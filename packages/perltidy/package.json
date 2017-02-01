@@ -1,0 +1,71 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-116105-7143-1y9fvqa.gmw1tc5wmi/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-116105-7143-1y9fvqa.gmw1tc5wmi/package.tgz",
+        "spec": "/tmp/d-116105-7143-1y9fvqa.gmw1tc5wmi/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-116105-7143-11ll7m0.xaacdcayvi"
+    ]
+  ],
+  "_from": "../d-116105-7143-1y9fvqa.gmw1tc5wmi/package.tgz",
+  "_id": "perltidy@3.0.0",
+  "_inCache": true,
+  "_location": "/perltidy",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/tmp/d-116105-7143-1y9fvqa.gmw1tc5wmi/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-116105-7143-1y9fvqa.gmw1tc5wmi/package.tgz",
+    "spec": "/tmp/d-116105-7143-1y9fvqa.gmw1tc5wmi/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-116105-7143-1y9fvqa.gmw1tc5wmi/package.tgz",
+  "_shasum": "01d57655fae0c03d74a3b05f8fddb78b0d24be67",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-116105-7143-1y9fvqa.gmw1tc5wmi/package.tgz",
+  "_where": "/tmp/apm-install-dir-116105-7143-11ll7m0.xaacdcayvi",
+  "bugs": {
+    "url": "https://github.com/kraih/atom-perltidy/issues"
+  },
+  "dependencies": {},
+  "description": "Perltidy for Atom.",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=0.174.0"
+  },
+  "homepage": "https://github.com/kraih/atom-perltidy#readme",
+  "main": "./index.js",
+  "name": "perltidy",
+  "optionalDependencies": {},
+  "readme": "# Perltidy\n\nPerltidy for Atom.\n\nStarted with `alt-p`, you may need to configure the location of your\n`perltidy` binary, which defaults to `/usr/local/bin/perltidy`.\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kraih/atom-perltidy.git"
+  },
+  "version": "3.0.0",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".js": [
+        "index.js"
+      ],
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

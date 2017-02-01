@@ -1,0 +1,19 @@
+"*":
+  core:
+    autoHideMenuBar: true
+    telemetryConsent: "no"
+  "exception-reporting":
+    userId: "e8b4ff51-55bf-620d-af04-5226eb6bb6fe"
+  minimap:
+    plugins:
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+  welcome:
+    showOnStartup: false
+".perl.source":
+  editor:
+    showIndentGuide: false
+    showInvisibles: false
+".python.source":
+  editor:
+    tabLength: 4

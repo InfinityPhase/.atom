@@ -1,0 +1,146 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-11711-498-6ne9jq.m743ac3di/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-11711-498-6ne9jq.m743ac3di/package.tgz",
+        "spec": "/tmp/d-11711-498-6ne9jq.m743ac3di/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-11711-498-1jxmqrz.hq3tjd1jor"
+    ]
+  ],
+  "_from": "../d-11711-498-6ne9jq.m743ac3di/package.tgz",
+  "_id": "minimap-highlight-selected@4.5.0",
+  "_inCache": true,
+  "_location": "/minimap-highlight-selected",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/tmp/d-11711-498-6ne9jq.m743ac3di/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-11711-498-6ne9jq.m743ac3di/package.tgz",
+    "spec": "/tmp/d-11711-498-6ne9jq.m743ac3di/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-11711-498-6ne9jq.m743ac3di/package.tgz",
+  "_shasum": "e1b99f88ecff37a867626881fbaf87e5126565d5",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-11711-498-6ne9jq.m743ac3di/package.tgz",
+  "_where": "/tmp/apm-install-dir-11711-498-1jxmqrz.hq3tjd1jor",
+  "bugs": {
+    "url": "https://github.com/atom-minimap/minimap-highlight-selected/issues"
+  },
+  "consumedServices": {
+    "minimap": {
+      "versions": {
+        "1.0.0": "consumeMinimapServiceV1"
+      }
+    },
+    "highlightSelected": {
+      "versions": {
+        "1.0.0": "consumeHighlightSelectedServiceV1"
+      }
+    }
+  },
+  "dependencies": {
+    "atom-utils": "0.0.1",
+    "event-kit": ">= 0.7.2",
+    "underscore-plus": "1.x"
+  },
+  "description": "A minimap binding for the highlight-selected package",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "homepage": "https://github.com/atom-minimap/minimap-highlight-selected#readme",
+  "license": "MIT",
+  "main": "./lib/minimap-highlight-selected",
+  "name": "minimap-highlight-selected",
+  "optionalDependencies": {},
+  "readme": "# minimap-highlight-selected package\n\nA minimap binding for the [highlight-selected package](https://github.com/richrace/highlight-selected).\n\n![Screenshot](https://github.com/atom-minimap/minimap-highlight-selected/blob/master/screenshot.png?raw=true)\n\n### Customization\n\nIf you want to change the color of the minimap highlights use the following CSS rules in your user stylesheet:\n\n```css\n/* The rule for normal highlights */\n.minimap .highlight-selected {\n  background: blue;\n}\n\n/* The rule for selected highlights */\n.minimap .highlight-selected.selected {\n  background: red;\n}\n```\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atom-minimap/minimap-highlight-selected.git"
+  },
+  "version": "4.5.0",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [
+      {
+        "name": "atom-utils",
+        "version": "0.0.1",
+        "path": "node_modules/atom-utils/lib/atom-utils.js"
+      },
+      {
+        "name": "event-kit",
+        "version": "2.2.0",
+        "path": "node_modules/event-kit/lib/event-kit.js"
+      },
+      {
+        "name": "underscore",
+        "version": "1.6.0",
+        "path": "node_modules/underscore/underscore.js"
+      },
+      {
+        "name": "underscore-plus",
+        "version": "1.6.6",
+        "path": "node_modules/underscore-plus/lib/underscore-plus.js"
+      }
+    ],
+    "extensions": {
+      ".coffee": [
+        "lib/minimap-highlight-selected.coffee"
+      ],
+      ".js": [
+        "node_modules/atom-utils/lib/atom-utils.js",
+        "node_modules/event-kit/lib/composite-disposable.js",
+        "node_modules/event-kit/lib/disposable.js",
+        "node_modules/event-kit/lib/emitter.js",
+        "node_modules/event-kit/lib/event-kit.js",
+        "node_modules/underscore/underscore-min.js",
+        "node_modules/underscore/underscore.js",
+        "node_modules/underscore-plus/lib/underscore-plus.js"
+      ],
+      ".json": [
+        "node_modules/atom-utils/package.json",
+        "node_modules/event-kit/api.json",
+        "node_modules/event-kit/package.json",
+        "node_modules/underscore/package.json",
+        "node_modules/underscore-plus/package.json",
+        "package.json"
+      ]
+    },
+    "folders": [
+      {
+        "paths": [
+          "lib",
+          "",
+          "spec"
+        ],
+        "dependencies": {
+          "atom-utils": "0.0.1",
+          "event-kit": ">= 0.7.2",
+          "underscore-plus": "1.x"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/underscore-plus/lib",
+          "node_modules/underscore-plus"
+        ],
+        "dependencies": {
+          "underscore": "~1.6.0"
+        }
+      }
+    ]
+  }
+}
