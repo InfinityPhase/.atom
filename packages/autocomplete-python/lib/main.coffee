@@ -180,7 +180,7 @@ module.exports =
           Metrics.Tracker.trackEvent "flow aborted"
           atom.config.set 'autocomplete-python.useKite', false
         )
-        installer = new Installer()
+        installer = new Installer(atom.project.getPaths())
         installer.init @installation.flow
         pane = atom.workspace.getActivePane()
         @installation.flow.onSkipInstall () =>
@@ -277,7 +277,7 @@ module.exports =
         safeConfirm.call(autocompleteManager, suggestion)
 
   trackSuggestions: (suggestions, editor) ->
-    if /\.py$/.test editor.getPath() and @kiteProvider?
+    if /\.py$/.test(editor.getPath()) and @kiteProvider?
       hasKiteSuggestions = suggestions.some (s) => s.provider is @kiteProvider
       hasJediSuggestions = suggestions.some (s) => s.provider is @provider
 
@@ -291,28 +291,28 @@ module.exports =
         @track 'Atom shows neither Kite nor Jedi completions'
 
   trackUsedSuggestion: (suggestion, editor) ->
-    if /\.py$/.test editor.getPath() and @kiteProvider?
+    if /\.py$/.test(editor.getPath()) and @kiteProvider?
       if @lastKiteSuggestions?
         if suggestion in @lastKiteSuggestions
           if @hasSameSuggestion(suggestion, @provider.lastSuggestions)
-            @track 'used completion returned by Kite but also returned by Jedi', suggestion.text
+            @track 'used completion returned by Kite but also returned by Jedi'
           else
-            @track 'used completion returned by Kite but not Jedi', suggestion.text
+            @track 'used completion returned by Kite but not Jedi'
         else if suggestion in @provider.lastSuggestions
           if @hasSameSuggestion(suggestion, @lastKiteSuggestions)
-            @track 'used completion returned by Jedi but also returned by Kite', suggestion.text
+            @track 'used completion returned by Jedi but also returned by Kite'
           else
             if @kiteSuggested
-              @track 'used completion returned by Jedi but not Kite (whitelisted filepath)', suggestion.text
+              @track 'used completion returned by Jedi but not Kite (whitelisted filepath)'
             else
-              @track 'used completion returned by Jedi but not Kite (not-whitelisted filepath)', suggestion.text
+              @track 'used completion returned by Jedi but not Kite (not-whitelisted filepath)'
         else
-          @track 'used completion from neither Kite nor Jedi', suggestion.text
+          @track 'used completion from neither Kite nor Jedi'
       else
         if suggestion in @provider.lastSuggestions
-          @track 'used completion returned by Jedi', suggestion.text
+          @track 'used completion returned by Jedi'
         else
-          @track 'used completion not returned by Jedi', suggestion.text
+          @track 'used completion not returned by Jedi'
 
   hasSameSuggestion: (suggestion, suggestions) ->
     suggestions.some (s) -> s.text is suggestion.text
