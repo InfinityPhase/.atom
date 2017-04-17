@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-11732-7024-rbet2m.7yz5vr6bt9/package.tgz",
+        "raw": "/tmp/d-117317-12478-1m0ywom.8prhu59udi/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-11732-7024-rbet2m.7yz5vr6bt9/package.tgz",
-        "spec": "/tmp/d-11732-7024-rbet2m.7yz5vr6bt9/package.tgz",
+        "rawSpec": "/tmp/d-117317-12478-1m0ywom.8prhu59udi/package.tgz",
+        "spec": "/tmp/d-117317-12478-1m0ywom.8prhu59udi/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-11732-7024-1fq5lia.njm0ksxlxr"
+      "/tmp/apm-install-dir-117317-12478-1u2j8vm.vakzk3mcxr"
     ]
   ],
-  "_from": "../d-11732-7024-rbet2m.7yz5vr6bt9/package.tgz",
-  "_id": "linter-ui-default@1.2.2",
+  "_from": "../d-117317-12478-1m0ywom.8prhu59udi/package.tgz",
+  "_id": "linter-ui-default@1.2.3",
   "_inCache": true,
   "_location": "/linter-ui-default",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-11732-7024-rbet2m.7yz5vr6bt9/package.tgz",
+    "raw": "/tmp/d-117317-12478-1m0ywom.8prhu59udi/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-11732-7024-rbet2m.7yz5vr6bt9/package.tgz",
-    "spec": "/tmp/d-11732-7024-rbet2m.7yz5vr6bt9/package.tgz",
+    "rawSpec": "/tmp/d-117317-12478-1m0ywom.8prhu59udi/package.tgz",
+    "spec": "/tmp/d-117317-12478-1m0ywom.8prhu59udi/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-11732-7024-rbet2m.7yz5vr6bt9/package.tgz",
-  "_shasum": "9eb05af81c4eeb023391465fa8aec0600bbfe5d8",
+  "_resolved": "file:../d-117317-12478-1m0ywom.8prhu59udi/package.tgz",
+  "_shasum": "92a6c92019a02ff06eda364918ae9aaa57ae30eb",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-11732-7024-rbet2m.7yz5vr6bt9/package.tgz",
-  "_where": "/tmp/apm-install-dir-11732-7024-1fq5lia.njm0ksxlxr",
+  "_spec": "/tmp/d-117317-12478-1m0ywom.8prhu59udi/package.tgz",
+  "_where": "/tmp/apm-install-dir-117317-12478-1u2j8vm.vakzk3mcxr",
   "bugs": {
     "url": "https://github.com/steelbrain/linter-ui-default/issues"
   },
@@ -182,13 +182,12 @@
     "react-dom": "^15.3.2",
     "react-resizable-box": "^1.8.1",
     "sb-debounce": "^1.0.1",
-    "sb-event-kit": "^3.0.0",
     "sb-react-table": "^1.0.1"
   },
   "description": "Default UI for the Linter package",
   "devDependencies": {
     "eslint-config-steelbrain": "^3.0.0",
-    "flow-bin": "^0.42.0",
+    "flow-bin": "^0.43.0",
     "jasmine-fix": "^1.0.1",
     "rimraf": "^2.5.4"
   },
@@ -229,7 +228,7 @@
   "scripts": {
     "test": "(apm test) && (flow check) && (eslint . )"
   },
-  "version": "1.2.2",
+  "version": "1.2.3",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -240,28 +239,13 @@
       },
       {
         "name": "atom-package-deps",
-        "version": "4.5.0",
+        "version": "4.6.0",
         "path": "node_modules/atom-package-deps/lib/index.js"
       },
       {
         "name": "atom-package-path",
         "version": "1.1.0",
         "path": "node_modules/atom-package-path/lib/index.js"
-      },
-      {
-        "name": "balanced-match",
-        "version": "0.4.2",
-        "path": "node_modules/balanced-match/index.js"
-      },
-      {
-        "name": "brace-expansion",
-        "version": "1.1.6",
-        "path": "node_modules/brace-expansion/index.js"
-      },
-      {
-        "name": "concat-map",
-        "version": "0.0.1",
-        "path": "node_modules/concat-map/index.js"
       },
       {
         "name": "consistent-env",
@@ -279,11 +263,6 @@
         "path": "node_modules/disposable-event/lib/index.js"
       },
       {
-        "name": "sb-event-kit",
-        "version": "2.0.0",
-        "path": "node_modules/disposable-event/node_modules/sb-event-kit/lib/main.js"
-      },
-      {
         "name": "encoding",
         "version": "0.1.12",
         "path": "node_modules/encoding/lib/encoding.js"
@@ -294,44 +273,19 @@
         "path": "node_modules/fbjs/index.js"
       },
       {
-        "name": "fs.realpath",
-        "version": "1.0.0",
-        "path": "node_modules/fs.realpath/index.js"
-      },
-      {
-        "name": "glob",
-        "version": "7.1.1",
-        "path": "node_modules/glob/glob.js"
-      },
-      {
-        "name": "graceful-fs",
-        "version": "4.1.11",
-        "path": "node_modules/graceful-fs/graceful-fs.js"
-      },
-      {
         "name": "iconv-lite",
         "version": "0.4.15",
         "path": "node_modules/iconv-lite/lib/index.js"
       },
       {
-        "name": "imurmurhash",
-        "version": "0.1.4",
-        "path": "node_modules/imurmurhash/imurmurhash.js"
-      },
-      {
-        "name": "inflight",
-        "version": "1.0.6",
-        "path": "node_modules/inflight/inflight.js"
-      },
-      {
-        "name": "inherits",
-        "version": "2.0.3",
-        "path": "node_modules/inherits/inherits.js"
-      },
-      {
         "name": "is-stream",
         "version": "1.1.0",
         "path": "node_modules/is-stream/index.js"
+      },
+      {
+        "name": "is-utf8",
+        "version": "0.2.1",
+        "path": "node_modules/is-utf8/is-utf8.js"
       },
       {
         "name": "isomorphic-fetch",
@@ -364,21 +318,6 @@
         "path": "node_modules/marked/lib/marked.js"
       },
       {
-        "name": "minimatch",
-        "version": "3.0.3",
-        "path": "node_modules/minimatch/minimatch.js"
-      },
-      {
-        "name": "minimist",
-        "version": "0.0.8",
-        "path": "node_modules/minimist/index.js"
-      },
-      {
-        "name": "mkdirp",
-        "version": "0.5.1",
-        "path": "node_modules/mkdirp/index.js"
-      },
-      {
         "name": "node-fetch",
         "version": "1.6.3",
         "path": "node_modules/node-fetch/index.js"
@@ -389,33 +328,23 @@
         "path": "node_modules/object-assign/index.js"
       },
       {
-        "name": "once",
-        "version": "1.4.0",
-        "path": "node_modules/once/once.js"
-      },
-      {
-        "name": "os-homedir",
-        "version": "1.0.2",
-        "path": "node_modules/os-homedir/index.js"
-      },
-      {
-        "name": "path-is-absolute",
-        "version": "1.0.1",
-        "path": "node_modules/path-is-absolute/index.js"
-      },
-      {
         "name": "promise",
         "version": "7.1.1",
         "path": "node_modules/promise/index.js"
       },
       {
+        "name": "prop-types",
+        "version": "15.5.8",
+        "path": "node_modules/prop-types/index.js"
+      },
+      {
         "name": "react",
-        "version": "15.4.2",
+        "version": "15.5.4",
         "path": "node_modules/react/react.js"
       },
       {
         "name": "react-dom",
-        "version": "15.4.2",
+        "version": "15.5.4",
         "path": "node_modules/react-dom/index.js"
       },
       {
@@ -424,24 +353,9 @@
         "path": "node_modules/react-resizable-box/lib/index.js"
       },
       {
-        "name": "rimraf",
-        "version": "2.6.1",
-        "path": "node_modules/rimraf/rimraf.js"
-      },
-      {
         "name": "sb-callsite",
         "version": "1.1.2",
         "path": "node_modules/sb-callsite/lib/main.js"
-      },
-      {
-        "name": "sb-config-file",
-        "version": "3.0.2",
-        "path": "node_modules/sb-config-file/lib/index.js"
-      },
-      {
-        "name": "sb-fs",
-        "version": "1.1.1",
-        "path": "node_modules/sb-config-file/node_modules/sb-fs/lib/index.js"
       },
       {
         "name": "sb-debounce",
@@ -450,7 +364,7 @@
       },
       {
         "name": "sb-event-kit",
-        "version": "3.0.0",
+        "version": "2.0.0",
         "path": "node_modules/sb-event-kit/lib/main.js"
       },
       {
@@ -460,7 +374,7 @@
       },
       {
         "name": "sb-fs",
-        "version": "2.0.0",
+        "version": "3.0.0",
         "path": "node_modules/sb-fs/lib/index.js"
       },
       {
@@ -494,19 +408,9 @@
         "path": "node_modules/setimmediate/setImmediate.js"
       },
       {
-        "name": "slide",
-        "version": "1.1.6",
-        "path": "node_modules/slide/lib/slide.js"
-      },
-      {
-        "name": "strip-bom",
-        "version": "3.0.0",
-        "path": "node_modules/strip-bom/index.js"
-      },
-      {
-        "name": "tildify",
-        "version": "1.2.0",
-        "path": "node_modules/tildify/index.js"
+        "name": "strip-bom-buf",
+        "version": "1.0.0",
+        "path": "node_modules/strip-bom-buf/index.js"
       },
       {
         "name": "ua-parser-js",
@@ -517,16 +421,6 @@
         "name": "whatwg-fetch",
         "version": "2.0.3",
         "path": "node_modules/whatwg-fetch/fetch.js"
-      },
-      {
-        "name": "wrappy",
-        "version": "1.0.2",
-        "path": "node_modules/wrappy/wrappy.js"
-      },
-      {
-        "name": "write-file-atomic",
-        "version": "1.3.1",
-        "path": "node_modules/write-file-atomic/index.js"
       }
     ],
     "extensions": {
@@ -536,22 +430,15 @@
         "node_modules/atom-package-deps/.eslintrc.json",
         "node_modules/atom-package-deps/package.json",
         "node_modules/atom-package-path/package.json",
-        "node_modules/balanced-match/package.json",
-        "node_modules/brace-expansion/package.json",
-        "node_modules/concat-map/package.json",
         "node_modules/consistent-env/.eslintrc.json",
         "node_modules/consistent-env/package.json",
         "node_modules/core-js/bower.json",
         "node_modules/core-js/package.json",
         "node_modules/disposable-event/.eslintrc.json",
-        "node_modules/disposable-event/node_modules/sb-event-kit/package.json",
         "node_modules/disposable-event/package.json",
         "node_modules/encoding/package.json",
         "node_modules/fbjs/module-map.json",
         "node_modules/fbjs/package.json",
-        "node_modules/fs.realpath/package.json",
-        "node_modules/glob/package.json",
-        "node_modules/graceful-fs/package.json",
         "node_modules/iconv-lite/encodings/tables/big5-added.json",
         "node_modules/iconv-lite/encodings/tables/cp936.json",
         "node_modules/iconv-lite/encodings/tables/cp949.json",
@@ -561,10 +448,8 @@
         "node_modules/iconv-lite/encodings/tables/gbk-added.json",
         "node_modules/iconv-lite/encodings/tables/shiftjis.json",
         "node_modules/iconv-lite/package.json",
-        "node_modules/imurmurhash/package.json",
-        "node_modules/inflight/package.json",
-        "node_modules/inherits/package.json",
         "node_modules/is-stream/package.json",
+        "node_modules/is-utf8/package.json",
         "node_modules/isomorphic-fetch/bower.json",
         "node_modules/isomorphic-fetch/package.json",
         "node_modules/js-tokens/package.json",
@@ -574,26 +459,15 @@
         "node_modules/marked/bower.json",
         "node_modules/marked/component.json",
         "node_modules/marked/package.json",
-        "node_modules/minimatch/package.json",
-        "node_modules/minimist/package.json",
-        "node_modules/mkdirp/package.json",
         "node_modules/node-fetch/package.json",
         "node_modules/object-assign/package.json",
-        "node_modules/once/package.json",
-        "node_modules/os-homedir/package.json",
-        "node_modules/path-is-absolute/package.json",
         "node_modules/promise/package.json",
+        "node_modules/prop-types/package.json",
         "node_modules/react/package.json",
         "node_modules/react-dom/package.json",
         "node_modules/react-resizable-box/package.json",
-        "node_modules/rimraf/package.json",
         "node_modules/sb-callsite/package.json",
-        "node_modules/sb-config-file/.eslintrc.json",
-        "node_modules/sb-config-file/node_modules/sb-fs/.eslintrc.json",
-        "node_modules/sb-config-file/node_modules/sb-fs/package.json",
-        "node_modules/sb-config-file/package.json",
         "node_modules/sb-debounce/package.json",
-        "node_modules/sb-event-kit/.eslintrc.json",
         "node_modules/sb-event-kit/package.json",
         "node_modules/sb-exec/.eslintrc.json",
         "node_modules/sb-exec/package.json",
@@ -608,15 +482,11 @@
         "node_modules/sb-react-table/package.json",
         "node_modules/semver/package.json",
         "node_modules/setimmediate/package.json",
-        "node_modules/slide/package.json",
-        "node_modules/strip-bom/package.json",
-        "node_modules/tildify/package.json",
+        "node_modules/strip-bom-buf/package.json",
         "node_modules/ua-parser-js/bower.json",
         "node_modules/ua-parser-js/package.json",
         "node_modules/ua-parser-js/ua-parser-js.jquery.json",
         "node_modules/whatwg-fetch/package.json",
-        "node_modules/wrappy/package.json",
-        "node_modules/write-file-atomic/package.json",
         "package.json"
       ],
       ".js": [
@@ -650,10 +520,6 @@
         "node_modules/atom-package-deps/lib/types.js",
         "node_modules/atom-package-deps/lib/view.js",
         "node_modules/atom-package-path/lib/index.js",
-        "node_modules/balanced-match/index.js",
-        "node_modules/brace-expansion/index.js",
-        "node_modules/concat-map/example/map.js",
-        "node_modules/concat-map/index.js",
         "node_modules/consistent-env/decls/jasmine.js",
         "node_modules/consistent-env/lib/helpers.js",
         "node_modules/consistent-env/lib/index.js",
@@ -1512,10 +1378,6 @@
         "node_modules/core-js/web/timers.js",
         "node_modules/disposable-event/decls/jasmine.js",
         "node_modules/disposable-event/lib/index.js",
-        "node_modules/disposable-event/node_modules/sb-event-kit/lib/composite-disposable.js",
-        "node_modules/disposable-event/node_modules/sb-event-kit/lib/disposable.js",
-        "node_modules/disposable-event/node_modules/sb-event-kit/lib/emitter.js",
-        "node_modules/disposable-event/node_modules/sb-event-kit/lib/main.js",
         "node_modules/encoding/lib/encoding.js",
         "node_modules/encoding/lib/iconv-loader.js",
         "node_modules/fbjs/flow/lib/dev.js",
@@ -1624,15 +1486,6 @@
         "node_modules/fbjs/lib/sprintf.js",
         "node_modules/fbjs/lib/warning.js",
         "node_modules/fbjs/lib/xhrSimpleDataSerializer.js",
-        "node_modules/fs.realpath/index.js",
-        "node_modules/fs.realpath/old.js",
-        "node_modules/glob/common.js",
-        "node_modules/glob/glob.js",
-        "node_modules/glob/sync.js",
-        "node_modules/graceful-fs/fs.js",
-        "node_modules/graceful-fs/graceful-fs.js",
-        "node_modules/graceful-fs/legacy-streams.js",
-        "node_modules/graceful-fs/polyfills.js",
         "node_modules/iconv-lite/encodings/dbcs-codec.js",
         "node_modules/iconv-lite/encodings/dbcs-data.js",
         "node_modules/iconv-lite/encodings/index.js",
@@ -1646,12 +1499,8 @@
         "node_modules/iconv-lite/lib/extend-node.js",
         "node_modules/iconv-lite/lib/index.js",
         "node_modules/iconv-lite/lib/streams.js",
-        "node_modules/imurmurhash/imurmurhash.js",
-        "node_modules/imurmurhash/imurmurhash.min.js",
-        "node_modules/inflight/inflight.js",
-        "node_modules/inherits/inherits.js",
-        "node_modules/inherits/inherits_browser.js",
         "node_modules/is-stream/index.js",
+        "node_modules/is-utf8/is-utf8.js",
         "node_modules/isomorphic-fetch/fetch-bower.js",
         "node_modules/isomorphic-fetch/fetch-npm-browserify.js",
         "node_modules/isomorphic-fetch/fetch-npm-node.js",
@@ -1667,12 +1516,6 @@
         "node_modules/marked/index.js",
         "node_modules/marked/lib/marked.js",
         "node_modules/marked/marked.min.js",
-        "node_modules/minimatch/minimatch.js",
-        "node_modules/minimist/example/parse.js",
-        "node_modules/minimist/index.js",
-        "node_modules/mkdirp/bin/cmd.js",
-        "node_modules/mkdirp/examples/pow.js",
-        "node_modules/mkdirp/index.js",
         "node_modules/node-fetch/index.js",
         "node_modules/node-fetch/lib/body.js",
         "node_modules/node-fetch/lib/fetch-error.js",
@@ -1680,9 +1523,6 @@
         "node_modules/node-fetch/lib/request.js",
         "node_modules/node-fetch/lib/response.js",
         "node_modules/object-assign/index.js",
-        "node_modules/once/once.js",
-        "node_modules/os-homedir/index.js",
-        "node_modules/path-is-absolute/index.js",
         "node_modules/promise/build.js",
         "node_modules/promise/core.js",
         "node_modules/promise/domains/core.js",
@@ -1720,6 +1560,14 @@
         "node_modules/promise/src/node-extensions.js",
         "node_modules/promise/src/rejection-tracking.js",
         "node_modules/promise/src/synchronous.js",
+        "node_modules/prop-types/checkPropTypes.js",
+        "node_modules/prop-types/factory.js",
+        "node_modules/prop-types/factoryWithThrowingShims.js",
+        "node_modules/prop-types/factoryWithTypeCheckers.js",
+        "node_modules/prop-types/index.js",
+        "node_modules/prop-types/lib/ReactPropTypesSecret.js",
+        "node_modules/prop-types/prop-types.js",
+        "node_modules/prop-types/prop-types.min.js",
         "node_modules/react/dist/react-with-addons.js",
         "node_modules/react/dist/react-with-addons.min.js",
         "node_modules/react/dist/react.js",
@@ -1769,6 +1617,7 @@
         "node_modules/react/lib/flattenChildren.js",
         "node_modules/react/lib/getIteratorFn.js",
         "node_modules/react/lib/getNextDebugID.js",
+        "node_modules/react/lib/getNextDebugIDUMDShim.js",
         "node_modules/react/lib/onlyChild.js",
         "node_modules/react/lib/reactProdInvariant.js",
         "node_modules/react/lib/shallowCompare.js",
@@ -1884,6 +1733,7 @@
         "node_modules/react-dom/lib/ReactShallowRenderer.js",
         "node_modules/react-dom/lib/ReactSimpleEmptyComponent.js",
         "node_modules/react-dom/lib/ReactSyntheticEventType.js",
+        "node_modules/react-dom/lib/ReactTestReconcileTransaction.js",
         "node_modules/react-dom/lib/ReactTestUtils.js",
         "node_modules/react-dom/lib/ReactTypeOfWork.js",
         "node_modules/react-dom/lib/ReactTypes.js",
@@ -1931,7 +1781,6 @@
         "node_modules/react-dom/lib/getEventTarget.js",
         "node_modules/react-dom/lib/getHostComponentFromComposite.js",
         "node_modules/react-dom/lib/getIteratorFn.js",
-        "node_modules/react-dom/lib/getNextDebugID.js",
         "node_modules/react-dom/lib/getNodeForCharacterOffset.js",
         "node_modules/react-dom/lib/getTestDocument.js",
         "node_modules/react-dom/lib/getTextContentAccessor.js",
@@ -1949,24 +1798,15 @@
         "node_modules/react-dom/lib/traverseAllChildren.js",
         "node_modules/react-dom/lib/validateDOMNesting.js",
         "node_modules/react-dom/server.js",
+        "node_modules/react-dom/test-utils.js",
         "node_modules/react-resizable-box/lib/index.js",
         "node_modules/react-resizable-box/lib/resizer.js",
-        "node_modules/rimraf/bin.js",
-        "node_modules/rimraf/rimraf.js",
         "node_modules/sb-callsite/lib/main.js",
-        "node_modules/sb-config-file/lib/helpers.js",
-        "node_modules/sb-config-file/lib/index.js",
-        "node_modules/sb-config-file/lib/object-path.js",
-        "node_modules/sb-config-file/lib/types.js",
-        "node_modules/sb-config-file/node_modules/sb-fs/decls/jasmine.js",
-        "node_modules/sb-config-file/node_modules/sb-fs/lib/index.js",
         "node_modules/sb-debounce/index.js",
         "node_modules/sb-debounce/test.js",
-        "node_modules/sb-event-kit/decls/jasmine.js",
         "node_modules/sb-event-kit/lib/composite-disposable.js",
         "node_modules/sb-event-kit/lib/disposable.js",
         "node_modules/sb-event-kit/lib/emitter.js",
-        "node_modules/sb-event-kit/lib/helpers.js",
         "node_modules/sb-event-kit/lib/main.js",
         "node_modules/sb-exec/decls/jasmine.js",
         "node_modules/sb-exec/lib/helpers.js",
@@ -1984,21 +1824,12 @@
         "node_modules/sb-react-table/lib/types.js",
         "node_modules/semver/semver.js",
         "node_modules/setimmediate/setImmediate.js",
-        "node_modules/slide/index.js",
-        "node_modules/slide/lib/async-map-ordered.js",
-        "node_modules/slide/lib/async-map.js",
-        "node_modules/slide/lib/bind-actor.js",
-        "node_modules/slide/lib/chain.js",
-        "node_modules/slide/lib/slide.js",
-        "node_modules/strip-bom/index.js",
-        "node_modules/tildify/index.js",
+        "node_modules/strip-bom-buf/index.js",
         "node_modules/ua-parser-js/dist/ua-parser.min.js",
         "node_modules/ua-parser-js/dist/ua-parser.pack.js",
         "node_modules/ua-parser-js/package.js",
         "node_modules/ua-parser-js/src/ua-parser.js",
-        "node_modules/whatwg-fetch/fetch.js",
-        "node_modules/wrappy/wrappy.js",
-        "node_modules/write-file-atomic/index.js"
+        "node_modules/whatwg-fetch/fetch.js"
       ]
     },
     "folders": [
@@ -2022,7 +1853,6 @@
           "react-dom": "^15.3.2",
           "react-resizable-box": "^1.8.1",
           "sb-debounce": "^1.0.1",
-          "sb-event-kit": "^3.0.0",
           "sb-react-table": "^1.0.1"
         }
       },
@@ -2033,11 +1863,9 @@
         ],
         "dependencies": {
           "atom-package-path": "^1.1.0",
-          "sb-config-file": "^3.0.1",
           "sb-exec": "^3.0.1",
-          "sb-fs": "^2.0.0",
-          "semver": "^5.3.0",
-          "tildify": "^1.2.0"
+          "sb-fs": "^3.0.0",
+          "semver": "^5.3.0"
         }
       },
       {
@@ -2048,15 +1876,6 @@
         ],
         "dependencies": {
           "sb-callsite": "^1.1.2"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/brace-expansion"
-        ],
-        "dependencies": {
-          "balanced-match": "^0.4.1",
-          "concat-map": "0.0.1"
         }
       },
       {
@@ -2108,28 +1927,6 @@
       },
       {
         "paths": [
-          "node_modules/glob"
-        ],
-        "dependencies": {
-          "fs.realpath": "^1.0.0",
-          "inflight": "^1.0.4",
-          "inherits": "2",
-          "minimatch": "^3.0.2",
-          "once": "^1.3.0",
-          "path-is-absolute": "^1.0.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/inflight"
-        ],
-        "dependencies": {
-          "once": "^1.3.0",
-          "wrappy": "1"
-        }
-      },
-      {
-        "paths": [
           "node_modules/isomorphic-fetch",
           "node_modules/isomorphic-fetch/test"
         ],
@@ -2148,25 +1945,6 @@
       },
       {
         "paths": [
-          "node_modules/minimatch"
-        ],
-        "dependencies": {
-          "brace-expansion": "^1.0.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/mkdirp/bin",
-          "node_modules/mkdirp/examples",
-          "node_modules/mkdirp",
-          "node_modules/mkdirp/test"
-        ],
-        "dependencies": {
-          "minimist": "0.0.8"
-        }
-      },
-      {
-        "paths": [
           "node_modules/node-fetch",
           "node_modules/node-fetch/lib",
           "node_modules/node-fetch/test"
@@ -2174,14 +1952,6 @@
         "dependencies": {
           "encoding": "^0.1.11",
           "is-stream": "^1.0.1"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/once"
-        ],
-        "dependencies": {
-          "wrappy": "1"
         }
       },
       {
@@ -2198,14 +1968,24 @@
       },
       {
         "paths": [
+          "node_modules/prop-types",
+          "node_modules/prop-types/lib"
+        ],
+        "dependencies": {
+          "fbjs": "^0.8.9"
+        }
+      },
+      {
+        "paths": [
           "node_modules/react/dist",
           "node_modules/react/lib",
           "node_modules/react"
         ],
         "dependencies": {
-          "fbjs": "^0.8.4",
+          "fbjs": "^0.8.9",
           "loose-envify": "^1.1.0",
-          "object-assign": "^4.1.0"
+          "object-assign": "^4.1.0",
+          "prop-types": "^15.5.7"
         }
       },
       {
@@ -2215,9 +1995,10 @@
           "node_modules/react-dom/lib"
         ],
         "dependencies": {
-          "fbjs": "^0.8.1",
+          "fbjs": "^0.8.9",
           "loose-envify": "^1.1.0",
-          "object-assign": "^4.1.0"
+          "object-assign": "^4.1.0",
+          "prop-types": "~15.5.7"
         }
       },
       {
@@ -2227,37 +2008,6 @@
         ],
         "dependencies": {
           "lodash.isequal": "^4.2.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/rimraf"
-        ],
-        "dependencies": {
-          "glob": "^7.0.5"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/sb-config-file",
-          "node_modules/sb-config-file/lib"
-        ],
-        "dependencies": {
-          "sb-fs": "^1.1.1",
-          "strip-bom": "^3.0.0",
-          "write-file-atomic": "^1.3.1"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/sb-config-file/node_modules/sb-fs",
-          "node_modules/sb-config-file/node_modules/sb-fs/decls",
-          "node_modules/sb-config-file/node_modules/sb-fs/lib"
-        ],
-        "dependencies": {
-          "mkdirp": "^0.5.1",
-          "rimraf": "^2.5.4",
-          "sb-promisify": "^2.0.1"
         }
       },
       {
@@ -2278,9 +2028,8 @@
           "node_modules/sb-fs"
         ],
         "dependencies": {
-          "mkdirp": "^0.5.1",
-          "rimraf": "^2.5.4",
-          "sb-promisify": "^2.0.1"
+          "sb-promisify": "^2.0.1",
+          "strip-bom-buf": "^1.0.0"
         }
       },
       {
@@ -2296,20 +2045,10 @@
       },
       {
         "paths": [
-          "node_modules/tildify"
+          "node_modules/strip-bom-buf"
         ],
         "dependencies": {
-          "os-homedir": "^1.0.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/write-file-atomic"
-        ],
-        "dependencies": {
-          "graceful-fs": "^4.1.11",
-          "imurmurhash": "^0.1.4",
-          "slide": "^1.1.5"
+          "is-utf8": "^0.2.1"
         }
       }
     ]
