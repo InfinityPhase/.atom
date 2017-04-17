@@ -4,18 +4,34 @@
     width: 160
   "activate-power-mode":
     autoToggle: false
+  "atom-beautify":
+    general:
+      _analyticsUserId: "c93f5d4f-1e08-47f2-9be3-d8768acad652"
   core:
+    audioBeep: false
     autoHideMenuBar: true
+    disabledPackages: [
+      "activate-power-mode"
+      "linter-write-good"
+      "autocomplete-python"
+    ]
+    openEmptyEditorOnStart: false
     telemetryConsent: "no"
     themes: [
       "seti-ui"
       "monokai-seti"
     ]
+  editor:
+    fontSize: 12
   "exception-reporting":
     userId: "e8b4ff51-55bf-620d-af04-5226eb6bb6fe"
   "git-plus":
     general:
       analytics: false
+  "linter-ui-default":
+    showPanel: true
+  "linter-write-good":
+    severityLevel: "Warning"
   minimap:
     plugins:
       bookmarks: true
@@ -26,6 +42,10 @@
       pigmentsDecorationsZIndex: 0
   "seti-ui":
     compactView: true
+    themeColor: "Steel"
+  "todo-show":
+    sortBy: "Line"
+    statusBarIndicator: true
   "tree-view":
     hideVcsIgnoredFiles: true
   welcome:

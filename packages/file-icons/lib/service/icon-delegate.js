@@ -1,8 +1,9 @@
 "use strict";
 
 const {CompositeDisposable, Disposable, Emitter} = require("atom");
+const {normalisePath} = require("alhadis.utils");
+const {EntityType} = require("atom-fs");
 const StrategyManager = require("./strategy-manager.js");
-const EntityType = require("../filesystem/entity-type.js");
 const IconTables = require("../icons/icon-tables.js");
 const Options = require("../options.js");
 const Storage = require("../storage.js");
@@ -220,11 +221,16 @@ class IconDelegate{
 	
 	
 	deserialise(){
-		const {path, isDirectory} = this.resource;
+		// HACK: https://github.com/file-icons/atom/issues/568#issuecomment-288983875
+		if(!this.resource)
+			return;
+		
+		const path = normalisePath(this.resource.path);
 		
 		if(!Storage.hasIcon(path))
 			return;
 		
+		const {isDirectory} = this.resource;
 		const icons = isDirectory
 			? IconTables.directoryIcons
 			: IconTables.fileIcons;
@@ -243,7 +249,7 @@ class IconDelegate{
 	
 	serialise(){
 		if(!Storage.locked){
-			const {path} = this.resource;
+			const path = normalisePath(this.resource.path);
 			const icon = this.currentIcon;
 			
 			if(icon)

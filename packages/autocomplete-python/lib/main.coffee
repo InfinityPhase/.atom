@@ -1,6 +1,8 @@
+os = require 'os'
+path = require 'path'
 {CompositeDisposable, Emitter} = require 'atom'
 
-Metrics = null
+[Metrics, Logger] = []
 
 window.DEBUG = false
 module.exports =
@@ -147,8 +149,13 @@ module.exports =
       Installation,
       Installer,
       Metrics,
+      Logger,
       StateController
     } = require 'kite-installer'
+
+    if atom.config.get('kite.loggingLevel')
+      Logger.LEVEL = Logger.LEVELS[atom.config.get('kite.loggingLevel').toUpperCase()]
+
     AccountManager.initClient 'alpha.kite.com', -1, true
     atom.views.addViewProvider Installation, (m) -> m.element
     editorCfg =
@@ -159,6 +166,12 @@ module.exports =
     dm = new DecisionMaker editorCfg, pluginCfg
 
     Metrics.Tracker.name = "atom acp"
+    Metrics.enabled = atom.config.get('core.telemetryConsent') is 'limited'
+
+    atom.packages.onDidActivatePackage (pkg) =>
+      if pkg.name is 'kite'
+        @patchKiteCompletions(pkg)
+        Metrics.Tracker.name = "atom kite+acp"
 
     checkKiteInstallation = () =>
       if not atom.config.get 'autocomplete-python.useKite'
@@ -173,19 +186,28 @@ module.exports =
         title = "Choose a autocomplete-python engine"
         @installation = new Installation variant, title
         @installation.accountCreated(() =>
-          Metrics.Tracker.trackEvent "account created"
+          @track "account created"
           atom.config.set 'autocomplete-python.useKite', true
         )
         @installation.flowSkipped(() =>
-          Metrics.Tracker.trackEvent "flow aborted"
+          @track "flow aborted"
           atom.config.set 'autocomplete-python.useKite', false
         )
-        installer = new Installer(atom.project.getPaths())
-        installer.init @installation.flow
+        [projectPath] = atom.project.getPaths()
+        root = if projectPath? and path.relative(os.homedir(), projectPath).indexOf('..') is 0
+          path.parse(projectPath).root
+        else
+          os.homedir()
+
+        installer = new Installer([root])
+        installer.init @installation.flow, ->
+          Logger.verbose('in onFinish')
+          atom.packages.activatePackage('kite')
+
         pane = atom.workspace.getActivePane()
         @installation.flow.onSkipInstall () =>
           atom.config.set 'autocomplete-python.useKite', false
-          Metrics.Tracker.trackEvent "skipped kite"
+          @track "skipped kite"
           pane.destroyActiveItem()
         pane.addItem @installation, index: 0
         pane.activateItemAtIndex 0
@@ -212,7 +234,7 @@ module.exports =
       @disposables.add disposable
     @disposables.add disposable
     @_loadKite()
-    @trackCompletions()
+    # @trackCompletions()
 
   activate: (state) ->
     @emitter = new Emitter
@@ -244,23 +266,16 @@ module.exports =
     promises = [atom.packages.activatePackage('autocomplete-plus')]
 
     if atom.packages.getLoadedPackage('kite')?
+
+      @disposables.add atom.config.observe 'kite.loggingLevel', (level) ->
+        Logger.LEVEL = Logger.LEVELS[(level ? 'info').toUpperCase()]
+
       promises.push(atom.packages.activatePackage('kite'))
       Metrics.Tracker.name = "atom kite+acp"
 
     Promise.all(promises).then ([autocompletePlus, kite]) =>
       if kite?
-        @kiteProvider = kite.mainModule.completions()
-        getSuggestions = @kiteProvider.getSuggestions
-        @kiteProvider.getSuggestions = (args...) =>
-          getSuggestions.apply(@kiteProvider, args)
-          .then (suggestions) =>
-            @lastKiteSuggestions = suggestions
-            @kiteSuggested = true
-            suggestions
-          .catch (err) =>
-            @lastKiteSuggestions = []
-            @kiteSuggested = false
-            throw err
+        @patchKiteCompletions(kite)
 
       autocompleteManager = autocompletePlus.mainModule.getAutocompleteManager()
 
@@ -290,32 +305,96 @@ module.exports =
       else
         @track 'Atom shows neither Kite nor Jedi completions'
 
+  patchKiteCompletions: (kite) ->
+    return if @kitePackage?
+
+    @kitePackage = kite.mainModule
+    @kiteProvider = @kitePackage.completions()
+    getSuggestions = @kiteProvider.getSuggestions
+    @kiteProvider.getSuggestions = (args...) =>
+      getSuggestions?.apply(@kiteProvider, args)
+      ?.then (suggestions) =>
+        @lastKiteSuggestions = suggestions
+        @kiteSuggested = suggestions?
+        suggestions
+      ?.catch (err) =>
+        @lastKiteSuggestions = []
+        @kiteSuggested = false
+        throw err
+
   trackUsedSuggestion: (suggestion, editor) ->
-    if /\.py$/.test(editor.getPath()) and @kiteProvider?
-      if @lastKiteSuggestions?
-        if suggestion in @lastKiteSuggestions
-          if @hasSameSuggestion(suggestion, @provider.lastSuggestions)
-            @track 'used completion returned by Kite but also returned by Jedi'
-          else
-            @track 'used completion returned by Kite but not Jedi'
-        else if suggestion in @provider.lastSuggestions
-          if @hasSameSuggestion(suggestion, @lastKiteSuggestions)
-            @track 'used completion returned by Jedi but also returned by Kite'
-          else
-            if @kiteSuggested
-              @track 'used completion returned by Jedi but not Kite (whitelisted filepath)'
+    if /\.py$/.test(editor.getPath())
+      if @kiteProvider?
+        if @lastKiteSuggestions?
+          if suggestion in @lastKiteSuggestions
+            altSuggestion = @hasSameSuggestion(suggestion, @provider.lastSuggestions or [])
+            if altSuggestion?
+              @track 'used completion returned by Kite but also returned by Jedi', {
+                kiteHasDocumentation: @hasDocumentation(suggestion)
+                jediHasDocumentation: @hasDocumentation(altSuggestion)
+              }
             else
-              @track 'used completion returned by Jedi but not Kite (not-whitelisted filepath)'
+              @track 'used completion returned by Kite but not Jedi', {
+                kiteHasDocumentation: @hasDocumentation(suggestion)
+              }
+          else if @provider.lastSuggestions and  suggestion in @provider.lastSuggestions
+            altSuggestion = @hasSameSuggestion(suggestion, @lastKiteSuggestions)
+            if altSuggestion?
+              @track 'used completion returned by Jedi but also returned by Kite', {
+                kiteHasDocumentation: @hasDocumentation(altSuggestion)
+                jediHasDocumentation: @hasDocumentation(suggestion)
+              }
+            else
+              if @kitePackage.isEditorWhitelisted?
+                if @kitePackage.isEditorWhitelisted(editor)
+                  @track 'used completion returned by Jedi but not Kite (whitelisted filepath)', {
+                    jediHasDocumentation: @hasDocumentation(suggestion)
+                  }
+                else
+                  @track 'used completion returned by Jedi but not Kite (non-whitelisted filepath)', {
+                    jediHasDocumentation: @hasDocumentation(suggestion)
+                  }
+              else
+                @track 'used completion returned by Jedi but not Kite (whitelisted filepath)', {
+                  jediHasDocumentation: @hasDocumentation(suggestion)
+                }
+          else
+            @track 'used completion from neither Kite nor Jedi'
         else
-          @track 'used completion from neither Kite nor Jedi'
+          if @kitePackage.isEditorWhitelisted?
+            if @kitePackage.isEditorWhitelisted(editor)
+              @track 'used completion returned by Jedi but not Kite (whitelisted filepath)', {
+                jediHasDocumentation: @hasDocumentation(suggestion)
+              }
+            else
+              @track 'used completion returned by Jedi but not Kite (non-whitelisted filepath)', {
+                jediHasDocumentation: @hasDocumentation(suggestion)
+              }
+          else
+            @track 'used completion returned by Jedi but not Kite (not-whitelisted filepath)', {
+              jediHasDocumentation: @hasDocumentation(suggestion)
+            }
       else
-        if suggestion in @provider.lastSuggestions
-          @track 'used completion returned by Jedi'
+        if @provider.lastSuggestions and suggestion in @provider.lastSuggestions
+          @track 'used completion returned by Jedi', {
+            jediHasDocumentation: @hasDocumentation(suggestion)
+          }
         else
           @track 'used completion not returned by Jedi'
 
   hasSameSuggestion: (suggestion, suggestions) ->
-    suggestions.some (s) -> s.text is suggestion.text
+    suggestions.filter((s) -> s.text is suggestion.text)[0]
+
+  hasDocumentation: (suggestion) ->
+    (suggestion.description? and suggestion.description isnt '') or
+    (suggestion.descriptionMarkdown? and suggestion.descriptionMarkdown isnt '')
 
   track: (msg, data) ->
-    Metrics.Tracker.trackEvent msg, data
+    try
+      Metrics.Tracker.trackEvent msg, data
+    catch e
+      # TODO: this should be removed after kite-installer is fixed
+      if e instanceof TypeError
+        console.error(e)
+      else
+        throw e

@@ -1,10 +1,9 @@
 "use strict";
 
 const {CompositeDisposable, Emitter} = require("atom");
-const {normalisePath} = require("../utils/general.js");
+const {FileSystem, System} = require("atom-fs");
+const {normalisePath} = require("alhadis.utils");
 const IconDelegate = require("../service/icon-delegate.js");
-const FileSystem   = require("../filesystem/filesystem.js");
-const System       = require("../filesystem/system.js");
 const IconNode     = require("../service/icon-node.js");
 
 
@@ -21,6 +20,9 @@ class TreeEntry{
 		iconEl.className = "name icon";
 		
 		this.resource = FileSystem.get(this.path);
+		
+		if("function" === typeof source.onDidDestroy)
+			this.disposables.add(source.onDidDestroy(() => this.destroy()));
 		
 		// Directory
 		if(this.isDirectory = this.resource.isDirectory){
@@ -51,6 +53,8 @@ class TreeEntry{
 			this.disposables.dispose();
 
 			this.disposables = null;
+			this.resource    = null;
+			this.element     = null;
 			this.emitter     = null;
 			this.iconNode    = null;
 			this.source      = null;
@@ -70,7 +74,9 @@ class TreeEntry{
 	
 	
 	get isExpanded(){
-		return this.isDirectory && this.source.expansionState.isExpanded;
+		return !this.destroyed
+			? this.isDirectory && this.source.expansionState.isExpanded
+			: false;
 	}
 	
 	
@@ -122,4 +128,5 @@ class TreeEntry{
 }
 
 
+TreeEntry.prototype.destroyed = false;
 module.exports = TreeEntry;

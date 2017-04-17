@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-11711-468-axv623.jkeygphkt9/package.tgz",
+        "raw": "/tmp/d-117224-30051-1xzejsy.wz6c4n29/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-11711-468-axv623.jkeygphkt9/package.tgz",
-        "spec": "/tmp/d-11711-468-axv623.jkeygphkt9/package.tgz",
+        "rawSpec": "/tmp/d-117224-30051-1xzejsy.wz6c4n29/package.tgz",
+        "spec": "/tmp/d-117224-30051-1xzejsy.wz6c4n29/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-11711-468-oio08x.x40st9be29"
+      "/tmp/apm-install-dir-117224-30051-cbzgyt.j476re8kt9"
     ]
   ],
-  "_from": "../d-11711-468-axv623.jkeygphkt9/package.tgz",
-  "_id": "highlight-selected@0.12.0",
+  "_from": "../d-117224-30051-1xzejsy.wz6c4n29/package.tgz",
+  "_id": "highlight-selected@0.13.1",
   "_inCache": true,
   "_location": "/highlight-selected",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-11711-468-axv623.jkeygphkt9/package.tgz",
+    "raw": "/tmp/d-117224-30051-1xzejsy.wz6c4n29/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-11711-468-axv623.jkeygphkt9/package.tgz",
-    "spec": "/tmp/d-11711-468-axv623.jkeygphkt9/package.tgz",
+    "rawSpec": "/tmp/d-117224-30051-1xzejsy.wz6c4n29/package.tgz",
+    "spec": "/tmp/d-117224-30051-1xzejsy.wz6c4n29/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-11711-468-axv623.jkeygphkt9/package.tgz",
-  "_shasum": "b73bbec5b00d28cb5d54c4fbebbfd4aff41cd331",
+  "_resolved": "file:../d-117224-30051-1xzejsy.wz6c4n29/package.tgz",
+  "_shasum": "8b6ce153f680dfd60ab003835e666266c4420e5f",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-11711-468-axv623.jkeygphkt9/package.tgz",
-  "_where": "/tmp/apm-install-dir-11711-468-oio08x.x40st9be29",
+  "_spec": "/tmp/d-117224-30051-1xzejsy.wz6c4n29/package.tgz",
+  "_where": "/tmp/apm-install-dir-117224-30051-cbzgyt.j476re8kt9",
   "bugs": {
     "url": "https://github.com/richrace/highlight-selected/issues"
   },
@@ -46,7 +46,7 @@
     }
   },
   "dependencies": {
-    "underscore-plus": "1.x"
+    "grim": "^2.0.1"
   },
   "description": "Highlights the current word selected when double clicking",
   "devDependencies": {
@@ -69,7 +69,8 @@
     "highlightSelected": {
       "description": "Exposes Highlight Selected Events",
       "versions": {
-        "1.0.0": "provideHighlightSelectedV1"
+        "1.0.0": "provideHighlightSelectedV1Deprecated",
+        "2.0.0": "provideHighlightSelectedV2"
       }
     }
   },
@@ -79,37 +80,42 @@
     "type": "git",
     "url": "git+https://github.com/richrace/highlight-selected.git"
   },
-  "version": "0.12.0",
+  "version": "0.13.1",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
       {
-        "name": "underscore",
-        "version": "1.6.0",
-        "path": "node_modules/underscore/underscore.js"
+        "name": "event-kit",
+        "version": "2.2.0",
+        "path": "node_modules/event-kit/lib/event-kit.js"
       },
       {
-        "name": "underscore-plus",
-        "version": "1.6.6",
-        "path": "node_modules/underscore-plus/lib/underscore-plus.js"
+        "name": "grim",
+        "version": "2.0.1",
+        "path": "node_modules/grim/lib/grim.js"
       }
     ],
     "extensions": {
       ".json": [
         "coffeelint.json",
-        "node_modules/underscore/package.json",
-        "node_modules/underscore-plus/package.json",
+        "node_modules/event-kit/api.json",
+        "node_modules/event-kit/package.json",
+        "node_modules/grim/package.json",
         "package.json"
       ],
       ".coffee": [
+        "lib/escape-reg-exp.coffee",
         "lib/highlight-selected.coffee",
         "lib/highlighted-area-view.coffee",
         "lib/status-bar-view.coffee"
       ],
       ".js": [
-        "node_modules/underscore/underscore-min.js",
-        "node_modules/underscore/underscore.js",
-        "node_modules/underscore-plus/lib/underscore-plus.js"
+        "node_modules/event-kit/lib/composite-disposable.js",
+        "node_modules/event-kit/lib/disposable.js",
+        "node_modules/event-kit/lib/emitter.js",
+        "node_modules/event-kit/lib/event-kit.js",
+        "node_modules/grim/lib/deprecation.js",
+        "node_modules/grim/lib/grim.js"
       ]
     },
     "folders": [
@@ -121,16 +127,16 @@
           "spec"
         ],
         "dependencies": {
-          "underscore-plus": "1.x"
+          "grim": "^2.0.1"
         }
       },
       {
         "paths": [
-          "node_modules/underscore-plus/lib",
-          "node_modules/underscore-plus"
+          "node_modules/grim/lib",
+          "node_modules/grim"
         ],
         "dependencies": {
-          "underscore": "~1.6.0"
+          "event-kit": "^2.0.0"
         }
       }
     ]

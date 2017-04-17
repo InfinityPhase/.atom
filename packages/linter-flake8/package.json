@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-11711-480-1gv2fcm.b8clg6tj4i/package.tgz",
+        "raw": "/tmp/d-117222-2762-1q254rk.94fih5xw29/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-11711-480-1gv2fcm.b8clg6tj4i/package.tgz",
-        "spec": "/tmp/d-11711-480-1gv2fcm.b8clg6tj4i/package.tgz",
+        "rawSpec": "/tmp/d-117222-2762-1q254rk.94fih5xw29/package.tgz",
+        "spec": "/tmp/d-117222-2762-1q254rk.94fih5xw29/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-11711-480-1c0ij8c.xd6bsjdcxr"
+      "/tmp/apm-install-dir-117222-2762-k6t0sy.53an4mfgvi"
     ]
   ],
-  "_from": "../d-11711-480-1gv2fcm.b8clg6tj4i/package.tgz",
-  "_id": "linter-flake8@2.1.4",
+  "_from": "../d-117222-2762-1q254rk.94fih5xw29/package.tgz",
+  "_id": "linter-flake8@2.1.5",
   "_inCache": true,
   "_location": "/linter-flake8",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-11711-480-1gv2fcm.b8clg6tj4i/package.tgz",
+    "raw": "/tmp/d-117222-2762-1q254rk.94fih5xw29/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-11711-480-1gv2fcm.b8clg6tj4i/package.tgz",
-    "spec": "/tmp/d-11711-480-1gv2fcm.b8clg6tj4i/package.tgz",
+    "rawSpec": "/tmp/d-117222-2762-1q254rk.94fih5xw29/package.tgz",
+    "spec": "/tmp/d-117222-2762-1q254rk.94fih5xw29/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-11711-480-1gv2fcm.b8clg6tj4i/package.tgz",
-  "_shasum": "b631d49c7323ea3dd811b0d7f5acdb4a833ed408",
+  "_resolved": "file:../d-117222-2762-1q254rk.94fih5xw29/package.tgz",
+  "_shasum": "3db7d48d824d66555294f57f5c24d90c40d78c7f",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-11711-480-1gv2fcm.b8clg6tj4i/package.tgz",
-  "_where": "/tmp/apm-install-dir-11711-480-1c0ij8c.xd6bsjdcxr",
+  "_spec": "/tmp/d-117222-2762-1q254rk.94fih5xw29/package.tgz",
+  "_where": "/tmp/apm-install-dir-117222-2762-k6t0sy.53an4mfgvi",
   "activationHooks": [
     "language-python:grammar-used",
     "MagicPython:grammar-used",
@@ -103,14 +103,14 @@
     }
   },
   "dependencies": {
-    "atom-linter": "^8.0.0",
+    "atom-linter": "^9.0.0",
     "atom-package-deps": "^4.0.1",
-    "fs-plus": "^2.9.3"
+    "fs-plus": "^3.0.0"
   },
   "description": "Atom linter plugin for Python, using flake8",
   "devDependencies": {
-    "eslint": "^3.12.0",
-    "eslint-config-airbnb-base": "^11.0.0",
+    "eslint": "^3.16.1",
+    "eslint-config-airbnb-base": "^11.1.1",
     "eslint-plugin-import": "^2.2.0"
   },
   "engines": {
@@ -161,23 +161,23 @@
     "lint": "eslint .",
     "test": "apm test"
   },
-  "version": "2.1.4",
+  "version": "2.1.5",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
       {
         "name": "async",
-        "version": "0.2.10",
+        "version": "1.5.2",
         "path": "node_modules/async/lib/async.js"
       },
       {
         "name": "atom-linter",
-        "version": "8.0.0",
+        "version": "9.0.1",
         "path": "node_modules/atom-linter/lib/index.js"
       },
       {
         "name": "atom-package-deps",
-        "version": "4.3.1",
+        "version": "4.5.0",
         "path": "node_modules/atom-package-deps/lib/index.js"
       },
       {
@@ -186,14 +186,59 @@
         "path": "node_modules/atom-package-path/lib/index.js"
       },
       {
+        "name": "balanced-match",
+        "version": "0.4.2",
+        "path": "node_modules/balanced-match/index.js"
+      },
+      {
+        "name": "brace-expansion",
+        "version": "1.1.6",
+        "path": "node_modules/brace-expansion/index.js"
+      },
+      {
+        "name": "concat-map",
+        "version": "0.0.1",
+        "path": "node_modules/concat-map/index.js"
+      },
+      {
         "name": "consistent-env",
         "version": "1.3.0",
         "path": "node_modules/consistent-env/lib/index.js"
       },
       {
         "name": "fs-plus",
-        "version": "2.9.3",
+        "version": "3.0.0",
         "path": "node_modules/fs-plus/lib/fs-plus.js"
+      },
+      {
+        "name": "fs.realpath",
+        "version": "1.0.0",
+        "path": "node_modules/fs.realpath/index.js"
+      },
+      {
+        "name": "glob",
+        "version": "7.1.1",
+        "path": "node_modules/glob/glob.js"
+      },
+      {
+        "name": "graceful-fs",
+        "version": "4.1.11",
+        "path": "node_modules/graceful-fs/graceful-fs.js"
+      },
+      {
+        "name": "imurmurhash",
+        "version": "0.1.4",
+        "path": "node_modules/imurmurhash/imurmurhash.js"
+      },
+      {
+        "name": "inflight",
+        "version": "1.0.6",
+        "path": "node_modules/inflight/inflight.js"
+      },
+      {
+        "name": "inherits",
+        "version": "2.0.3",
+        "path": "node_modules/inherits/inherits.js"
       },
       {
         "name": "lodash.uniq",
@@ -201,8 +246,18 @@
         "path": "node_modules/lodash.uniq/index.js"
       },
       {
+        "name": "minimatch",
+        "version": "3.0.3",
+        "path": "node_modules/minimatch/minimatch.js"
+      },
+      {
+        "name": "minimist",
+        "version": "0.0.8",
+        "path": "node_modules/minimist/index.js"
+      },
+      {
         "name": "mkdirp",
-        "version": "0.3.5",
+        "version": "0.5.1",
         "path": "node_modules/mkdirp/index.js"
       },
       {
@@ -211,13 +266,28 @@
         "path": "node_modules/named-js-regexp/lib/named-js-regexp.js"
       },
       {
+        "name": "once",
+        "version": "1.4.0",
+        "path": "node_modules/once/once.js"
+      },
+      {
+        "name": "os-homedir",
+        "version": "1.0.2",
+        "path": "node_modules/os-homedir/index.js"
+      },
+      {
         "name": "os-tmpdir",
         "version": "1.0.2",
         "path": "node_modules/os-tmpdir/index.js"
       },
       {
+        "name": "path-is-absolute",
+        "version": "1.0.1",
+        "path": "node_modules/path-is-absolute/index.js"
+      },
+      {
         "name": "rimraf",
-        "version": "2.2.8",
+        "version": "2.6.1",
         "path": "node_modules/rimraf/rimraf.js"
       },
       {
@@ -226,9 +296,24 @@
         "path": "node_modules/sb-callsite/lib/main.js"
       },
       {
+        "name": "sb-config-file",
+        "version": "3.0.2",
+        "path": "node_modules/sb-config-file/lib/index.js"
+      },
+      {
+        "name": "sb-fs",
+        "version": "1.1.1",
+        "path": "node_modules/sb-config-file/node_modules/sb-fs/lib/index.js"
+      },
+      {
         "name": "sb-exec",
         "version": "3.1.0",
         "path": "node_modules/sb-exec/lib/index.js"
+      },
+      {
+        "name": "sb-fs",
+        "version": "2.0.0",
+        "path": "node_modules/sb-fs/lib/index.js"
       },
       {
         "name": "sb-memoize",
@@ -246,6 +331,26 @@
         "path": "node_modules/sb-promisify/lib/index.js"
       },
       {
+        "name": "semver",
+        "version": "5.3.0",
+        "path": "node_modules/semver/semver.js"
+      },
+      {
+        "name": "slide",
+        "version": "1.1.6",
+        "path": "node_modules/slide/lib/slide.js"
+      },
+      {
+        "name": "strip-bom",
+        "version": "3.0.0",
+        "path": "node_modules/strip-bom/index.js"
+      },
+      {
+        "name": "tildify",
+        "version": "1.2.0",
+        "path": "node_modules/tildify/index.js"
+      },
+      {
         "name": "tmp",
         "version": "0.0.31",
         "path": "node_modules/tmp/lib/tmp.js"
@@ -259,80 +364,154 @@
         "name": "underscore-plus",
         "version": "1.6.6",
         "path": "node_modules/underscore-plus/lib/underscore-plus.js"
+      },
+      {
+        "name": "wrappy",
+        "version": "1.0.2",
+        "path": "node_modules/wrappy/wrappy.js"
+      },
+      {
+        "name": "write-file-atomic",
+        "version": "1.3.1",
+        "path": "node_modules/write-file-atomic/index.js"
       }
     ],
     "extensions": {
       ".js": [
         "lib/main.js",
+        "node_modules/async/dist/async.js",
+        "node_modules/async/dist/async.min.js",
         "node_modules/async/lib/async.js",
-        "node_modules/atom-linter/decls/atom.js",
-        "node_modules/atom-linter/decls/jasmine.js",
         "node_modules/atom-linter/lib/helpers.js",
         "node_modules/atom-linter/lib/index.js",
         "node_modules/atom-linter/lib/types.js",
-        "node_modules/atom-package-deps/decls/atom.js",
-        "node_modules/atom-package-deps/decls/jasmine.js",
-        "node_modules/atom-package-deps/decls/package-deps.js",
         "node_modules/atom-package-deps/lib/helpers.js",
         "node_modules/atom-package-deps/lib/index.js",
         "node_modules/atom-package-deps/lib/types.js",
         "node_modules/atom-package-deps/lib/view.js",
         "node_modules/atom-package-path/lib/index.js",
+        "node_modules/balanced-match/index.js",
+        "node_modules/brace-expansion/index.js",
+        "node_modules/concat-map/example/map.js",
+        "node_modules/concat-map/index.js",
         "node_modules/consistent-env/decls/jasmine.js",
         "node_modules/consistent-env/lib/helpers.js",
         "node_modules/consistent-env/lib/index.js",
         "node_modules/fs-plus/lib/fs-plus.js",
+        "node_modules/fs.realpath/index.js",
+        "node_modules/fs.realpath/old.js",
+        "node_modules/glob/common.js",
+        "node_modules/glob/glob.js",
+        "node_modules/glob/sync.js",
+        "node_modules/graceful-fs/fs.js",
+        "node_modules/graceful-fs/graceful-fs.js",
+        "node_modules/graceful-fs/legacy-streams.js",
+        "node_modules/graceful-fs/polyfills.js",
+        "node_modules/imurmurhash/imurmurhash.js",
+        "node_modules/imurmurhash/imurmurhash.min.js",
+        "node_modules/inflight/inflight.js",
+        "node_modules/inherits/inherits.js",
+        "node_modules/inherits/inherits_browser.js",
         "node_modules/lodash.uniq/index.js",
+        "node_modules/minimatch/minimatch.js",
+        "node_modules/minimist/example/parse.js",
+        "node_modules/minimist/index.js",
+        "node_modules/mkdirp/bin/cmd.js",
         "node_modules/mkdirp/examples/pow.js",
         "node_modules/mkdirp/index.js",
         "node_modules/named-js-regexp/lib/named-js-regexp.js",
+        "node_modules/once/once.js",
+        "node_modules/os-homedir/index.js",
         "node_modules/os-tmpdir/index.js",
+        "node_modules/path-is-absolute/index.js",
         "node_modules/rimraf/bin.js",
         "node_modules/rimraf/rimraf.js",
         "node_modules/sb-callsite/lib/main.js",
+        "node_modules/sb-config-file/lib/helpers.js",
+        "node_modules/sb-config-file/lib/index.js",
+        "node_modules/sb-config-file/lib/object-path.js",
+        "node_modules/sb-config-file/lib/types.js",
+        "node_modules/sb-config-file/node_modules/sb-fs/decls/jasmine.js",
+        "node_modules/sb-config-file/node_modules/sb-fs/lib/index.js",
         "node_modules/sb-exec/decls/jasmine.js",
         "node_modules/sb-exec/lib/helpers.js",
         "node_modules/sb-exec/lib/index.js",
         "node_modules/sb-exec/lib/types.js",
+        "node_modules/sb-fs/lib/index.js",
         "node_modules/sb-memoize/lib/index.js",
         "node_modules/sb-npm-path/decls/jasmine.js",
         "node_modules/sb-npm-path/lib/helpers.js",
         "node_modules/sb-npm-path/lib/index.js",
         "node_modules/sb-promisify/decls/jasmine.js",
         "node_modules/sb-promisify/lib/index.js",
+        "node_modules/semver/semver.js",
+        "node_modules/slide/index.js",
+        "node_modules/slide/lib/async-map-ordered.js",
+        "node_modules/slide/lib/async-map.js",
+        "node_modules/slide/lib/bind-actor.js",
+        "node_modules/slide/lib/chain.js",
+        "node_modules/slide/lib/slide.js",
+        "node_modules/strip-bom/index.js",
+        "node_modules/tildify/index.js",
         "node_modules/tmp/lib/tmp.js",
         "node_modules/underscore/underscore-min.js",
         "node_modules/underscore/underscore.js",
-        "node_modules/underscore-plus/lib/underscore-plus.js"
+        "node_modules/underscore-plus/lib/underscore-plus.js",
+        "node_modules/wrappy/wrappy.js",
+        "node_modules/write-file-atomic/index.js"
       ],
       ".json": [
-        "node_modules/async/component.json",
         "node_modules/async/package.json",
         "node_modules/atom-linter/.eslintrc.json",
         "node_modules/atom-linter/package.json",
         "node_modules/atom-package-deps/.eslintrc.json",
         "node_modules/atom-package-deps/package.json",
         "node_modules/atom-package-path/package.json",
+        "node_modules/balanced-match/package.json",
+        "node_modules/brace-expansion/package.json",
+        "node_modules/concat-map/package.json",
         "node_modules/consistent-env/.eslintrc.json",
         "node_modules/consistent-env/package.json",
         "node_modules/fs-plus/package.json",
+        "node_modules/fs.realpath/package.json",
+        "node_modules/glob/package.json",
+        "node_modules/graceful-fs/package.json",
+        "node_modules/imurmurhash/package.json",
+        "node_modules/inflight/package.json",
+        "node_modules/inherits/package.json",
         "node_modules/lodash.uniq/package.json",
+        "node_modules/minimatch/package.json",
+        "node_modules/minimist/package.json",
         "node_modules/mkdirp/package.json",
         "node_modules/named-js-regexp/package.json",
+        "node_modules/once/package.json",
+        "node_modules/os-homedir/package.json",
         "node_modules/os-tmpdir/package.json",
+        "node_modules/path-is-absolute/package.json",
         "node_modules/rimraf/package.json",
         "node_modules/sb-callsite/package.json",
+        "node_modules/sb-config-file/.eslintrc.json",
+        "node_modules/sb-config-file/node_modules/sb-fs/.eslintrc.json",
+        "node_modules/sb-config-file/node_modules/sb-fs/package.json",
+        "node_modules/sb-config-file/package.json",
         "node_modules/sb-exec/.eslintrc.json",
         "node_modules/sb-exec/package.json",
+        "node_modules/sb-fs/package.json",
         "node_modules/sb-memoize/.eslintrc.json",
         "node_modules/sb-memoize/package.json",
         "node_modules/sb-npm-path/.eslintrc.json",
         "node_modules/sb-npm-path/package.json",
         "node_modules/sb-promisify/.eslintrc.json",
         "node_modules/sb-promisify/package.json",
+        "node_modules/semver/package.json",
+        "node_modules/slide/package.json",
+        "node_modules/strip-bom/package.json",
+        "node_modules/tildify/package.json",
         "node_modules/tmp/package.json",
         "node_modules/underscore/package.json",
         "node_modules/underscore-plus/package.json",
+        "node_modules/wrappy/package.json",
+        "node_modules/write-file-atomic/package.json",
         "package.json"
       ]
     },
@@ -344,20 +523,19 @@
           "spec"
         ],
         "dependencies": {
-          "atom-linter": "^8.0.0",
+          "atom-linter": "^9.0.0",
           "atom-package-deps": "^4.0.1",
-          "fs-plus": "^2.9.3"
+          "fs-plus": "^3.0.0"
         }
       },
       {
         "paths": [
           "node_modules/atom-linter",
-          "node_modules/atom-linter/decls",
           "node_modules/atom-linter/lib"
         ],
         "dependencies": {
           "named-js-regexp": "^1.3.1",
-          "sb-exec": "^3.0.1",
+          "sb-exec": "^3.1.0",
           "sb-promisify": "^2.0.1",
           "tmp": "~0.0.28"
         }
@@ -365,12 +543,15 @@
       {
         "paths": [
           "node_modules/atom-package-deps",
-          "node_modules/atom-package-deps/decls",
           "node_modules/atom-package-deps/lib"
         ],
         "dependencies": {
           "atom-package-path": "^1.1.0",
-          "sb-exec": "^3.0.1"
+          "sb-config-file": "^3.0.1",
+          "sb-exec": "^3.0.1",
+          "sb-fs": "^2.0.0",
+          "semver": "^5.3.0",
+          "tildify": "^1.2.0"
         }
       },
       {
@@ -381,6 +562,15 @@
         ],
         "dependencies": {
           "sb-callsite": "^1.1.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/brace-expansion"
+        ],
+        "dependencies": {
+          "balanced-match": "^0.4.1",
+          "concat-map": "0.0.1"
         }
       },
       {
@@ -399,10 +589,90 @@
           "node_modules/fs-plus"
         ],
         "dependencies": {
-          "async": "~0.2.9",
-          "mkdirp": "~0.3.5",
-          "rimraf": "~2.2.2",
+          "async": "^1.5.2",
+          "mkdirp": "^0.5.1",
+          "rimraf": "^2.5.2",
           "underscore-plus": "1.x"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/glob"
+        ],
+        "dependencies": {
+          "fs.realpath": "^1.0.0",
+          "inflight": "^1.0.4",
+          "inherits": "2",
+          "minimatch": "^3.0.2",
+          "once": "^1.3.0",
+          "path-is-absolute": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/inflight"
+        ],
+        "dependencies": {
+          "once": "^1.3.0",
+          "wrappy": "1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/minimatch"
+        ],
+        "dependencies": {
+          "brace-expansion": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/mkdirp/bin",
+          "node_modules/mkdirp/examples",
+          "node_modules/mkdirp",
+          "node_modules/mkdirp/test"
+        ],
+        "dependencies": {
+          "minimist": "0.0.8"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/once"
+        ],
+        "dependencies": {
+          "wrappy": "1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/rimraf"
+        ],
+        "dependencies": {
+          "glob": "^7.0.5"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/sb-config-file",
+          "node_modules/sb-config-file/lib"
+        ],
+        "dependencies": {
+          "sb-fs": "^1.1.1",
+          "strip-bom": "^3.0.0",
+          "write-file-atomic": "^1.3.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/sb-config-file/node_modules/sb-fs",
+          "node_modules/sb-config-file/node_modules/sb-fs/decls",
+          "node_modules/sb-config-file/node_modules/sb-fs/lib"
+        ],
+        "dependencies": {
+          "mkdirp": "^0.5.1",
+          "rimraf": "^2.5.4",
+          "sb-promisify": "^2.0.1"
         }
       },
       {
@@ -419,6 +689,17 @@
       },
       {
         "paths": [
+          "node_modules/sb-fs/lib",
+          "node_modules/sb-fs"
+        ],
+        "dependencies": {
+          "mkdirp": "^0.5.1",
+          "rimraf": "^2.5.4",
+          "sb-promisify": "^2.0.1"
+        }
+      },
+      {
+        "paths": [
           "node_modules/sb-npm-path",
           "node_modules/sb-npm-path/decls",
           "node_modules/sb-npm-path/lib"
@@ -426,6 +707,14 @@
         "dependencies": {
           "sb-memoize": "^1.0.2",
           "sb-promisify": "^2.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/tildify"
+        ],
+        "dependencies": {
+          "os-homedir": "^1.0.0"
         }
       },
       {
@@ -444,6 +733,16 @@
         ],
         "dependencies": {
           "underscore": "~1.6.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/write-file-atomic"
+        ],
+        "dependencies": {
+          "graceful-fs": "^4.1.11",
+          "imurmurhash": "^0.1.4",
+          "slide": "^1.1.5"
         }
       }
     ]

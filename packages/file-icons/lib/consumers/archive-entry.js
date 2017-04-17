@@ -1,12 +1,10 @@
 "use strict";
 
 const {join} = require("path");
-const {statify} = require("../utils/fs.js");
-const {normalisePath} = require("../utils/general.js");
+const {normalisePath, statify} = require("alhadis.utils");
+const {EntityType, Resource} = require("atom-fs");
 const IconDelegate = require("../service/icon-delegate.js");
-const EntityType = require("../filesystem/entity-type.js");
 const IconNode = require("../service/icon-node.js");
-const Resource = require("../filesystem/resource.js");
 
 
 class ArchiveEntry extends Resource{
@@ -28,8 +26,10 @@ class ArchiveEntry extends Resource{
 		this.icon        = new IconDelegate(this);
 		
 		const iconElement = isDirectory
-			? view[0].querySelector(".directory.icon")
-			: view[0].spacePenView.name[0];
+			? (view[0] || view).querySelector(".directory.icon")
+			: view[0]
+				? view[0].spacePenView.name[0]
+				: view.firstElementChild;
 		
 		this.iconNode = new IconNode(this, iconElement);
 	}

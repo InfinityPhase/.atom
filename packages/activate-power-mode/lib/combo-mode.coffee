@@ -31,6 +31,7 @@ module.exports =
     if not @container
       @maxStreak = @getMaxStreak()
       @container = @createElement "streak-container"
+      @container.classList.add "combo-zero"
       @title = @createElement "title", @container
       @title.textContent = "Combo"
       @max = @createElement "max", @container
@@ -66,6 +67,7 @@ module.exports =
 
     @currentStreak++
 
+    @container.classList.remove "combo-zero"
     if @currentStreak > @maxStreak
       @increaseMaxStreak()
 
@@ -83,6 +85,7 @@ module.exports =
     @currentStreak = 0
     @reached = false
     @maxStreakReached = false
+    @container.classList.add "combo-zero"
     @container.classList.remove "reached"
     @renderStreak()
 
@@ -111,8 +114,9 @@ module.exports =
 
     @exclamations.insertBefore exclamation, @exclamations.childNodes[0]
     setTimeout =>
-      @exclamations.removeChild exclamation if @exclamations.firstChild
-    , 3000
+      if exclamation.parentNode is @exclamations
+        @exclamations.removeChild exclamation
+    , 2000
 
   hasReached: ->
     @reached
@@ -128,6 +132,13 @@ module.exports =
     @max.textContent = "Max #{@maxStreak}"
     @showExclamation "NEW MAX!!!" if @maxStreakReached is false
     @maxStreakReached = true
+
+  resetMaxStreak: ->
+    localStorage.setItem "activate-power-mode.maxStreak", 0
+    @maxStreakReached = false
+    @maxStreak = 0
+    if @max
+      @max.textContent = "Max 0"
 
   getConfig: (config) ->
     atom.config.get "activate-power-mode.comboMode.#{config}"
