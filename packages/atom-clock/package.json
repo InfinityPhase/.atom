@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-11725-26796-1wnj0pj.mtjg2gwrk9/package.tgz",
+        "raw": "/tmp/d-117318-25142-naokre.4p0onr8uxr/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-11725-26796-1wnj0pj.mtjg2gwrk9/package.tgz",
-        "spec": "/tmp/d-11725-26796-1wnj0pj.mtjg2gwrk9/package.tgz",
+        "rawSpec": "/tmp/d-117318-25142-naokre.4p0onr8uxr/package.tgz",
+        "spec": "/tmp/d-117318-25142-naokre.4p0onr8uxr/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-11725-26796-j4poat.2l6o7mbo6r"
+      "/tmp/apm-install-dir-117318-25142-1byqsg2.x1dhqqto6r"
     ]
   ],
-  "_from": "../d-11725-26796-1wnj0pj.mtjg2gwrk9/package.tgz",
-  "_id": "atom-clock@0.1.6",
+  "_from": "../d-117318-25142-naokre.4p0onr8uxr/package.tgz",
+  "_id": "atom-clock@0.1.7",
   "_inCache": true,
   "_location": "/atom-clock",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-11725-26796-1wnj0pj.mtjg2gwrk9/package.tgz",
+    "raw": "/tmp/d-117318-25142-naokre.4p0onr8uxr/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-11725-26796-1wnj0pj.mtjg2gwrk9/package.tgz",
-    "spec": "/tmp/d-11725-26796-1wnj0pj.mtjg2gwrk9/package.tgz",
+    "rawSpec": "/tmp/d-117318-25142-naokre.4p0onr8uxr/package.tgz",
+    "spec": "/tmp/d-117318-25142-naokre.4p0onr8uxr/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-11725-26796-1wnj0pj.mtjg2gwrk9/package.tgz",
-  "_shasum": "c6de7226701bec7b39bf39722b4dc0ed406c3096",
+  "_resolved": "file:../d-117318-25142-naokre.4p0onr8uxr/package.tgz",
+  "_shasum": "7f372208b5db181290c887ed0c7e63da598f894f",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-11725-26796-1wnj0pj.mtjg2gwrk9/package.tgz",
-  "_where": "/tmp/apm-install-dir-11725-26796-j4poat.2l6o7mbo6r",
+  "_spec": "/tmp/d-117318-25142-naokre.4p0onr8uxr/package.tgz",
+  "_where": "/tmp/apm-install-dir-117318-25142-1byqsg2.x1dhqqto6r",
   "author": {
     "name": "Antonio Bevilacqua",
     "email": "b3by.in.th3.sky@gmail.com",
@@ -54,7 +54,9 @@
     "moment": "^2.17.x"
   },
   "description": "Display a customizable clock in the status bar.",
-  "devDependencies": {},
+  "devDependencies": {
+    "mockdate": "^2.0.1"
+  },
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
@@ -76,13 +78,13 @@
     "type": "git",
     "url": "git+https://github.com/b3by/atom-clock.git"
   },
-  "version": "0.1.6",
+  "version": "0.1.7",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
       {
         "name": "moment",
-        "version": "2.17.1",
+        "version": "2.18.1",
         "path": "node_modules/moment/moment.js"
       }
     ],
@@ -93,6 +95,7 @@
         "node_modules/moment/ender.js",
         "node_modules/moment/locale/af.js",
         "node_modules/moment/locale/ar-dz.js",
+        "node_modules/moment/locale/ar-kw.js",
         "node_modules/moment/locale/ar-ly.js",
         "node_modules/moment/locale/ar-ma.js",
         "node_modules/moment/locale/ar-sa.js",
@@ -111,6 +114,7 @@
         "node_modules/moment/locale/cy.js",
         "node_modules/moment/locale/da.js",
         "node_modules/moment/locale/de-at.js",
+        "node_modules/moment/locale/de-ch.js",
         "node_modules/moment/locale/de.js",
         "node_modules/moment/locale/dv.js",
         "node_modules/moment/locale/el.js",
@@ -133,6 +137,7 @@
         "node_modules/moment/locale/fy.js",
         "node_modules/moment/locale/gd.js",
         "node_modules/moment/locale/gl.js",
+        "node_modules/moment/locale/gom-latn.js",
         "node_modules/moment/locale/he.js",
         "node_modules/moment/locale/hi.js",
         "node_modules/moment/locale/hr.js",
@@ -146,6 +151,7 @@
         "node_modules/moment/locale/ka.js",
         "node_modules/moment/locale/kk.js",
         "node_modules/moment/locale/km.js",
+        "node_modules/moment/locale/kn.js",
         "node_modules/moment/locale/ko.js",
         "node_modules/moment/locale/ky.js",
         "node_modules/moment/locale/lb.js",
@@ -171,6 +177,7 @@
         "node_modules/moment/locale/pt.js",
         "node_modules/moment/locale/ro.js",
         "node_modules/moment/locale/ru.js",
+        "node_modules/moment/locale/sd.js",
         "node_modules/moment/locale/se.js",
         "node_modules/moment/locale/si.js",
         "node_modules/moment/locale/sk.js",
@@ -192,6 +199,8 @@
         "node_modules/moment/locale/tzm-latn.js",
         "node_modules/moment/locale/tzm.js",
         "node_modules/moment/locale/uk.js",
+        "node_modules/moment/locale/ur.js",
+        "node_modules/moment/locale/uz-latn.js",
         "node_modules/moment/locale/uz.js",
         "node_modules/moment/locale/vi.js",
         "node_modules/moment/locale/x-pseudo.js",
@@ -229,6 +238,7 @@
         "node_modules/moment/src/lib/duration/humanize.js",
         "node_modules/moment/src/lib/duration/iso-string.js",
         "node_modules/moment/src/lib/duration/prototype.js",
+        "node_modules/moment/src/lib/duration/valid.js",
         "node_modules/moment/src/lib/format/format.js",
         "node_modules/moment/src/lib/locale/base-config.js",
         "node_modules/moment/src/lib/locale/calendar.js",
@@ -309,6 +319,7 @@
         "node_modules/moment/src/lib/utils/zero-fill.js",
         "node_modules/moment/src/locale/af.js",
         "node_modules/moment/src/locale/ar-dz.js",
+        "node_modules/moment/src/locale/ar-kw.js",
         "node_modules/moment/src/locale/ar-ly.js",
         "node_modules/moment/src/locale/ar-ma.js",
         "node_modules/moment/src/locale/ar-sa.js",
@@ -327,6 +338,7 @@
         "node_modules/moment/src/locale/cy.js",
         "node_modules/moment/src/locale/da.js",
         "node_modules/moment/src/locale/de-at.js",
+        "node_modules/moment/src/locale/de-ch.js",
         "node_modules/moment/src/locale/de.js",
         "node_modules/moment/src/locale/dv.js",
         "node_modules/moment/src/locale/el.js",
@@ -349,6 +361,7 @@
         "node_modules/moment/src/locale/fy.js",
         "node_modules/moment/src/locale/gd.js",
         "node_modules/moment/src/locale/gl.js",
+        "node_modules/moment/src/locale/gom-latn.js",
         "node_modules/moment/src/locale/he.js",
         "node_modules/moment/src/locale/hi.js",
         "node_modules/moment/src/locale/hr.js",
@@ -362,6 +375,7 @@
         "node_modules/moment/src/locale/ka.js",
         "node_modules/moment/src/locale/kk.js",
         "node_modules/moment/src/locale/km.js",
+        "node_modules/moment/src/locale/kn.js",
         "node_modules/moment/src/locale/ko.js",
         "node_modules/moment/src/locale/ky.js",
         "node_modules/moment/src/locale/lb.js",
@@ -387,6 +401,7 @@
         "node_modules/moment/src/locale/pt.js",
         "node_modules/moment/src/locale/ro.js",
         "node_modules/moment/src/locale/ru.js",
+        "node_modules/moment/src/locale/sd.js",
         "node_modules/moment/src/locale/se.js",
         "node_modules/moment/src/locale/si.js",
         "node_modules/moment/src/locale/sk.js",
@@ -408,6 +423,8 @@
         "node_modules/moment/src/locale/tzm-latn.js",
         "node_modules/moment/src/locale/tzm.js",
         "node_modules/moment/src/locale/uk.js",
+        "node_modules/moment/src/locale/ur.js",
+        "node_modules/moment/src/locale/uz-latn.js",
         "node_modules/moment/src/locale/uz.js",
         "node_modules/moment/src/locale/vi.js",
         "node_modules/moment/src/locale/x-pseudo.js",
