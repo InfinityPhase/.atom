@@ -75,62 +75,63 @@ const generateInvalidPointTrace = async (execPath, match, filePath, textEditor, 
 
 export default {
   activate() {
-    require('atom-package-deps').install('linter-flake8');
+    this.idleCallbacks = new Set();
+
+    let packageDepsID;
+    const linterFlake8Deps = () => {
+      this.idleCallbacks.delete(packageDepsID);
+
+      // Request checking / installation of package dependencies
+      if (!atom.inSpecMode()) {
+        require('atom-package-deps').install('linter-flake8');
+      }
+
+      // FIXME: Remove after a few versions
+      if (typeof atom.config.get('linter-flake8.disableTimeout') !== 'undefined') {
+        atom.config.unset('linter-flake8.disableTimeout');
+      }
+    };
+    packageDepsID = window.requestIdleCallback(linterFlake8Deps);
+    this.idleCallbacks.add(packageDepsID);
 
     this.subscriptions = new CompositeDisposable();
-    this.subscriptions.add(
-      atom.config.observe('linter-flake8.disableTimeout', (value) => {
-        this.disableTimeout = value;
-      }),
-    );
     this.subscriptions.add(
       atom.config.observe('linter-flake8.projectConfigFile', (value) => {
         this.projectConfigFile = value;
       }),
-    );
-    this.subscriptions.add(
       atom.config.observe('linter-flake8.maxLineLength', (value) => {
         this.maxLineLength = value;
       }),
-    );
-    this.subscriptions.add(
       atom.config.observe('linter-flake8.ignoreErrorCodes', (value) => {
         this.ignoreErrorCodes = value;
       }),
-    );
-    this.subscriptions.add(
       atom.config.observe('linter-flake8.maxComplexity', (value) => {
         this.maxComplexity = value;
       }),
-    );
-    this.subscriptions.add(
       atom.config.observe('linter-flake8.selectErrors', (value) => {
         this.selectErrors = value;
       }),
-    );
-    this.subscriptions.add(
       atom.config.observe('linter-flake8.hangClosing', (value) => {
         this.hangClosing = value;
       }),
-    );
-    this.subscriptions.add(
       atom.config.observe('linter-flake8.executablePath', (value) => {
         this.executablePath = value;
       }),
-    );
-    this.subscriptions.add(
       atom.config.observe('linter-flake8.pycodestyleErrorsToWarnings', (value) => {
         this.pycodestyleErrorsToWarnings = value;
       }),
-    );
-    this.subscriptions.add(
       atom.config.observe('linter-flake8.flakeErrors', (value) => {
         this.flakeErrors = value;
+      }),
+      atom.config.observe('linter-flake8.builtins', (value) => {
+        this.builtins = value;
       }),
     );
   },
 
   deactivate() {
+    this.idleCallbacks.forEach(callbackID => window.cancelIdleCallback(callbackID));
+    this.idleCallbacks.clear();
     this.subscriptions.dispose();
   },
 
@@ -159,7 +160,7 @@ export default {
           if (this.ignoreErrorCodes.length) {
             parameters.push('--ignore', this.ignoreErrorCodes.join(','));
           }
-          if (this.maxComplexity) {
+          if (this.maxComplexity !== 79) {
             parameters.push('--max-complexity', this.maxComplexity);
           }
           if (this.hangClosing) {
@@ -168,34 +169,53 @@ export default {
           if (this.selectErrors.length) {
             parameters.push('--select', this.selectErrors.join(','));
           }
+          if (this.builtins.length) {
+            parameters.push('--builtins', this.builtins.join(','));
+          }
         }
 
         parameters.push('-');
 
         const execPath = fs.normalize(applySubstitutions(this.executablePath, baseDir));
+        const forceTimeout = 1000 * 60 * 5; // (ms * s * m) = Five minutes
         const options = {
           stdin: fileText,
           cwd: path.dirname(textEditor.getPath()),
-          stream: 'both',
+          ignoreExitCode: true,
+          timeout: forceTimeout,
+          uniqueKey: `linter-flake8:${filePath}`,
         };
-        if (this.disableTimeout) {
-          options.timeout = Infinity;
+
+        let result;
+        try {
+          result = await helpers.exec(execPath, parameters, options);
+        } catch (e) {
+          const pyTrace = e.message.split('\n');
+          const pyMostRecent = pyTrace[pyTrace.length - 1];
+          atom.notifications.addError('Flake8 crashed!', {
+            detail: 'linter-flake8:: Flake8 threw an error related to:\n' +
+              `${pyMostRecent}\n` +
+              "Please check Atom's Console for more details",
+          });
+          // eslint-disable-next-line no-console
+          console.error('linter-flake8:: Flake8 returned an error', e.message);
+          // Tell Linter to not update any current messages it may have
+          return null;
         }
 
-        const result = await helpers.exec(execPath, parameters, options);
+        if (result === null) {
+          // Process was killed by a future invocation
+          return null;
+        }
 
         if (textEditor.getText() !== fileText) {
           // Editor contents have changed, tell Linter not to update
           return null;
         }
 
-        if (result.stderr && result.stderr.length && atom.inDevMode()) {
-          // eslint-disable-next-line no-console
-          console.log(`flake8 stderr: ${result.stderr}`);
-        }
         const messages = [];
 
-        let match = parseRegex.exec(result.stdout);
+        let match = parseRegex.exec(result);
         while (match !== null) {
           // Note that these positions are being converted to 0-indexed
           const line = Number.parseInt(match[1], 10) - 1 || 0;
@@ -217,7 +237,7 @@ export default {
               execPath, match, filePath, textEditor, point));
           }
 
-          match = parseRegex.exec(result.stdout);
+          match = parseRegex.exec(result);
         }
         // Ensure that any invalid point messages have finished resolving
         return Promise.all(messages);

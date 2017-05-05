@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-117317-12478-1m0ywom.8prhu59udi/package.tgz",
+        "raw": "/tmp/d-11744-20815-v8mbjl.3913v7vi/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-117317-12478-1m0ywom.8prhu59udi/package.tgz",
-        "spec": "/tmp/d-117317-12478-1m0ywom.8prhu59udi/package.tgz",
+        "rawSpec": "/tmp/d-11744-20815-v8mbjl.3913v7vi/package.tgz",
+        "spec": "/tmp/d-11744-20815-v8mbjl.3913v7vi/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-117317-12478-1u2j8vm.vakzk3mcxr"
+      "/tmp/apm-install-dir-11744-20815-vxpih6.ql1axde7b9"
     ]
   ],
-  "_from": "../d-117317-12478-1m0ywom.8prhu59udi/package.tgz",
-  "_id": "linter-ui-default@1.2.3",
+  "_from": "../d-11744-20815-v8mbjl.3913v7vi/package.tgz",
+  "_id": "linter-ui-default@1.2.4",
   "_inCache": true,
   "_location": "/linter-ui-default",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-117317-12478-1m0ywom.8prhu59udi/package.tgz",
+    "raw": "/tmp/d-11744-20815-v8mbjl.3913v7vi/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-117317-12478-1m0ywom.8prhu59udi/package.tgz",
-    "spec": "/tmp/d-117317-12478-1m0ywom.8prhu59udi/package.tgz",
+    "rawSpec": "/tmp/d-11744-20815-v8mbjl.3913v7vi/package.tgz",
+    "spec": "/tmp/d-11744-20815-v8mbjl.3913v7vi/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-117317-12478-1m0ywom.8prhu59udi/package.tgz",
-  "_shasum": "92a6c92019a02ff06eda364918ae9aaa57ae30eb",
+  "_resolved": "file:../d-11744-20815-v8mbjl.3913v7vi/package.tgz",
+  "_shasum": "cd6cbb9e21c33c92c7d351ba7db3f67bc8c750a8",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-117317-12478-1m0ywom.8prhu59udi/package.tgz",
-  "_where": "/tmp/apm-install-dir-117317-12478-1u2j8vm.vakzk3mcxr",
+  "_spec": "/tmp/d-11744-20815-v8mbjl.3913v7vi/package.tgz",
+  "_where": "/tmp/apm-install-dir-11744-20815-vxpih6.ql1axde7b9",
   "bugs": {
     "url": "https://github.com/steelbrain/linter-ui-default/issues"
   },
@@ -187,7 +187,7 @@
   "description": "Default UI for the Linter package",
   "devDependencies": {
     "eslint-config-steelbrain": "^3.0.0",
-    "flow-bin": "^0.43.0",
+    "flow-bin": "^0.45.0",
     "jasmine-fix": "^1.0.1",
     "rimraf": "^2.5.4"
   },
@@ -228,7 +228,7 @@
   "scripts": {
     "test": "(apm test) && (flow check) && (eslint . )"
   },
-  "version": "1.2.3",
+  "version": "1.2.4",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -274,7 +274,7 @@
       },
       {
         "name": "iconv-lite",
-        "version": "0.4.15",
+        "version": "0.4.17",
         "path": "node_modules/iconv-lite/lib/index.js"
       },
       {
@@ -389,7 +389,7 @@
       },
       {
         "name": "sb-promisify",
-        "version": "2.0.1",
+        "version": "2.0.2",
         "path": "node_modules/sb-promisify/lib/index.js"
       },
       {
@@ -476,7 +476,6 @@
         "node_modules/sb-memoize/package.json",
         "node_modules/sb-npm-path/.eslintrc.json",
         "node_modules/sb-npm-path/package.json",
-        "node_modules/sb-promisify/.eslintrc.json",
         "node_modules/sb-promisify/package.json",
         "node_modules/sb-react-table/.eslintrc.json",
         "node_modules/sb-react-table/package.json",
@@ -1817,7 +1816,6 @@
         "node_modules/sb-npm-path/decls/jasmine.js",
         "node_modules/sb-npm-path/lib/helpers.js",
         "node_modules/sb-npm-path/lib/index.js",
-        "node_modules/sb-promisify/decls/jasmine.js",
         "node_modules/sb-promisify/lib/index.js",
         "node_modules/sb-react-table/lib/helpers.js",
         "node_modules/sb-react-table/lib/index.js",

@@ -5,8 +5,10 @@
   "activate-power-mode":
     autoToggle: false
   "atom-beautify":
+    c: {}
     general:
-      _analyticsUserId: "c93f5d4f-1e08-47f2-9be3-d8768acad652"
+      _analyticsUserId: "inowreal-true-hate-gogl-d8768acad65"
+      analytics: false
   core:
     audioBeep: false
     autoHideMenuBar: true
@@ -14,6 +16,9 @@
       "activate-power-mode"
       "linter-write-good"
       "autocomplete-python"
+      "welcome"
+      "dalek"
+      "metrics"
     ]
     openEmptyEditorOnStart: false
     telemetryConsent: "no"
@@ -26,6 +31,7 @@
   "exception-reporting":
     userId: "e8b4ff51-55bf-620d-af04-5226eb6bb6fe"
   "git-plus":
+    experimental: {}
     general:
       analytics: false
   "linter-ui-default":

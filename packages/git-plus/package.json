@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-117319-15875-1g2dv5b.uggsc3di/package.tgz",
+        "raw": "/tmp/d-11744-20809-10cwhjk.31e6axxbt9/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-117319-15875-1g2dv5b.uggsc3di/package.tgz",
-        "spec": "/tmp/d-117319-15875-1g2dv5b.uggsc3di/package.tgz",
+        "rawSpec": "/tmp/d-11744-20809-10cwhjk.31e6axxbt9/package.tgz",
+        "spec": "/tmp/d-11744-20809-10cwhjk.31e6axxbt9/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-117319-15875-9zdc2a.2bfvkg9zfr"
+      "/tmp/apm-install-dir-11744-20809-m1witt.nay0pjsjor"
     ]
   ],
-  "_from": "../d-117319-15875-1g2dv5b.uggsc3di/package.tgz",
-  "_id": "git-plus@7.6.0",
+  "_from": "../d-11744-20809-10cwhjk.31e6axxbt9/package.tgz",
+  "_id": "git-plus@7.8.0",
   "_inCache": true,
   "_location": "/git-plus",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-117319-15875-1g2dv5b.uggsc3di/package.tgz",
+    "raw": "/tmp/d-11744-20809-10cwhjk.31e6axxbt9/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-117319-15875-1g2dv5b.uggsc3di/package.tgz",
-    "spec": "/tmp/d-117319-15875-1g2dv5b.uggsc3di/package.tgz",
+    "rawSpec": "/tmp/d-11744-20809-10cwhjk.31e6axxbt9/package.tgz",
+    "spec": "/tmp/d-11744-20809-10cwhjk.31e6axxbt9/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-117319-15875-1g2dv5b.uggsc3di/package.tgz",
-  "_shasum": "fcbbf4010f26fcad4f09cfa3b6d3761234306ac0",
+  "_resolved": "file:../d-11744-20809-10cwhjk.31e6axxbt9/package.tgz",
+  "_shasum": "2ab536b1d4428bb3ce31e0f9da0be572224dd8bc",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-117319-15875-1g2dv5b.uggsc3di/package.tgz",
-  "_where": "/tmp/apm-install-dir-117319-15875-9zdc2a.2bfvkg9zfr",
+  "_spec": "/tmp/d-11744-20809-10cwhjk.31e6axxbt9/package.tgz",
+  "_where": "/tmp/apm-install-dir-11744-20809-m1witt.nay0pjsjor",
   "bugs": {
     "url": "https://github.com/akonwi/git-plus/issues"
   },
@@ -87,7 +87,7 @@
     "type": "git",
     "url": "git+https://github.com/akonwi/git-plus.git"
   },
-  "version": "7.6.0",
+  "version": "7.8.0",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [

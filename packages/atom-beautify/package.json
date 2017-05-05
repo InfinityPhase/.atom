@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-117317-12436-mxj3g8.3m53tyb9/package.tgz",
+        "raw": "/tmp/d-117327-1397-1pmk77d.sg87jk0529/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-117317-12436-mxj3g8.3m53tyb9/package.tgz",
-        "spec": "/tmp/d-117317-12436-mxj3g8.3m53tyb9/package.tgz",
+        "rawSpec": "/tmp/d-117327-1397-1pmk77d.sg87jk0529/package.tgz",
+        "spec": "/tmp/d-117327-1397-1pmk77d.sg87jk0529/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-117317-12436-m98o0l.8xwkxrbe29"
+      "/tmp/apm-install-dir-117327-1397-1b0uzyc.d0sogbke29"
     ]
   ],
-  "_from": "../d-117317-12436-mxj3g8.3m53tyb9/package.tgz",
-  "_id": "atom-beautify@0.29.22",
+  "_from": "../d-117327-1397-1pmk77d.sg87jk0529/package.tgz",
+  "_id": "atom-beautify@0.29.23",
   "_inCache": true,
   "_location": "/atom-beautify",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-117317-12436-mxj3g8.3m53tyb9/package.tgz",
+    "raw": "/tmp/d-117327-1397-1pmk77d.sg87jk0529/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-117317-12436-mxj3g8.3m53tyb9/package.tgz",
-    "spec": "/tmp/d-117317-12436-mxj3g8.3m53tyb9/package.tgz",
+    "rawSpec": "/tmp/d-117327-1397-1pmk77d.sg87jk0529/package.tgz",
+    "spec": "/tmp/d-117327-1397-1pmk77d.sg87jk0529/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-117317-12436-mxj3g8.3m53tyb9/package.tgz",
-  "_shasum": "9c21bd32b0cae1c5ef3c82eb7cd8fccae17a4b16",
+  "_resolved": "file:../d-117327-1397-1pmk77d.sg87jk0529/package.tgz",
+  "_shasum": "ed04407b875ff555547ee22d0b625750caa4bafc",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-117317-12436-mxj3g8.3m53tyb9/package.tgz",
-  "_where": "/tmp/apm-install-dir-117317-12436-m98o0l.8xwkxrbe29",
+  "_spec": "/tmp/d-117327-1397-1pmk77d.sg87jk0529/package.tgz",
+  "_where": "/tmp/apm-install-dir-117327-1397-1b0uzyc.d0sogbke29",
   "activationCommands": {
     "atom-workspace": [
       "atom-beautify:help-debug-editor",
@@ -199,7 +199,7 @@
     "jscs": "^3.0.7",
     "lodash": "^4.14.2",
     "loophole": "^1.0.0",
-    "marko-prettyprint": "^1.2.0",
+    "marko-prettyprint": "^1.3.5",
     "nginxbeautify": "^2.0.0",
     "node-cljfmt": "^0.5.3-1",
     "node-dir": "^0.1.16",
@@ -373,7 +373,7 @@
     "lint": "coffeelint src/ spec/",
     "prepublish": "npm run docs"
   },
-  "version": "0.29.22",
+  "version": "0.29.23",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -549,7 +549,7 @@
       },
       {
         "name": "babylon",
-        "version": "6.16.1",
+        "version": "6.17.0",
         "path": "node_modules/babylon/lib/index.js"
       },
       {
@@ -839,7 +839,7 @@
       },
       {
         "name": "debug",
-        "version": "2.6.3",
+        "version": "2.6.5",
         "path": "node_modules/debug/src/index.js"
       },
       {
@@ -1139,7 +1139,7 @@
       },
       {
         "name": "espree",
-        "version": "3.4.1",
+        "version": "3.4.2",
         "path": "node_modules/espree/espree.js"
       },
       {
@@ -1344,7 +1344,7 @@
       },
       {
         "name": "getpass",
-        "version": "0.1.6",
+        "version": "0.1.7",
         "path": "node_modules/getpass/lib/index.js"
       },
       {
@@ -1494,7 +1494,7 @@
       },
       {
         "name": "html-entities",
-        "version": "1.2.0",
+        "version": "1.2.1",
         "path": "node_modules/html-entities/index.js"
       },
       {
@@ -1594,7 +1594,7 @@
       },
       {
         "name": "interpret",
-        "version": "1.0.2",
+        "version": "1.0.3",
         "path": "node_modules/interpret/index.js"
       },
       {
@@ -1894,7 +1894,7 @@
       },
       {
         "name": "kind-of",
-        "version": "3.1.0",
+        "version": "3.2.0",
         "path": "node_modules/kind-of/index.js"
       },
       {
@@ -2054,7 +2054,7 @@
       },
       {
         "name": "ms",
-        "version": "0.7.2",
+        "version": "0.7.3",
         "path": "node_modules/ms/index.js"
       },
       {
@@ -2399,7 +2399,7 @@
       },
       {
         "name": "regenerator-runtime",
-        "version": "0.10.3",
+        "version": "0.10.4",
         "path": "node_modules/regenerator-runtime/runtime-module.js"
       },
       {
@@ -2459,7 +2459,7 @@
       },
       {
         "name": "resolve",
-        "version": "1.3.2",
+        "version": "1.3.3",
         "path": "node_modules/resolve/index.js"
       },
       {
@@ -3039,7 +3039,7 @@
       },
       {
         "name": "yaml-js",
-        "version": "0.1.4",
+        "version": "0.1.5",
         "path": "node_modules/yaml-js/lib/yaml.js"
       },
       {
@@ -3177,7 +3177,6 @@
         "node_modules/d/package.json",
         "node_modules/dashdash/node_modules/assert-plus/package.json",
         "node_modules/dashdash/package.json",
-        "node_modules/debug/bower.json",
         "node_modules/debug/component.json",
         "node_modules/debug/package.json",
         "node_modules/decamelize/package.json",
@@ -13405,7 +13404,7 @@
           "jscs": "^3.0.7",
           "lodash": "^4.14.2",
           "loophole": "^1.0.0",
-          "marko-prettyprint": "^1.2.0",
+          "marko-prettyprint": "^1.3.5",
           "nginxbeautify": "^2.0.0",
           "node-cljfmt": "^0.5.3-1",
           "node-dir": "^0.1.16",
@@ -13852,7 +13851,7 @@
           "node_modules/debug/src"
         ],
         "dependencies": {
-          "ms": "0.7.2"
+          "ms": "0.7.3"
         }
       },
       {
@@ -15418,7 +15417,7 @@
           "node_modules/kind-of"
         ],
         "dependencies": {
-          "is-buffer": "^1.0.2"
+          "is-buffer": "^1.1.5"
         }
       },
       {
@@ -16019,6 +16018,8 @@
           "node_modules/resolve/test/resolver/other_path/lib",
           "node_modules/resolve/test/resolver/other_path",
           "node_modules/resolve/test/resolver/quux/foo",
+          "node_modules/resolve/test/resolver/same_names/foo",
+          "node_modules/resolve/test/resolver/same_names",
           "node_modules/resolve/test/resolver/without_basedir"
         ],
         "dependencies": {
