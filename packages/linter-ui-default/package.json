@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-11744-20815-v8mbjl.3913v7vi/package.tgz",
+        "raw": "/tmp/d-117422-25312-bry7l1.b7qcjo47vi/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-11744-20815-v8mbjl.3913v7vi/package.tgz",
-        "spec": "/tmp/d-11744-20815-v8mbjl.3913v7vi/package.tgz",
+        "rawSpec": "/tmp/d-117422-25312-bry7l1.b7qcjo47vi/package.tgz",
+        "spec": "/tmp/d-117422-25312-bry7l1.b7qcjo47vi/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-11744-20815-vxpih6.ql1axde7b9"
+      "/tmp/apm-install-dir-117422-25312-l4xxeg.v51qo20529"
     ]
   ],
-  "_from": "../d-11744-20815-v8mbjl.3913v7vi/package.tgz",
-  "_id": "linter-ui-default@1.2.4",
+  "_from": "../d-117422-25312-bry7l1.b7qcjo47vi/package.tgz",
+  "_id": "linter-ui-default@1.6.0",
   "_inCache": true,
   "_location": "/linter-ui-default",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-11744-20815-v8mbjl.3913v7vi/package.tgz",
+    "raw": "/tmp/d-117422-25312-bry7l1.b7qcjo47vi/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-11744-20815-v8mbjl.3913v7vi/package.tgz",
-    "spec": "/tmp/d-11744-20815-v8mbjl.3913v7vi/package.tgz",
+    "rawSpec": "/tmp/d-117422-25312-bry7l1.b7qcjo47vi/package.tgz",
+    "spec": "/tmp/d-117422-25312-bry7l1.b7qcjo47vi/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-11744-20815-v8mbjl.3913v7vi/package.tgz",
-  "_shasum": "cd6cbb9e21c33c92c7d351ba7db3f67bc8c750a8",
+  "_resolved": "file:../d-117422-25312-bry7l1.b7qcjo47vi/package.tgz",
+  "_shasum": "4a3d1a571b9edc8ce6ee5fb454dd61b6d5c18bc6",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-11744-20815-v8mbjl.3913v7vi/package.tgz",
-  "_where": "/tmp/apm-install-dir-11744-20815-vxpih6.ql1axde7b9",
+  "_spec": "/tmp/d-117422-25312-bry7l1.b7qcjo47vi/package.tgz",
+  "_where": "/tmp/apm-install-dir-117422-25312-l4xxeg.v51qo20529",
   "bugs": {
     "url": "https://github.com/steelbrain/linter-ui-default/issues"
   },
@@ -69,15 +69,14 @@
       "default": false,
       "order": 1
     },
-    "panelTakesMinimumHeight": {
-      "title": "Panel Takes Minimum Height",
-      "description": "Reduce panel height when it exceeds the height of the error list",
+    "useBusySignal": {
+      "description": "Whether to integrate with the `busy-signal` package",
       "type": "boolean",
       "default": true,
       "order": 1
     },
-    "useBusySignal": {
-      "description": "Whether to integrate with the `busy-signal` package",
+    "hidePanelWhenEmpty": {
+      "description": "Hide panel when there are no issues to display",
       "type": "boolean",
       "default": true,
       "order": 1
@@ -120,7 +119,7 @@
         "Entire Project",
         "Current File"
       ],
-      "default": "Current File",
+      "default": "Entire Project",
       "order": 2
     },
     "statusBarClickBehavior": {
@@ -128,6 +127,7 @@
       "type": "string",
       "enum": [
         "Toggle Panel",
+        "Toggle Status Bar Scope",
         "Jump to next issue"
       ],
       "default": "Toggle Panel",
@@ -137,10 +137,11 @@
       "type": "string",
       "description": "Choose whether tooltips show on mouseover, or follow the keyboard cursor",
       "enum": [
+        "Both",
         "Mouse",
         "Keyboard"
       ],
-      "default": "Mouse",
+      "default": "Both",
       "order": 2
     },
     "gutterPosition": {
@@ -158,7 +159,7 @@
       "title": "Panel Height",
       "description": "in px",
       "type": "number",
-      "default": 150,
+      "default": 100,
       "order": 3
     }
   },
@@ -180,19 +181,18 @@
     "marked": "^0.3.6",
     "react": "^15.3.1",
     "react-dom": "^15.3.2",
-    "react-resizable-box": "^1.8.1",
     "sb-debounce": "^1.0.1",
     "sb-react-table": "^1.0.1"
   },
   "description": "Default UI for the Linter package",
   "devDependencies": {
     "eslint-config-steelbrain": "^3.0.0",
-    "flow-bin": "^0.45.0",
+    "flow-bin": "^0.46.0",
     "jasmine-fix": "^1.0.1",
     "rimraf": "^2.5.4"
   },
   "engines": {
-    "atom": ">=1.4.0 <2.0.0"
+    "atom": ">=1.17.0 <2.0.0"
   },
   "homepage": "https://github.com/steelbrain/linter-ui-default#readme",
   "keywords": [
@@ -219,7 +219,7 @@
       }
     }
   },
-  "readme": "Linter-UI-Default\n================\n\n[![Greenkeeper badge](https://badges.greenkeeper.io/steelbrain/linter-ui-default.svg)](https://greenkeeper.io/)\n\n[![Slack Badge](https://img.shields.io/badge/chat-atom.io%20slack-blue.svg?style=flat-square)](http://atom-slack.herokuapp.com/)\n[![Build Status](https://img.shields.io/circleci/project/steelbrain/linter-ui-default.svg?style=flat-square)](https://circleci.com/gh/steelbrain/linter-ui-default)\n[![Plugin installs!](https://img.shields.io/apm/dm/linter-ui-default.svg?style=flat-square)](https://atom.io/packages/linter-ui-default)\n[![Package version!](https://img.shields.io/apm/v/linter-ui-default.svg?style=flat-square)](https://atom.io/packages/linter-ui-defeault)\n[![Dependencies!](https://img.shields.io/david/steelbrain/linter-ui-default.svg?style=flat-square)](https://david-dm.org/steelbrain/linter-ui-default)\n\nThe default UI for linter.\n\n![Preview](https://cloud.githubusercontent.com/assets/4278113/23879933/1ab17e2a-0872-11e7-803d-3fe0ccfc6790.gif)\n\n### Installation\n\nYou can install it from the CLI\n\n```\napm install linter-ui-default\n```\n\nOr you can install from Settings view by searching for `linter-ui-default`.\n\n### License\n\nThis Project is licensed under the terms of MIT License, check the license file for more info.\n",
+  "readme": "Linter-UI-Default\n================\n\n[![Greenkeeper badge](https://badges.greenkeeper.io/steelbrain/linter-ui-default.svg)](https://greenkeeper.io/)\n\n[![Slack Badge](https://img.shields.io/badge/chat-atom.io%20slack-blue.svg?style=flat-square)](http://atom-slack.herokuapp.com/)\n[![Build Status](https://img.shields.io/circleci/project/steelbrain/linter-ui-default.svg?style=flat-square)](https://circleci.com/gh/steelbrain/linter-ui-default)\n[![Plugin installs!](https://img.shields.io/apm/dm/linter-ui-default.svg?style=flat-square)](https://atom.io/packages/linter-ui-default)\n[![Package version!](https://img.shields.io/apm/v/linter-ui-default.svg?style=flat-square)](https://atom.io/packages/linter-ui-default)\n[![Dependencies!](https://img.shields.io/david/steelbrain/linter-ui-default.svg?style=flat-square)](https://david-dm.org/steelbrain/linter-ui-default)\n\nThe default UI for linter.\n\n![Preview](https://cloud.githubusercontent.com/assets/4278113/23879933/1ab17e2a-0872-11e7-803d-3fe0ccfc6790.gif)\n\n### Installation\n\nYou can install it from the CLI\n\n```\napm install linter-ui-default\n```\n\nOr you can install from Settings view by searching for `linter-ui-default`.\n\n### License\n\nThis Project is licensed under the terms of MIT License, check the license file for more info.\n",
   "readmeFilename": "README.md",
   "repository": {
     "type": "git",
@@ -228,7 +228,7 @@
   "scripts": {
     "test": "(apm test) && (flow check) && (eslint . )"
   },
-  "version": "1.2.4",
+  "version": "1.6.0",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -298,11 +298,6 @@
         "path": "node_modules/js-tokens/index.js"
       },
       {
-        "name": "lodash.isequal",
-        "version": "4.5.0",
-        "path": "node_modules/lodash.isequal/index.js"
-      },
-      {
         "name": "lodash.uniq",
         "version": "4.5.0",
         "path": "node_modules/lodash.uniq/index.js"
@@ -334,7 +329,7 @@
       },
       {
         "name": "prop-types",
-        "version": "15.5.8",
+        "version": "15.5.10",
         "path": "node_modules/prop-types/index.js"
       },
       {
@@ -346,11 +341,6 @@
         "name": "react-dom",
         "version": "15.5.4",
         "path": "node_modules/react-dom/index.js"
-      },
-      {
-        "name": "react-resizable-box",
-        "version": "1.8.4",
-        "path": "node_modules/react-resizable-box/lib/index.js"
       },
       {
         "name": "sb-callsite",
@@ -453,7 +443,6 @@
         "node_modules/isomorphic-fetch/bower.json",
         "node_modules/isomorphic-fetch/package.json",
         "node_modules/js-tokens/package.json",
-        "node_modules/lodash.isequal/package.json",
         "node_modules/lodash.uniq/package.json",
         "node_modules/loose-envify/package.json",
         "node_modules/marked/bower.json",
@@ -465,7 +454,6 @@
         "node_modules/prop-types/package.json",
         "node_modules/react/package.json",
         "node_modules/react-dom/package.json",
-        "node_modules/react-resizable-box/package.json",
         "node_modules/sb-callsite/package.json",
         "node_modules/sb-debounce/package.json",
         "node_modules/sb-event-kit/package.json",
@@ -500,8 +488,10 @@
         "lib/main.js",
         "lib/panel/component.js",
         "lib/panel/delegate.js",
+        "lib/panel/dock.js",
         "lib/panel/index.js",
         "lib/status-bar/element.js",
+        "lib/status-bar/helpers.js",
         "lib/status-bar/index.js",
         "lib/tooltip/delegate.js",
         "lib/tooltip/index.js",
@@ -1504,7 +1494,6 @@
         "node_modules/isomorphic-fetch/fetch-npm-browserify.js",
         "node_modules/isomorphic-fetch/fetch-npm-node.js",
         "node_modules/js-tokens/index.js",
-        "node_modules/lodash.isequal/index.js",
         "node_modules/lodash.uniq/index.js",
         "node_modules/loose-envify/cli.js",
         "node_modules/loose-envify/custom.js",
@@ -1798,8 +1787,6 @@
         "node_modules/react-dom/lib/validateDOMNesting.js",
         "node_modules/react-dom/server.js",
         "node_modules/react-dom/test-utils.js",
-        "node_modules/react-resizable-box/lib/index.js",
-        "node_modules/react-resizable-box/lib/resizer.js",
         "node_modules/sb-callsite/lib/main.js",
         "node_modules/sb-debounce/index.js",
         "node_modules/sb-debounce/test.js",
@@ -1849,7 +1836,6 @@
           "marked": "^0.3.6",
           "react": "^15.3.1",
           "react-dom": "^15.3.2",
-          "react-resizable-box": "^1.8.1",
           "sb-debounce": "^1.0.1",
           "sb-react-table": "^1.0.1"
         }
@@ -1970,7 +1956,8 @@
           "node_modules/prop-types/lib"
         ],
         "dependencies": {
-          "fbjs": "^0.8.9"
+          "fbjs": "^0.8.9",
+          "loose-envify": "^1.3.1"
         }
       },
       {
@@ -1997,15 +1984,6 @@
           "loose-envify": "^1.1.0",
           "object-assign": "^4.1.0",
           "prop-types": "~15.5.7"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/react-resizable-box/lib",
-          "node_modules/react-resizable-box"
-        ],
-        "dependencies": {
-          "lodash.isequal": "^4.2.0"
         }
       },
       {

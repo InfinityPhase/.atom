@@ -1,0 +1,135 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-117424-5033-udhjdf.x5cequmcxr/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-117424-5033-udhjdf.x5cequmcxr/package.tgz",
+        "spec": "/tmp/d-117424-5033-udhjdf.x5cequmcxr/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-117424-5033-shwatn.4eixbkpgb9"
+    ]
+  ],
+  "_from": "../d-117424-5033-udhjdf.x5cequmcxr/package.tgz",
+  "_id": "battery-status@0.11.3",
+  "_inCache": true,
+  "_location": "/battery-status",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/tmp/d-117424-5033-udhjdf.x5cequmcxr/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-117424-5033-udhjdf.x5cequmcxr/package.tgz",
+    "spec": "/tmp/d-117424-5033-udhjdf.x5cequmcxr/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-117424-5033-udhjdf.x5cequmcxr/package.tgz",
+  "_shasum": "794b5e51a971e08aec1d0da380dae596e900fc0e",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-117424-5033-udhjdf.x5cequmcxr/package.tgz",
+  "_where": "/tmp/apm-install-dir-117424-5033-shwatn.4eixbkpgb9",
+  "author": {
+    "name": "Jonas Auer"
+  },
+  "bugs": {
+    "url": "https://github.com/cmd-johnson/atom-battery-status/issues"
+  },
+  "consumedServices": {
+    "status-bar": {
+      "versions": {
+        "^1.0.0": "consumeStatusBar"
+      }
+    }
+  },
+  "dependencies": {
+    "node-power-info": "^0.1.1"
+  },
+  "description": "Displays your laptop's battery status in the status bar of Atom.",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/cmd-johnson/atom-battery-status",
+  "keywords": [
+    "battery",
+    "status",
+    "laptop",
+    "charge",
+    "power"
+  ],
+  "license": "MIT",
+  "main": "./lib/main",
+  "name": "battery-status",
+  "optionalDependencies": {},
+  "readme": "# Battery Status\nDisplays the current power level of the battery in Atom's status bar, and\nindicates if the battery is currently charging. Especially useful if you often\nwork in full-screen mode on your laptop!\n\n![How a battery cycle looks like in Atom's status bar when using this package](https://github.com/cmd-johnson/atom-battery-status/raw/master/preview.png)\n\n## Known issues\nThe backend only supports linux and osx (darwin) at the moment, drop a feature\nrequest at [node-power-info](https://github.com/cmd-johnson/node-power-info) to\nget yours added, or (even better), if you already have a solution in mind, feel\nfree to contribute and make a pull request!\nIf you'd like to have some configuration options, just drop a feature request\nhere and I'll look into it.\n\n## License\nThis package is MIT-licensed, see the [license-file](https://github.com/cmd-johnson/atom-battery-status/blob/master/LICENSE.md) for third party licenses.\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmd-johnson/atom-battery-status.git"
+  },
+  "version": "0.11.3",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [
+      {
+        "name": "async",
+        "version": "1.5.2",
+        "path": "node_modules/async/lib/async.js"
+      },
+      {
+        "name": "node-power-info",
+        "version": "0.1.8",
+        "path": "node_modules/node-power-info/index.js"
+      }
+    ],
+    "extensions": {
+      ".coffee": [
+        "lib/battery-status-view.coffee",
+        "lib/main.coffee"
+      ],
+      ".js": [
+        "node_modules/async/dist/async.js",
+        "node_modules/async/dist/async.min.js",
+        "node_modules/async/lib/async.js",
+        "node_modules/node-power-info/index.js",
+        "node_modules/node-power-info/lib/darwin.js",
+        "node_modules/node-power-info/lib/default.js",
+        "node_modules/node-power-info/lib/index.js",
+        "node_modules/node-power-info/lib/linux.js",
+        "node_modules/node-power-info/lib/util.js"
+      ],
+      ".json": [
+        "node_modules/async/package.json",
+        "node_modules/node-power-info/package.json",
+        "package.json"
+      ]
+    },
+    "folders": [
+      {
+        "paths": [
+          "lib",
+          ""
+        ],
+        "dependencies": {
+          "node-power-info": "^0.1.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/node-power-info",
+          "node_modules/node-power-info/lib"
+        ],
+        "dependencies": {
+          "async": "^1.4.2"
+        }
+      }
+    ]
+  }
+}

@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-117318-25273-dtmz9z.l9tzftuik9/package.tgz",
+        "raw": "/tmp/d-117424-4862-r5uh80.bkiaf6flxr/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-117318-25273-dtmz9z.l9tzftuik9/package.tgz",
-        "spec": "/tmp/d-117318-25273-dtmz9z.l9tzftuik9/package.tgz",
+        "rawSpec": "/tmp/d-117424-4862-r5uh80.bkiaf6flxr/package.tgz",
+        "spec": "/tmp/d-117424-4862-r5uh80.bkiaf6flxr/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-117318-25273-jv9im.qm5fr8jjor"
+      "/tmp/apm-install-dir-117424-4862-dxf8f7.42iskprpb9"
     ]
   ],
-  "_from": "../d-117318-25273-dtmz9z.l9tzftuik9/package.tgz",
-  "_id": "autocomplete-java@1.2.5",
+  "_from": "../d-117424-4862-r5uh80.bkiaf6flxr/package.tgz",
+  "_id": "autocomplete-java@1.2.7",
   "_inCache": true,
   "_location": "/autocomplete-java",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-117318-25273-dtmz9z.l9tzftuik9/package.tgz",
+    "raw": "/tmp/d-117424-4862-r5uh80.bkiaf6flxr/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-117318-25273-dtmz9z.l9tzftuik9/package.tgz",
-    "spec": "/tmp/d-117318-25273-dtmz9z.l9tzftuik9/package.tgz",
+    "rawSpec": "/tmp/d-117424-4862-r5uh80.bkiaf6flxr/package.tgz",
+    "spec": "/tmp/d-117424-4862-r5uh80.bkiaf6flxr/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-117318-25273-dtmz9z.l9tzftuik9/package.tgz",
-  "_shasum": "92f9efa4f87205edfee16a4c4384633375203758",
+  "_resolved": "file:../d-117424-4862-r5uh80.bkiaf6flxr/package.tgz",
+  "_shasum": "35de590ec7390ccc25ab50f736489c3946d01949",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-117318-25273-dtmz9z.l9tzftuik9/package.tgz",
-  "_where": "/tmp/apm-install-dir-117318-25273-jv9im.qm5fr8jjor",
+  "_spec": "/tmp/d-117424-4862-r5uh80.bkiaf6flxr/package.tgz",
+  "_where": "/tmp/apm-install-dir-117424-4862-dxf8f7.42iskprpb9",
   "activationCommands": {
     "atom-workspace": [
       "autocomplete-java:organize-imports",
@@ -87,7 +87,7 @@
     "type": "git",
     "url": "git+https://github.com/keskiju/autocomplete-java.git"
   },
-  "version": "1.2.5",
+  "version": "1.2.7",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -128,7 +128,7 @@
       },
       {
         "name": "mime",
-        "version": "1.3.4",
+        "version": "1.3.6",
         "path": "node_modules/mime/mime.js"
       },
       {

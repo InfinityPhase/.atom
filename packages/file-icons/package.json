@@ -2,39 +2,39 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-117327-15770-15xs1bv.96h0nt57b9/package.tgz",
+        "raw": "/tmp/d-117422-25294-rxpgt8.1l1ikvs4i/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-117327-15770-15xs1bv.96h0nt57b9/package.tgz",
-        "spec": "/tmp/d-117327-15770-15xs1bv.96h0nt57b9/package.tgz",
+        "rawSpec": "/tmp/d-117422-25294-rxpgt8.1l1ikvs4i/package.tgz",
+        "spec": "/tmp/d-117422-25294-rxpgt8.1l1ikvs4i/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-117327-15770-db669y.bu7sm26gvi"
+      "/tmp/apm-install-dir-117422-25294-7duwg6.w8vkvxtj4i"
     ]
   ],
-  "_from": "../d-117327-15770-15xs1bv.96h0nt57b9/package.tgz",
-  "_id": "file-icons@2.1.4",
+  "_from": "../d-117422-25294-rxpgt8.1l1ikvs4i/package.tgz",
+  "_id": "file-icons@2.1.6",
   "_inCache": true,
   "_location": "/file-icons",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-117327-15770-15xs1bv.96h0nt57b9/package.tgz",
+    "raw": "/tmp/d-117422-25294-rxpgt8.1l1ikvs4i/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-117327-15770-15xs1bv.96h0nt57b9/package.tgz",
-    "spec": "/tmp/d-117327-15770-15xs1bv.96h0nt57b9/package.tgz",
+    "rawSpec": "/tmp/d-117422-25294-rxpgt8.1l1ikvs4i/package.tgz",
+    "spec": "/tmp/d-117422-25294-rxpgt8.1l1ikvs4i/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-117327-15770-15xs1bv.96h0nt57b9/package.tgz",
-  "_shasum": "3c4804c47c0fff947fe5a3b929a4363af4bc0609",
+  "_resolved": "file:../d-117422-25294-rxpgt8.1l1ikvs4i/package.tgz",
+  "_shasum": "4d99b25f651680fc14ae9ce13ed8e317580ae51e",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-117327-15770-15xs1bv.96h0nt57b9/package.tgz",
-  "_where": "/tmp/apm-install-dir-117327-15770-db669y.bu7sm26gvi",
+  "_spec": "/tmp/d-117422-25294-rxpgt8.1l1ikvs4i/package.tgz",
+  "_where": "/tmp/apm-install-dir-117422-25294-7duwg6.w8vkvxtj4i",
   "atomTestRunner": "atom-mocha",
   "bugs": {
     "url": "https://github.com/file-icons/atom/issues"
@@ -152,7 +152,7 @@
     "type": "git",
     "url": "git+https://github.com/file-icons/atom.git"
   },
-  "version": "2.1.4",
+  "version": "2.1.6",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -203,7 +203,7 @@
       },
       {
         "name": "filename-regex",
-        "version": "2.0.0",
+        "version": "2.0.1",
         "path": "node_modules/filename-regex/index.js"
       },
       {
@@ -288,7 +288,7 @@
       },
       {
         "name": "kind-of",
-        "version": "3.2.0",
+        "version": "3.2.2",
         "path": "node_modules/kind-of/index.js"
       },
       {

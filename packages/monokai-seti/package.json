@@ -2,49 +2,49 @@
   "_args": [
     [
       {
-        "raw": "/tmp/d-117127-23922-1n1oia6.rsuy6nu3di/package.tgz",
+        "raw": "/tmp/d-117422-25318-1j4gron.n7lxflxr/package.tgz",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "/tmp/d-117127-23922-1n1oia6.rsuy6nu3di/package.tgz",
-        "spec": "/tmp/d-117127-23922-1n1oia6.rsuy6nu3di/package.tgz",
+        "rawSpec": "/tmp/d-117422-25318-1j4gron.n7lxflxr/package.tgz",
+        "spec": "/tmp/d-117422-25318-1j4gron.n7lxflxr/package.tgz",
         "type": "local"
       },
-      "/tmp/apm-install-dir-117127-23922-zlkw87.haney1ra4i"
+      "/tmp/apm-install-dir-117422-25318-1niqxmy.emp7hqia4i"
     ]
   ],
-  "_from": "../d-117127-23922-1n1oia6.rsuy6nu3di/package.tgz",
-  "_id": "monokai-seti@0.7.0",
+  "_from": "../d-117422-25318-1j4gron.n7lxflxr/package.tgz",
+  "_id": "monokai-seti@0.9.0",
   "_inCache": true,
   "_location": "/monokai-seti",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-117127-23922-1n1oia6.rsuy6nu3di/package.tgz",
+    "raw": "/tmp/d-117422-25318-1j4gron.n7lxflxr/package.tgz",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "/tmp/d-117127-23922-1n1oia6.rsuy6nu3di/package.tgz",
-    "spec": "/tmp/d-117127-23922-1n1oia6.rsuy6nu3di/package.tgz",
+    "rawSpec": "/tmp/d-117422-25318-1j4gron.n7lxflxr/package.tgz",
+    "spec": "/tmp/d-117422-25318-1j4gron.n7lxflxr/package.tgz",
     "type": "local"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-117127-23922-1n1oia6.rsuy6nu3di/package.tgz",
-  "_shasum": "73a3f8365ee08b38adf047835087e3f65e2cf45b",
+  "_resolved": "file:../d-117422-25318-1j4gron.n7lxflxr/package.tgz",
+  "_shasum": "71e96e8d0d18292c88a25a8c3e3b91381ce71552",
   "_shrinkwrap": null,
-  "_spec": "/tmp/d-117127-23922-1n1oia6.rsuy6nu3di/package.tgz",
-  "_where": "/tmp/apm-install-dir-117127-23922-zlkw87.haney1ra4i",
+  "_spec": "/tmp/d-117422-25318-1j4gron.n7lxflxr/package.tgz",
+  "_where": "/tmp/apm-install-dir-117422-25318-1niqxmy.emp7hqia4i",
   "bugs": {
-    "url": "https://github.com/schmitzjake/monokai-seti/issues"
+    "url": "https://github.com/schmittyjd/monokai-seti/issues"
   },
   "dependencies": {},
   "description": "A monokai theme for the seti ui",
   "devDependencies": {},
   "engines": {
-    "atom": ">0.39.0"
+    "atom": ">=1.13.0"
   },
-  "homepage": "https://github.com/schmitzjake/monokai-seti#readme",
+  "homepage": "https://github.com/schmittyjd/monokai-seti#readme",
   "license": "MIT",
   "name": "monokai-seti",
   "optionalDependencies": {},
@@ -53,10 +53,10 @@
   "readmeFilename": "README.md",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/schmitzjake/monokai-seti.git"
+    "url": "git+https://github.com/schmittyjd/monokai-seti.git"
   },
   "theme": "syntax",
-  "version": "0.7.0",
+  "version": "0.9.0",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [],

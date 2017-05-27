@@ -18,6 +18,7 @@ Currently supported grammars are:
 | AppleScript                          | Yes        | Yes             | |
 | Babel ES6 JS                         | Yes        | Yes             | |
 | Bash                                 | Yes        | Yes             | The shell used is based on your default `$SHELL` environment variable |
+| Bash Automated Test System (Bats)    | Yes        | Yes             | |
 | Batch                                | Yes        |                 | |
 | Behat Feature                        | Yes        |                 | |
 | BuckleScript                         | Yes        | Yes             | |
@@ -37,6 +38,7 @@ Currently supported grammars are:
 | Erlang                               |            | Yes             | Uses `erl` for limited selection based runs (see [#70](https://github.com/rgbkrk/atom-script/pull/70)) |
 | F#                                   | Yes        |                 | |
 | F*                                   | Yes        |                 | |
+| Fable                                | Yes        | Yes             | |
 | Fish                                 | Yes        | Yes             | Finally, a way to run code within Atom for the 90s |
 | Forth (via GForth)                   | Yes        |                 | |
 | Fortran (via gfortran)               | Yes        |                 |
@@ -48,8 +50,9 @@ Currently supported grammars are:
 | Hy                                   | Yes        | Yes             | Requires the path of 'hy.exe' in your system environment variables. This is probably already fulfilled if you used `pip install hy` to get Hy. A Hy grammar, such as [this one](https://atom.io/packages/language-hy) is also a good idea. |
 | IcedCoffeeScript                     | Yes        | Yes             | |
 | Inno Setup                           | Yes        |                 | Requires the path of `ISCC.exe` in your system environment variables |
+| [Idris](http://idris-lang.org/)      | Yes        |                 | |
 | [ioLanguage](http://iolanguage.org/) | Yes        | Yes             | |
-| Java                                 | Yes        |                 | Windows users should manually add jdk path (...\jdk1.x.x_xx\bin) to their system environment variables |
+| Java                                 | Yes        |                 | Windows users should manually add jdk path (...\jdk1.x.x_xx\bin) to their system environment variables. Project directory should be the source directory; subfolders imply packaging. |
 | Javascript                           | Yes        | Yes             | |
 | [JavaScript for Automation](https://developer.apple.com/library/mac/releasenotes/InterapplicationCommunication/RN-JavaScriptForAutomation/Articles/Introduction.html) (JXA)            | Yes        | Yes             | |
 | Jolie                                | Yes        |                 | |
