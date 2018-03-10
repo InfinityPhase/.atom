@@ -1,15 +1,11 @@
 export {}
-
 declare module "atom" {
-  export class CompositeDisposable {
-    add(disposable: AtomCore.Disposable)
-    dispose()
+  interface TextBuffer {
+    emitDidStopChangingEvent(): void
   }
 
-  var TextBuffer: {
-    new (opts?: {
-      filePath?: string
-      load?: boolean
-    }): TextBuffer.ITextBuffer
+  interface TextEditor {
+    isDestroyed(): boolean
+    getURI(): string
   }
 }

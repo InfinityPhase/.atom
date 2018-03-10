@@ -1,50 +1,115 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "/tmp/d-11733-6858-1t2r9r0.z2hclt0529/package.tgz",
-        "scope": null,
-        "escapedName": null,
-        "name": null,
-        "rawSpec": "/tmp/d-11733-6858-1t2r9r0.z2hclt0529/package.tgz",
-        "spec": "/tmp/d-11733-6858-1t2r9r0.z2hclt0529/package.tgz",
-        "type": "local"
-      },
-      "/tmp/apm-install-dir-11733-6858-8toao0.aq33jwnrk9"
-    ]
-  ],
-  "_from": "../d-11733-6858-1t2r9r0.z2hclt0529/package.tgz",
-  "_id": "todo-show@1.11.0",
-  "_inCache": true,
+  "_from": "file:/tmp/d-11828-32402-jhi2q3.7jlh/package.tgz",
+  "_id": "todo-show@2.2.0",
+  "_inBundle": false,
+  "_integrity": "sha512-R215AkJtlDqC+PP2KbY0fhAsKposIJvGBcdXolYoFu7K8x0PRlOqBXowdGvgrWzh1srNRb6kxkOXsVCm+LvBDQ==",
   "_location": "/todo-show",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-11733-6858-1t2r9r0.z2hclt0529/package.tgz",
-    "scope": null,
-    "escapedName": null,
-    "name": null,
-    "rawSpec": "/tmp/d-11733-6858-1t2r9r0.z2hclt0529/package.tgz",
-    "spec": "/tmp/d-11733-6858-1t2r9r0.z2hclt0529/package.tgz",
-    "type": "local"
+    "type": "file",
+    "where": "/tmp/apm-install-dir-11828-32402-1j07tcq.sk8q",
+    "raw": "/tmp/d-11828-32402-jhi2q3.7jlh/package.tgz",
+    "rawSpec": "/tmp/d-11828-32402-jhi2q3.7jlh/package.tgz",
+    "saveSpec": "file:/tmp/d-11828-32402-jhi2q3.7jlh/package.tgz",
+    "fetchSpec": "/tmp/d-11828-32402-jhi2q3.7jlh/package.tgz"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-11733-6858-1t2r9r0.z2hclt0529/package.tgz",
-  "_shasum": "9ceb7b497401a7612c59ede2b768ffd218675bbd",
-  "_shrinkwrap": null,
-  "_spec": "/tmp/d-11733-6858-1t2r9r0.z2hclt0529/package.tgz",
-  "_where": "/tmp/apm-install-dir-11733-6858-8toao0.aq33jwnrk9",
-  "activationCommands": {
-    "atom-workspace": [
-      "todo-show:find-in-workspace",
-      "todo-show:find-in-project",
-      "todo-show:find-in-open-files",
-      "todo-show:find-in-active-file"
-    ]
-  },
+  "_resolved": "/tmp/d-11828-32402-jhi2q3.7jlh/package.tgz",
+  "_spec": "/tmp/d-11828-32402-jhi2q3.7jlh/package.tgz",
+  "_where": "/tmp/apm-install-dir-11828-32402-1j07tcq.sk8q",
   "bugs": {
     "url": "https://github.com/mrodalgaard/atom-todo-show/issues"
+  },
+  "bundleDependencies": false,
+  "configSchema": {
+    "autoRefresh": {
+      "type": "boolean",
+      "default": true
+    },
+    "findTheseTodos": {
+      "description": "An array of todo types used by the search regex.",
+      "type": "array",
+      "default": [
+        "TODO",
+        "FIXME",
+        "CHANGED",
+        "XXX",
+        "IDEA",
+        "HACK",
+        "NOTE",
+        "REVIEW",
+        "NB",
+        "BUG",
+        "QUESTION",
+        "COMBAK",
+        "TEMP"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "findUsingRegex": {
+      "description": "Regex string used to find all your todos. `${TODOS}` is replaced with `FindTheseTodos` from above.",
+      "type": "string",
+      "default": "/\\b(${TODOS})[:;.,]?\\d*($|\\s.*$|[\\{\\[\\(].+$)/g"
+    },
+    "ignoreThesePaths": {
+      "description": "Similar to `.gitignore` (remember to use `/` on Mac/Linux and `\\` on Windows for subdirectories).",
+      "type": "array",
+      "default": [
+        "node_modules",
+        "vendor",
+        "bower_components",
+        "*.pdf"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "showInTable": {
+      "description": "An array of properties to show for each todo in table.",
+      "type": "array",
+      "default": [
+        "Text",
+        "Type",
+        "Path"
+      ]
+    },
+    "sortBy": {
+      "type": "string",
+      "default": "Text",
+      "enum": [
+        "All",
+        "Text",
+        "Type",
+        "Range",
+        "Line",
+        "Regex",
+        "Path",
+        "File",
+        "Tags",
+        "Id",
+        "Project"
+      ]
+    },
+    "sortAscending": {
+      "type": "boolean",
+      "default": true
+    },
+    "saveOutputAs": {
+      "type": "string",
+      "default": "List",
+      "enum": [
+        "List",
+        "Table"
+      ]
+    },
+    "statusBarIndicator": {
+      "type": "boolean",
+      "default": false
+    }
   },
   "consumedServices": {
     "status-bar": {
@@ -55,28 +120,29 @@
   },
   "dependencies": {
     "atom-space-pen-views": "^2.0.3",
+    "event-kit": "^2.3.0",
     "fs-plus": "2.x",
     "sortablejs": "^1.4.2",
     "temp": "^0.8.3",
     "underscore-plus": "^1.6.6"
   },
+  "deprecated": false,
   "description": "Finds all the TODOs, FIXMEs, CHANGEDs, etc. in your project.",
-  "devDependencies": {},
+  "deserializers": {
+    "todo-show/todo-view": "deserializeTodoView"
+  },
   "engines": {
-    "atom": ">0.50.0"
+    "atom": ">1.17.0"
   },
   "homepage": "https://github.com/mrodalgaard/atom-todo-show#readme",
   "license": "MIT",
-  "main": "./lib/show-todo",
+  "main": "./lib/main",
   "name": "todo-show",
-  "optionalDependencies": {},
-  "readme": "# Todo Show Package [![Build Status](https://travis-ci.org/mrodalgaard/atom-todo-show.svg)](https://travis-ci.org/mrodalgaard/atom-todo-show)\n\nFinds all TODO, FIXME, CHANGED, XXX, IDEA, HACK, NOTE, REVIEW, NB, BUG, QUESTION, COMBAK, TEMP comments in your project and shows them in a nice overview list.\n\nOpen todo list using command palette `Todo Show: Find In Workspace`, `Todo Show: Find In Project` or `Todo Show: Find In Open Files`. Keyboard shortcuts <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>T</kbd> on Mac OSX or <kbd>ALT</kbd> + <kbd>SHIFT</kbd> + <kbd>T</kbd> on Windows and Linux.\n\nInstall with `apm install todo-show` or use *Install Packages* from *Atom Settings*.\n\n![todo-show-package](https://raw.githubusercontent.com/mrodalgaard/atom-todo-show/master/screenshots/preview.png)\n\n## Search Scopes\n\nFour different scopes are available to narrow down your search for todos. Change scope using the button at the top of the todo tab or use the corresponding command.\n* __Workspace__: Searches all open projects.\n* __Project__: Searches active project (a project is marked as active when you open a file it contains).\n* __Open Files__: Searches currently open files.\n* __Active File__: Searches last active file only.\n\n## Configuration\n\nName                  | Default                                 | Description\n----------------------|-----------------------------------------|------------\n_findTheseTodos_      | `['FIXME', 'TODO', 'CHANGED', 'XXX', 'IDEA', 'HACK', 'NOTE', 'REVIEW', 'NB', 'BUG', 'QUESTION', 'COMBAK', 'TEMP']` | An array of todo types used by the search regex\n_findUsingRegex_      | See 'Regular Expression Search' section | Regex string used to find all your todos. `${TODOS}` is replaced with `FindTheseTodos` from above\n_ignoreThesePaths_    | `['node_modules', 'vendor', 'bower_components']` | An array of files / folders to exclude (syntax according to [scandal](https://github.com/atom/scandal) used internally by Atom). <br> ⚬ _globally_: `Ignored Names` from atom core settings. <br> ⚬ _locally_: Ignores anything in your `.gitignore` file, if the current project is a valid git repository and atom core setting `Exclude VCS Ignored Paths` is checked.\n_showInTable_         | `['Text', 'Type', 'Path']`              | An array of properties to show for each todo in table\n_sortBy_              | `'Text'`                                | Sort table by this todo property\n_sortAscending_       | `true`                                  | Sort table in ascending or descending order\n_openListInDirection_ | `'right'`                               | Defines where the todo list is shown when opened\n_rememberViewSize_    | `true`                                  | Remember the todo list width or split in the middle\n_saveOutputAs_        | `'List'`                                | Choose which format to use for saved markdown\n_statusBarIndicator_  | `false`                                 | Show todo count in status bar (this is only shown and updated when the 'Todo Show' tab is open)\n\n## Regular Expression Search\n\nThe regexes in `findTheseRegexes` are used for searching the workspace for todo matches. They are configurable to match the users specific needs.\n\nDefault regex string: `'/\\\\b(${TODOS})[:;.,]?\\\\d*($|\\\\s.*$|\\\\(.*$)/g'`\n* `\\b` start at word boundary\n* `${TODOS}` todo type match (is replaced with `findTheseTodos`)\n* `[:;.,]?` optional separator after type\n* `\\d*` optional digits for supporting [imdone](http://imdone.io/) sorting\n* `$` to end todos without additional text (newline)\n* Or `\\s.*$` to match the todo text with a non-optional space in front\n* Or an immediate parentheses, `\\(.*$`, to support [Google style guide IDs](https://google.github.io/styleguide/cppguide.html#TODO_Comments)\n* Because Atom config only accepts strings all `\\` characters are also escaped\n\nTodos can be tagged using hashtag (e.g. `TODO: do this #object #profile`), which is presented in the tags column.\n\nTo extend the default todo types and search regex, the existing config needs to be copied into your config.cson.\n\n## Credits\nOriginally created by [Jamis Charles](https://github.com/jamischarles)\n\nNow maintained by [Martin Rodalgaard](https://github.com/mrodalgaard)\n",
-  "readmeFilename": "README.md",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mrodalgaard/atom-todo-show.git"
   },
-  "version": "1.11.0",
+  "version": "2.2.0",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -92,12 +158,12 @@
       },
       {
         "name": "balanced-match",
-        "version": "0.4.2",
+        "version": "1.0.0",
         "path": "node_modules/balanced-match/index.js"
       },
       {
         "name": "brace-expansion",
-        "version": "1.1.6",
+        "version": "1.1.11",
         "path": "node_modules/brace-expansion/index.js"
       },
       {
@@ -117,7 +183,7 @@
       },
       {
         "name": "es5-ext",
-        "version": "0.10.15",
+        "version": "0.10.39",
         "path": "node_modules/es5-ext/index.js"
       },
       {
@@ -127,7 +193,7 @@
       },
       {
         "name": "es6-iterator",
-        "version": "2.0.1",
+        "version": "2.0.3",
         "path": "node_modules/es5-ext/node_modules/es6-iterator/index.js"
       },
       {
@@ -151,6 +217,11 @@
         "path": "node_modules/es6-weak-map/index.js"
       },
       {
+        "name": "event-kit",
+        "version": "2.4.0",
+        "path": "node_modules/event-kit/lib/event-kit.js"
+      },
+      {
         "name": "fs-plus",
         "version": "2.10.1",
         "path": "node_modules/fs-plus/lib/fs-plus.js"
@@ -167,7 +238,7 @@
       },
       {
         "name": "glob",
-        "version": "7.1.1",
+        "version": "7.1.2",
         "path": "node_modules/glob/glob.js"
       },
       {
@@ -192,7 +263,7 @@
       },
       {
         "name": "minimatch",
-        "version": "3.0.3",
+        "version": "3.0.4",
         "path": "node_modules/minimatch/minimatch.js"
       },
       {
@@ -232,12 +303,12 @@
       },
       {
         "name": "rimraf",
-        "version": "2.6.1",
+        "version": "2.6.2",
         "path": "node_modules/rimraf/rimraf.js"
       },
       {
         "name": "sortablejs",
-        "version": "1.5.1",
+        "version": "1.7.0",
         "path": "node_modules/sortablejs/Sortable.js"
       },
       {
@@ -272,19 +343,9 @@
       }
     ],
     "extensions": {
-      ".coffee": [
-        "lib/show-todo.coffee",
-        "lib/todo-collection.coffee",
-        "lib/todo-indicator-view.coffee",
-        "lib/todo-item-view.coffee",
-        "lib/todo-markdown.coffee",
-        "lib/todo-model.coffee",
-        "lib/todo-options-view.coffee",
-        "lib/todo-regex.coffee",
-        "lib/todo-table-view.coffee",
-        "lib/todo-view.coffee"
-      ],
       ".js": [
+        "lib/main.js",
+        "lib/todo-show.js",
         "node_modules/async/dist/async.js",
         "node_modules/async/dist/async.min.js",
         "node_modules/async/lib/async.js",
@@ -356,6 +417,7 @@
         "node_modules/es5-ext/array/#/indexes-of.js",
         "node_modules/es5-ext/array/#/intersection.js",
         "node_modules/es5-ext/array/#/is-copy.js",
+        "node_modules/es5-ext/array/#/is-empty.js",
         "node_modules/es5-ext/array/#/is-uniq.js",
         "node_modules/es5-ext/array/#/keys/implement.js",
         "node_modules/es5-ext/array/#/keys/index.js",
@@ -408,8 +470,10 @@
         "node_modules/es5-ext/date/#/floor-year.js",
         "node_modules/es5-ext/date/#/format.js",
         "node_modules/es5-ext/date/#/index.js",
+        "node_modules/es5-ext/date/ensure-time-value.js",
         "node_modules/es5-ext/date/index.js",
         "node_modules/es5-ext/date/is-date.js",
+        "node_modules/es5-ext/date/is-time-value.js",
         "node_modules/es5-ext/date/valid-date.js",
         "node_modules/es5-ext/error/#/index.js",
         "node_modules/es5-ext/error/#/throw.js",
@@ -572,6 +636,7 @@
         "node_modules/es5-ext/object/assign/index.js",
         "node_modules/es5-ext/object/assign/is-implemented.js",
         "node_modules/es5-ext/object/assign/shim.js",
+        "node_modules/es5-ext/object/assign-deep.js",
         "node_modules/es5-ext/object/clear.js",
         "node_modules/es5-ext/object/compact.js",
         "node_modules/es5-ext/object/compare.js",
@@ -579,8 +644,11 @@
         "node_modules/es5-ext/object/copy.js",
         "node_modules/es5-ext/object/count.js",
         "node_modules/es5-ext/object/create.js",
+        "node_modules/es5-ext/object/ensure-array.js",
+        "node_modules/es5-ext/object/ensure-finite-number.js",
         "node_modules/es5-ext/object/ensure-natural-number-value.js",
         "node_modules/es5-ext/object/ensure-natural-number.js",
+        "node_modules/es5-ext/object/ensure-promise.js",
         "node_modules/es5-ext/object/eq.js",
         "node_modules/es5-ext/object/every.js",
         "node_modules/es5-ext/object/filter.js",
@@ -596,9 +664,14 @@
         "node_modules/es5-ext/object/is-copy-deep.js",
         "node_modules/es5-ext/object/is-copy.js",
         "node_modules/es5-ext/object/is-empty.js",
+        "node_modules/es5-ext/object/is-finite-number.js",
+        "node_modules/es5-ext/object/is-natural-number-value.js",
+        "node_modules/es5-ext/object/is-natural-number.js",
         "node_modules/es5-ext/object/is-number-value.js",
         "node_modules/es5-ext/object/is-object.js",
+        "node_modules/es5-ext/object/is-plain-function.js",
         "node_modules/es5-ext/object/is-plain-object.js",
+        "node_modules/es5-ext/object/is-promise.js",
         "node_modules/es5-ext/object/is-value.js",
         "node_modules/es5-ext/object/is.js",
         "node_modules/es5-ext/object/key-of.js",
@@ -628,6 +701,9 @@
         "node_modules/es5-ext/object/validate-array-like.js",
         "node_modules/es5-ext/object/validate-stringifiable-value.js",
         "node_modules/es5-ext/object/validate-stringifiable.js",
+        "node_modules/es5-ext/optional-chaining.js",
+        "node_modules/es5-ext/promise/index.js",
+        "node_modules/es5-ext/promise/lazy.js",
         "node_modules/es5-ext/reg-exp/#/index.js",
         "node_modules/es5-ext/reg-exp/#/is-sticky.js",
         "node_modules/es5-ext/reg-exp/#/is-unicode.js",
@@ -655,6 +731,7 @@
         "node_modules/es5-ext/reg-exp/index.js",
         "node_modules/es5-ext/reg-exp/is-reg-exp.js",
         "node_modules/es5-ext/reg-exp/valid-reg-exp.js",
+        "node_modules/es5-ext/safe-to-string.js",
         "node_modules/es5-ext/string/#/@@iterator/implement.js",
         "node_modules/es5-ext/string/#/@@iterator/index.js",
         "node_modules/es5-ext/string/#/@@iterator/is-implemented.js",
@@ -671,6 +748,7 @@
         "node_modules/es5-ext/string/#/contains/index.js",
         "node_modules/es5-ext/string/#/contains/is-implemented.js",
         "node_modules/es5-ext/string/#/contains/shim.js",
+        "node_modules/es5-ext/string/#/count.js",
         "node_modules/es5-ext/string/#/ends-with/implement.js",
         "node_modules/es5-ext/string/#/ends-with/index.js",
         "node_modules/es5-ext/string/#/ends-with/is-implemented.js",
@@ -704,10 +782,12 @@
         "node_modules/es5-ext/string/index.js",
         "node_modules/es5-ext/string/is-string.js",
         "node_modules/es5-ext/string/random-uniq.js",
+        "node_modules/es5-ext/string/random.js",
         "node_modules/es5-ext/string/raw/implement.js",
         "node_modules/es5-ext/string/raw/index.js",
         "node_modules/es5-ext/string/raw/is-implemented.js",
         "node_modules/es5-ext/string/raw/shim.js",
+        "node_modules/es5-ext/to-short-string-representation.js",
         "node_modules/es6-iterator/#/chain.js",
         "node_modules/es6-iterator/array.js",
         "node_modules/es6-iterator/for-of.js",
@@ -730,6 +810,10 @@
         "node_modules/es6-weak-map/is-weak-map.js",
         "node_modules/es6-weak-map/polyfill.js",
         "node_modules/es6-weak-map/valid-weak-map.js",
+        "node_modules/event-kit/lib/composite-disposable.js",
+        "node_modules/event-kit/lib/disposable.js",
+        "node_modules/event-kit/lib/emitter.js",
+        "node_modules/event-kit/lib/event-kit.js",
         "node_modules/fs-plus/lib/fs-plus.js",
         "node_modules/fs.realpath/index.js",
         "node_modules/fs.realpath/old.js",
@@ -859,6 +943,17 @@
         "node_modules/underscore-plus/lib/underscore-plus.js",
         "node_modules/wrappy/wrappy.js"
       ],
+      ".coffee": [
+        "lib/todo-collection.coffee",
+        "lib/todo-indicator-view.coffee",
+        "lib/todo-item-view.coffee",
+        "lib/todo-markdown.coffee",
+        "lib/todo-model.coffee",
+        "lib/todo-options-view.coffee",
+        "lib/todo-regex.coffee",
+        "lib/todo-table-view.coffee",
+        "lib/todo-view.coffee"
+      ],
       ".json": [
         "node_modules/async/package.json",
         "node_modules/atom-space-pen-views/package.json",
@@ -871,9 +966,12 @@
         "node_modules/es5-ext/node_modules/es6-iterator/package.json",
         "node_modules/es5-ext/node_modules/es6-symbol/package.json",
         "node_modules/es5-ext/package.json",
+        "node_modules/es5-ext/promise/.eslintrc.json",
         "node_modules/es6-iterator/package.json",
         "node_modules/es6-symbol/package.json",
         "node_modules/es6-weak-map/package.json",
+        "node_modules/event-kit/api.json",
+        "node_modules/event-kit/package.json",
         "node_modules/fs-plus/package.json",
         "node_modules/fs.realpath/package.json",
         "node_modules/fuzzaldrin/package.json",
@@ -913,6 +1011,7 @@
         ],
         "dependencies": {
           "atom-space-pen-views": "^2.0.3",
+          "event-kit": "^2.3.0",
           "fs-plus": "2.x",
           "sortablejs": "^1.4.2",
           "temp": "^0.8.3",
@@ -934,7 +1033,7 @@
           "node_modules/brace-expansion"
         ],
         "dependencies": {
-          "balanced-match": "^0.4.1",
+          "balanced-match": "^1.0.0",
           "concat-map": "0.0.1"
         }
       },
@@ -1019,6 +1118,7 @@
           "node_modules/es5-ext/object/assign",
           "node_modules/es5-ext/object/keys",
           "node_modules/es5-ext/object/set-prototype-of",
+          "node_modules/es5-ext/promise",
           "node_modules/es5-ext/reg-exp/#",
           "node_modules/es5-ext/reg-exp/#/match",
           "node_modules/es5-ext/reg-exp/#/replace",
@@ -1096,6 +1196,7 @@
           "node_modules/es5-ext/test/object/assign",
           "node_modules/es5-ext/test/object/keys",
           "node_modules/es5-ext/test/object/set-prototype-of",
+          "node_modules/es5-ext/test/promise",
           "node_modules/es5-ext/test/reg-exp/#",
           "node_modules/es5-ext/test/reg-exp/#/match",
           "node_modules/es5-ext/test/reg-exp/#/replace",
@@ -1117,8 +1218,8 @@
           "node_modules/es5-ext/test/string/raw"
         ],
         "dependencies": {
-          "es6-iterator": "2",
-          "es6-symbol": "~3.1"
+          "es6-iterator": "~2.0.3",
+          "es6-symbol": "~3.1.1"
         }
       },
       {
@@ -1139,8 +1240,8 @@
         ],
         "dependencies": {
           "d": "1",
-          "es5-ext": "^0.10.14",
-          "es6-symbol": "^3.1"
+          "es5-ext": "^0.10.35",
+          "es6-symbol": "^3.1.1"
         }
       },
       {
@@ -1208,7 +1309,7 @@
           "fs.realpath": "^1.0.0",
           "inflight": "^1.0.4",
           "inherits": "2",
-          "minimatch": "^3.0.2",
+          "minimatch": "^3.0.4",
           "once": "^1.3.0",
           "path-is-absolute": "^1.0.0"
         }
@@ -1236,7 +1337,7 @@
           "node_modules/minimatch"
         ],
         "dependencies": {
-          "brace-expansion": "^1.0.0"
+          "brace-expansion": "^1.1.7"
         }
       },
       {

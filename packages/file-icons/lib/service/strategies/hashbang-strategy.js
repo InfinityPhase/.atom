@@ -28,6 +28,10 @@ class HashbangStrategy extends HeaderStrategy {
 			? (tokens[2] || "").split("/").pop()
 			:  tokens[1];
 		
+		// TypeScript source which compiles an executable Node file (#606)
+		if("node" === name && /\.tsx?$/i.test(resource.name))
+			return null;
+		
 		let result = IconTables.matchInterpreter(name);
 		
 		// Valid hashbang, unrecognised interpreter
@@ -36,7 +40,7 @@ class HashbangStrategy extends HeaderStrategy {
 			
 			// Stats currently unavailable
 			if(null === executable){
-				const onStats = resource.onDidLoadStats(stats => {
+				const onStats = resource.onDidLoadStats(() => {
 					onStats.dispose();
 					if(resource.executable)
 						resource.icon.add(executableIcon, this.priority);

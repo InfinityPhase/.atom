@@ -1,17 +1,41 @@
 import {debounce} from "lodash"
-import {Diagnostic} from "typescript/lib/protocol"
-import {Linter, LinterMessage} from "../typings/linter"
-import {locationsToRange, systemPath} from "./atom/utils"
+import {Diagnostic, Location} from "typescript/lib/protocol"
+import {IndieDelegate, Message} from "atom/linter"
+import {locationsToRange, isLocationInRange} from "./atom/utils"
+import {CompositeDisposable} from "atom"
+import * as path from "path"
 
 /** Class that collects errors from all of the clients and pushes them to the Linter service */
 export class ErrorPusher {
-  private linter?: Linter
+  private linter?: IndieDelegate
   private errors: Map<string, Map<string, Diagnostic[]>> = new Map()
   private unusedAsInfo = true
+  private subscriptions = new CompositeDisposable()
+
+  constructor() {
+    this.subscriptions.add(
+      atom.config.observe("atom-typescript.unusedAsInfo", (unusedAsInfo: boolean) => {
+        this.unusedAsInfo = unusedAsInfo
+      }),
+    )
+    this.pushErrors = debounce(this.pushErrors.bind(this), 100)
+  }
+
+  /** Return any errors that cover the given location */
+  public getErrorsAt(filePath: string, loc: Location): Diagnostic[] {
+    const result: Diagnostic[] = []
+    for (const prefixed of this.errors.values()) {
+      const errors = prefixed.get(filePath)
+      if (errors) {
+        result.push(...errors.filter(err => isLocationInRange(loc, err)))
+      }
+    }
+    return result
+  }
 
   /** Set errors. Previous errors with the same prefix and filePath are going to be replaced */
-  setErrors(prefix: string | undefined, filePath: string | undefined, errors: Diagnostic[]) {
-    if (prefix == undefined || filePath == undefined) {
+  public setErrors(prefix: string | undefined, filePath: string | undefined, errors: Diagnostic[]) {
+    if (prefix === undefined || filePath === undefined) {
       console.warn("setErrors: prefix or filePath is undefined", prefix, filePath)
       return
     }
@@ -27,41 +51,51 @@ export class ErrorPusher {
     this.pushErrors()
   }
 
-  setUnusedAsInfo(unusedAsInfo: boolean) {
-    this.unusedAsInfo = unusedAsInfo
-  }
-
   /** Clear all errors */
-  clear() {
+  public clear() {
     if (this.linter) {
-      this.linter.deleteMessages()
+      this.linter.clearMessages()
     }
   }
 
-  setLinter(linter: Linter) {
+  public setLinter(linter: IndieDelegate) {
     this.linter = linter
     this.pushErrors()
   }
 
-  private pushErrors = debounce(() => {
-    const errors: LinterMessage[] = []
+  public dispose() {
+    this.subscriptions.dispose()
+    this.clear()
+  }
+
+  private pushErrors() {
+    const errors: Message[] = []
 
     for (const fileErrors of this.errors.values()) {
       for (const [filePath, diagnostics] of fileErrors) {
-        const _filePath = systemPath(filePath)
+        const normalizedFilePath = path.normalize(filePath)
         for (const diagnostic of diagnostics) {
+          // Add a bit of extra validation that we have the necessary locations since linter v2
+          // does not allow range-less messages anymore. This happens with configFileDiagnostics.
+          let {start, end} = diagnostic
+          if (!start || !end) {
+            start = end = {line: 1, offset: 1}
+          }
+
           errors.push({
-            type: this.unusedAsInfo && diagnostic.code === 6133 ? "Info" : "Error",
-            text: diagnostic.text,
-            filePath: _filePath,
-            range: diagnostic.start ? locationsToRange(diagnostic.start, diagnostic.end) : undefined
+            severity: this.unusedAsInfo && diagnostic.code === 6133 ? "info" : "error",
+            excerpt: diagnostic.text,
+            location: {
+              file: normalizedFilePath,
+              position: locationsToRange(start, end),
+            },
           })
         }
       }
     }
 
     if (this.linter) {
-      this.linter.setMessages(errors)
+      this.linter.setAllMessages(errors)
     }
-  }, 100)
+  }
 }

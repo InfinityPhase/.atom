@@ -1,0 +1,47 @@
+{
+  "_from": "file:/tmp/d-11818-1725-15q3dtu.ctx7/package.tgz",
+  "_id": "CutePastel-syntax@0.0.1",
+  "_inBundle": false,
+  "_integrity": "sha512-Ud7M4h3hWlOk/tFq6aZIrqUpmSq8RRwHbM+GbopacNrGRmAEe16ZkSTHqhPW6sHW3Tg3lHDhCTKJgs6fDmzz5g==",
+  "_location": "/CutePastel-syntax",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "file",
+    "where": "/tmp/apm-install-dir-11818-1725-1frl3lz.h4vq",
+    "raw": "/tmp/d-11818-1725-15q3dtu.ctx7/package.tgz",
+    "rawSpec": "/tmp/d-11818-1725-15q3dtu.ctx7/package.tgz",
+    "saveSpec": "file:/tmp/d-11818-1725-15q3dtu.ctx7/package.tgz",
+    "fetchSpec": "/tmp/d-11818-1725-15q3dtu.ctx7/package.tgz"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "/tmp/d-11818-1725-15q3dtu.ctx7/package.tgz",
+  "_spec": "/tmp/d-11818-1725-15q3dtu.ctx7/package.tgz",
+  "_where": "/tmp/apm-install-dir-11818-1725-1frl3lz.h4vq",
+  "bugs": {
+    "url": "https://github.com/Anna-Cantrell/cutepastel-syntax/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "A super cute pastel colored theme to make your workflow a little happier ^_^",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/Anna-Cantrell/cutepastel-syntax#readme",
+  "keywords": [
+    "syntax",
+    "theme",
+    "pastel",
+    "cute",
+    "pretty"
+  ],
+  "license": "MIT",
+  "name": "CutePastel-syntax",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anna-Cantrell/cutepastel-syntax.git"
+  },
+  "theme": "syntax",
+  "version": "0.0.1"
+}

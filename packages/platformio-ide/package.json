@@ -1,0 +1,1884 @@
+{
+  "_from": "file:/tmp/d-11828-10011-y0f20j.ps23/package.tgz",
+  "_id": "platformio-ide@2.1.2",
+  "_inBundle": false,
+  "_integrity": "sha512-VUFTaKzRGJbX97GhN7SYPwrIdgZPalEMuN8BDyg7BQ445GiMj9A3RV6uOEJfxVQ3FoS9rmR3GFn1kwAKBBWYaQ==",
+  "_location": "/platformio-ide",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "file",
+    "where": "/tmp/apm-install-dir-11828-10011-1ah0m1d.75fe",
+    "raw": "/tmp/d-11828-10011-y0f20j.ps23/package.tgz",
+    "rawSpec": "/tmp/d-11828-10011-y0f20j.ps23/package.tgz",
+    "saveSpec": "file:/tmp/d-11828-10011-y0f20j.ps23/package.tgz",
+    "fetchSpec": "/tmp/d-11828-10011-y0f20j.ps23/package.tgz"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "/tmp/d-11828-10011-y0f20j.ps23/package.tgz",
+  "_spec": "/tmp/d-11828-10011-y0f20j.ps23/package.tgz",
+  "_where": "/tmp/apm-install-dir-11828-10011-1ah0m1d.75fe",
+  "activationHooks": [
+    "core:loaded-shell-environment"
+  ],
+  "bugs": {
+    "url": "https://github.com/platformio/platformio-atom-ide/issues"
+  },
+  "bundleDependencies": false,
+  "consumedServices": {
+    "tool-bar": {
+      "versions": {
+        "<2.0.0": "consumeToolbar"
+      }
+    },
+    "platformioIDETerminal": {
+      "versions": {
+        "^1.0.0": "consumePlatformioIDETerminal"
+      }
+    },
+    "busy-signal": {
+      "versions": {
+        "^1.0.0": "consumeBusy"
+      }
+    },
+    "platformioIDEDebugger": {
+      "versions": {
+        "^1.0.0": "consumeDebugger"
+      }
+    }
+  },
+  "dependencies": {
+    "command-join": "^1.1.1",
+    "etch": "^0.12.6",
+    "fs-plus": "^3.0.1",
+    "ini": "^1.3.4",
+    "platformio-node-helpers": "^0.4.2",
+    "semver": "^5.3.0"
+  },
+  "deprecated": false,
+  "description": "Official PlatformIO IDE for IoT, Arduino, ARM mbed, Espressif (ESP8266/ESP32), STM32, PIC32, nRF51/nRF52, FPGA, CMSIS, SPL, AVR, Samsung ARTIK, libOpenCM3",
+  "devDependencies": {
+    "babel-eslint": "^8.1.2",
+    "esformatter": "^0.10.0",
+    "esformatter-jsx": "^8.0.1",
+    "eslint": "^4.1.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx": "0.0.2"
+  },
+  "engines": {
+    "atom": ">=1.13.0 <2.0.0"
+  },
+  "homepage": "https://github.com/platformio/platformio-atom-ide#readme",
+  "keywords": [
+    "PlatformIO",
+    "IoT",
+    "debugger",
+    "unittest",
+    "embedded",
+    "arduino",
+    "mbed",
+    "flash",
+    "firmware",
+    "esp8266",
+    "esp32",
+    "avr",
+    "arm",
+    "fpga",
+    "verilog",
+    "hardware",
+    "serial",
+    "monitor"
+  ],
+  "license": "Apache-2.0",
+  "main": "./lib/main",
+  "name": "platformio-ide",
+  "providedServices": {
+    "builder": {
+      "description": "PlatformIO IDE for Atom",
+      "versions": {
+        "2.0.0": "provideBuilder"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/platformio/platformio-atom-ide.git"
+  },
+  "scripts": {
+    "lint": "eslint --ext js lib || exit 0"
+  },
+  "version": "2.1.2",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [
+      {
+        "name": "ajv",
+        "version": "5.5.2",
+        "path": "node_modules/ajv/lib/ajv.js"
+      },
+      {
+        "name": "array-from",
+        "version": "2.1.1",
+        "path": "node_modules/array-from/index.js"
+      },
+      {
+        "name": "asn1",
+        "version": "0.2.3",
+        "path": "node_modules/asn1/lib/index.js"
+      },
+      {
+        "name": "assert-plus",
+        "version": "1.0.0",
+        "path": "node_modules/assert-plus/assert.js"
+      },
+      {
+        "name": "async",
+        "version": "1.5.2",
+        "path": "node_modules/async/lib/async.js"
+      },
+      {
+        "name": "asynckit",
+        "version": "0.4.0",
+        "path": "node_modules/asynckit/index.js"
+      },
+      {
+        "name": "aws-sign2",
+        "version": "0.7.0",
+        "path": "node_modules/aws-sign2/index.js"
+      },
+      {
+        "name": "aws4",
+        "version": "1.6.0",
+        "path": "node_modules/aws4/aws4.js"
+      },
+      {
+        "name": "balanced-match",
+        "version": "1.0.0",
+        "path": "node_modules/balanced-match/index.js"
+      },
+      {
+        "name": "bcrypt-pbkdf",
+        "version": "1.0.1",
+        "path": "node_modules/bcrypt-pbkdf/index.js"
+      },
+      {
+        "name": "boom",
+        "version": "4.3.1",
+        "path": "node_modules/boom/lib/index.js"
+      },
+      {
+        "name": "brace-expansion",
+        "version": "1.1.11",
+        "path": "node_modules/brace-expansion/index.js"
+      },
+      {
+        "name": "caseless",
+        "version": "0.12.0",
+        "path": "node_modules/caseless/index.js"
+      },
+      {
+        "name": "chownr",
+        "version": "1.0.1",
+        "path": "node_modules/chownr/chownr.js"
+      },
+      {
+        "name": "co",
+        "version": "4.6.0",
+        "path": "node_modules/co/index.js"
+      },
+      {
+        "name": "combined-stream",
+        "version": "1.0.6",
+        "path": "node_modules/combined-stream/lib/combined_stream.js"
+      },
+      {
+        "name": "command-join",
+        "version": "1.1.1",
+        "path": "node_modules/command-join/dist/command-join.js"
+      },
+      {
+        "name": "concat-map",
+        "version": "0.0.1",
+        "path": "node_modules/concat-map/index.js"
+      },
+      {
+        "name": "core-util-is",
+        "version": "1.0.2",
+        "path": "node_modules/core-util-is/lib/util.js"
+      },
+      {
+        "name": "cross-spawn",
+        "version": "6.0.5",
+        "path": "node_modules/cross-spawn/index.js"
+      },
+      {
+        "name": "cryptiles",
+        "version": "3.1.2",
+        "path": "node_modules/cryptiles/lib/index.js"
+      },
+      {
+        "name": "boom",
+        "version": "5.2.0",
+        "path": "node_modules/cryptiles/node_modules/boom/lib/index.js"
+      },
+      {
+        "name": "dashdash",
+        "version": "1.14.1",
+        "path": "node_modules/dashdash/lib/dashdash.js"
+      },
+      {
+        "name": "debug",
+        "version": "2.6.9",
+        "path": "node_modules/debug/src/index.js"
+      },
+      {
+        "name": "deep-is",
+        "version": "0.1.2",
+        "path": "node_modules/deep-is/index.js"
+      },
+      {
+        "name": "delayed-stream",
+        "version": "1.0.0",
+        "path": "node_modules/delayed-stream/lib/delayed_stream.js"
+      },
+      {
+        "name": "ecc-jsbn",
+        "version": "0.1.1",
+        "path": "node_modules/ecc-jsbn/index.js"
+      },
+      {
+        "name": "etch",
+        "version": "0.12.8",
+        "path": "node_modules/etch/lib/index.js"
+      },
+      {
+        "name": "eventsource",
+        "version": "0.1.6",
+        "path": "node_modules/eventsource/lib/eventsource.js"
+      },
+      {
+        "name": "extend",
+        "version": "3.0.1",
+        "path": "node_modules/extend/index.js"
+      },
+      {
+        "name": "extsprintf",
+        "version": "1.3.0",
+        "path": "node_modules/extsprintf/lib/extsprintf.js"
+      },
+      {
+        "name": "fast-deep-equal",
+        "version": "1.1.0",
+        "path": "node_modules/fast-deep-equal/index.js"
+      },
+      {
+        "name": "fast-json-stable-stringify",
+        "version": "2.0.0",
+        "path": "node_modules/fast-json-stable-stringify/index.js"
+      },
+      {
+        "name": "faye-websocket",
+        "version": "0.11.1",
+        "path": "node_modules/faye-websocket/lib/faye/websocket.js"
+      },
+      {
+        "name": "forever-agent",
+        "version": "0.6.1",
+        "path": "node_modules/forever-agent/index.js"
+      },
+      {
+        "name": "form-data",
+        "version": "2.3.2",
+        "path": "node_modules/form-data/lib/form_data.js"
+      },
+      {
+        "name": "fs-minipass",
+        "version": "1.2.5",
+        "path": "node_modules/fs-minipass/index.js"
+      },
+      {
+        "name": "fs-plus",
+        "version": "3.0.2",
+        "path": "node_modules/fs-plus/lib/fs-plus.js"
+      },
+      {
+        "name": "fs.realpath",
+        "version": "1.0.0",
+        "path": "node_modules/fs.realpath/index.js"
+      },
+      {
+        "name": "getpass",
+        "version": "0.1.7",
+        "path": "node_modules/getpass/lib/index.js"
+      },
+      {
+        "name": "glob",
+        "version": "7.1.2",
+        "path": "node_modules/glob/glob.js"
+      },
+      {
+        "name": "har-schema",
+        "version": "2.0.0",
+        "path": "node_modules/har-schema/lib/index.js"
+      },
+      {
+        "name": "har-validator",
+        "version": "5.0.3",
+        "path": "node_modules/har-validator/lib/promise.js"
+      },
+      {
+        "name": "hawk",
+        "version": "6.0.2",
+        "path": "node_modules/hawk/lib/index.js"
+      },
+      {
+        "name": "hoek",
+        "version": "4.2.1",
+        "path": "node_modules/hoek/lib/index.js"
+      },
+      {
+        "name": "http-parser-js",
+        "version": "0.4.11",
+        "path": "node_modules/http-parser-js/http-parser.js"
+      },
+      {
+        "name": "http-signature",
+        "version": "1.2.0",
+        "path": "node_modules/http-signature/lib/index.js"
+      },
+      {
+        "name": "inflight",
+        "version": "1.0.6",
+        "path": "node_modules/inflight/inflight.js"
+      },
+      {
+        "name": "inherits",
+        "version": "2.0.3",
+        "path": "node_modules/inherits/inherits.js"
+      },
+      {
+        "name": "ini",
+        "version": "1.3.5",
+        "path": "node_modules/ini/ini.js"
+      },
+      {
+        "name": "is-typedarray",
+        "version": "1.0.0",
+        "path": "node_modules/is-typedarray/index.js"
+      },
+      {
+        "name": "is2",
+        "version": "0.0.9",
+        "path": "node_modules/is2/lib/is2.js"
+      },
+      {
+        "name": "isexe",
+        "version": "2.0.0",
+        "path": "node_modules/isexe/index.js"
+      },
+      {
+        "name": "isstream",
+        "version": "0.1.2",
+        "path": "node_modules/isstream/isstream.js"
+      },
+      {
+        "name": "jsbn",
+        "version": "0.1.1",
+        "path": "node_modules/jsbn/index.js"
+      },
+      {
+        "name": "json-schema",
+        "version": "0.2.3",
+        "path": "node_modules/json-schema/lib/validate.js"
+      },
+      {
+        "name": "json-schema-traverse",
+        "version": "0.3.1",
+        "path": "node_modules/json-schema-traverse/index.js"
+      },
+      {
+        "name": "json-stringify-safe",
+        "version": "5.0.1",
+        "path": "node_modules/json-stringify-safe/stringify.js"
+      },
+      {
+        "name": "json3",
+        "version": "3.3.2",
+        "path": "node_modules/json3/lib/json3.js"
+      },
+      {
+        "name": "jsonrpc-lite",
+        "version": "1.3.0",
+        "path": "node_modules/jsonrpc-lite/jsonrpc.js"
+      },
+      {
+        "name": "jsprim",
+        "version": "1.4.1",
+        "path": "node_modules/jsprim/lib/jsprim.js"
+      },
+      {
+        "name": "mime-db",
+        "version": "1.33.0",
+        "path": "node_modules/mime-db/index.js"
+      },
+      {
+        "name": "mime-types",
+        "version": "2.1.18",
+        "path": "node_modules/mime-types/index.js"
+      },
+      {
+        "name": "minimatch",
+        "version": "3.0.4",
+        "path": "node_modules/minimatch/minimatch.js"
+      },
+      {
+        "name": "minimist",
+        "version": "0.0.8",
+        "path": "node_modules/minimist/index.js"
+      },
+      {
+        "name": "minipass",
+        "version": "2.2.1",
+        "path": "node_modules/minipass/index.js"
+      },
+      {
+        "name": "minizlib",
+        "version": "1.1.0",
+        "path": "node_modules/minizlib/index.js"
+      },
+      {
+        "name": "mkdirp",
+        "version": "0.5.1",
+        "path": "node_modules/mkdirp/index.js"
+      },
+      {
+        "name": "ms",
+        "version": "2.0.0",
+        "path": "node_modules/ms/index.js"
+      },
+      {
+        "name": "nice-try",
+        "version": "1.0.4",
+        "path": "node_modules/nice-try/src/index.js"
+      },
+      {
+        "name": "oauth-sign",
+        "version": "0.8.2",
+        "path": "node_modules/oauth-sign/index.js"
+      },
+      {
+        "name": "once",
+        "version": "1.4.0",
+        "path": "node_modules/once/once.js"
+      },
+      {
+        "name": "original",
+        "version": "1.0.0",
+        "path": "node_modules/original/index.js"
+      },
+      {
+        "name": "querystringify",
+        "version": "0.0.4",
+        "path": "node_modules/original/node_modules/querystringify/index.js"
+      },
+      {
+        "name": "url-parse",
+        "version": "1.0.5",
+        "path": "node_modules/original/node_modules/url-parse/index.js"
+      },
+      {
+        "name": "os-tmpdir",
+        "version": "1.0.2",
+        "path": "node_modules/os-tmpdir/index.js"
+      },
+      {
+        "name": "path-is-absolute",
+        "version": "1.0.1",
+        "path": "node_modules/path-is-absolute/index.js"
+      },
+      {
+        "name": "path-key",
+        "version": "2.0.1",
+        "path": "node_modules/path-key/index.js"
+      },
+      {
+        "name": "performance-now",
+        "version": "2.1.0",
+        "path": "node_modules/performance-now/lib/performance-now.js"
+      },
+      {
+        "name": "platformio-node-helpers",
+        "version": "0.4.2",
+        "path": "node_modules/platformio-node-helpers/lib/index.js"
+      },
+      {
+        "name": "punycode",
+        "version": "1.4.1",
+        "path": "node_modules/punycode/punycode.js"
+      },
+      {
+        "name": "q",
+        "version": "0.9.7",
+        "path": "node_modules/q/q.js"
+      },
+      {
+        "name": "qs",
+        "version": "6.5.1",
+        "path": "node_modules/qs/lib/index.js"
+      },
+      {
+        "name": "querystringify",
+        "version": "1.0.0",
+        "path": "node_modules/querystringify/index.js"
+      },
+      {
+        "name": "repeat-string",
+        "version": "1.6.1",
+        "path": "node_modules/repeat-string/index.js"
+      },
+      {
+        "name": "request",
+        "version": "2.83.0",
+        "path": "node_modules/request/index.js"
+      },
+      {
+        "name": "requires-port",
+        "version": "1.0.0",
+        "path": "node_modules/requires-port/index.js"
+      },
+      {
+        "name": "rimraf",
+        "version": "2.6.2",
+        "path": "node_modules/rimraf/rimraf.js"
+      },
+      {
+        "name": "safe-buffer",
+        "version": "5.1.1",
+        "path": "node_modules/safe-buffer/index.js"
+      },
+      {
+        "name": "semver",
+        "version": "5.5.0",
+        "path": "node_modules/semver/semver.js"
+      },
+      {
+        "name": "shebang-command",
+        "version": "1.2.0",
+        "path": "node_modules/shebang-command/index.js"
+      },
+      {
+        "name": "shebang-regex",
+        "version": "1.0.0",
+        "path": "node_modules/shebang-regex/index.js"
+      },
+      {
+        "name": "sntp",
+        "version": "2.1.0",
+        "path": "node_modules/sntp/lib/index.js"
+      },
+      {
+        "name": "sockjs-client",
+        "version": "1.1.4",
+        "path": "node_modules/sockjs-client/lib/entry.js"
+      },
+      {
+        "name": "sshpk",
+        "version": "1.13.1",
+        "path": "node_modules/sshpk/lib/index.js"
+      },
+      {
+        "name": "stringstream",
+        "version": "0.0.5",
+        "path": "node_modules/stringstream/stringstream.js"
+      },
+      {
+        "name": "tar",
+        "version": "4.4.0",
+        "path": "node_modules/tar/index.js"
+      },
+      {
+        "name": "tcp-port-used",
+        "version": "0.1.2",
+        "path": "node_modules/tcp-port-used/index.js"
+      },
+      {
+        "name": "debug",
+        "version": "0.7.4",
+        "path": "node_modules/tcp-port-used/node_modules/debug/lib/debug.js"
+      },
+      {
+        "name": "tmp",
+        "version": "0.0.33",
+        "path": "node_modules/tmp/lib/tmp.js"
+      },
+      {
+        "name": "tough-cookie",
+        "version": "2.3.4",
+        "path": "node_modules/tough-cookie/lib/cookie.js"
+      },
+      {
+        "name": "tunnel-agent",
+        "version": "0.6.0",
+        "path": "node_modules/tunnel-agent/index.js"
+      },
+      {
+        "name": "tweetnacl",
+        "version": "0.14.5",
+        "path": "node_modules/tweetnacl/nacl-fast.js"
+      },
+      {
+        "name": "underscore",
+        "version": "1.6.0",
+        "path": "node_modules/underscore/underscore.js"
+      },
+      {
+        "name": "underscore-plus",
+        "version": "1.6.6",
+        "path": "node_modules/underscore-plus/lib/underscore-plus.js"
+      },
+      {
+        "name": "url-parse",
+        "version": "1.2.0",
+        "path": "node_modules/url-parse/index.js"
+      },
+      {
+        "name": "uuid",
+        "version": "3.2.1",
+        "path": "node_modules/uuid/index.js"
+      },
+      {
+        "name": "verror",
+        "version": "1.10.0",
+        "path": "node_modules/verror/lib/verror.js"
+      },
+      {
+        "name": "websocket-driver",
+        "version": "0.7.0",
+        "path": "node_modules/websocket-driver/lib/websocket/driver.js"
+      },
+      {
+        "name": "websocket-extensions",
+        "version": "0.1.3",
+        "path": "node_modules/websocket-extensions/lib/websocket_extensions.js"
+      },
+      {
+        "name": "which",
+        "version": "1.3.0",
+        "path": "node_modules/which/which.js"
+      },
+      {
+        "name": "wrappy",
+        "version": "1.0.2",
+        "path": "node_modules/wrappy/wrappy.js"
+      },
+      {
+        "name": "yallist",
+        "version": "3.0.2",
+        "path": "node_modules/yallist/yallist.js"
+      }
+    ],
+    "extensions": {
+      ".js": [
+        ".eslintrc.js",
+        "lib/base-view.js",
+        "lib/config.js",
+        "lib/home/view.js",
+        "lib/installer/ide.js",
+        "lib/installer/manager.js",
+        "lib/installer/progress-modal.js",
+        "lib/installer/python-prompt.js",
+        "lib/installer/stages/atom-dependencies.js",
+        "lib/installer/stages/code-completion-engine.js",
+        "lib/installer/stages/configuration.js",
+        "lib/installer/state-storage.js",
+        "lib/main.js",
+        "lib/maintenance.js",
+        "lib/project/helpers.js",
+        "lib/project/indexer.js",
+        "lib/project/observer.js",
+        "lib/serial-monitor/command.js",
+        "lib/serial-monitor/view.js",
+        "lib/services/build.js",
+        "lib/services/busy.js",
+        "lib/services/debugger.js",
+        "lib/services/terminal.js",
+        "lib/services/toolbar.js",
+        "lib/utils.js",
+        "lib/view.js",
+        "node_modules/ajv/.tonic_example.js",
+        "node_modules/ajv/dist/ajv.bundle.js",
+        "node_modules/ajv/dist/ajv.min.js",
+        "node_modules/ajv/dist/nodent.min.js",
+        "node_modules/ajv/dist/regenerator.min.js",
+        "node_modules/ajv/lib/$data.js",
+        "node_modules/ajv/lib/ajv.js",
+        "node_modules/ajv/lib/cache.js",
+        "node_modules/ajv/lib/compile/_rules.js",
+        "node_modules/ajv/lib/compile/async.js",
+        "node_modules/ajv/lib/compile/equal.js",
+        "node_modules/ajv/lib/compile/error_classes.js",
+        "node_modules/ajv/lib/compile/formats.js",
+        "node_modules/ajv/lib/compile/index.js",
+        "node_modules/ajv/lib/compile/resolve.js",
+        "node_modules/ajv/lib/compile/rules.js",
+        "node_modules/ajv/lib/compile/schema_obj.js",
+        "node_modules/ajv/lib/compile/ucs2length.js",
+        "node_modules/ajv/lib/compile/util.js",
+        "node_modules/ajv/lib/dotjs/_limit.js",
+        "node_modules/ajv/lib/dotjs/_limitItems.js",
+        "node_modules/ajv/lib/dotjs/_limitLength.js",
+        "node_modules/ajv/lib/dotjs/_limitProperties.js",
+        "node_modules/ajv/lib/dotjs/allOf.js",
+        "node_modules/ajv/lib/dotjs/anyOf.js",
+        "node_modules/ajv/lib/dotjs/const.js",
+        "node_modules/ajv/lib/dotjs/contains.js",
+        "node_modules/ajv/lib/dotjs/custom.js",
+        "node_modules/ajv/lib/dotjs/dependencies.js",
+        "node_modules/ajv/lib/dotjs/enum.js",
+        "node_modules/ajv/lib/dotjs/format.js",
+        "node_modules/ajv/lib/dotjs/items.js",
+        "node_modules/ajv/lib/dotjs/multipleOf.js",
+        "node_modules/ajv/lib/dotjs/not.js",
+        "node_modules/ajv/lib/dotjs/oneOf.js",
+        "node_modules/ajv/lib/dotjs/pattern.js",
+        "node_modules/ajv/lib/dotjs/properties.js",
+        "node_modules/ajv/lib/dotjs/propertyNames.js",
+        "node_modules/ajv/lib/dotjs/ref.js",
+        "node_modules/ajv/lib/dotjs/required.js",
+        "node_modules/ajv/lib/dotjs/uniqueItems.js",
+        "node_modules/ajv/lib/dotjs/validate.js",
+        "node_modules/ajv/lib/keyword.js",
+        "node_modules/ajv/lib/patternGroups.js",
+        "node_modules/ajv/scripts/bundle.js",
+        "node_modules/ajv/scripts/compile-dots.js",
+        "node_modules/array-from/index.js",
+        "node_modules/array-from/polyfill.js",
+        "node_modules/array-from/test.js",
+        "node_modules/asn1/lib/ber/errors.js",
+        "node_modules/asn1/lib/ber/index.js",
+        "node_modules/asn1/lib/ber/reader.js",
+        "node_modules/asn1/lib/ber/types.js",
+        "node_modules/asn1/lib/ber/writer.js",
+        "node_modules/asn1/lib/index.js",
+        "node_modules/asn1/tst/ber/reader.test.js",
+        "node_modules/asn1/tst/ber/writer.test.js",
+        "node_modules/assert-plus/assert.js",
+        "node_modules/async/dist/async.js",
+        "node_modules/async/dist/async.min.js",
+        "node_modules/async/lib/async.js",
+        "node_modules/asynckit/bench.js",
+        "node_modules/asynckit/index.js",
+        "node_modules/asynckit/lib/abort.js",
+        "node_modules/asynckit/lib/async.js",
+        "node_modules/asynckit/lib/defer.js",
+        "node_modules/asynckit/lib/iterate.js",
+        "node_modules/asynckit/lib/readable_asynckit.js",
+        "node_modules/asynckit/lib/readable_parallel.js",
+        "node_modules/asynckit/lib/readable_serial.js",
+        "node_modules/asynckit/lib/readable_serial_ordered.js",
+        "node_modules/asynckit/lib/state.js",
+        "node_modules/asynckit/lib/streamify.js",
+        "node_modules/asynckit/lib/terminator.js",
+        "node_modules/asynckit/parallel.js",
+        "node_modules/asynckit/serial.js",
+        "node_modules/asynckit/serialOrdered.js",
+        "node_modules/asynckit/stream.js",
+        "node_modules/aws-sign2/index.js",
+        "node_modules/aws4/aws4.js",
+        "node_modules/aws4/lru.js",
+        "node_modules/balanced-match/index.js",
+        "node_modules/bcrypt-pbkdf/index.js",
+        "node_modules/boom/lib/index.js",
+        "node_modules/brace-expansion/index.js",
+        "node_modules/caseless/index.js",
+        "node_modules/caseless/test.js",
+        "node_modules/chownr/chownr.js",
+        "node_modules/co/index.js",
+        "node_modules/combined-stream/lib/combined_stream.js",
+        "node_modules/combined-stream/lib/defer.js",
+        "node_modules/command-join/dist/command-join.js",
+        "node_modules/concat-map/example/map.js",
+        "node_modules/concat-map/index.js",
+        "node_modules/core-util-is/lib/util.js",
+        "node_modules/core-util-is/test.js",
+        "node_modules/cross-spawn/index.js",
+        "node_modules/cross-spawn/lib/enoent.js",
+        "node_modules/cross-spawn/lib/parse.js",
+        "node_modules/cross-spawn/lib/util/escape.js",
+        "node_modules/cross-spawn/lib/util/readShebang.js",
+        "node_modules/cross-spawn/lib/util/resolveCommand.js",
+        "node_modules/cryptiles/lib/index.js",
+        "node_modules/cryptiles/node_modules/boom/lib/index.js",
+        "node_modules/dashdash/lib/dashdash.js",
+        "node_modules/debug/karma.conf.js",
+        "node_modules/debug/node.js",
+        "node_modules/debug/src/browser.js",
+        "node_modules/debug/src/debug.js",
+        "node_modules/debug/src/index.js",
+        "node_modules/debug/src/inspector-log.js",
+        "node_modules/debug/src/node.js",
+        "node_modules/deep-is/example/cmp.js",
+        "node_modules/deep-is/index.js",
+        "node_modules/delayed-stream/lib/delayed_stream.js",
+        "node_modules/ecc-jsbn/index.js",
+        "node_modules/ecc-jsbn/lib/ec.js",
+        "node_modules/ecc-jsbn/lib/sec.js",
+        "node_modules/ecc-jsbn/test.js",
+        "node_modules/etch/dist/component-helpers.js",
+        "node_modules/etch/dist/default-scheduler.js",
+        "node_modules/etch/dist/dom.js",
+        "node_modules/etch/dist/event-listener-props.js",
+        "node_modules/etch/dist/index.js",
+        "node_modules/etch/dist/patch.js",
+        "node_modules/etch/dist/render.js",
+        "node_modules/etch/dist/scheduler-assignment.js",
+        "node_modules/etch/dist/svg-attribute-translations.js",
+        "node_modules/etch/dist/svg-tags.js",
+        "node_modules/etch/dist/update-props.js",
+        "node_modules/etch/lib/component-helpers.js",
+        "node_modules/etch/lib/default-scheduler.js",
+        "node_modules/etch/lib/dom.js",
+        "node_modules/etch/lib/event-listener-props.js",
+        "node_modules/etch/lib/index.js",
+        "node_modules/etch/lib/patch.js",
+        "node_modules/etch/lib/render.js",
+        "node_modules/etch/lib/scheduler-assignment.js",
+        "node_modules/etch/lib/svg-attribute-translations.js",
+        "node_modules/etch/lib/svg-tags.js",
+        "node_modules/etch/lib/update-props.js",
+        "node_modules/eventsource/example.js",
+        "node_modules/eventsource/lib/eventsource.js",
+        "node_modules/extend/index.js",
+        "node_modules/extsprintf/lib/extsprintf.js",
+        "node_modules/fast-deep-equal/index.js",
+        "node_modules/fast-json-stable-stringify/benchmark/index.js",
+        "node_modules/fast-json-stable-stringify/example/key_cmp.js",
+        "node_modules/fast-json-stable-stringify/example/nested.js",
+        "node_modules/fast-json-stable-stringify/example/str.js",
+        "node_modules/fast-json-stable-stringify/example/value_cmp.js",
+        "node_modules/fast-json-stable-stringify/index.js",
+        "node_modules/faye-websocket/examples/autobahn_client.js",
+        "node_modules/faye-websocket/examples/client.js",
+        "node_modules/faye-websocket/examples/proxy_server.js",
+        "node_modules/faye-websocket/examples/server.js",
+        "node_modules/faye-websocket/lib/faye/eventsource.js",
+        "node_modules/faye-websocket/lib/faye/websocket/api/event.js",
+        "node_modules/faye-websocket/lib/faye/websocket/api/event_target.js",
+        "node_modules/faye-websocket/lib/faye/websocket/api.js",
+        "node_modules/faye-websocket/lib/faye/websocket/client.js",
+        "node_modules/faye-websocket/lib/faye/websocket.js",
+        "node_modules/forever-agent/index.js",
+        "node_modules/form-data/lib/browser.js",
+        "node_modules/form-data/lib/form_data.js",
+        "node_modules/form-data/lib/populate.js",
+        "node_modules/fs-minipass/index.js",
+        "node_modules/fs-plus/lib/fs-plus.js",
+        "node_modules/fs.realpath/index.js",
+        "node_modules/fs.realpath/old.js",
+        "node_modules/getpass/lib/index.js",
+        "node_modules/glob/common.js",
+        "node_modules/glob/glob.js",
+        "node_modules/glob/sync.js",
+        "node_modules/har-schema/lib/index.js",
+        "node_modules/har-validator/lib/async.js",
+        "node_modules/har-validator/lib/error.js",
+        "node_modules/har-validator/lib/promise.js",
+        "node_modules/hawk/client.js",
+        "node_modules/hawk/dist/browser.js",
+        "node_modules/hawk/lib/browser.js",
+        "node_modules/hawk/lib/client.js",
+        "node_modules/hawk/lib/crypto.js",
+        "node_modules/hawk/lib/index.js",
+        "node_modules/hawk/lib/server.js",
+        "node_modules/hawk/lib/utils.js",
+        "node_modules/hoek/lib/escape.js",
+        "node_modules/hoek/lib/index.js",
+        "node_modules/http-parser-js/http-parser.js",
+        "node_modules/http-signature/lib/index.js",
+        "node_modules/http-signature/lib/parser.js",
+        "node_modules/http-signature/lib/signer.js",
+        "node_modules/http-signature/lib/utils.js",
+        "node_modules/http-signature/lib/verify.js",
+        "node_modules/inflight/inflight.js",
+        "node_modules/inherits/inherits.js",
+        "node_modules/inherits/inherits_browser.js",
+        "node_modules/ini/ini.js",
+        "node_modules/is-typedarray/index.js",
+        "node_modules/is-typedarray/test.js",
+        "node_modules/is2/jsdoc/scripts/prettify/lang-css.js",
+        "node_modules/is2/jsdoc/scripts/prettify/prettify.js",
+        "node_modules/is2/lib/is2.js",
+        "node_modules/isexe/index.js",
+        "node_modules/isexe/mode.js",
+        "node_modules/isexe/windows.js",
+        "node_modules/isstream/isstream.js",
+        "node_modules/isstream/test.js",
+        "node_modules/jsbn/example.js",
+        "node_modules/jsbn/index.js",
+        "node_modules/json-schema/lib/links.js",
+        "node_modules/json-schema/lib/validate.js",
+        "node_modules/json-schema-traverse/index.js",
+        "node_modules/json-stringify-safe/stringify.js",
+        "node_modules/json3/lib/json3.js",
+        "node_modules/json3/lib/json3.min.js",
+        "node_modules/jsonrpc-lite/jsonrpc.js",
+        "node_modules/jsprim/lib/jsprim.js",
+        "node_modules/mime-db/index.js",
+        "node_modules/mime-types/index.js",
+        "node_modules/minimatch/minimatch.js",
+        "node_modules/minimist/example/parse.js",
+        "node_modules/minimist/index.js",
+        "node_modules/minipass/b.js",
+        "node_modules/minipass/bench/lib/extend-minipass.js",
+        "node_modules/minipass/bench/lib/extend-through2.js",
+        "node_modules/minipass/bench/lib/extend-transform.js",
+        "node_modules/minipass/bench/lib/nullsink.js",
+        "node_modules/minipass/bench/lib/numbers.js",
+        "node_modules/minipass/bench/lib/timer.js",
+        "node_modules/minipass/bench/test.js",
+        "node_modules/minipass/d.js",
+        "node_modules/minipass/e.js",
+        "node_modules/minipass/eos.js",
+        "node_modules/minipass/index.js",
+        "node_modules/minizlib/constants.js",
+        "node_modules/minizlib/index.js",
+        "node_modules/mkdirp/bin/cmd.js",
+        "node_modules/mkdirp/examples/pow.js",
+        "node_modules/mkdirp/index.js",
+        "node_modules/ms/index.js",
+        "node_modules/nice-try/src/index.js",
+        "node_modules/oauth-sign/index.js",
+        "node_modules/once/once.js",
+        "node_modules/original/index.js",
+        "node_modules/original/node_modules/querystringify/index.js",
+        "node_modules/original/node_modules/url-parse/fuzzy.js",
+        "node_modules/original/node_modules/url-parse/index.js",
+        "node_modules/original/node_modules/url-parse/lolcation.js",
+        "node_modules/original/node_modules/url-parse/test.js",
+        "node_modules/original/test.js",
+        "node_modules/os-tmpdir/index.js",
+        "node_modules/path-is-absolute/index.js",
+        "node_modules/path-key/index.js",
+        "node_modules/performance-now/lib/performance-now.js",
+        "node_modules/platformio-node-helpers/.eslintrc.js",
+        "node_modules/platformio-node-helpers/lib/index.js",
+        "node_modules/platformio-node-helpers/webpack.config.js",
+        "node_modules/punycode/punycode.js",
+        "node_modules/q/benchmark/compare-with-callbacks.js",
+        "node_modules/q/benchmark/scenarios.js",
+        "node_modules/q/q.js",
+        "node_modules/q/queue.js",
+        "node_modules/qs/dist/qs.js",
+        "node_modules/qs/lib/formats.js",
+        "node_modules/qs/lib/index.js",
+        "node_modules/qs/lib/parse.js",
+        "node_modules/qs/lib/stringify.js",
+        "node_modules/qs/lib/utils.js",
+        "node_modules/querystringify/index.js",
+        "node_modules/repeat-string/index.js",
+        "node_modules/request/index.js",
+        "node_modules/request/lib/auth.js",
+        "node_modules/request/lib/cookies.js",
+        "node_modules/request/lib/getProxyFromURI.js",
+        "node_modules/request/lib/har.js",
+        "node_modules/request/lib/helpers.js",
+        "node_modules/request/lib/multipart.js",
+        "node_modules/request/lib/oauth.js",
+        "node_modules/request/lib/querystring.js",
+        "node_modules/request/lib/redirect.js",
+        "node_modules/request/lib/tunnel.js",
+        "node_modules/request/request.js",
+        "node_modules/requires-port/index.js",
+        "node_modules/requires-port/test.js",
+        "node_modules/rimraf/bin.js",
+        "node_modules/rimraf/rimraf.js",
+        "node_modules/safe-buffer/index.js",
+        "node_modules/safe-buffer/test.js",
+        "node_modules/semver/semver.js",
+        "node_modules/shebang-command/index.js",
+        "node_modules/shebang-regex/index.js",
+        "node_modules/sntp/lib/index.js",
+        "node_modules/sockjs-client/dist/sockjs.js",
+        "node_modules/sockjs-client/dist/sockjs.min.js",
+        "node_modules/sockjs-client/lib/entry.js",
+        "node_modules/sockjs-client/lib/event/close.js",
+        "node_modules/sockjs-client/lib/event/emitter.js",
+        "node_modules/sockjs-client/lib/event/event.js",
+        "node_modules/sockjs-client/lib/event/eventtarget.js",
+        "node_modules/sockjs-client/lib/event/trans-message.js",
+        "node_modules/sockjs-client/lib/facade.js",
+        "node_modules/sockjs-client/lib/iframe-bootstrap.js",
+        "node_modules/sockjs-client/lib/info-ajax.js",
+        "node_modules/sockjs-client/lib/info-iframe-receiver.js",
+        "node_modules/sockjs-client/lib/info-iframe.js",
+        "node_modules/sockjs-client/lib/info-receiver.js",
+        "node_modules/sockjs-client/lib/location.js",
+        "node_modules/sockjs-client/lib/main.js",
+        "node_modules/sockjs-client/lib/shims.js",
+        "node_modules/sockjs-client/lib/transport/browser/abstract-xhr.js",
+        "node_modules/sockjs-client/lib/transport/browser/eventsource.js",
+        "node_modules/sockjs-client/lib/transport/browser/websocket.js",
+        "node_modules/sockjs-client/lib/transport/driver/websocket.js",
+        "node_modules/sockjs-client/lib/transport/driver/xhr.js",
+        "node_modules/sockjs-client/lib/transport/eventsource.js",
+        "node_modules/sockjs-client/lib/transport/htmlfile.js",
+        "node_modules/sockjs-client/lib/transport/iframe.js",
+        "node_modules/sockjs-client/lib/transport/jsonp-polling.js",
+        "node_modules/sockjs-client/lib/transport/lib/ajax-based.js",
+        "node_modules/sockjs-client/lib/transport/lib/buffered-sender.js",
+        "node_modules/sockjs-client/lib/transport/lib/iframe-wrap.js",
+        "node_modules/sockjs-client/lib/transport/lib/polling.js",
+        "node_modules/sockjs-client/lib/transport/lib/sender-receiver.js",
+        "node_modules/sockjs-client/lib/transport/receiver/eventsource.js",
+        "node_modules/sockjs-client/lib/transport/receiver/htmlfile.js",
+        "node_modules/sockjs-client/lib/transport/receiver/jsonp.js",
+        "node_modules/sockjs-client/lib/transport/receiver/xhr.js",
+        "node_modules/sockjs-client/lib/transport/sender/jsonp.js",
+        "node_modules/sockjs-client/lib/transport/sender/xdr.js",
+        "node_modules/sockjs-client/lib/transport/sender/xhr-cors.js",
+        "node_modules/sockjs-client/lib/transport/sender/xhr-fake.js",
+        "node_modules/sockjs-client/lib/transport/sender/xhr-local.js",
+        "node_modules/sockjs-client/lib/transport/websocket.js",
+        "node_modules/sockjs-client/lib/transport/xdr-polling.js",
+        "node_modules/sockjs-client/lib/transport/xdr-streaming.js",
+        "node_modules/sockjs-client/lib/transport/xhr-polling.js",
+        "node_modules/sockjs-client/lib/transport/xhr-streaming.js",
+        "node_modules/sockjs-client/lib/transport-list.js",
+        "node_modules/sockjs-client/lib/utils/browser-crypto.js",
+        "node_modules/sockjs-client/lib/utils/browser.js",
+        "node_modules/sockjs-client/lib/utils/escape.js",
+        "node_modules/sockjs-client/lib/utils/event.js",
+        "node_modules/sockjs-client/lib/utils/iframe.js",
+        "node_modules/sockjs-client/lib/utils/log.js",
+        "node_modules/sockjs-client/lib/utils/object.js",
+        "node_modules/sockjs-client/lib/utils/random.js",
+        "node_modules/sockjs-client/lib/utils/transport.js",
+        "node_modules/sockjs-client/lib/utils/url.js",
+        "node_modules/sockjs-client/lib/version.js",
+        "node_modules/sshpk/lib/algs.js",
+        "node_modules/sshpk/lib/certificate.js",
+        "node_modules/sshpk/lib/dhe.js",
+        "node_modules/sshpk/lib/ed-compat.js",
+        "node_modules/sshpk/lib/errors.js",
+        "node_modules/sshpk/lib/fingerprint.js",
+        "node_modules/sshpk/lib/formats/auto.js",
+        "node_modules/sshpk/lib/formats/openssh-cert.js",
+        "node_modules/sshpk/lib/formats/pem.js",
+        "node_modules/sshpk/lib/formats/pkcs1.js",
+        "node_modules/sshpk/lib/formats/pkcs8.js",
+        "node_modules/sshpk/lib/formats/rfc4253.js",
+        "node_modules/sshpk/lib/formats/ssh-private.js",
+        "node_modules/sshpk/lib/formats/ssh.js",
+        "node_modules/sshpk/lib/formats/x509-pem.js",
+        "node_modules/sshpk/lib/formats/x509.js",
+        "node_modules/sshpk/lib/identity.js",
+        "node_modules/sshpk/lib/index.js",
+        "node_modules/sshpk/lib/key.js",
+        "node_modules/sshpk/lib/private-key.js",
+        "node_modules/sshpk/lib/signature.js",
+        "node_modules/sshpk/lib/ssh-buffer.js",
+        "node_modules/sshpk/lib/utils.js",
+        "node_modules/stringstream/example.js",
+        "node_modules/stringstream/stringstream.js",
+        "node_modules/tar/index.js",
+        "node_modules/tar/lib/create.js",
+        "node_modules/tar/lib/extract.js",
+        "node_modules/tar/lib/header.js",
+        "node_modules/tar/lib/high-level-opt.js",
+        "node_modules/tar/lib/large-numbers.js",
+        "node_modules/tar/lib/list.js",
+        "node_modules/tar/lib/mkdir.js",
+        "node_modules/tar/lib/pack.js",
+        "node_modules/tar/lib/parse.js",
+        "node_modules/tar/lib/pax.js",
+        "node_modules/tar/lib/read-entry.js",
+        "node_modules/tar/lib/replace.js",
+        "node_modules/tar/lib/types.js",
+        "node_modules/tar/lib/unpack.js",
+        "node_modules/tar/lib/update.js",
+        "node_modules/tar/lib/warn-mixin.js",
+        "node_modules/tar/lib/winchars.js",
+        "node_modules/tar/lib/write-entry.js",
+        "node_modules/tcp-port-used/index.js",
+        "node_modules/tcp-port-used/node_modules/debug/debug.js",
+        "node_modules/tcp-port-used/node_modules/debug/index.js",
+        "node_modules/tcp-port-used/node_modules/debug/lib/debug.js",
+        "node_modules/tcp-port-used/test.js",
+        "node_modules/tmp/lib/tmp.js",
+        "node_modules/tough-cookie/lib/cookie.js",
+        "node_modules/tough-cookie/lib/memstore.js",
+        "node_modules/tough-cookie/lib/pathMatch.js",
+        "node_modules/tough-cookie/lib/permuteDomain.js",
+        "node_modules/tough-cookie/lib/pubsuffix.js",
+        "node_modules/tough-cookie/lib/store.js",
+        "node_modules/tunnel-agent/index.js",
+        "node_modules/tweetnacl/nacl-fast.js",
+        "node_modules/tweetnacl/nacl-fast.min.js",
+        "node_modules/tweetnacl/nacl.js",
+        "node_modules/tweetnacl/nacl.min.js",
+        "node_modules/underscore/underscore-min.js",
+        "node_modules/underscore/underscore.js",
+        "node_modules/underscore-plus/lib/underscore-plus.js",
+        "node_modules/url-parse/dist/url-parse.js",
+        "node_modules/url-parse/dist/url-parse.min.js",
+        "node_modules/url-parse/index.js",
+        "node_modules/uuid/index.js",
+        "node_modules/uuid/lib/bytesToUuid.js",
+        "node_modules/uuid/lib/md5-browser.js",
+        "node_modules/uuid/lib/md5.js",
+        "node_modules/uuid/lib/rng-browser.js",
+        "node_modules/uuid/lib/rng.js",
+        "node_modules/uuid/lib/sha1-browser.js",
+        "node_modules/uuid/lib/sha1.js",
+        "node_modules/uuid/lib/v35.js",
+        "node_modules/uuid/v1.js",
+        "node_modules/uuid/v3.js",
+        "node_modules/uuid/v4.js",
+        "node_modules/uuid/v5.js",
+        "node_modules/verror/lib/verror.js",
+        "node_modules/websocket-driver/lib/websocket/driver/base.js",
+        "node_modules/websocket-driver/lib/websocket/driver/client.js",
+        "node_modules/websocket-driver/lib/websocket/driver/draft75.js",
+        "node_modules/websocket-driver/lib/websocket/driver/draft76.js",
+        "node_modules/websocket-driver/lib/websocket/driver/headers.js",
+        "node_modules/websocket-driver/lib/websocket/driver/hybi/frame.js",
+        "node_modules/websocket-driver/lib/websocket/driver/hybi/message.js",
+        "node_modules/websocket-driver/lib/websocket/driver/hybi.js",
+        "node_modules/websocket-driver/lib/websocket/driver/proxy.js",
+        "node_modules/websocket-driver/lib/websocket/driver/server.js",
+        "node_modules/websocket-driver/lib/websocket/driver/stream_reader.js",
+        "node_modules/websocket-driver/lib/websocket/driver.js",
+        "node_modules/websocket-driver/lib/websocket/http_parser.js",
+        "node_modules/websocket-driver/lib/websocket/streams.js",
+        "node_modules/websocket-extensions/lib/parser.js",
+        "node_modules/websocket-extensions/lib/pipeline/cell.js",
+        "node_modules/websocket-extensions/lib/pipeline/functor.js",
+        "node_modules/websocket-extensions/lib/pipeline/index.js",
+        "node_modules/websocket-extensions/lib/pipeline/pledge.js",
+        "node_modules/websocket-extensions/lib/pipeline/ring_buffer.js",
+        "node_modules/websocket-extensions/lib/websocket_extensions.js",
+        "node_modules/which/which.js",
+        "node_modules/wrappy/wrappy.js",
+        "node_modules/yallist/iterator.js",
+        "node_modules/yallist/yallist.js"
+      ],
+      ".json": [
+        "node_modules/ajv/lib/refs/$data.json",
+        "node_modules/ajv/lib/refs/json-schema-draft-04.json",
+        "node_modules/ajv/lib/refs/json-schema-draft-06.json",
+        "node_modules/ajv/lib/refs/json-schema-v5.json",
+        "node_modules/ajv/package.json",
+        "node_modules/array-from/package.json",
+        "node_modules/asn1/package.json",
+        "node_modules/assert-plus/package.json",
+        "node_modules/async/package.json",
+        "node_modules/asynckit/package.json",
+        "node_modules/aws-sign2/package.json",
+        "node_modules/aws4/package.json",
+        "node_modules/balanced-match/package.json",
+        "node_modules/bcrypt-pbkdf/package.json",
+        "node_modules/boom/package.json",
+        "node_modules/brace-expansion/package.json",
+        "node_modules/caseless/package.json",
+        "node_modules/chownr/package.json",
+        "node_modules/co/package.json",
+        "node_modules/combined-stream/package.json",
+        "node_modules/command-join/package.json",
+        "node_modules/concat-map/package.json",
+        "node_modules/core-util-is/package.json",
+        "node_modules/cross-spawn/package.json",
+        "node_modules/cryptiles/node_modules/boom/package.json",
+        "node_modules/cryptiles/package.json",
+        "node_modules/dashdash/package.json",
+        "node_modules/debug/component.json",
+        "node_modules/debug/package.json",
+        "node_modules/deep-is/package.json",
+        "node_modules/delayed-stream/package.json",
+        "node_modules/ecc-jsbn/package.json",
+        "node_modules/etch/package.json",
+        "node_modules/eventsource/package.json",
+        "node_modules/extend/.jscs.json",
+        "node_modules/extend/component.json",
+        "node_modules/extend/package.json",
+        "node_modules/extsprintf/package.json",
+        "node_modules/fast-deep-equal/package.json",
+        "node_modules/fast-json-stable-stringify/benchmark/test.json",
+        "node_modules/fast-json-stable-stringify/package.json",
+        "node_modules/faye-websocket/package.json",
+        "node_modules/forever-agent/package.json",
+        "node_modules/form-data/package.json",
+        "node_modules/fs-minipass/package.json",
+        "node_modules/fs-plus/package.json",
+        "node_modules/fs.realpath/package.json",
+        "node_modules/getpass/package.json",
+        "node_modules/glob/package.json",
+        "node_modules/har-schema/lib/afterRequest.json",
+        "node_modules/har-schema/lib/beforeRequest.json",
+        "node_modules/har-schema/lib/browser.json",
+        "node_modules/har-schema/lib/cache.json",
+        "node_modules/har-schema/lib/content.json",
+        "node_modules/har-schema/lib/cookie.json",
+        "node_modules/har-schema/lib/creator.json",
+        "node_modules/har-schema/lib/entry.json",
+        "node_modules/har-schema/lib/har.json",
+        "node_modules/har-schema/lib/header.json",
+        "node_modules/har-schema/lib/log.json",
+        "node_modules/har-schema/lib/page.json",
+        "node_modules/har-schema/lib/pageTimings.json",
+        "node_modules/har-schema/lib/postData.json",
+        "node_modules/har-schema/lib/query.json",
+        "node_modules/har-schema/lib/request.json",
+        "node_modules/har-schema/lib/response.json",
+        "node_modules/har-schema/lib/timings.json",
+        "node_modules/har-schema/package.json",
+        "node_modules/har-validator/package.json",
+        "node_modules/hawk/package.json",
+        "node_modules/hoek/package.json",
+        "node_modules/http-parser-js/package.json",
+        "node_modules/http-signature/package.json",
+        "node_modules/inflight/package.json",
+        "node_modules/inherits/package.json",
+        "node_modules/ini/package.json",
+        "node_modules/is-typedarray/package.json",
+        "node_modules/is2/package.json",
+        "node_modules/isexe/package.json",
+        "node_modules/isstream/package.json",
+        "node_modules/jsbn/package.json",
+        "node_modules/json-schema/package.json",
+        "node_modules/json-schema-traverse/package.json",
+        "node_modules/json-stringify-safe/package.json",
+        "node_modules/json3/package.json",
+        "node_modules/jsonrpc-lite/package.json",
+        "node_modules/jsprim/package.json",
+        "node_modules/mime-db/db.json",
+        "node_modules/mime-db/package.json",
+        "node_modules/mime-types/package.json",
+        "node_modules/minimatch/package.json",
+        "node_modules/minimist/package.json",
+        "node_modules/minipass/package.json",
+        "node_modules/minizlib/package.json",
+        "node_modules/mkdirp/package.json",
+        "node_modules/ms/package.json",
+        "node_modules/nice-try/package.json",
+        "node_modules/oauth-sign/package.json",
+        "node_modules/once/package.json",
+        "node_modules/original/node_modules/querystringify/package.json",
+        "node_modules/original/node_modules/url-parse/package.json",
+        "node_modules/original/package.json",
+        "node_modules/os-tmpdir/package.json",
+        "node_modules/path-is-absolute/package.json",
+        "node_modules/path-key/package.json",
+        "node_modules/performance-now/package.json",
+        "node_modules/platformio-node-helpers/package.json",
+        "node_modules/punycode/package.json",
+        "node_modules/q/package.json",
+        "node_modules/qs/package.json",
+        "node_modules/querystringify/package.json",
+        "node_modules/repeat-string/package.json",
+        "node_modules/request/package.json",
+        "node_modules/requires-port/package.json",
+        "node_modules/rimraf/package.json",
+        "node_modules/safe-buffer/package.json",
+        "node_modules/semver/package.json",
+        "node_modules/shebang-command/package.json",
+        "node_modules/shebang-regex/package.json",
+        "node_modules/sntp/package.json",
+        "node_modules/sockjs-client/package.json",
+        "node_modules/sshpk/package.json",
+        "node_modules/stringstream/package.json",
+        "node_modules/tar/package.json",
+        "node_modules/tcp-port-used/node_modules/debug/package.json",
+        "node_modules/tcp-port-used/package.json",
+        "node_modules/tmp/package.json",
+        "node_modules/tough-cookie/package.json",
+        "node_modules/tunnel-agent/package.json",
+        "node_modules/tweetnacl/package.json",
+        "node_modules/underscore/package.json",
+        "node_modules/underscore-plus/package.json",
+        "node_modules/url-parse/package.json",
+        "node_modules/uuid/.eslintrc.json",
+        "node_modules/uuid/package.json",
+        "node_modules/verror/package.json",
+        "node_modules/websocket-driver/package.json",
+        "node_modules/websocket-extensions/package.json",
+        "node_modules/which/package.json",
+        "node_modules/wrappy/package.json",
+        "node_modules/yallist/package.json",
+        "package.json"
+      ],
+      ".coffee": [
+        "node_modules/performance-now/src/performance-now.coffee"
+      ]
+    },
+    "folders": [
+      {
+        "paths": [
+          "",
+          "lib",
+          "lib/home",
+          "lib/installer",
+          "lib/installer/stages",
+          "lib/project",
+          "lib/serial-monitor",
+          "lib/services",
+          "spec"
+        ],
+        "dependencies": {
+          "command-join": "^1.1.1",
+          "etch": "^0.12.6",
+          "fs-plus": "^3.0.1",
+          "ini": "^1.3.4",
+          "platformio-node-helpers": "^0.4.2",
+          "semver": "^5.3.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/ajv",
+          "node_modules/ajv/dist",
+          "node_modules/ajv/lib",
+          "node_modules/ajv/lib/compile",
+          "node_modules/ajv/lib/dotjs",
+          "node_modules/ajv/lib/refs",
+          "node_modules/ajv/scripts"
+        ],
+        "dependencies": {
+          "co": "^4.6.0",
+          "fast-deep-equal": "^1.0.0",
+          "fast-json-stable-stringify": "^2.0.0",
+          "json-schema-traverse": "^0.3.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/bcrypt-pbkdf"
+        ],
+        "dependencies": {
+          "tweetnacl": "^0.14.3"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/boom/lib",
+          "node_modules/boom"
+        ],
+        "dependencies": {
+          "hoek": "4.x.x"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/brace-expansion"
+        ],
+        "dependencies": {
+          "balanced-match": "^1.0.0",
+          "concat-map": "0.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/combined-stream/lib",
+          "node_modules/combined-stream"
+        ],
+        "dependencies": {
+          "delayed-stream": "~1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/command-join/dist",
+          "node_modules/command-join"
+        ],
+        "dependencies": {
+          "array-from": "^2.1.1",
+          "repeat-string": "^1.5.4"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/cross-spawn",
+          "node_modules/cross-spawn/lib",
+          "node_modules/cross-spawn/lib/util"
+        ],
+        "dependencies": {
+          "nice-try": "^1.0.4",
+          "path-key": "^2.0.1",
+          "semver": "^5.5.0",
+          "shebang-command": "^1.2.0",
+          "which": "^1.2.9"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/cryptiles/lib",
+          "node_modules/cryptiles"
+        ],
+        "dependencies": {
+          "boom": "5.x.x"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/cryptiles/node_modules/boom/lib",
+          "node_modules/cryptiles/node_modules/boom"
+        ],
+        "dependencies": {
+          "hoek": "4.x.x"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/dashdash/lib",
+          "node_modules/dashdash"
+        ],
+        "dependencies": {
+          "assert-plus": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/debug",
+          "node_modules/debug/src"
+        ],
+        "dependencies": {
+          "ms": "2.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/ecc-jsbn",
+          "node_modules/ecc-jsbn/lib"
+        ],
+        "dependencies": {
+          "jsbn": "~0.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/eventsource",
+          "node_modules/eventsource/lib",
+          "node_modules/eventsource/test"
+        ],
+        "dependencies": {
+          "original": ">=0.0.5"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/faye-websocket/examples",
+          "node_modules/faye-websocket/lib/faye",
+          "node_modules/faye-websocket/lib/faye/websocket/api",
+          "node_modules/faye-websocket/lib/faye/websocket",
+          "node_modules/faye-websocket"
+        ],
+        "dependencies": {
+          "websocket-driver": ">=0.5.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/form-data/lib",
+          "node_modules/form-data"
+        ],
+        "dependencies": {
+          "asynckit": "^0.4.0",
+          "combined-stream": "1.0.6",
+          "mime-types": "^2.1.12"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/fs-minipass"
+        ],
+        "dependencies": {
+          "minipass": "^2.2.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/fs-plus/lib",
+          "node_modules/fs-plus"
+        ],
+        "dependencies": {
+          "async": "^1.5.2",
+          "mkdirp": "^0.5.1",
+          "rimraf": "^2.5.2",
+          "underscore-plus": "1.x"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/getpass/lib",
+          "node_modules/getpass"
+        ],
+        "dependencies": {
+          "assert-plus": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/glob"
+        ],
+        "dependencies": {
+          "fs.realpath": "^1.0.0",
+          "inflight": "^1.0.4",
+          "inherits": "2",
+          "minimatch": "^3.0.4",
+          "once": "^1.3.0",
+          "path-is-absolute": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/har-validator/lib",
+          "node_modules/har-validator"
+        ],
+        "dependencies": {
+          "ajv": "^5.1.0",
+          "har-schema": "^2.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/hawk",
+          "node_modules/hawk/dist",
+          "node_modules/hawk/lib"
+        ],
+        "dependencies": {
+          "boom": "4.x.x",
+          "cryptiles": "3.x.x",
+          "hoek": "4.x.x",
+          "sntp": "2.x.x"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/http-signature/lib",
+          "node_modules/http-signature"
+        ],
+        "dependencies": {
+          "assert-plus": "^1.0.0",
+          "jsprim": "^1.2.2",
+          "sshpk": "^1.7.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/inflight"
+        ],
+        "dependencies": {
+          "once": "^1.3.0",
+          "wrappy": "1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/is2/jsdoc/scripts/prettify",
+          "node_modules/is2/lib",
+          "node_modules/is2",
+          "node_modules/is2/test"
+        ],
+        "dependencies": {
+          "deep-is": "0.1.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/jsprim/lib",
+          "node_modules/jsprim"
+        ],
+        "dependencies": {
+          "assert-plus": "1.0.0",
+          "extsprintf": "1.3.0",
+          "json-schema": "0.2.3",
+          "verror": "1.10.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/mime-types"
+        ],
+        "dependencies": {
+          "mime-db": "~1.33.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/minimatch"
+        ],
+        "dependencies": {
+          "brace-expansion": "^1.1.7"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/minipass",
+          "node_modules/minipass/bench/lib",
+          "node_modules/minipass/bench",
+          "node_modules/minipass/test"
+        ],
+        "dependencies": {
+          "yallist": "^3.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/minizlib"
+        ],
+        "dependencies": {
+          "minipass": "^2.2.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/mkdirp/bin",
+          "node_modules/mkdirp/examples",
+          "node_modules/mkdirp",
+          "node_modules/mkdirp/test"
+        ],
+        "dependencies": {
+          "minimist": "0.0.8"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/once"
+        ],
+        "dependencies": {
+          "wrappy": "1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/original"
+        ],
+        "dependencies": {
+          "url-parse": "1.0.x"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/original/node_modules/url-parse"
+        ],
+        "dependencies": {
+          "querystringify": "0.0.x",
+          "requires-port": "1.0.x"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/platformio-node-helpers",
+          "node_modules/platformio-node-helpers/lib"
+        ],
+        "dependencies": {
+          "cross-spawn": "^6.0.3",
+          "fs-plus": "^3.0.1",
+          "jsonrpc-lite": "^1.2.4",
+          "querystringify": "*",
+          "request": "^2.81.0",
+          "semver": "^5.4.1",
+          "sockjs-client": "^1.1.4",
+          "tar": "^4.0.1",
+          "tcp-port-used": "^0.1.2",
+          "tmp": "^0.0.33"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/request",
+          "node_modules/request/lib"
+        ],
+        "dependencies": {
+          "aws-sign2": "~0.7.0",
+          "aws4": "^1.6.0",
+          "caseless": "~0.12.0",
+          "combined-stream": "~1.0.5",
+          "extend": "~3.0.1",
+          "forever-agent": "~0.6.1",
+          "form-data": "~2.3.1",
+          "har-validator": "~5.0.3",
+          "hawk": "~6.0.2",
+          "http-signature": "~1.2.0",
+          "is-typedarray": "~1.0.0",
+          "isstream": "~0.1.2",
+          "json-stringify-safe": "~5.0.1",
+          "mime-types": "~2.1.17",
+          "oauth-sign": "~0.8.2",
+          "performance-now": "^2.1.0",
+          "qs": "~6.5.1",
+          "safe-buffer": "^5.1.1",
+          "stringstream": "~0.0.5",
+          "tough-cookie": "~2.3.3",
+          "tunnel-agent": "^0.6.0",
+          "uuid": "^3.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/rimraf"
+        ],
+        "dependencies": {
+          "glob": "^7.0.5"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/shebang-command"
+        ],
+        "dependencies": {
+          "shebang-regex": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/sntp/lib",
+          "node_modules/sntp"
+        ],
+        "dependencies": {
+          "hoek": "4.x.x"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/sockjs-client/dist",
+          "node_modules/sockjs-client/lib",
+          "node_modules/sockjs-client/lib/event",
+          "node_modules/sockjs-client/lib/transport/browser",
+          "node_modules/sockjs-client/lib/transport/driver",
+          "node_modules/sockjs-client/lib/transport",
+          "node_modules/sockjs-client/lib/transport/lib",
+          "node_modules/sockjs-client/lib/transport/receiver",
+          "node_modules/sockjs-client/lib/transport/sender",
+          "node_modules/sockjs-client/lib/utils",
+          "node_modules/sockjs-client"
+        ],
+        "dependencies": {
+          "debug": "^2.6.6",
+          "eventsource": "0.1.6",
+          "faye-websocket": "~0.11.0",
+          "inherits": "^2.0.1",
+          "json3": "^3.3.2",
+          "url-parse": "^1.1.8"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/sshpk/lib",
+          "node_modules/sshpk/lib/formats",
+          "node_modules/sshpk"
+        ],
+        "dependencies": {
+          "asn1": "~0.2.3",
+          "assert-plus": "^1.0.0",
+          "bcrypt-pbkdf": "^1.0.0",
+          "dashdash": "^1.12.0",
+          "ecc-jsbn": "~0.1.1",
+          "getpass": "^0.1.1",
+          "jsbn": "~0.1.0",
+          "tweetnacl": "~0.14.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/tar",
+          "node_modules/tar/lib"
+        ],
+        "dependencies": {
+          "chownr": "^1.0.1",
+          "fs-minipass": "^1.2.3",
+          "minipass": "^2.2.1",
+          "minizlib": "^1.1.0",
+          "mkdirp": "^0.5.0",
+          "yallist": "^3.0.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/tcp-port-used"
+        ],
+        "dependencies": {
+          "debug": "0.7.4",
+          "is2": "0.0.9",
+          "q": "0.9.7"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/tmp/lib",
+          "node_modules/tmp"
+        ],
+        "dependencies": {
+          "os-tmpdir": "~1.0.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/tough-cookie/lib",
+          "node_modules/tough-cookie"
+        ],
+        "dependencies": {
+          "punycode": "^1.4.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/tunnel-agent"
+        ],
+        "dependencies": {
+          "safe-buffer": "^5.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/underscore-plus/lib",
+          "node_modules/underscore-plus"
+        ],
+        "dependencies": {
+          "underscore": "~1.6.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/url-parse/dist",
+          "node_modules/url-parse"
+        ],
+        "dependencies": {
+          "querystringify": "~1.0.0",
+          "requires-port": "~1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/verror/lib",
+          "node_modules/verror"
+        ],
+        "dependencies": {
+          "assert-plus": "^1.0.0",
+          "core-util-is": "1.0.2",
+          "extsprintf": "^1.2.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/websocket-driver/lib/websocket/driver",
+          "node_modules/websocket-driver/lib/websocket/driver/hybi",
+          "node_modules/websocket-driver/lib/websocket",
+          "node_modules/websocket-driver"
+        ],
+        "dependencies": {
+          "http-parser-js": ">=0.4.0",
+          "websocket-extensions": ">=0.1.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/which"
+        ],
+        "dependencies": {
+          "isexe": "^2.0.0"
+        }
+      }
+    ]
+  }
+}

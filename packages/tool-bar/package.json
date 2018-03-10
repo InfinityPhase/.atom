@@ -1,0 +1,85 @@
+{
+  "_from": "file:/tmp/d-11828-32408-1ahqcg5.6axg/package.tgz",
+  "_id": "tool-bar@1.1.6",
+  "_inBundle": false,
+  "_integrity": "sha512-U8JNryI4nXYM2TzdoK8uCvV51X8BeBMX6bPvcgg96NN7YkjH9LKpU0Q8+psqPqqG0zOAl6CKyh58F6F5i5sNLQ==",
+  "_location": "/tool-bar",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "file",
+    "where": "/tmp/apm-install-dir-11828-32408-1vbitp3.c63h",
+    "raw": "/tmp/d-11828-32408-1ahqcg5.6axg/package.tgz",
+    "rawSpec": "/tmp/d-11828-32408-1ahqcg5.6axg/package.tgz",
+    "saveSpec": "file:/tmp/d-11828-32408-1ahqcg5.6axg/package.tgz",
+    "fetchSpec": "/tmp/d-11828-32408-1ahqcg5.6axg/package.tgz"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "/tmp/d-11828-32408-1ahqcg5.6axg/package.tgz",
+  "_spec": "/tmp/d-11828-32408-1ahqcg5.6axg/package.tgz",
+  "_where": "/tmp/apm-install-dir-11828-32408-1vbitp3.c63h",
+  "bugs": {
+    "url": "https://github.com/suda/toolbar/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Package providing customisable tool bar",
+  "devDependencies": {
+    "babel-eslint": "^6.0.4",
+    "eslint": "^2.9.0",
+    "eslint-config-standard": "^5.2.0",
+    "eslint-plugin-promise": "^1.1.0",
+    "eslint-plugin-standard": "^1.3.2",
+    "remark-cli": "^4.0.0",
+    "remark-lint": "^6.0.1"
+  },
+  "engines": {
+    "atom": ">=1.20.0"
+  },
+  "homepage": "https://github.com/suda/toolbar#readme",
+  "keywords": [
+    "toolbar",
+    "tool-bar",
+    "service"
+  ],
+  "license": "MIT",
+  "main": "./lib/tool-bar",
+  "name": "tool-bar",
+  "providedServices": {
+    "tool-bar": {
+      "description": "A container for buttons at workspace edge",
+      "versions": {
+        "1.0.0": "provideToolBar"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/suda/toolbar.git"
+  },
+  "scripts": {
+    "lint": "eslint --format tap . && remark ."
+  },
+  "version": "1.1.6",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        ".eslintrc.json",
+        "package.json"
+      ],
+      ".js": [
+        "lib/raf-debounce.js",
+        "lib/tool-bar-button-view.js",
+        "lib/tool-bar-manager.js",
+        "lib/tool-bar-spacer-view.js",
+        "lib/tool-bar-view.js",
+        "lib/tool-bar.js",
+        "lib/touch-bar-manager.js"
+      ]
+    },
+    "folders": []
+  }
+}

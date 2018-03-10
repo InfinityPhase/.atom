@@ -1,22 +1,30 @@
-import {commands} from "./registry"
+import {addCommand} from "./registry"
 import {
   CodeEdit,
   commandForTypeScript,
-  formatCode,
-  FormatCodeSettings,
   LocationRangeQuery,
   rangeToLocationRange,
+  spanToRange,
 } from "../utils"
-import {loadProjectConfig} from "../../atomts"
+import {TextEditor} from "atom"
 
-commands.set("typescript:format-code", deps => {
-  return async e => {
+addCommand("atom-text-editor", "typescript:format-code", deps => ({
+  description: "Format code in currently active text editor",
+  async didDispatch(e) {
     if (!commandForTypeScript(e)) {
       return
     }
 
-    const editor = atom.workspace.getActiveTextEditor()
+    const editor = e.currentTarget.getModel()
+    if (!editor) {
+      e.abortKeyBinding()
+      return
+    }
     const filePath = editor.getPath()
+    if (!filePath) {
+      e.abortKeyBinding()
+      return
+    }
     const ranges: LocationRangeQuery[] = []
 
     for (const selection of editor.getSelectedBufferRanges()) {
@@ -32,24 +40,16 @@ commands.set("typescript:format-code", deps => {
         line: 1,
         offset: 1,
         endLine: end.row + 1,
-        endOffset: end.column + 1
+        endOffset: end.column + 1,
       })
     }
 
     const client = await deps.getClient(filePath)
-    const options = await getProjectCodeSettings(filePath)
-
-    // Newer versions of tsserver ignore the options argument so we need to call
-    // configure with the format code options to make the format command do anything.
-    client.executeConfigure({
-      formatOptions: options
-    })
-
     const edits: CodeEdit[] = []
 
     // Collect all edits together so we can update everything in a single transaction
     for (const range of ranges) {
-      const result = await client.executeFormat({...range, options, file: filePath})
+      const result = await client.execute("format", {...range, file: filePath})
       if (result.body) {
         edits.push(...result.body)
       }
@@ -60,16 +60,12 @@ commands.set("typescript:format-code", deps => {
         formatCode(editor, edits)
       })
     }
-  }
-})
+  },
+}))
 
-async function getProjectCodeSettings(filePath: string): Promise<FormatCodeSettings> {
-  const config = await loadProjectConfig(filePath)
-  const options = config.formatCodeOptions
-
-  return {
-    indentSize: atom.config.get("editor.tabLength"),
-    tabSize: atom.config.get("editor.tabLength"),
-    ...options,
+function formatCode(editor: TextEditor, edits: CodeEdit[]) {
+  // The code edits need to be applied in reverse order
+  for (let i = edits.length - 1; i >= 0; i--) {
+    editor.setTextInBufferRange(spanToRange(edits[i]), edits[i].newText)
   }
 }

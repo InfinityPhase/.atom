@@ -1,141 +1,145 @@
-import {$} from "atom-space-pen-views"
+import * as Atom from "atom"
 import {CompositeDisposable} from "atom"
 import {debounce, flatten} from "lodash"
-import {spanToRange} from "./atom/utils"
+import {spanToRange, getProjectCodeSettings, isTypescriptEditorWithPath} from "./atom/utils"
 import {StatusPanel} from "./atom/components/statusPanel"
 import {TypescriptBuffer} from "./typescriptBuffer"
 import {TypescriptServiceClient} from "../client/client"
-import * as tooltipManager from './atom/tooltipManager'
+import {TooltipManager} from "./atom/tooltipManager"
 
 interface PaneOptions {
   getClient: (filePath: string) => Promise<TypescriptServiceClient>
-  onDispose: (pane: TypescriptEditorPane) => any
-  onSave: (pane: TypescriptEditorPane) => any
+
+  // Called when the pane is being disposed.
+  onDispose: (pane: TypescriptEditorPane) => void
+
+  // Called when the Typescript view of the file is closed. This happens when the pane is closed
+  // and also when the file is renamed.
+  onClose: (filePath: string) => void
+
+  onSave: (pane: TypescriptEditorPane) => void
   statusPanel: StatusPanel
 }
 
-export class TypescriptEditorPane implements AtomCore.Disposable {
+export class TypescriptEditorPane implements Atom.Disposable {
   // Timestamp for activated event
-  activeAt: number
-
-  buffer: TypescriptBuffer
-  client?: TypescriptServiceClient
+  public activeAt: number
+  public client?: TypescriptServiceClient
+  public isTypescript = false
+  public readonly buffer: TypescriptBuffer
 
   // Path to the project's tsconfig.json
-  configFile: string = ""
-
-  filePath: string
-  isActive = false
-  isTypescript = false
-
-  private opts: PaneOptions
+  private configFile: string = ""
+  private isActive = false
   private isOpen = false
 
-  readonly occurrenceMarkers: AtomCore.IDisplayBufferMarker[] = []
-  readonly editor: AtomCore.IEditor
-  readonly subscriptions = new CompositeDisposable()
+  private readonly occurrenceMarkers: Atom.DisplayMarker[] = []
+  private readonly subscriptions = new CompositeDisposable()
 
-  constructor(editor: AtomCore.IEditor, opts: PaneOptions) {
-    this.editor = editor
-    this.filePath = editor.getPath()
-    this.opts = opts
-    this.buffer = new TypescriptBuffer(editor.buffer, opts.getClient)
-      .on("changed", this.onChanged)
-      .on("opened", this.onOpened)
-      .on("saved", this.onSaved)
+  constructor(public readonly editor: Atom.TextEditor, private opts: PaneOptions) {
+    this.updateMarkers = debounce(this.updateMarkers.bind(this), 100)
+    this.buffer = TypescriptBuffer.create(editor.buffer, opts.getClient)
+    this.subscriptions.add(
+      this.buffer.events.on("changed", this.onChanged),
+      this.buffer.events.on("closed", this.opts.onClose),
+      this.buffer.events.on("opened", this.onOpened),
+      this.buffer.events.on("saved", this.onSaved),
+    )
 
-    this.isTypescript = isTypescriptGrammar(editor.getGrammar())
+    this.checkIfTypescript()
 
-    // Add 'typescript-editor' class to the <atom-text-editor> where typescript is active.
-    if (this.isTypescript) {
-      this.editor.element.classList.add('typescript-editor')
-    }
+    this.subscriptions.add(
+      editor.onDidChangePath(this.checkIfTypescript),
+      editor.onDidChangeGrammar(this.checkIfTypescript),
+      this.editor.onDidChangeCursorPosition(this.onDidChangeCursorPosition),
+      this.editor.onDidDestroy(this.onDidDestroy),
+    )
 
-    this.subscriptions.add(editor.onDidChangeGrammar(grammar => {
-      this.isTypescript = isTypescriptGrammar(grammar)
-    }))
-
-    this.setupTooltipView()
+    this.subscriptions.add(new TooltipManager(this.editor, opts.getClient))
   }
 
-  dispose() {
-    this.editor.element.classList.remove('typescript-editor')
+  public dispose() {
+    atom.views.getView(this.editor).classList.remove("typescript-editor")
     this.subscriptions.dispose()
     this.opts.onDispose(this)
   }
 
-  onActivated = () => {
+  public onActivated = () => {
     this.activeAt = Date.now()
     this.isActive = true
 
-    if (this.isTypescript && this.filePath) {
+    const filePath = this.buffer.getPath()
+    if (this.isTypescript && filePath) {
       this.opts.statusPanel.show()
 
       // The first activation might happen before we even have a client
       if (this.client) {
-        this.client.executeGetErr({
-          files: [this.filePath],
-          delay: 100
+        this.client.execute("geterr", {
+          files: [filePath],
+          delay: 100,
         })
 
-        this.opts.statusPanel.setVersion(this.client.version)
+        this.opts.statusPanel.update({version: this.client.version})
       }
     }
 
-    this.opts.statusPanel.setTsConfigPath(this.configFile)
+    this.opts.statusPanel.update({tsConfigPath: this.configFile})
   }
 
-  onChanged = () => {
-    if (!this.client)
-      return
-
-    this.opts.statusPanel.setBuildStatus(undefined)
-
-    this.client.executeGetErr({
-      files: [this.filePath],
-      delay: 100
-    })
-  }
-
-  onDeactivated = () => {
+  public onDeactivated = () => {
     this.isActive = false
     this.opts.statusPanel.hide()
   }
 
-  clearOccurrenceMarkers() {
+  private onChanged = () => {
+    if (!this.client) return
+    const filePath = this.buffer.getPath()
+    if (!filePath) return
+
+    this.opts.statusPanel.update({buildStatus: undefined})
+
+    this.client.execute("geterr", {
+      files: [filePath],
+      delay: 100,
+    })
+  }
+
+  private clearOccurrenceMarkers() {
     for (const marker of this.occurrenceMarkers) {
       marker.destroy()
     }
   }
 
-  updateMarkers = debounce(() => {
-    if (!this.client)
-      return
+  private async updateMarkers() {
+    if (!this.client) return
+    const filePath = this.buffer.getPath()
+    if (!filePath) return
 
     const pos = this.editor.getLastCursor().getBufferPosition()
 
-    this.client.executeOccurances({
-      file: this.filePath,
-      line: pos.row+1,
-      offset: pos.column+1
-    }).then(result => {
-      this.clearOccurrenceMarkers()
+    this.clearOccurrenceMarkers()
+    try {
+      const result = await this.client.execute("occurrences", {
+        file: filePath,
+        line: pos.row + 1,
+        offset: pos.column + 1,
+      })
 
       for (const ref of result.body!) {
         const marker = this.editor.markBufferRange(spanToRange(ref))
-        this.editor.decorateMarker(marker as any, {
+        this.editor.decorateMarker(marker, {
           type: "highlight",
-          class: "atom-typescript-occurrence"
+          class: "atom-typescript-occurrence",
         })
         this.occurrenceMarkers.push(marker)
       }
-    }).catch(() => this.clearOccurrenceMarkers())
-  }, 100)
-
-  onDidChangeCursorPosition = ({textChanged}: {textChanged: boolean}) => {
-    if (!this.isTypescript) {
-      return
+    } catch (e) {
+      if (window.atom_typescript_debug) console.error(e)
     }
+  }
+
+  private onDidChangeCursorPosition = ({textChanged}: {textChanged: boolean}) => {
+    if (!this.isTypescript || !this.isOpen) return
 
     if (textChanged) {
       this.clearOccurrenceMarkers()
@@ -145,98 +149,94 @@ export class TypescriptEditorPane implements AtomCore.Disposable {
     this.updateMarkers()
   }
 
-  onDidDestroy = () => {
+  private onDidDestroy = () => {
     this.dispose()
   }
 
-  onOpened = async () => {
-    this.client = await this.opts.getClient(this.filePath)
-
-    this.subscriptions.add(this.editor.onDidChangeCursorPosition(this.onDidChangeCursorPosition))
-    this.subscriptions.add(this.editor.onDidDestroy(this.onDidDestroy))
+  private onOpened = async () => {
+    const filePath = this.buffer.getPath()
+    if (!filePath) return
+    this.client = await this.opts.getClient(filePath)
 
     // onOpened might trigger before onActivated so we can't rely on isActive flag
     if (atom.workspace.getActiveTextEditor() === this.editor) {
       this.isActive = true
-      this.opts.statusPanel.setVersion(this.client.version)
+      this.opts.statusPanel.update({version: this.client.version})
     }
 
-    if (this.isTypescript && this.filePath) {
-      this.client.executeGetErr({
-        files: [this.filePath],
-        delay: 100
+    if (this.isTypescript) {
+      this.client.execute("geterr", {
+        files: [filePath],
+        delay: 100,
       })
 
       this.isOpen = true
 
-      this.client.executeProjectInfo({
-        needFileNameList: false,
-        file: this.filePath
-      }).then(result => {
+      try {
+        const result = await this.client.execute("projectInfo", {
+          needFileNameList: false,
+          file: filePath,
+        })
         this.configFile = result.body!.configFileName
 
         if (this.isActive) {
-          this.opts.statusPanel.setTsConfigPath(this.configFile)
+          this.opts.statusPanel.update({tsConfigPath: this.configFile})
         }
-      }, error => null)
+
+        getProjectCodeSettings(this.configFile).then(options => {
+          this.client!.execute("configure", {
+            file: filePath,
+            formatOptions: options,
+          })
+        })
+      } catch (e) {
+        if (window.atom_typescript_debug) console.error(e)
+      }
     }
   }
 
-  onSaved = () => {
-    this.filePath = this.editor.getPath()
-
-    if (this.opts.onSave) {
-      this.opts.onSave(this)
-    }
-
+  private onSaved = () => {
+    this.opts.onSave(this)
     this.compileOnSave()
   }
 
-  async compileOnSave() {
+  private async compileOnSave() {
     const {client} = this
-    if (!client)
-      return
+    if (!client) return
+    const filePath = this.buffer.getPath()
+    if (!filePath) return
 
-    const result = await client.executeCompileOnSaveAffectedFileList({
-      file: this.filePath
+    const result = await client.execute("compileOnSaveAffectedFileList", {
+      file: filePath,
     })
 
-    this.opts.statusPanel.setBuildStatus(undefined)
+    this.opts.statusPanel.update({buildStatus: undefined})
 
     const fileNames = flatten(result.body.map(project => project.fileNames))
 
-    if (fileNames.length === 0) {
-      return
-    }
+    if (fileNames.length === 0) return
 
     try {
-      const promises = fileNames.map(file => client.executeCompileOnSaveEmitFile({file}))
+      const promises = fileNames.map(file => client.execute("compileOnSaveEmitFile", {file}))
       const saved = await Promise.all(promises)
 
-      if (!saved.every(res => res.body)) {
+      if (!saved.every(res => !!res.body)) {
         throw new Error("Some files failed to emit")
       }
 
-      this.opts.statusPanel.setBuildStatus({
-        success: true
-      })
-
+      this.opts.statusPanel.update({buildStatus: {success: true}})
     } catch (error) {
       console.error("Save failed with error", error)
-      this.opts.statusPanel.setBuildStatus({
-        success: false
-      })
+      this.opts.statusPanel.update({buildStatus: {success: false, message: error.message}})
     }
   }
 
-  setupTooltipView() {
-    // subscribe for tooltips
-    // inspiration : https://github.com/chaika2013/ide-haskell
-    const editorView = $(atom.views.getView(this.editor))
-    tooltipManager.attach(editorView, this.editor)
-  }
-}
+  private checkIfTypescript = () => {
+    this.isTypescript = isTypescriptEditorWithPath(this.editor)
 
-function isTypescriptGrammar(grammar: AtomCore.IGrammar): boolean {
-  return grammar.scopeName === "source.ts" || grammar.scopeName === "source.tsx"
+    // Add 'typescript-editor' class to the <atom-text-editor> where typescript is active.
+    if (this.isTypescript) {
+      atom.views.getView(this.editor).classList.add("typescript-editor")
+    }
+  }
 }

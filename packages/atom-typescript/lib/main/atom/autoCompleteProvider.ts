@@ -1,33 +1,30 @@
 // more: https://github.com/atom-community/autocomplete-plus/wiki/Provider-API
 import {ClientResolver} from "../../client/clientResolver"
-import {kindToType, FileLocationQuery} from "./utils"
-import {Provider, RequestOptions, Suggestion} from "../../typings/autocomplete"
-import {TypescriptBuffer} from "../typescriptBuffer"
+import {FileLocationQuery} from "./utils"
+import * as ACP from "atom/autocomplete-plus"
 import {TypescriptServiceClient} from "../../client/client"
 import * as Atom from "atom"
 import * as fuzzaldrin from "fuzzaldrin"
+import {WithTypescriptBuffer} from "../pluginManager"
 
 const importPathScopes = ["meta.import", "meta.import-equals", "triple-slash-directive"]
 
-type SuggestionWithDetails = Suggestion & {
+type SuggestionWithDetails = ACP.TextSuggestion & {
   details?: protocol.CompletionEntryDetails
 }
 
-type Options = {
-  getTypescriptBuffer: (filePath: string) => Promise<{
-    buffer: TypescriptBuffer
-    isOpen: boolean
-  }>
+interface Options {
+  withTypescriptBuffer: WithTypescriptBuffer
 }
 
-export class AutocompleteProvider implements Provider {
-  selector = ".source.ts, .source.tsx"
+export class AutocompleteProvider implements ACP.AutocompleteProvider {
+  public selector = ".source.ts, .source.tsx"
 
-  disableForSelector = ".comment"
+  public disableForSelector = ".comment"
 
-  inclusionPriority = 3
-  suggestionPriority = 3
-  excludeLowerPriority = false
+  public inclusionPriority = 3
+  public suggestionPriority = atom.config.get("atom-typescript.autocompletionSuggestionPriority")
+  public excludeLowerPriority = false
 
   private clientResolver: ClientResolver
   private lastSuggestions: {
@@ -51,8 +48,102 @@ export class AutocompleteProvider implements Provider {
     this.opts = opts
   }
 
+  public async getSuggestions(opts: ACP.SuggestionsRequestedEvent): Promise<ACP.TextSuggestion[]> {
+    const location = getLocationQuery(opts)
+    const {prefix} = opts
+
+    if (!location) {
+      return []
+    }
+
+    // Don't show autocomplete if the previous character was a non word character except "."
+    const lastChar = getLastNonWhitespaceChar(opts.editor.buffer, opts.bufferPosition)
+    if (lastChar && !opts.activatedManually) {
+      if (/\W/i.test(lastChar) && lastChar !== ".") {
+        return []
+      }
+    }
+
+    // Don't show autocomplete if we're in a string.template and not in a template expression
+    if (
+      containsScope(opts.scopeDescriptor.scopes, "string.template.") &&
+      !containsScope(opts.scopeDescriptor.scopes, "template.expression.")
+    ) {
+      return []
+    }
+
+    // Don't show autocomplete if we're in a string and it's not an import path
+    if (containsScope(opts.scopeDescriptor.scopes, "string.quoted.")) {
+      if (!importPathScopes.some(scope => containsScope(opts.scopeDescriptor.scopes, scope))) {
+        return []
+      }
+    }
+
+    // Flush any pending changes for this buffer to get up to date completions
+    await this.opts.withTypescriptBuffer(location.file, async buffer => {
+      await buffer.flush()
+    })
+
+    try {
+      let suggestions = await this.getSuggestionsWithCache(prefix, location, opts.activatedManually)
+
+      const alphaPrefix = prefix.replace(/\W/g, "")
+      if (alphaPrefix !== "") {
+        suggestions = fuzzaldrin.filter(suggestions, alphaPrefix, {
+          key: "text",
+        })
+      }
+
+      // Get additional details for the first few suggestions
+      await this.getAdditionalDetails(suggestions.slice(0, 10), location)
+
+      const trimmed = prefix.trim()
+
+      return suggestions.map(suggestion => ({
+        replacementPrefix: getReplacementPrefix(prefix, trimmed, suggestion.text!),
+        ...suggestion,
+      }))
+    } catch (error) {
+      return []
+    }
+  }
+
+  private async getAdditionalDetails(
+    suggestions: SuggestionWithDetails[],
+    location: FileLocationQuery,
+  ) {
+    if (suggestions.some(s => !s.details)) {
+      const details = await this.lastSuggestions.client.execute("completionEntryDetails", {
+        entryNames: suggestions.map(s => s.text!),
+        ...location,
+      })
+
+      details.body!.forEach((detail, i) => {
+        const suggestion = suggestions[i]
+
+        suggestion.details = detail
+        let parts = detail.displayParts
+        if (
+          parts[1] &&
+          parts[1].text === suggestion.leftLabel &&
+          parts[0] &&
+          parts[0].text === "(" &&
+          parts[2] &&
+          parts[2].text === ")"
+        ) {
+          parts = parts.slice(3)
+        }
+        suggestion.rightLabel = parts.map(d => d.text).join("")
+
+        if (detail.documentation) {
+          suggestion.description = detail.documentation.map(d => d.text).join(" ")
+        }
+      })
+    }
+  }
+
   // Try to reuse the last completions we got from tsserver if they're for the same position.
-  async getSuggestionsWithCache(
+  private async getSuggestionsWithCache(
     prefix: string,
     location: FileLocationQuery,
     activatedManually: boolean,
@@ -62,7 +153,7 @@ export class AutocompleteProvider implements Provider {
       const lastCol = getNormalizedCol(this.lastSuggestions.prefix, lastLoc.offset)
       const thisCol = getNormalizedCol(prefix, location.offset)
 
-      if (lastLoc.file === location.file && lastLoc.line == location.line && lastCol === thisCol) {
+      if (lastLoc.file === location.file && lastLoc.line === location.line && lastCol === thisCol) {
         if (this.lastSuggestions.suggestions.length !== 0) {
           return this.lastSuggestions.suggestions
         }
@@ -70,7 +161,11 @@ export class AutocompleteProvider implements Provider {
     }
 
     const client = await this.clientResolver.get(location.file)
-    const completions = await client.executeCompletions({prefix, ...location})
+    const completions = await client.execute("completions", {
+      prefix,
+      includeExternalModuleExports: false,
+      ...location,
+    })
 
     const suggestions = completions.body!.map(entry => ({
       text: entry.name,
@@ -86,81 +181,6 @@ export class AutocompleteProvider implements Provider {
     }
 
     return suggestions
-  }
-
-  async getSuggestions(opts: RequestOptions): Promise<Suggestion[]> {
-    const location = getLocationQuery(opts)
-    const {prefix} = opts
-
-    if (!location.file) {
-      return []
-    }
-
-    // Don't show autocomplete if the previous character was a non word character except "."
-    const lastChar = getLastNonWhitespaceChar(opts.editor.buffer, opts.bufferPosition)
-    if (lastChar && !opts.activatedManually) {
-      if (/\W/i.test(lastChar) && lastChar !== ".") {
-        return []
-      }
-    }
-
-    // Don't show autocomplete if we're in a string.template and not in a template expression
-    if (containsScope(opts.scopeDescriptor.scopes, "string.template.")
-      && !containsScope(opts.scopeDescriptor.scopes, "template.expression.")) {
-        return []
-    }
-
-    // Don't show autocomplete if we're in a string and it's not an import path
-    if (containsScope(opts.scopeDescriptor.scopes, "string.quoted.")) {
-      if (!importPathScopes.some(scope => containsScope(opts.scopeDescriptor.scopes, scope))) {
-        return []
-      }
-    }
-
-    // Flush any pending changes for this buffer to get up to date completions
-    const {buffer} = await this.opts.getTypescriptBuffer(location.file)
-    await buffer.flush()
-
-    try {
-      var suggestions = await this.getSuggestionsWithCache(prefix, location, opts.activatedManually)
-    } catch (error) {
-      return []
-    }
-
-    const alphaPrefix = prefix.replace(/\W/g, "")
-    if (alphaPrefix !== "") {
-      suggestions = fuzzaldrin.filter(suggestions, alphaPrefix, {key: "text"})
-    }
-
-    // Get additional details for the first few suggestions
-    await this.getAdditionalDetails(suggestions.slice(0, 10), location)
-
-    const trimmed = prefix.trim()
-
-    return suggestions.map(suggestion => ({
-      replacementPrefix: getReplacementPrefix(prefix, trimmed, suggestion.text!),
-      ...suggestion
-    }))
-  }
-
-  async getAdditionalDetails(suggestions: SuggestionWithDetails[], location: FileLocationQuery) {
-    if (suggestions.some(s => !s.details)) {
-      const details = await this.lastSuggestions.client.executeCompletionDetails({
-        entryNames: suggestions.map(s => s.text!),
-        ...location
-      })
-
-      details.body!.forEach((detail, i) => {
-        const suggestion = suggestions[i]
-
-        suggestion.details = detail
-        suggestion.rightLabel = detail.displayParts.map(d => d.text).join("")
-
-        if (detail.documentation) {
-          suggestion.description = detail.documentation.map(d => d.text).join(" ")
-        }
-      })
-    }
   }
 }
 
@@ -182,21 +202,29 @@ function getNormalizedCol(prefix: string, col: number): number {
   return col - length
 }
 
-function getLocationQuery(opts: RequestOptions): FileLocationQuery {
+function getLocationQuery(opts: ACP.SuggestionsRequestedEvent): FileLocationQuery | undefined {
+  const path = opts.editor.getPath()
+  if (!path) {
+    return undefined
+  }
   return {
-    file: opts.editor.getPath(),
-    line: opts.bufferPosition.row+1,
-    offset: opts.bufferPosition.column+1
+    file: path,
+    line: opts.bufferPosition.row + 1,
+    offset: opts.bufferPosition.column + 1,
   }
 }
 
-function getLastNonWhitespaceChar(buffer: TextBuffer.ITextBuffer, pos: TextBuffer.IPoint): string | undefined {
-  let lastChar: string | undefined = undefined
-  const range = new Atom.Range([0,0], pos)
-  buffer.backwardsScanInRange(/\S/, range, ({matchText, stop}: {matchText: string, stop: () => void}) => {
+function getLastNonWhitespaceChar(buffer: Atom.TextBuffer, pos: Atom.Point): string | undefined {
+  let lastChar: string | undefined
+  const range = new Atom.Range([0, 0], pos)
+  buffer.backwardsScanInRange(
+    /\S/,
+    range,
+    ({matchText, stop}: {matchText: string; stop: () => void}) => {
       lastChar = matchText
       stop()
-    })
+    },
+  )
   return lastChar
 }
 
@@ -208,4 +236,33 @@ function containsScope(scopes: string[], matchScope: string): boolean {
   }
 
   return false
+}
+
+/** See types :
+ * https://github.com/atom-community/autocomplete-plus/pull/334#issuecomment-85697409
+ */
+export function kindToType(kind: string) {
+  // variable, constant, property, value, method, function, class, type, keyword, tag, snippet, import, require
+  switch (kind) {
+    case "const":
+      return "constant"
+    case "interface":
+      return "type"
+    case "identifier":
+      return "variable"
+    case "local function":
+      return "function"
+    case "local var":
+      return "variable"
+    case "let":
+    case "var":
+    case "parameter":
+      return "variable"
+    case "alias":
+      return "import"
+    case "type parameter":
+      return "type"
+    default:
+      return kind.split(" ")[0]
+  }
 }

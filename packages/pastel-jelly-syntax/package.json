@@ -1,0 +1,56 @@
+{
+  "_from": "file:/tmp/d-11818-31940-1qojvrz.itu2/package.tgz",
+  "_id": "pastel-jelly-syntax@0.2.0",
+  "_inBundle": false,
+  "_integrity": "sha512-PJUry1do516z2JZiy2+8marLgNCDsyrayVraHSKmkjx6PyXBKV4i4d02FFVYHIIGTnsYQ6ZcNJekXpMmld6xTA==",
+  "_location": "/pastel-jelly-syntax",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "file",
+    "where": "/tmp/apm-install-dir-11818-31940-x6xg45.fx96r",
+    "raw": "/tmp/d-11818-31940-1qojvrz.itu2/package.tgz",
+    "rawSpec": "/tmp/d-11818-31940-1qojvrz.itu2/package.tgz",
+    "saveSpec": "file:/tmp/d-11818-31940-1qojvrz.itu2/package.tgz",
+    "fetchSpec": "/tmp/d-11818-31940-1qojvrz.itu2/package.tgz"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "/tmp/d-11818-31940-1qojvrz.itu2/package.tgz",
+  "_spec": "/tmp/d-11818-31940-1qojvrz.itu2/package.tgz",
+  "_where": "/tmp/apm-install-dir-11818-31940-x6xg45.fx96r",
+  "bugs": {
+    "url": "https://github.com/hexjelly/pastel-jelly-syntax/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Syntax theme for Atom with pastel colors and dark background.",
+  "engines": {
+    "atom": ">=1.13.0 <2.0.0"
+  },
+  "homepage": "https://github.com/hexjelly/pastel-jelly-syntax#readme",
+  "keywords": [
+    "syntax",
+    "theme",
+    "pastel",
+    "jelly"
+  ],
+  "license": "MIT",
+  "name": "pastel-jelly-syntax",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hexjelly/pastel-jelly-syntax.git"
+  },
+  "theme": "syntax",
+  "version": "0.2.0",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

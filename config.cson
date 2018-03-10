@@ -1,43 +1,84 @@
 "*":
   Zen:
     minimap: true
-    width: 160
-  "activate-power-mode":
-    autoToggle: false
+    width: 100
+  "activate-power-mode": {}
   "atom-beautify":
-    c: {}
     general:
-      _analyticsUserId: "inowreal-true-hate-gogl-d8768acad65"
       analytics: false
+  "atom-clock": {}
+  "atom-material-ui":
+    colors:
+      abaseColor: "#7e7e7e"
+      genAccent: true
+      predefinedColor: "Grey"
+    tabs:
+      compactTabs: true
+      tintedTabBar: true
+    ui:
+      panelContrast: true
+      panelShadows: true
+  "autoclose-html": {}
+  "autocomplete-python":
+    useKite: false
+  "battery-status":
+    onlyShowWhileInFullscreen: true
   core:
     audioBeep: false
     autoHideMenuBar: true
     disabledPackages: [
-      "activate-power-mode"
       "linter-write-good"
-      "autocomplete-python"
       "welcome"
       "dalek"
       "metrics"
+      "git-plus"
+      "linter-lua"
+      "minimap-pigments"
+      "autocomplete-java"
+      "linter-javac"
+      "github"
+      "background-tips"
+      "linter-golinter"
+      "intentions"
+      "atom-ide-ui"
+      "platformio-ide"
+      "platformio-ide-debugger"
+      "platformio-ide-terminal"
+      "atom-beautify"
+      "spell-check"
     ]
-    openEmptyEditorOnStart: false
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      ".pioenvs"
+      ".piolibdeps"
+      ".clang_complete"
+      ".gcc-flags.json"
+    ]
     telemetryConsent: "no"
     themes: [
       "seti-ui"
       "monokai-seti"
     ]
-  editor:
-    fontSize: 12
+  editor: {}
   "exception-reporting":
-    userId: "e8b4ff51-55bf-620d-af04-5226eb6bb6fe"
+    userId: "c9520757-c057-484e-a129-77dea25aa744"
+  "file-icons":
+    strategies: {}
   "git-plus":
-    experimental: {}
     general:
       analytics: false
+  linter: {}
+  "linter-flake8":
+    pycodestyleErrorsToWarnings: true
   "linter-ui-default":
-    showPanel: true
-  "linter-write-good":
-    severityLevel: "Warning"
+    useBusySignal: false
+  "linter-write-good": {}
   minimap:
     plugins:
       bookmarks: true
@@ -46,20 +87,30 @@
       "highlight-selectedDecorationsZIndex": 0
       pigments: true
       pigmentsDecorationsZIndex: 0
+  "nord-atom-syntax":
+    accessibility: {}
+  "nord-atom-ui":
+    darkerFormFocusEffect: true
+  proton:
+    core:
+      selectedLayers: [
+        "core"
+      ]
+  script: {}
   "seti-ui":
     compactView: true
+    fileIcons: false
+    hideProjectTab: true
     themeColor: "Steel"
-  "todo-show":
-    sortBy: "Line"
-    statusBarIndicator: true
+  "todo-show": {}
+  "tool-bar":
+    position: "Left"
   "tree-view":
-    hideVcsIgnoredFiles: true
-  welcome:
-    showOnStartup: false
-".perl.source":
+    hideIgnoredNames: true
+  welcome: {}
+".basic.html.text":
   editor:
-    showIndentGuide: false
-    showInvisibles: false
-".python.source":
+    showIndentGuide: true
+".diff.source":
   editor:
-    tabLength: 4
+    showInvisibles: true

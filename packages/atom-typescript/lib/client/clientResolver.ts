@@ -1,26 +1,25 @@
 import {TypescriptServiceClient as Client} from "./client"
 import * as events from "events"
 import * as path from "path"
-import {sync as resolveSync} from "resolve"
-import {Diagnostic, DiagnosticEventBody, ConfigFileDiagnosticEventBody} from "typescript/lib/protocol"
+import * as Resolve from "resolve"
+import {
+  Diagnostic,
+  DiagnosticEventBody,
+  ConfigFileDiagnosticEventBody,
+} from "typescript/lib/protocol"
 
 type DiagnosticTypes = "configFileDiag" | "semanticDiag" | "syntaxDiag"
 
 interface DiagnosticsPayload {
   diagnostics: Diagnostic[]
-  filePath: string,
-  serverPath: string,
-  type: DiagnosticTypes,
-}
-
-interface Server {
-  version: string
+  filePath: string
   serverPath: string
+  type: DiagnosticTypes
 }
 
-const defaultServer: Server = {
-  serverPath: require.resolve("typescript/bin/tsserver"),
-  version: require("typescript").version
+interface Binary {
+  version: string
+  pathToBin: string
 }
 
 /**
@@ -28,60 +27,63 @@ const defaultServer: Server = {
  * require("typescript") from the same source file would resolve.
  */
 export class ClientResolver extends events.EventEmitter {
-
-  clients: {
+  public clients: {
     [tsServerPath: string]: {
-      client: Client,
-      pending: string[],
+      client: Client
+      pending: string[]
     }
   } = {}
 
   // This is just here so Typescript can infer the types of the callbacks when using "on" method
-  on(event: "diagnostics", callback: (result: DiagnosticsPayload) => any): this
-  on(event: "pendingRequestsChange", callback: Function): this
-  on(event: string, callback: Function): this {
+  public on(event: "diagnostics", callback: (result: DiagnosticsPayload) => void): this
+  public on(event: "pendingRequestsChange", callback: () => void): this
+  public on(event: string, callback: (() => void) | ((result: DiagnosticsPayload) => void)): this {
     return super.on(event, callback)
   }
 
-  get(filePath: string): Promise<Client> {
-    return resolveServer(filePath)
-      .catch(() => defaultServer)
-      .then(({serverPath, version}) => {
-        if (this.clients[serverPath]) {
-          return this.clients[serverPath].client
-        }
+  public async get(pFilePath: string): Promise<Client> {
+    const {pathToBin, version} = await resolveBinary(pFilePath, "tsserver")
 
-        const entry = this.addClient(serverPath, new Client(serverPath, version))
+    if (this.clients[pathToBin]) {
+      return this.clients[pathToBin].client
+    }
 
-        entry.client.startServer()
+    const entry = this.addClient(pathToBin, new Client(pathToBin, version))
 
-        entry.client.on("pendingRequestsChange", pending => {
-          entry.pending = pending
-          this.emit("pendingRequestsChange")
+    entry.client.startServer()
+
+    entry.client.on("pendingRequestsChange", pending => {
+      entry.pending = pending
+      this.emit("pendingRequestsChange")
+    })
+
+    const diagnosticHandler = (type: string) => (
+      result: DiagnosticEventBody | ConfigFileDiagnosticEventBody,
+    ) => {
+      const filePath = isConfDiagBody(result) ? result.configFile : result.file
+
+      if (filePath) {
+        this.emit("diagnostics", {
+          type,
+          pathToBin,
+          filePath,
+          diagnostics: result.diagnostics,
         })
+      }
+    }
 
-        const diagnosticHandler = (type: string, result: DiagnosticEventBody | ConfigFileDiagnosticEventBody) => {
-          const filePath = isConfDiagBody(result) ? result.configFile : result.file
+    entry.client.on("configFileDiag", diagnosticHandler("configFileDiag"))
+    entry.client.on("semanticDiag", diagnosticHandler("semanticDiag"))
+    entry.client.on("syntaxDiag", diagnosticHandler("syntaxDiag"))
 
-          if (filePath) {
-            this.emit("diagnostics", {
-              type,
-              serverPath,
-              filePath,
-              diagnostics: result.diagnostics
-            })
-          }
-        }
-
-        entry.client.on("configFileDiag", diagnosticHandler.bind(this, "configFileDiag"))
-        entry.client.on("semanticDiag", diagnosticHandler.bind(this, "semanticDiag"))
-        entry.client.on("syntaxDiag", diagnosticHandler.bind(this, "syntaxDiag"))
-
-        return entry.client
-      })
+    return entry.client
   }
 
-  addClient(serverPath: string, client: Client) {
+  public dispose() {
+    this.removeAllListeners()
+  }
+
+  private addClient(serverPath: string, client: Client) {
     this.clients[serverPath] = {
       client,
       pending: [],
@@ -91,19 +93,35 @@ export class ClientResolver extends events.EventEmitter {
   }
 }
 
-export function resolveServer(sourcePath: string): Promise<Server> {
-  const basedir = path.dirname(sourcePath)
+// Promisify the async resolve function
+const resolveModule = (id: string, opts: Resolve.AsyncOpts): Promise<string> => {
+  return new Promise<string>((resolve, reject) =>
+    Resolve(id, opts, (err, result) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve(result)
+      }
+    }),
+  )
+}
 
-  return Promise.resolve().then(() => {
-    const resolvedPath = resolveSync("typescript/bin/tsserver", {basedir})
-    const packagePath = path.resolve(resolvedPath, "../../package.json")
-    const version = require(packagePath).version
+export async function resolveBinary(sourcePath: string, binName: string): Promise<Binary> {
+  const {NODE_PATH} = process.env
+  const defaultPath = require.resolve(`typescript/bin/${binName}`)
 
-    return {
-      version,
-      serverPath: resolvedPath
-    }
-  })
+  const resolvedPath = await resolveModule(`typescript/bin/${binName}`, {
+    basedir: path.dirname(sourcePath),
+    paths: NODE_PATH && NODE_PATH.split(path.delimiter),
+  }).catch(() => defaultPath)
+
+  const packagePath = path.resolve(resolvedPath, "../../package.json")
+  const version = require(packagePath).version
+
+  return {
+    version,
+    pathToBin: resolvedPath,
+  }
 }
 
 function isConfDiagBody(body: any): body is ConfigFileDiagnosticEventBody {

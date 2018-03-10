@@ -1,0 +1,60 @@
+{
+  "_from": "file:/tmp/d-11815-31386-nhcint.bpexl/package.tgz",
+  "_id": "double-tag@1.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-d196rMD/Zk6i1dR7uXb+BiPTGa67G2phUHzaiyafs/FKPoGjMh9ZACpk/RQCu5GKha/QALTy2pddAdfisGI1Mg==",
+  "_location": "/double-tag",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "file",
+    "where": "/tmp/apm-install-dir-11815-31386-1f5avqm.ftia",
+    "raw": "/tmp/d-11815-31386-nhcint.bpexl/package.tgz",
+    "rawSpec": "/tmp/d-11815-31386-nhcint.bpexl/package.tgz",
+    "saveSpec": "file:/tmp/d-11815-31386-nhcint.bpexl/package.tgz",
+    "fetchSpec": "/tmp/d-11815-31386-nhcint.bpexl/package.tgz"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "/tmp/d-11815-31386-nhcint.bpexl/package.tgz",
+  "_spec": "/tmp/d-11815-31386-nhcint.bpexl/package.tgz",
+  "_where": "/tmp/apm-install-dir-11815-31386-1f5avqm.ftia",
+  "activationCommands": {},
+  "bugs": {
+    "url": "https://github.com/dsandstrom/atom-double-tag/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Faster HTML tag editing",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/dsandstrom/atom-double-tag#readme",
+  "keywords": [
+    "html"
+  ],
+  "license": "MIT",
+  "main": "./lib/main",
+  "name": "double-tag",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dsandstrom/atom-double-tag.git"
+  },
+  "version": "1.1.0",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".coffee": [
+        "lib/double-tag.coffee",
+        "lib/main.coffee"
+      ],
+      ".json": [
+        "package-lock.json",
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

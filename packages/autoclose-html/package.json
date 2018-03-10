@@ -1,0 +1,74 @@
+{
+  "_from": "file:/tmp/d-11817-14572-16452i7.npg7i/package.tgz",
+  "_id": "autoclose-html@0.23.0",
+  "_inBundle": false,
+  "_integrity": "sha512-D+XDFMqHlWqCpi5XlkJM15yWgYQaAvGtOvWuQHzFwA5wsJc0WSqA6hvjbBYaia9K4pHnZ8SzOOe4k39qNY/1/w==",
+  "_location": "/autoclose-html",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "file",
+    "where": "/tmp/apm-install-dir-11817-14572-1fn8lqq.shx3",
+    "raw": "/tmp/d-11817-14572-16452i7.npg7i/package.tgz",
+    "rawSpec": "/tmp/d-11817-14572-16452i7.npg7i/package.tgz",
+    "saveSpec": "file:/tmp/d-11817-14572-16452i7.npg7i/package.tgz",
+    "fetchSpec": "/tmp/d-11817-14572-16452i7.npg7i/package.tgz"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "/tmp/d-11817-14572-16452i7.npg7i/package.tgz",
+  "_spec": "/tmp/d-11817-14572-16452i7.npg7i/package.tgz",
+  "_where": "/tmp/apm-install-dir-11817-14572-1fn8lqq.shx3",
+  "author": {
+    "name": "Matt Berkowitz"
+  },
+  "bugs": {
+    "url": "https://github.com/mattberkowitz/autoclose-html/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Evan Hahn",
+      "email": "me@evanhahn.com",
+      "url": "http://evanhahn.com"
+    },
+    {
+      "name": "Mat Silva",
+      "email": "askmatsilva@.com",
+      "url": "https://github.com/matsilva"
+    }
+  ],
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Automates closing of HTML Tags",
+  "dist": {
+    "shasum": "25792d1cf3395393c861bfcb919fe684f505af85"
+  },
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "homepage": "https://github.com/mattberkowitz/autoclose-html",
+  "license": "MIT",
+  "main": "./lib/autoclose-html",
+  "name": "autoclose-html",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattberkowitz/autoclose-html.git"
+  },
+  "version": "0.23.0",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".coffee": [
+        "lib/autoclose-html.coffee",
+        "lib/configuration.coffee"
+      ],
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

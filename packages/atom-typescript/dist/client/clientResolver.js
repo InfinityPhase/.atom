@@ -3,11 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const client_1 = require("./client");
 const events = require("events");
 const path = require("path");
-const resolve_1 = require("resolve");
-const defaultServer = {
-    serverPath: require.resolve("typescript/bin/tsserver"),
-    version: require("typescript").version
-};
+const Resolve = require("resolve");
 /**
  * ClientResolver takes care of finding the correct tsserver for a source file based on how a
  * require("typescript") from the same source file would resolve.
@@ -20,35 +16,35 @@ class ClientResolver extends events.EventEmitter {
     on(event, callback) {
         return super.on(event, callback);
     }
-    get(filePath) {
-        return resolveServer(filePath)
-            .catch(() => defaultServer)
-            .then(({ serverPath, version }) => {
-            if (this.clients[serverPath]) {
-                return this.clients[serverPath].client;
-            }
-            const entry = this.addClient(serverPath, new client_1.TypescriptServiceClient(serverPath, version));
-            entry.client.startServer();
-            entry.client.on("pendingRequestsChange", pending => {
-                entry.pending = pending;
-                this.emit("pendingRequestsChange");
-            });
-            const diagnosticHandler = (type, result) => {
-                const filePath = isConfDiagBody(result) ? result.configFile : result.file;
-                if (filePath) {
-                    this.emit("diagnostics", {
-                        type,
-                        serverPath,
-                        filePath,
-                        diagnostics: result.diagnostics
-                    });
-                }
-            };
-            entry.client.on("configFileDiag", diagnosticHandler.bind(this, "configFileDiag"));
-            entry.client.on("semanticDiag", diagnosticHandler.bind(this, "semanticDiag"));
-            entry.client.on("syntaxDiag", diagnosticHandler.bind(this, "syntaxDiag"));
-            return entry.client;
+    async get(pFilePath) {
+        const { pathToBin, version } = await resolveBinary(pFilePath, "tsserver");
+        if (this.clients[pathToBin]) {
+            return this.clients[pathToBin].client;
+        }
+        const entry = this.addClient(pathToBin, new client_1.TypescriptServiceClient(pathToBin, version));
+        entry.client.startServer();
+        entry.client.on("pendingRequestsChange", pending => {
+            entry.pending = pending;
+            this.emit("pendingRequestsChange");
         });
+        const diagnosticHandler = (type) => (result) => {
+            const filePath = isConfDiagBody(result) ? result.configFile : result.file;
+            if (filePath) {
+                this.emit("diagnostics", {
+                    type,
+                    pathToBin,
+                    filePath,
+                    diagnostics: result.diagnostics,
+                });
+            }
+        };
+        entry.client.on("configFileDiag", diagnosticHandler("configFileDiag"));
+        entry.client.on("semanticDiag", diagnosticHandler("semanticDiag"));
+        entry.client.on("syntaxDiag", diagnosticHandler("syntaxDiag"));
+        return entry.client;
+    }
+    dispose() {
+        this.removeAllListeners();
     }
     addClient(serverPath, client) {
         this.clients[serverPath] = {
@@ -59,19 +55,32 @@ class ClientResolver extends events.EventEmitter {
     }
 }
 exports.ClientResolver = ClientResolver;
-function resolveServer(sourcePath) {
-    const basedir = path.dirname(sourcePath);
-    return Promise.resolve().then(() => {
-        const resolvedPath = resolve_1.sync("typescript/bin/tsserver", { basedir });
-        const packagePath = path.resolve(resolvedPath, "../../package.json");
-        const version = require(packagePath).version;
-        return {
-            version,
-            serverPath: resolvedPath
-        };
-    });
+// Promisify the async resolve function
+const resolveModule = (id, opts) => {
+    return new Promise((resolve, reject) => Resolve(id, opts, (err, result) => {
+        if (err) {
+            reject(err);
+        }
+        else {
+            resolve(result);
+        }
+    }));
+};
+async function resolveBinary(sourcePath, binName) {
+    const { NODE_PATH } = process.env;
+    const defaultPath = require.resolve(`typescript/bin/${binName}`);
+    const resolvedPath = await resolveModule(`typescript/bin/${binName}`, {
+        basedir: path.dirname(sourcePath),
+        paths: NODE_PATH && NODE_PATH.split(path.delimiter),
+    }).catch(() => defaultPath);
+    const packagePath = path.resolve(resolvedPath, "../../package.json");
+    const version = require(packagePath).version;
+    return {
+        version,
+        pathToBin: resolvedPath,
+    };
 }
-exports.resolveServer = resolveServer;
+exports.resolveBinary = resolveBinary;
 function isConfDiagBody(body) {
     return body && body.triggerFile && body.configFile;
 }

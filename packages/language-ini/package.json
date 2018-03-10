@@ -1,0 +1,58 @@
+{
+  "_from": "file:/tmp/d-117116-19265-z1d272.8e2o/package.tgz",
+  "_id": "language-ini@1.19.0",
+  "_inBundle": false,
+  "_integrity": "sha512-9tSlwcDyjUn5ksb4/GboFTEPiH9SOFglOdz13aRPhTDakeUZuLFvO79na7FhaV7Ihkm7ihliRSrWwnPx1S1Qow==",
+  "_location": "/language-ini",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "file",
+    "where": "/tmp/apm-install-dir-117116-19265-1cbeunf.savq",
+    "raw": "/tmp/d-117116-19265-z1d272.8e2o/package.tgz",
+    "rawSpec": "/tmp/d-117116-19265-z1d272.8e2o/package.tgz",
+    "saveSpec": "file:/tmp/d-117116-19265-z1d272.8e2o/package.tgz",
+    "fetchSpec": "/tmp/d-117116-19265-z1d272.8e2o/package.tgz"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "/tmp/d-117116-19265-z1d272.8e2o/package.tgz",
+  "_spec": "/tmp/d-117116-19265-z1d272.8e2o/package.tgz",
+  "_where": "/tmp/apm-install-dir-117116-19265-1cbeunf.savq",
+  "author": {
+    "name": "Jacob Bednarz",
+    "email": "jacob.bednarz@gmail.com",
+    "url": "https://jacobbednarz.github.io"
+  },
+  "bugs": {
+    "url": "https://github.com/jacobbednarz/atom-language-ini/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Syntax support for ini files.",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "homepage": "https://github.com/jacobbednarz/atom-language-ini",
+  "license": "MIT",
+  "name": "language-ini",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobbednarz/atom-language-ini.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.19.0",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

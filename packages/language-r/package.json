@@ -1,0 +1,57 @@
+{
+  "_from": "file:/tmp/d-117820-19355-ldgms6.ib2g/package.tgz",
+  "_id": "language-r@0.4.2",
+  "_inBundle": false,
+  "_integrity": "sha1-AeMiItfO7+QsEZW8T9kWBZT2Ui8=",
+  "_location": "/language-r",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "file",
+    "where": "/tmp/apm-install-dir-117820-19355-k7zeqf.tjb8",
+    "raw": "/tmp/d-117820-19355-ldgms6.ib2g/package.tgz",
+    "rawSpec": "/tmp/d-117820-19355-ldgms6.ib2g/package.tgz",
+    "saveSpec": "file:/tmp/d-117820-19355-ldgms6.ib2g/package.tgz",
+    "fetchSpec": "/tmp/d-117820-19355-ldgms6.ib2g/package.tgz"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "/tmp/d-117820-19355-ldgms6.ib2g/package.tgz",
+  "_spec": "/tmp/d-117820-19355-ldgms6.ib2g/package.tgz",
+  "_where": "/tmp/apm-install-dir-117820-19355-k7zeqf.tjb8",
+  "author": {
+    "name": "Lee Dohm",
+    "email": "lee@lee-dohm.com"
+  },
+  "bugs": {
+    "url": "https://github.com/lee-dohm/language-r/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "A language description and snippets for R",
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "homepage": "https://github.com/lee-dohm/language-r#readme",
+  "keywords": [
+    "grammar",
+    "r"
+  ],
+  "license": "MIT",
+  "name": "language-r",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lee-dohm/language-r.git"
+  },
+  "version": "0.4.2",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

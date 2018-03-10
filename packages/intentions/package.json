@@ -1,43 +1,28 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "/tmp/d-117222-2358-1wmnck1.pfnctvgqfr/package.tgz",
-        "scope": null,
-        "escapedName": null,
-        "name": null,
-        "rawSpec": "/tmp/d-117222-2358-1wmnck1.pfnctvgqfr/package.tgz",
-        "spec": "/tmp/d-117222-2358-1wmnck1.pfnctvgqfr/package.tgz",
-        "type": "local"
-      },
-      "/tmp/apm-install-dir-117222-2358-r9um0g.uhe437hkt9"
-    ]
-  ],
-  "_from": "../d-117222-2358-1wmnck1.pfnctvgqfr/package.tgz",
-  "_id": "intentions@1.1.2",
-  "_inCache": true,
+  "_from": "file:/tmp/d-117710-18260-1f0fgnt.yz9r/package.tgz",
+  "_id": "intentions@1.1.5",
+  "_inBundle": false,
+  "_integrity": "sha1-yEFMrMVcQAzCFycW7DF4zOoCq7Q=",
   "_location": "/intentions",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-117222-2358-1wmnck1.pfnctvgqfr/package.tgz",
-    "scope": null,
-    "escapedName": null,
-    "name": null,
-    "rawSpec": "/tmp/d-117222-2358-1wmnck1.pfnctvgqfr/package.tgz",
-    "spec": "/tmp/d-117222-2358-1wmnck1.pfnctvgqfr/package.tgz",
-    "type": "local"
+    "type": "file",
+    "where": "/tmp/apm-install-dir-117710-18260-jk8cvz.56jco",
+    "raw": "/tmp/d-117710-18260-1f0fgnt.yz9r/package.tgz",
+    "rawSpec": "/tmp/d-117710-18260-1f0fgnt.yz9r/package.tgz",
+    "saveSpec": "file:/tmp/d-117710-18260-1f0fgnt.yz9r/package.tgz",
+    "fetchSpec": "/tmp/d-117710-18260-1f0fgnt.yz9r/package.tgz"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-117222-2358-1wmnck1.pfnctvgqfr/package.tgz",
-  "_shasum": "ff78e073a6bf1069e184a4cc79e8306af30a1962",
-  "_shrinkwrap": null,
-  "_spec": "/tmp/d-117222-2358-1wmnck1.pfnctvgqfr/package.tgz",
-  "_where": "/tmp/apm-install-dir-117222-2358-r9um0g.uhe437hkt9",
+  "_resolved": "/tmp/d-117710-18260-1f0fgnt.yz9r/package.tgz",
+  "_spec": "/tmp/d-117710-18260-1f0fgnt.yz9r/package.tgz",
+  "_where": "/tmp/apm-install-dir-117710-18260-jk8cvz.56jco",
   "bugs": {
     "url": "https://github.com/steelbrain/intentions/issues"
   },
+  "bundleDependencies": false,
   "consumedServices": {
     "intentions:list": {
       "versions": {
@@ -52,12 +37,14 @@
   },
   "dependencies": {
     "disposable-event": "^1.0.1",
-    "sb-event-kit": "^2.0.0",
+    "sb-event-kit": "^3.0.0",
     "vanilla-jsx": "^3.0.2"
   },
+  "deprecated": false,
   "description": "Base package for showing intentions in Atom",
   "devDependencies": {
-    "eslint-config-steelbrain": "^1.0.4",
+    "eslint-config-steelbrain": "^2.0.0",
+    "flow-bin": "^0.46.0",
     "jasmine-fix": "^1.0.1"
   },
   "engines": {
@@ -68,18 +55,14 @@
   "license": "MIT",
   "main": "./lib/index.js",
   "name": "intentions",
-  "optionalDependencies": {},
-  "readme": "Intentions\n=========\n\nIntentions is a base package that provides an easy-to-use API to show intentions based in Atom.\n\n#### Usage\n\nThe default keybinding on OSX to trigger list is `ctrl` + `enter`. If you want to trigger intentions highlights,\npress `alt`.\n\nThe default keybinding on Windows and Linux to trigger list is `alt` + `enter`. If you want to trigger intentions\nhighlights press `ctrl`.\n\n#### APIs\n\nIntentions provides two kinds of APIs, there's Intentions List API that allows you to add items\nto intentions list. Here is what it looks like,\n\n![Intentions List API](https://cloud.githubusercontent.com/assets/4278113/12488546/e73809ba-c08d-11e5-8038-dd222f3a815d.png)\n\nThe second type of API is highlight API. It allows packages to mark buffer ranges and do cool thing with them.\nIt can be jump-to-declaration click, show type on mouse move and show color as underline.\nHere is what it looks like\n\n![Intentions Highlight API](https://cloud.githubusercontent.com/assets/4278113/12878032/0f915ef2-ce3f-11e5-833e-be231abeda12.png)\n\nYou can find docs about both of these in [Intentions Wiki](https://github.com/steelbrain/intentions/wiki/Intentions-API)\n\n#### License\nThis package is licensed under the terms of MIT License, see the license file for more info.\n",
-  "readmeFilename": "README.md",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/steelbrain/intentions.git"
   },
   "scripts": {
-    "lint": "eslint .",
-    "test": "apm test"
+    "test": "(apm test) && (flow check) && (eslint . )"
   },
-  "version": "1.1.2",
+  "version": "1.1.5",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -89,13 +72,18 @@
         "path": "node_modules/disposable-event/lib/index.js"
       },
       {
+        "name": "sb-event-kit",
+        "version": "2.0.0",
+        "path": "node_modules/disposable-event/node_modules/sb-event-kit/lib/main.js"
+      },
+      {
         "name": "escape-html",
         "version": "1.0.3",
         "path": "node_modules/escape-html/index.js"
       },
       {
         "name": "sb-event-kit",
-        "version": "2.0.0",
+        "version": "3.0.0",
         "path": "node_modules/sb-event-kit/lib/main.js"
       },
       {
@@ -108,10 +96,13 @@
       ".json": [
         ".eslintrc.json",
         "node_modules/disposable-event/.eslintrc.json",
+        "node_modules/disposable-event/node_modules/sb-event-kit/package.json",
         "node_modules/disposable-event/package.json",
         "node_modules/escape-html/package.json",
+        "node_modules/sb-event-kit/.eslintrc.json",
         "node_modules/sb-event-kit/package.json",
         "node_modules/vanilla-jsx/package.json",
+        "package-lock.json",
         "package.json"
       ],
       ".js": [
@@ -128,10 +119,16 @@
         "lib/view-list.js",
         "node_modules/disposable-event/decls/jasmine.js",
         "node_modules/disposable-event/lib/index.js",
+        "node_modules/disposable-event/node_modules/sb-event-kit/lib/composite-disposable.js",
+        "node_modules/disposable-event/node_modules/sb-event-kit/lib/disposable.js",
+        "node_modules/disposable-event/node_modules/sb-event-kit/lib/emitter.js",
+        "node_modules/disposable-event/node_modules/sb-event-kit/lib/main.js",
         "node_modules/escape-html/index.js",
+        "node_modules/sb-event-kit/decls/jasmine.js",
         "node_modules/sb-event-kit/lib/composite-disposable.js",
         "node_modules/sb-event-kit/lib/disposable.js",
         "node_modules/sb-event-kit/lib/emitter.js",
+        "node_modules/sb-event-kit/lib/helpers.js",
         "node_modules/sb-event-kit/lib/main.js",
         "node_modules/vanilla-jsx/lib/main.js",
         "node_modules/vanilla-jsx/src/main.js"
@@ -149,7 +146,7 @@
         ],
         "dependencies": {
           "disposable-event": "^1.0.1",
-          "sb-event-kit": "^2.0.0",
+          "sb-event-kit": "^3.0.0",
           "vanilla-jsx": "^3.0.2"
         }
       },

@@ -1,4 +1,0 @@
-List
-Map<HashMap>
-ArrayList[]
-String[]

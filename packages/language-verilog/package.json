@@ -1,0 +1,50 @@
+{
+  "_from": "file:/tmp/d-11818-10824-1bsfi9k.syj/package.tgz",
+  "_id": "language-verilog@0.4.0",
+  "_inBundle": false,
+  "_integrity": "sha512-9MgyK8mfYAMdA4MQWkzAp4bExXGdO+6xJBmJ8GrolZKCW2a35f5roRrCM26sfQC4sMJhujzRnvhfVIpyYX7bMw==",
+  "_location": "/language-verilog",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "file",
+    "where": "/tmp/apm-install-dir-11818-10824-1rn51yl.3wgn",
+    "raw": "/tmp/d-11818-10824-1bsfi9k.syj/package.tgz",
+    "rawSpec": "/tmp/d-11818-10824-1bsfi9k.syj/package.tgz",
+    "saveSpec": "file:/tmp/d-11818-10824-1bsfi9k.syj/package.tgz",
+    "fetchSpec": "/tmp/d-11818-10824-1bsfi9k.syj/package.tgz"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "/tmp/d-11818-10824-1bsfi9k.syj/package.tgz",
+  "_spec": "/tmp/d-11818-10824-1bsfi9k.syj/package.tgz",
+  "_where": "/tmp/apm-install-dir-11818-10824-1rn51yl.3wgn",
+  "bugs": {
+    "url": "https://github.com/Razer6/language-verilog/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Verilog language support in Atom",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "homepage": "https://github.com/Razer6/language-verilog#readme",
+  "license": "MIT",
+  "name": "language-verilog",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Razer6/language-verilog.git"
+  },
+  "version": "0.4.0",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

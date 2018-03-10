@@ -1,61 +1,42 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "/tmp/d-11722-25403-1e4fytm.zfzt5oecdi/package.tgz",
-        "scope": null,
-        "escapedName": null,
-        "name": null,
-        "rawSpec": "/tmp/d-11722-25403-1e4fytm.zfzt5oecdi/package.tgz",
-        "spec": "/tmp/d-11722-25403-1e4fytm.zfzt5oecdi/package.tgz",
-        "type": "local"
-      },
-      "/tmp/apm-install-dir-11722-25403-6z9klk.bimshbbj4i"
-    ]
-  ],
-  "_from": "../d-11722-25403-1e4fytm.zfzt5oecdi/package.tgz",
-  "_id": "language-gradle@0.0.3",
-  "_inCache": true,
+  "_from": "file:/tmp/d-117116-18091-1s6u45j.nmdc/package.tgz",
+  "_id": "language-gradle@0.0.5",
+  "_inBundle": false,
+  "_integrity": "sha512-cgLXTH8AiVxtGzM8nozFelRRtouwzx8h5Q2V8faiCFLfu3+aIFCJgLSq6e7bm15Ei+X5b3MhSlQ06QvVf17TKg==",
   "_location": "/language-gradle",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-11722-25403-1e4fytm.zfzt5oecdi/package.tgz",
-    "scope": null,
-    "escapedName": null,
-    "name": null,
-    "rawSpec": "/tmp/d-11722-25403-1e4fytm.zfzt5oecdi/package.tgz",
-    "spec": "/tmp/d-11722-25403-1e4fytm.zfzt5oecdi/package.tgz",
-    "type": "local"
+    "type": "file",
+    "where": "/tmp/apm-install-dir-117116-18091-10bb2j4.0g9c",
+    "raw": "/tmp/d-117116-18091-1s6u45j.nmdc/package.tgz",
+    "rawSpec": "/tmp/d-117116-18091-1s6u45j.nmdc/package.tgz",
+    "saveSpec": "file:/tmp/d-117116-18091-1s6u45j.nmdc/package.tgz",
+    "fetchSpec": "/tmp/d-117116-18091-1s6u45j.nmdc/package.tgz"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-11722-25403-1e4fytm.zfzt5oecdi/package.tgz",
-  "_shasum": "777f8b66a9b1d16ae68573c09c397b9d649f65ba",
-  "_shrinkwrap": null,
-  "_spec": "/tmp/d-11722-25403-1e4fytm.zfzt5oecdi/package.tgz",
-  "_where": "/tmp/apm-install-dir-11722-25403-6z9klk.bimshbbj4i",
+  "_resolved": "/tmp/d-117116-18091-1s6u45j.nmdc/package.tgz",
+  "_spec": "/tmp/d-117116-18091-1s6u45j.nmdc/package.tgz",
+  "_where": "/tmp/apm-install-dir-117116-18091-10bb2j4.0g9c",
   "bugs": {
     "url": "https://github.com/skyisle/language-gradle/issues"
   },
-  "dependencies": {},
+  "bundleDependencies": false,
+  "deprecated": false,
   "description": "Gradle support in Atom",
-  "devDependencies": {},
   "engines": {
     "atom": ">0.50.0"
   },
   "homepage": "https://github.com/skyisle/language-gradle#readme",
   "license": "MIT",
   "name": "language-gradle",
-  "optionalDependencies": {},
   "private": true,
-  "readme": "#Gradle support in Atom\nAdds syntax highlighting to Gradle files in Atom.\n\nOriginally [converted](http://atom.io/docs/latest/converting-a-text-mate-bundle)\nfrom the [gradle.tmbundle](https://github.com/gradle/gradle.tmbundle).\n\nContributions are greatly appreciated. Please fork this repository and open a pull request to make grammar tweaks, etc.\n",
-  "readmeFilename": "README.md",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/skyisle/language-gradle.git"
   },
-  "version": "0.0.3",
+  "version": "0.0.5",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [],

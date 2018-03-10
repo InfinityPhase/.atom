@@ -50,6 +50,17 @@ export default {
     }
   },
 
+  // Public: Returns cmd or bash, depending on the current OS
+  command: os.platform() === 'win32' ? 'cmd' : 'bash',
+
+  // Public: Format args for cmd or bash, depending on the current OS
+  formatArgs(command) {
+    if (os.platform() === 'win32') {
+      return [`/c ${command.replace(/['"]/g, '')}`];
+    }
+    return ['-c', command];
+  },
+
   /* eslint-disable global-require */
   // Public: Get the Java helper object
   //
@@ -90,11 +101,6 @@ export default {
   //
   // Returns an {Object} which assists in selecting the right project file for Nim code
   Nim: require('./grammar-utils/nim'),
-
-  // Public: Predetermine CoffeeScript compiler
-  //
-  // Returns an [array] of appropriate command line flags for the active CS compiler.
-  CScompiler: require('./grammar-utils/coffee-script-compiler'),
 
   // Public: Get the D helper object
   //

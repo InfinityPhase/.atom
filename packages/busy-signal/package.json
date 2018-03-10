@@ -1,43 +1,28 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "/tmp/d-117327-27085-5m0q2o.wc6nbl0udi/package.tgz",
-        "scope": null,
-        "escapedName": null,
-        "name": null,
-        "rawSpec": "/tmp/d-117327-27085-5m0q2o.wc6nbl0udi/package.tgz",
-        "spec": "/tmp/d-117327-27085-5m0q2o.wc6nbl0udi/package.tgz",
-        "type": "local"
-      },
-      "/tmp/apm-install-dir-117327-27085-1hlqrxz.kjh8478pvi"
-    ]
-  ],
-  "_from": "../d-117327-27085-5m0q2o.wc6nbl0udi/package.tgz",
-  "_id": "busy-signal@1.4.1",
-  "_inCache": true,
+  "_from": "file:/tmp/d-117729-16123-nbyzu7.ngfz/package.tgz",
+  "_id": "busy-signal@1.4.3",
+  "_inBundle": false,
+  "_integrity": "sha1-a683o4v5Ro2b/UkYFxAqcLUOBfM=",
   "_location": "/busy-signal",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-117327-27085-5m0q2o.wc6nbl0udi/package.tgz",
-    "scope": null,
-    "escapedName": null,
-    "name": null,
-    "rawSpec": "/tmp/d-117327-27085-5m0q2o.wc6nbl0udi/package.tgz",
-    "spec": "/tmp/d-117327-27085-5m0q2o.wc6nbl0udi/package.tgz",
-    "type": "local"
+    "type": "file",
+    "where": "/tmp/apm-install-dir-117729-16123-1a3hhwz.jwpn",
+    "raw": "/tmp/d-117729-16123-nbyzu7.ngfz/package.tgz",
+    "rawSpec": "/tmp/d-117729-16123-nbyzu7.ngfz/package.tgz",
+    "saveSpec": "file:/tmp/d-117729-16123-nbyzu7.ngfz/package.tgz",
+    "fetchSpec": "/tmp/d-117729-16123-nbyzu7.ngfz/package.tgz"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-117327-27085-5m0q2o.wc6nbl0udi/package.tgz",
-  "_shasum": "bea1229c77d3ea332466bc878e52ab4a2a394590",
-  "_shrinkwrap": null,
-  "_spec": "/tmp/d-117327-27085-5m0q2o.wc6nbl0udi/package.tgz",
-  "_where": "/tmp/apm-install-dir-117327-27085-1hlqrxz.kjh8478pvi",
+  "_resolved": "/tmp/d-117729-16123-nbyzu7.ngfz/package.tgz",
+  "_spec": "/tmp/d-117729-16123-nbyzu7.ngfz/package.tgz",
+  "_where": "/tmp/apm-install-dir-117729-16123-1a3hhwz.jwpn",
   "bugs": {
     "url": "https://github.com/steelbrain/busy-signal/issues"
   },
+  "bundleDependencies": false,
   "consumedServices": {
     "status-bar": {
       "versions": {
@@ -48,11 +33,13 @@
   "dependencies": {
     "disposify": "^1.0.0",
     "escape-html": "^1.0.3",
-    "ms": "^1.0.0"
+    "ms": "^2.0.0"
   },
+  "deprecated": false,
   "description": "A package that provides an easy to use API to show your package is performing a task",
   "devDependencies": {
     "eslint-config-steelbrain": "^3.0.1",
+    "flow-bin": "^0.47.0",
     "jasmine-fix": "^1.0.1"
   },
   "engines": {
@@ -66,7 +53,6 @@
   "license": "MIT",
   "main": "./lib/index.js",
   "name": "busy-signal",
-  "optionalDependencies": {},
   "providedServices": {
     "busy-signal": {
       "versions": {
@@ -74,8 +60,6 @@
       }
     }
   },
-  "readme": "# Busy Signal\n\n[![Greenkeeper badge](https://badges.greenkeeper.io/steelbrain/busy-signal.svg)](https://greenkeeper.io/)\n\nBusy Signal is a base package that provides an easy to use API to show your package is performing a task.\n\n## API\n\nPlease head to [`busy-signal` wiki](https://github.com/steelbrain/busy-signal/wiki/Busy-Signal-API) for the API documentation\n\n## Screenshot\n\n![busy-signal](https://cloud.githubusercontent.com/assets/4278113/22865536/0a123074-f188-11e6-8c6e-38574a6fe14c.gif)\n\n## License\n\nThis project is licensed under the terms of MIT License\n",
-  "readmeFilename": "README.md",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/steelbrain/busy-signal.git"
@@ -84,7 +68,7 @@
     "lint": "eslint .",
     "test": "apm test"
   },
-  "version": "1.4.1",
+  "version": "1.4.3",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -100,7 +84,7 @@
       },
       {
         "name": "ms",
-        "version": "1.0.0",
+        "version": "2.0.0",
         "path": "node_modules/ms/index.js"
       }
     ],
@@ -110,6 +94,7 @@
         "node_modules/disposify/package.json",
         "node_modules/escape-html/package.json",
         "node_modules/ms/package.json",
+        "package-lock.json",
         "package.json"
       ],
       ".js": [
@@ -136,7 +121,7 @@
         "dependencies": {
           "disposify": "^1.0.0",
           "escape-html": "^1.0.3",
-          "ms": "^1.0.0"
+          "ms": "^2.0.0"
         }
       }
     ]

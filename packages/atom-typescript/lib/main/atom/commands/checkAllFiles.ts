@@ -1,18 +1,24 @@
-import {commands} from "./registry"
+import {addCommand} from "./registry"
 import {commandForTypeScript, getFilePathPosition} from "../utils"
 
-commands.set("typescript:check-all-files", deps => {
-  return async e => {
+addCommand("atom-text-editor", "typescript:check-all-files", deps => ({
+  description: "Typecheck all files in project related to current active text editor",
+  async didDispatch(e) {
     if (!commandForTypeScript(e)) {
       return
     }
 
-    const {file} = getFilePathPosition()
+    const fpp = getFilePathPosition(e.currentTarget.getModel())
+    if (!fpp) {
+      e.abortKeyBinding()
+      return
+    }
+    const {file} = fpp
     const client = await deps.getClient(file)
 
-    const projectInfo = await client.executeProjectInfo({
+    const projectInfo = await client.execute("projectInfo", {
       file,
-      needFileNameList: true
+      needFileNameList: true,
     })
 
     const files = new Set(projectInfo.body!.fileNames)
@@ -22,18 +28,20 @@ commands.set("typescript:check-all-files", deps => {
     // the files set is going to receive a a diagnostic event (typically some d.ts files). To counter
     // that, we cancel the listener and close the progress bar after no diagnostics have been received
     // for some amount of time.
-    let cancelTimeout: any
+    let cancelTimeout: number | undefined
 
     const unregister = client.on("syntaxDiag", evt => {
-      clearTimeout(cancelTimeout)
-      cancelTimeout = setTimeout(cancel, 500)
+      if (cancelTimeout !== undefined) window.clearTimeout(cancelTimeout)
+      cancelTimeout = window.setTimeout(cancel, 500)
 
       files.delete(evt.file)
       updateStatus()
     })
 
-    deps.statusPanel.setProgress({max, value: 0})
-    client.executeGetErrForProject({file, delay: 0})
+    const stp = deps.getStatusPanel()
+
+    stp.update({progress: {max, value: 0}})
+    client.execute("geterrForProject", {file, delay: 0})
 
     function cancel() {
       files.clear()
@@ -43,10 +51,10 @@ commands.set("typescript:check-all-files", deps => {
     function updateStatus() {
       if (files.size === 0) {
         unregister()
-        deps.statusPanel.setProgress(undefined)
+        stp.update({progress: undefined})
       } else {
-        deps.statusPanel.setProgress({max, value: max - files.size})
+        stp.update({progress: {max, value: max - files.size}})
       }
     }
-  }
-})
+  },
+}))

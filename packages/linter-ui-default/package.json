@@ -1,43 +1,28 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "/tmp/d-117422-25312-bry7l1.b7qcjo47vi/package.tgz",
-        "scope": null,
-        "escapedName": null,
-        "name": null,
-        "rawSpec": "/tmp/d-117422-25312-bry7l1.b7qcjo47vi/package.tgz",
-        "spec": "/tmp/d-117422-25312-bry7l1.b7qcjo47vi/package.tgz",
-        "type": "local"
-      },
-      "/tmp/apm-install-dir-117422-25312-l4xxeg.v51qo20529"
-    ]
-  ],
-  "_from": "../d-117422-25312-bry7l1.b7qcjo47vi/package.tgz",
-  "_id": "linter-ui-default@1.6.0",
-  "_inCache": true,
+  "_from": "file:/tmp/d-11828-32384-tb2a45.nxyid/package.tgz",
+  "_id": "linter-ui-default@1.7.1",
+  "_inBundle": false,
+  "_integrity": "sha512-zuw6vNN9GvROWOHFYAv0NeraOBXyx11xmGR0uM1xIvvqCxEJb0haOyKuLmh+Ajn5Xofpb0d7SrBMm96oHW1X6Q==",
   "_location": "/linter-ui-default",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-117422-25312-bry7l1.b7qcjo47vi/package.tgz",
-    "scope": null,
-    "escapedName": null,
-    "name": null,
-    "rawSpec": "/tmp/d-117422-25312-bry7l1.b7qcjo47vi/package.tgz",
-    "spec": "/tmp/d-117422-25312-bry7l1.b7qcjo47vi/package.tgz",
-    "type": "local"
+    "type": "file",
+    "where": "/tmp/apm-install-dir-11828-32384-rtmre6.uth9r",
+    "raw": "/tmp/d-11828-32384-tb2a45.nxyid/package.tgz",
+    "rawSpec": "/tmp/d-11828-32384-tb2a45.nxyid/package.tgz",
+    "saveSpec": "file:/tmp/d-11828-32384-tb2a45.nxyid/package.tgz",
+    "fetchSpec": "/tmp/d-11828-32384-tb2a45.nxyid/package.tgz"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-117422-25312-bry7l1.b7qcjo47vi/package.tgz",
-  "_shasum": "4a3d1a571b9edc8ce6ee5fb454dd61b6d5c18bc6",
-  "_shrinkwrap": null,
-  "_spec": "/tmp/d-117422-25312-bry7l1.b7qcjo47vi/package.tgz",
-  "_where": "/tmp/apm-install-dir-117422-25312-l4xxeg.v51qo20529",
+  "_resolved": "/tmp/d-11828-32384-tb2a45.nxyid/package.tgz",
+  "_spec": "/tmp/d-11828-32384-tb2a45.nxyid/package.tgz",
+  "_where": "/tmp/apm-install-dir-11828-32384-rtmre6.uth9r",
   "bugs": {
     "url": "https://github.com/steelbrain/linter-ui-default/issues"
   },
+  "bundleDependencies": false,
   "configSchema": {
     "showPanel": {
       "type": "boolean",
@@ -79,6 +64,12 @@
       "description": "Hide panel when there are no issues to display",
       "type": "boolean",
       "default": true,
+      "order": 1
+    },
+    "alwaysTakeMinimumSpace": {
+      "description": "Auto resizes Linter panel when there are less issues to show",
+      "type": "boolean",
+      "default": false,
       "order": 1
     },
     "decorateOnTreeView": {
@@ -178,21 +169,22 @@
   "dependencies": {
     "atom-package-deps": "^4.3.1",
     "disposable-event": "^1.0.3",
-    "marked": "^0.3.6",
-    "react": "^15.3.1",
-    "react-dom": "^15.3.2",
+    "marked": "^0.3.9",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "sb-debounce": "^1.0.1",
-    "sb-react-table": "^1.0.1"
+    "sb-react-table": "^1.0.2"
   },
+  "deprecated": false,
   "description": "Default UI for the Linter package",
   "devDependencies": {
-    "eslint-config-steelbrain": "^3.0.0",
-    "flow-bin": "^0.46.0",
+    "eslint-config-steelbrain": "^5.0.0",
+    "flow-bin": "^0.66.0",
     "jasmine-fix": "^1.0.1",
     "rimraf": "^2.5.4"
   },
   "engines": {
-    "atom": ">=1.17.0 <2.0.0"
+    "atom": ">=1.19.0 <2.0.0"
   },
   "homepage": "https://github.com/steelbrain/linter-ui-default#readme",
   "keywords": [
@@ -202,7 +194,6 @@
   "license": "MIT",
   "main": "./lib/index.js",
   "name": "linter-ui-default",
-  "optionalDependencies": {},
   "package-deps": [
     "intentions",
     "linter"
@@ -219,38 +210,31 @@
       }
     }
   },
-  "readme": "Linter-UI-Default\n================\n\n[![Greenkeeper badge](https://badges.greenkeeper.io/steelbrain/linter-ui-default.svg)](https://greenkeeper.io/)\n\n[![Slack Badge](https://img.shields.io/badge/chat-atom.io%20slack-blue.svg?style=flat-square)](http://atom-slack.herokuapp.com/)\n[![Build Status](https://img.shields.io/circleci/project/steelbrain/linter-ui-default.svg?style=flat-square)](https://circleci.com/gh/steelbrain/linter-ui-default)\n[![Plugin installs!](https://img.shields.io/apm/dm/linter-ui-default.svg?style=flat-square)](https://atom.io/packages/linter-ui-default)\n[![Package version!](https://img.shields.io/apm/v/linter-ui-default.svg?style=flat-square)](https://atom.io/packages/linter-ui-default)\n[![Dependencies!](https://img.shields.io/david/steelbrain/linter-ui-default.svg?style=flat-square)](https://david-dm.org/steelbrain/linter-ui-default)\n\nThe default UI for linter.\n\n![Preview](https://cloud.githubusercontent.com/assets/4278113/23879933/1ab17e2a-0872-11e7-803d-3fe0ccfc6790.gif)\n\n### Installation\n\nYou can install it from the CLI\n\n```\napm install linter-ui-default\n```\n\nOr you can install from Settings view by searching for `linter-ui-default`.\n\n### License\n\nThis Project is licensed under the terms of MIT License, check the license file for more info.\n",
-  "readmeFilename": "README.md",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/steelbrain/linter-ui-default.git"
   },
   "scripts": {
-    "test": "(apm test) && (flow check) && (eslint . )"
+    "test": "(apm test) && (flow check) && (eslint . ) && (prettier --list-different lib/*.js)"
   },
-  "version": "1.6.0",
+  "version": "1.7.1",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
       {
         "name": "asap",
-        "version": "2.0.5",
+        "version": "2.0.6",
         "path": "node_modules/asap/asap.js"
       },
       {
         "name": "atom-package-deps",
-        "version": "4.6.0",
+        "version": "4.6.1",
         "path": "node_modules/atom-package-deps/lib/index.js"
       },
       {
         "name": "atom-package-path",
         "version": "1.1.0",
         "path": "node_modules/atom-package-path/lib/index.js"
-      },
-      {
-        "name": "consistent-env",
-        "version": "1.3.0",
-        "path": "node_modules/consistent-env/lib/index.js"
       },
       {
         "name": "core-js",
@@ -269,12 +253,12 @@
       },
       {
         "name": "fbjs",
-        "version": "0.8.12",
+        "version": "0.8.16",
         "path": "node_modules/fbjs/index.js"
       },
       {
         "name": "iconv-lite",
-        "version": "0.4.17",
+        "version": "0.4.19",
         "path": "node_modules/iconv-lite/lib/index.js"
       },
       {
@@ -294,13 +278,8 @@
       },
       {
         "name": "js-tokens",
-        "version": "3.0.1",
+        "version": "3.0.2",
         "path": "node_modules/js-tokens/index.js"
-      },
-      {
-        "name": "lodash.uniq",
-        "version": "4.5.0",
-        "path": "node_modules/lodash.uniq/index.js"
       },
       {
         "name": "loose-envify",
@@ -309,12 +288,12 @@
       },
       {
         "name": "marked",
-        "version": "0.3.6",
+        "version": "0.3.17",
         "path": "node_modules/marked/lib/marked.js"
       },
       {
         "name": "node-fetch",
-        "version": "1.6.3",
+        "version": "1.7.3",
         "path": "node_modules/node-fetch/index.js"
       },
       {
@@ -324,22 +303,22 @@
       },
       {
         "name": "promise",
-        "version": "7.1.1",
+        "version": "7.3.1",
         "path": "node_modules/promise/index.js"
       },
       {
         "name": "prop-types",
-        "version": "15.5.10",
+        "version": "15.6.1",
         "path": "node_modules/prop-types/index.js"
       },
       {
         "name": "react",
-        "version": "15.5.4",
-        "path": "node_modules/react/react.js"
+        "version": "16.2.0",
+        "path": "node_modules/react/index.js"
       },
       {
         "name": "react-dom",
-        "version": "15.5.4",
+        "version": "16.2.0",
         "path": "node_modules/react-dom/index.js"
       },
       {
@@ -358,24 +337,9 @@
         "path": "node_modules/sb-event-kit/lib/main.js"
       },
       {
-        "name": "sb-exec",
-        "version": "3.1.0",
-        "path": "node_modules/sb-exec/lib/index.js"
-      },
-      {
         "name": "sb-fs",
         "version": "3.0.0",
         "path": "node_modules/sb-fs/lib/index.js"
-      },
-      {
-        "name": "sb-memoize",
-        "version": "1.0.2",
-        "path": "node_modules/sb-memoize/lib/index.js"
-      },
-      {
-        "name": "sb-npm-path",
-        "version": "2.0.0",
-        "path": "node_modules/sb-npm-path/lib/index.js"
       },
       {
         "name": "sb-promisify",
@@ -384,12 +348,12 @@
       },
       {
         "name": "sb-react-table",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "path": "node_modules/sb-react-table/lib/index.js"
       },
       {
         "name": "semver",
-        "version": "5.3.0",
+        "version": "5.5.0",
         "path": "node_modules/semver/semver.js"
       },
       {
@@ -404,7 +368,7 @@
       },
       {
         "name": "ua-parser-js",
-        "version": "0.7.12",
+        "version": "0.7.17",
         "path": "node_modules/ua-parser-js/src/ua-parser.js"
       },
       {
@@ -420,8 +384,6 @@
         "node_modules/atom-package-deps/.eslintrc.json",
         "node_modules/atom-package-deps/package.json",
         "node_modules/atom-package-path/package.json",
-        "node_modules/consistent-env/.eslintrc.json",
-        "node_modules/consistent-env/package.json",
         "node_modules/core-js/bower.json",
         "node_modules/core-js/package.json",
         "node_modules/disposable-event/.eslintrc.json",
@@ -443,8 +405,8 @@
         "node_modules/isomorphic-fetch/bower.json",
         "node_modules/isomorphic-fetch/package.json",
         "node_modules/js-tokens/package.json",
-        "node_modules/lodash.uniq/package.json",
         "node_modules/loose-envify/package.json",
+        "node_modules/marked/.eslintrc.json",
         "node_modules/marked/bower.json",
         "node_modules/marked/component.json",
         "node_modules/marked/package.json",
@@ -457,13 +419,7 @@
         "node_modules/sb-callsite/package.json",
         "node_modules/sb-debounce/package.json",
         "node_modules/sb-event-kit/package.json",
-        "node_modules/sb-exec/.eslintrc.json",
-        "node_modules/sb-exec/package.json",
         "node_modules/sb-fs/package.json",
-        "node_modules/sb-memoize/.eslintrc.json",
-        "node_modules/sb-memoize/package.json",
-        "node_modules/sb-npm-path/.eslintrc.json",
-        "node_modules/sb-npm-path/package.json",
         "node_modules/sb-promisify/package.json",
         "node_modules/sb-react-table/.eslintrc.json",
         "node_modules/sb-react-table/package.json",
@@ -472,8 +428,8 @@
         "node_modules/strip-bom-buf/package.json",
         "node_modules/ua-parser-js/bower.json",
         "node_modules/ua-parser-js/package.json",
-        "node_modules/ua-parser-js/ua-parser-js.jquery.json",
         "node_modules/whatwg-fetch/package.json",
+        "package-lock.json",
         "package.json"
       ],
       ".js": [
@@ -494,6 +450,7 @@
         "lib/status-bar/helpers.js",
         "lib/status-bar/index.js",
         "lib/tooltip/delegate.js",
+        "lib/tooltip/fix-button.js",
         "lib/tooltip/index.js",
         "lib/tooltip/message-legacy.js",
         "lib/tooltip/message.js",
@@ -509,9 +466,6 @@
         "node_modules/atom-package-deps/lib/types.js",
         "node_modules/atom-package-deps/lib/view.js",
         "node_modules/atom-package-path/lib/index.js",
-        "node_modules/consistent-env/decls/jasmine.js",
-        "node_modules/consistent-env/lib/helpers.js",
-        "node_modules/consistent-env/lib/index.js",
         "node_modules/core-js/Gruntfile.js",
         "node_modules/core-js/build/config.js",
         "node_modules/core-js/build/index.js",
@@ -1494,13 +1448,11 @@
         "node_modules/isomorphic-fetch/fetch-npm-browserify.js",
         "node_modules/isomorphic-fetch/fetch-npm-node.js",
         "node_modules/js-tokens/index.js",
-        "node_modules/lodash.uniq/index.js",
         "node_modules/loose-envify/cli.js",
         "node_modules/loose-envify/custom.js",
         "node_modules/loose-envify/index.js",
         "node_modules/loose-envify/loose-envify.js",
         "node_modules/loose-envify/replace.js",
-        "node_modules/marked/Gulpfile.js",
         "node_modules/marked/index.js",
         "node_modules/marked/lib/marked.js",
         "node_modules/marked/marked.min.js",
@@ -1508,6 +1460,7 @@
         "node_modules/node-fetch/lib/body.js",
         "node_modules/node-fetch/lib/fetch-error.js",
         "node_modules/node-fetch/lib/headers.js",
+        "node_modules/node-fetch/lib/index.js",
         "node_modules/node-fetch/lib/request.js",
         "node_modules/node-fetch/lib/response.js",
         "node_modules/object-assign/index.js",
@@ -1556,237 +1509,35 @@
         "node_modules/prop-types/lib/ReactPropTypesSecret.js",
         "node_modules/prop-types/prop-types.js",
         "node_modules/prop-types/prop-types.min.js",
-        "node_modules/react/dist/react-with-addons.js",
-        "node_modules/react/dist/react-with-addons.min.js",
-        "node_modules/react/dist/react.js",
-        "node_modules/react/dist/react.min.js",
-        "node_modules/react/lib/KeyEscapeUtils.js",
-        "node_modules/react/lib/LinkedStateMixin.js",
-        "node_modules/react/lib/PooledClass.js",
-        "node_modules/react/lib/React.js",
-        "node_modules/react/lib/ReactAddonsDOMDependencies.js",
-        "node_modules/react/lib/ReactAddonsDOMDependenciesUMDShim.js",
-        "node_modules/react/lib/ReactCSSTransitionGroup.js",
-        "node_modules/react/lib/ReactCSSTransitionGroupChild.js",
-        "node_modules/react/lib/ReactChildren.js",
-        "node_modules/react/lib/ReactClass.js",
-        "node_modules/react/lib/ReactComponent.js",
-        "node_modules/react/lib/ReactComponentTreeDevtool.js",
-        "node_modules/react/lib/ReactComponentTreeHook.js",
-        "node_modules/react/lib/ReactComponentTreeHookUMDShim.js",
-        "node_modules/react/lib/ReactComponentWithPureRenderMixin.js",
-        "node_modules/react/lib/ReactCurrentOwner.js",
-        "node_modules/react/lib/ReactCurrentOwnerUMDShim.js",
-        "node_modules/react/lib/ReactDOMFactories.js",
-        "node_modules/react/lib/ReactElement.js",
-        "node_modules/react/lib/ReactElementSymbol.js",
-        "node_modules/react/lib/ReactElementType.js",
-        "node_modules/react/lib/ReactElementValidator.js",
-        "node_modules/react/lib/ReactFragment.js",
-        "node_modules/react/lib/ReactLink.js",
-        "node_modules/react/lib/ReactNoopUpdateQueue.js",
-        "node_modules/react/lib/ReactPropTypeLocationNames.js",
-        "node_modules/react/lib/ReactPropTypeLocations.js",
-        "node_modules/react/lib/ReactPropTypes.js",
-        "node_modules/react/lib/ReactPropTypesSecret.js",
-        "node_modules/react/lib/ReactPureComponent.js",
-        "node_modules/react/lib/ReactStateSetters.js",
-        "node_modules/react/lib/ReactTransitionChildMapping.js",
-        "node_modules/react/lib/ReactTransitionEvents.js",
-        "node_modules/react/lib/ReactTransitionGroup.js",
-        "node_modules/react/lib/ReactUMDEntry.js",
-        "node_modules/react/lib/ReactUMDShim.js",
-        "node_modules/react/lib/ReactVersion.js",
-        "node_modules/react/lib/ReactWithAddons.js",
-        "node_modules/react/lib/ReactWithAddonsUMDEntry.js",
-        "node_modules/react/lib/canDefineProperty.js",
-        "node_modules/react/lib/checkReactTypeSpec.js",
-        "node_modules/react/lib/deprecated.js",
-        "node_modules/react/lib/flattenChildren.js",
-        "node_modules/react/lib/getIteratorFn.js",
-        "node_modules/react/lib/getNextDebugID.js",
-        "node_modules/react/lib/getNextDebugIDUMDShim.js",
-        "node_modules/react/lib/onlyChild.js",
-        "node_modules/react/lib/reactProdInvariant.js",
-        "node_modules/react/lib/shallowCompare.js",
-        "node_modules/react/lib/sliceChildren.js",
-        "node_modules/react/lib/traverseAllChildren.js",
-        "node_modules/react/lib/update.js",
-        "node_modules/react/react.js",
-        "node_modules/react-dom/dist/react-dom-server.js",
-        "node_modules/react-dom/dist/react-dom-server.min.js",
-        "node_modules/react-dom/dist/react-dom.js",
-        "node_modules/react-dom/dist/react-dom.min.js",
+        "node_modules/react/cjs/react.development.js",
+        "node_modules/react/cjs/react.production.min.js",
+        "node_modules/react/index.js",
+        "node_modules/react/umd/react.development.js",
+        "node_modules/react/umd/react.production.min.js",
+        "node_modules/react-dom/cjs/react-dom-server.browser.development.js",
+        "node_modules/react-dom/cjs/react-dom-server.browser.production.min.js",
+        "node_modules/react-dom/cjs/react-dom-server.node.development.js",
+        "node_modules/react-dom/cjs/react-dom-server.node.production.min.js",
+        "node_modules/react-dom/cjs/react-dom-test-utils.development.js",
+        "node_modules/react-dom/cjs/react-dom-test-utils.production.min.js",
+        "node_modules/react-dom/cjs/react-dom-unstable-native-dependencies.development.js",
+        "node_modules/react-dom/cjs/react-dom-unstable-native-dependencies.production.min.js",
+        "node_modules/react-dom/cjs/react-dom.development.js",
+        "node_modules/react-dom/cjs/react-dom.production.min.js",
         "node_modules/react-dom/index.js",
-        "node_modules/react-dom/lib/ARIADOMPropertyConfig.js",
-        "node_modules/react-dom/lib/AutoFocusUtils.js",
-        "node_modules/react-dom/lib/BeforeInputEventPlugin.js",
-        "node_modules/react-dom/lib/CSSProperty.js",
-        "node_modules/react-dom/lib/CSSPropertyOperations.js",
-        "node_modules/react-dom/lib/CallbackQueue.js",
-        "node_modules/react-dom/lib/ChangeEventPlugin.js",
-        "node_modules/react-dom/lib/DOMChildrenOperations.js",
-        "node_modules/react-dom/lib/DOMLazyTree.js",
-        "node_modules/react-dom/lib/DOMNamespaces.js",
-        "node_modules/react-dom/lib/DOMProperty.js",
-        "node_modules/react-dom/lib/DOMPropertyOperations.js",
-        "node_modules/react-dom/lib/Danger.js",
-        "node_modules/react-dom/lib/DefaultEventPluginOrder.js",
-        "node_modules/react-dom/lib/EnterLeaveEventPlugin.js",
-        "node_modules/react-dom/lib/EventConstants.js",
-        "node_modules/react-dom/lib/EventPluginHub.js",
-        "node_modules/react-dom/lib/EventPluginRegistry.js",
-        "node_modules/react-dom/lib/EventPluginUtils.js",
-        "node_modules/react-dom/lib/EventPropagators.js",
-        "node_modules/react-dom/lib/FallbackCompositionState.js",
-        "node_modules/react-dom/lib/HTMLDOMPropertyConfig.js",
-        "node_modules/react-dom/lib/KeyEscapeUtils.js",
-        "node_modules/react-dom/lib/LinkedValueUtils.js",
-        "node_modules/react-dom/lib/PluginModuleType.js",
-        "node_modules/react-dom/lib/PooledClass.js",
-        "node_modules/react-dom/lib/ReactBrowserEventEmitter.js",
-        "node_modules/react-dom/lib/ReactChildFiber.js",
-        "node_modules/react-dom/lib/ReactChildReconciler.js",
-        "node_modules/react-dom/lib/ReactComponentBrowserEnvironment.js",
-        "node_modules/react-dom/lib/ReactComponentEnvironment.js",
-        "node_modules/react-dom/lib/ReactComponentTreeTestUtils.js",
-        "node_modules/react-dom/lib/ReactCompositeComponent.js",
-        "node_modules/react-dom/lib/ReactCoroutine.js",
-        "node_modules/react-dom/lib/ReactDOM.js",
-        "node_modules/react-dom/lib/ReactDOMComponent.js",
-        "node_modules/react-dom/lib/ReactDOMComponentFlags.js",
-        "node_modules/react-dom/lib/ReactDOMComponentTree.js",
-        "node_modules/react-dom/lib/ReactDOMContainerInfo.js",
-        "node_modules/react-dom/lib/ReactDOMEmptyComponent.js",
-        "node_modules/react-dom/lib/ReactDOMFeatureFlags.js",
-        "node_modules/react-dom/lib/ReactDOMFiber.js",
-        "node_modules/react-dom/lib/ReactDOMIDOperations.js",
-        "node_modules/react-dom/lib/ReactDOMInput.js",
-        "node_modules/react-dom/lib/ReactDOMInvalidARIAHook.js",
-        "node_modules/react-dom/lib/ReactDOMNullInputValuePropHook.js",
-        "node_modules/react-dom/lib/ReactDOMOption.js",
-        "node_modules/react-dom/lib/ReactDOMSelect.js",
-        "node_modules/react-dom/lib/ReactDOMSelection.js",
-        "node_modules/react-dom/lib/ReactDOMServer.js",
-        "node_modules/react-dom/lib/ReactDOMServerUMDEntry.js",
-        "node_modules/react-dom/lib/ReactDOMTextComponent.js",
-        "node_modules/react-dom/lib/ReactDOMTextarea.js",
-        "node_modules/react-dom/lib/ReactDOMTreeTraversal.js",
-        "node_modules/react-dom/lib/ReactDOMUMDEntry.js",
-        "node_modules/react-dom/lib/ReactDOMUnknownPropertyHook.js",
-        "node_modules/react-dom/lib/ReactDebugTool.js",
-        "node_modules/react-dom/lib/ReactDefaultBatchingStrategy.js",
-        "node_modules/react-dom/lib/ReactDefaultInjection.js",
-        "node_modules/react-dom/lib/ReactElementSymbol.js",
-        "node_modules/react-dom/lib/ReactEmptyComponent.js",
-        "node_modules/react-dom/lib/ReactErrorUtils.js",
-        "node_modules/react-dom/lib/ReactEventEmitterMixin.js",
-        "node_modules/react-dom/lib/ReactEventListener.js",
-        "node_modules/react-dom/lib/ReactFeatureFlags.js",
-        "node_modules/react-dom/lib/ReactFiber.js",
-        "node_modules/react-dom/lib/ReactFiberBeginWork.js",
-        "node_modules/react-dom/lib/ReactFiberCommitWork.js",
-        "node_modules/react-dom/lib/ReactFiberCompleteWork.js",
-        "node_modules/react-dom/lib/ReactFiberReconciler.js",
-        "node_modules/react-dom/lib/ReactFiberRoot.js",
-        "node_modules/react-dom/lib/ReactFiberScheduler.js",
-        "node_modules/react-dom/lib/ReactFiberUpdateQueue.js",
-        "node_modules/react-dom/lib/ReactHostComponent.js",
-        "node_modules/react-dom/lib/ReactHostOperationHistoryHook.js",
-        "node_modules/react-dom/lib/ReactInjection.js",
-        "node_modules/react-dom/lib/ReactInputSelection.js",
-        "node_modules/react-dom/lib/ReactInstanceMap.js",
-        "node_modules/react-dom/lib/ReactInstanceType.js",
-        "node_modules/react-dom/lib/ReactInstrumentation.js",
-        "node_modules/react-dom/lib/ReactInvalidSetStateWarningHook.js",
-        "node_modules/react-dom/lib/ReactMarkupChecksum.js",
-        "node_modules/react-dom/lib/ReactMount.js",
-        "node_modules/react-dom/lib/ReactMultiChild.js",
-        "node_modules/react-dom/lib/ReactMultiChildUpdateTypes.js",
-        "node_modules/react-dom/lib/ReactNodeTypes.js",
-        "node_modules/react-dom/lib/ReactOwner.js",
-        "node_modules/react-dom/lib/ReactPerf.js",
-        "node_modules/react-dom/lib/ReactPriorityLevel.js",
-        "node_modules/react-dom/lib/ReactPropTypeLocationNames.js",
-        "node_modules/react-dom/lib/ReactPropTypeLocations.js",
-        "node_modules/react-dom/lib/ReactPropTypesSecret.js",
-        "node_modules/react-dom/lib/ReactReconcileTransaction.js",
-        "node_modules/react-dom/lib/ReactReconciler.js",
-        "node_modules/react-dom/lib/ReactRef.js",
-        "node_modules/react-dom/lib/ReactReifiedYield.js",
-        "node_modules/react-dom/lib/ReactServerBatchingStrategy.js",
-        "node_modules/react-dom/lib/ReactServerRendering.js",
-        "node_modules/react-dom/lib/ReactServerRenderingTransaction.js",
-        "node_modules/react-dom/lib/ReactServerUpdateQueue.js",
-        "node_modules/react-dom/lib/ReactShallowRenderer.js",
-        "node_modules/react-dom/lib/ReactSimpleEmptyComponent.js",
-        "node_modules/react-dom/lib/ReactSyntheticEventType.js",
-        "node_modules/react-dom/lib/ReactTestReconcileTransaction.js",
-        "node_modules/react-dom/lib/ReactTestUtils.js",
-        "node_modules/react-dom/lib/ReactTypeOfWork.js",
-        "node_modules/react-dom/lib/ReactTypes.js",
-        "node_modules/react-dom/lib/ReactUpdateQueue.js",
-        "node_modules/react-dom/lib/ReactUpdates.js",
-        "node_modules/react-dom/lib/ReactVersion.js",
-        "node_modules/react-dom/lib/ResponderEventPlugin.js",
-        "node_modules/react-dom/lib/ResponderSyntheticEvent.js",
-        "node_modules/react-dom/lib/ResponderTouchHistoryStore.js",
-        "node_modules/react-dom/lib/SVGDOMPropertyConfig.js",
-        "node_modules/react-dom/lib/SelectEventPlugin.js",
-        "node_modules/react-dom/lib/SimpleEventPlugin.js",
-        "node_modules/react-dom/lib/SyntheticAnimationEvent.js",
-        "node_modules/react-dom/lib/SyntheticClipboardEvent.js",
-        "node_modules/react-dom/lib/SyntheticCompositionEvent.js",
-        "node_modules/react-dom/lib/SyntheticDragEvent.js",
-        "node_modules/react-dom/lib/SyntheticEvent.js",
-        "node_modules/react-dom/lib/SyntheticFocusEvent.js",
-        "node_modules/react-dom/lib/SyntheticInputEvent.js",
-        "node_modules/react-dom/lib/SyntheticKeyboardEvent.js",
-        "node_modules/react-dom/lib/SyntheticMouseEvent.js",
-        "node_modules/react-dom/lib/SyntheticTouchEvent.js",
-        "node_modules/react-dom/lib/SyntheticTransitionEvent.js",
-        "node_modules/react-dom/lib/SyntheticUIEvent.js",
-        "node_modules/react-dom/lib/SyntheticWheelEvent.js",
-        "node_modules/react-dom/lib/TapEventPlugin.js",
-        "node_modules/react-dom/lib/TouchHistoryMath.js",
-        "node_modules/react-dom/lib/Transaction.js",
-        "node_modules/react-dom/lib/ViewportMetrics.js",
-        "node_modules/react-dom/lib/accumulate.js",
-        "node_modules/react-dom/lib/accumulateInto.js",
-        "node_modules/react-dom/lib/adler32.js",
-        "node_modules/react-dom/lib/canDefineProperty.js",
-        "node_modules/react-dom/lib/checkReactTypeSpec.js",
-        "node_modules/react-dom/lib/createMicrosoftUnsafeLocalFunction.js",
-        "node_modules/react-dom/lib/dangerousStyleValue.js",
-        "node_modules/react-dom/lib/deprecated.js",
-        "node_modules/react-dom/lib/escapeTextContentForBrowser.js",
-        "node_modules/react-dom/lib/findDOMNode.js",
-        "node_modules/react-dom/lib/flattenChildren.js",
-        "node_modules/react-dom/lib/forEachAccumulated.js",
-        "node_modules/react-dom/lib/getEventCharCode.js",
-        "node_modules/react-dom/lib/getEventKey.js",
-        "node_modules/react-dom/lib/getEventModifierState.js",
-        "node_modules/react-dom/lib/getEventTarget.js",
-        "node_modules/react-dom/lib/getHostComponentFromComposite.js",
-        "node_modules/react-dom/lib/getIteratorFn.js",
-        "node_modules/react-dom/lib/getNodeForCharacterOffset.js",
-        "node_modules/react-dom/lib/getTestDocument.js",
-        "node_modules/react-dom/lib/getTextContentAccessor.js",
-        "node_modules/react-dom/lib/getVendorPrefixedEventName.js",
-        "node_modules/react-dom/lib/instantiateReactComponent.js",
-        "node_modules/react-dom/lib/isEventSupported.js",
-        "node_modules/react-dom/lib/isTextInputElement.js",
-        "node_modules/react-dom/lib/quoteAttributeValueForBrowser.js",
-        "node_modules/react-dom/lib/reactComponentExpect.js",
-        "node_modules/react-dom/lib/reactProdInvariant.js",
-        "node_modules/react-dom/lib/renderSubtreeIntoContainer.js",
-        "node_modules/react-dom/lib/setInnerHTML.js",
-        "node_modules/react-dom/lib/setTextContent.js",
-        "node_modules/react-dom/lib/shouldUpdateReactComponent.js",
-        "node_modules/react-dom/lib/traverseAllChildren.js",
-        "node_modules/react-dom/lib/validateDOMNesting.js",
+        "node_modules/react-dom/server.browser.js",
         "node_modules/react-dom/server.js",
+        "node_modules/react-dom/server.node.js",
         "node_modules/react-dom/test-utils.js",
+        "node_modules/react-dom/umd/react-dom-server.browser.development.js",
+        "node_modules/react-dom/umd/react-dom-server.browser.production.min.js",
+        "node_modules/react-dom/umd/react-dom-test-utils.development.js",
+        "node_modules/react-dom/umd/react-dom-test-utils.production.min.js",
+        "node_modules/react-dom/umd/react-dom-unstable-native-dependencies.development.js",
+        "node_modules/react-dom/umd/react-dom-unstable-native-dependencies.production.min.js",
+        "node_modules/react-dom/umd/react-dom.development.js",
+        "node_modules/react-dom/umd/react-dom.production.min.js",
+        "node_modules/react-dom/unstable-native-dependencies.js",
         "node_modules/sb-callsite/lib/main.js",
         "node_modules/sb-debounce/index.js",
         "node_modules/sb-debounce/test.js",
@@ -1794,15 +1545,7 @@
         "node_modules/sb-event-kit/lib/disposable.js",
         "node_modules/sb-event-kit/lib/emitter.js",
         "node_modules/sb-event-kit/lib/main.js",
-        "node_modules/sb-exec/decls/jasmine.js",
-        "node_modules/sb-exec/lib/helpers.js",
-        "node_modules/sb-exec/lib/index.js",
-        "node_modules/sb-exec/lib/types.js",
         "node_modules/sb-fs/lib/index.js",
-        "node_modules/sb-memoize/lib/index.js",
-        "node_modules/sb-npm-path/decls/jasmine.js",
-        "node_modules/sb-npm-path/lib/helpers.js",
-        "node_modules/sb-npm-path/lib/index.js",
         "node_modules/sb-promisify/lib/index.js",
         "node_modules/sb-react-table/lib/helpers.js",
         "node_modules/sb-react-table/lib/index.js",
@@ -1833,11 +1576,11 @@
         "dependencies": {
           "atom-package-deps": "^4.3.1",
           "disposable-event": "^1.0.3",
-          "marked": "^0.3.6",
-          "react": "^15.3.1",
-          "react-dom": "^15.3.2",
+          "marked": "^0.3.9",
+          "react": "^16.0.0",
+          "react-dom": "^16.0.0",
           "sb-debounce": "^1.0.1",
-          "sb-react-table": "^1.0.1"
+          "sb-react-table": "^1.0.2"
         }
       },
       {
@@ -1847,7 +1590,6 @@
         ],
         "dependencies": {
           "atom-package-path": "^1.1.0",
-          "sb-exec": "^3.0.1",
           "sb-fs": "^3.0.0",
           "semver": "^5.3.0"
         }
@@ -1860,16 +1602,6 @@
         ],
         "dependencies": {
           "sb-callsite": "^1.1.2"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/consistent-env",
-          "node_modules/consistent-env/decls",
-          "node_modules/consistent-env/lib"
-        ],
-        "dependencies": {
-          "lodash.uniq": "^4.5.0"
         }
       },
       {
@@ -1956,46 +1688,35 @@
           "node_modules/prop-types/lib"
         ],
         "dependencies": {
-          "fbjs": "^0.8.9",
-          "loose-envify": "^1.3.1"
+          "fbjs": "^0.8.16",
+          "loose-envify": "^1.3.1",
+          "object-assign": "^4.1.1"
         }
       },
       {
         "paths": [
-          "node_modules/react/dist",
-          "node_modules/react/lib",
-          "node_modules/react"
+          "node_modules/react/cjs",
+          "node_modules/react",
+          "node_modules/react/umd"
         ],
         "dependencies": {
-          "fbjs": "^0.8.9",
+          "fbjs": "^0.8.16",
           "loose-envify": "^1.1.0",
-          "object-assign": "^4.1.0",
-          "prop-types": "^15.5.7"
+          "object-assign": "^4.1.1",
+          "prop-types": "^15.6.0"
         }
       },
       {
         "paths": [
-          "node_modules/react-dom/dist",
+          "node_modules/react-dom/cjs",
           "node_modules/react-dom",
-          "node_modules/react-dom/lib"
+          "node_modules/react-dom/umd"
         ],
         "dependencies": {
-          "fbjs": "^0.8.9",
+          "fbjs": "^0.8.16",
           "loose-envify": "^1.1.0",
-          "object-assign": "^4.1.0",
-          "prop-types": "~15.5.7"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/sb-exec",
-          "node_modules/sb-exec/decls",
-          "node_modules/sb-exec/lib"
-        ],
-        "dependencies": {
-          "consistent-env": "^1.2.0",
-          "lodash.uniq": "^4.5.0",
-          "sb-npm-path": "^2.0.0"
+          "object-assign": "^4.1.1",
+          "prop-types": "^15.6.0"
         }
       },
       {
@@ -2006,17 +1727,6 @@
         "dependencies": {
           "sb-promisify": "^2.0.1",
           "strip-bom-buf": "^1.0.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/sb-npm-path",
-          "node_modules/sb-npm-path/decls",
-          "node_modules/sb-npm-path/lib"
-        ],
-        "dependencies": {
-          "sb-memoize": "^1.0.2",
-          "sb-promisify": "^2.0.1"
         }
       },
       {
