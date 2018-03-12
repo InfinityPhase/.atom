@@ -18,7 +18,20 @@
     ui:
       panelContrast: true
       panelShadows: true
-  "autoclose-html": {}
+  "autoclose-html":
+    forceInline: [
+      "title"
+      "h1"
+      "h2"
+      "h3"
+      "h4"
+      "h5"
+      "h6"
+      "li"
+      "th"
+      "td"
+      "a"
+    ]
   "autocomplete-python":
     useKite: false
   "battery-status":
@@ -27,13 +40,11 @@
     audioBeep: false
     autoHideMenuBar: true
     disabledPackages: [
-      "linter-write-good"
       "welcome"
       "dalek"
       "metrics"
       "git-plus"
       "linter-lua"
-      "minimap-pigments"
       "autocomplete-java"
       "linter-javac"
       "github"
@@ -77,6 +88,7 @@
   "linter-flake8":
     pycodestyleErrorsToWarnings: true
   "linter-ui-default":
+    panelHeight: 143
     useBusySignal: false
   "linter-write-good": {}
   minimap:
@@ -91,6 +103,8 @@
     accessibility: {}
   "nord-atom-ui":
     darkerFormFocusEffect: true
+  pigments:
+    mergeColorDuplicates: true
   proton:
     core:
       selectedLayers: [
@@ -101,7 +115,7 @@
     compactView: true
     fileIcons: false
     hideProjectTab: true
-    themeColor: "Steel"
+    themeColor: "Purple"
   "todo-show": {}
   "tool-bar":
     position: "Left"

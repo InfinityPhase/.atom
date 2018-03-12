@@ -1,24 +1,24 @@
 {
-  "_from": "file:/tmp/d-11828-32376-o3bay1.dck9n/package.tgz",
-  "_id": "atom-typescript@12.3.5",
+  "_from": "file:/tmp/d-118212-29539-1nvvsar.4gi1/package.tgz",
+  "_id": "atom-typescript@12.3.7",
   "_inBundle": false,
-  "_integrity": "sha512-8EeHMNzHOckvtlnIR/RMYK7L4pu/gN25tkefFwIfkdpAoM2tzIJISRcCzv6eGtX8fCvX7foFiteyEyR46S01Rg==",
+  "_integrity": "sha512-/SJ/IRD/qDK2yR7Lu2ZSS5UpWqCIGkgdGqiw90W9jaaknDgtk6VvokdhffzKucigtpvZTftwGtFfKJksqiHOXA==",
   "_location": "/atom-typescript",
   "_phantomChildren": {},
   "_requested": {
     "type": "file",
-    "where": "/tmp/apm-install-dir-11828-32376-1lf1k1q.zk5o",
-    "raw": "/tmp/d-11828-32376-o3bay1.dck9n/package.tgz",
-    "rawSpec": "/tmp/d-11828-32376-o3bay1.dck9n/package.tgz",
-    "saveSpec": "file:/tmp/d-11828-32376-o3bay1.dck9n/package.tgz",
-    "fetchSpec": "/tmp/d-11828-32376-o3bay1.dck9n/package.tgz"
+    "where": "/tmp/apm-install-dir-118212-29539-rbzcx8.fodrd",
+    "raw": "/tmp/d-118212-29539-1nvvsar.4gi1/package.tgz",
+    "rawSpec": "/tmp/d-118212-29539-1nvvsar.4gi1/package.tgz",
+    "saveSpec": "file:/tmp/d-118212-29539-1nvvsar.4gi1/package.tgz",
+    "fetchSpec": "/tmp/d-118212-29539-1nvvsar.4gi1/package.tgz"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "/tmp/d-11828-32376-o3bay1.dck9n/package.tgz",
-  "_spec": "/tmp/d-11828-32376-o3bay1.dck9n/package.tgz",
-  "_where": "/tmp/apm-install-dir-11828-32376-1lf1k1q.zk5o",
+  "_resolved": "/tmp/d-118212-29539-1nvvsar.4gi1/package.tgz",
+  "_spec": "/tmp/d-118212-29539-1nvvsar.4gi1/package.tgz",
+  "_where": "/tmp/apm-install-dir-118212-29539-rbzcx8.fodrd",
   "activationCommands": {
     "atom-workspace": [
       "typescript:initialize-config"
@@ -165,7 +165,7 @@
     "test": "npm run typecheck && npm run lint && npm run prettier-check",
     "typecheck": "tsc --noEmit -p ./lib && tsc --noEmit -p ./scripts && tsc --noEmit -p ./spec"
   },
-  "version": "12.3.5",
+  "version": "12.3.7",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
