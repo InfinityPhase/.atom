@@ -1,24 +1,24 @@
 {
-  "_from": "file:/tmp/d-118212-29539-1nvvsar.4gi1/package.tgz",
-  "_id": "atom-typescript@12.3.7",
+  "_from": "file:/tmp/d-118220-22945-17dn2t3.nutg/package.tgz",
+  "_id": "atom-typescript@12.3.8",
   "_inBundle": false,
-  "_integrity": "sha512-/SJ/IRD/qDK2yR7Lu2ZSS5UpWqCIGkgdGqiw90W9jaaknDgtk6VvokdhffzKucigtpvZTftwGtFfKJksqiHOXA==",
+  "_integrity": "sha512-YZJcZmWLZV2jjfO7YyK0vvJQpsE6yFyVZIJxtxzWTNlLpICrJ/kug/Qp9cV2czGTQ6Qi+3dE+WCmBZAUvlo63Q==",
   "_location": "/atom-typescript",
   "_phantomChildren": {},
   "_requested": {
     "type": "file",
-    "where": "/tmp/apm-install-dir-118212-29539-rbzcx8.fodrd",
-    "raw": "/tmp/d-118212-29539-1nvvsar.4gi1/package.tgz",
-    "rawSpec": "/tmp/d-118212-29539-1nvvsar.4gi1/package.tgz",
-    "saveSpec": "file:/tmp/d-118212-29539-1nvvsar.4gi1/package.tgz",
-    "fetchSpec": "/tmp/d-118212-29539-1nvvsar.4gi1/package.tgz"
+    "where": "/tmp/apm-install-dir-118220-22945-zysnog.vy27h",
+    "raw": "/tmp/d-118220-22945-17dn2t3.nutg/package.tgz",
+    "rawSpec": "/tmp/d-118220-22945-17dn2t3.nutg/package.tgz",
+    "saveSpec": "file:/tmp/d-118220-22945-17dn2t3.nutg/package.tgz",
+    "fetchSpec": "/tmp/d-118220-22945-17dn2t3.nutg/package.tgz"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "/tmp/d-118212-29539-1nvvsar.4gi1/package.tgz",
-  "_spec": "/tmp/d-118212-29539-1nvvsar.4gi1/package.tgz",
-  "_where": "/tmp/apm-install-dir-118212-29539-rbzcx8.fodrd",
+  "_resolved": "/tmp/d-118220-22945-17dn2t3.nutg/package.tgz",
+  "_spec": "/tmp/d-118220-22945-17dn2t3.nutg/package.tgz",
+  "_where": "/tmp/apm-install-dir-118220-22945-zysnog.vy27h",
   "activationCommands": {
     "atom-workspace": [
       "typescript:initialize-config"
@@ -165,7 +165,7 @@
     "test": "npm run typecheck && npm run lint && npm run prettier-check",
     "typecheck": "tsc --noEmit -p ./lib && tsc --noEmit -p ./scripts && tsc --noEmit -p ./spec"
   },
-  "version": "12.3.7",
+  "version": "12.3.8",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -176,7 +176,7 @@
       },
       {
         "name": "atom-package-deps",
-        "version": "4.6.1",
+        "version": "4.6.2",
         "path": "node_modules/atom-package-deps/lib/index.js"
       },
       {

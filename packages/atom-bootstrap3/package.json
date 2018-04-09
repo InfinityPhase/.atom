@@ -1,0 +1,54 @@
+{
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  },
+  "_from": "file:/tmp/d-118211-14506-1p4l3p8.g68z/package.tgz",
+  "_id": "atom-bootstrap3@1.2.12",
+  "_inBundle": false,
+  "_integrity": "sha512-1jglvoHyAAmr/0xbPX+WSxhebEHKu++8V06a4rwBBa8hLWuUiivyDm224/YA9VBNzGK7wgTcODa3rIG0kVy0Fg==",
+  "_location": "/atom-bootstrap3",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "file",
+    "where": "/tmp/apm-install-dir-118211-14506-gf21ta.bw5in",
+    "raw": "/tmp/d-118211-14506-1p4l3p8.g68z/package.tgz",
+    "rawSpec": "/tmp/d-118211-14506-1p4l3p8.g68z/package.tgz",
+    "saveSpec": "file:/tmp/d-118211-14506-1p4l3p8.g68z/package.tgz",
+    "fetchSpec": "/tmp/d-118211-14506-1p4l3p8.g68z/package.tgz"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "/tmp/d-118211-14506-1p4l3p8.g68z/package.tgz",
+  "_shasum": "dc10409f567d922da6ba45e0968d2d8359ee4902",
+  "_spec": "/tmp/d-118211-14506-1p4l3p8.g68z/package.tgz",
+  "_where": "/tmp/apm-install-dir-118211-14506-gf21ta.bw5in",
+  "activationCommands": {
+    "bootstrap": "toggle"
+  },
+  "bugs": {
+    "url": "https://github.com/f/atom-bootstrap3/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Bootstrap 3 Support with snippets and autocompletion. Supports Glyphicons and Fontawesome",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "homepage": "https://github.com/f/atom-bootstrap3#readme",
+  "license": "MIT",
+  "name": "atom-bootstrap3",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/f/atom-bootstrap3.git"
+  },
+  "version": "1.2.12"
+}

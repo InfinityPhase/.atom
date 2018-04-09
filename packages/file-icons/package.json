@@ -1,24 +1,24 @@
 {
-  "_from": "file:/tmp/d-11828-32378-1b4b7yk.d9sf/package.tgz",
-  "_id": "file-icons@2.1.17",
+  "_from": "file:/tmp/d-118224-32548-1gvybqr.grk2/package.tgz",
+  "_id": "file-icons@2.1.18",
   "_inBundle": false,
-  "_integrity": "sha512-FsHmeVfuXTYHqmI7ttoePMpt7MzYfLQzJBo72s0yq49+vmp9rxRQgNG3vW4waYjeFFbXNdQV6HdJXFJemrNnxg==",
+  "_integrity": "sha512-FUYU/61Kg+Xhgwm8jhcfkrffGRw9QBMWDPkpXgNmS4n5faejjaYNh6sACsWHppY5UCGsL5/HBp5HjJMuMgG9ww==",
   "_location": "/file-icons",
   "_phantomChildren": {},
   "_requested": {
     "type": "file",
-    "where": "/tmp/apm-install-dir-11828-32378-1f4grs6.984x",
-    "raw": "/tmp/d-11828-32378-1b4b7yk.d9sf/package.tgz",
-    "rawSpec": "/tmp/d-11828-32378-1b4b7yk.d9sf/package.tgz",
-    "saveSpec": "file:/tmp/d-11828-32378-1b4b7yk.d9sf/package.tgz",
-    "fetchSpec": "/tmp/d-11828-32378-1b4b7yk.d9sf/package.tgz"
+    "where": "/tmp/apm-install-dir-118224-32548-11lih4t.vejv",
+    "raw": "/tmp/d-118224-32548-1gvybqr.grk2/package.tgz",
+    "rawSpec": "/tmp/d-118224-32548-1gvybqr.grk2/package.tgz",
+    "saveSpec": "file:/tmp/d-118224-32548-1gvybqr.grk2/package.tgz",
+    "fetchSpec": "/tmp/d-118224-32548-1gvybqr.grk2/package.tgz"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "/tmp/d-11828-32378-1b4b7yk.d9sf/package.tgz",
-  "_spec": "/tmp/d-11828-32378-1b4b7yk.d9sf/package.tgz",
-  "_where": "/tmp/apm-install-dir-11828-32378-1f4grs6.984x",
+  "_resolved": "/tmp/d-118224-32548-1gvybqr.grk2/package.tgz",
+  "_spec": "/tmp/d-118224-32548-1gvybqr.grk2/package.tgz",
+  "_where": "/tmp/apm-install-dir-118224-32548-11lih4t.vejv",
   "atomTestRunner": "atom-mocha",
   "bugs": {
     "url": "https://github.com/file-icons/atom/issues"
@@ -99,12 +99,12 @@
     "alhadis.utils": "v0.1.3",
     "atom-fs": "v0.1.4",
     "micromatch": "*",
-    "print": "*"
+    "print": ">=v1.1.0"
   },
   "deprecated": false,
   "description": "Assign file extension icons and colours for improved visual grepping",
   "devDependencies": {
-    "atom-mocha": ">=2.0.3",
+    "atom-mocha": ">=v2.0.5",
     "coffee-script": "*",
     "get-options": "*",
     "rimraf": "*",
@@ -135,7 +135,7 @@
     "type": "git",
     "url": "git+https://github.com/file-icons/atom.git"
   },
-  "version": "2.1.17",
+  "version": "2.1.18",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -460,11 +460,6 @@
         "path": "node_modules/kind-of/index.js"
       },
       {
-        "name": "lazy-cache",
-        "version": "2.0.2",
-        "path": "node_modules/lazy-cache/index.js"
-      },
-      {
         "name": "map-cache",
         "version": "0.2.2",
         "path": "node_modules/map-cache/index.js"
@@ -476,7 +471,7 @@
       },
       {
         "name": "micromatch",
-        "version": "3.1.9",
+        "version": "3.1.10",
         "path": "node_modules/micromatch/index.js"
       },
       {
@@ -556,7 +551,7 @@
       },
       {
         "name": "print",
-        "version": "1.0.2",
+        "version": "1.1.0",
         "path": "node_modules/print/print.js"
       },
       {
@@ -590,11 +585,6 @@
         "path": "node_modules/safe-regex/index.js"
       },
       {
-        "name": "set-getter",
-        "version": "0.1.0",
-        "path": "node_modules/set-getter/index.js"
-      },
-      {
         "name": "set-value",
         "version": "2.0.0",
         "path": "node_modules/set-value/index.js"
@@ -606,7 +596,7 @@
       },
       {
         "name": "snapdragon",
-        "version": "0.8.1",
+        "version": "0.8.2",
         "path": "node_modules/snapdragon/index.js"
       },
       {
@@ -791,43 +781,8 @@
       },
       {
         "name": "use",
-        "version": "2.0.2",
+        "version": "3.1.0",
         "path": "node_modules/use/index.js"
-      },
-      {
-        "name": "define-property",
-        "version": "0.2.5",
-        "path": "node_modules/use/node_modules/define-property/index.js"
-      },
-      {
-        "name": "is-accessor-descriptor",
-        "version": "0.1.6",
-        "path": "node_modules/use/node_modules/is-accessor-descriptor/index.js"
-      },
-      {
-        "name": "kind-of",
-        "version": "3.2.2",
-        "path": "node_modules/use/node_modules/is-accessor-descriptor/node_modules/kind-of/index.js"
-      },
-      {
-        "name": "is-data-descriptor",
-        "version": "0.1.4",
-        "path": "node_modules/use/node_modules/is-data-descriptor/index.js"
-      },
-      {
-        "name": "kind-of",
-        "version": "3.2.2",
-        "path": "node_modules/use/node_modules/is-data-descriptor/node_modules/kind-of/index.js"
-      },
-      {
-        "name": "is-descriptor",
-        "version": "0.1.6",
-        "path": "node_modules/use/node_modules/is-descriptor/index.js"
-      },
-      {
-        "name": "kind-of",
-        "version": "5.1.0",
-        "path": "node_modules/use/node_modules/kind-of/index.js"
       }
     ],
     "extensions": {
@@ -900,7 +855,6 @@
         "node_modules/isarray/package.json",
         "node_modules/isobject/package.json",
         "node_modules/kind-of/package.json",
-        "node_modules/lazy-cache/package.json",
         "node_modules/map-cache/package.json",
         "node_modules/map-visit/package.json",
         "node_modules/micromatch/package.json",
@@ -928,7 +882,6 @@
         "node_modules/resolve-url/package.json",
         "node_modules/ret/package.json",
         "node_modules/safe-regex/package.json",
-        "node_modules/set-getter/package.json",
         "node_modules/set-value/node_modules/extend-shallow/package.json",
         "node_modules/set-value/package.json",
         "node_modules/snapdragon/node_modules/define-property/package.json",
@@ -972,13 +925,6 @@
         "node_modules/unset-value/node_modules/has-values/package.json",
         "node_modules/unset-value/package.json",
         "node_modules/urix/package.json",
-        "node_modules/use/node_modules/define-property/package.json",
-        "node_modules/use/node_modules/is-accessor-descriptor/node_modules/kind-of/package.json",
-        "node_modules/use/node_modules/is-accessor-descriptor/package.json",
-        "node_modules/use/node_modules/is-data-descriptor/node_modules/kind-of/package.json",
-        "node_modules/use/node_modules/is-data-descriptor/package.json",
-        "node_modules/use/node_modules/is-descriptor/package.json",
-        "node_modules/use/node_modules/kind-of/package.json",
         "node_modules/use/package.json",
         "package.json"
       ],
@@ -1103,7 +1049,6 @@
         "node_modules/isarray/test.js",
         "node_modules/isobject/index.js",
         "node_modules/kind-of/index.js",
-        "node_modules/lazy-cache/index.js",
         "node_modules/map-cache/index.js",
         "node_modules/map-visit/index.js",
         "node_modules/micromatch/index.js",
@@ -1143,7 +1088,6 @@
         "node_modules/ret/lib/util.js",
         "node_modules/safe-regex/example/safe.js",
         "node_modules/safe-regex/index.js",
-        "node_modules/set-getter/index.js",
         "node_modules/set-value/index.js",
         "node_modules/set-value/node_modules/extend-shallow/index.js",
         "node_modules/snapdragon/index.js",
@@ -1205,15 +1149,7 @@
         "node_modules/unset-value/node_modules/has-value/node_modules/isobject/index.js",
         "node_modules/unset-value/node_modules/has-values/index.js",
         "node_modules/urix/index.js",
-        "node_modules/use/index.js",
-        "node_modules/use/node_modules/define-property/index.js",
-        "node_modules/use/node_modules/is-accessor-descriptor/index.js",
-        "node_modules/use/node_modules/is-accessor-descriptor/node_modules/kind-of/index.js",
-        "node_modules/use/node_modules/is-data-descriptor/index.js",
-        "node_modules/use/node_modules/is-data-descriptor/node_modules/kind-of/index.js",
-        "node_modules/use/node_modules/is-descriptor/index.js",
-        "node_modules/use/node_modules/kind-of/index.js",
-        "node_modules/use/utils.js"
+        "node_modules/use/index.js"
       ]
     },
     "folders": [
@@ -1229,7 +1165,7 @@
           "alhadis.utils": "v0.1.3",
           "atom-fs": "v0.1.4",
           "micromatch": "*",
-          "print": "*"
+          "print": ">=v1.1.0"
         }
       },
       {
@@ -1639,14 +1575,6 @@
       },
       {
         "paths": [
-          "node_modules/lazy-cache"
-        ],
-        "dependencies": {
-          "set-getter": "^0.1.0"
-        }
-      },
-      {
-        "paths": [
           "node_modules/map-visit"
         ],
         "dependencies": {
@@ -1671,7 +1599,7 @@
           "object.pick": "^1.3.0",
           "regex-not": "^1.0.0",
           "snapdragon": "^0.8.1",
-          "to-regex": "^3.0.1"
+          "to-regex": "^3.0.2"
         }
       },
       {
@@ -1800,14 +1728,6 @@
       },
       {
         "paths": [
-          "node_modules/set-getter"
-        ],
-        "dependencies": {
-          "to-object-path": "^0.3.0"
-        }
-      },
-      {
-        "paths": [
           "node_modules/set-value"
         ],
         "dependencies": {
@@ -1838,7 +1758,7 @@
           "map-cache": "^0.2.2",
           "source-map": "^0.5.6",
           "source-map-resolve": "^0.5.0",
-          "use": "^2.0.0"
+          "use": "^3.1.0"
         }
       },
       {
@@ -2111,59 +2031,7 @@
           "node_modules/use"
         ],
         "dependencies": {
-          "define-property": "^0.2.5",
-          "isobject": "^3.0.0",
-          "lazy-cache": "^2.0.2"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/use/node_modules/define-property"
-        ],
-        "dependencies": {
-          "is-descriptor": "^0.1.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/use/node_modules/is-accessor-descriptor"
-        ],
-        "dependencies": {
-          "kind-of": "^3.0.2"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/use/node_modules/is-accessor-descriptor/node_modules/kind-of"
-        ],
-        "dependencies": {
-          "is-buffer": "^1.1.5"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/use/node_modules/is-data-descriptor"
-        ],
-        "dependencies": {
-          "kind-of": "^3.0.2"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/use/node_modules/is-data-descriptor/node_modules/kind-of"
-        ],
-        "dependencies": {
-          "is-buffer": "^1.1.5"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/use/node_modules/is-descriptor"
-        ],
-        "dependencies": {
-          "is-accessor-descriptor": "^0.1.6",
-          "is-data-descriptor": "^0.1.4",
-          "kind-of": "^5.0.0"
+          "kind-of": "^6.0.2"
         }
       }
     ]

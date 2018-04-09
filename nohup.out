@@ -1,4 +1,1 @@
-(node:22823) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): ReferenceError: atom is not defined
-(node:22823) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
-libpng warning: iCCP: known incorrect sRGB profile
-libpng warning: iCCP: known incorrect sRGB profile
+Gtk-Message: 16:49:54.878: GtkDialog mapped without a transient parent. This is discouraged.

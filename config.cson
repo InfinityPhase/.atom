@@ -76,7 +76,8 @@
       "seti-ui"
       "monokai-seti"
     ]
-  editor: {}
+  editor:
+    fontSize: 13
   "exception-reporting":
     userId: "c9520757-c057-484e-a129-77dea25aa744"
   "file-icons":

@@ -1,0 +1,190 @@
+{
+  "_from": "file:/tmp/d-11838-16261-11j2xu7.z28f/package.tgz",
+  "_id": "autocomplete-haskell@1.0.1",
+  "_inBundle": false,
+  "_integrity": "sha512-u4xtgrWN28YYwlLarjIgbXxCtQaptSbg9w1IRMcQ0pKm72zRxtJ3u/jFx5XhjqehBY9NrSew1Y7oHesBmOsH+Q==",
+  "_location": "/autocomplete-haskell",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "file",
+    "where": "/tmp/apm-install-dir-11838-16261-143w496.c1gy",
+    "raw": "/tmp/d-11838-16261-11j2xu7.z28f/package.tgz",
+    "rawSpec": "/tmp/d-11838-16261-11j2xu7.z28f/package.tgz",
+    "saveSpec": "file:/tmp/d-11838-16261-11j2xu7.z28f/package.tgz",
+    "fetchSpec": "/tmp/d-11838-16261-11j2xu7.z28f/package.tgz"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "/tmp/d-11838-16261-11j2xu7.z28f/package.tgz",
+  "_spec": "/tmp/d-11838-16261-11j2xu7.z28f/package.tgz",
+  "_where": "/tmp/apm-install-dir-11838-16261-143w496.c1gy",
+  "activationHooks": [
+    "language-haskell:grammar-used"
+  ],
+  "bugs": {
+    "url": "https://github.com/atom-haskell/autocomplete-haskell/issues"
+  },
+  "bundleDependencies": false,
+  "consumedServices": {
+    "haskell-completion-backend": {
+      "versions": {
+        "0.1.0": "consumeCompBack",
+        "^1.0.0": "consumeCompBack"
+      }
+    },
+    "ide-haskell-upi": {
+      "description": "Uses ide-haskell's unified pluggable interface",
+      "versions": {
+        "^0.3.0": "consumeUPI"
+      }
+    }
+  },
+  "dependencies": {
+    "atom-highlight": "^0.3.0",
+    "fuzzaldrin": "^2.1.0",
+    "xregexp": "^3.2.0"
+  },
+  "deprecated": false,
+  "description": "Autocomplete-plus provider for haskell",
+  "devDependencies": {
+    "@types/fuzzaldrin": "^2.1.0",
+    "@types/xregexp": "^3.0.29",
+    "atom-haskell-utils": "^1.0.0",
+    "typescript": "^2.4.2"
+  },
+  "engines": {
+    "atom": ">=1.19.0 <2.0.0"
+  },
+  "homepage": "https://github.com/atom-haskell/autocomplete-haskell#readme",
+  "keywords": [
+    "ide-haskell",
+    "ide",
+    "haskell",
+    "autocomplete",
+    "autocomplete-plus"
+  ],
+  "license": "MIT",
+  "main": "./lib/autocomplete-haskell",
+  "name": "autocomplete-haskell",
+  "providedServices": {
+    "autocomplete.provider": {
+      "versions": {
+        "2.0.0": "autocompleteProvider_2_0_0"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atom-haskell/autocomplete-haskell.git"
+  },
+  "version": "1.0.1",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [
+      {
+        "name": "atom-highlight",
+        "version": "0.3.0",
+        "path": "node_modules/atom-highlight/lib/highlight.js"
+      },
+      {
+        "name": "compare-versions",
+        "version": "3.1.0",
+        "path": "node_modules/compare-versions/index.js"
+      },
+      {
+        "name": "fuzzaldrin",
+        "version": "2.1.0",
+        "path": "node_modules/fuzzaldrin/lib/fuzzaldrin.js"
+      },
+      {
+        "name": "underscore",
+        "version": "1.6.0",
+        "path": "node_modules/underscore/underscore.js"
+      },
+      {
+        "name": "underscore-plus",
+        "version": "1.6.6",
+        "path": "node_modules/underscore-plus/lib/underscore-plus.js"
+      },
+      {
+        "name": "xregexp",
+        "version": "3.2.0",
+        "path": "node_modules/xregexp/xregexp-all.js"
+      }
+    ],
+    "extensions": {
+      ".json": [
+        "coffeelint.json",
+        "node_modules/atom-highlight/package.json",
+        "node_modules/compare-versions/bower.json",
+        "node_modules/compare-versions/package.json",
+        "node_modules/fuzzaldrin/package.json",
+        "node_modules/underscore/package.json",
+        "node_modules/underscore-plus/package.json",
+        "node_modules/xregexp/package.json",
+        "package.json",
+        "tsconfig.json",
+        "tslint.json"
+      ],
+      ".js": [
+        "lib/autocomplete-haskell.js",
+        "lib/config.js",
+        "lib/last-suggestion-view.js",
+        "lib/opertator-regex.js",
+        "lib/suggestion-builder.js",
+        "node_modules/atom-highlight/lib/highlight.js",
+        "node_modules/compare-versions/index.js",
+        "node_modules/fuzzaldrin/lib/filter.js",
+        "node_modules/fuzzaldrin/lib/fuzzaldrin.js",
+        "node_modules/fuzzaldrin/lib/matcher.js",
+        "node_modules/fuzzaldrin/lib/scorer.js",
+        "node_modules/underscore/underscore-min.js",
+        "node_modules/underscore/underscore.js",
+        "node_modules/underscore-plus/lib/underscore-plus.js",
+        "node_modules/xregexp/src/addons/build.js",
+        "node_modules/xregexp/src/addons/matchrecursive.js",
+        "node_modules/xregexp/src/addons/unicode-base.js",
+        "node_modules/xregexp/src/addons/unicode-blocks.js",
+        "node_modules/xregexp/src/addons/unicode-categories.js",
+        "node_modules/xregexp/src/addons/unicode-properties.js",
+        "node_modules/xregexp/src/addons/unicode-scripts.js",
+        "node_modules/xregexp/src/index.js",
+        "node_modules/xregexp/src/xregexp.js",
+        "node_modules/xregexp/xregexp-all.js"
+      ]
+    },
+    "folders": [
+      {
+        "paths": [
+          "",
+          "lib"
+        ],
+        "dependencies": {
+          "atom-highlight": "^0.3.0",
+          "fuzzaldrin": "^2.1.0",
+          "xregexp": "^3.2.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/atom-highlight/lib",
+          "node_modules/atom-highlight"
+        ],
+        "dependencies": {
+          "compare-versions": "^3.0.0",
+          "underscore-plus": "^1.6.6"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/underscore-plus/lib",
+          "node_modules/underscore-plus"
+        ],
+        "dependencies": {
+          "underscore": "~1.6.0"
+        }
+      }
+    ]
+  }
+}

@@ -1,24 +1,24 @@
 {
-  "_from": "file:/tmp/d-11828-32370-1br1bai.jewf/package.tgz",
-  "_id": "atom-ide-ui@0.9.3",
+  "_from": "file:/tmp/d-118220-22944-b4z2p7.f5aeo/package.tgz",
+  "_id": "atom-ide-ui@0.9.4",
   "_inBundle": false,
-  "_integrity": "sha512-Jv9KasieHHVWEqcUU81yHyYNUMltW0L9RTB1ML+jFToVziuoTbSjcu94XIOINnVvDUVKywNEpfAbpdvtsjFsLA==",
+  "_integrity": "sha512-WRpWX2Dcy8voB2Q5QASy7RaQDeXnfYpZ7l1HdUnOUP62HGSiJ8zTCUuivouY1ucv1qGWX+/xgfapalaV0G+3KQ==",
   "_location": "/atom-ide-ui",
   "_phantomChildren": {},
   "_requested": {
     "type": "file",
-    "where": "/tmp/apm-install-dir-11828-32370-3uxgmn.777jp",
-    "raw": "/tmp/d-11828-32370-1br1bai.jewf/package.tgz",
-    "rawSpec": "/tmp/d-11828-32370-1br1bai.jewf/package.tgz",
-    "saveSpec": "file:/tmp/d-11828-32370-1br1bai.jewf/package.tgz",
-    "fetchSpec": "/tmp/d-11828-32370-1br1bai.jewf/package.tgz"
+    "where": "/tmp/apm-install-dir-118220-22944-ru7cql.efjem",
+    "raw": "/tmp/d-118220-22944-b4z2p7.f5aeo/package.tgz",
+    "rawSpec": "/tmp/d-118220-22944-b4z2p7.f5aeo/package.tgz",
+    "saveSpec": "file:/tmp/d-118220-22944-b4z2p7.f5aeo/package.tgz",
+    "fetchSpec": "/tmp/d-118220-22944-b4z2p7.f5aeo/package.tgz"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "/tmp/d-11828-32370-1br1bai.jewf/package.tgz",
-  "_spec": "/tmp/d-11828-32370-1br1bai.jewf/package.tgz",
-  "_where": "/tmp/apm-install-dir-11828-32370-3uxgmn.777jp",
+  "_resolved": "/tmp/d-118220-22944-b4z2p7.f5aeo/package.tgz",
+  "_spec": "/tmp/d-118220-22944-b4z2p7.f5aeo/package.tgz",
+  "_where": "/tmp/apm-install-dir-118220-22944-ru7cql.efjem",
   "bugs": {
     "url": "https://github.com/facebook-atom/atom-ide-ui/issues"
   },
@@ -72,6 +72,7 @@
     "babel-plugin-lodash": "3.2.11",
     "babel-plugin-relay": "1.4.1",
     "babel-plugin-syntax-flow": "6.18.0",
+    "babel-plugin-transform-async-super": "1.0.0",
     "babel-plugin-transform-async-to-module-method": "6.24.1",
     "babel-plugin-transform-class-properties": "6.24.1",
     "babel-plugin-transform-es2015-modules-commonjs": "6.26.0",
@@ -91,7 +92,7 @@
     "eslint-plugin-prettier": "2.3.1",
     "eslint-plugin-react": "7.4.0",
     "eslint-plugin-rulesdir": "0.1.0",
-    "flow-bin": "0.66.0",
+    "flow-bin": "0.67.1",
     "jasmine-node": "1.14.5",
     "nyc": "11.2.1",
     "prettier": "1.9.1",
@@ -118,7 +119,7 @@
     "release-transpile": "./modules/nuclide-node-transpiler/bin/release-transpile.js",
     "test": "npm run flow && npm run lint-all && ./scripts/test.js"
   },
-  "version": "0.9.3",
+  "version": "0.9.4",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
