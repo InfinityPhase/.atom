@@ -1,24 +1,24 @@
 {
-  "_from": "file:/tmp/d-118211-11430-1envabp.7nwt/package.tgz",
-  "_id": "color-picker@2.2.5",
+  "_from": "file:/tmp/d-118313-1723-1d2qoa7.athy/package.tgz",
+  "_id": "color-picker@2.3.0",
   "_inBundle": false,
-  "_integrity": "sha512-07+9F/rh20JkfkapAivfnT5r1RF1S/zFr5fytw7Is1gqK76LzSonSin4yK75tedrxiIkDsM2L6Br7FZcbF/5MA==",
+  "_integrity": "sha512-QmtOCpvvCQb6yNVVocuP00OzJXCe1ODC5C0oFokaCMIL/fD2POmoGwDs+0Vg6SsRltKWLxTa6BkaU3uRY3qm+A==",
   "_location": "/color-picker",
   "_phantomChildren": {},
   "_requested": {
     "type": "file",
-    "where": "/tmp/apm-install-dir-118211-11430-mcrn2m.9fuos",
-    "raw": "/tmp/d-118211-11430-1envabp.7nwt/package.tgz",
-    "rawSpec": "/tmp/d-118211-11430-1envabp.7nwt/package.tgz",
-    "saveSpec": "file:/tmp/d-118211-11430-1envabp.7nwt/package.tgz",
-    "fetchSpec": "/tmp/d-118211-11430-1envabp.7nwt/package.tgz"
+    "where": "/tmp/apm-install-dir-118313-1723-1curxi9.fwy1",
+    "raw": "/tmp/d-118313-1723-1d2qoa7.athy/package.tgz",
+    "rawSpec": "/tmp/d-118313-1723-1d2qoa7.athy/package.tgz",
+    "saveSpec": "file:/tmp/d-118313-1723-1d2qoa7.athy/package.tgz",
+    "fetchSpec": "/tmp/d-118313-1723-1d2qoa7.athy/package.tgz"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "/tmp/d-118211-11430-1envabp.7nwt/package.tgz",
-  "_spec": "/tmp/d-118211-11430-1envabp.7nwt/package.tgz",
-  "_where": "/tmp/apm-install-dir-118211-11430-mcrn2m.9fuos",
+  "_resolved": "/tmp/d-118313-1723-1d2qoa7.athy/package.tgz",
+  "_spec": "/tmp/d-118313-1723-1d2qoa7.athy/package.tgz",
+  "_where": "/tmp/apm-install-dir-118313-1723-1curxi9.fwy1",
   "bugs": {
     "url": "https://github.com/thomaslindstrom/color-picker/issues"
   },
@@ -49,7 +49,7 @@
     "type": "git",
     "url": "git+https://github.com/thomaslindstrom/color-picker.git"
   },
-  "version": "2.2.5",
+  "version": "2.3.0",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [],
