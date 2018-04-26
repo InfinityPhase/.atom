@@ -57,6 +57,7 @@
       "platformio-ide-terminal"
       "atom-beautify"
       "spell-check"
+      "ide-haskell"
     ]
     ignoredNames: [
       ".git"
@@ -104,6 +105,8 @@
     accessibility: {}
   "nord-atom-ui":
     darkerFormFocusEffect: true
+  perltidy:
+    binary: "/usr/bin/vendor_perl/perltidy"
   pigments:
     mergeColorDuplicates: true
   proton:

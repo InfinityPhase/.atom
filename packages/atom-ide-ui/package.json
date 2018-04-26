@@ -1,35 +1,40 @@
 {
-  "_from": "file:/tmp/d-118220-22944-b4z2p7.f5aeo/package.tgz",
-  "_id": "atom-ide-ui@0.9.4",
+  "_from": "file:/tmp/d-118323-18712-9gqygt.hotbn/package.tgz",
+  "_id": "atom-ide-ui@0.11.1",
   "_inBundle": false,
-  "_integrity": "sha512-WRpWX2Dcy8voB2Q5QASy7RaQDeXnfYpZ7l1HdUnOUP62HGSiJ8zTCUuivouY1ucv1qGWX+/xgfapalaV0G+3KQ==",
+  "_integrity": "sha512-kgGGJn+2in11V02z49wviUIvf8/XnLu+TElymU4mn+7o/qzFX2WeQM8pNDDdDVRp8gj+ZSTaVrIsMhVPMQnq9A==",
   "_location": "/atom-ide-ui",
   "_phantomChildren": {},
   "_requested": {
     "type": "file",
-    "where": "/tmp/apm-install-dir-118220-22944-ru7cql.efjem",
-    "raw": "/tmp/d-118220-22944-b4z2p7.f5aeo/package.tgz",
-    "rawSpec": "/tmp/d-118220-22944-b4z2p7.f5aeo/package.tgz",
-    "saveSpec": "file:/tmp/d-118220-22944-b4z2p7.f5aeo/package.tgz",
-    "fetchSpec": "/tmp/d-118220-22944-b4z2p7.f5aeo/package.tgz"
+    "where": "/tmp/apm-install-dir-118323-18712-1txli7r.erzqf",
+    "raw": "/tmp/d-118323-18712-9gqygt.hotbn/package.tgz",
+    "rawSpec": "/tmp/d-118323-18712-9gqygt.hotbn/package.tgz",
+    "saveSpec": "file:/tmp/d-118323-18712-9gqygt.hotbn/package.tgz",
+    "fetchSpec": "/tmp/d-118323-18712-9gqygt.hotbn/package.tgz"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "/tmp/d-118220-22944-b4z2p7.f5aeo/package.tgz",
-  "_spec": "/tmp/d-118220-22944-b4z2p7.f5aeo/package.tgz",
-  "_where": "/tmp/apm-install-dir-118220-22944-ru7cql.efjem",
+  "_resolved": "/tmp/d-118323-18712-9gqygt.hotbn/package.tgz",
+  "_spec": "/tmp/d-118323-18712-9gqygt.hotbn/package.tgz",
+  "_where": "/tmp/apm-install-dir-118323-18712-1txli7r.erzqf",
   "bugs": {
     "url": "https://github.com/facebook-atom/atom-ide-ui/issues"
   },
   "bundleDependencies": false,
   "dependencies": {
+    "anser": "1.4.6",
     "async-to-generator": "1.1.0",
     "classnames": "2.2.5",
-    "command-exists": "1.2.2",
     "dedent": "0.6.0",
+    "domexception": "1.0.1",
+    "dompurify": "1.0.3",
+    "escape-carriage": "1.2.0",
+    "escape-html": "1.0.3",
     "escape-string-regexp": "1.0.5",
     "event-kit": "2.2.0",
+    "event-target-shim": "3.0.1",
     "fs-plus": "2.9.3",
     "fuzzaldrin-plus": "0.4.1",
     "glob": "7.1.1",
@@ -43,6 +48,7 @@
     "mime-types": "2.1.16",
     "mkdirp": "0.5.1",
     "mv": "2.1.1",
+    "nuclide-prebuilt-libs": "0.4.0",
     "nullthrows": "1.0.0",
     "react": "16.2.0",
     "react-dom": "16.2.0",
@@ -56,11 +62,14 @@
     "semver": "5.3.0",
     "shallowequal": "0.2.2",
     "shell-quote": "1.6.1",
+    "strip-ansi": "3.0.1",
     "tabbable": "1.1.0",
     "temp": "0.8.3",
     "uuid": "3.0.1",
+    "vscode-debugprotocol": "1.24.0",
     "vscode-jsonrpc": "3.3.0",
-    "vscode-uri": "1.0.1"
+    "vscode-uri": "1.0.1",
+    "xterm": "3.1.0"
   },
   "deprecated": false,
   "description": "A collection of Atom UIs to support language services.",
@@ -94,8 +103,11 @@
     "eslint-plugin-rulesdir": "0.1.0",
     "flow-bin": "0.67.1",
     "jasmine-node": "1.14.5",
+    "jest-cli": "22.4.2",
+    "jest-mock": "22.2.0",
+    "jest-util": "22.4.1",
     "nyc": "11.2.1",
-    "prettier": "1.9.1",
+    "prettier": "1.12.1",
     "react-addons-test-utils": "15.3.1",
     "simple-text-buffer": "9.2.11",
     "yargs": "3.32.0"
@@ -119,10 +131,23 @@
     "release-transpile": "./modules/nuclide-node-transpiler/bin/release-transpile.js",
     "test": "npm run flow && npm run lint-all && ./scripts/test.js"
   },
-  "version": "0.9.4",
+  "version": "0.11.1",
+  "workspaces": [
+    "modules/*"
+  ],
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
+      {
+        "name": "anser",
+        "version": "1.4.6",
+        "path": "node_modules/anser/lib/index.js"
+      },
+      {
+        "name": "ansi-regex",
+        "version": "2.1.1",
+        "path": "node_modules/ansi-regex/index.js"
+      },
       {
         "name": "array-filter",
         "version": "0.0.1",
@@ -155,7 +180,7 @@
       },
       {
         "name": "core-js",
-        "version": "2.5.3",
+        "version": "2.5.5",
         "path": "node_modules/babel-runtime/node_modules/core-js/index.js"
       },
       {
@@ -172,11 +197,6 @@
         "name": "classnames",
         "version": "2.2.5",
         "path": "node_modules/classnames/index.js"
-      },
-      {
-        "name": "command-exists",
-        "version": "1.2.2",
-        "path": "node_modules/command-exists/index.js"
       },
       {
         "name": "concat-map",
@@ -219,9 +239,29 @@
         "path": "node_modules/dom-helpers/index.js"
       },
       {
+        "name": "domexception",
+        "version": "1.0.1",
+        "path": "node_modules/domexception/lib/public-api.js"
+      },
+      {
+        "name": "dompurify",
+        "version": "1.0.3",
+        "path": "node_modules/dompurify/dist/purify.cjs.js"
+      },
+      {
         "name": "encoding",
         "version": "0.1.12",
         "path": "node_modules/encoding/lib/encoding.js"
+      },
+      {
+        "name": "escape-carriage",
+        "version": "1.2.0",
+        "path": "node_modules/escape-carriage/index.js"
+      },
+      {
+        "name": "escape-html",
+        "version": "1.0.3",
+        "path": "node_modules/escape-html/index.js"
       },
       {
         "name": "escape-string-regexp",
@@ -232,6 +272,11 @@
         "name": "event-kit",
         "version": "2.2.0",
         "path": "node_modules/event-kit/lib/event-kit.js"
+      },
+      {
+        "name": "event-target-shim",
+        "version": "3.0.1",
+        "path": "node_modules/event-target-shim/dist/event-target-shim.js"
       },
       {
         "name": "fbjs",
@@ -270,7 +315,7 @@
       },
       {
         "name": "iconv-lite",
-        "version": "0.4.19",
+        "version": "0.4.21",
         "path": "node_modules/iconv-lite/lib/index.js"
       },
       {
@@ -330,7 +375,7 @@
       },
       {
         "name": "lodash-es",
-        "version": "4.17.7",
+        "version": "4.17.8",
         "path": "node_modules/lodash-es/lodash.js"
       },
       {
@@ -427,6 +472,11 @@
         "name": "node-fetch",
         "version": "1.7.3",
         "path": "node_modules/node-fetch/index.js"
+      },
+      {
+        "name": "nuclide-prebuilt-libs",
+        "version": "0.4.0",
+        "path": "node_modules/nuclide-prebuilt-libs/index.js"
       },
       {
         "name": "nullthrows",
@@ -529,6 +579,11 @@
         "path": "node_modules/rxjs/node_modules/symbol-observable/index.js"
       },
       {
+        "name": "safer-buffer",
+        "version": "2.1.2",
+        "path": "node_modules/safer-buffer/safer.js"
+      },
+      {
         "name": "semver",
         "version": "5.3.0",
         "path": "node_modules/semver/semver.js"
@@ -562,6 +617,11 @@
         "name": "string_decoder",
         "version": "0.10.31",
         "path": "node_modules/string_decoder/index.js"
+      },
+      {
+        "name": "strip-ansi",
+        "version": "3.0.1",
+        "path": "node_modules/strip-ansi/index.js"
       },
       {
         "name": "symbol-observable",
@@ -604,6 +664,11 @@
         "path": "node_modules/uuid/index.js"
       },
       {
+        "name": "vscode-debugprotocol",
+        "version": "1.24.0",
+        "path": "node_modules/vscode-debugprotocol/lib/debugProtocol.js"
+      },
+      {
         "name": "vscode-jsonrpc",
         "version": "3.3.0",
         "path": "node_modules/vscode-jsonrpc/lib/main.js"
@@ -614,14 +679,24 @@
         "path": "node_modules/vscode-uri/lib/index.js"
       },
       {
+        "name": "webidl-conversions",
+        "version": "4.0.2",
+        "path": "node_modules/webidl-conversions/lib/index.js"
+      },
+      {
         "name": "whatwg-fetch",
-        "version": "2.0.3",
+        "version": "2.0.4",
         "path": "node_modules/whatwg-fetch/fetch.js"
       },
       {
         "name": "wrappy",
         "version": "1.0.2",
         "path": "node_modules/wrappy/wrappy.js"
+      },
+      {
+        "name": "xterm",
+        "version": "3.1.0",
+        "path": "node_modules/xterm/lib/Terminal.js"
       },
       {
         "name": "yallist",
@@ -634,6 +709,8 @@
         "display-nuclide-warning.js",
         "index-entry.js",
         "index.js",
+        "node_modules/anser/lib/index.js",
+        "node_modules/ansi-regex/index.js",
         "node_modules/array-filter/index.js",
         "node_modules/array-map/example/map.js",
         "node_modules/array-map/index.js",
@@ -2351,8 +2428,6 @@
         "node_modules/classnames/bind.js",
         "node_modules/classnames/dedupe.js",
         "node_modules/classnames/index.js",
-        "node_modules/command-exists/index.js",
-        "node_modules/command-exists/lib/command-exists.js",
         "node_modules/concat-map/example/map.js",
         "node_modules/concat-map/index.js",
         "node_modules/core-js/Gruntfile.js",
@@ -3280,13 +3355,25 @@
         "node_modules/dom-helpers/util/requestAnimationFrame.js",
         "node_modules/dom-helpers/util/scrollTo.js",
         "node_modules/dom-helpers/util/scrollbarSize.js",
+        "node_modules/domexception/lib/DOMException-impl.js",
+        "node_modules/domexception/lib/DOMException.js",
+        "node_modules/domexception/lib/public-api.js",
+        "node_modules/domexception/lib/utils.js",
+        "node_modules/dompurify/dist/purify.cjs.js",
+        "node_modules/dompurify/dist/purify.es.js",
+        "node_modules/dompurify/dist/purify.js",
+        "node_modules/dompurify/dist/purify.min.js",
         "node_modules/encoding/lib/encoding.js",
         "node_modules/encoding/lib/iconv-loader.js",
+        "node_modules/escape-carriage/index.js",
+        "node_modules/escape-html/index.js",
         "node_modules/escape-string-regexp/index.js",
         "node_modules/event-kit/lib/composite-disposable.js",
         "node_modules/event-kit/lib/disposable.js",
         "node_modules/event-kit/lib/emitter.js",
         "node_modules/event-kit/lib/event-kit.js",
+        "node_modules/event-target-shim/dist/event-target-shim.js",
+        "node_modules/event-target-shim/dist/event-target-shim.umd.js",
         "node_modules/fbjs/flow/lib/dev.js",
         "node_modules/fbjs/index.js",
         "node_modules/fbjs/lib/CSSCore.js",
@@ -5221,6 +5308,20 @@
         "node_modules/node-fetch/lib/index.js",
         "node_modules/node-fetch/lib/request.js",
         "node_modules/node-fetch/lib/response.js",
+        "node_modules/nuclide-prebuilt-libs/ctags/lib/ctags.js",
+        "node_modules/nuclide-prebuilt-libs/ctags/lib/readable.js",
+        "node_modules/nuclide-prebuilt-libs/find-binary.js",
+        "node_modules/nuclide-prebuilt-libs/fuzzy-native/lib/main.js",
+        "node_modules/nuclide-prebuilt-libs/index.js",
+        "node_modules/nuclide-prebuilt-libs/keytar/lib/keytar.js",
+        "node_modules/nuclide-prebuilt-libs/pty/lib/index.js",
+        "node_modules/nuclide-prebuilt-libs/pty/lib/interfaces.js",
+        "node_modules/nuclide-prebuilt-libs/pty/lib/terminal.js",
+        "node_modules/nuclide-prebuilt-libs/pty/lib/types.js",
+        "node_modules/nuclide-prebuilt-libs/pty/lib/unixTerminal.js",
+        "node_modules/nuclide-prebuilt-libs/pty/lib/utils.js",
+        "node_modules/nuclide-prebuilt-libs/pty/lib/windowsPtyAgent.js",
+        "node_modules/nuclide-prebuilt-libs/pty/lib/windowsTerminal.js",
         "node_modules/nullthrows/nullthrows.js",
         "node_modules/object-assign/index.js",
         "node_modules/once/once.js",
@@ -6919,6 +7020,9 @@
         "node_modules/rxjs/util/subscribeToResult.js",
         "node_modules/rxjs/util/toSubscriber.js",
         "node_modules/rxjs/util/tryCatch.js",
+        "node_modules/safer-buffer/dangerous.js",
+        "node_modules/safer-buffer/safer.js",
+        "node_modules/safer-buffer/tests.js",
         "node_modules/semver/semver.js",
         "node_modules/setimmediate/setImmediate.js",
         "node_modules/shallowequal/modules/index.js",
@@ -6935,6 +7039,7 @@
         "node_modules/streamroller/node_modules/debug/index.js",
         "node_modules/streamroller/node_modules/debug/lib/debug.js",
         "node_modules/string_decoder/index.js",
+        "node_modules/strip-ansi/index.js",
         "node_modules/symbol-observable/es/index.js",
         "node_modules/symbol-observable/es/ponyfill.js",
         "node_modules/symbol-observable/index.js",
@@ -6963,6 +7068,7 @@
         "node_modules/uuid/lib/rng.js",
         "node_modules/uuid/v1.js",
         "node_modules/uuid/v4.js",
+        "node_modules/vscode-debugprotocol/lib/debugProtocol.js",
         "node_modules/vscode-jsonrpc/lib/cancellation.js",
         "node_modules/vscode-jsonrpc/lib/events.js",
         "node_modules/vscode-jsonrpc/lib/is.js",
@@ -6974,12 +7080,110 @@
         "node_modules/vscode-jsonrpc/lib/pipeSupport.js",
         "node_modules/vscode-jsonrpc/lib/thenable.js",
         "node_modules/vscode-uri/lib/index.js",
+        "node_modules/webidl-conversions/lib/index.js",
         "node_modules/whatwg-fetch/fetch.js",
         "node_modules/wrappy/wrappy.js",
+        "node_modules/xterm/dist/addons/attach/attach.js",
+        "node_modules/xterm/dist/addons/attach/attach.test.js",
+        "node_modules/xterm/dist/addons/fit/fit.js",
+        "node_modules/xterm/dist/addons/fit/fit.test.js",
+        "node_modules/xterm/dist/addons/fullscreen/fullscreen.js",
+        "node_modules/xterm/dist/addons/fullscreen/fullscreen.test.js",
+        "node_modules/xterm/dist/addons/search/SearchHelper.js",
+        "node_modules/xterm/dist/addons/search/search.js",
+        "node_modules/xterm/dist/addons/terminado/terminado.js",
+        "node_modules/xterm/dist/addons/terminado/terminado.test.js",
+        "node_modules/xterm/dist/addons/winptyCompat/winptyCompat.js",
+        "node_modules/xterm/dist/addons/winptyCompat/winptyCompat.test.js",
+        "node_modules/xterm/dist/addons/zmodem/demo/app.js",
+        "node_modules/xterm/dist/addons/zmodem/demo/main.js",
+        "node_modules/xterm/dist/addons/zmodem/zmodem.js",
+        "node_modules/xterm/dist/addons/zmodem/zmodem.test.js",
+        "node_modules/xterm/dist/xterm.js",
+        "node_modules/xterm/gulpfile.js",
+        "node_modules/xterm/lib/Buffer.js",
+        "node_modules/xterm/lib/Buffer.test.js",
+        "node_modules/xterm/lib/BufferSet.js",
+        "node_modules/xterm/lib/BufferSet.test.js",
+        "node_modules/xterm/lib/CharWidth.js",
+        "node_modules/xterm/lib/Charsets.js",
+        "node_modules/xterm/lib/CompositionHelper.js",
+        "node_modules/xterm/lib/CompositionHelper.test.js",
+        "node_modules/xterm/lib/EscapeSequences.js",
+        "node_modules/xterm/lib/EventEmitter.js",
+        "node_modules/xterm/lib/EventEmitter.test.js",
+        "node_modules/xterm/lib/InputHandler.js",
+        "node_modules/xterm/lib/InputHandler.test.js",
+        "node_modules/xterm/lib/Linkifier.js",
+        "node_modules/xterm/lib/Linkifier.test.js",
+        "node_modules/xterm/lib/Parser.js",
+        "node_modules/xterm/lib/SelectionManager.js",
+        "node_modules/xterm/lib/SelectionManager.test.js",
+        "node_modules/xterm/lib/SelectionModel.js",
+        "node_modules/xterm/lib/SelectionModel.test.js",
+        "node_modules/xterm/lib/Terminal.integration.js",
+        "node_modules/xterm/lib/Terminal.js",
+        "node_modules/xterm/lib/Terminal.test.js",
+        "node_modules/xterm/lib/Types.js",
+        "node_modules/xterm/lib/Viewport.js",
+        "node_modules/xterm/lib/addons/attach/Interfaces.js",
+        "node_modules/xterm/lib/addons/attach/attach.js",
+        "node_modules/xterm/lib/addons/attach/attach.test.js",
+        "node_modules/xterm/lib/addons/fit/fit.js",
+        "node_modules/xterm/lib/addons/fit/fit.test.js",
+        "node_modules/xterm/lib/addons/fullscreen/fullscreen.js",
+        "node_modules/xterm/lib/addons/fullscreen/fullscreen.test.js",
+        "node_modules/xterm/lib/addons/search/Interfaces.js",
+        "node_modules/xterm/lib/addons/search/SearchHelper.js",
+        "node_modules/xterm/lib/addons/search/search.js",
+        "node_modules/xterm/lib/addons/terminado/Interfaces.js",
+        "node_modules/xterm/lib/addons/terminado/terminado.js",
+        "node_modules/xterm/lib/addons/terminado/terminado.test.js",
+        "node_modules/xterm/lib/addons/winptyCompat/Interfaces.js",
+        "node_modules/xterm/lib/addons/winptyCompat/winptyCompat.js",
+        "node_modules/xterm/lib/addons/winptyCompat/winptyCompat.test.js",
+        "node_modules/xterm/lib/addons/zmodem/demo/app.js",
+        "node_modules/xterm/lib/addons/zmodem/demo/main.js",
+        "node_modules/xterm/lib/addons/zmodem/zmodem.js",
+        "node_modules/xterm/lib/addons/zmodem/zmodem.test.js",
+        "node_modules/xterm/lib/handlers/AltClickHandler.js",
+        "node_modules/xterm/lib/handlers/Clipboard.js",
+        "node_modules/xterm/lib/handlers/Clipboard.test.js",
+        "node_modules/xterm/lib/input/MouseZoneManager.js",
+        "node_modules/xterm/lib/input/Types.js",
+        "node_modules/xterm/lib/renderer/BaseRenderLayer.js",
+        "node_modules/xterm/lib/renderer/CharAtlas.js",
+        "node_modules/xterm/lib/renderer/ColorManager.js",
+        "node_modules/xterm/lib/renderer/ColorManager.test.js",
+        "node_modules/xterm/lib/renderer/CursorRenderLayer.js",
+        "node_modules/xterm/lib/renderer/GridCache.js",
+        "node_modules/xterm/lib/renderer/GridCache.test.js",
+        "node_modules/xterm/lib/renderer/LinkRenderLayer.js",
+        "node_modules/xterm/lib/renderer/Renderer.js",
+        "node_modules/xterm/lib/renderer/SelectionRenderLayer.js",
+        "node_modules/xterm/lib/renderer/TextRenderLayer.js",
+        "node_modules/xterm/lib/renderer/Types.js",
+        "node_modules/xterm/lib/shared/CharAtlasGenerator.js",
+        "node_modules/xterm/lib/shared/utils/Browser.js",
+        "node_modules/xterm/lib/utils/CharMeasure.js",
+        "node_modules/xterm/lib/utils/CharMeasure.test.js",
+        "node_modules/xterm/lib/utils/CircularList.js",
+        "node_modules/xterm/lib/utils/CircularList.test.js",
+        "node_modules/xterm/lib/utils/MouseHelper.js",
+        "node_modules/xterm/lib/utils/MouseHelper.test.js",
+        "node_modules/xterm/lib/utils/ScreenDprMonitor.js",
+        "node_modules/xterm/lib/utils/Sounds.js",
+        "node_modules/xterm/lib/utils/TestUtils.test.js",
+        "node_modules/xterm/lib/xterm.js",
+        "node_modules/xterm/src/addons/zmodem/demo/app.js",
+        "node_modules/xterm/src/addons/zmodem/demo/main.js",
+        "node_modules/xterm/webpack.config.js",
         "node_modules/yallist/iterator.js",
         "node_modules/yallist/yallist.js"
       ],
       ".json": [
+        "node_modules/anser/package.json",
+        "node_modules/ansi-regex/package.json",
         "node_modules/array-filter/package.json",
         "node_modules/array-map/package.json",
         "node_modules/array-reduce/package.json",
@@ -6995,7 +7199,6 @@
         "node_modules/brace-expansion/package.json",
         "node_modules/classnames/bower.json",
         "node_modules/classnames/package.json",
-        "node_modules/command-exists/package.json",
         "node_modules/concat-map/package.json",
         "node_modules/core-js/bower.json",
         "node_modules/core-js/package.json",
@@ -7006,10 +7209,17 @@
         "node_modules/dedent/package.json",
         "node_modules/deep-diff/package.json",
         "node_modules/dom-helpers/package.json",
+        "node_modules/domexception/lib/legacy-error-codes.json",
+        "node_modules/domexception/package.json",
+        "node_modules/dompurify/package-lock.json",
+        "node_modules/dompurify/package.json",
         "node_modules/encoding/package.json",
+        "node_modules/escape-carriage/package.json",
+        "node_modules/escape-html/package.json",
         "node_modules/escape-string-regexp/package.json",
         "node_modules/event-kit/api.json",
         "node_modules/event-kit/package.json",
+        "node_modules/event-target-shim/package.json",
         "node_modules/fbjs/module-map.json",
         "node_modules/fbjs/package.json",
         "node_modules/fs-plus/node_modules/mkdirp/package.json",
@@ -7088,6 +7298,11 @@
         "node_modules/mv/package.json",
         "node_modules/ncp/package.json",
         "node_modules/node-fetch/package.json",
+        "node_modules/nuclide-prebuilt-libs/ctags/package.json",
+        "node_modules/nuclide-prebuilt-libs/fuzzy-native/package.json",
+        "node_modules/nuclide-prebuilt-libs/keytar/package.json",
+        "node_modules/nuclide-prebuilt-libs/package.json",
+        "node_modules/nuclide-prebuilt-libs/pty/package.json",
         "node_modules/nullthrows/package.json",
         "node_modules/object-assign/package.json",
         "node_modules/once/package.json",
@@ -7109,6 +7324,7 @@
         "node_modules/rxjs/node_modules/symbol-observable/package.json",
         "node_modules/rxjs/package.json",
         "node_modules/rxjs/src/tsconfig.json",
+        "node_modules/safer-buffer/package.json",
         "node_modules/semver/package.json",
         "node_modules/setimmediate/package.json",
         "node_modules/shallowequal/package.json",
@@ -7116,6 +7332,7 @@
         "node_modules/streamroller/node_modules/debug/package.json",
         "node_modules/streamroller/package.json",
         "node_modules/string_decoder/package.json",
+        "node_modules/strip-ansi/package.json",
         "node_modules/symbol-observable/package.json",
         "node_modules/tabbable/package.json",
         "node_modules/temp/node_modules/rimraf/package.json",
@@ -7125,13 +7342,100 @@
         "node_modules/underscore/package.json",
         "node_modules/underscore-plus/package.json",
         "node_modules/uuid/package.json",
+        "node_modules/vscode-debugprotocol/package.json",
         "node_modules/vscode-jsonrpc/package.json",
         "node_modules/vscode-uri/.vscode/settings.json",
         "node_modules/vscode-uri/package.json",
+        "node_modules/webidl-conversions/package.json",
         "node_modules/whatwg-fetch/package.json",
         "node_modules/wrappy/package.json",
+        "node_modules/xterm/dist/addons/attach/package.json",
+        "node_modules/xterm/dist/addons/attach/tsconfig.json",
+        "node_modules/xterm/dist/addons/fit/package.json",
+        "node_modules/xterm/dist/addons/fit/tsconfig.json",
+        "node_modules/xterm/dist/addons/fullscreen/package.json",
+        "node_modules/xterm/dist/addons/fullscreen/tsconfig.json",
+        "node_modules/xterm/dist/addons/search/package.json",
+        "node_modules/xterm/dist/addons/search/tsconfig.json",
+        "node_modules/xterm/dist/addons/terminado/package.json",
+        "node_modules/xterm/dist/addons/terminado/tsconfig.json",
+        "node_modules/xterm/dist/addons/winptyCompat/package.json",
+        "node_modules/xterm/dist/addons/winptyCompat/tsconfig.json",
+        "node_modules/xterm/dist/addons/zmodem/package.json",
+        "node_modules/xterm/dist/addons/zmodem/tsconfig.json",
+        "node_modules/xterm/jsdoc.json",
+        "node_modules/xterm/lib/addons/attach/package.json",
+        "node_modules/xterm/lib/addons/attach/tsconfig.json",
+        "node_modules/xterm/lib/addons/fit/package.json",
+        "node_modules/xterm/lib/addons/fit/tsconfig.json",
+        "node_modules/xterm/lib/addons/fullscreen/package.json",
+        "node_modules/xterm/lib/addons/fullscreen/tsconfig.json",
+        "node_modules/xterm/lib/addons/search/package.json",
+        "node_modules/xterm/lib/addons/search/tsconfig.json",
+        "node_modules/xterm/lib/addons/terminado/package.json",
+        "node_modules/xterm/lib/addons/terminado/tsconfig.json",
+        "node_modules/xterm/lib/addons/winptyCompat/package.json",
+        "node_modules/xterm/lib/addons/winptyCompat/tsconfig.json",
+        "node_modules/xterm/lib/addons/zmodem/package.json",
+        "node_modules/xterm/lib/addons/zmodem/tsconfig.json",
+        "node_modules/xterm/package-lock.json",
+        "node_modules/xterm/package.json",
+        "node_modules/xterm/src/addons/attach/package.json",
+        "node_modules/xterm/src/addons/attach/tsconfig.json",
+        "node_modules/xterm/src/addons/fit/package.json",
+        "node_modules/xterm/src/addons/fit/tsconfig.json",
+        "node_modules/xterm/src/addons/fullscreen/package.json",
+        "node_modules/xterm/src/addons/fullscreen/tsconfig.json",
+        "node_modules/xterm/src/addons/search/package.json",
+        "node_modules/xterm/src/addons/search/tsconfig.json",
+        "node_modules/xterm/src/addons/terminado/package.json",
+        "node_modules/xterm/src/addons/terminado/tsconfig.json",
+        "node_modules/xterm/src/addons/winptyCompat/package.json",
+        "node_modules/xterm/src/addons/winptyCompat/tsconfig.json",
+        "node_modules/xterm/src/addons/zmodem/package.json",
+        "node_modules/xterm/src/addons/zmodem/tsconfig.json",
+        "node_modules/xterm/tsconfig.json",
+        "node_modules/xterm/tslint.json",
         "node_modules/yallist/package.json",
         "package.json"
+      ],
+      ".node": [
+        "node_modules/nuclide-prebuilt-libs/ctags/build/ctags-v0.2.3-electron-v1.6-darwin-x64/ctags.node",
+        "node_modules/nuclide-prebuilt-libs/ctags/build/ctags-v0.2.3-electron-v1.6-linux-x64/ctags.node",
+        "node_modules/nuclide-prebuilt-libs/ctags/build/ctags-v0.2.3-electron-v1.6-win32-x64/ctags.node",
+        "node_modules/nuclide-prebuilt-libs/ctags/build/ctags-v0.2.3-electron-v1.7-darwin-x64/ctags.node",
+        "node_modules/nuclide-prebuilt-libs/ctags/build/ctags-v0.2.3-electron-v1.7-linux-x64/ctags.node",
+        "node_modules/nuclide-prebuilt-libs/ctags/build/ctags-v0.2.3-electron-v1.7-win32-x64/ctags.node",
+        "node_modules/nuclide-prebuilt-libs/ctags/build/ctags-v0.2.3-node-v51-darwin-x64/ctags.node",
+        "node_modules/nuclide-prebuilt-libs/ctags/build/ctags-v0.2.3-node-v51-linux-x64/ctags.node",
+        "node_modules/nuclide-prebuilt-libs/ctags/build/ctags-v0.2.3-node-v51-win32-x64/ctags.node",
+        "node_modules/nuclide-prebuilt-libs/fuzzy-native/build/fuzzy-native-v0.7.0-electron-v1.6-darwin-x64/fuzzy-native.node",
+        "node_modules/nuclide-prebuilt-libs/fuzzy-native/build/fuzzy-native-v0.7.0-electron-v1.6-linux-x64/fuzzy-native.node",
+        "node_modules/nuclide-prebuilt-libs/fuzzy-native/build/fuzzy-native-v0.7.0-electron-v1.6-win32-x64/fuzzy-native.node",
+        "node_modules/nuclide-prebuilt-libs/fuzzy-native/build/fuzzy-native-v0.7.0-electron-v1.7-darwin-x64/fuzzy-native.node",
+        "node_modules/nuclide-prebuilt-libs/fuzzy-native/build/fuzzy-native-v0.7.0-electron-v1.7-linux-x64/fuzzy-native.node",
+        "node_modules/nuclide-prebuilt-libs/fuzzy-native/build/fuzzy-native-v0.7.0-electron-v1.7-win32-x64/fuzzy-native.node",
+        "node_modules/nuclide-prebuilt-libs/fuzzy-native/build/fuzzy-native-v0.7.0-node-v51-darwin-x64/fuzzy-native.node",
+        "node_modules/nuclide-prebuilt-libs/fuzzy-native/build/fuzzy-native-v0.7.0-node-v51-linux-x64/fuzzy-native.node",
+        "node_modules/nuclide-prebuilt-libs/fuzzy-native/build/fuzzy-native-v0.7.0-node-v51-win32-x64/fuzzy-native.node",
+        "node_modules/nuclide-prebuilt-libs/keytar/build/keytar-v4.0.4-electron-v1.6-darwin-x64/keytar.node",
+        "node_modules/nuclide-prebuilt-libs/keytar/build/keytar-v4.0.4-electron-v1.6-linux-x64/keytar.node",
+        "node_modules/nuclide-prebuilt-libs/keytar/build/keytar-v4.0.4-electron-v1.6-win32-x64/keytar.node",
+        "node_modules/nuclide-prebuilt-libs/keytar/build/keytar-v4.0.4-electron-v1.7-darwin-x64/keytar.node",
+        "node_modules/nuclide-prebuilt-libs/keytar/build/keytar-v4.0.4-electron-v1.7-linux-x64/keytar.node",
+        "node_modules/nuclide-prebuilt-libs/keytar/build/keytar-v4.0.4-electron-v1.7-win32-x64/keytar.node",
+        "node_modules/nuclide-prebuilt-libs/keytar/build/keytar-v4.0.4-node-v51-darwin-x64/keytar.node",
+        "node_modules/nuclide-prebuilt-libs/keytar/build/keytar-v4.0.4-node-v51-linux-x64/keytar.node",
+        "node_modules/nuclide-prebuilt-libs/keytar/build/keytar-v4.0.4-node-v51-win32-x64/keytar.node",
+        "node_modules/nuclide-prebuilt-libs/pty/build/pty-v0.1.4-electron-v1.6-darwin-x64/pty.node",
+        "node_modules/nuclide-prebuilt-libs/pty/build/pty-v0.1.4-electron-v1.6-linux-x64/pty.node",
+        "node_modules/nuclide-prebuilt-libs/pty/build/pty-v0.1.4-electron-v1.6-win32-x64/pty.node",
+        "node_modules/nuclide-prebuilt-libs/pty/build/pty-v0.1.4-electron-v1.7-darwin-x64/pty.node",
+        "node_modules/nuclide-prebuilt-libs/pty/build/pty-v0.1.4-electron-v1.7-linux-x64/pty.node",
+        "node_modules/nuclide-prebuilt-libs/pty/build/pty-v0.1.4-electron-v1.7-win32-x64/pty.node",
+        "node_modules/nuclide-prebuilt-libs/pty/build/pty-v0.1.4-node-v51-darwin-x64/pty.node",
+        "node_modules/nuclide-prebuilt-libs/pty/build/pty-v0.1.4-node-v51-linux-x64/pty.node",
+        "node_modules/nuclide-prebuilt-libs/pty/build/pty-v0.1.4-node-v51-win32-x64/pty.node"
       ]
     },
     "folders": [
@@ -7158,6 +7462,12 @@
           "modules/atom-ide-ui/pkg/atom-ide-datatip/keymaps",
           "modules/atom-ide-ui/pkg/atom-ide-datatip/lib",
           "modules/atom-ide-ui/pkg/atom-ide-datatip",
+          "modules/atom-ide-ui/pkg/atom-ide-debugger/keymaps",
+          "modules/atom-ide-ui/pkg/atom-ide-debugger/lib",
+          "modules/atom-ide-ui/pkg/atom-ide-debugger/lib/ui",
+          "modules/atom-ide-ui/pkg/atom-ide-debugger/lib/vsp",
+          "modules/atom-ide-ui/pkg/atom-ide-debugger/menus",
+          "modules/atom-ide-ui/pkg/atom-ide-debugger",
           "modules/atom-ide-ui/pkg/atom-ide-definitions/lib",
           "modules/atom-ide-ui/pkg/atom-ide-definitions",
           "modules/atom-ide-ui/pkg/atom-ide-diagnostics/lib",
@@ -7182,25 +7492,41 @@
           "modules/atom-ide-ui/pkg/atom-ide-outline-view/lib",
           "modules/atom-ide-ui/pkg/atom-ide-outline-view/menus",
           "modules/atom-ide-ui/pkg/atom-ide-outline-view",
+          "modules/atom-ide-ui/pkg/atom-ide-signature-help/keymaps",
           "modules/atom-ide-ui/pkg/atom-ide-signature-help/lib",
           "modules/atom-ide-ui/pkg/atom-ide-signature-help",
+          "modules/atom-ide-ui/pkg/atom-ide-terminal/keymaps",
+          "modules/atom-ide-ui/pkg/atom-ide-terminal/lib",
+          "modules/atom-ide-ui/pkg/atom-ide-terminal/lib/pty-service",
+          "modules/atom-ide-ui/pkg/atom-ide-terminal/menus",
+          "modules/atom-ide-ui/pkg/atom-ide-terminal",
           "modules/atom-ide-ui/pkg/hyperclick/keymaps",
           "modules/atom-ide-ui/pkg/hyperclick/lib",
           "modules/atom-ide-ui/pkg/hyperclick",
           "modules/nuclide-commons",
           "modules/nuclide-commons-atom",
           "modules/nuclide-commons-ui",
+          "modules/nuclide-commons-ui/VendorLib/atom-tabs/lib",
+          "modules/nuclide-debugger-common",
+          "modules/nuclide-jest",
+          "modules/nuclide-jest/bin",
+          "modules/nuclide-jest/frontend",
           "modules/nuclide-node-transpiler/bin",
           "modules/nuclide-node-transpiler/lib",
           "modules/nuclide-node-transpiler"
         ],
         "dependencies": {
+          "anser": "1.4.6",
           "async-to-generator": "1.1.0",
           "classnames": "2.2.5",
-          "command-exists": "1.2.2",
           "dedent": "0.6.0",
+          "domexception": "1.0.1",
+          "dompurify": "1.0.3",
+          "escape-carriage": "1.2.0",
+          "escape-html": "1.0.3",
           "escape-string-regexp": "1.0.5",
           "event-kit": "2.2.0",
+          "event-target-shim": "3.0.1",
           "fs-plus": "2.9.3",
           "fuzzaldrin-plus": "0.4.1",
           "glob": "7.1.1",
@@ -7214,6 +7540,7 @@
           "mime-types": "2.1.16",
           "mkdirp": "0.5.1",
           "mv": "2.1.1",
+          "nuclide-prebuilt-libs": "0.4.0",
           "nullthrows": "1.0.0",
           "react": "16.2.0",
           "react-dom": "16.2.0",
@@ -7227,11 +7554,14 @@
           "semver": "5.3.0",
           "shallowequal": "0.2.2",
           "shell-quote": "1.6.1",
+          "strip-ansi": "3.0.1",
           "tabbable": "1.1.0",
           "temp": "0.8.3",
           "uuid": "3.0.1",
+          "vscode-debugprotocol": "1.24.0",
           "vscode-jsonrpc": "3.3.0",
-          "vscode-uri": "1.0.1"
+          "vscode-uri": "1.0.1",
+          "xterm": "3.1.0"
         }
       },
       {
@@ -7273,6 +7603,15 @@
         ],
         "dependencies": {
           "ms": "2.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/domexception/lib",
+          "node_modules/domexception"
+        ],
+        "dependencies": {
+          "webidl-conversions": "^4.0.2"
         }
       },
       {
@@ -7325,6 +7664,17 @@
           "minimatch": "^3.0.2",
           "once": "^1.3.0",
           "path-is-absolute": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/iconv-lite/encodings",
+          "node_modules/iconv-lite/encodings/tables",
+          "node_modules/iconv-lite/lib",
+          "node_modules/iconv-lite"
+        ],
+        "dependencies": {
+          "safer-buffer": "^2.1.0"
         }
       },
       {
@@ -7702,6 +8052,14 @@
           "debug": "^0.7.2",
           "mkdirp": "^0.5.1",
           "readable-stream": "^1.1.7"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/strip-ansi"
+        ],
+        "dependencies": {
+          "ansi-regex": "^2.0.0"
         }
       },
       {

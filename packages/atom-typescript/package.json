@@ -1,24 +1,24 @@
 {
-  "_from": "file:/tmp/d-118220-22945-17dn2t3.nutg/package.tgz",
-  "_id": "atom-typescript@12.3.8",
+  "_from": "file:/tmp/d-118321-13339-g2a60c.20hkd/package.tgz",
+  "_id": "atom-typescript@12.4.0",
   "_inBundle": false,
-  "_integrity": "sha512-YZJcZmWLZV2jjfO7YyK0vvJQpsE6yFyVZIJxtxzWTNlLpICrJ/kug/Qp9cV2czGTQ6Qi+3dE+WCmBZAUvlo63Q==",
+  "_integrity": "sha512-iSwXVyKNHQqwzDGsC+KCCHOj1jGxO8ILzmVGQD9ELfnM3s7a6ha9LnRDljWFGY+4mvi8O32DhJGyFGypsiEytw==",
   "_location": "/atom-typescript",
   "_phantomChildren": {},
   "_requested": {
     "type": "file",
-    "where": "/tmp/apm-install-dir-118220-22945-zysnog.vy27h",
-    "raw": "/tmp/d-118220-22945-17dn2t3.nutg/package.tgz",
-    "rawSpec": "/tmp/d-118220-22945-17dn2t3.nutg/package.tgz",
-    "saveSpec": "file:/tmp/d-118220-22945-17dn2t3.nutg/package.tgz",
-    "fetchSpec": "/tmp/d-118220-22945-17dn2t3.nutg/package.tgz"
+    "where": "/tmp/apm-install-dir-118321-13339-1rj0qjl.6jfv",
+    "raw": "/tmp/d-118321-13339-g2a60c.20hkd/package.tgz",
+    "rawSpec": "/tmp/d-118321-13339-g2a60c.20hkd/package.tgz",
+    "saveSpec": "file:/tmp/d-118321-13339-g2a60c.20hkd/package.tgz",
+    "fetchSpec": "/tmp/d-118321-13339-g2a60c.20hkd/package.tgz"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "/tmp/d-118220-22945-17dn2t3.nutg/package.tgz",
-  "_spec": "/tmp/d-118220-22945-17dn2t3.nutg/package.tgz",
-  "_where": "/tmp/apm-install-dir-118220-22945-zysnog.vy27h",
+  "_resolved": "/tmp/d-118321-13339-g2a60c.20hkd/package.tgz",
+  "_spec": "/tmp/d-118321-13339-g2a60c.20hkd/package.tgz",
+  "_where": "/tmp/apm-install-dir-118321-13339-1rj0qjl.6jfv",
   "activationCommands": {
     "atom-workspace": [
       "typescript:initialize-config"
@@ -27,7 +27,7 @@
   "activationHooks": [
     "language-typescript:grammar-used"
   ],
-  "atomTestRunner": "./spec/runner.js",
+  "atomTestRunner": "./node_modules/atom-ts-spec-runner/runner.js",
   "bugs": {
     "url": "https://github.com/TypeStrong/atom-typescript/issues"
   },
@@ -77,17 +77,17 @@
   },
   "dependencies": {
     "atom-highlight": "^0.4.1",
-    "atom-package-deps": "^4.6.1",
-    "atom-select-list": "^0.7.0",
+    "atom-package-deps": "^4.6.2",
+    "atom-select-list": "^0.7.1",
     "byline": "^5.0.0",
     "escape-html": "^1.0.3",
-    "etch": "^0.12.7",
+    "etch": "^0.12.8",
     "fuzzaldrin": "^2.1.0",
-    "lodash": "^4.17.4",
-    "resolve": "1.5.0",
+    "lodash": "^4.17.5",
+    "resolve": "1.6.0",
     "tsconfig": "^7.0.0",
-    "tslib": "^1.8.1",
-    "typescript": "~2.6.2"
+    "tslib": "^1.9.0",
+    "typescript": "~2.7.2"
   },
   "deprecated": false,
   "description": "The only TypeScript plugin you will ever need.",
@@ -95,27 +95,28 @@
     "atomts-semantic-view/SemanticView": "deserializeSemanticView"
   },
   "devDependencies": {
-    "@types/atom": "~1.24",
+    "@types/atom": "~1.25",
     "@types/byline": "^4.2.31",
-    "@types/chai": "^4.1.0",
-    "@types/cson": "0.0.31",
+    "@types/chai": "^4.1.2",
+    "@types/cson": "^0.0.31",
     "@types/fuzzaldrin": "^2.1.1",
-    "@types/lodash": "^4.14.92",
-    "@types/mocha": "^2.2.46",
+    "@types/lodash": "^4.14.105",
+    "@types/mocha": "^2.2.48",
     "@types/node": "^7",
-    "@types/resolve": "0.0.5",
+    "@types/resolve": "^0.0.7",
     "atom-mocha-test-runner": "^1.2.0",
+    "atom-ts-spec-runner": "^1.1.0",
     "chai": "^4.1.2",
-    "cson": "^4.1.0",
+    "cson": "^5.1.0",
     "mz": "^2.7.0",
-    "plist": "2.1.0",
-    "popsicle": "9.2.0",
-    "prettier": "^1.10.1",
-    "ts-node": "4.1.0",
-    "tslint": "^5.9.0"
+    "plist": "^3.0.0",
+    "popsicle": "^9.2.0",
+    "prettier": "^1.11.1",
+    "ts-node": "^5.0.1",
+    "tslint": "^5.9.1"
   },
   "engines": {
-    "atom": ">=1.24.0 <2.0.0",
+    "atom": ">=1.25.0 <2.0.0",
     "node": "*"
   },
   "homepage": "https://github.com/TypeStrong/atom-typescript",
@@ -165,7 +166,7 @@
     "test": "npm run typecheck && npm run lint && npm run prettier-check",
     "typecheck": "tsc --noEmit -p ./lib && tsc --noEmit -p ./scripts && tsc --noEmit -p ./spec"
   },
-  "version": "12.3.8",
+  "version": "12.4.0",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -231,7 +232,7 @@
       },
       {
         "name": "resolve",
-        "version": "1.5.0",
+        "version": "1.6.0",
         "path": "node_modules/resolve/index.js"
       },
       {
@@ -281,12 +282,12 @@
       },
       {
         "name": "typescript",
-        "version": "2.6.2",
+        "version": "2.7.2",
         "path": "node_modules/typescript/lib/typescript.js"
       },
       {
         "name": "underscore",
-        "version": "1.8.3",
+        "version": "1.9.0",
         "path": "node_modules/underscore/underscore.js"
       }
     ],
@@ -324,6 +325,7 @@
         "node_modules/tsconfig/package.json",
         "node_modules/tslib/bower.json",
         "node_modules/tslib/package.json",
+        "node_modules/typescript/.parallelperf.json",
         "node_modules/typescript/lib/cs/diagnosticMessages.generated.json",
         "node_modules/typescript/lib/de/diagnosticMessages.generated.json",
         "node_modules/typescript/lib/es/diagnosticMessages.generated.json",
@@ -332,12 +334,11 @@
         "node_modules/typescript/lib/ja/diagnosticMessages.generated.json",
         "node_modules/typescript/lib/ko/diagnosticMessages.generated.json",
         "node_modules/typescript/lib/pl/diagnosticMessages.generated.json",
-        "node_modules/typescript/lib/pt-br/diagnosticMessages.generated.json",
+        "node_modules/typescript/lib/pt-BR/diagnosticMessages.generated.json",
         "node_modules/typescript/lib/ru/diagnosticMessages.generated.json",
         "node_modules/typescript/lib/tr/diagnosticMessages.generated.json",
-        "node_modules/typescript/lib/zh-cn/diagnosticMessages.generated.json",
-        "node_modules/typescript/lib/zh-tw/diagnosticMessages.generated.json",
-        "node_modules/typescript/package-lock.json",
+        "node_modules/typescript/lib/zh-CN/diagnosticMessages.generated.json",
+        "node_modules/typescript/lib/zh-TW/diagnosticMessages.generated.json",
         "node_modules/typescript/package.json",
         "node_modules/underscore/package.json",
         "package-lock.json",
@@ -1483,17 +1484,17 @@
         ],
         "dependencies": {
           "atom-highlight": "^0.4.1",
-          "atom-package-deps": "^4.6.1",
-          "atom-select-list": "^0.7.0",
+          "atom-package-deps": "^4.6.2",
+          "atom-select-list": "^0.7.1",
           "byline": "^5.0.0",
           "escape-html": "^1.0.3",
-          "etch": "^0.12.7",
+          "etch": "^0.12.8",
           "fuzzaldrin": "^2.1.0",
-          "lodash": "^4.17.4",
-          "resolve": "1.5.0",
+          "lodash": "^4.17.5",
+          "resolve": "1.6.0",
           "tsconfig": "^7.0.0",
-          "tslib": "^1.8.1",
-          "typescript": "~2.6.2"
+          "tslib": "^1.9.0",
+          "typescript": "~2.7.2"
         }
       },
       {

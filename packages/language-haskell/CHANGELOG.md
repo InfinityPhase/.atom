@@ -1,3 +1,16 @@
+## 1.17.6
+
+-   Add module name highlighting to functions
+
+## 1.17.5
+
+-   Fix comments containing <- and = after function signatures
+
+## 1.17.4
+
+-   Update\/fix specs
+-   Remove string scope from quasiquotes (URI injection breaks highlighting)
+
 ## 1.17.3
 * Better module exports highlighting at the cost of C
 

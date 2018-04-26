@@ -1,9 +1,9 @@
 import * as Atom from "atom"
 import {ClientResolver} from "../../../client/clientResolver"
 import {ErrorPusher} from "../../errorPusher"
-import {spanToRange, pointToLocation} from "../utils"
+import {pointToLocation} from "../utils"
 import {TypescriptServiceClient} from "../../../client/client"
-import {WithTypescriptBuffer} from "../../pluginManager"
+import {ApplyEdits} from "../../pluginManager"
 
 export class CodefixProvider {
   private supportedFixes: WeakMap<TypescriptServiceClient, Set<number>> = new WeakMap()
@@ -11,7 +11,7 @@ export class CodefixProvider {
   constructor(
     private clientResolver: ClientResolver,
     private errorPusher: ErrorPusher,
-    private withTypescriptBuffer: WithTypescriptBuffer,
+    private applyEdits: ApplyEdits,
   ) {}
 
   public async runCodeFix(
@@ -20,16 +20,14 @@ export class CodefixProvider {
   ): Promise<protocol.CodeAction[]> {
     const filePath = textEditor.getPath()
 
-    if (!filePath || !this.errorPusher || !this.clientResolver || !this.withTypescriptBuffer) {
-      return []
-    }
+    if (filePath === undefined) return []
 
     const client = await this.clientResolver.get(filePath)
     const supportedCodes = await this.getSupportedFixes(client)
 
     const requests = this.errorPusher
       .getErrorsAt(filePath, pointToLocation(bufferPosition))
-      .filter(error => error.code && supportedCodes.has(error.code))
+      .filter(error => error.code !== undefined && supportedCodes.has(error.code))
       .map(error =>
         client.execute("getCodeFixes", {
           file: filePath,
@@ -56,15 +54,7 @@ export class CodefixProvider {
   }
 
   public async applyFix(fix: protocol.CodeAction) {
-    for (const f of fix.changes) {
-      await this.withTypescriptBuffer(f.fileName, async buffer => {
-        buffer.buffer.transact(() => {
-          for (const edit of f.textChanges.reverse()) {
-            buffer.buffer.setTextInRange(spanToRange(edit), edit.newText)
-          }
-        })
-      })
-    }
+    return this.applyEdits(fix.changes)
   }
 
   public dispose() {

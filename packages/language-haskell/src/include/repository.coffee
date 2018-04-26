@@ -303,7 +303,7 @@ module.exports=
         patterns: { include: '#module_name_prefix' }
     endCaptures:
       2: name: 'punctuation.definition.quasiquotes.end.haskell'
-    contentName: 'string.quoted.quasiquotes.haskell'
+    contentName: 'quoted.quasiquotes.haskell'
   module_decl:
     name: 'meta.declaration.module.haskell'
     begin: /{indentBlockStart}(module){rb}/
@@ -524,13 +524,17 @@ module.exports=
         include: '#haskell_expr'
       ]
   ,
-    match: '({doubleColonOperator})(.*?)(?=(?<!{operatorChar})(<-|=)(?!{operatorChar})|$)'
+    match: '({doubleColonOperator})'+
+        '(.*?)'+
+        '(?=({-|(?<!{operatorChar})(--|<-|=))(?!{operatorChar})|$)'
     captures:
       1: name: 'keyword.other.double-colon.haskell'
       2: {name: 'meta.type-signature.haskell', patterns: [include: '#type_signature']}
   ]
   scoped_type_override:
-    match: '{indentBlockStart}{functionTypeDeclaration}(.*)(?<!{operatorChar})(<-|=)(?!{operatorChar})'
+    match: '{indentBlockStart}{functionTypeDeclaration}'+
+        '((?:(?!(?:(?<!{operatorChar})--|{-)).)*)'+
+        '(?<!{operatorChar})(<-|=)(?!{operatorChar})'
     captures:
       2: patterns: [include: '#identifier']
       3: name: 'keyword.other.double-colon.haskell'
@@ -629,6 +633,9 @@ module.exports=
   function_name:
     name: 'entity.name.function.haskell'
     match: /{lb}{functionName}{rb}/
+    captures: 0: patterns: [
+      { include: '#module_name_prefix' }
+    ]
   assignment_op:
     match: /=/
     captures:

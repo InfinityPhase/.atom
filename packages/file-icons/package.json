@@ -1,24 +1,24 @@
 {
-  "_from": "file:/tmp/d-118224-32548-1gvybqr.grk2/package.tgz",
-  "_id": "file-icons@2.1.18",
+  "_from": "file:/tmp/d-118324-14375-wo9kov.9w4br/package.tgz",
+  "_id": "file-icons@2.1.19",
   "_inBundle": false,
-  "_integrity": "sha512-FUYU/61Kg+Xhgwm8jhcfkrffGRw9QBMWDPkpXgNmS4n5faejjaYNh6sACsWHppY5UCGsL5/HBp5HjJMuMgG9ww==",
+  "_integrity": "sha512-RdqRyg9SQXfUQFWNTS5wHyT+EDD2F3B9iQZFjPVtVPlPckwHct3jCxZEfI0e+L58mC5gfP/G2YsIFLLcHLgp/Q==",
   "_location": "/file-icons",
   "_phantomChildren": {},
   "_requested": {
     "type": "file",
-    "where": "/tmp/apm-install-dir-118224-32548-11lih4t.vejv",
-    "raw": "/tmp/d-118224-32548-1gvybqr.grk2/package.tgz",
-    "rawSpec": "/tmp/d-118224-32548-1gvybqr.grk2/package.tgz",
-    "saveSpec": "file:/tmp/d-118224-32548-1gvybqr.grk2/package.tgz",
-    "fetchSpec": "/tmp/d-118224-32548-1gvybqr.grk2/package.tgz"
+    "where": "/tmp/apm-install-dir-118324-14375-191yh1l.uaqy",
+    "raw": "/tmp/d-118324-14375-wo9kov.9w4br/package.tgz",
+    "rawSpec": "/tmp/d-118324-14375-wo9kov.9w4br/package.tgz",
+    "saveSpec": "file:/tmp/d-118324-14375-wo9kov.9w4br/package.tgz",
+    "fetchSpec": "/tmp/d-118324-14375-wo9kov.9w4br/package.tgz"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "/tmp/d-118224-32548-1gvybqr.grk2/package.tgz",
-  "_spec": "/tmp/d-118224-32548-1gvybqr.grk2/package.tgz",
-  "_where": "/tmp/apm-install-dir-118224-32548-11lih4t.vejv",
+  "_resolved": "/tmp/d-118324-14375-wo9kov.9w4br/package.tgz",
+  "_spec": "/tmp/d-118324-14375-wo9kov.9w4br/package.tgz",
+  "_where": "/tmp/apm-install-dir-118324-14375-191yh1l.uaqy",
   "atomTestRunner": "atom-mocha",
   "bugs": {
     "url": "https://github.com/file-icons/atom/issues"
@@ -135,7 +135,7 @@
     "type": "git",
     "url": "git+https://github.com/file-icons/atom.git"
   },
-  "version": "2.1.18",
+  "version": "2.1.19",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -171,7 +171,7 @@
       },
       {
         "name": "atob",
-        "version": "2.0.3",
+        "version": "2.1.0",
         "path": "node_modules/atob/node-atob.js"
       },
       {
@@ -190,14 +190,24 @@
         "path": "node_modules/base/node_modules/define-property/index.js"
       },
       {
-        "name": "braces",
-        "version": "2.3.1",
-        "path": "node_modules/braces/index.js"
+        "name": "is-accessor-descriptor",
+        "version": "1.0.0",
+        "path": "node_modules/base/node_modules/is-accessor-descriptor/index.js"
       },
       {
-        "name": "define-property",
+        "name": "is-data-descriptor",
         "version": "1.0.0",
-        "path": "node_modules/braces/node_modules/define-property/index.js"
+        "path": "node_modules/base/node_modules/is-data-descriptor/index.js"
+      },
+      {
+        "name": "is-descriptor",
+        "version": "1.0.2",
+        "path": "node_modules/base/node_modules/is-descriptor/index.js"
+      },
+      {
+        "name": "braces",
+        "version": "2.3.2",
+        "path": "node_modules/braces/index.js"
       },
       {
         "name": "extend-shallow",
@@ -218,36 +228,6 @@
         "name": "define-property",
         "version": "0.2.5",
         "path": "node_modules/class-utils/node_modules/define-property/index.js"
-      },
-      {
-        "name": "is-accessor-descriptor",
-        "version": "0.1.6",
-        "path": "node_modules/class-utils/node_modules/is-accessor-descriptor/index.js"
-      },
-      {
-        "name": "kind-of",
-        "version": "3.2.2",
-        "path": "node_modules/class-utils/node_modules/is-accessor-descriptor/node_modules/kind-of/index.js"
-      },
-      {
-        "name": "is-data-descriptor",
-        "version": "0.1.4",
-        "path": "node_modules/class-utils/node_modules/is-data-descriptor/index.js"
-      },
-      {
-        "name": "kind-of",
-        "version": "3.2.2",
-        "path": "node_modules/class-utils/node_modules/is-data-descriptor/node_modules/kind-of/index.js"
-      },
-      {
-        "name": "is-descriptor",
-        "version": "0.1.6",
-        "path": "node_modules/class-utils/node_modules/is-descriptor/index.js"
-      },
-      {
-        "name": "kind-of",
-        "version": "5.1.0",
-        "path": "node_modules/class-utils/node_modules/kind-of/index.js"
       },
       {
         "name": "collection-visit",
@@ -280,6 +260,21 @@
         "path": "node_modules/define-property/index.js"
       },
       {
+        "name": "is-accessor-descriptor",
+        "version": "1.0.0",
+        "path": "node_modules/define-property/node_modules/is-accessor-descriptor/index.js"
+      },
+      {
+        "name": "is-data-descriptor",
+        "version": "1.0.0",
+        "path": "node_modules/define-property/node_modules/is-data-descriptor/index.js"
+      },
+      {
+        "name": "is-descriptor",
+        "version": "1.0.2",
+        "path": "node_modules/define-property/node_modules/is-descriptor/index.js"
+      },
+      {
         "name": "expand-brackets",
         "version": "2.1.4",
         "path": "node_modules/expand-brackets/index.js"
@@ -293,36 +288,6 @@
         "name": "extend-shallow",
         "version": "2.0.1",
         "path": "node_modules/expand-brackets/node_modules/extend-shallow/index.js"
-      },
-      {
-        "name": "is-accessor-descriptor",
-        "version": "0.1.6",
-        "path": "node_modules/expand-brackets/node_modules/is-accessor-descriptor/index.js"
-      },
-      {
-        "name": "kind-of",
-        "version": "3.2.2",
-        "path": "node_modules/expand-brackets/node_modules/is-accessor-descriptor/node_modules/kind-of/index.js"
-      },
-      {
-        "name": "is-data-descriptor",
-        "version": "0.1.4",
-        "path": "node_modules/expand-brackets/node_modules/is-data-descriptor/index.js"
-      },
-      {
-        "name": "kind-of",
-        "version": "3.2.2",
-        "path": "node_modules/expand-brackets/node_modules/is-data-descriptor/node_modules/kind-of/index.js"
-      },
-      {
-        "name": "is-descriptor",
-        "version": "0.1.6",
-        "path": "node_modules/expand-brackets/node_modules/is-descriptor/index.js"
-      },
-      {
-        "name": "kind-of",
-        "version": "5.1.0",
-        "path": "node_modules/expand-brackets/node_modules/kind-of/index.js"
       },
       {
         "name": "extend-shallow",
@@ -348,6 +313,21 @@
         "name": "extend-shallow",
         "version": "2.0.1",
         "path": "node_modules/extglob/node_modules/extend-shallow/index.js"
+      },
+      {
+        "name": "is-accessor-descriptor",
+        "version": "1.0.0",
+        "path": "node_modules/extglob/node_modules/is-accessor-descriptor/index.js"
+      },
+      {
+        "name": "is-data-descriptor",
+        "version": "1.0.0",
+        "path": "node_modules/extglob/node_modules/is-data-descriptor/index.js"
+      },
+      {
+        "name": "is-descriptor",
+        "version": "1.0.2",
+        "path": "node_modules/extglob/node_modules/is-descriptor/index.js"
       },
       {
         "name": "fill-range",
@@ -391,8 +371,13 @@
       },
       {
         "name": "is-accessor-descriptor",
-        "version": "1.0.0",
+        "version": "0.1.6",
         "path": "node_modules/is-accessor-descriptor/index.js"
+      },
+      {
+        "name": "kind-of",
+        "version": "3.2.2",
+        "path": "node_modules/is-accessor-descriptor/node_modules/kind-of/index.js"
       },
       {
         "name": "is-buffer",
@@ -401,13 +386,23 @@
       },
       {
         "name": "is-data-descriptor",
-        "version": "1.0.0",
+        "version": "0.1.4",
         "path": "node_modules/is-data-descriptor/index.js"
       },
       {
+        "name": "kind-of",
+        "version": "3.2.2",
+        "path": "node_modules/is-data-descriptor/node_modules/kind-of/index.js"
+      },
+      {
         "name": "is-descriptor",
-        "version": "1.0.2",
+        "version": "0.1.6",
         "path": "node_modules/is-descriptor/index.js"
+      },
+      {
+        "name": "kind-of",
+        "version": "5.1.0",
+        "path": "node_modules/is-descriptor/node_modules/kind-of/index.js"
       },
       {
         "name": "is-extendable",
@@ -505,26 +500,6 @@
         "path": "node_modules/object-copy/node_modules/define-property/index.js"
       },
       {
-        "name": "is-accessor-descriptor",
-        "version": "0.1.6",
-        "path": "node_modules/object-copy/node_modules/is-accessor-descriptor/index.js"
-      },
-      {
-        "name": "is-data-descriptor",
-        "version": "0.1.4",
-        "path": "node_modules/object-copy/node_modules/is-data-descriptor/index.js"
-      },
-      {
-        "name": "is-descriptor",
-        "version": "0.1.6",
-        "path": "node_modules/object-copy/node_modules/is-descriptor/index.js"
-      },
-      {
-        "name": "kind-of",
-        "version": "5.1.0",
-        "path": "node_modules/object-copy/node_modules/is-descriptor/node_modules/kind-of/index.js"
-      },
-      {
         "name": "kind-of",
         "version": "3.2.2",
         "path": "node_modules/object-copy/node_modules/kind-of/index.js"
@@ -610,36 +585,6 @@
         "path": "node_modules/snapdragon/node_modules/extend-shallow/index.js"
       },
       {
-        "name": "is-accessor-descriptor",
-        "version": "0.1.6",
-        "path": "node_modules/snapdragon/node_modules/is-accessor-descriptor/index.js"
-      },
-      {
-        "name": "kind-of",
-        "version": "3.2.2",
-        "path": "node_modules/snapdragon/node_modules/is-accessor-descriptor/node_modules/kind-of/index.js"
-      },
-      {
-        "name": "is-data-descriptor",
-        "version": "0.1.4",
-        "path": "node_modules/snapdragon/node_modules/is-data-descriptor/index.js"
-      },
-      {
-        "name": "kind-of",
-        "version": "3.2.2",
-        "path": "node_modules/snapdragon/node_modules/is-data-descriptor/node_modules/kind-of/index.js"
-      },
-      {
-        "name": "is-descriptor",
-        "version": "0.1.6",
-        "path": "node_modules/snapdragon/node_modules/is-descriptor/index.js"
-      },
-      {
-        "name": "kind-of",
-        "version": "5.1.0",
-        "path": "node_modules/snapdragon/node_modules/kind-of/index.js"
-      },
-      {
         "name": "snapdragon-node",
         "version": "2.1.1",
         "path": "node_modules/snapdragon-node/index.js"
@@ -648,6 +593,21 @@
         "name": "define-property",
         "version": "1.0.0",
         "path": "node_modules/snapdragon-node/node_modules/define-property/index.js"
+      },
+      {
+        "name": "is-accessor-descriptor",
+        "version": "1.0.0",
+        "path": "node_modules/snapdragon-node/node_modules/is-accessor-descriptor/index.js"
+      },
+      {
+        "name": "is-data-descriptor",
+        "version": "1.0.0",
+        "path": "node_modules/snapdragon-node/node_modules/is-data-descriptor/index.js"
+      },
+      {
+        "name": "is-descriptor",
+        "version": "1.0.2",
+        "path": "node_modules/snapdragon-node/node_modules/is-descriptor/index.js"
       },
       {
         "name": "snapdragon-util",
@@ -688,36 +648,6 @@
         "name": "define-property",
         "version": "0.2.5",
         "path": "node_modules/static-extend/node_modules/define-property/index.js"
-      },
-      {
-        "name": "is-accessor-descriptor",
-        "version": "0.1.6",
-        "path": "node_modules/static-extend/node_modules/is-accessor-descriptor/index.js"
-      },
-      {
-        "name": "kind-of",
-        "version": "3.2.2",
-        "path": "node_modules/static-extend/node_modules/is-accessor-descriptor/node_modules/kind-of/index.js"
-      },
-      {
-        "name": "is-data-descriptor",
-        "version": "0.1.4",
-        "path": "node_modules/static-extend/node_modules/is-data-descriptor/index.js"
-      },
-      {
-        "name": "kind-of",
-        "version": "3.2.2",
-        "path": "node_modules/static-extend/node_modules/is-data-descriptor/node_modules/kind-of/index.js"
-      },
-      {
-        "name": "is-descriptor",
-        "version": "0.1.6",
-        "path": "node_modules/static-extend/node_modules/is-descriptor/index.js"
-      },
-      {
-        "name": "kind-of",
-        "version": "5.1.0",
-        "path": "node_modules/static-extend/node_modules/kind-of/index.js"
       },
       {
         "name": "to-object-path",
@@ -798,18 +728,14 @@
         "node_modules/atob/package.json",
         "node_modules/atom-fs/package.json",
         "node_modules/base/node_modules/define-property/package.json",
+        "node_modules/base/node_modules/is-accessor-descriptor/package.json",
+        "node_modules/base/node_modules/is-data-descriptor/package.json",
+        "node_modules/base/node_modules/is-descriptor/package.json",
         "node_modules/base/package.json",
-        "node_modules/braces/node_modules/define-property/package.json",
         "node_modules/braces/node_modules/extend-shallow/package.json",
         "node_modules/braces/package.json",
         "node_modules/cache-base/package.json",
         "node_modules/class-utils/node_modules/define-property/package.json",
-        "node_modules/class-utils/node_modules/is-accessor-descriptor/node_modules/kind-of/package.json",
-        "node_modules/class-utils/node_modules/is-accessor-descriptor/package.json",
-        "node_modules/class-utils/node_modules/is-data-descriptor/node_modules/kind-of/package.json",
-        "node_modules/class-utils/node_modules/is-data-descriptor/package.json",
-        "node_modules/class-utils/node_modules/is-descriptor/package.json",
-        "node_modules/class-utils/node_modules/kind-of/package.json",
         "node_modules/class-utils/package.json",
         "node_modules/collection-visit/package.json",
         "node_modules/component-emitter/package.json",
@@ -817,20 +743,20 @@
         "node_modules/debug/component.json",
         "node_modules/debug/package.json",
         "node_modules/decode-uri-component/package.json",
+        "node_modules/define-property/node_modules/is-accessor-descriptor/package.json",
+        "node_modules/define-property/node_modules/is-data-descriptor/package.json",
+        "node_modules/define-property/node_modules/is-descriptor/package.json",
         "node_modules/define-property/package.json",
         "node_modules/expand-brackets/node_modules/define-property/package.json",
         "node_modules/expand-brackets/node_modules/extend-shallow/package.json",
-        "node_modules/expand-brackets/node_modules/is-accessor-descriptor/node_modules/kind-of/package.json",
-        "node_modules/expand-brackets/node_modules/is-accessor-descriptor/package.json",
-        "node_modules/expand-brackets/node_modules/is-data-descriptor/node_modules/kind-of/package.json",
-        "node_modules/expand-brackets/node_modules/is-data-descriptor/package.json",
-        "node_modules/expand-brackets/node_modules/is-descriptor/package.json",
-        "node_modules/expand-brackets/node_modules/kind-of/package.json",
         "node_modules/expand-brackets/package.json",
         "node_modules/extend-shallow/node_modules/is-extendable/package.json",
         "node_modules/extend-shallow/package.json",
         "node_modules/extglob/node_modules/define-property/package.json",
         "node_modules/extglob/node_modules/extend-shallow/package.json",
+        "node_modules/extglob/node_modules/is-accessor-descriptor/package.json",
+        "node_modules/extglob/node_modules/is-data-descriptor/package.json",
+        "node_modules/extglob/node_modules/is-descriptor/package.json",
         "node_modules/extglob/package.json",
         "node_modules/fill-range/node_modules/extend-shallow/package.json",
         "node_modules/fill-range/package.json",
@@ -840,9 +766,12 @@
         "node_modules/has-value/package.json",
         "node_modules/has-values/node_modules/kind-of/package.json",
         "node_modules/has-values/package.json",
+        "node_modules/is-accessor-descriptor/node_modules/kind-of/package.json",
         "node_modules/is-accessor-descriptor/package.json",
         "node_modules/is-buffer/package.json",
+        "node_modules/is-data-descriptor/node_modules/kind-of/package.json",
         "node_modules/is-data-descriptor/package.json",
+        "node_modules/is-descriptor/node_modules/kind-of/package.json",
         "node_modules/is-descriptor/package.json",
         "node_modules/is-extendable/package.json",
         "node_modules/is-number/node_modules/kind-of/package.json",
@@ -863,10 +792,6 @@
         "node_modules/ms/package.json",
         "node_modules/nanomatch/package.json",
         "node_modules/object-copy/node_modules/define-property/package.json",
-        "node_modules/object-copy/node_modules/is-accessor-descriptor/package.json",
-        "node_modules/object-copy/node_modules/is-data-descriptor/package.json",
-        "node_modules/object-copy/node_modules/is-descriptor/node_modules/kind-of/package.json",
-        "node_modules/object-copy/node_modules/is-descriptor/package.json",
         "node_modules/object-copy/node_modules/kind-of/package.json",
         "node_modules/object-copy/package.json",
         "node_modules/object-visit/package.json",
@@ -886,14 +811,11 @@
         "node_modules/set-value/package.json",
         "node_modules/snapdragon/node_modules/define-property/package.json",
         "node_modules/snapdragon/node_modules/extend-shallow/package.json",
-        "node_modules/snapdragon/node_modules/is-accessor-descriptor/node_modules/kind-of/package.json",
-        "node_modules/snapdragon/node_modules/is-accessor-descriptor/package.json",
-        "node_modules/snapdragon/node_modules/is-data-descriptor/node_modules/kind-of/package.json",
-        "node_modules/snapdragon/node_modules/is-data-descriptor/package.json",
-        "node_modules/snapdragon/node_modules/is-descriptor/package.json",
-        "node_modules/snapdragon/node_modules/kind-of/package.json",
         "node_modules/snapdragon/package.json",
         "node_modules/snapdragon-node/node_modules/define-property/package.json",
+        "node_modules/snapdragon-node/node_modules/is-accessor-descriptor/package.json",
+        "node_modules/snapdragon-node/node_modules/is-data-descriptor/package.json",
+        "node_modules/snapdragon-node/node_modules/is-descriptor/package.json",
         "node_modules/snapdragon-node/package.json",
         "node_modules/snapdragon-util/node_modules/kind-of/package.json",
         "node_modules/snapdragon-util/package.json",
@@ -906,12 +828,6 @@
         "node_modules/source-map-url/package.json",
         "node_modules/split-string/package.json",
         "node_modules/static-extend/node_modules/define-property/package.json",
-        "node_modules/static-extend/node_modules/is-accessor-descriptor/node_modules/kind-of/package.json",
-        "node_modules/static-extend/node_modules/is-accessor-descriptor/package.json",
-        "node_modules/static-extend/node_modules/is-data-descriptor/node_modules/kind-of/package.json",
-        "node_modules/static-extend/node_modules/is-data-descriptor/package.json",
-        "node_modules/static-extend/node_modules/is-descriptor/package.json",
-        "node_modules/static-extend/node_modules/kind-of/package.json",
         "node_modules/static-extend/package.json",
         "node_modules/to-object-path/node_modules/kind-of/package.json",
         "node_modules/to-object-path/package.json",
@@ -974,25 +890,18 @@
         "node_modules/atom-fs/lib/system.js",
         "node_modules/base/index.js",
         "node_modules/base/node_modules/define-property/index.js",
+        "node_modules/base/node_modules/is-accessor-descriptor/index.js",
+        "node_modules/base/node_modules/is-data-descriptor/index.js",
+        "node_modules/base/node_modules/is-descriptor/index.js",
         "node_modules/braces/index.js",
         "node_modules/braces/lib/braces.js",
         "node_modules/braces/lib/compilers.js",
-        "node_modules/braces/lib/parsers-new.js",
-        "node_modules/braces/lib/parsers-orig.js",
-        "node_modules/braces/lib/parsers-parens.js",
         "node_modules/braces/lib/parsers.js",
         "node_modules/braces/lib/utils.js",
-        "node_modules/braces/node_modules/define-property/index.js",
         "node_modules/braces/node_modules/extend-shallow/index.js",
         "node_modules/cache-base/index.js",
         "node_modules/class-utils/index.js",
         "node_modules/class-utils/node_modules/define-property/index.js",
-        "node_modules/class-utils/node_modules/is-accessor-descriptor/index.js",
-        "node_modules/class-utils/node_modules/is-accessor-descriptor/node_modules/kind-of/index.js",
-        "node_modules/class-utils/node_modules/is-data-descriptor/index.js",
-        "node_modules/class-utils/node_modules/is-data-descriptor/node_modules/kind-of/index.js",
-        "node_modules/class-utils/node_modules/is-descriptor/index.js",
-        "node_modules/class-utils/node_modules/kind-of/index.js",
         "node_modules/collection-visit/index.js",
         "node_modules/component-emitter/index.js",
         "node_modules/copy-descriptor/index.js",
@@ -1005,18 +914,15 @@
         "node_modules/debug/src/node.js",
         "node_modules/decode-uri-component/index.js",
         "node_modules/define-property/index.js",
+        "node_modules/define-property/node_modules/is-accessor-descriptor/index.js",
+        "node_modules/define-property/node_modules/is-data-descriptor/index.js",
+        "node_modules/define-property/node_modules/is-descriptor/index.js",
         "node_modules/expand-brackets/index.js",
         "node_modules/expand-brackets/lib/compilers.js",
         "node_modules/expand-brackets/lib/parsers.js",
         "node_modules/expand-brackets/lib/utils.js",
         "node_modules/expand-brackets/node_modules/define-property/index.js",
         "node_modules/expand-brackets/node_modules/extend-shallow/index.js",
-        "node_modules/expand-brackets/node_modules/is-accessor-descriptor/index.js",
-        "node_modules/expand-brackets/node_modules/is-accessor-descriptor/node_modules/kind-of/index.js",
-        "node_modules/expand-brackets/node_modules/is-data-descriptor/index.js",
-        "node_modules/expand-brackets/node_modules/is-data-descriptor/node_modules/kind-of/index.js",
-        "node_modules/expand-brackets/node_modules/is-descriptor/index.js",
-        "node_modules/expand-brackets/node_modules/kind-of/index.js",
         "node_modules/extend-shallow/index.js",
         "node_modules/extend-shallow/node_modules/is-extendable/index.js",
         "node_modules/extglob/index.js",
@@ -1026,6 +932,9 @@
         "node_modules/extglob/lib/utils.js",
         "node_modules/extglob/node_modules/define-property/index.js",
         "node_modules/extglob/node_modules/extend-shallow/index.js",
+        "node_modules/extglob/node_modules/is-accessor-descriptor/index.js",
+        "node_modules/extglob/node_modules/is-data-descriptor/index.js",
+        "node_modules/extglob/node_modules/is-descriptor/index.js",
         "node_modules/fill-range/index.js",
         "node_modules/fill-range/node_modules/extend-shallow/index.js",
         "node_modules/for-in/index.js",
@@ -1035,9 +944,12 @@
         "node_modules/has-values/index.js",
         "node_modules/has-values/node_modules/kind-of/index.js",
         "node_modules/is-accessor-descriptor/index.js",
+        "node_modules/is-accessor-descriptor/node_modules/kind-of/index.js",
         "node_modules/is-buffer/index.js",
         "node_modules/is-data-descriptor/index.js",
+        "node_modules/is-data-descriptor/node_modules/kind-of/index.js",
         "node_modules/is-descriptor/index.js",
+        "node_modules/is-descriptor/node_modules/kind-of/index.js",
         "node_modules/is-extendable/index.js",
         "node_modules/is-number/index.js",
         "node_modules/is-number/node_modules/kind-of/index.js",
@@ -1067,10 +979,6 @@
         "node_modules/nanomatch/lib/utils.js",
         "node_modules/object-copy/index.js",
         "node_modules/object-copy/node_modules/define-property/index.js",
-        "node_modules/object-copy/node_modules/is-accessor-descriptor/index.js",
-        "node_modules/object-copy/node_modules/is-data-descriptor/index.js",
-        "node_modules/object-copy/node_modules/is-descriptor/index.js",
-        "node_modules/object-copy/node_modules/is-descriptor/node_modules/kind-of/index.js",
         "node_modules/object-copy/node_modules/kind-of/index.js",
         "node_modules/object-visit/index.js",
         "node_modules/object.pick/index.js",
@@ -1098,14 +1006,11 @@
         "node_modules/snapdragon/lib/utils.js",
         "node_modules/snapdragon/node_modules/define-property/index.js",
         "node_modules/snapdragon/node_modules/extend-shallow/index.js",
-        "node_modules/snapdragon/node_modules/is-accessor-descriptor/index.js",
-        "node_modules/snapdragon/node_modules/is-accessor-descriptor/node_modules/kind-of/index.js",
-        "node_modules/snapdragon/node_modules/is-data-descriptor/index.js",
-        "node_modules/snapdragon/node_modules/is-data-descriptor/node_modules/kind-of/index.js",
-        "node_modules/snapdragon/node_modules/is-descriptor/index.js",
-        "node_modules/snapdragon/node_modules/kind-of/index.js",
         "node_modules/snapdragon-node/index.js",
         "node_modules/snapdragon-node/node_modules/define-property/index.js",
+        "node_modules/snapdragon-node/node_modules/is-accessor-descriptor/index.js",
+        "node_modules/snapdragon-node/node_modules/is-data-descriptor/index.js",
+        "node_modules/snapdragon-node/node_modules/is-descriptor/index.js",
         "node_modules/snapdragon-util/index.js",
         "node_modules/snapdragon-util/node_modules/kind-of/index.js",
         "node_modules/source-map/dist/source-map.debug.js",
@@ -1131,12 +1036,6 @@
         "node_modules/split-string/index.js",
         "node_modules/static-extend/index.js",
         "node_modules/static-extend/node_modules/define-property/index.js",
-        "node_modules/static-extend/node_modules/is-accessor-descriptor/index.js",
-        "node_modules/static-extend/node_modules/is-accessor-descriptor/node_modules/kind-of/index.js",
-        "node_modules/static-extend/node_modules/is-data-descriptor/index.js",
-        "node_modules/static-extend/node_modules/is-data-descriptor/node_modules/kind-of/index.js",
-        "node_modules/static-extend/node_modules/is-descriptor/index.js",
-        "node_modules/static-extend/node_modules/kind-of/index.js",
         "node_modules/to-object-path/index.js",
         "node_modules/to-object-path/node_modules/kind-of/index.js",
         "node_modules/to-regex/index.js",
@@ -1201,30 +1100,46 @@
       },
       {
         "paths": [
+          "node_modules/base/node_modules/is-accessor-descriptor"
+        ],
+        "dependencies": {
+          "kind-of": "^6.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/base/node_modules/is-data-descriptor"
+        ],
+        "dependencies": {
+          "kind-of": "^6.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/base/node_modules/is-descriptor"
+        ],
+        "dependencies": {
+          "is-accessor-descriptor": "^1.0.0",
+          "is-data-descriptor": "^1.0.0",
+          "kind-of": "^6.0.2"
+        }
+      },
+      {
+        "paths": [
           "node_modules/braces",
           "node_modules/braces/lib"
         ],
         "dependencies": {
           "arr-flatten": "^1.1.0",
           "array-unique": "^0.3.2",
-          "define-property": "^1.0.0",
           "extend-shallow": "^2.0.1",
           "fill-range": "^4.0.0",
           "isobject": "^3.0.1",
-          "kind-of": "^6.0.2",
           "repeat-element": "^1.1.2",
           "snapdragon": "^0.8.1",
           "snapdragon-node": "^2.0.1",
           "split-string": "^3.0.2",
           "to-regex": "^3.0.1"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/braces/node_modules/define-property"
-        ],
-        "dependencies": {
-          "is-descriptor": "^1.0.0"
         }
       },
       {
@@ -1272,48 +1187,6 @@
       },
       {
         "paths": [
-          "node_modules/class-utils/node_modules/is-accessor-descriptor"
-        ],
-        "dependencies": {
-          "kind-of": "^3.0.2"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/class-utils/node_modules/is-accessor-descriptor/node_modules/kind-of"
-        ],
-        "dependencies": {
-          "is-buffer": "^1.1.5"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/class-utils/node_modules/is-data-descriptor"
-        ],
-        "dependencies": {
-          "kind-of": "^3.0.2"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/class-utils/node_modules/is-data-descriptor/node_modules/kind-of"
-        ],
-        "dependencies": {
-          "is-buffer": "^1.1.5"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/class-utils/node_modules/is-descriptor"
-        ],
-        "dependencies": {
-          "is-accessor-descriptor": "^0.1.6",
-          "is-data-descriptor": "^0.1.4",
-          "kind-of": "^5.0.0"
-        }
-      },
-      {
-        "paths": [
           "node_modules/collection-visit"
         ],
         "dependencies": {
@@ -1337,6 +1210,32 @@
         "dependencies": {
           "is-descriptor": "^1.0.2",
           "isobject": "^3.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/define-property/node_modules/is-accessor-descriptor"
+        ],
+        "dependencies": {
+          "kind-of": "^6.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/define-property/node_modules/is-data-descriptor"
+        ],
+        "dependencies": {
+          "kind-of": "^6.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/define-property/node_modules/is-descriptor"
+        ],
+        "dependencies": {
+          "is-accessor-descriptor": "^1.0.0",
+          "is-data-descriptor": "^1.0.0",
+          "kind-of": "^6.0.2"
         }
       },
       {
@@ -1368,48 +1267,6 @@
         ],
         "dependencies": {
           "is-extendable": "^0.1.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/expand-brackets/node_modules/is-accessor-descriptor"
-        ],
-        "dependencies": {
-          "kind-of": "^3.0.2"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/expand-brackets/node_modules/is-accessor-descriptor/node_modules/kind-of"
-        ],
-        "dependencies": {
-          "is-buffer": "^1.1.5"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/expand-brackets/node_modules/is-data-descriptor"
-        ],
-        "dependencies": {
-          "kind-of": "^3.0.2"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/expand-brackets/node_modules/is-data-descriptor/node_modules/kind-of"
-        ],
-        "dependencies": {
-          "is-buffer": "^1.1.5"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/expand-brackets/node_modules/is-descriptor"
-        ],
-        "dependencies": {
-          "is-accessor-descriptor": "^0.1.6",
-          "is-data-descriptor": "^0.1.4",
-          "kind-of": "^5.0.0"
         }
       },
       {
@@ -1459,6 +1316,32 @@
         ],
         "dependencies": {
           "is-extendable": "^0.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/extglob/node_modules/is-accessor-descriptor"
+        ],
+        "dependencies": {
+          "kind-of": "^6.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/extglob/node_modules/is-data-descriptor"
+        ],
+        "dependencies": {
+          "kind-of": "^6.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/extglob/node_modules/is-descriptor"
+        ],
+        "dependencies": {
+          "is-accessor-descriptor": "^1.0.0",
+          "is-data-descriptor": "^1.0.0",
+          "kind-of": "^6.0.2"
         }
       },
       {
@@ -1520,7 +1403,15 @@
           "node_modules/is-accessor-descriptor"
         ],
         "dependencies": {
-          "kind-of": "^6.0.0"
+          "kind-of": "^3.0.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/is-accessor-descriptor/node_modules/kind-of"
+        ],
+        "dependencies": {
+          "is-buffer": "^1.1.5"
         }
       },
       {
@@ -1528,7 +1419,15 @@
           "node_modules/is-data-descriptor"
         ],
         "dependencies": {
-          "kind-of": "^6.0.0"
+          "kind-of": "^3.0.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/is-data-descriptor/node_modules/kind-of"
+        ],
+        "dependencies": {
+          "is-buffer": "^1.1.5"
         }
       },
       {
@@ -1536,9 +1435,9 @@
           "node_modules/is-descriptor"
         ],
         "dependencies": {
-          "is-accessor-descriptor": "^1.0.0",
-          "is-data-descriptor": "^1.0.0",
-          "kind-of": "^6.0.2"
+          "is-accessor-descriptor": "^0.1.6",
+          "is-data-descriptor": "^0.1.4",
+          "kind-of": "^5.0.0"
         }
       },
       {
@@ -1659,32 +1558,6 @@
       },
       {
         "paths": [
-          "node_modules/object-copy/node_modules/is-accessor-descriptor"
-        ],
-        "dependencies": {
-          "kind-of": "^3.0.2"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/object-copy/node_modules/is-data-descriptor"
-        ],
-        "dependencies": {
-          "kind-of": "^3.0.2"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/object-copy/node_modules/is-descriptor"
-        ],
-        "dependencies": {
-          "is-accessor-descriptor": "^0.1.6",
-          "is-data-descriptor": "^0.1.4",
-          "kind-of": "^5.0.0"
-        }
-      },
-      {
-        "paths": [
           "node_modules/object-copy/node_modules/kind-of"
         ],
         "dependencies": {
@@ -1779,48 +1652,6 @@
       },
       {
         "paths": [
-          "node_modules/snapdragon/node_modules/is-accessor-descriptor"
-        ],
-        "dependencies": {
-          "kind-of": "^3.0.2"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/snapdragon/node_modules/is-accessor-descriptor/node_modules/kind-of"
-        ],
-        "dependencies": {
-          "is-buffer": "^1.1.5"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/snapdragon/node_modules/is-data-descriptor"
-        ],
-        "dependencies": {
-          "kind-of": "^3.0.2"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/snapdragon/node_modules/is-data-descriptor/node_modules/kind-of"
-        ],
-        "dependencies": {
-          "is-buffer": "^1.1.5"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/snapdragon/node_modules/is-descriptor"
-        ],
-        "dependencies": {
-          "is-accessor-descriptor": "^0.1.6",
-          "is-data-descriptor": "^0.1.4",
-          "kind-of": "^5.0.0"
-        }
-      },
-      {
-        "paths": [
           "node_modules/snapdragon-node"
         ],
         "dependencies": {
@@ -1835,6 +1666,32 @@
         ],
         "dependencies": {
           "is-descriptor": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/snapdragon-node/node_modules/is-accessor-descriptor"
+        ],
+        "dependencies": {
+          "kind-of": "^6.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/snapdragon-node/node_modules/is-data-descriptor"
+        ],
+        "dependencies": {
+          "kind-of": "^6.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/snapdragon-node/node_modules/is-descriptor"
+        ],
+        "dependencies": {
+          "is-accessor-descriptor": "^1.0.0",
+          "is-data-descriptor": "^1.0.0",
+          "kind-of": "^6.0.2"
         }
       },
       {
@@ -1889,48 +1746,6 @@
         ],
         "dependencies": {
           "is-descriptor": "^0.1.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/static-extend/node_modules/is-accessor-descriptor"
-        ],
-        "dependencies": {
-          "kind-of": "^3.0.2"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/static-extend/node_modules/is-accessor-descriptor/node_modules/kind-of"
-        ],
-        "dependencies": {
-          "is-buffer": "^1.1.5"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/static-extend/node_modules/is-data-descriptor"
-        ],
-        "dependencies": {
-          "kind-of": "^3.0.2"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/static-extend/node_modules/is-data-descriptor/node_modules/kind-of"
-        ],
-        "dependencies": {
-          "is-buffer": "^1.1.5"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/static-extend/node_modules/is-descriptor"
-        ],
-        "dependencies": {
-          "is-accessor-descriptor": "^0.1.6",
-          "is-data-descriptor": "^0.1.4",
-          "kind-of": "^5.0.0"
         }
       },
       {

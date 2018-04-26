@@ -1,0 +1,51 @@
+{
+  "_from": "file:/tmp/d-118321-25229-wmtam6.i6ph/package.tgz",
+  "_id": "language-batch@0.4.0",
+  "_inBundle": false,
+  "_integrity": "sha512-Z3AM6KkFg5MtH79DwmUjlZiqPqb4lfIEeNZ2Kdgfn6I3JKGcy0dtjnPYux57OUUIlAhjwuLNPCAJI5VxMmnWLA==",
+  "_location": "/language-batch",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "file",
+    "where": "/tmp/apm-install-dir-118321-25229-eqzi7a.ze5k",
+    "raw": "/tmp/d-118321-25229-wmtam6.i6ph/package.tgz",
+    "rawSpec": "/tmp/d-118321-25229-wmtam6.i6ph/package.tgz",
+    "saveSpec": "file:/tmp/d-118321-25229-wmtam6.i6ph/package.tgz",
+    "fetchSpec": "/tmp/d-118321-25229-wmtam6.i6ph/package.tgz"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "/tmp/d-118321-25229-wmtam6.i6ph/package.tgz",
+  "_spec": "/tmp/d-118321-25229-wmtam6.i6ph/package.tgz",
+  "_where": "/tmp/apm-install-dir-118321-25229-eqzi7a.ze5k",
+  "bugs": {
+    "url": "https://github.com/footballhead/language-batch/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Adds syntax highlighting for Windows Batch files in Atom.",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "homepage": "https://github.com/footballhead/language-batch#readme",
+  "license": "MIT",
+  "main": "./lib/language-batch",
+  "name": "language-batch",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/footballhead/language-batch.git"
+  },
+  "version": "0.4.0",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

@@ -29,6 +29,8 @@ const commandWithResponse = new Set<keyof CommandArgResponseMap>([
   "rename",
   "navtree",
   "navto",
+  "getApplicableRefactors",
+  "getEditsForRefactor",
 ])
 
 export class TypescriptServiceClient {
@@ -75,14 +77,13 @@ export class TypescriptServiceClient {
         this.serverPromise = undefined
 
         setImmediate(() => {
-          let detail = (err && err.stack) || ""
-
+          let detail = err.message
           if (lastStderrOutput) {
-            detail = "Last output from tsserver:\n" + lastStderrOutput + "\n \n" + detail
+            detail = `Last output from tsserver:\n${lastStderrOutput}\n\n${detail}`
           }
-
           atom.notifications.addError("Typescript quit unexpectedly", {
             detail,
+            stack: err.stack,
             dismissable: true,
           })
         })

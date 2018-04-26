@@ -15,6 +15,7 @@ const commands_1 = require("./atom/commands");
 const semanticViewController_1 = require("./atom/views/outline/semanticViewController");
 const symbolsViewController_1 = require("./atom/views/symbols/symbolsViewController");
 const editorPositionHistoryManager_1 = require("./atom/editorPositionHistoryManager");
+const utils_1 = require("./atom/utils");
 class PluginManager {
     constructor(state) {
         this.panes = []; // TODO: do we need it?
@@ -45,6 +46,15 @@ class PluginManager {
                 buffer.destroy();
             }
         };
+        this.applyEdits = async (edits, reverse = true) => void Promise.all(edits.map(edit => this.withTypescriptBuffer(edit.fileName, async (buffer) => {
+            buffer.buffer.transact(() => {
+                const changes = reverse ? edit.textChanges.slice().reverse() : edit.textChanges;
+                for (const change of changes) {
+                    buffer.buffer.setTextInRange(utils_1.spanToRange(change), change.newText);
+                }
+            });
+            return buffer.flush();
+        })));
         this.getSemanticViewController = () => this.semanticViewController;
         this.getSymbolsViewController = () => this.symbolsViewController;
         this.getEditorPositionHistoryManager = () => this.editorPosHist;
@@ -57,7 +67,7 @@ class PluginManager {
         this.subscriptions.add(this.errorPusher);
         // NOTE: This has to run before withTypescriptBuffer is used to populate this.panes
         this.subscribeEditors();
-        this.codefixProvider = new codefix_1.CodefixProvider(this.clientResolver, this.errorPusher, this.withTypescriptBuffer);
+        this.codefixProvider = new codefix_1.CodefixProvider(this.clientResolver, this.errorPusher, this.applyEdits);
         this.subscriptions.add(this.codefixProvider);
         this.semanticViewController = new semanticViewController_1.SemanticViewController(this.withTypescriptBuffer);
         this.subscriptions.add(this.semanticViewController);
@@ -143,7 +153,7 @@ class PluginManager {
                     const files = [];
                     for (const p of this.panes.sort((a, b) => a.activeAt - b.activeAt)) {
                         const filePath = p.buffer.getPath();
-                        if (filePath && p.isTypescript && p.client === pane.client) {
+                        if (filePath !== undefined && p.isTypescript && p.client === pane.client) {
                             files.push(filePath);
                         }
                     }

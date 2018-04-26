@@ -1,0 +1,31 @@
+libpng warning: iCCP: known incorrect sRGB profile
+libpng warning: iCCP: known incorrect sRGB profile
+[21899:0425/155537.908762:ERROR:buffer_manager.cc(453)] [.DisplayCompositor-0x21c7dad72100]GL ERROR :GL_INVALID_OPERATION : glBufferData: <- error from previous GL command
+Gtk-Message: 16:34:14.406: GtkDialog mapped without a transient parent. This is discouraged.
+This tool has been deprecated, use 'gio trash' instead.
+See 'gio help trash' for more info.
+
+[21899:0425/163719.359888:ERROR:buffer_manager.cc(453)] [.DisplayCompositor-0x21c7dacaec00]GL ERROR :GL_INVALID_OPERATION : glBufferData: <- error from previous GL command
+[21899:0425/163725.713374:ERROR:buffer_manager.cc(453)] [.DisplayCompositor-0x21c7dacaec00]GL ERROR :GL_INVALID_OPERATION : glBufferData: <- error from previous GL command
+[21899:0425/163826.944238:ERROR:buffer_manager.cc(453)] [.DisplayCompositor-0x21c7dacaec00]GL ERROR :GL_INVALID_OPERATION : glBufferData: <- error from previous GL command
+Gtk-Message: 16:40:03.619: GtkDialog mapped without a transient parent. This is discouraged.
+This tool has been deprecated, use 'gio trash' instead.
+See 'gio help trash' for more info.
+
+[21899:0425/164657.466476:ERROR:buffer_manager.cc(453)] [.DisplayCompositor-0x21c7dacafa00]GL ERROR :GL_INVALID_OPERATION : glBufferData: <- error from previous GL command
+Gtk-Message: 07:44:59.995: GtkDialog mapped without a transient parent. This is discouraged.
+[21899:0426/074739.410936:ERROR:buffer_manager.cc(453)] [.DisplayCompositor-0x21c7dbd4a300]GL ERROR :GL_INVALID_OPERATION : glBufferData: <- error from previous GL command
+[21899:0426/074755.258578:ERROR:buffer_manager.cc(453)] [.DisplayCompositor-0x21c7dac31800]GL ERROR :GL_INVALID_OPERATION : glBufferData: <- error from previous GL command
+Gtk-Message: 07:48:02.054: GtkDialog mapped without a transient parent. This is discouraged.
+This tool has been deprecated, use 'gio trash' instead.
+See 'gio help trash' for more info.
+
+Gtk-Message: 07:48:06.540: GtkDialog mapped without a transient parent. This is discouraged.
+This tool has been deprecated, use 'gio trash' instead.
+See 'gio help trash' for more info.
+
+Gtk-Message: 07:49:16.512: GtkDialog mapped without a transient parent. This is discouraged.
+This tool has been deprecated, use 'gio trash' instead.
+See 'gio help trash' for more info.
+
+Gtk-Message: 09:27:13.201: GtkDialog mapped without a transient parent. This is discouraged.

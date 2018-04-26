@@ -1,0 +1,63 @@
+{
+  "_from": "file:/tmp/d-118321-24473-1b9uwd6.61a7/package.tgz",
+  "_id": "language-powershell@4.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-l4/7n5YvR+Wy8x9+o7p49ur/Vya3w9c5y29Uo1T49aK8xtt1M0niF3XTK7T2875nZnFosR/HgJ/YxPRGqEl8Ng==",
+  "_location": "/language-powershell",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "file",
+    "where": "/tmp/apm-install-dir-118321-24473-18g5khy.7igo",
+    "raw": "/tmp/d-118321-24473-1b9uwd6.61a7/package.tgz",
+    "rawSpec": "/tmp/d-118321-24473-1b9uwd6.61a7/package.tgz",
+    "saveSpec": "file:/tmp/d-118321-24473-1b9uwd6.61a7/package.tgz",
+    "fetchSpec": "/tmp/d-118321-24473-1b9uwd6.61a7/package.tgz"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "/tmp/d-118321-24473-1b9uwd6.61a7/package.tgz",
+  "_spec": "/tmp/d-118321-24473-1b9uwd6.61a7/package.tgz",
+  "_where": "/tmp/apm-install-dir-118321-24473-18g5khy.7igo",
+  "bugs": {
+    "url": "https://github.com/jugglingnutcase/language-powershell/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "PowerShell language support for Atom",
+  "devDependencies": {
+    "cson": "^1.6.2",
+    "plist": "^1.1.0"
+  },
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "homepage": "https://github.com/jugglingnutcase/language-powershell#readme",
+  "keywords": [
+    "powershell",
+    "microsoft",
+    "windows",
+    "grammar"
+  ],
+  "license": "MIT",
+  "name": "language-powershell",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jugglingnutcase/language-powershell.git"
+  },
+  "scripts": {
+    "convert": "node scripts/convert-grammar.js"
+  },
+  "version": "4.0.0",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}
