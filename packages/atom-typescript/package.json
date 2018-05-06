@@ -1,24 +1,24 @@
 {
-  "_from": "file:/tmp/d-118321-13339-g2a60c.20hkd/package.tgz",
-  "_id": "atom-typescript@12.4.0",
+  "_from": "file:/tmp/d-118326-29882-qen8n9.x1n8j/package.tgz",
+  "_id": "atom-typescript@12.4.1",
   "_inBundle": false,
-  "_integrity": "sha512-iSwXVyKNHQqwzDGsC+KCCHOj1jGxO8ILzmVGQD9ELfnM3s7a6ha9LnRDljWFGY+4mvi8O32DhJGyFGypsiEytw==",
+  "_integrity": "sha512-NvnhIxtO4Ju9LLfhv0RmFH8/PXCN8JylpHekMkLfziLRn3n0TbGz1+d80JnHWxBWgPHiL5WjOCbsUF48hvRYSQ==",
   "_location": "/atom-typescript",
   "_phantomChildren": {},
   "_requested": {
     "type": "file",
-    "where": "/tmp/apm-install-dir-118321-13339-1rj0qjl.6jfv",
-    "raw": "/tmp/d-118321-13339-g2a60c.20hkd/package.tgz",
-    "rawSpec": "/tmp/d-118321-13339-g2a60c.20hkd/package.tgz",
-    "saveSpec": "file:/tmp/d-118321-13339-g2a60c.20hkd/package.tgz",
-    "fetchSpec": "/tmp/d-118321-13339-g2a60c.20hkd/package.tgz"
+    "where": "/tmp/apm-install-dir-118326-29882-oolfm3.o8nke",
+    "raw": "/tmp/d-118326-29882-qen8n9.x1n8j/package.tgz",
+    "rawSpec": "/tmp/d-118326-29882-qen8n9.x1n8j/package.tgz",
+    "saveSpec": "file:/tmp/d-118326-29882-qen8n9.x1n8j/package.tgz",
+    "fetchSpec": "/tmp/d-118326-29882-qen8n9.x1n8j/package.tgz"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "/tmp/d-118321-13339-g2a60c.20hkd/package.tgz",
-  "_spec": "/tmp/d-118321-13339-g2a60c.20hkd/package.tgz",
-  "_where": "/tmp/apm-install-dir-118321-13339-1rj0qjl.6jfv",
+  "_resolved": "/tmp/d-118326-29882-qen8n9.x1n8j/package.tgz",
+  "_spec": "/tmp/d-118326-29882-qen8n9.x1n8j/package.tgz",
+  "_where": "/tmp/apm-install-dir-118326-29882-oolfm3.o8nke",
   "activationCommands": {
     "atom-workspace": [
       "typescript:initialize-config"
@@ -166,7 +166,7 @@
     "test": "npm run typecheck && npm run lint && npm run prettier-check",
     "typecheck": "tsc --noEmit -p ./lib && tsc --noEmit -p ./scripts && tsc --noEmit -p ./spec"
   },
-  "version": "12.4.0",
+  "version": "12.4.1",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -222,7 +222,7 @@
       },
       {
         "name": "lodash",
-        "version": "4.17.5",
+        "version": "4.17.10",
         "path": "node_modules/lodash/lodash.js"
       },
       {

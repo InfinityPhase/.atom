@@ -58,6 +58,7 @@
       "atom-beautify"
       "spell-check"
       "ide-haskell"
+      "language-hugo"
     ]
     ignoredNames: [
       ".git"
@@ -72,6 +73,7 @@
       ".clang_complete"
       ".gcc-flags.json"
     ]
+    projectHome: "/home/infinity/Documents/Code/AutoAtom"
     telemetryConsent: "no"
     themes: [
       "seti-ui"
