@@ -1,24 +1,25 @@
 {
-  "_from": "file:/tmp/d-118321-13347-1k9vo5l.3tq8/package.tgz",
-  "_id": "language-haskell@1.17.6",
+  "_from": "file:/tmp/d-118526-28202-1dksrmk.dp64/package.tgz",
+  "_id": "language-haskell@1.17.8",
   "_inBundle": false,
-  "_integrity": "sha512-idUd5qXv3l/5xBGoaqO7xg9fPcW+j4fLfLRNamTqhvDX/1T+iUcU/wRNLwhgcSR1mowft0mt8pQZMHX77gQhKQ==",
+  "_integrity": "sha512-wElpsf+9xcnnxdtE3KzfZsGNi68paHhkVcu4C342Iaa0Cv2zZiGOD4mHrx36liiLekfoN1/orNc9EGIBZ01BEw==",
   "_location": "/language-haskell",
   "_phantomChildren": {},
   "_requested": {
     "type": "file",
-    "where": "/tmp/apm-install-dir-118321-13347-743y75.2c3dc",
-    "raw": "/tmp/d-118321-13347-1k9vo5l.3tq8/package.tgz",
-    "rawSpec": "/tmp/d-118321-13347-1k9vo5l.3tq8/package.tgz",
-    "saveSpec": "file:/tmp/d-118321-13347-1k9vo5l.3tq8/package.tgz",
-    "fetchSpec": "/tmp/d-118321-13347-1k9vo5l.3tq8/package.tgz"
+    "where": "/tmp/apm-install-dir-118526-28202-1v5glbg.5c5y",
+    "raw": "/tmp/d-118526-28202-1dksrmk.dp64/package.tgz",
+    "rawSpec": "/tmp/d-118526-28202-1dksrmk.dp64/package.tgz",
+    "saveSpec": "file:/tmp/d-118526-28202-1dksrmk.dp64/package.tgz",
+    "fetchSpec": "/tmp/d-118526-28202-1dksrmk.dp64/package.tgz"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "/tmp/d-118321-13347-1k9vo5l.3tq8/package.tgz",
-  "_spec": "/tmp/d-118321-13347-1k9vo5l.3tq8/package.tgz",
-  "_where": "/tmp/apm-install-dir-118321-13347-743y75.2c3dc",
+  "_resolved": "/tmp/d-118526-28202-1dksrmk.dp64/package.tgz",
+  "_shasum": "d7f79ae5f17c522930cdc7e1c779c393e4386a48",
+  "_spec": "/tmp/d-118526-28202-1dksrmk.dp64/package.tgz",
+  "_where": "/tmp/apm-install-dir-118526-28202-1v5glbg.5c5y",
   "bugs": {
     "url": "https://github.com/atom-haskell/language-haskell/issues"
   },
@@ -42,7 +43,7 @@
     "type": "git",
     "url": "git+https://github.com/atom-haskell/language-haskell.git"
   },
-  "version": "1.17.6",
+  "version": "1.17.8",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [],

@@ -1,0 +1,56 @@
+{
+  "_from": "file:/tmp/d-11871-16024-5wflmn.0tuuu/package.tgz",
+  "_id": "styri-syntax@0.2.0",
+  "_inBundle": false,
+  "_integrity": "sha512-ZfvfPlEh4yxaX3gIsXyjXp6OI8v9jTu5/QGYgSP/cSE7D0hXbB9aevEkYCxWaks460ZeHP46sR0lTc5LvDm+3w==",
+  "_location": "/styri-syntax",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "file",
+    "where": "/tmp/apm-install-dir-11871-16024-10l1ilg.jrod",
+    "raw": "/tmp/d-11871-16024-5wflmn.0tuuu/package.tgz",
+    "rawSpec": "/tmp/d-11871-16024-5wflmn.0tuuu/package.tgz",
+    "saveSpec": "file:/tmp/d-11871-16024-5wflmn.0tuuu/package.tgz",
+    "fetchSpec": "/tmp/d-11871-16024-5wflmn.0tuuu/package.tgz"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "/tmp/d-11871-16024-5wflmn.0tuuu/package.tgz",
+  "_shasum": "43b5849392b874ac9dacee091f6392003807baf5",
+  "_spec": "/tmp/d-11871-16024-5wflmn.0tuuu/package.tgz",
+  "_where": "/tmp/apm-install-dir-11871-16024-10l1ilg.jrod",
+  "bugs": {
+    "url": "https://github.com/chbk/styri-syntax/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "A colorful and intuitive syntax theme",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/chbk/styri-syntax#readme",
+  "keywords": [
+    "styri",
+    "color",
+    "dark"
+  ],
+  "license": "MIT",
+  "name": "styri-syntax",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chbk/styri-syntax.git"
+  },
+  "theme": "syntax",
+  "version": "0.2.0",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

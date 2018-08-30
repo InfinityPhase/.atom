@@ -13,21 +13,36 @@ import * as pioNodeHelpers from 'platformio-node-helpers';
 
 import { beginBusy, endBusy } from './services/busy';
 
+import fs from 'fs-plus';
+import os from 'os';
 import path from 'path';
-import querystring from 'querystring';
 import shell from 'shell';
 
 
 export function notifyError(title, err) {
-  const detail = err.stack || err.toString();
+  const description = err.stack || err.toString();
+  const ghbody = `# Description of problem
+Leave a comment...
+
+BEFORE SUBMITTING, PLEASE SEARCH FOR DUPLICATES IN
+- https://github.com/platformio/platformio-atom-ide/issues
+
+# Configuration
+Atom: ${atom.appVersion}
+PIO IDE: v${getIDEVersion()}
+System: ${os.type()}, ${os.release()}, ${os.arch()}
+
+# Exception
+\`\`\`
+${description}
+\`\`\`
+`;
   atom.notifications.addError(title, {
     buttons: [{
       text: 'Report a problem',
-      onDidClick: () => openUrl(
-        `https://github.com/platformio/platformio-atom-ide/issues/new?${querystring.stringify(
-          { title: title, body: detail })}`)
+      onDidClick: () => openUrl(decodeURIComponent(pioNodeHelpers.misc.getErrorReportUrl(title, ghbody)))
     }],
-    detail,
+    description,
     dismissable: true
   });
   console.error(title, err);
@@ -65,4 +80,26 @@ export function getIDEVersion() {
 
 export function openUrl(url) {
   shell.openExternal(url);
+}
+
+export function getPioProjects() {
+  return atom.project.getPaths()
+    .filter(p => pioNodeHelpers.misc.isPIOProject(p))
+    .map(p => fs.realpathSync(p));
+}
+
+export function getActivePioProject() {
+  const paths = getPioProjects();
+  if (paths.length === 0) {
+    return null;
+  }
+  const editor = atom.workspace.getActiveTextEditor();
+  if (editor && editor.getPath()) {
+    const filePath = fs.realpathSync(editor.getPath());
+    const found = paths.find(p => filePath.startsWith(p + path.sep));
+    if (found) {
+      return found;
+    }
+  }
+  return paths[0];
 }

@@ -1,24 +1,25 @@
 {
-  "_from": "file:/tmp/d-117116-19265-z1d272.8e2o/package.tgz",
-  "_id": "language-ini@1.19.0",
+  "_from": "file:/tmp/d-11849-22294-p36uzu.wbpk8/package.tgz",
+  "_id": "language-ini@1.20.0",
   "_inBundle": false,
-  "_integrity": "sha512-9tSlwcDyjUn5ksb4/GboFTEPiH9SOFglOdz13aRPhTDakeUZuLFvO79na7FhaV7Ihkm7ihliRSrWwnPx1S1Qow==",
+  "_integrity": "sha512-aQijgrFBEnPiohfUFF3qPObcf8lxxjMaCrC4ZE+9gZLIkfDS9kk0QD3un//+VAl70Hv3/xXAtUpxa7IfrkZRbQ==",
   "_location": "/language-ini",
   "_phantomChildren": {},
   "_requested": {
     "type": "file",
-    "where": "/tmp/apm-install-dir-117116-19265-1cbeunf.savq",
-    "raw": "/tmp/d-117116-19265-z1d272.8e2o/package.tgz",
-    "rawSpec": "/tmp/d-117116-19265-z1d272.8e2o/package.tgz",
-    "saveSpec": "file:/tmp/d-117116-19265-z1d272.8e2o/package.tgz",
-    "fetchSpec": "/tmp/d-117116-19265-z1d272.8e2o/package.tgz"
+    "where": "/tmp/apm-install-dir-11849-22294-8vyj5n.q2mwu",
+    "raw": "/tmp/d-11849-22294-p36uzu.wbpk8/package.tgz",
+    "rawSpec": "/tmp/d-11849-22294-p36uzu.wbpk8/package.tgz",
+    "saveSpec": "file:/tmp/d-11849-22294-p36uzu.wbpk8/package.tgz",
+    "fetchSpec": "/tmp/d-11849-22294-p36uzu.wbpk8/package.tgz"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "/tmp/d-117116-19265-z1d272.8e2o/package.tgz",
-  "_spec": "/tmp/d-117116-19265-z1d272.8e2o/package.tgz",
-  "_where": "/tmp/apm-install-dir-117116-19265-1cbeunf.savq",
+  "_resolved": "/tmp/d-11849-22294-p36uzu.wbpk8/package.tgz",
+  "_shasum": "ec9c7f2af63704b90e4c9be42b3dab5ccdbc3b34",
+  "_spec": "/tmp/d-11849-22294-p36uzu.wbpk8/package.tgz",
+  "_where": "/tmp/apm-install-dir-11849-22294-8vyj5n.q2mwu",
   "author": {
     "name": "Jacob Bednarz",
     "email": "jacob.bednarz@gmail.com",
@@ -44,7 +45,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "1.19.0",
+  "version": "1.20.0",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [],

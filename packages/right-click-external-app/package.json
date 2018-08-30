@@ -1,0 +1,263 @@
+{
+  "_from": "file:/tmp/d-118424-28864-lr3z3.httns/package.tgz",
+  "_id": "right-click-external-app@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-vhjuMOVZK4tQx9F7dSJzhSbTvoxtydBKdiiQGQsuivOoIBpaCLApmsB0LKIbQXgq/S+Zttjy1WiihGJiZLot9A==",
+  "_location": "/right-click-external-app",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "file",
+    "where": "/tmp/apm-install-dir-118424-28864-1cddqn4.9ju",
+    "raw": "/tmp/d-118424-28864-lr3z3.httns/package.tgz",
+    "rawSpec": "/tmp/d-118424-28864-lr3z3.httns/package.tgz",
+    "saveSpec": "file:/tmp/d-118424-28864-lr3z3.httns/package.tgz",
+    "fetchSpec": "/tmp/d-118424-28864-lr3z3.httns/package.tgz"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "/tmp/d-118424-28864-lr3z3.httns/package.tgz",
+  "_shasum": "a618f6b6305e87dccae9ac8c61ad38af135bce57",
+  "_spec": "/tmp/d-118424-28864-lr3z3.httns/package.tgz",
+  "_where": "/tmp/apm-install-dir-118424-28864-1cddqn4.9ju",
+  "bugs": {
+    "url": "https://github.com/aterenin/right-click-external-app/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "shell": "^0.3.2"
+  },
+  "deprecated": false,
+  "description": "Adds a right click menu option to open any file in the system's default external app.",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/aterenin/right-click-external-app#readme",
+  "keywords": [
+    "open in",
+    "external application",
+    "right click",
+    "tree view",
+    "pdf"
+  ],
+  "license": "MIT",
+  "main": "./lib/right-click-external-app",
+  "name": "right-click-external-app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aterenin/right-click-external-app.git"
+  },
+  "version": "1.0.0",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [
+      {
+        "name": "clone",
+        "version": "1.0.4",
+        "path": "node_modules/clone/clone.js"
+      },
+      {
+        "name": "defaults",
+        "version": "1.0.3",
+        "path": "node_modules/defaults/index.js"
+      },
+      {
+        "name": "each",
+        "version": "1.2.0",
+        "path": "node_modules/each/lib/index.js"
+      },
+      {
+        "name": "minimist",
+        "version": "0.0.10",
+        "path": "node_modules/minimist/index.js"
+      },
+      {
+        "name": "optimist",
+        "version": "0.6.1",
+        "path": "node_modules/optimist/index.js"
+      },
+      {
+        "name": "pad",
+        "version": "2.1.0",
+        "path": "node_modules/pad/lib/index.js"
+      },
+      {
+        "name": "shell",
+        "version": "0.3.2",
+        "path": "node_modules/shell/index.js"
+      },
+      {
+        "name": "wcwidth",
+        "version": "1.0.1",
+        "path": "node_modules/wcwidth/index.js"
+      },
+      {
+        "name": "wordwrap",
+        "version": "0.0.3",
+        "path": "node_modules/wordwrap/index.js"
+      }
+    ],
+    "extensions": {
+      ".coffee": [
+        "lib/right-click-external-app.coffee",
+        "node_modules/each/src/index.coffee",
+        "node_modules/shell/samples/coffee/sample.coffee",
+        "node_modules/shell/samples/question.coffee",
+        "node_modules/shell/src/NullStream.coffee",
+        "node_modules/shell/src/Request.coffee",
+        "node_modules/shell/src/Response.coffee",
+        "node_modules/shell/src/Shell.coffee",
+        "node_modules/shell/src/Styles.coffee",
+        "node_modules/shell/src/plugins/cloud9.coffee",
+        "node_modules/shell/src/plugins/coffee.coffee",
+        "node_modules/shell/src/plugins/completer.coffee",
+        "node_modules/shell/src/plugins/error.coffee",
+        "node_modules/shell/src/plugins/help.coffee",
+        "node_modules/shell/src/plugins/history.coffee",
+        "node_modules/shell/src/plugins/http.coffee",
+        "node_modules/shell/src/plugins/redis.coffee",
+        "node_modules/shell/src/plugins/router.coffee",
+        "node_modules/shell/src/plugins/stylus.coffee",
+        "node_modules/shell/src/plugins/test.coffee",
+        "node_modules/shell/src/routes/confirm.coffee",
+        "node_modules/shell/src/routes/prompt.coffee",
+        "node_modules/shell/src/routes/shellOnly.coffee",
+        "node_modules/shell/src/routes/timeout.coffee",
+        "node_modules/shell/src/start_stop.coffee",
+        "node_modules/shell/src/utils.coffee"
+      ],
+      ".js": [
+        "node_modules/clone/clone.js",
+        "node_modules/defaults/index.js",
+        "node_modules/defaults/test.js",
+        "node_modules/each/lib/index.js",
+        "node_modules/each/samples/api.promise.js",
+        "node_modules/each/samples/array_concurrent.js",
+        "node_modules/each/samples/array_parallel.js",
+        "node_modules/each/samples/array_sequential.js",
+        "node_modules/each/samples/object_concurrent.js",
+        "node_modules/each/samples/object_sequential.js",
+        "node_modules/minimist/example/parse.js",
+        "node_modules/minimist/index.js",
+        "node_modules/optimist/example/bool.js",
+        "node_modules/optimist/example/boolean_double.js",
+        "node_modules/optimist/example/boolean_single.js",
+        "node_modules/optimist/example/default_hash.js",
+        "node_modules/optimist/example/default_singles.js",
+        "node_modules/optimist/example/divide.js",
+        "node_modules/optimist/example/line_count.js",
+        "node_modules/optimist/example/line_count_options.js",
+        "node_modules/optimist/example/line_count_wrap.js",
+        "node_modules/optimist/example/nonopt.js",
+        "node_modules/optimist/example/reflect.js",
+        "node_modules/optimist/example/short.js",
+        "node_modules/optimist/example/string.js",
+        "node_modules/optimist/example/usage-options.js",
+        "node_modules/optimist/example/xup.js",
+        "node_modules/optimist/index.js",
+        "node_modules/pad/lib/colors.js",
+        "node_modules/pad/lib/index.js",
+        "node_modules/pad/samples/left.js",
+        "node_modules/pad/samples/right.js",
+        "node_modules/shell/index.js",
+        "node_modules/shell/lib/NullStream.js",
+        "node_modules/shell/lib/Request.js",
+        "node_modules/shell/lib/Response.js",
+        "node_modules/shell/lib/Shell.js",
+        "node_modules/shell/lib/Styles.js",
+        "node_modules/shell/lib/plugins/cloud9.js",
+        "node_modules/shell/lib/plugins/coffee.js",
+        "node_modules/shell/lib/plugins/completer.js",
+        "node_modules/shell/lib/plugins/error.js",
+        "node_modules/shell/lib/plugins/help.js",
+        "node_modules/shell/lib/plugins/history.js",
+        "node_modules/shell/lib/plugins/http.js",
+        "node_modules/shell/lib/plugins/redis.js",
+        "node_modules/shell/lib/plugins/router.js",
+        "node_modules/shell/lib/plugins/stylus.js",
+        "node_modules/shell/lib/plugins/test.js",
+        "node_modules/shell/lib/routes/confirm.js",
+        "node_modules/shell/lib/routes/prompt.js",
+        "node_modules/shell/lib/routes/shellOnly.js",
+        "node_modules/shell/lib/routes/timeout.js",
+        "node_modules/shell/lib/start_stop.js",
+        "node_modules/shell/lib/utils.js",
+        "node_modules/shell/samples/cloud9/sample.js",
+        "node_modules/shell/samples/error/sample.js",
+        "node_modules/shell/samples/http/app.js",
+        "node_modules/shell/samples/http/sample.js",
+        "node_modules/shell/samples/params/ami.js",
+        "node_modules/shell/samples/params/sample.js",
+        "node_modules/shell/samples/redis/sample.js",
+        "node_modules/shell/samples/routes/sample.js",
+        "node_modules/wcwidth/combining.js",
+        "node_modules/wcwidth/index.js",
+        "node_modules/wordwrap/example/center.js",
+        "node_modules/wordwrap/example/meat.js",
+        "node_modules/wordwrap/index.js"
+      ],
+      ".json": [
+        "node_modules/clone/package.json",
+        "node_modules/defaults/package.json",
+        "node_modules/each/package.json",
+        "node_modules/minimist/package.json",
+        "node_modules/optimist/package.json",
+        "node_modules/pad/package.json",
+        "node_modules/shell/package.json",
+        "node_modules/wcwidth/package.json",
+        "node_modules/wordwrap/package.json",
+        "package.json"
+      ]
+    },
+    "folders": [
+      {
+        "paths": [
+          "lib",
+          ""
+        ],
+        "dependencies": {
+          "shell": "^0.3.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/defaults"
+        ],
+        "dependencies": {
+          "clone": "^1.0.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/optimist/example",
+          "node_modules/optimist",
+          "node_modules/optimist/test/_",
+          "node_modules/optimist/test"
+        ],
+        "dependencies": {
+          "minimist": "~0.0.1",
+          "wordwrap": "~0.0.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/pad/lib",
+          "node_modules/pad",
+          "node_modules/pad/samples"
+        ],
+        "dependencies": {
+          "wcwidth": "^1.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/wcwidth",
+          "node_modules/wcwidth/test"
+        ],
+        "dependencies": {
+          "defaults": "^1.0.3"
+        }
+      }
+    ]
+  }
+}

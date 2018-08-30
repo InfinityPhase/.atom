@@ -1,5 +1,48 @@
 # Release Notes
 
+## 2.2.0 (2018-08-28)
+
+* Refactored Project IntelliSense Indexer and Task Manager
+
+## 2.1.13 (2018-08-11)
+
+* Fixed double URI encoding when reporting issue to GitHub
+
+## 2.1.12 (2018-07-27)
+
+* Improved PlatformIO Core installer
+
+## 2.1.11 (2018-07-19)
+
+* Fixed "Cannot find module 'tslib'"
+
+## 2.1.10 (2018-07-19)
+
+* Fixed broken integration with PIO Home
+
+## 2.1.9 (2018-07-19)
+
+* Fixed "PIP: Command "python setup.py egg_info" failed" (issue [#1950](https://github.com/platformio/platformio-atom-ide/issues/1950))
+
+## 2.1.8 (2018-07-17)
+
+* Instruction how to manually create [PIO Core Virtual Environment](http://docs.platformio.org/page/installation.html#virtual-environment)
+* Deprecate [PIO Unified Debugger](http://docs.platformio.org/page/plus/debugging.html) for Atom
+
+## 2.1.7 (2018-06-26)
+
+* Handle PIO Home server errors
+* Install `virtualenv` to the global scope if possible
+
+## 2.1.6 (2018-06-21)
+
+* Fixed an issue with infinite PIO Core installation [#1925](https://github.com/platformio/platformio-atom-ide/issues/1925))
+
+## 2.1.5 (2018-06-20)
+
+* Pre-fill GitHub issue template with system data
+* Improved PIO Core installer using `pip` as Python module
+
 ## 2.1.4 (2018-04-09)
 
 * Automatically install related packages to PIO Home

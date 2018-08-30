@@ -1,0 +1,989 @@
+{
+  "_from": "file:/tmp/d-11871-8186-1gmbyg9.k6ui/package.tgz",
+  "_id": "ide-java@0.8.3",
+  "_inBundle": false,
+  "_integrity": "sha512-5ypC0RxTOTEsNfxgkt3R94J7ztE4TKW4wNfRs+5NlfcxDyJNyR/TpTiIPGKE7GPtXlCIuZkvVReu4w7VL+RtDQ==",
+  "_location": "/ide-java",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "file",
+    "where": "/tmp/apm-install-dir-11871-8186-1hcigyn.n4wr",
+    "raw": "/tmp/d-11871-8186-1gmbyg9.k6ui/package.tgz",
+    "rawSpec": "/tmp/d-11871-8186-1gmbyg9.k6ui/package.tgz",
+    "saveSpec": "file:/tmp/d-11871-8186-1gmbyg9.k6ui/package.tgz",
+    "fetchSpec": "/tmp/d-11871-8186-1gmbyg9.k6ui/package.tgz"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "/tmp/d-11871-8186-1gmbyg9.k6ui/package.tgz",
+  "_shasum": "ea42a7c6ef89febb1ad8a520b80cd697a1b72d4c",
+  "_spec": "/tmp/d-11871-8186-1gmbyg9.k6ui/package.tgz",
+  "_where": "/tmp/apm-install-dir-11871-8186-1hcigyn.n4wr",
+  "atomTestRunner": "./test/runner",
+  "bugs": {
+    "url": "https://github.com/atom/ide-java/issues"
+  },
+  "bundleDependencies": false,
+  "configSchema": {
+    "javaHome": {
+      "order": 10,
+      "type": "string",
+      "default": "",
+      "description": "Absolute path to Java 8 or later home folder used to launch the Java language server."
+    },
+    "virtualMachine": {
+      "order": 20,
+      "type": "object",
+      "properties": {
+        "extraArgs": {
+          "type": "string",
+          "default": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication",
+          "description": "Extra arguments passed to the Java VM when launching the Java Language Server. Eg. use `-noverify -Xmx1G  -XX:+UseG1GC -XX:+UseStringDeduplication` to bypass class verification, increase the heap size to 1GB and enable String deduplication with the G1 Garbage collector."
+        }
+      }
+    },
+    "errors": {
+      "order": 30,
+      "type": "object",
+      "title": "Warnings and Errors",
+      "properties": {
+        "incompleteClasspathSeverity": {
+          "type": "string",
+          "title": "Incomplete Classpath Severity",
+          "enum": [
+            "ignore",
+            "info",
+            "warning",
+            "error"
+          ],
+          "default": "warning",
+          "description": "Severity of the message when the classpath is incomplete for a Java file."
+        }
+      }
+    }
+  },
+  "consumedServices": {
+    "linter-indie": {
+      "versions": {
+        "2.0.0": "consumeLinterV2"
+      }
+    },
+    "atom-ide-busy-signal": {
+      "versions": {
+        "0.1.0": "consumeBusySignal"
+      }
+    },
+    "console": {
+      "versions": {
+        "0.1.0": "consumeConsole"
+      }
+    },
+    "datatip": {
+      "versions": {
+        "0.1.0": "consumeDatatip"
+      }
+    },
+    "status-bar": {
+      "versions": {
+        "^1.0.0": "consumeStatusBar"
+      }
+    }
+  },
+  "dependencies": {
+    "atom-languageclient": "0.9.5",
+    "atom-select-list": "^0.7.1",
+    "decompress": "^4.2.0"
+  },
+  "deprecated": false,
+  "description": "Java language support for Atom-IDE.",
+  "devDependencies": {
+    "atom-mocha-test-runner": "^1.0.1",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
+    "mocha": "^3.4.2",
+    "mocha-appveyor-reporter": "^0.4.0",
+    "mocha-junit-and-console-reporter": "^1.6.0"
+  },
+  "engines": {
+    "atom": ">=1.21.0"
+  },
+  "enhancedScopes": [
+    "source.java"
+  ],
+  "homepage": "https://github.com/atom/ide-java#readme",
+  "license": "MIT",
+  "main": "./lib/main",
+  "name": "ide-java",
+  "providedServices": {
+    "autocomplete.provider": {
+      "versions": {
+        "2.0.0": "provideAutocomplete"
+      }
+    },
+    "code-format.range": {
+      "versions": {
+        "0.1.0": "provideCodeFormat"
+      }
+    },
+    "code-highlight": {
+      "versions": {
+        "0.1.0": "provideCodeHighlight"
+      }
+    },
+    "definitions": {
+      "versions": {
+        "0.1.0": "provideDefinitions"
+      }
+    },
+    "find-references": {
+      "versions": {
+        "0.1.0": "provideFindReferences"
+      }
+    },
+    "outline-view": {
+      "versions": {
+        "0.1.0": "provideOutlines"
+      }
+    },
+    "code-actions": {
+      "versions": {
+        "0.1.0": "provideCodeActions"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atom/ide-java.git"
+  },
+  "scripts": {
+    "test": "atom --test test"
+  },
+  "version": "0.8.3",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [
+      {
+        "name": "atom-languageclient",
+        "version": "0.9.5",
+        "path": "node_modules/atom-languageclient/build/lib/main.js"
+      },
+      {
+        "name": "atom-select-list",
+        "version": "0.7.1",
+        "path": "node_modules/atom-select-list/src/select-list-view.js"
+      },
+      {
+        "name": "base64-js",
+        "version": "0.0.8",
+        "path": "node_modules/base64-js/lib/b64.js"
+      },
+      {
+        "name": "bl",
+        "version": "1.2.2",
+        "path": "node_modules/bl/bl.js"
+      },
+      {
+        "name": "buffer",
+        "version": "3.6.0",
+        "path": "node_modules/buffer/index.js"
+      },
+      {
+        "name": "buffer-alloc",
+        "version": "1.2.0",
+        "path": "node_modules/buffer-alloc/index.js"
+      },
+      {
+        "name": "buffer-alloc-unsafe",
+        "version": "1.1.0",
+        "path": "node_modules/buffer-alloc-unsafe/index.js"
+      },
+      {
+        "name": "buffer-crc32",
+        "version": "0.2.13",
+        "path": "node_modules/buffer-crc32/index.js"
+      },
+      {
+        "name": "buffer-fill",
+        "version": "1.0.0",
+        "path": "node_modules/buffer-fill/index.js"
+      },
+      {
+        "name": "commander",
+        "version": "2.8.1",
+        "path": "node_modules/commander/index.js"
+      },
+      {
+        "name": "core-util-is",
+        "version": "1.0.2",
+        "path": "node_modules/core-util-is/lib/util.js"
+      },
+      {
+        "name": "decompress",
+        "version": "4.2.0",
+        "path": "node_modules/decompress/index.js"
+      },
+      {
+        "name": "decompress-tar",
+        "version": "4.1.1",
+        "path": "node_modules/decompress-tar/index.js"
+      },
+      {
+        "name": "decompress-tarbz2",
+        "version": "4.1.1",
+        "path": "node_modules/decompress-tarbz2/index.js"
+      },
+      {
+        "name": "file-type",
+        "version": "6.2.0",
+        "path": "node_modules/decompress-tarbz2/node_modules/file-type/index.js"
+      },
+      {
+        "name": "decompress-targz",
+        "version": "4.1.1",
+        "path": "node_modules/decompress-targz/index.js"
+      },
+      {
+        "name": "decompress-unzip",
+        "version": "4.0.1",
+        "path": "node_modules/decompress-unzip/index.js"
+      },
+      {
+        "name": "file-type",
+        "version": "3.9.0",
+        "path": "node_modules/decompress-unzip/node_modules/file-type/index.js"
+      },
+      {
+        "name": "end-of-stream",
+        "version": "1.4.1",
+        "path": "node_modules/end-of-stream/index.js"
+      },
+      {
+        "name": "etch",
+        "version": "0.12.8",
+        "path": "node_modules/etch/lib/index.js"
+      },
+      {
+        "name": "fd-slicer",
+        "version": "1.1.0",
+        "path": "node_modules/fd-slicer/index.js"
+      },
+      {
+        "name": "file-type",
+        "version": "5.2.0",
+        "path": "node_modules/file-type/index.js"
+      },
+      {
+        "name": "fs-constants",
+        "version": "1.0.0",
+        "path": "node_modules/fs-constants/index.js"
+      },
+      {
+        "name": "fuzzaldrin",
+        "version": "2.1.0",
+        "path": "node_modules/fuzzaldrin/lib/fuzzaldrin.js"
+      },
+      {
+        "name": "fuzzaldrin-plus",
+        "version": "0.6.0",
+        "path": "node_modules/fuzzaldrin-plus/lib/fuzzaldrin.js"
+      },
+      {
+        "name": "get-stream",
+        "version": "2.3.1",
+        "path": "node_modules/get-stream/index.js"
+      },
+      {
+        "name": "graceful-fs",
+        "version": "4.1.11",
+        "path": "node_modules/graceful-fs/graceful-fs.js"
+      },
+      {
+        "name": "graceful-readlink",
+        "version": "1.0.1",
+        "path": "node_modules/graceful-readlink/index.js"
+      },
+      {
+        "name": "ieee754",
+        "version": "1.1.12",
+        "path": "node_modules/ieee754/index.js"
+      },
+      {
+        "name": "inherits",
+        "version": "2.0.3",
+        "path": "node_modules/inherits/inherits.js"
+      },
+      {
+        "name": "is-natural-number",
+        "version": "4.0.1",
+        "path": "node_modules/is-natural-number/index.js"
+      },
+      {
+        "name": "is-stream",
+        "version": "1.1.0",
+        "path": "node_modules/is-stream/index.js"
+      },
+      {
+        "name": "isarray",
+        "version": "1.0.0",
+        "path": "node_modules/isarray/index.js"
+      },
+      {
+        "name": "make-dir",
+        "version": "1.3.0",
+        "path": "node_modules/make-dir/index.js"
+      },
+      {
+        "name": "pify",
+        "version": "3.0.0",
+        "path": "node_modules/make-dir/node_modules/pify/index.js"
+      },
+      {
+        "name": "object-assign",
+        "version": "4.1.1",
+        "path": "node_modules/object-assign/index.js"
+      },
+      {
+        "name": "once",
+        "version": "1.4.0",
+        "path": "node_modules/once/once.js"
+      },
+      {
+        "name": "pend",
+        "version": "1.2.0",
+        "path": "node_modules/pend/index.js"
+      },
+      {
+        "name": "pify",
+        "version": "2.3.0",
+        "path": "node_modules/pify/index.js"
+      },
+      {
+        "name": "pinkie",
+        "version": "2.0.4",
+        "path": "node_modules/pinkie/index.js"
+      },
+      {
+        "name": "pinkie-promise",
+        "version": "2.0.1",
+        "path": "node_modules/pinkie-promise/index.js"
+      },
+      {
+        "name": "process-nextick-args",
+        "version": "2.0.0",
+        "path": "node_modules/process-nextick-args/index.js"
+      },
+      {
+        "name": "readable-stream",
+        "version": "2.3.6",
+        "path": "node_modules/readable-stream/readable.js"
+      },
+      {
+        "name": "safe-buffer",
+        "version": "5.1.2",
+        "path": "node_modules/safe-buffer/index.js"
+      },
+      {
+        "name": "seek-bzip",
+        "version": "1.0.5",
+        "path": "node_modules/seek-bzip/lib/index.js"
+      },
+      {
+        "name": "string_decoder",
+        "version": "1.1.1",
+        "path": "node_modules/string_decoder/lib/string_decoder.js"
+      },
+      {
+        "name": "strip-dirs",
+        "version": "2.1.0",
+        "path": "node_modules/strip-dirs/index.js"
+      },
+      {
+        "name": "tar-stream",
+        "version": "1.6.1",
+        "path": "node_modules/tar-stream/index.js"
+      },
+      {
+        "name": "through",
+        "version": "2.3.8",
+        "path": "node_modules/through/index.js"
+      },
+      {
+        "name": "to-buffer",
+        "version": "1.1.1",
+        "path": "node_modules/to-buffer/index.js"
+      },
+      {
+        "name": "unbzip2-stream",
+        "version": "1.2.5",
+        "path": "node_modules/unbzip2-stream/index.js"
+      },
+      {
+        "name": "util-deprecate",
+        "version": "1.0.2",
+        "path": "node_modules/util-deprecate/node.js"
+      },
+      {
+        "name": "vscode-jsonrpc",
+        "version": "3.6.2",
+        "path": "node_modules/vscode-jsonrpc/lib/main.js"
+      },
+      {
+        "name": "vscode-languageserver-protocol",
+        "version": "3.6.0-next.5",
+        "path": "node_modules/vscode-languageserver-protocol/lib/main.js"
+      },
+      {
+        "name": "vscode-languageserver-types",
+        "version": "3.10.0",
+        "path": "node_modules/vscode-languageserver-types/lib/umd/main.js"
+      },
+      {
+        "name": "wrappy",
+        "version": "1.0.2",
+        "path": "node_modules/wrappy/wrappy.js"
+      },
+      {
+        "name": "xtend",
+        "version": "4.0.1",
+        "path": "node_modules/xtend/immutable.js"
+      },
+      {
+        "name": "yauzl",
+        "version": "2.10.0",
+        "path": "node_modules/yauzl/index.js"
+      }
+    ],
+    "extensions": {
+      ".js": [
+        "lib/main.js",
+        "lib/providers/actionProviderComposer.js",
+        "lib/providers/autoImportActionProvider.js",
+        "lib/providers/index.js",
+        "lib/providers/removeUnusedImportActionProvider.js",
+        "lib/views/importSuggestionListView.js",
+        "node_modules/atom-languageclient/build/lib/adapters/apply-edit-adapter.js",
+        "node_modules/atom-languageclient/build/lib/adapters/autocomplete-adapter.js",
+        "node_modules/atom-languageclient/build/lib/adapters/code-action-adapter.js",
+        "node_modules/atom-languageclient/build/lib/adapters/code-format-adapter.js",
+        "node_modules/atom-languageclient/build/lib/adapters/code-highlight-adapter.js",
+        "node_modules/atom-languageclient/build/lib/adapters/datatip-adapter.js",
+        "node_modules/atom-languageclient/build/lib/adapters/definition-adapter.js",
+        "node_modules/atom-languageclient/build/lib/adapters/document-sync-adapter.js",
+        "node_modules/atom-languageclient/build/lib/adapters/find-references-adapter.js",
+        "node_modules/atom-languageclient/build/lib/adapters/linter-push-v2-adapter.js",
+        "node_modules/atom-languageclient/build/lib/adapters/logging-console-adapter.js",
+        "node_modules/atom-languageclient/build/lib/adapters/notifications-adapter.js",
+        "node_modules/atom-languageclient/build/lib/adapters/outline-view-adapter.js",
+        "node_modules/atom-languageclient/build/lib/adapters/signature-help-adapter.js",
+        "node_modules/atom-languageclient/build/lib/auto-languageclient.js",
+        "node_modules/atom-languageclient/build/lib/convert.js",
+        "node_modules/atom-languageclient/build/lib/download-file.js",
+        "node_modules/atom-languageclient/build/lib/languageclient.js",
+        "node_modules/atom-languageclient/build/lib/logger.js",
+        "node_modules/atom-languageclient/build/lib/main.js",
+        "node_modules/atom-languageclient/build/lib/server-manager.js",
+        "node_modules/atom-languageclient/build/lib/utils.js",
+        "node_modules/atom-select-list/src/select-list-view.js",
+        "node_modules/base64-js/bench/bench.js",
+        "node_modules/base64-js/lib/b64.js",
+        "node_modules/bl/bl.js",
+        "node_modules/buffer/bin/download-node-tests.js",
+        "node_modules/buffer/bin/test.js",
+        "node_modules/buffer/index.js",
+        "node_modules/buffer-alloc/index.js",
+        "node_modules/buffer-alloc-unsafe/index.js",
+        "node_modules/buffer-crc32/index.js",
+        "node_modules/buffer-fill/index.js",
+        "node_modules/commander/index.js",
+        "node_modules/core-util-is/lib/util.js",
+        "node_modules/core-util-is/test.js",
+        "node_modules/decompress/index.js",
+        "node_modules/decompress-tar/index.js",
+        "node_modules/decompress-tarbz2/index.js",
+        "node_modules/decompress-tarbz2/node_modules/file-type/index.js",
+        "node_modules/decompress-targz/index.js",
+        "node_modules/decompress-unzip/index.js",
+        "node_modules/decompress-unzip/node_modules/file-type/index.js",
+        "node_modules/end-of-stream/index.js",
+        "node_modules/etch/dist/component-helpers.js",
+        "node_modules/etch/dist/default-scheduler.js",
+        "node_modules/etch/dist/dom.js",
+        "node_modules/etch/dist/event-listener-props.js",
+        "node_modules/etch/dist/index.js",
+        "node_modules/etch/dist/patch.js",
+        "node_modules/etch/dist/render.js",
+        "node_modules/etch/dist/scheduler-assignment.js",
+        "node_modules/etch/dist/svg-attribute-translations.js",
+        "node_modules/etch/dist/svg-tags.js",
+        "node_modules/etch/dist/update-props.js",
+        "node_modules/etch/lib/component-helpers.js",
+        "node_modules/etch/lib/default-scheduler.js",
+        "node_modules/etch/lib/dom.js",
+        "node_modules/etch/lib/event-listener-props.js",
+        "node_modules/etch/lib/index.js",
+        "node_modules/etch/lib/patch.js",
+        "node_modules/etch/lib/render.js",
+        "node_modules/etch/lib/scheduler-assignment.js",
+        "node_modules/etch/lib/svg-attribute-translations.js",
+        "node_modules/etch/lib/svg-tags.js",
+        "node_modules/etch/lib/update-props.js",
+        "node_modules/fd-slicer/index.js",
+        "node_modules/file-type/index.js",
+        "node_modules/fs-constants/browser.js",
+        "node_modules/fs-constants/index.js",
+        "node_modules/fuzzaldrin/lib/filter.js",
+        "node_modules/fuzzaldrin/lib/fuzzaldrin.js",
+        "node_modules/fuzzaldrin/lib/matcher.js",
+        "node_modules/fuzzaldrin/lib/scorer.js",
+        "node_modules/fuzzaldrin-plus/dist-browser/fuzzaldrin-plus.js",
+        "node_modules/fuzzaldrin-plus/dist-browser/fuzzaldrin-plus.min.js",
+        "node_modules/fuzzaldrin-plus/lib/filter.js",
+        "node_modules/fuzzaldrin-plus/lib/fuzzaldrin.js",
+        "node_modules/fuzzaldrin-plus/lib/matcher.js",
+        "node_modules/fuzzaldrin-plus/lib/pathScorer.js",
+        "node_modules/fuzzaldrin-plus/lib/query.js",
+        "node_modules/fuzzaldrin-plus/lib/scorer.js",
+        "node_modules/get-stream/buffer-stream.js",
+        "node_modules/get-stream/index.js",
+        "node_modules/graceful-fs/fs.js",
+        "node_modules/graceful-fs/graceful-fs.js",
+        "node_modules/graceful-fs/legacy-streams.js",
+        "node_modules/graceful-fs/polyfills.js",
+        "node_modules/graceful-readlink/index.js",
+        "node_modules/ieee754/index.js",
+        "node_modules/inherits/inherits.js",
+        "node_modules/inherits/inherits_browser.js",
+        "node_modules/is-natural-number/index.js",
+        "node_modules/is-natural-number/index.jsnext.js",
+        "node_modules/is-stream/index.js",
+        "node_modules/isarray/index.js",
+        "node_modules/isarray/test.js",
+        "node_modules/make-dir/index.js",
+        "node_modules/make-dir/node_modules/pify/index.js",
+        "node_modules/object-assign/index.js",
+        "node_modules/once/once.js",
+        "node_modules/pend/index.js",
+        "node_modules/pend/test.js",
+        "node_modules/pify/index.js",
+        "node_modules/pinkie/index.js",
+        "node_modules/pinkie-promise/index.js",
+        "node_modules/process-nextick-args/index.js",
+        "node_modules/readable-stream/duplex-browser.js",
+        "node_modules/readable-stream/duplex.js",
+        "node_modules/readable-stream/lib/_stream_duplex.js",
+        "node_modules/readable-stream/lib/_stream_passthrough.js",
+        "node_modules/readable-stream/lib/_stream_readable.js",
+        "node_modules/readable-stream/lib/_stream_transform.js",
+        "node_modules/readable-stream/lib/_stream_writable.js",
+        "node_modules/readable-stream/lib/internal/streams/BufferList.js",
+        "node_modules/readable-stream/lib/internal/streams/destroy.js",
+        "node_modules/readable-stream/lib/internal/streams/stream-browser.js",
+        "node_modules/readable-stream/lib/internal/streams/stream.js",
+        "node_modules/readable-stream/passthrough.js",
+        "node_modules/readable-stream/readable-browser.js",
+        "node_modules/readable-stream/readable.js",
+        "node_modules/readable-stream/transform.js",
+        "node_modules/readable-stream/writable-browser.js",
+        "node_modules/readable-stream/writable.js",
+        "node_modules/safe-buffer/index.js",
+        "node_modules/seek-bzip/lib/bitreader.js",
+        "node_modules/seek-bzip/lib/crc32.js",
+        "node_modules/seek-bzip/lib/index.js",
+        "node_modules/seek-bzip/lib/stream.js",
+        "node_modules/string_decoder/lib/string_decoder.js",
+        "node_modules/strip-dirs/index.js",
+        "node_modules/tar-stream/extract.js",
+        "node_modules/tar-stream/headers.js",
+        "node_modules/tar-stream/index.js",
+        "node_modules/tar-stream/pack.js",
+        "node_modules/through/index.js",
+        "node_modules/to-buffer/index.js",
+        "node_modules/to-buffer/test.js",
+        "node_modules/unbzip2-stream/dist/unbzip2-stream.min.js",
+        "node_modules/unbzip2-stream/index.js",
+        "node_modules/unbzip2-stream/lib/bit_iterator.js",
+        "node_modules/unbzip2-stream/lib/bzip2.js",
+        "node_modules/util-deprecate/browser.js",
+        "node_modules/util-deprecate/node.js",
+        "node_modules/vscode-jsonrpc/lib/cancellation.js",
+        "node_modules/vscode-jsonrpc/lib/events.js",
+        "node_modules/vscode-jsonrpc/lib/is.js",
+        "node_modules/vscode-jsonrpc/lib/linkedMap.js",
+        "node_modules/vscode-jsonrpc/lib/main.js",
+        "node_modules/vscode-jsonrpc/lib/messageReader.js",
+        "node_modules/vscode-jsonrpc/lib/messageWriter.js",
+        "node_modules/vscode-jsonrpc/lib/messages.js",
+        "node_modules/vscode-jsonrpc/lib/pipeSupport.js",
+        "node_modules/vscode-jsonrpc/lib/socketSupport.js",
+        "node_modules/vscode-jsonrpc/lib/thenable.js",
+        "node_modules/vscode-languageserver-protocol/lib/main.js",
+        "node_modules/vscode-languageserver-protocol/lib/protocol.colorProvider.proposed.js",
+        "node_modules/vscode-languageserver-protocol/lib/protocol.configuration.proposed.js",
+        "node_modules/vscode-languageserver-protocol/lib/protocol.implementation.proposed.js",
+        "node_modules/vscode-languageserver-protocol/lib/protocol.js",
+        "node_modules/vscode-languageserver-protocol/lib/protocol.typeDefinition.proposed.js",
+        "node_modules/vscode-languageserver-protocol/lib/protocol.workspaceFolders.proposed.js",
+        "node_modules/vscode-languageserver-protocol/lib/utils/is.js",
+        "node_modules/vscode-languageserver-types/lib/esm/main.js",
+        "node_modules/vscode-languageserver-types/lib/umd/main.js",
+        "node_modules/wrappy/wrappy.js",
+        "node_modules/xtend/immutable.js",
+        "node_modules/xtend/mutable.js",
+        "node_modules/xtend/test.js",
+        "node_modules/yauzl/index.js"
+      ],
+      ".json": [
+        "node_modules/@types/atom/package.json",
+        "node_modules/@types/node/package.json",
+        "node_modules/atom-languageclient/package.json",
+        "node_modules/atom-languageclient/tsconfig.json",
+        "node_modules/atom-languageclient/tslint.json",
+        "node_modules/atom-select-list/package-lock.json",
+        "node_modules/atom-select-list/package.json",
+        "node_modules/base64-js/package.json",
+        "node_modules/bl/package.json",
+        "node_modules/buffer/package.json",
+        "node_modules/buffer-alloc/package.json",
+        "node_modules/buffer-alloc-unsafe/package.json",
+        "node_modules/buffer-crc32/package.json",
+        "node_modules/buffer-fill/package.json",
+        "node_modules/commander/package.json",
+        "node_modules/core-util-is/package.json",
+        "node_modules/decompress/package.json",
+        "node_modules/decompress-tar/package.json",
+        "node_modules/decompress-tarbz2/node_modules/file-type/package.json",
+        "node_modules/decompress-tarbz2/package.json",
+        "node_modules/decompress-targz/package.json",
+        "node_modules/decompress-unzip/node_modules/file-type/package.json",
+        "node_modules/decompress-unzip/package.json",
+        "node_modules/end-of-stream/package.json",
+        "node_modules/etch/package.json",
+        "node_modules/fd-slicer/package.json",
+        "node_modules/file-type/package.json",
+        "node_modules/fs-constants/package.json",
+        "node_modules/fuzzaldrin/package.json",
+        "node_modules/fuzzaldrin-plus/bower.json",
+        "node_modules/fuzzaldrin-plus/demo/movies.json",
+        "node_modules/fuzzaldrin-plus/package.json",
+        "node_modules/get-stream/package.json",
+        "node_modules/graceful-fs/package.json",
+        "node_modules/graceful-readlink/package.json",
+        "node_modules/ieee754/package.json",
+        "node_modules/inherits/package.json",
+        "node_modules/is-natural-number/package.json",
+        "node_modules/is-stream/package.json",
+        "node_modules/isarray/component.json",
+        "node_modules/isarray/package.json",
+        "node_modules/make-dir/node_modules/pify/package.json",
+        "node_modules/make-dir/package.json",
+        "node_modules/object-assign/package.json",
+        "node_modules/once/package.json",
+        "node_modules/pend/package.json",
+        "node_modules/pify/package.json",
+        "node_modules/pinkie/package.json",
+        "node_modules/pinkie-promise/package.json",
+        "node_modules/process-nextick-args/package.json",
+        "node_modules/readable-stream/package.json",
+        "node_modules/safe-buffer/package.json",
+        "node_modules/seek-bzip/package.json",
+        "node_modules/string_decoder/package.json",
+        "node_modules/strip-dirs/package.json",
+        "node_modules/tar-stream/package.json",
+        "node_modules/through/package.json",
+        "node_modules/to-buffer/package.json",
+        "node_modules/unbzip2-stream/package.json",
+        "node_modules/util-deprecate/package.json",
+        "node_modules/vscode-jsonrpc/package.json",
+        "node_modules/vscode-languageserver-protocol/package.json",
+        "node_modules/vscode-languageserver-types/package.json",
+        "node_modules/vscode-languageserver-types/tsconfig.esm.json",
+        "node_modules/wrappy/package.json",
+        "node_modules/xtend/package.json",
+        "node_modules/yauzl/package.json",
+        "package.json"
+      ]
+    },
+    "folders": [
+      {
+        "paths": [
+          "lib",
+          "lib/providers",
+          "lib/views",
+          "",
+          "test",
+          "test/helpers"
+        ],
+        "dependencies": {
+          "atom-languageclient": "0.9.5",
+          "atom-select-list": "^0.7.1",
+          "decompress": "^4.2.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/atom-languageclient/build/lib/adapters",
+          "node_modules/atom-languageclient/build/lib",
+          "node_modules/atom-languageclient/build/test/adapters",
+          "node_modules/atom-languageclient/build/test",
+          "node_modules/atom-languageclient"
+        ],
+        "dependencies": {
+          "@types/atom": "^1.24.1",
+          "@types/node": "^8.0.41",
+          "fuzzaldrin-plus": "^0.6.0",
+          "vscode-jsonrpc": "^3.5.0",
+          "vscode-languageserver-protocol": "3.6.0-next.5",
+          "vscode-languageserver-types": "^3.6.0-next.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/atom-select-list",
+          "node_modules/atom-select-list/src",
+          "node_modules/atom-select-list/test"
+        ],
+        "dependencies": {
+          "etch": "^0.12.6",
+          "fuzzaldrin": "^2.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/bl",
+          "node_modules/bl/test"
+        ],
+        "dependencies": {
+          "readable-stream": "^2.3.5",
+          "safe-buffer": "^5.1.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/buffer/bin",
+          "node_modules/buffer",
+          "node_modules/buffer/test",
+          "node_modules/buffer/test/node",
+          "node_modules/buffer/test/node-es6"
+        ],
+        "dependencies": {
+          "base64-js": "0.0.8",
+          "ieee754": "^1.1.4",
+          "isarray": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/buffer-alloc"
+        ],
+        "dependencies": {
+          "buffer-alloc-unsafe": "^1.1.0",
+          "buffer-fill": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/commander"
+        ],
+        "dependencies": {
+          "graceful-readlink": ">= 1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/decompress"
+        ],
+        "dependencies": {
+          "decompress-tar": "^4.0.0",
+          "decompress-tarbz2": "^4.0.0",
+          "decompress-targz": "^4.0.0",
+          "decompress-unzip": "^4.0.1",
+          "graceful-fs": "^4.1.10",
+          "make-dir": "^1.0.0",
+          "pify": "^2.3.0",
+          "strip-dirs": "^2.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/decompress-tar"
+        ],
+        "dependencies": {
+          "file-type": "^5.2.0",
+          "is-stream": "^1.1.0",
+          "tar-stream": "^1.5.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/decompress-tarbz2"
+        ],
+        "dependencies": {
+          "decompress-tar": "^4.1.0",
+          "file-type": "^6.1.0",
+          "is-stream": "^1.1.0",
+          "seek-bzip": "^1.0.5",
+          "unbzip2-stream": "^1.0.9"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/decompress-targz"
+        ],
+        "dependencies": {
+          "decompress-tar": "^4.1.1",
+          "file-type": "^5.2.0",
+          "is-stream": "^1.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/decompress-unzip"
+        ],
+        "dependencies": {
+          "file-type": "^3.8.0",
+          "get-stream": "^2.2.0",
+          "pify": "^2.3.0",
+          "yauzl": "^2.4.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/end-of-stream"
+        ],
+        "dependencies": {
+          "once": "^1.4.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/fd-slicer",
+          "node_modules/fd-slicer/test"
+        ],
+        "dependencies": {
+          "pend": "~1.2.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/get-stream"
+        ],
+        "dependencies": {
+          "object-assign": "^4.0.1",
+          "pinkie-promise": "^2.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/make-dir"
+        ],
+        "dependencies": {
+          "pify": "^3.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/once"
+        ],
+        "dependencies": {
+          "wrappy": "1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/pinkie-promise"
+        ],
+        "dependencies": {
+          "pinkie": "^2.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/readable-stream",
+          "node_modules/readable-stream/lib",
+          "node_modules/readable-stream/lib/internal/streams"
+        ],
+        "dependencies": {
+          "core-util-is": "~1.0.0",
+          "inherits": "~2.0.3",
+          "isarray": "~1.0.0",
+          "process-nextick-args": "~2.0.0",
+          "safe-buffer": "~5.1.1",
+          "string_decoder": "~1.1.1",
+          "util-deprecate": "~1.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/seek-bzip/lib",
+          "node_modules/seek-bzip"
+        ],
+        "dependencies": {
+          "commander": "~2.8.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/string_decoder/lib",
+          "node_modules/string_decoder"
+        ],
+        "dependencies": {
+          "safe-buffer": "~5.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/strip-dirs"
+        ],
+        "dependencies": {
+          "is-natural-number": "^4.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/tar-stream"
+        ],
+        "dependencies": {
+          "bl": "^1.0.0",
+          "buffer-alloc": "^1.1.0",
+          "end-of-stream": "^1.0.0",
+          "fs-constants": "^1.0.0",
+          "readable-stream": "^2.3.0",
+          "to-buffer": "^1.1.0",
+          "xtend": "^4.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/unbzip2-stream/dist",
+          "node_modules/unbzip2-stream",
+          "node_modules/unbzip2-stream/lib"
+        ],
+        "dependencies": {
+          "buffer": "^3.0.1",
+          "through": "^2.3.6"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/vscode-languageserver-protocol/lib",
+          "node_modules/vscode-languageserver-protocol/lib/utils",
+          "node_modules/vscode-languageserver-protocol"
+        ],
+        "dependencies": {
+          "vscode-jsonrpc": "^3.6.0-next.1",
+          "vscode-languageserver-types": "^3.6.0-next.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/yauzl"
+        ],
+        "dependencies": {
+          "buffer-crc32": "~0.2.3",
+          "fd-slicer": "~1.1.0"
+        }
+      }
+    ]
+  }
+}

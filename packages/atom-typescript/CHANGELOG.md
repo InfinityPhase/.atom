@@ -1,3 +1,76 @@
+## 12.6.3
+
+-   Ensure text edits are always applied in reverse location order
+
+    Fixes rename-refactor on TypeScript 3.0
+
+-   Fix spelling of “TypeScript” (Jakob Krigovsky)
+
+## 12.6.2
+
+-   Normalize file path when searching for existing typescript buffer
+
+## 12.6.1
+
+-   Fix [#1437](https://github.com/TypeStrong/atom-typescript/issues/1437)
+
+## 12.6.0
+
+### New features
+
+-   Added `typescript:organize-imports` command (needs recent enough TypeScript)
+
+-   Added option for suppressing all diagnostics
+
+-   Added an option to ignore unused\* suggestion diagnostics specifically
+
+    See [#1433](https://github.com/TypeStrong/atom-typescript/issues/1433)
+    for context.
+
+    Long story short, TypeScript 2.9 will report unused locals/parameters/etc
+    regardless of tsconfig settings, just with different severity. This option
+    lets you disable those lower-serverity diagnostics specifically.
+
+### Changes
+
+-   Updated dependencies. In particular, bundled TypeScript version bumped to
+    v2.9.2
+
+### Maintenence
+
+-   Refactored commands code
+-   Added order to settings
+
+## 12.5.3
+
+-   Configurable tooltip delay
+-   Removed unneeded tooltip delay
+
+## 12.5.2
+
+-   Allow refactors for empty selection
+-   Clean-up client code a bit
+
+## 12.5.1
+
+### Fixes
+
+-   Don't ignore insertText autocompletion suggestions
+-   Minor bugfixes in initializeConfig command
+
+### Maintenence
+
+-   Enabled no-shadowed-variable tslint diagnostic
+-   Enabled no-unsafe-any tslint diagnostic
+
+## 12.5.0
+
+-   Fix #1423 (unhandled error when tsserver is terminated)
+-   Bundle TypeScript 2.8
+-   Add tslint-language-service to set-up.
+-   Clean up client code
+-   Add "suggestion diagnostics"
+
 ## 12.4.1
 
 -   Fix autocomplete and codefix for tree-sitter

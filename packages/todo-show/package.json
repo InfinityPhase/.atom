@@ -1,24 +1,25 @@
 {
-  "_from": "file:/tmp/d-11838-15064-1jwoz89.qs7q/package.tgz",
-  "_id": "todo-show@2.3.0",
+  "_from": "file:/tmp/d-118726-32143-1l29nyq.i1gq/package.tgz",
+  "_id": "todo-show@2.3.2",
   "_inBundle": false,
-  "_integrity": "sha512-fEIlFFNyRhsSKMElrQ2ABjQqWS1TO5wHB3YMCWOvYd640HUBHvI7VA/1zmLTZU0qt12Q65j9iYe/6nK05tTywQ==",
+  "_integrity": "sha512-GZrXGg4D7qgx/eEl/JIxvbg/2p8fJityr/eMK7jhwxuUk6bm/1AU8mltgFvOKoZXfJUP8Jr0m+BYfo8p5l6Rfw==",
   "_location": "/todo-show",
   "_phantomChildren": {},
   "_requested": {
     "type": "file",
-    "where": "/tmp/apm-install-dir-11838-15064-jxr4mu.382eg",
-    "raw": "/tmp/d-11838-15064-1jwoz89.qs7q/package.tgz",
-    "rawSpec": "/tmp/d-11838-15064-1jwoz89.qs7q/package.tgz",
-    "saveSpec": "file:/tmp/d-11838-15064-1jwoz89.qs7q/package.tgz",
-    "fetchSpec": "/tmp/d-11838-15064-1jwoz89.qs7q/package.tgz"
+    "where": "/tmp/apm-install-dir-118726-32143-f5sixn.rorum",
+    "raw": "/tmp/d-118726-32143-1l29nyq.i1gq/package.tgz",
+    "rawSpec": "/tmp/d-118726-32143-1l29nyq.i1gq/package.tgz",
+    "saveSpec": "file:/tmp/d-118726-32143-1l29nyq.i1gq/package.tgz",
+    "fetchSpec": "/tmp/d-118726-32143-1l29nyq.i1gq/package.tgz"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "/tmp/d-11838-15064-1jwoz89.qs7q/package.tgz",
-  "_spec": "/tmp/d-11838-15064-1jwoz89.qs7q/package.tgz",
-  "_where": "/tmp/apm-install-dir-11838-15064-jxr4mu.382eg",
+  "_resolved": "/tmp/d-118726-32143-1l29nyq.i1gq/package.tgz",
+  "_shasum": "b24537d53e46bc69cc6608d4c4ec03ac8ad5b0f1",
+  "_spec": "/tmp/d-118726-32143-1l29nyq.i1gq/package.tgz",
+  "_where": "/tmp/apm-install-dir-118726-32143-f5sixn.rorum",
   "bugs": {
     "url": "https://github.com/mrodalgaard/atom-todo-show/issues"
   },
@@ -142,7 +143,7 @@
     "type": "git",
     "url": "git+https://github.com/mrodalgaard/atom-todo-show.git"
   },
-  "version": "2.3.0",
+  "version": "2.3.2",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -183,7 +184,7 @@
       },
       {
         "name": "es5-ext",
-        "version": "0.10.42",
+        "version": "0.10.46",
         "path": "node_modules/es5-ext/index.js"
       },
       {
@@ -218,7 +219,7 @@
       },
       {
         "name": "event-kit",
-        "version": "2.4.0",
+        "version": "2.5.0",
         "path": "node_modules/event-kit/lib/event-kit.js"
       },
       {
@@ -333,12 +334,12 @@
       },
       {
         "name": "underscore",
-        "version": "1.6.0",
+        "version": "1.8.3",
         "path": "node_modules/underscore/underscore.js"
       },
       {
         "name": "underscore-plus",
-        "version": "1.6.6",
+        "version": "1.6.8",
         "path": "node_modules/underscore-plus/lib/underscore-plus.js"
       },
       {
@@ -662,6 +663,10 @@
         "node_modules/es5-ext/object/ensure-plain-function.js",
         "node_modules/es5-ext/object/ensure-promise.js",
         "node_modules/es5-ext/object/ensure-thenable.js",
+        "node_modules/es5-ext/object/entries/implement.js",
+        "node_modules/es5-ext/object/entries/index.js",
+        "node_modules/es5-ext/object/entries/is-implemented.js",
+        "node_modules/es5-ext/object/entries/shim.js",
         "node_modules/es5-ext/object/eq.js",
         "node_modules/es5-ext/object/every.js",
         "node_modules/es5-ext/object/filter.js",
@@ -1024,9 +1029,7 @@
       {
         "paths": [
           "lib",
-          "",
-          "spec/fixtures/sample1",
-          "spec"
+          ""
         ],
         "dependencies": {
           "atom-space-pen-views": "^2.0.3",
@@ -1135,6 +1138,7 @@
           "node_modules/es5-ext/number/min-safe-integer",
           "node_modules/es5-ext/object",
           "node_modules/es5-ext/object/assign",
+          "node_modules/es5-ext/object/entries",
           "node_modules/es5-ext/object/keys",
           "node_modules/es5-ext/object/set-prototype-of",
           "node_modules/es5-ext/promise/#",
@@ -1214,6 +1218,7 @@
           "node_modules/es5-ext/test/number/min-safe-integer",
           "node_modules/es5-ext/test/object",
           "node_modules/es5-ext/test/object/assign",
+          "node_modules/es5-ext/test/object/entries",
           "node_modules/es5-ext/test/object/keys",
           "node_modules/es5-ext/test/object/set-prototype-of",
           "node_modules/es5-ext/test/promise/#",
@@ -1428,7 +1433,7 @@
           "node_modules/underscore-plus"
         ],
         "dependencies": {
-          "underscore": "~1.6.0"
+          "underscore": "~1.8.3"
         }
       }
     ]

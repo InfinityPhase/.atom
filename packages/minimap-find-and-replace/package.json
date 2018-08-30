@@ -1,0 +1,71 @@
+{
+  "_from": "file:/tmp/d-118620-15504-12klkco.hy6gj/package.tgz",
+  "_id": "minimap-find-and-replace@4.5.2",
+  "_inBundle": false,
+  "_integrity": "sha512-5h8mQ3gfVZG+V1bK6Kokq34lgOQAFPnI8mvO6K9WB3YnHWqxP3Ov7QoTbOUw98dO7C1ebesm66IdiZTtx0xydQ==",
+  "_location": "/minimap-find-and-replace",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "file",
+    "where": "/tmp/apm-install-dir-118620-15504-1jfz2xt.lgg9",
+    "raw": "/tmp/d-118620-15504-12klkco.hy6gj/package.tgz",
+    "rawSpec": "/tmp/d-118620-15504-12klkco.hy6gj/package.tgz",
+    "saveSpec": "file:/tmp/d-118620-15504-12klkco.hy6gj/package.tgz",
+    "fetchSpec": "/tmp/d-118620-15504-12klkco.hy6gj/package.tgz"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "/tmp/d-118620-15504-12klkco.hy6gj/package.tgz",
+  "_shasum": "b7f2d462efcfc9bc3ea9e29720a779fbd7805d58",
+  "_spec": "/tmp/d-118620-15504-12klkco.hy6gj/package.tgz",
+  "_where": "/tmp/apm-install-dir-118620-15504-1jfz2xt.lgg9",
+  "author": {
+    "name": "Cédric Néhémie",
+    "email": "cedric.nehemie@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/atom-minimap/minimap-find-and-replace/issues"
+  },
+  "bundleDependencies": false,
+  "consumedServices": {
+    "minimap": {
+      "versions": {
+        "1.0.0": "consumeMinimapServiceV1"
+      }
+    }
+  },
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Minimap bindings for the find and replace package",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "homepage": "https://github.com/atom-minimap/minimap-find-and-replace#readme",
+  "keywords": [
+    "minimap",
+    "find-and-replace"
+  ],
+  "license": "MIT",
+  "main": "./lib/minimap-find-and-replace",
+  "name": "minimap-find-and-replace",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atom-minimap/minimap-find-and-replace.git"
+  },
+  "version": "4.5.2",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".coffee": [
+        "lib/minimap-find-and-replace-binding.coffee",
+        "lib/minimap-find-and-replace.coffee"
+      ],
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

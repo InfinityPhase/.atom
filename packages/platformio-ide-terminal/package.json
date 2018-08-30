@@ -1,24 +1,25 @@
 {
-  "_from": "file:/tmp/d-118220-22963-7bd2q0.qb9vv/package.tgz",
-  "_id": "platformio-ide-terminal@2.8.1",
+  "_from": "file:/tmp/d-118721-26583-kfktfs.xpw/package.tgz",
+  "_id": "platformio-ide-terminal@2.8.4",
   "_inBundle": false,
-  "_integrity": "sha512-rdCY9Qv8SvpunL/AvQZbTFU09pQZxgYMNmECV99jkgKwCDgcgtoi0KWGWY9KOJPYjtuoK3gJ+FoAQPkseRa+3w==",
+  "_integrity": "sha512-gqI06OFPP1NuNTRsV298MrhfsDVE1dFwzauyoqUydBGQ8kwt7cJQ4784I856aLdfUM6qExK3pjFe9qdXZebcHQ==",
   "_location": "/platformio-ide-terminal",
   "_phantomChildren": {},
   "_requested": {
     "type": "file",
-    "where": "/tmp/apm-install-dir-118220-22963-1ownvmk.fnzh",
-    "raw": "/tmp/d-118220-22963-7bd2q0.qb9vv/package.tgz",
-    "rawSpec": "/tmp/d-118220-22963-7bd2q0.qb9vv/package.tgz",
-    "saveSpec": "file:/tmp/d-118220-22963-7bd2q0.qb9vv/package.tgz",
-    "fetchSpec": "/tmp/d-118220-22963-7bd2q0.qb9vv/package.tgz"
+    "where": "/tmp/apm-install-dir-118721-26583-b0ztll.cfmr4",
+    "raw": "/tmp/d-118721-26583-kfktfs.xpw/package.tgz",
+    "rawSpec": "/tmp/d-118721-26583-kfktfs.xpw/package.tgz",
+    "saveSpec": "file:/tmp/d-118721-26583-kfktfs.xpw/package.tgz",
+    "fetchSpec": "/tmp/d-118721-26583-kfktfs.xpw/package.tgz"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "/tmp/d-118220-22963-7bd2q0.qb9vv/package.tgz",
-  "_spec": "/tmp/d-118220-22963-7bd2q0.qb9vv/package.tgz",
-  "_where": "/tmp/apm-install-dir-118220-22963-1ownvmk.fnzh",
+  "_resolved": "/tmp/d-118721-26583-kfktfs.xpw/package.tgz",
+  "_shasum": "0c757212efe8fb0cf02bde9b96ccbc9348a4e3e2",
+  "_spec": "/tmp/d-118721-26583-kfktfs.xpw/package.tgz",
+  "_where": "/tmp/apm-install-dir-118721-26583-b0ztll.cfmr4",
   "activationHooks": [
     "core:loaded-shell-environment"
   ],
@@ -49,7 +50,7 @@
     }
   ],
   "dependencies": {
-    "atom-space-pen-views": "^2.1.0",
+    "atom-space-pen-views": "^2.2.0",
     "pty.js": "https://github.com/platformio/pty.js/tarball/prebuilt",
     "term.js": "https://github.com/jeremyramin/term.js/tarball/master",
     "underscore": "^1.8.3"
@@ -95,7 +96,7 @@
     "type": "git",
     "url": "git+https://github.com/platformio/platformio-atom-ide-terminal.git"
   },
-  "version": "2.8.1",
+  "version": "2.8.4",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -116,7 +117,7 @@
       },
       {
         "name": "es5-ext",
-        "version": "0.10.41",
+        "version": "0.10.46",
         "path": "node_modules/es5-ext/index.js"
       },
       {
@@ -206,17 +207,17 @@
       },
       {
         "name": "underscore",
-        "version": "1.8.3",
+        "version": "1.9.1",
         "path": "node_modules/underscore/underscore.js"
       },
       {
         "name": "underscore-plus",
-        "version": "1.6.6",
+        "version": "1.6.8",
         "path": "node_modules/underscore-plus/lib/underscore-plus.js"
       },
       {
         "name": "underscore",
-        "version": "1.6.0",
+        "version": "1.8.3",
         "path": "node_modules/underscore-plus/node_modules/underscore/underscore.js"
       }
     ],
@@ -536,6 +537,10 @@
         "node_modules/es5-ext/object/ensure-plain-function.js",
         "node_modules/es5-ext/object/ensure-promise.js",
         "node_modules/es5-ext/object/ensure-thenable.js",
+        "node_modules/es5-ext/object/entries/implement.js",
+        "node_modules/es5-ext/object/entries/index.js",
+        "node_modules/es5-ext/object/entries/is-implemented.js",
+        "node_modules/es5-ext/object/entries/shim.js",
         "node_modules/es5-ext/object/eq.js",
         "node_modules/es5-ext/object/every.js",
         "node_modules/es5-ext/object/filter.js",
@@ -858,7 +863,7 @@
           "spec"
         ],
         "dependencies": {
-          "atom-space-pen-views": "^2.1.0",
+          "atom-space-pen-views": "^2.2.0",
           "underscore": "^1.8.3"
         }
       },
@@ -951,6 +956,7 @@
           "node_modules/es5-ext/number/min-safe-integer",
           "node_modules/es5-ext/object",
           "node_modules/es5-ext/object/assign",
+          "node_modules/es5-ext/object/entries",
           "node_modules/es5-ext/object/keys",
           "node_modules/es5-ext/object/set-prototype-of",
           "node_modules/es5-ext/promise/#",
@@ -1030,6 +1036,7 @@
           "node_modules/es5-ext/test/number/min-safe-integer",
           "node_modules/es5-ext/test/object",
           "node_modules/es5-ext/test/object/assign",
+          "node_modules/es5-ext/test/object/entries",
           "node_modules/es5-ext/test/object/keys",
           "node_modules/es5-ext/test/object/set-prototype-of",
           "node_modules/es5-ext/test/promise/#",
@@ -1176,7 +1183,7 @@
           "node_modules/underscore-plus"
         ],
         "dependencies": {
-          "underscore": "~1.6.0"
+          "underscore": "~1.8.3"
         }
       }
     ]

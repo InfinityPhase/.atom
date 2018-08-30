@@ -2,124 +2,135 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const atom_1 = require("atom");
 const callbacks_1 = require("./callbacks");
-const events_1 = require("events");
 const stream_1 = require("stream");
 const byline = require("byline");
 // Set this to true to start tsserver with node --inspect
 const INSPECT_TSSERVER = false;
-const commandWithResponse = new Set([
-    "compileOnSaveAffectedFileList",
-    "compileOnSaveEmitFile",
-    "completionEntryDetails",
-    "completions",
-    "configure",
-    "definition",
-    "format",
-    "getCodeFixes",
-    "getSupportedCodeFixes",
-    "occurrences",
-    "projectInfo",
-    "quickinfo",
-    "references",
-    "reload",
-    "rename",
-    "navtree",
-    "navto",
-    "getApplicableRefactors",
-    "getEditsForRefactor",
-]);
+const commandWithResponseMap = {
+    compileOnSaveAffectedFileList: true,
+    compileOnSaveEmitFile: true,
+    completionEntryDetails: true,
+    completions: true,
+    configure: true,
+    definition: true,
+    format: true,
+    getCodeFixes: true,
+    getSupportedCodeFixes: true,
+    occurrences: true,
+    projectInfo: true,
+    quickinfo: true,
+    references: true,
+    reload: true,
+    rename: true,
+    navtree: true,
+    navto: true,
+    getApplicableRefactors: true,
+    getEditsForRefactor: true,
+    ping: true,
+    organizeImports: true,
+};
+const commandWithResponse = new Set(Object.keys(commandWithResponseMap));
 class TypescriptServiceClient {
     constructor(tsServerPath, version) {
         this.tsServerPath = tsServerPath;
         this.version = version;
-        this.events = new events_1.EventEmitter();
+        this.emitter = new atom_1.Emitter();
         this.seq = 0;
+        this.running = false;
+        this.lastStderrOutput = "";
+        this.exitHandler = (reject) => (err) => {
+            console.error("tsserver: ", err);
+            this.callbacks.rejectAll(err);
+            this.emitter.dispose();
+            reject(err);
+            this.running = false;
+            setImmediate(() => {
+                let detail = err.message;
+                if (this.lastStderrOutput) {
+                    detail = `Last output from tsserver:\n${this.lastStderrOutput}\n\n${detail}`;
+                }
+                atom.notifications.addError("TypeScript quit unexpectedly", {
+                    detail,
+                    stack: err.stack,
+                    dismissable: true,
+                });
+            });
+        };
         this.emitPendingRequests = (pending) => {
-            this.events.emit("pendingRequestsChange", pending);
+            this.emitter.emit("pendingRequestsChange", pending);
         };
         this.onMessage = (res) => {
-            if (isResponse(res)) {
-                const req = this.callbacks.remove(res.request_seq);
-                if (req) {
-                    if (window.atom_typescript_debug) {
-                        console.log("received response for", res.command, "in", Date.now() - req.started, "ms", "with data", res.body);
-                    }
-                    if (res.success) {
-                        req.resolve(res);
-                    }
-                    else {
-                        req.reject(new Error(res.message));
-                    }
-                }
-                else {
-                    console.warn("unexpected response:", res);
-                }
-            }
-            else if (isEvent(res)) {
-                if (window.atom_typescript_debug) {
-                    console.log("received event", res);
-                }
-                this.events.emit(res.event, res.body);
-            }
+            if (res.type === "response")
+                this.onResponse(res);
+            else
+                this.onEvent(res);
         };
         this.callbacks = new callbacks_1.Callbacks(this.emitPendingRequests);
+        this.serverPromise = this.startServer();
     }
     async execute(command, args) {
-        if (!this.serverPromise) {
+        if (!this.running) {
             throw new Error("Server is not running");
         }
-        return this.sendRequest(await this.serverPromise, command, args, commandWithResponse.has(command));
-    }
-    startServer() {
-        if (!this.serverPromise) {
-            let lastStderrOutput;
-            let reject;
-            const exitHandler = (result) => {
-                const err = typeof result === "number" ? new Error("exited with code: " + result) : result;
-                console.error("tsserver: ", err);
-                this.callbacks.rejectAll(err);
-                reject(err);
-                this.serverPromise = undefined;
-                setImmediate(() => {
-                    let detail = err.message;
-                    if (lastStderrOutput) {
-                        detail = `Last output from tsserver:\n${lastStderrOutput}\n\n${detail}`;
-                    }
-                    atom.notifications.addError("Typescript quit unexpectedly", {
-                        detail,
-                        stack: err.stack,
-                        dismissable: true,
-                    });
-                });
-            };
-            return (this.serverPromise = new Promise((resolve, pReject) => {
-                reject = pReject;
-                if (window.atom_typescript_debug) {
-                    console.log("starting", this.tsServerPath);
-                }
-                const cp = startServer(this.tsServerPath);
-                cp.once("error", exitHandler);
-                cp.once("exit", exitHandler);
-                // Pipe both stdout and stderr appropriately
-                messageStream(cp.stdout).on("data", this.onMessage);
-                cp.stderr.on("data", data => {
-                    console.warn("tsserver stderr:", (lastStderrOutput = data.toString()));
-                });
-                // We send an unknown command to verify that the server is working.
-                this.sendRequest(cp, "ping", null, true).then(() => resolve(cp), () => resolve(cp));
-            }));
-        }
-        else {
-            throw new Error(`Server already started: ${this.tsServerPath}`);
-        }
+        return this.sendRequest(await this.serverPromise, command, args);
     }
     on(name, listener) {
-        this.events.on(name, listener);
-        return () => {
-            this.events.removeListener(name, listener);
-        };
+        return this.emitter.on(name, listener);
     }
-    sendRequest(cp, command, args, expectResponse) {
+    startServer() {
+        return new Promise((resolve, reject) => {
+            this.running = true;
+            if (window.atom_typescript_debug) {
+                console.log("starting", this.tsServerPath);
+            }
+            const cp = startServer(this.tsServerPath);
+            const h = this.exitHandler(reject);
+            if (!cp) {
+                h(new Error("ChildProcess failed to start"));
+                return;
+            }
+            cp.once("error", h);
+            cp.once("exit", (code, signal) => {
+                if (code !== null)
+                    h(new Error(`exited with code: ${code}`));
+                else if (signal !== null)
+                    h(new Error(`terminated on signal: ${signal}`));
+            });
+            // Pipe both stdout and stderr appropriately
+            messageStream(cp.stdout).on("data", this.onMessage);
+            cp.stderr.on("data", data => {
+                console.warn("tsserver stderr:", (this.lastStderrOutput = data.toString()));
+            });
+            this.sendRequest(cp, "ping", undefined).then(() => resolve(cp), () => resolve(cp));
+        });
+    }
+    onResponse(res) {
+        const req = this.callbacks.remove(res.request_seq);
+        if (req) {
+            if (window.atom_typescript_debug) {
+                console.log("received response for", res.command, "in", Date.now() - req.started, "ms", "with data", res.body);
+            }
+            if (res.success) {
+                req.resolve(res);
+            }
+            else {
+                req.reject(new Error(res.message));
+            }
+        }
+        else {
+            console.warn("unexpected response:", res);
+        }
+    }
+    onEvent(res) {
+        if (window.atom_typescript_debug) {
+            console.log("received event", res);
+        }
+        // tslint:disable-next-line:no-unsafe-any
+        if (res.body)
+            this.emitter.emit(res.event, res.body);
+    }
+    async sendRequest(cp, command, args) {
+        const expectResponse = commandWithResponse.has(command);
         const req = {
             seq: this.seq++,
             command,
@@ -145,6 +156,9 @@ class TypescriptServiceClient {
         if (expectResponse) {
             return this.callbacks.add(req.seq, command);
         }
+        else {
+            return undefined;
+        }
     }
 }
 exports.TypescriptServiceClient = TypescriptServiceClient;
@@ -163,12 +177,6 @@ function startServer(tsServerPath) {
             args: tsServerArgs,
         }).process;
     }
-}
-function isEvent(res) {
-    return res.type === "event";
-}
-function isResponse(res) {
-    return res.type === "response";
 }
 function messageStream(input) {
     return input.pipe(byline()).pipe(new MessageStream());

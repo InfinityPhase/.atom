@@ -14,17 +14,15 @@ import * as pioNodeHelpers from 'platformio-node-helpers';
 import * as utils from './utils';
 
 import { BusyConsumer, beginBusy, endBusy } from './services/busy';
+import { CompositeDisposable, Directory, File } from 'atom';
 import { TerminalConsumer, runCmdsInTerminal } from './services/terminal';
 import { checkIDEUpdates, reinstallIDE } from './installer/ide';
 
 import BuildProvider from './services/build';
-import { CompositeDisposable } from 'atom';
 import { DebuggerConsumer } from './services/debugger';
 import HomeView from './home/view';
 import InstallationManager from './installer/manager';
-import ProjectObserver from './project/observer';
 import { ToolbarConsumer } from './services/toolbar';
-import { getActivePioProject } from './project/helpers';
 import path from 'path';
 import { command as serialMonitor } from './serial-monitor/command';
 
@@ -45,7 +43,6 @@ class PlatformIOIDEPackage {
 
     // misc
     this._reinstallIDETimer = null;
-    this._projectObservable = null;
   }
 
   activate() {
@@ -68,7 +65,7 @@ class PlatformIOIDEPackage {
       return;
     }
     this.setupCommands();
-    this._projectObservable = new ProjectObserver();
+    this.initProjectIndexer();
     await this.startPIOHome();
     checkIDEUpdates();
   }
@@ -106,9 +103,76 @@ class PlatformIOIDEPackage {
     try {
       await pioNodeHelpers.home.ensureServerStarted();
     } catch (err) {
-      console.error(err);
+      utils.notifyError('Start PIO Home Server', err);
     }
     atom.workspace.open('platformio-home://');
+  }
+
+  initProjectIndexer() {
+    const observer = new pioNodeHelpers.project.ProjectObserver({
+      createFileSystemWatcher: (filePath) => {
+        const fsFile = new File(filePath);
+        return {
+          dispose: () => {},
+          onDidCreate: () => {
+            return {dispose: () => {}};
+          },
+          onDidChange: (callback) => {
+            if (fsFile.existsSync) {
+              return fsFile.onDidChange(callback);
+            }
+            return {dispose: () => {}};
+          },
+          onDidDelete: (callback) => {
+            if (fsFile.existsSync) {
+              return fsFile.onDidDelete(callback);
+            }
+            return {dispose: () => {}};
+          }
+        };
+      },
+      createDirSystemWatcher: (dir) => {
+        const fsDir = new Directory(dir);
+        const result = {
+          dispose: () => {},
+          onDidCreate: (callback) => {
+            if (fsDir.existsSync) {
+              return fsDir.onDidChange(callback);
+            }
+            return {dispose: () => {}};
+          }
+        };
+        result.onDidChange = result.onDidCreate;
+        result.onDidDelete = result.onDidCreate;
+        return result;
+      },
+      withProgress: async (task) => {
+        beginBusy('PlatformIO: IntelliSense Index Rebuild');
+        await task();
+        endBusy();
+      },
+      useBuiltinPIOCore: atom.config.get('platformio-ide.useBuiltinPIOCore')
+    });
+
+    const doUpdate = () => {
+      observer.update(atom.config.get('platformio-ide.autoRebuildAutocompleteIndex') ? atom.project.getPaths() : []);
+    };
+
+    this.subscriptions.add(
+      observer,
+      atom.project.onDidChangePaths(doUpdate.bind(this)),
+      atom.config.observe(
+        'platformio-ide.autoRebuildAutocompleteIndex',
+        doUpdate.bind(this)
+      ),
+      atom.commands.add('atom-workspace', {
+        'platformio-ide:maintenance.rebuild-index': () => {
+          doUpdate(); // re-scan PIO Projects
+          observer.rebuildIndex();
+        }
+      })
+    );
+    doUpdate();
   }
 
   setupCommands() {
@@ -116,7 +180,7 @@ class PlatformIOIDEPackage {
       'platformio-ide:maintenance.open-terminal': () => runCmdsInTerminal(['pio --help']),
       'platformio-ide:maintenance.serial-monitor': () => serialMonitor(),
       'platformio-ide:maintenance.serial-ports': () => runCmdsInTerminal(['pio device list']),
-      'platformio-ide:maintenance.install-commands': () => maintenance.installCommands(),
+      'platformio-ide:maintenance.install-commands': () => utils.openUrl('http://docs.platformio.org/page/faq.html#install-platformio-core-shell-commands'),
       'platformio-ide:maintenance.update-platformio': () => runCmdsInTerminal(['platformio update']),
       'platformio-ide:maintenance.upgrade-platformio': () => runCmdsInTerminal(['platformio upgrade']),
 
@@ -187,7 +251,7 @@ class PlatformIOIDEPackage {
 
     function makeRunTargetCommand(target) {
       return function() {
-        const p = getActivePioProject();
+        const p = utils.getActivePioProject();
         if (!p) {
           atom.notifications.addWarning('Can not find active PlatformIO project.', {
             detail: 'Make sure that an opened project you are trying to rebuid is ' +
@@ -265,9 +329,6 @@ class PlatformIOIDEPackage {
     this.subscriptions.dispose();
     if (this.highlightSubscriptions) {
       this.highlightSubscriptions.dispose();
-    }
-    if (this._projectObservable) {
-      this._projectObservable.dispose();
     }
     pioNodeHelpers.home.shutdownServer();
   }

@@ -1,24 +1,25 @@
 {
-  "_from": "file:/tmp/d-118321-24473-1b9uwd6.61a7/package.tgz",
-  "_id": "language-powershell@4.0.0",
+  "_from": "file:/tmp/d-118417-12846-kbu5ih.1kef9/package.tgz",
+  "_id": "language-powershell@4.0.1",
   "_inBundle": false,
-  "_integrity": "sha512-l4/7n5YvR+Wy8x9+o7p49ur/Vya3w9c5y29Uo1T49aK8xtt1M0niF3XTK7T2875nZnFosR/HgJ/YxPRGqEl8Ng==",
+  "_integrity": "sha512-GENOzLIFiuhOl69zdushZsUHYqRWa3jlo8HUIPAvqmbuIAzTRnzZMEizxZqgCyFFLH6nfJDxmhPbq+MS0imyEA==",
   "_location": "/language-powershell",
   "_phantomChildren": {},
   "_requested": {
     "type": "file",
-    "where": "/tmp/apm-install-dir-118321-24473-18g5khy.7igo",
-    "raw": "/tmp/d-118321-24473-1b9uwd6.61a7/package.tgz",
-    "rawSpec": "/tmp/d-118321-24473-1b9uwd6.61a7/package.tgz",
-    "saveSpec": "file:/tmp/d-118321-24473-1b9uwd6.61a7/package.tgz",
-    "fetchSpec": "/tmp/d-118321-24473-1b9uwd6.61a7/package.tgz"
+    "where": "/tmp/apm-install-dir-118417-12846-1ppdwpn.m0r7l",
+    "raw": "/tmp/d-118417-12846-kbu5ih.1kef9/package.tgz",
+    "rawSpec": "/tmp/d-118417-12846-kbu5ih.1kef9/package.tgz",
+    "saveSpec": "file:/tmp/d-118417-12846-kbu5ih.1kef9/package.tgz",
+    "fetchSpec": "/tmp/d-118417-12846-kbu5ih.1kef9/package.tgz"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "/tmp/d-118321-24473-1b9uwd6.61a7/package.tgz",
-  "_spec": "/tmp/d-118321-24473-1b9uwd6.61a7/package.tgz",
-  "_where": "/tmp/apm-install-dir-118321-24473-18g5khy.7igo",
+  "_resolved": "/tmp/d-118417-12846-kbu5ih.1kef9/package.tgz",
+  "_shasum": "a96828ba11567fd88d2cb8871718d4d78947b104",
+  "_spec": "/tmp/d-118417-12846-kbu5ih.1kef9/package.tgz",
+  "_where": "/tmp/apm-install-dir-118417-12846-1ppdwpn.m0r7l",
   "bugs": {
     "url": "https://github.com/jugglingnutcase/language-powershell/issues"
   },
@@ -49,7 +50,7 @@
   "scripts": {
     "convert": "node scripts/convert-grammar.js"
   },
-  "version": "4.0.0",
+  "version": "4.0.1",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [],

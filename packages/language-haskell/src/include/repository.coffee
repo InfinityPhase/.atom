@@ -1,6 +1,6 @@
 prelude = require './prelude'
 pragmas = require './pragmas'
-{ balanced, floatPattern, controlKeywords, otherKeywords } = require './util'
+{ balanced, guarded, floatPattern, controlKeywords, otherKeywords } = require './util'
 
 module.exports=
   block_comment:
@@ -105,6 +105,7 @@ module.exports=
             match: /\.\./
             name: 'keyword.operator.wildcard.haskell'
           }
+          {include: '#infix_op'}
         ]
       ,
         include: '#infix_op'
@@ -126,7 +127,7 @@ module.exports=
   function_type_declaration:
     name: 'meta.function.type-declaration.haskell'
     begin: /{indentBlockStart}{functionTypeDeclaration}/
-    end: '{indentBlockEnd}|(?=(?<!{operatorChar})(<-|=)(?!{operatorChar}))'
+    end: '{indentBlockEnd}|(?={scoped_assignment})'
     contentName: 'meta.type-signature.haskell'
     beginCaptures:
       2:
@@ -141,7 +142,7 @@ module.exports=
   multiline_type_declaration:
     name: 'meta.multiline.type-declaration.haskell'
     begin: /{indentBlockStart}({doubleColonOperator})/
-    end: '{indentBlockCont}|(?=(?<!{operatorChar})(<-|=)(?!{operatorChar}))'
+    end: '{indentBlockCont}|(?={scoped_assignment})'
     contentName: 'meta.type-signature.haskell'
     beginCaptures:
       2: name: 'keyword.other.double-colon.haskell'
@@ -227,10 +228,10 @@ module.exports=
         include: '#string'
       ,
         name: 'keyword.other.arrow.haskell'
-        match: '(?<!{operatorChar})(->|→)(?!{operatorChar})'
+        match: guarded '->|→'
       ,
         name: 'keyword.other.big-arrow.haskell'
-        match: '(?<!{operatorChar})(=>|⇒)(?!{operatorChar})'
+        match: guarded '=>|⇒'
       ,
         match: "'({operator})"
         name: 'keyword.operator.promoted.haskell'
@@ -404,7 +405,7 @@ module.exports=
     ]
   data_decl:
     name: 'meta.declaration.type.data.haskell'
-    begin: /{indentBlockStart}(data|newtype)\s+((?:(?!=|where).)*)/
+    begin: /{indentBlockStart}(data|newtype)\s+{data_def}/
     end: /{indentBlockEnd}/
     beginCaptures:
       2: name: 'keyword.other.data.haskell'
@@ -525,16 +526,15 @@ module.exports=
       ]
   ,
     match: '({doubleColonOperator})'+
-        '(.*?)'+
-        '(?=({-|(?<!{operatorChar})(--|<-|=))(?!{operatorChar})|$)'
+        "((?:(?!{-|#{guarded '<-|=|--+'}|$).|{-.*?-})*)"
     captures:
       1: name: 'keyword.other.double-colon.haskell'
       2: {name: 'meta.type-signature.haskell', patterns: [include: '#type_signature']}
   ]
   scoped_type_override:
     match: '{indentBlockStart}{functionTypeDeclaration}'+
-        '((?:(?!(?:(?<!{operatorChar})--|{-)).)*)'+
-        '(?<!{operatorChar})(<-|=)(?!{operatorChar})'
+        "((?:(?!{-|#{guarded '--+'}).|{-.*?-})*)"+
+        '({scoped_assignment})'
     captures:
       2: patterns: [include: '#identifier']
       3: name: 'keyword.other.double-colon.haskell'

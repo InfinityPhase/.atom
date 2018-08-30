@@ -17,6 +17,7 @@ import {SymbolsViewController} from "./atom/views/symbols/symbolsViewController"
 import {EditorPositionHistoryManager} from "./atom/editorPositionHistoryManager"
 import {State} from "./packageState"
 import {TextSpan, spanToRange} from "./atom/utils"
+import * as path from "path"
 
 export type WithTypescriptBuffer = <T>(
   filePath: string,
@@ -31,7 +32,7 @@ export interface Edit {
   textChanges: ReadonlyArray<Readonly<Change>>
 }
 export type Edits = ReadonlyArray<Readonly<Edit>>
-export type ApplyEdits = (edits: Edits, reverse?: boolean) => Promise<void>
+export type ApplyEdits = (edits: Edits) => Promise<void>
 
 export class PluginManager {
   // components
@@ -93,7 +94,7 @@ export class PluginManager {
 
   public consumeLinter(register: (opts: {name: string}) => IndieDelegate) {
     const linter = register({
-      name: "Typescript",
+      name: "TypeScript",
     })
 
     this.errorPusher.setLinter(linter)
@@ -158,11 +159,12 @@ export class PluginManager {
   public getStatusPanel = () => this.statusPanel
 
   public withTypescriptBuffer: WithTypescriptBuffer = async (filePath, action) => {
-    const pane = this.panes.find(p => p.buffer.getPath() === filePath)
+    const normalizedFilePath = path.normalize(filePath)
+    const pane = this.panes.find(p => p.buffer.getPath() === normalizedFilePath)
     if (pane) return action(pane.buffer)
 
     // no open buffer
-    const buffer = await Atom.TextBuffer.load(filePath)
+    const buffer = await Atom.TextBuffer.load(normalizedFilePath)
     try {
       const tsbuffer = TypescriptBuffer.create(buffer, fp => this.clientResolver.get(fp))
       return await action(tsbuffer)
@@ -172,14 +174,16 @@ export class PluginManager {
     }
   }
 
-  public applyEdits: ApplyEdits = async (edits, reverse = true) =>
+  public applyEdits: ApplyEdits = async edits =>
     void Promise.all(
       edits.map(edit =>
         this.withTypescriptBuffer(edit.fileName, async buffer => {
           buffer.buffer.transact(() => {
-            const changes = reverse ? edit.textChanges.slice().reverse() : edit.textChanges
+            const changes = edit.textChanges
+              .map(e => ({range: spanToRange(e), newText: e.newText}))
+              .sort((a, b) => b.range.compare(a.range))
             for (const change of changes) {
-              buffer.buffer.setTextInRange(spanToRange(change), change.newText)
+              buffer.buffer.setTextInRange(change.range, change.newText)
             }
           })
           return buffer.flush()

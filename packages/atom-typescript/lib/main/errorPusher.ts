@@ -65,32 +65,48 @@ export class ErrorPusher {
 
   private pushErrors() {
     const errors: Message[] = []
+    const config = atom.config.get("atom-typescript")
 
-    for (const fileErrors of this.errors.values()) {
-      for (const [filePath, diagnostics] of fileErrors) {
-        for (const diagnostic of diagnostics) {
-          // Add a bit of extra validation that we have the necessary locations since linter v2
-          // does not allow range-less messages anymore. This happens with configFileDiagnostics.
-          let {start, end} = diagnostic
-          // tslint:disable-next-line: strict-boolean-expressions
-          if (!start || !end) {
-            start = end = {line: 1, offset: 1}
+    if (!config.suppressAllDiagnostics) {
+      for (const fileErrors of this.errors.values()) {
+        for (const [filePath, diagnostics] of fileErrors) {
+          for (const diagnostic of diagnostics) {
+            if (config.ignoredDiagnosticCodes.includes(`${diagnostic.code}`)) continue
+            if (config.ignoreUnusedSuggestionDiagnostics && diagnostic.reportsUnnecessary) continue
+            // Add a bit of extra validation that we have the necessary locations since linter v2
+            // does not allow range-less messages anymore. This happens with configFileDiagnostics.
+            let {start, end} = diagnostic as Partial<Diagnostic>
+            if (!start || !end) {
+              start = end = {line: 1, offset: 1}
+            }
+
+            errors.push({
+              severity: this.getSeverity(diagnostic),
+              excerpt: diagnostic.text,
+              location: {
+                file: filePath,
+                position: locationsToRange(start, end),
+              },
+            })
           }
-
-          errors.push({
-            severity: this.unusedAsInfo && diagnostic.code === 6133 ? "info" : "error",
-            excerpt: diagnostic.text,
-            location: {
-              file: filePath,
-              position: locationsToRange(start, end),
-            },
-          })
         }
       }
     }
 
     if (this.linter) {
       this.linter.setAllMessages(errors)
+    }
+  }
+
+  private getSeverity(diagnostic: Diagnostic) {
+    if (this.unusedAsInfo && diagnostic.code === 6133) return "info"
+    switch (diagnostic.category) {
+      case "error":
+        return "error"
+      case "warning":
+        return "warning"
+      default:
+        return "info"
     }
   }
 }

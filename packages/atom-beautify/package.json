@@ -1,24 +1,25 @@
 {
-  "_from": "file:/tmp/d-118210-16101-18cggj3.hjr3/package.tgz",
-  "_id": "atom-beautify@0.32.2",
+  "_from": "file:/tmp/d-118721-26540-ee552o.x1xts/package.tgz",
+  "_id": "atom-beautify@0.33.0",
   "_inBundle": false,
-  "_integrity": "sha512-oTHLeSvIItbRmemgu1S9WQfIlLLEnas+p2w0sLCQ3InHKFyaViASDLs8jeBrvFj6e+ii+FLh9TkhEw/BQFQkoA==",
+  "_integrity": "sha512-ZOpeQz6kTjgSneepu7eQUda8+Y0gBm8rWwWGkj3M/QKYh3cpJ6i0XzRycZ8Ww+Rhusl+/oO9z+X/Hlt1R03oZw==",
   "_location": "/atom-beautify",
   "_phantomChildren": {},
   "_requested": {
     "type": "file",
-    "where": "/tmp/apm-install-dir-118210-16101-7yq8v6.wjogo",
-    "raw": "/tmp/d-118210-16101-18cggj3.hjr3/package.tgz",
-    "rawSpec": "/tmp/d-118210-16101-18cggj3.hjr3/package.tgz",
-    "saveSpec": "file:/tmp/d-118210-16101-18cggj3.hjr3/package.tgz",
-    "fetchSpec": "/tmp/d-118210-16101-18cggj3.hjr3/package.tgz"
+    "where": "/tmp/apm-install-dir-118721-26540-4qkfuj.jncrk",
+    "raw": "/tmp/d-118721-26540-ee552o.x1xts/package.tgz",
+    "rawSpec": "/tmp/d-118721-26540-ee552o.x1xts/package.tgz",
+    "saveSpec": "file:/tmp/d-118721-26540-ee552o.x1xts/package.tgz",
+    "fetchSpec": "/tmp/d-118721-26540-ee552o.x1xts/package.tgz"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "/tmp/d-118210-16101-18cggj3.hjr3/package.tgz",
-  "_spec": "/tmp/d-118210-16101-18cggj3.hjr3/package.tgz",
-  "_where": "/tmp/apm-install-dir-118210-16101-7yq8v6.wjogo",
+  "_resolved": "/tmp/d-118721-26540-ee552o.x1xts/package.tgz",
+  "_shasum": "703523e78f85fb8221ad65ee28da45bacdc48c80",
+  "_spec": "/tmp/d-118721-26540-ee552o.x1xts/package.tgz",
+  "_where": "/tmp/apm-install-dir-118721-26540-4qkfuj.jncrk",
   "activationCommands": {
     "atom-workspace": [
       "atom-beautify:help-debug-editor",
@@ -96,7 +97,8 @@
       "atom-beautify:beautify-language-tsx",
       "atom-beautify:beautify-language-verilog",
       "atom-beautify:beautify-language-vhdl",
-      "atom-beautify:beautify-language-gn"
+      "atom-beautify:beautify-language-gn",
+      "atom-beautify:beautify-language-blade"
     ],
     ".tree-view .file .name": [
       "atom-beautify:beautify-file"
@@ -489,7 +491,8 @@
     "emacs verilog mode",
     "vhdl",
     "vhdl beautifier",
-    "gn"
+    "gn",
+    "blade"
   ],
   "license": "MIT",
   "main": "./src/beautify",
@@ -497,7 +500,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Glavin001/atom-beautify.git"
+    "url": "git+https://github.com/Glavin001/atom-beautify.git"
   },
   "scripts": {
     "build-options": "node script/build-options.js",
@@ -508,7 +511,7 @@
     "pretest": "npm run lint",
     "test": "atom --test spec"
   },
-  "version": "0.32.2",
+  "version": "0.33.0",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -519,7 +522,7 @@
       },
       {
         "name": "acorn",
-        "version": "5.5.3",
+        "version": "5.7.1",
         "path": "node_modules/acorn/dist/acorn.js"
       },
       {
@@ -569,7 +572,7 @@
       },
       {
         "name": "ansi-escapes",
-        "version": "3.0.0",
+        "version": "3.1.0",
         "path": "node_modules/ansi-escapes/index.js"
       },
       {
@@ -598,11 +601,6 @@
         "path": "node_modules/argparse/index.js"
       },
       {
-        "name": "array-iterate",
-        "version": "1.1.1",
-        "path": "node_modules/array-iterate/index.js"
-      },
-      {
         "name": "array-union",
         "version": "1.0.2",
         "path": "node_modules/array-union/index.js"
@@ -619,7 +617,7 @@
       },
       {
         "name": "asn1",
-        "version": "0.2.3",
+        "version": "0.2.4",
         "path": "node_modules/asn1/lib/index.js"
       },
       {
@@ -634,7 +632,7 @@
       },
       {
         "name": "async",
-        "version": "2.6.0",
+        "version": "2.6.1",
         "path": "node_modules/async/dist/async.js"
       },
       {
@@ -659,7 +657,7 @@
       },
       {
         "name": "aws4",
-        "version": "1.6.0",
+        "version": "1.8.0",
         "path": "node_modules/aws4/aws4.js"
       },
       {
@@ -699,7 +697,7 @@
       },
       {
         "name": "bail",
-        "version": "1.0.2",
+        "version": "1.0.3",
         "path": "node_modules/bail/index.js"
       },
       {
@@ -709,7 +707,7 @@
       },
       {
         "name": "bcrypt-pbkdf",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "path": "node_modules/bcrypt-pbkdf/index.js"
       },
       {
@@ -733,6 +731,11 @@
         "path": "node_modules/browser-refresh-client/lib/index.js"
       },
       {
+        "name": "buffer-from",
+        "version": "1.1.1",
+        "path": "node_modules/buffer-from/index.js"
+      },
+      {
         "name": "caller-path",
         "version": "0.1.0",
         "path": "node_modules/caller-path/index.js"
@@ -754,7 +757,7 @@
       },
       {
         "name": "ccount",
-        "version": "1.0.2",
+        "version": "1.0.3",
         "path": "node_modules/ccount/index.js"
       },
       {
@@ -779,22 +782,22 @@
       },
       {
         "name": "character-entities",
-        "version": "1.2.1",
+        "version": "1.2.2",
         "path": "node_modules/character-entities/index.json"
       },
       {
         "name": "character-entities-html4",
-        "version": "1.1.1",
+        "version": "1.1.2",
         "path": "node_modules/character-entities-html4/index.json"
       },
       {
         "name": "character-entities-legacy",
-        "version": "1.1.1",
+        "version": "1.1.2",
         "path": "node_modules/character-entities-legacy/index.json"
       },
       {
         "name": "character-reference-invalid",
-        "version": "1.1.1",
+        "version": "1.1.2",
         "path": "node_modules/character-reference-invalid/index.json"
       },
       {
@@ -869,17 +872,17 @@
       },
       {
         "name": "collapse-white-space",
-        "version": "1.0.3",
+        "version": "1.0.4",
         "path": "node_modules/collapse-white-space/index.js"
       },
       {
         "name": "color-convert",
-        "version": "1.9.1",
+        "version": "1.9.2",
         "path": "node_modules/color-convert/index.js"
       },
       {
         "name": "color-name",
-        "version": "1.1.3",
+        "version": "1.1.1",
         "path": "node_modules/color-name/index.js"
       },
       {
@@ -894,7 +897,7 @@
       },
       {
         "name": "commander",
-        "version": "2.15.0",
+        "version": "2.17.1",
         "path": "node_modules/commander/index.js"
       },
       {
@@ -909,7 +912,7 @@
       },
       {
         "name": "complain",
-        "version": "1.2.0",
+        "version": "1.3.0",
         "path": "node_modules/complain/index.js"
       },
       {
@@ -919,7 +922,7 @@
       },
       {
         "name": "concat-stream",
-        "version": "1.6.1",
+        "version": "1.6.2",
         "path": "node_modules/concat-stream/index.js"
       },
       {
@@ -929,7 +932,7 @@
       },
       {
         "name": "core-js",
-        "version": "2.5.3",
+        "version": "2.5.7",
         "path": "node_modules/core-js/index.js"
       },
       {
@@ -944,7 +947,7 @@
       },
       {
         "name": "lru-cache",
-        "version": "4.1.2",
+        "version": "4.1.3",
         "path": "node_modules/cross-spawn/node_modules/lru-cache/index.js"
       },
       {
@@ -1044,7 +1047,7 @@
       },
       {
         "name": "deep-extend",
-        "version": "0.4.2",
+        "version": "0.6.0",
         "path": "node_modules/deep-extend/lib/deep-extend.js"
       },
       {
@@ -1114,7 +1117,7 @@
       },
       {
         "name": "ecc-jsbn",
-        "version": "0.1.1",
+        "version": "0.1.2",
         "path": "node_modules/ecc-jsbn/index.js"
       },
       {
@@ -1124,7 +1127,7 @@
       },
       {
         "name": "lru-cache",
-        "version": "4.1.2",
+        "version": "4.1.3",
         "path": "node_modules/editorconfig/node_modules/lru-cache/index.js"
       },
       {
@@ -1139,12 +1142,12 @@
       },
       {
         "name": "error-stack-parser",
-        "version": "2.0.1",
+        "version": "2.0.2",
         "path": "node_modules/error-stack-parser/error-stack-parser.js"
       },
       {
         "name": "es5-ext",
-        "version": "0.10.40",
+        "version": "0.10.46",
         "path": "node_modules/es5-ext/index.js"
       },
       {
@@ -1184,7 +1187,7 @@
       },
       {
         "name": "escodegen",
-        "version": "1.9.1",
+        "version": "1.11.0",
         "path": "node_modules/escodegen/escodegen.js"
       },
       {
@@ -1199,7 +1202,7 @@
       },
       {
         "name": "eslint",
-        "version": "4.18.2",
+        "version": "4.19.1",
         "path": "node_modules/eslint/lib/api.js"
       },
       {
@@ -1219,12 +1222,12 @@
       },
       {
         "name": "chalk",
-        "version": "2.3.2",
+        "version": "2.4.1",
         "path": "node_modules/eslint/node_modules/chalk/index.js"
       },
       {
         "name": "esprima",
-        "version": "4.0.0",
+        "version": "4.0.1",
         "path": "node_modules/eslint/node_modules/esprima/dist/esprima.js"
       },
       {
@@ -1234,7 +1237,7 @@
       },
       {
         "name": "js-yaml",
-        "version": "3.11.0",
+        "version": "3.12.0",
         "path": "node_modules/eslint/node_modules/js-yaml/index.js"
       },
       {
@@ -1264,12 +1267,12 @@
       },
       {
         "name": "supports-color",
-        "version": "5.3.0",
+        "version": "5.5.0",
         "path": "node_modules/eslint/node_modules/supports-color/index.js"
       },
       {
         "name": "eslint-scope",
-        "version": "3.7.1",
+        "version": "3.7.3",
         "path": "node_modules/eslint-scope/lib/index.js"
       },
       {
@@ -1289,7 +1292,7 @@
       },
       {
         "name": "esquery",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "path": "node_modules/esquery/esquery.js"
       },
       {
@@ -1309,7 +1312,7 @@
       },
       {
         "name": "event-kit",
-        "version": "2.4.0",
+        "version": "2.5.0",
         "path": "node_modules/event-kit/lib/event-kit.js"
       },
       {
@@ -1334,7 +1337,7 @@
       },
       {
         "name": "lru-cache",
-        "version": "4.1.2",
+        "version": "4.1.3",
         "path": "node_modules/execa/node_modules/lru-cache/index.js"
       },
       {
@@ -1349,12 +1352,12 @@
       },
       {
         "name": "extend",
-        "version": "3.0.1",
+        "version": "3.0.2",
         "path": "node_modules/extend/index.js"
       },
       {
         "name": "external-editor",
-        "version": "2.1.0",
+        "version": "2.2.0",
         "path": "node_modules/external-editor/main/index.js"
       },
       {
@@ -1514,7 +1517,7 @@
       },
       {
         "name": "globals",
-        "version": "11.3.0",
+        "version": "11.7.0",
         "path": "node_modules/globals/index.js"
       },
       {
@@ -1594,7 +1597,7 @@
       },
       {
         "name": "has",
-        "version": "1.0.1",
+        "version": "1.0.3",
         "path": "node_modules/has/src/index.js"
       },
       {
@@ -1669,12 +1672,12 @@
       },
       {
         "name": "iconv-lite",
-        "version": "0.4.19",
+        "version": "0.4.23",
         "path": "node_modules/iconv-lite/lib/index.js"
       },
       {
         "name": "ignore",
-        "version": "3.3.7",
+        "version": "3.3.10",
         "path": "node_modules/ignore/ignore.js"
       },
       {
@@ -1734,7 +1737,7 @@
       },
       {
         "name": "chalk",
-        "version": "2.3.2",
+        "version": "2.4.1",
         "path": "node_modules/inquirer/node_modules/chalk/index.js"
       },
       {
@@ -1744,7 +1747,7 @@
       },
       {
         "name": "supports-color",
-        "version": "5.3.0",
+        "version": "5.5.0",
         "path": "node_modules/inquirer/node_modules/supports-color/index.js"
       },
       {
@@ -1754,7 +1757,7 @@
       },
       {
         "name": "is-alphabetical",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "path": "node_modules/is-alphabetical/index.js"
       },
       {
@@ -1764,7 +1767,7 @@
       },
       {
         "name": "is-alphanumerical",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "path": "node_modules/is-alphanumerical/index.js"
       },
       {
@@ -1774,7 +1777,7 @@
       },
       {
         "name": "is-decimal",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "path": "node_modules/is-decimal/index.js"
       },
       {
@@ -1784,7 +1787,7 @@
       },
       {
         "name": "is-hexadecimal",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "path": "node_modules/is-hexadecimal/index.js"
       },
       {
@@ -1794,7 +1797,7 @@
       },
       {
         "name": "is-path-in-cwd",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "path": "node_modules/is-path-in-cwd/index.js"
       },
       {
@@ -1829,12 +1832,12 @@
       },
       {
         "name": "is-whitespace-character",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "path": "node_modules/is-whitespace-character/index.js"
       },
       {
         "name": "is-word-character",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "path": "node_modules/is-word-character/index.js"
       },
       {
@@ -1979,7 +1982,7 @@
       },
       {
         "name": "jscs-preset-wikimedia",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "path": "node_modules/jscs-preset-wikimedia/presets/wikimedia.json"
       },
       {
@@ -2074,17 +2077,17 @@
       },
       {
         "name": "load-plugin",
-        "version": "2.2.1",
+        "version": "2.2.2",
         "path": "node_modules/load-plugin/index.js"
       },
       {
         "name": "resolve-from",
-        "version": "2.0.0",
+        "version": "4.0.0",
         "path": "node_modules/load-plugin/node_modules/resolve-from/index.js"
       },
       {
         "name": "lodash",
-        "version": "4.17.5",
+        "version": "4.17.10",
         "path": "node_modules/lodash/lodash.js"
       },
       {
@@ -2109,12 +2112,12 @@
       },
       {
         "name": "markdown-escapes",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "path": "node_modules/markdown-escapes/index.js"
       },
       {
         "name": "markdown-table",
-        "version": "1.1.1",
+        "version": "1.1.2",
         "path": "node_modules/markdown-table/index.js"
       },
       {
@@ -2124,12 +2127,12 @@
       },
       {
         "name": "marko",
-        "version": "4.9.1",
+        "version": "4.12.5",
         "path": "node_modules/marko/index.js"
       },
       {
         "name": "esprima",
-        "version": "4.0.0",
+        "version": "4.0.1",
         "path": "node_modules/marko/node_modules/esprima/dist/esprima.js"
       },
       {
@@ -2144,18 +2147,8 @@
       },
       {
         "name": "marko-prettyprint",
-        "version": "1.4.1",
+        "version": "1.4.3",
         "path": "node_modules/marko-prettyprint/src/index.js"
-      },
-      {
-        "name": "editorconfig",
-        "version": "0.13.3",
-        "path": "node_modules/marko-prettyprint/node_modules/editorconfig/editorconfig.js"
-      },
-      {
-        "name": "lru-cache",
-        "version": "3.2.0",
-        "path": "node_modules/marko-prettyprint/node_modules/lru-cache/lib/lru-cache.js"
       },
       {
         "name": "minimatch",
@@ -2164,22 +2157,22 @@
       },
       {
         "name": "resolve-from",
-        "version": "3.0.0",
+        "version": "4.0.0",
         "path": "node_modules/marko-prettyprint/node_modules/resolve-from/index.js"
       },
       {
         "name": "mdast-util-compact",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "path": "node_modules/mdast-util-compact/index.js"
       },
       {
         "name": "mime-db",
-        "version": "1.33.0",
+        "version": "1.35.0",
         "path": "node_modules/mime-db/index.js"
       },
       {
         "name": "mime-types",
-        "version": "2.1.18",
+        "version": "2.1.19",
         "path": "node_modules/mime-types/index.js"
       },
       {
@@ -2226,6 +2219,11 @@
         "name": "ncp",
         "version": "0.4.2",
         "path": "node_modules/ncp/lib/ncp.js"
+      },
+      {
+        "name": "next-tick",
+        "version": "1.0.0",
+        "path": "node_modules/next-tick/index.js"
       },
       {
         "name": "nginxbeautify",
@@ -2339,7 +2337,7 @@
       },
       {
         "name": "parse-entities",
-        "version": "1.1.1",
+        "version": "1.1.2",
         "path": "node_modules/parse-entities/index.js"
       },
       {
@@ -2364,7 +2362,7 @@
       },
       {
         "name": "path-parse",
-        "version": "1.0.5",
+        "version": "1.0.6",
         "path": "node_modules/path-parse/index.js"
       },
       {
@@ -2409,7 +2407,7 @@
       },
       {
         "name": "prettier",
-        "version": "1.11.1",
+        "version": "1.14.2",
         "path": "node_modules/prettier/index.js"
       },
       {
@@ -2489,7 +2487,7 @@
       },
       {
         "name": "qs",
-        "version": "6.5.1",
+        "version": "6.5.2",
         "path": "node_modules/qs/lib/index.js"
       },
       {
@@ -2504,7 +2502,7 @@
       },
       {
         "name": "raptor-polyfill",
-        "version": "1.0.2",
+        "version": "1.1.0",
         "path": "node_modules/raptor-polyfill/raptor-polyfill.js"
       },
       {
@@ -2534,7 +2532,7 @@
       },
       {
         "name": "rc",
-        "version": "1.2.5",
+        "version": "1.2.8",
         "path": "node_modules/rc/index.js"
       },
       {
@@ -2549,7 +2547,7 @@
       },
       {
         "name": "readable-stream",
-        "version": "2.3.5",
+        "version": "2.3.6",
         "path": "node_modules/readable-stream/readable.js"
       },
       {
@@ -2561,6 +2559,11 @@
         "name": "regenerator-runtime",
         "version": "0.10.5",
         "path": "node_modules/regenerator-runtime/runtime-module.js"
+      },
+      {
+        "name": "regexpp",
+        "version": "1.1.0",
+        "path": "node_modules/regexpp/index.js"
       },
       {
         "name": "remark",
@@ -2599,7 +2602,7 @@
       },
       {
         "name": "request",
-        "version": "2.83.0",
+        "version": "2.86.0",
         "path": "node_modules/request/index.js"
       },
       {
@@ -2614,7 +2617,7 @@
       },
       {
         "name": "resolve",
-        "version": "1.5.0",
+        "version": "1.8.1",
         "path": "node_modules/resolve/index.js"
       },
       {
@@ -2664,8 +2667,13 @@
       },
       {
         "name": "safe-buffer",
-        "version": "5.1.1",
+        "version": "5.1.2",
         "path": "node_modules/safe-buffer/index.js"
+      },
+      {
+        "name": "safer-buffer",
+        "version": "2.1.2",
+        "path": "node_modules/safer-buffer/safer.js"
       },
       {
         "name": "season",
@@ -2709,7 +2717,7 @@
       },
       {
         "name": "semver",
-        "version": "5.5.0",
+        "version": "5.5.1",
         "path": "node_modules/semver/semver.js"
       },
       {
@@ -2754,7 +2762,7 @@
       },
       {
         "name": "simple-sha1",
-        "version": "2.1.0",
+        "version": "2.1.1",
         "path": "node_modules/simple-sha1/index.js"
       },
       {
@@ -2794,7 +2802,7 @@
       },
       {
         "name": "sshpk",
-        "version": "1.13.1",
+        "version": "1.14.2",
         "path": "node_modules/sshpk/lib/index.js"
       },
       {
@@ -2809,12 +2817,12 @@
       },
       {
         "name": "state-toggle",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "path": "node_modules/state-toggle/index.js"
       },
       {
         "name": "string_decoder",
-        "version": "1.0.3",
+        "version": "1.1.1",
         "path": "node_modules/string_decoder/lib/string_decoder.js"
       },
       {
@@ -2834,13 +2842,8 @@
       },
       {
         "name": "stringify-entities",
-        "version": "1.3.1",
+        "version": "1.3.2",
         "path": "node_modules/stringify-entities/index.js"
-      },
-      {
-        "name": "stringstream",
-        "version": "0.0.5",
-        "path": "node_modules/stringstream/stringstream.js"
       },
       {
         "name": "strip-ansi",
@@ -2884,12 +2887,12 @@
       },
       {
         "name": "chalk",
-        "version": "2.3.2",
+        "version": "2.4.1",
         "path": "node_modules/table/node_modules/chalk/index.js"
       },
       {
         "name": "supports-color",
-        "version": "5.3.0",
+        "version": "5.5.0",
         "path": "node_modules/table/node_modules/supports-color/index.js"
       },
       {
@@ -2919,12 +2922,12 @@
       },
       {
         "name": "esprima",
-        "version": "4.0.0",
+        "version": "4.0.1",
         "path": "node_modules/tidy-markdown/node_modules/esprima/dist/esprima.js"
       },
       {
         "name": "js-yaml",
-        "version": "3.11.0",
+        "version": "3.12.0",
         "path": "node_modules/tidy-markdown/node_modules/js-yaml/index.js"
       },
       {
@@ -2959,12 +2962,12 @@
       },
       {
         "name": "trim-trailing-lines",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "path": "node_modules/trim-trailing-lines/index.js"
       },
       {
         "name": "trough",
-        "version": "1.0.1",
+        "version": "1.0.3",
         "path": "node_modules/trough/index.js"
       },
       {
@@ -2999,12 +3002,12 @@
       },
       {
         "name": "typescript",
-        "version": "2.7.2",
+        "version": "2.9.2",
         "path": "node_modules/typescript/lib/typescript.js"
       },
       {
         "name": "typescript-formatter",
-        "version": "7.1.0",
+        "version": "7.2.2",
         "path": "node_modules/typescript-formatter/index.js"
       },
       {
@@ -3029,12 +3032,12 @@
       },
       {
         "name": "underscore-plus",
-        "version": "1.6.6",
+        "version": "1.6.8",
         "path": "node_modules/underscore-plus/lib/underscore-plus.js"
       },
       {
         "name": "underscore",
-        "version": "1.6.0",
+        "version": "1.8.3",
         "path": "node_modules/underscore-plus/node_modules/underscore/underscore.js"
       },
       {
@@ -3044,7 +3047,7 @@
       },
       {
         "name": "unherit",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "path": "node_modules/unherit/index.js"
       },
       {
@@ -3054,32 +3057,32 @@
       },
       {
         "name": "unist-util-is",
-        "version": "2.1.1",
+        "version": "2.1.2",
         "path": "node_modules/unist-util-is/index.js"
       },
       {
-        "name": "unist-util-modify-children",
-        "version": "1.1.1",
-        "path": "node_modules/unist-util-modify-children/index.js"
-      },
-      {
         "name": "unist-util-remove-position",
-        "version": "1.1.1",
+        "version": "1.1.2",
         "path": "node_modules/unist-util-remove-position/index.js"
       },
       {
         "name": "unist-util-stringify-position",
-        "version": "1.1.1",
+        "version": "1.1.2",
         "path": "node_modules/unist-util-stringify-position/index.js"
       },
       {
         "name": "unist-util-visit",
-        "version": "1.3.0",
+        "version": "1.4.0",
         "path": "node_modules/unist-util-visit/index.js"
       },
       {
+        "name": "unist-util-visit-parents",
+        "version": "2.0.1",
+        "path": "node_modules/unist-util-visit-parents/index.js"
+      },
+      {
         "name": "universal-analytics",
-        "version": "0.4.16",
+        "version": "0.4.17",
         "path": "node_modules/universal-analytics/index.js"
       },
       {
@@ -3104,7 +3107,7 @@
       },
       {
         "name": "uuid",
-        "version": "3.2.1",
+        "version": "3.3.2",
         "path": "node_modules/uuid/index.js"
       },
       {
@@ -3124,12 +3127,12 @@
       },
       {
         "name": "vfile-location",
-        "version": "2.0.2",
+        "version": "2.0.3",
         "path": "node_modules/vfile-location/index.js"
       },
       {
         "name": "vfile-message",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "path": "node_modules/vfile-message/index.js"
       },
       {
@@ -3179,7 +3182,7 @@
       },
       {
         "name": "which",
-        "version": "1.3.0",
+        "version": "1.3.1",
         "path": "node_modules/which/which.js"
       },
       {
@@ -3189,7 +3192,7 @@
       },
       {
         "name": "winston",
-        "version": "2.4.1",
+        "version": "2.4.4",
         "path": "node_modules/winston/lib/winston.js"
       },
       {
@@ -3289,12 +3292,12 @@
       },
       {
         "name": "esprima",
-        "version": "4.0.0",
+        "version": "4.0.1",
         "path": "node_modules/yaml-front-matter/node_modules/esprima/dist/esprima.js"
       },
       {
         "name": "js-yaml",
-        "version": "3.11.0",
+        "version": "3.12.0",
         "path": "node_modules/yaml-front-matter/node_modules/js-yaml/index.js"
       },
       {
@@ -3357,7 +3360,6 @@
         "node_modules/app-module-path/package.json",
         "node_modules/argly/package.json",
         "node_modules/argparse/package.json",
-        "node_modules/array-iterate/package.json",
         "node_modules/array-union/package.json",
         "node_modules/array-uniq/package.json",
         "node_modules/arrify/package.json",
@@ -3388,6 +3390,7 @@
         "node_modules/boom/package.json",
         "node_modules/brace-expansion/package.json",
         "node_modules/browser-refresh-client/package.json",
+        "node_modules/buffer-from/package.json",
         "node_modules/caller-path/package.json",
         "node_modules/callsites/package.json",
         "node_modules/camelcase/package.json",
@@ -3422,7 +3425,6 @@
         "node_modules/coffeescript/package.json",
         "node_modules/collapse-white-space/package.json",
         "node_modules/color-convert/package.json",
-        "node_modules/color-name/.eslintrc.json",
         "node_modules/color-name/package.json",
         "node_modules/colors/package.json",
         "node_modules/combined-stream/package.json",
@@ -3803,8 +3805,6 @@
         "node_modules/marko/src/taglibs/html/marko.json",
         "node_modules/marko/src/taglibs/layout/marko.json",
         "node_modules/marko/src/taglibs/svg/marko.json",
-        "node_modules/marko-prettyprint/node_modules/editorconfig/package.json",
-        "node_modules/marko-prettyprint/node_modules/lru-cache/package.json",
         "node_modules/marko-prettyprint/node_modules/minimatch/package.json",
         "node_modules/marko-prettyprint/node_modules/resolve-from/package.json",
         "node_modules/marko-prettyprint/package.json",
@@ -3824,6 +3824,7 @@
         "node_modules/mute-stream/package.json",
         "node_modules/natural-compare/package.json",
         "node_modules/ncp/package.json",
+        "node_modules/next-tick/package.json",
         "node_modules/nginxbeautify/package.json",
         "node_modules/node-cljfmt/package.json",
         "node_modules/node-dir/node_modules/minimatch/package.json",
@@ -3901,6 +3902,7 @@
         "node_modules/readable-stream/package.json",
         "node_modules/redent/package.json",
         "node_modules/regenerator-runtime/package.json",
+        "node_modules/regexpp/package.json",
         "node_modules/remark/package.json",
         "node_modules/remark-parse/lib/block-elements.json",
         "node_modules/remark-parse/node_modules/repeat-string/package.json",
@@ -3925,6 +3927,7 @@
         "node_modules/rx-lite/package.json",
         "node_modules/rx-lite-aggregates/package.json",
         "node_modules/safe-buffer/package.json",
+        "node_modules/safer-buffer/package.json",
         "node_modules/season/node_modules/camelcase/package.json",
         "node_modules/season/node_modules/cliui/package.json",
         "node_modules/season/node_modules/is-fullwidth-code-point/package.json",
@@ -3978,7 +3981,6 @@
         "node_modules/string_decoder/package.json",
         "node_modules/stringify-entities/dangerous.json",
         "node_modules/stringify-entities/package.json",
-        "node_modules/stringstream/package.json",
         "node_modules/strip-ansi/package.json",
         "node_modules/strip-bom/package.json",
         "node_modules/strip-eof/package.json",
@@ -4017,7 +4019,6 @@
         "node_modules/type-check/package.json",
         "node_modules/type-detect/package.json",
         "node_modules/typedarray/package.json",
-        "node_modules/typescript/.parallelperf.json",
         "node_modules/typescript/lib/cs/diagnosticMessages.generated.json",
         "node_modules/typescript/lib/de/diagnosticMessages.generated.json",
         "node_modules/typescript/lib/es/diagnosticMessages.generated.json",
@@ -4026,11 +4027,12 @@
         "node_modules/typescript/lib/ja/diagnosticMessages.generated.json",
         "node_modules/typescript/lib/ko/diagnosticMessages.generated.json",
         "node_modules/typescript/lib/pl/diagnosticMessages.generated.json",
-        "node_modules/typescript/lib/pt-BR/diagnosticMessages.generated.json",
+        "node_modules/typescript/lib/pt-br/diagnosticMessages.generated.json",
         "node_modules/typescript/lib/ru/diagnosticMessages.generated.json",
         "node_modules/typescript/lib/tr/diagnosticMessages.generated.json",
-        "node_modules/typescript/lib/zh-CN/diagnosticMessages.generated.json",
-        "node_modules/typescript/lib/zh-TW/diagnosticMessages.generated.json",
+        "node_modules/typescript/lib/typesMap.json",
+        "node_modules/typescript/lib/zh-cn/diagnosticMessages.generated.json",
+        "node_modules/typescript/lib/zh-tw/diagnosticMessages.generated.json",
         "node_modules/typescript/package.json",
         "node_modules/typescript-formatter/example/package.json",
         "node_modules/typescript-formatter/example/tsconfig.json",
@@ -4049,10 +4051,10 @@
         "node_modules/unherit/package.json",
         "node_modules/unified/package.json",
         "node_modules/unist-util-is/package.json",
-        "node_modules/unist-util-modify-children/package.json",
         "node_modules/unist-util-remove-position/package.json",
         "node_modules/unist-util-stringify-position/package.json",
         "node_modules/unist-util-visit/package.json",
+        "node_modules/unist-util-visit-parents/package.json",
         "node_modules/universal-analytics/package.json",
         "node_modules/untildify/package.json",
         "node_modules/util-deprecate/package.json",
@@ -4330,7 +4332,6 @@
         "node_modules/argparse/lib/help/added_formatters.js",
         "node_modules/argparse/lib/help/formatter.js",
         "node_modules/argparse/lib/namespace.js",
-        "node_modules/array-iterate/index.js",
         "node_modules/array-union/index.js",
         "node_modules/array-uniq/index.js",
         "node_modules/arrify/index.js",
@@ -4340,8 +4341,6 @@
         "node_modules/asn1/lib/ber/types.js",
         "node_modules/asn1/lib/ber/writer.js",
         "node_modules/asn1/lib/index.js",
-        "node_modules/asn1/tst/ber/reader.test.js",
-        "node_modules/asn1/tst/ber/writer.test.js",
         "node_modules/assert-plus/assert.js",
         "node_modules/assertion-error/index.js",
         "node_modules/async/all.js",
@@ -4802,6 +4801,7 @@
         "node_modules/brace-expansion/index.js",
         "node_modules/browser-refresh-client/lib/browser-refresh-client.js",
         "node_modules/browser-refresh-client/lib/index.js",
+        "node_modules/buffer-from/index.js",
         "node_modules/caller-path/index.js",
         "node_modules/callsites/index.js",
         "node_modules/camelcase/index.js",
@@ -5343,7 +5343,6 @@
         "node_modules/color-convert/index.js",
         "node_modules/color-convert/route.js",
         "node_modules/color-name/index.js",
-        "node_modules/color-name/test.js",
         "node_modules/colors/examples/normal-usage.js",
         "node_modules/colors/examples/safe-string.js",
         "node_modules/colors/lib/colors.js",
@@ -7242,6 +7241,7 @@
         "node_modules/es5-ext/function/#/curry.js",
         "node_modules/es5-ext/function/#/index.js",
         "node_modules/es5-ext/function/#/lock.js",
+        "node_modules/es5-ext/function/#/microtask-delay.js",
         "node_modules/es5-ext/function/#/not.js",
         "node_modules/es5-ext/function/#/partial.js",
         "node_modules/es5-ext/function/#/spread.js",
@@ -7409,7 +7409,13 @@
         "node_modules/es5-ext/object/ensure-integer.js",
         "node_modules/es5-ext/object/ensure-natural-number-value.js",
         "node_modules/es5-ext/object/ensure-natural-number.js",
+        "node_modules/es5-ext/object/ensure-plain-function.js",
         "node_modules/es5-ext/object/ensure-promise.js",
+        "node_modules/es5-ext/object/ensure-thenable.js",
+        "node_modules/es5-ext/object/entries/implement.js",
+        "node_modules/es5-ext/object/entries/index.js",
+        "node_modules/es5-ext/object/entries/is-implemented.js",
+        "node_modules/es5-ext/object/entries/shim.js",
         "node_modules/es5-ext/object/eq.js",
         "node_modules/es5-ext/object/every.js",
         "node_modules/es5-ext/object/filter.js",
@@ -7434,6 +7440,7 @@
         "node_modules/es5-ext/object/is-plain-function.js",
         "node_modules/es5-ext/object/is-plain-object.js",
         "node_modules/es5-ext/object/is-promise.js",
+        "node_modules/es5-ext/object/is-thenable.js",
         "node_modules/es5-ext/object/is-value.js",
         "node_modules/es5-ext/object/is.js",
         "node_modules/es5-ext/object/key-of.js",
@@ -7464,6 +7471,8 @@
         "node_modules/es5-ext/object/validate-stringifiable-value.js",
         "node_modules/es5-ext/object/validate-stringifiable.js",
         "node_modules/es5-ext/optional-chaining.js",
+        "node_modules/es5-ext/promise/#/as-callback.js",
+        "node_modules/es5-ext/promise/#/index.js",
         "node_modules/es5-ext/promise/index.js",
         "node_modules/es5-ext/promise/lazy.js",
         "node_modules/es5-ext/reg-exp/#/index.js",
@@ -9881,6 +9890,7 @@
         "node_modules/levn/lib/parse.js",
         "node_modules/listener-tracker/karma.conf.js",
         "node_modules/listener-tracker/lib/listener-tracker.js",
+        "node_modules/load-plugin/browser.js",
         "node_modules/load-plugin/index.js",
         "node_modules/load-plugin/node_modules/resolve-from/index.js",
         "node_modules/lodash/_DataView.js",
@@ -11045,6 +11055,7 @@
         "node_modules/marko/dist/compiler/util/UniqueVars.js",
         "node_modules/marko/dist/compiler/util/adjustIndent.js",
         "node_modules/marko/dist/compiler/util/deresolve.js",
+        "node_modules/marko/dist/compiler/util/enableTagParams.js",
         "node_modules/marko/dist/compiler/util/finger-print.js",
         "node_modules/marko/dist/compiler/util/html-elements.js",
         "node_modules/marko/dist/compiler/util/isCompoundExpression.js",
@@ -11056,6 +11067,7 @@
         "node_modules/marko/dist/compiler/util/parseExpression.js",
         "node_modules/marko/dist/compiler/util/parseJavaScript.js",
         "node_modules/marko/dist/compiler/util/parseJavaScriptArgs.js",
+        "node_modules/marko/dist/compiler/util/parseJavaScriptParams.js",
         "node_modules/marko/dist/compiler/util/parseStatement.js",
         "node_modules/marko/dist/compiler/util/removeComments.js",
         "node_modules/marko/dist/compiler/util/removeDashes.js",
@@ -11076,7 +11088,6 @@
         "node_modules/marko/dist/components/beginComponent-browser.js",
         "node_modules/marko/dist/components/beginComponent.js",
         "node_modules/marko/dist/components/boot.js",
-        "node_modules/marko/dist/components/bubble.js",
         "node_modules/marko/dist/components/defineComponent.js",
         "node_modules/marko/dist/components/endComponent-browser.js",
         "node_modules/marko/dist/components/endComponent.js",
@@ -11153,6 +11164,7 @@
         "node_modules/marko/dist/runtime/createOut.js",
         "node_modules/marko/dist/runtime/dom-insert.js",
         "node_modules/marko/dist/runtime/events.js",
+        "node_modules/marko/dist/runtime/helper-assign.js",
         "node_modules/marko/dist/runtime/helper-forEachPropStatusVar.js",
         "node_modules/marko/dist/runtime/helper-forEachProperty.js",
         "node_modules/marko/dist/runtime/helper-forEachWithStatusVar.js",
@@ -11182,6 +11194,7 @@
         "node_modules/marko/dist/runtime/vdom/VElement.js",
         "node_modules/marko/dist/runtime/vdom/VNode.js",
         "node_modules/marko/dist/runtime/vdom/VText.js",
+        "node_modules/marko/dist/runtime/vdom/helper-attrs.js",
         "node_modules/marko/dist/runtime/vdom/helper-createInlineTemplate.js",
         "node_modules/marko/dist/runtime/vdom/helper-styleAttr.js",
         "node_modules/marko/dist/runtime/vdom/helpers.js",
@@ -11354,6 +11367,7 @@
         "node_modules/marko/src/compiler/util/UniqueVars.js",
         "node_modules/marko/src/compiler/util/adjustIndent.js",
         "node_modules/marko/src/compiler/util/deresolve.js",
+        "node_modules/marko/src/compiler/util/enableTagParams.js",
         "node_modules/marko/src/compiler/util/finger-print.js",
         "node_modules/marko/src/compiler/util/html-elements.js",
         "node_modules/marko/src/compiler/util/isCompoundExpression.js",
@@ -11365,6 +11379,7 @@
         "node_modules/marko/src/compiler/util/parseExpression.js",
         "node_modules/marko/src/compiler/util/parseJavaScript.js",
         "node_modules/marko/src/compiler/util/parseJavaScriptArgs.js",
+        "node_modules/marko/src/compiler/util/parseJavaScriptParams.js",
         "node_modules/marko/src/compiler/util/parseStatement.js",
         "node_modules/marko/src/compiler/util/removeComments.js",
         "node_modules/marko/src/compiler/util/removeDashes.js",
@@ -11385,7 +11400,6 @@
         "node_modules/marko/src/components/beginComponent-browser.js",
         "node_modules/marko/src/components/beginComponent.js",
         "node_modules/marko/src/components/boot.js",
-        "node_modules/marko/src/components/bubble.js",
         "node_modules/marko/src/components/defineComponent.js",
         "node_modules/marko/src/components/endComponent-browser.js",
         "node_modules/marko/src/components/endComponent.js",
@@ -11462,6 +11476,7 @@
         "node_modules/marko/src/runtime/createOut.js",
         "node_modules/marko/src/runtime/dom-insert.js",
         "node_modules/marko/src/runtime/events.js",
+        "node_modules/marko/src/runtime/helper-assign.js",
         "node_modules/marko/src/runtime/helper-forEachPropStatusVar.js",
         "node_modules/marko/src/runtime/helper-forEachProperty.js",
         "node_modules/marko/src/runtime/helper-forEachWithStatusVar.js",
@@ -11491,6 +11506,7 @@
         "node_modules/marko/src/runtime/vdom/VElement.js",
         "node_modules/marko/src/runtime/vdom/VNode.js",
         "node_modules/marko/src/runtime/vdom/VText.js",
+        "node_modules/marko/src/runtime/vdom/helper-attrs.js",
         "node_modules/marko/src/runtime/vdom/helper-createInlineTemplate.js",
         "node_modules/marko/src/runtime/vdom/helper-styleAttr.js",
         "node_modules/marko/src/runtime/vdom/helpers.js",
@@ -11544,10 +11560,6 @@
         "node_modules/marko/src/taglibs/layout/use-tag.js",
         "node_modules/marko/src/vdom.js",
         "node_modules/marko-prettyprint/bin/marko-prettyprint.js",
-        "node_modules/marko-prettyprint/node_modules/editorconfig/editorconfig.js",
-        "node_modules/marko-prettyprint/node_modules/editorconfig/lib/fnmatch.js",
-        "node_modules/marko-prettyprint/node_modules/editorconfig/lib/ini.js",
-        "node_modules/marko-prettyprint/node_modules/lru-cache/lib/lru-cache.js",
         "node_modules/marko-prettyprint/node_modules/minimatch/minimatch.js",
         "node_modules/marko-prettyprint/node_modules/resolve-from/index.js",
         "node_modules/marko-prettyprint/prettyPrintAST.js",
@@ -11575,6 +11587,7 @@
         "node_modules/marko-prettyprint/src/util/getMarkoCompiler.browser.js",
         "node_modules/marko-prettyprint/src/util/getMarkoCompiler.js",
         "node_modules/marko-prettyprint/src/util/hasLineBreaks.js",
+        "node_modules/marko-prettyprint/src/util/hasUnenclosedWhitespace.js",
         "node_modules/marko-prettyprint/src/util/indent.js",
         "node_modules/marko-prettyprint/src/util/isInlineComment.js",
         "node_modules/marko-prettyprint/src/util/readConfigFile.browser.js",
@@ -11597,6 +11610,7 @@
         "node_modules/mute-stream/mute.js",
         "node_modules/natural-compare/index.js",
         "node_modules/ncp/lib/ncp.js",
+        "node_modules/next-tick/index.js",
         "node_modules/nginxbeautify/nginxbeautify/main.js",
         "node_modules/node-dir/index.js",
         "node_modules/node-dir/lib/paths.js",
@@ -11675,9 +11689,7 @@
         "node_modules/path-is-inside/lib/path-is-inside.js",
         "node_modules/path-key/index.js",
         "node_modules/path-parse/index.js",
-        "node_modules/path-parse/index.min.js",
         "node_modules/path-parse/test.js",
-        "node_modules/path-parse/test.min.js",
         "node_modules/pathval/hydro.conf.js",
         "node_modules/pathval/index.js",
         "node_modules/performance-now/lib/performance-now.js",
@@ -11709,6 +11721,8 @@
         "node_modules/prettier/parser-postcss.js",
         "node_modules/prettier/parser-typescript.js",
         "node_modules/prettier/parser-vue.js",
+        "node_modules/prettier/parser-yaml.js",
+        "node_modules/prettier/standalone.js",
         "node_modules/prettier/third-party.js",
         "node_modules/prettydiff2/api/node-local.js",
         "node_modules/prettydiff2/lib/csspretty.js",
@@ -11814,6 +11828,7 @@
         "node_modules/raptor-polyfill/function/bind.js",
         "node_modules/raptor-polyfill/function/index.js",
         "node_modules/raptor-polyfill/json/index.js",
+        "node_modules/raptor-polyfill/object/assign.js",
         "node_modules/raptor-polyfill/object/index.js",
         "node_modules/raptor-polyfill/object/keys.js",
         "node_modules/raptor-polyfill/raptor-polyfill.js",
@@ -11886,6 +11901,7 @@
         "node_modules/regenerator-runtime/path.js",
         "node_modules/regenerator-runtime/runtime-module.js",
         "node_modules/regenerator-runtime/runtime.js",
+        "node_modules/regexpp/index.js",
         "node_modules/remark/cli.js",
         "node_modules/remark/index.js",
         "node_modules/remark-parse/index.js",
@@ -12025,7 +12041,9 @@
         "node_modules/rx-lite-aggregates/rx.lite.aggregates.js",
         "node_modules/rx-lite-aggregates/rx.lite.aggregates.min.js",
         "node_modules/safe-buffer/index.js",
-        "node_modules/safe-buffer/test.js",
+        "node_modules/safer-buffer/dangerous.js",
+        "node_modules/safer-buffer/safer.js",
+        "node_modules/safer-buffer/tests.js",
         "node_modules/season/lib/cson.js",
         "node_modules/season/lib/csonc.js",
         "node_modules/season/node_modules/camelcase/index.js",
@@ -12054,9 +12072,7 @@
         "node_modules/sigmund/sigmund.js",
         "node_modules/signal-exit/index.js",
         "node_modules/signal-exit/signals.js",
-        "node_modules/simple-sha1/benchmark.js",
         "node_modules/simple-sha1/browser.js",
-        "node_modules/simple-sha1/example.js",
         "node_modules/simple-sha1/index.js",
         "node_modules/slice-ansi/index.js",
         "node_modules/sntp/lib/index.js",
@@ -12108,6 +12124,7 @@
         "node_modules/sshpk/lib/errors.js",
         "node_modules/sshpk/lib/fingerprint.js",
         "node_modules/sshpk/lib/formats/auto.js",
+        "node_modules/sshpk/lib/formats/dnssec.js",
         "node_modules/sshpk/lib/formats/openssh-cert.js",
         "node_modules/sshpk/lib/formats/pem.js",
         "node_modules/sshpk/lib/formats/pkcs1.js",
@@ -12137,8 +12154,6 @@
         "node_modules/string-width/node_modules/strip-ansi/index.js",
         "node_modules/string_decoder/lib/string_decoder.js",
         "node_modules/stringify-entities/index.js",
-        "node_modules/stringstream/example.js",
-        "node_modules/stringstream/stringstream.js",
         "node_modules/strip-ansi/cli.js",
         "node_modules/strip-ansi/index.js",
         "node_modules/strip-bom/index.js",
@@ -12271,6 +12286,7 @@
         "node_modules/trim/index.js",
         "node_modules/trim-trailing-lines/index.js",
         "node_modules/trough/index.js",
+        "node_modules/trough/wrap.js",
         "node_modules/try-require/index.js",
         "node_modules/tunnel-agent/index.js",
         "node_modules/tweetnacl/nacl-fast.js",
@@ -12341,10 +12357,10 @@
         "node_modules/unherit/index.js",
         "node_modules/unified/index.js",
         "node_modules/unist-util-is/index.js",
-        "node_modules/unist-util-modify-children/index.js",
         "node_modules/unist-util-remove-position/index.js",
         "node_modules/unist-util-stringify-position/index.js",
         "node_modules/unist-util-visit/index.js",
+        "node_modules/unist-util-visit-parents/index.js",
         "node_modules/universal-analytics/index.js",
         "node_modules/universal-analytics/lib/config.js",
         "node_modules/universal-analytics/lib/index.js",
@@ -13066,6 +13082,7 @@
         "src/languages/apex.coffee",
         "src/languages/arduino.coffee",
         "src/languages/bash.coffee",
+        "src/languages/blade.coffee",
         "src/languages/c-sharp.coffee",
         "src/languages/c.coffee",
         "src/languages/clojure.coffee",
@@ -13286,12 +13303,22 @@
       },
       {
         "paths": [
+          "node_modules/asn1/lib/ber",
+          "node_modules/asn1/lib",
+          "node_modules/asn1"
+        ],
+        "dependencies": {
+          "safer-buffer": "~2.1.0"
+        }
+      },
+      {
+        "paths": [
           "node_modules/async",
           "node_modules/async/dist",
           "node_modules/async/internal"
         ],
         "dependencies": {
-          "lodash": "^4.14.0"
+          "lodash": "^4.17.10"
         }
       },
       {
@@ -13511,7 +13538,7 @@
           "node_modules/color-convert"
         ],
         "dependencies": {
-          "color-name": "^1.1.1"
+          "color-name": "1.1.1"
         }
       },
       {
@@ -13535,7 +13562,8 @@
       },
       {
         "paths": [
-          "node_modules/complain"
+          "node_modules/complain",
+          "node_modules/complain/test"
         ],
         "dependencies": {
           "error-stack-parser": "^2.0.1"
@@ -13546,6 +13574,7 @@
           "node_modules/concat-stream"
         ],
         "dependencies": {
+          "buffer-from": "^1.0.0",
           "inherits": "^2.0.3",
           "readable-stream": "^2.2.2",
           "typedarray": "^0.0.6"
@@ -13783,7 +13812,8 @@
           "node_modules/ecc-jsbn/lib"
         ],
         "dependencies": {
-          "jsbn": "~0.1.0"
+          "jsbn": "~0.1.0",
+          "safer-buffer": "^2.1.0"
         }
       },
       {
@@ -13827,7 +13857,7 @@
           "node_modules/error-stack-parser"
         ],
         "dependencies": {
-          "stackframe": "^1.0.3"
+          "stackframe": "^1.0.4"
         }
       },
       {
@@ -13888,8 +13918,10 @@
           "node_modules/es5-ext/number/min-safe-integer",
           "node_modules/es5-ext/object",
           "node_modules/es5-ext/object/assign",
+          "node_modules/es5-ext/object/entries",
           "node_modules/es5-ext/object/keys",
           "node_modules/es5-ext/object/set-prototype-of",
+          "node_modules/es5-ext/promise/#",
           "node_modules/es5-ext/promise",
           "node_modules/es5-ext/reg-exp/#",
           "node_modules/es5-ext/reg-exp/#/match",
@@ -13966,8 +13998,10 @@
           "node_modules/es5-ext/test/number/min-safe-integer",
           "node_modules/es5-ext/test/object",
           "node_modules/es5-ext/test/object/assign",
+          "node_modules/es5-ext/test/object/entries",
           "node_modules/es5-ext/test/object/keys",
           "node_modules/es5-ext/test/object/set-prototype-of",
+          "node_modules/es5-ext/test/promise/#",
           "node_modules/es5-ext/test/promise",
           "node_modules/es5-ext/test/reg-exp/#",
           "node_modules/es5-ext/test/reg-exp/#/match",
@@ -13991,7 +14025,8 @@
         ],
         "dependencies": {
           "es6-iterator": "~2.0.3",
-          "es6-symbol": "~3.1.1"
+          "es6-symbol": "~3.1.1",
+          "next-tick": "1"
         }
       },
       {
@@ -14099,7 +14134,7 @@
           "doctrine": "^2.1.0",
           "eslint-scope": "^3.7.1",
           "eslint-visitor-keys": "^1.0.0",
-          "espree": "^3.5.2",
+          "espree": "^3.5.4",
           "esquery": "^1.0.0",
           "esutils": "^2.0.2",
           "file-entry-cache": "^2.0.0",
@@ -14121,6 +14156,7 @@
           "path-is-inside": "^1.0.2",
           "pluralize": "^7.0.0",
           "progress": "^2.0.0",
+          "regexpp": "^1.0.1",
           "require-uncached": "^1.0.3",
           "semver": "^5.3.0",
           "strip-ansi": "^4.0.0",
@@ -14594,7 +14630,7 @@
           "node_modules/has/test"
         ],
         "dependencies": {
-          "function-bind": "^1.0.2"
+          "function-bind": "^1.1.1"
         }
       },
       {
@@ -14715,6 +14751,17 @@
           "assert-plus": "^1.0.0",
           "jsprim": "^1.2.2",
           "sshpk": "^1.7.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/iconv-lite/encodings",
+          "node_modules/iconv-lite/encodings/tables",
+          "node_modules/iconv-lite/lib",
+          "node_modules/iconv-lite"
+        ],
+        "dependencies": {
+          "safer-buffer": ">= 2.1.2 < 3"
         }
       },
       {
@@ -15131,7 +15178,7 @@
         ],
         "dependencies": {
           "npm-prefix": "^1.2.0",
-          "resolve-from": "^2.0.0"
+          "resolve-from": "^4.0.0"
         }
       },
       {
@@ -15223,7 +15270,7 @@
           "argly": "^1.0.0",
           "browser-refresh-client": "^1.0.0",
           "char-props": "~0.1.5",
-          "complain": "^1.2.0",
+          "complain": "^1.3.0",
           "deresolve": "^1.1.2",
           "escodegen": "^1.8.1",
           "esprima": "^4.0.0",
@@ -15279,38 +15326,15 @@
           "node_modules/marko-prettyprint/test/util"
         ],
         "dependencies": {
-          "argly": "^1.0.0",
+          "argly": "^1.2.0",
           "cssbeautify": "^0.3.1",
-          "editorconfig": "^0.13.2",
-          "lasso-package-root": "^1.0.0",
-          "marko": "^4.0.0",
-          "minimatch": "^3.0.0",
-          "prettier": "^1.8.2",
+          "editorconfig": "^0.15.0",
+          "lasso-package-root": "^1.0.1",
+          "marko": "^4.12.3",
+          "minimatch": "^3.0.4",
+          "prettier": "^1.13.7",
           "redent": "^2.0.0",
-          "resolve-from": "^3.0.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/marko-prettyprint/node_modules/editorconfig",
-          "node_modules/marko-prettyprint/node_modules/editorconfig/lib"
-        ],
-        "dependencies": {
-          "bluebird": "^3.0.5",
-          "commander": "^2.9.0",
-          "lru-cache": "^3.2.0",
-          "semver": "^5.1.0",
-          "sigmund": "^1.0.1"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/marko-prettyprint/node_modules/lru-cache/lib",
-          "node_modules/marko-prettyprint/node_modules/lru-cache",
-          "node_modules/marko-prettyprint/node_modules/lru-cache/test"
-        ],
-        "dependencies": {
-          "pseudomap": "^1.0.1"
+          "resolve-from": "^4.0.0"
         }
       },
       {
@@ -15326,7 +15350,6 @@
           "node_modules/mdast-util-compact"
         ],
         "dependencies": {
-          "unist-util-modify-children": "^1.0.0",
           "unist-util-visit": "^1.1.0"
         }
       },
@@ -15335,7 +15358,7 @@
           "node_modules/mime-types"
         ],
         "dependencies": {
-          "mime-db": "~1.33.0"
+          "mime-db": "~1.35.0"
         }
       },
       {
@@ -15570,7 +15593,7 @@
           "node_modules/rc/test"
         ],
         "dependencies": {
-          "deep-extend": "~0.4.0",
+          "deep-extend": "^0.6.0",
           "ini": "~1.3.0",
           "minimist": "^1.2.0",
           "strip-json-comments": "~2.0.1"
@@ -15597,7 +15620,7 @@
           "isarray": "~1.0.0",
           "process-nextick-args": "~2.0.0",
           "safe-buffer": "~5.1.1",
-          "string_decoder": "~1.0.3",
+          "string_decoder": "~1.1.1",
           "util-deprecate": "~1.0.1"
         }
       },
@@ -15697,7 +15720,6 @@
           "performance-now": "^2.1.0",
           "qs": "~6.5.1",
           "safe-buffer": "^5.1.1",
-          "stringstream": "~0.0.5",
           "tough-cookie": "~2.3.3",
           "tunnel-agent": "^0.6.0",
           "uuid": "^3.1.0"
@@ -15732,6 +15754,7 @@
           "node_modules/resolve/test/precedence",
           "node_modules/resolve/test/precedence/bbb",
           "node_modules/resolve/test/resolver/baz",
+          "node_modules/resolve/test/resolver/browser_field",
           "node_modules/resolve/test/resolver",
           "node_modules/resolve/test/resolver/dot_main",
           "node_modules/resolve/test/resolver/dot_slash_main",
@@ -15871,8 +15894,7 @@
       },
       {
         "paths": [
-          "node_modules/simple-sha1",
-          "node_modules/simple-sha1/test"
+          "node_modules/simple-sha1"
         ],
         "dependencies": {
           "rusha": "^0.8.1"
@@ -15939,6 +15961,7 @@
           "ecc-jsbn": "~0.1.1",
           "getpass": "^0.1.1",
           "jsbn": "~0.1.0",
+          "safer-buffer": "^2.0.2",
           "tweetnacl": "~0.14.0"
         }
       },
@@ -16154,7 +16177,7 @@
           "node_modules/underscore-plus"
         ],
         "dependencies": {
-          "underscore": "~1.6.0"
+          "underscore": "~1.8.3"
         }
       },
       {
@@ -16183,14 +16206,6 @@
       },
       {
         "paths": [
-          "node_modules/unist-util-modify-children"
-        ],
-        "dependencies": {
-          "array-iterate": "^1.0.0"
-        }
-      },
-      {
-        "paths": [
           "node_modules/unist-util-remove-position"
         ],
         "dependencies": {
@@ -16202,7 +16217,15 @@
           "node_modules/unist-util-visit"
         ],
         "dependencies": {
-          "unist-util-is": "^2.1.1"
+          "unist-util-visit-parents": "^2.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/unist-util-visit-parents"
+        ],
+        "dependencies": {
+          "unist-util-is": "^2.1.2"
         }
       },
       {
@@ -16212,7 +16235,8 @@
           "node_modules/universal-analytics/test"
         ],
         "dependencies": {
-          "request": "2.x",
+          "debug": "^3.0.0",
+          "request": "2.86.0",
           "uuid": "^3.0.0"
         }
       },

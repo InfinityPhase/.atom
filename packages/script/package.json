@@ -1,24 +1,25 @@
 {
-  "_from": "file:/tmp/d-117931-15867-10uliym.lwl6/package.tgz",
-  "_id": "script@3.17.3",
+  "_from": "file:/tmp/d-11851-7483-srmart.fn4c/package.tgz",
+  "_id": "script@3.18.1",
   "_inBundle": false,
-  "_integrity": "sha1-jPnB4WB1W+NPRB2+WyX+LqTv3R8=",
+  "_integrity": "sha512-Pjm1s/e0HEAIcVsrUkAeqedZ+znGnK7mfWFbt6PnBUW+JqmdrPT3iG27awjjPzP8LpDocHpGIJa+UGmbFDolug==",
   "_location": "/script",
   "_phantomChildren": {},
   "_requested": {
     "type": "file",
-    "where": "/tmp/apm-install-dir-117931-15867-15tlb5p.z9wg",
-    "raw": "/tmp/d-117931-15867-10uliym.lwl6/package.tgz",
-    "rawSpec": "/tmp/d-117931-15867-10uliym.lwl6/package.tgz",
-    "saveSpec": "file:/tmp/d-117931-15867-10uliym.lwl6/package.tgz",
-    "fetchSpec": "/tmp/d-117931-15867-10uliym.lwl6/package.tgz"
+    "where": "/tmp/apm-install-dir-11851-7483-1fritz2.b5gg",
+    "raw": "/tmp/d-11851-7483-srmart.fn4c/package.tgz",
+    "rawSpec": "/tmp/d-11851-7483-srmart.fn4c/package.tgz",
+    "saveSpec": "file:/tmp/d-11851-7483-srmart.fn4c/package.tgz",
+    "fetchSpec": "/tmp/d-11851-7483-srmart.fn4c/package.tgz"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "/tmp/d-117931-15867-10uliym.lwl6/package.tgz",
-  "_spec": "/tmp/d-117931-15867-10uliym.lwl6/package.tgz",
-  "_where": "/tmp/apm-install-dir-117931-15867-15tlb5p.z9wg",
+  "_resolved": "/tmp/d-11851-7483-srmart.fn4c/package.tgz",
+  "_shasum": "1fc9c875390dcceb6f987d1cf6220c7dd219e207",
+  "_spec": "/tmp/d-11851-7483-srmart.fn4c/package.tgz",
+  "_where": "/tmp/apm-install-dir-11851-7483-1fritz2.b5gg",
   "activationCommands": {
     "atom-text-editor": [
       "script:run",
@@ -412,7 +413,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
-  "version": "3.17.3",
+  "version": "3.18.1",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -478,12 +479,12 @@
       },
       {
         "name": "babel-core",
-        "version": "6.26.0",
+        "version": "6.26.3",
         "path": "node_modules/babel-core/index.js"
       },
       {
         "name": "babel-generator",
-        "version": "6.26.0",
+        "version": "6.26.1",
         "path": "node_modules/babel-generator/lib/index.js"
       },
       {
@@ -633,7 +634,7 @@
       },
       {
         "name": "babel-plugin-transform-es2015-modules-commonjs",
-        "version": "6.26.0",
+        "version": "6.26.2",
         "path": "node_modules/babel-plugin-transform-es2015-modules-commonjs/lib/index.js"
       },
       {
@@ -713,7 +714,7 @@
       },
       {
         "name": "babel-preset-env",
-        "version": "1.6.1",
+        "version": "1.7.0",
         "path": "node_modules/babel-preset-env/lib/index.js"
       },
       {
@@ -748,12 +749,12 @@
       },
       {
         "name": "binary-extensions",
-        "version": "1.10.0",
+        "version": "1.11.0",
         "path": "node_modules/binary-extensions/binary-extensions.json"
       },
       {
         "name": "brace-expansion",
-        "version": "1.1.8",
+        "version": "1.1.11",
         "path": "node_modules/brace-expansion/index.js"
       },
       {
@@ -763,12 +764,12 @@
       },
       {
         "name": "browserslist",
-        "version": "2.6.1",
+        "version": "3.2.8",
         "path": "node_modules/browserslist/index.js"
       },
       {
         "name": "caniuse-lite",
-        "version": "1.0.30000756",
+        "version": "1.0.30000847",
         "path": "node_modules/caniuse-lite/dist/unpacker/index.js"
       },
       {
@@ -783,12 +784,12 @@
       },
       {
         "name": "coffeescript",
-        "version": "2.0.2",
+        "version": "2.3.1",
         "path": "node_modules/coffeescript/lib/coffeescript/index.js"
       },
       {
         "name": "commander",
-        "version": "2.11.0",
+        "version": "2.15.1",
         "path": "node_modules/commander/index.js"
       },
       {
@@ -798,12 +799,12 @@
       },
       {
         "name": "convert-source-map",
-        "version": "1.5.0",
+        "version": "1.5.1",
         "path": "node_modules/convert-source-map/index.js"
       },
       {
         "name": "core-js",
-        "version": "2.5.1",
+        "version": "2.5.7",
         "path": "node_modules/core-js/index.js"
       },
       {
@@ -828,7 +829,7 @@
       },
       {
         "name": "electron-to-chromium",
-        "version": "1.3.27",
+        "version": "1.3.48",
         "path": "node_modules/electron-to-chromium/index.js"
       },
       {
@@ -843,7 +844,7 @@
       },
       {
         "name": "es5-ext",
-        "version": "0.10.35",
+        "version": "0.10.45",
         "path": "node_modules/es5-ext/index.js"
       },
       {
@@ -908,7 +909,7 @@
       },
       {
         "name": "fill-range",
-        "version": "2.2.3",
+        "version": "2.2.4",
         "path": "node_modules/fill-range/index.js"
       },
       {
@@ -923,7 +924,7 @@
       },
       {
         "name": "fs-readdir-recursive",
-        "version": "1.0.0",
+        "version": "1.1.0",
         "path": "node_modules/fs-readdir-recursive/index.js"
       },
       {
@@ -988,7 +989,7 @@
       },
       {
         "name": "invariant",
-        "version": "2.2.2",
+        "version": "2.2.4",
         "path": "node_modules/invariant/invariant.js"
       },
       {
@@ -1083,13 +1084,18 @@
       },
       {
         "name": "lodash",
-        "version": "4.17.4",
+        "version": "4.17.10",
         "path": "node_modules/lodash/lodash.js"
       },
       {
         "name": "loose-envify",
         "version": "1.3.1",
         "path": "node_modules/loose-envify/index.js"
+      },
+      {
+        "name": "math-random",
+        "version": "1.0.1",
+        "path": "node_modules/math-random/node.js"
       },
       {
         "name": "micromatch",
@@ -1120,6 +1126,11 @@
         "name": "ms",
         "version": "2.0.0",
         "path": "node_modules/ms/index.js"
+      },
+      {
+        "name": "next-tick",
+        "version": "1.0.0",
+        "path": "node_modules/next-tick/index.js"
       },
       {
         "name": "normalize-path",
@@ -1183,7 +1194,7 @@
       },
       {
         "name": "process-nextick-args",
-        "version": "1.0.7",
+        "version": "2.0.0",
         "path": "node_modules/process-nextick-args/index.js"
       },
       {
@@ -1193,27 +1204,22 @@
       },
       {
         "name": "randomatic",
-        "version": "1.1.7",
+        "version": "3.0.0",
         "path": "node_modules/randomatic/index.js"
       },
       {
         "name": "is-number",
-        "version": "3.0.0",
+        "version": "4.0.0",
         "path": "node_modules/randomatic/node_modules/is-number/index.js"
       },
       {
         "name": "kind-of",
-        "version": "3.2.2",
-        "path": "node_modules/randomatic/node_modules/is-number/node_modules/kind-of/index.js"
-      },
-      {
-        "name": "kind-of",
-        "version": "4.0.0",
+        "version": "6.0.2",
         "path": "node_modules/randomatic/node_modules/kind-of/index.js"
       },
       {
         "name": "readable-stream",
-        "version": "2.3.3",
+        "version": "2.3.6",
         "path": "node_modules/readable-stream/readable.js"
       },
       {
@@ -1223,12 +1229,12 @@
       },
       {
         "name": "regenerate",
-        "version": "1.3.3",
+        "version": "1.4.0",
         "path": "node_modules/regenerate/regenerate.js"
       },
       {
         "name": "regenerator-runtime",
-        "version": "0.11.0",
+        "version": "0.11.1",
         "path": "node_modules/regenerator-runtime/runtime-module.js"
       },
       {
@@ -1283,12 +1289,12 @@
       },
       {
         "name": "safe-buffer",
-        "version": "5.1.1",
+        "version": "5.1.2",
         "path": "node_modules/safe-buffer/index.js"
       },
       {
         "name": "semver",
-        "version": "5.4.1",
+        "version": "5.5.0",
         "path": "node_modules/semver/semver.js"
       },
       {
@@ -1318,7 +1324,7 @@
       },
       {
         "name": "string_decoder",
-        "version": "1.0.3",
+        "version": "1.1.1",
         "path": "node_modules/string_decoder/lib/string_decoder.js"
       },
       {
@@ -1343,7 +1349,7 @@
       },
       {
         "name": "underscore",
-        "version": "1.8.3",
+        "version": "1.9.1",
         "path": "node_modules/underscore/underscore.js"
       },
       {
@@ -1368,7 +1374,7 @@
       },
       {
         "name": "uuid",
-        "version": "3.1.0",
+        "version": "3.2.1",
         "path": "node_modules/uuid/index.js"
       },
       {
@@ -1399,7 +1405,6 @@
         "node_modules/babel-cli/package.json",
         "node_modules/babel-code-frame/package-lock.json",
         "node_modules/babel-code-frame/package.json",
-        "node_modules/babel-core/package-lock.json",
         "node_modules/babel-core/package.json",
         "node_modules/babel-generator/package.json",
         "node_modules/babel-helper-builder-binary-assignment-operator-visitor/package.json",
@@ -1497,6 +1502,7 @@
         "node_modules/es5-ext/node_modules/es6-iterator/package.json",
         "node_modules/es5-ext/node_modules/es6-symbol/package.json",
         "node_modules/es5-ext/package.json",
+        "node_modules/es5-ext/promise/.eslintrc.json",
         "node_modules/es6-iterator/package.json",
         "node_modules/es6-symbol/package.json",
         "node_modules/es6-weak-map/package.json",
@@ -1546,12 +1552,14 @@
         "node_modules/kind-of/package.json",
         "node_modules/lodash/package.json",
         "node_modules/loose-envify/package.json",
+        "node_modules/math-random/package.json",
         "node_modules/micromatch/package.json",
         "node_modules/minimatch/package.json",
         "node_modules/minimist/package.json",
         "node_modules/mixto/package.json",
         "node_modules/mkdirp/package.json",
         "node_modules/ms/package.json",
+        "node_modules/next-tick/package.json",
         "node_modules/normalize-path/package.json",
         "node_modules/number-is-nan/package.json",
         "node_modules/object-assign/package.json",
@@ -1566,7 +1574,6 @@
         "node_modules/private/package.json",
         "node_modules/process-nextick-args/package.json",
         "node_modules/property-accessors/package.json",
-        "node_modules/randomatic/node_modules/is-number/node_modules/kind-of/package.json",
         "node_modules/randomatic/node_modules/is-number/package.json",
         "node_modules/randomatic/node_modules/kind-of/package.json",
         "node_modules/randomatic/package.json",
@@ -1684,6 +1691,7 @@
         "node_modules/babel-core/lib/tools/build-external-helpers.js",
         "node_modules/babel-core/lib/transformation/file/index.js",
         "node_modules/babel-core/lib/transformation/file/logger.js",
+        "node_modules/babel-core/lib/transformation/file/merge-map.js",
         "node_modules/babel-core/lib/transformation/file/metadata.js",
         "node_modules/babel-core/lib/transformation/file/options/build-config-chain.js",
         "node_modules/babel-core/lib/transformation/file/options/config.js",
@@ -2074,30 +2082,39 @@
         "node_modules/balanced-match/index.js",
         "node_modules/brace-expansion/index.js",
         "node_modules/braces/index.js",
+        "node_modules/browserslist/browser.js",
         "node_modules/browserslist/cli.js",
+        "node_modules/browserslist/error.js",
         "node_modules/browserslist/index.js",
+        "node_modules/browserslist/node.js",
         "node_modules/caniuse-lite/data/agents.js",
         "node_modules/caniuse-lite/data/browserVersions.js",
         "node_modules/caniuse-lite/data/browsers.js",
         "node_modules/caniuse-lite/data/features/aac.js",
+        "node_modules/caniuse-lite/data/features/abortcontroller.js",
         "node_modules/caniuse-lite/data/features/ac3-ec3.js",
+        "node_modules/caniuse-lite/data/features/accelerometer.js",
         "node_modules/caniuse-lite/data/features/addeventlistener.js",
         "node_modules/caniuse-lite/data/features/alternate-stylesheet.js",
         "node_modules/caniuse-lite/data/features/ambient-light.js",
         "node_modules/caniuse-lite/data/features/apng.js",
+        "node_modules/caniuse-lite/data/features/array-includes.js",
         "node_modules/caniuse-lite/data/features/arrow-functions.js",
         "node_modules/caniuse-lite/data/features/asmjs.js",
         "node_modules/caniuse-lite/data/features/async-functions.js",
+        "node_modules/caniuse-lite/data/features/async-iterations-and-generators.js",
         "node_modules/caniuse-lite/data/features/atob-btoa.js",
         "node_modules/caniuse-lite/data/features/audio-api.js",
         "node_modules/caniuse-lite/data/features/audio.js",
         "node_modules/caniuse-lite/data/features/audiotracks.js",
         "node_modules/caniuse-lite/data/features/autofocus.js",
         "node_modules/caniuse-lite/data/features/aux-click.js",
+        "node_modules/caniuse-lite/data/features/auxclick.js",
         "node_modules/caniuse-lite/data/features/background-attachment.js",
         "node_modules/caniuse-lite/data/features/background-img-opts.js",
         "node_modules/caniuse-lite/data/features/background-position-x-y.js",
         "node_modules/caniuse-lite/data/features/background-repeat-round-space.js",
+        "node_modules/caniuse-lite/data/features/background-sync.js",
         "node_modules/caniuse-lite/data/features/battery-status.js",
         "node_modules/caniuse-lite/data/features/beacon.js",
         "node_modules/caniuse-lite/data/features/beforeafterprint.js",
@@ -2144,6 +2161,7 @@
         "node_modules/caniuse-lite/data/features/css-caret-color.js",
         "node_modules/caniuse-lite/data/features/css-case-insensitive.js",
         "node_modules/caniuse-lite/data/features/css-clip-path.js",
+        "node_modules/caniuse-lite/data/features/css-color-adjust.js",
         "node_modules/caniuse-lite/data/features/css-conic-gradients.js",
         "node_modules/caniuse-lite/data/features/css-containment.js",
         "node_modules/caniuse-lite/data/features/css-counters.js",
@@ -2163,6 +2181,7 @@
         "node_modules/caniuse-lite/data/features/css-first-line.js",
         "node_modules/caniuse-lite/data/features/css-fixed.js",
         "node_modules/caniuse-lite/data/features/css-focus-ring.js",
+        "node_modules/caniuse-lite/data/features/css-focus-visible.js",
         "node_modules/caniuse-lite/data/features/css-focus-within.js",
         "node_modules/caniuse-lite/data/features/css-font-rendering-controls.js",
         "node_modules/caniuse-lite/data/features/css-font-stretch.js",
@@ -2197,8 +2216,10 @@
         "node_modules/caniuse-lite/data/features/css-opacity.js",
         "node_modules/caniuse-lite/data/features/css-optional-pseudo.js",
         "node_modules/caniuse-lite/data/features/css-overflow-anchor.js",
+        "node_modules/caniuse-lite/data/features/css-overscroll-behavior.js",
         "node_modules/caniuse-lite/data/features/css-page-break.js",
         "node_modules/caniuse-lite/data/features/css-paged-media.js",
+        "node_modules/caniuse-lite/data/features/css-paint-api.js",
         "node_modules/caniuse-lite/data/features/css-placeholder-shown.js",
         "node_modules/caniuse-lite/data/features/css-placeholder.js",
         "node_modules/caniuse-lite/data/features/css-read-only-write.js",
@@ -2253,9 +2274,11 @@
         "node_modules/caniuse-lite/data/features/devicepixelratio.js",
         "node_modules/caniuse-lite/data/features/dialog.js",
         "node_modules/caniuse-lite/data/features/dispatchevent.js",
+        "node_modules/caniuse-lite/data/features/do-not-track.js",
         "node_modules/caniuse-lite/data/features/document-currentscript.js",
         "node_modules/caniuse-lite/data/features/document-evaluate-xpath.js",
         "node_modules/caniuse-lite/data/features/document-execcommand.js",
+        "node_modules/caniuse-lite/data/features/document-scrollingelement.js",
         "node_modules/caniuse-lite/data/features/documenthead.js",
         "node_modules/caniuse-lite/data/features/dom-manip-convenience.js",
         "node_modules/caniuse-lite/data/features/dom-range.js",
@@ -2275,6 +2298,7 @@
         "node_modules/caniuse-lite/data/features/es6-module-nomodule.js",
         "node_modules/caniuse-lite/data/features/es6-module.js",
         "node_modules/caniuse-lite/data/features/es6-number.js",
+        "node_modules/caniuse-lite/data/features/es6-string-includes.js",
         "node_modules/caniuse-lite/data/features/eventsource.js",
         "node_modules/caniuse-lite/data/features/fetch.js",
         "node_modules/caniuse-lite/data/features/fieldset-disabled.js",
@@ -2286,6 +2310,8 @@
         "node_modules/caniuse-lite/data/features/flexbox.js",
         "node_modules/caniuse-lite/data/features/flow-root.js",
         "node_modules/caniuse-lite/data/features/focusin-focusout-events.js",
+        "node_modules/caniuse-lite/data/features/focusoptions-preventscroll.js",
+        "node_modules/caniuse-lite/data/features/font-family-system-ui.js",
         "node_modules/caniuse-lite/data/features/font-feature.js",
         "node_modules/caniuse-lite/data/features/font-kerning.js",
         "node_modules/caniuse-lite/data/features/font-loading.js",
@@ -2293,6 +2319,7 @@
         "node_modules/caniuse-lite/data/features/font-smooth.js",
         "node_modules/caniuse-lite/data/features/font-unicode-range.js",
         "node_modules/caniuse-lite/data/features/font-variant-alternates.js",
+        "node_modules/caniuse-lite/data/features/font-variant-east-asian.js",
         "node_modules/caniuse-lite/data/features/fontface.js",
         "node_modules/caniuse-lite/data/features/form-attribute.js",
         "node_modules/caniuse-lite/data/features/form-submit-attributes.js",
@@ -2305,6 +2332,7 @@
         "node_modules/caniuse-lite/data/features/getcomputedstyle.js",
         "node_modules/caniuse-lite/data/features/getelementsbyclassname.js",
         "node_modules/caniuse-lite/data/features/getrandomvalues.js",
+        "node_modules/caniuse-lite/data/features/gyroscope.js",
         "node_modules/caniuse-lite/data/features/hardwareconcurrency.js",
         "node_modules/caniuse-lite/data/features/hashchange.js",
         "node_modules/caniuse-lite/data/features/heif.js",
@@ -2369,6 +2397,7 @@
         "node_modules/caniuse-lite/data/features/link-rel-preload.js",
         "node_modules/caniuse-lite/data/features/link-rel-prerender.js",
         "node_modules/caniuse-lite/data/features/localecompare.js",
+        "node_modules/caniuse-lite/data/features/magnetometer.js",
         "node_modules/caniuse-lite/data/features/matchesselector.js",
         "node_modules/caniuse-lite/data/features/matchmedia.js",
         "node_modules/caniuse-lite/data/features/mathml.js",
@@ -2380,6 +2409,7 @@
         "node_modules/caniuse-lite/data/features/mediarecorder.js",
         "node_modules/caniuse-lite/data/features/mediasource.js",
         "node_modules/caniuse-lite/data/features/menu.js",
+        "node_modules/caniuse-lite/data/features/meta-theme-color.js",
         "node_modules/caniuse-lite/data/features/meter.js",
         "node_modules/caniuse-lite/data/features/midi.js",
         "node_modules/caniuse-lite/data/features/minmaxwh.js",
@@ -2392,6 +2422,7 @@
         "node_modules/caniuse-lite/data/features/mutationobserver.js",
         "node_modules/caniuse-lite/data/features/namevalue-storage.js",
         "node_modules/caniuse-lite/data/features/nav-timing.js",
+        "node_modules/caniuse-lite/data/features/navigator-language.js",
         "node_modules/caniuse-lite/data/features/netinfo.js",
         "node_modules/caniuse-lite/data/features/node-contains.js",
         "node_modules/caniuse-lite/data/features/node-parentelement.js",
@@ -2408,6 +2439,7 @@
         "node_modules/caniuse-lite/data/features/once-event-listener.js",
         "node_modules/caniuse-lite/data/features/online-status.js",
         "node_modules/caniuse-lite/data/features/opus.js",
+        "node_modules/caniuse-lite/data/features/orientation-sensor.js",
         "node_modules/caniuse-lite/data/features/outline.js",
         "node_modules/caniuse-lite/data/features/pad-start-end.js",
         "node_modules/caniuse-lite/data/features/page-transition-events.js",
@@ -2422,6 +2454,7 @@
         "node_modules/caniuse-lite/data/features/pointer-events.js",
         "node_modules/caniuse-lite/data/features/pointer.js",
         "node_modules/caniuse-lite/data/features/pointerlock.js",
+        "node_modules/caniuse-lite/data/features/prefers-reduced-motion.js",
         "node_modules/caniuse-lite/data/features/progress.js",
         "node_modules/caniuse-lite/data/features/promises.js",
         "node_modules/caniuse-lite/data/features/proximity.js",
@@ -2452,6 +2485,7 @@
         "node_modules/caniuse-lite/data/features/scrollintoviewifneeded.js",
         "node_modules/caniuse-lite/data/features/sdch.js",
         "node_modules/caniuse-lite/data/features/selection-api.js",
+        "node_modules/caniuse-lite/data/features/server-timing.js",
         "node_modules/caniuse-lite/data/features/serviceworkers.js",
         "node_modules/caniuse-lite/data/features/setimmediate.js",
         "node_modules/caniuse-lite/data/features/sha-2.js",
@@ -2480,6 +2514,7 @@
         "node_modules/caniuse-lite/data/features/svg-img.js",
         "node_modules/caniuse-lite/data/features/svg-smil.js",
         "node_modules/caniuse-lite/data/features/svg.js",
+        "node_modules/caniuse-lite/data/features/symbols.js",
         "node_modules/caniuse-lite/data/features/tabindex-attr.js",
         "node_modules/caniuse-lite/data/features/template-literals.js",
         "node_modules/caniuse-lite/data/features/template.js",
@@ -2521,6 +2556,7 @@
         "node_modules/caniuse-lite/data/features/web-app-manifest.js",
         "node_modules/caniuse-lite/data/features/web-bluetooth.js",
         "node_modules/caniuse-lite/data/features/web-share.js",
+        "node_modules/caniuse-lite/data/features/webauthn.js",
         "node_modules/caniuse-lite/data/features/webgl.js",
         "node_modules/caniuse-lite/data/features/webgl2.js",
         "node_modules/caniuse-lite/data/features/webm.js",
@@ -2818,7 +2854,6 @@
         "node_modules/commander/index.js",
         "node_modules/concat-map/example/map.js",
         "node_modules/concat-map/index.js",
-        "node_modules/convert-source-map/example/comment-to-json.js",
         "node_modules/convert-source-map/index.js",
         "node_modules/core-js/Gruntfile.js",
         "node_modules/core-js/build/config.js",
@@ -3681,6 +3716,7 @@
         "node_modules/core-js/library/modules/_typed-buffer.js",
         "node_modules/core-js/library/modules/_typed.js",
         "node_modules/core-js/library/modules/_uid.js",
+        "node_modules/core-js/library/modules/_user-agent.js",
         "node_modules/core-js/library/modules/_validate-collection.js",
         "node_modules/core-js/library/modules/_wks-define.js",
         "node_modules/core-js/library/modules/_wks-ext.js",
@@ -4032,6 +4068,7 @@
         "node_modules/core-js/modules/_typed-buffer.js",
         "node_modules/core-js/modules/_typed.js",
         "node_modules/core-js/modules/_uid.js",
+        "node_modules/core-js/modules/_user-agent.js",
         "node_modules/core-js/modules/_validate-collection.js",
         "node_modules/core-js/modules/_wks-define.js",
         "node_modules/core-js/modules/_wks-ext.js",
@@ -4413,8 +4450,10 @@
         "node_modules/es5-ext/date/#/floor-year.js",
         "node_modules/es5-ext/date/#/format.js",
         "node_modules/es5-ext/date/#/index.js",
+        "node_modules/es5-ext/date/ensure-time-value.js",
         "node_modules/es5-ext/date/index.js",
         "node_modules/es5-ext/date/is-date.js",
+        "node_modules/es5-ext/date/is-time-value.js",
         "node_modules/es5-ext/date/valid-date.js",
         "node_modules/es5-ext/error/#/index.js",
         "node_modules/es5-ext/error/#/throw.js",
@@ -4427,6 +4466,7 @@
         "node_modules/es5-ext/function/#/curry.js",
         "node_modules/es5-ext/function/#/index.js",
         "node_modules/es5-ext/function/#/lock.js",
+        "node_modules/es5-ext/function/#/microtask-delay.js",
         "node_modules/es5-ext/function/#/not.js",
         "node_modules/es5-ext/function/#/partial.js",
         "node_modules/es5-ext/function/#/spread.js",
@@ -4450,6 +4490,7 @@
         "node_modules/es5-ext/iterable/validate.js",
         "node_modules/es5-ext/json/index.js",
         "node_modules/es5-ext/json/safe-stringify.js",
+        "node_modules/es5-ext/math/_decimal-adjust.js",
         "node_modules/es5-ext/math/_pack-ieee754.js",
         "node_modules/es5-ext/math/_unpack-ieee754.js",
         "node_modules/es5-ext/math/acosh/implement.js",
@@ -4468,6 +4509,7 @@
         "node_modules/es5-ext/math/cbrt/index.js",
         "node_modules/es5-ext/math/cbrt/is-implemented.js",
         "node_modules/es5-ext/math/cbrt/shim.js",
+        "node_modules/es5-ext/math/ceil-10.js",
         "node_modules/es5-ext/math/clz32/implement.js",
         "node_modules/es5-ext/math/clz32/index.js",
         "node_modules/es5-ext/math/clz32/is-implemented.js",
@@ -4480,6 +4522,7 @@
         "node_modules/es5-ext/math/expm1/index.js",
         "node_modules/es5-ext/math/expm1/is-implemented.js",
         "node_modules/es5-ext/math/expm1/shim.js",
+        "node_modules/es5-ext/math/floor-10.js",
         "node_modules/es5-ext/math/fround/implement.js",
         "node_modules/es5-ext/math/fround/index.js",
         "node_modules/es5-ext/math/fround/is-implemented.js",
@@ -4505,6 +4548,7 @@
         "node_modules/es5-ext/math/log2/index.js",
         "node_modules/es5-ext/math/log2/is-implemented.js",
         "node_modules/es5-ext/math/log2/shim.js",
+        "node_modules/es5-ext/math/round-10.js",
         "node_modules/es5-ext/math/sign/implement.js",
         "node_modules/es5-ext/math/sign/index.js",
         "node_modules/es5-ext/math/sign/is-implemented.js",
@@ -4587,9 +4631,16 @@
         "node_modules/es5-ext/object/create.js",
         "node_modules/es5-ext/object/ensure-array.js",
         "node_modules/es5-ext/object/ensure-finite-number.js",
+        "node_modules/es5-ext/object/ensure-integer.js",
         "node_modules/es5-ext/object/ensure-natural-number-value.js",
         "node_modules/es5-ext/object/ensure-natural-number.js",
+        "node_modules/es5-ext/object/ensure-plain-function.js",
         "node_modules/es5-ext/object/ensure-promise.js",
+        "node_modules/es5-ext/object/ensure-thenable.js",
+        "node_modules/es5-ext/object/entries/implement.js",
+        "node_modules/es5-ext/object/entries/index.js",
+        "node_modules/es5-ext/object/entries/is-implemented.js",
+        "node_modules/es5-ext/object/entries/shim.js",
         "node_modules/es5-ext/object/eq.js",
         "node_modules/es5-ext/object/every.js",
         "node_modules/es5-ext/object/filter.js",
@@ -4606,11 +4657,15 @@
         "node_modules/es5-ext/object/is-copy.js",
         "node_modules/es5-ext/object/is-empty.js",
         "node_modules/es5-ext/object/is-finite-number.js",
+        "node_modules/es5-ext/object/is-integer.js",
+        "node_modules/es5-ext/object/is-natural-number-value.js",
+        "node_modules/es5-ext/object/is-natural-number.js",
         "node_modules/es5-ext/object/is-number-value.js",
         "node_modules/es5-ext/object/is-object.js",
         "node_modules/es5-ext/object/is-plain-function.js",
         "node_modules/es5-ext/object/is-plain-object.js",
         "node_modules/es5-ext/object/is-promise.js",
+        "node_modules/es5-ext/object/is-thenable.js",
         "node_modules/es5-ext/object/is-value.js",
         "node_modules/es5-ext/object/is.js",
         "node_modules/es5-ext/object/key-of.js",
@@ -4641,6 +4696,10 @@
         "node_modules/es5-ext/object/validate-stringifiable-value.js",
         "node_modules/es5-ext/object/validate-stringifiable.js",
         "node_modules/es5-ext/optional-chaining.js",
+        "node_modules/es5-ext/promise/#/as-callback.js",
+        "node_modules/es5-ext/promise/#/index.js",
+        "node_modules/es5-ext/promise/index.js",
+        "node_modules/es5-ext/promise/lazy.js",
         "node_modules/es5-ext/reg-exp/#/index.js",
         "node_modules/es5-ext/reg-exp/#/is-sticky.js",
         "node_modules/es5-ext/reg-exp/#/is-unicode.js",
@@ -4719,6 +4778,7 @@
         "node_modules/es5-ext/string/index.js",
         "node_modules/es5-ext/string/is-string.js",
         "node_modules/es5-ext/string/random-uniq.js",
+        "node_modules/es5-ext/string/random.js",
         "node_modules/es5-ext/string/raw/implement.js",
         "node_modules/es5-ext/string/raw/index.js",
         "node_modules/es5-ext/string/raw/is-implemented.js",
@@ -4904,8 +4964,6 @@
         "node_modules/lodash/_Symbol.js",
         "node_modules/lodash/_Uint8Array.js",
         "node_modules/lodash/_WeakMap.js",
-        "node_modules/lodash/_addMapEntry.js",
-        "node_modules/lodash/_addSetEntry.js",
         "node_modules/lodash/_apply.js",
         "node_modules/lodash/_arrayAggregator.js",
         "node_modules/lodash/_arrayEach.js",
@@ -5041,9 +5099,7 @@
         "node_modules/lodash/_cloneArrayBuffer.js",
         "node_modules/lodash/_cloneBuffer.js",
         "node_modules/lodash/_cloneDataView.js",
-        "node_modules/lodash/_cloneMap.js",
         "node_modules/lodash/_cloneRegExp.js",
-        "node_modules/lodash/_cloneSet.js",
         "node_modules/lodash/_cloneSymbol.js",
         "node_modules/lodash/_cloneTypedArray.js",
         "node_modules/lodash/_compareAscending.js",
@@ -5164,6 +5220,7 @@
         "node_modules/lodash/_reorder.js",
         "node_modules/lodash/_replaceHolders.js",
         "node_modules/lodash/_root.js",
+        "node_modules/lodash/_safeGet.js",
         "node_modules/lodash/_setCacheAdd.js",
         "node_modules/lodash/_setCacheHas.js",
         "node_modules/lodash/_setData.js",
@@ -5944,6 +6001,9 @@
         "node_modules/loose-envify/index.js",
         "node_modules/loose-envify/loose-envify.js",
         "node_modules/loose-envify/replace.js",
+        "node_modules/math-random/browser.js",
+        "node_modules/math-random/node.js",
+        "node_modules/math-random/test.js",
         "node_modules/micromatch/index.js",
         "node_modules/micromatch/lib/chars.js",
         "node_modules/micromatch/lib/expand.js",
@@ -5957,6 +6017,7 @@
         "node_modules/mkdirp/examples/pow.js",
         "node_modules/mkdirp/index.js",
         "node_modules/ms/index.js",
+        "node_modules/next-tick/index.js",
         "node_modules/normalize-path/index.js",
         "node_modules/number-is-nan/index.js",
         "node_modules/object-assign/index.js",
@@ -5971,11 +6032,9 @@
         "node_modules/preserve/test.js",
         "node_modules/private/private.js",
         "node_modules/process-nextick-args/index.js",
-        "node_modules/process-nextick-args/test.js",
         "node_modules/property-accessors/lib/property-accessors.js",
         "node_modules/randomatic/index.js",
         "node_modules/randomatic/node_modules/is-number/index.js",
-        "node_modules/randomatic/node_modules/is-number/node_modules/kind-of/index.js",
         "node_modules/randomatic/node_modules/kind-of/index.js",
         "node_modules/readable-stream/duplex-browser.js",
         "node_modules/readable-stream/duplex.js",
@@ -6031,7 +6090,6 @@
         "node_modules/repeat-string/index.js",
         "node_modules/repeating/index.js",
         "node_modules/safe-buffer/index.js",
-        "node_modules/safe-buffer/test.js",
         "node_modules/semver/semver.js",
         "node_modules/set-immediate-shim/index.js",
         "node_modules/slash/index.js",
@@ -6069,11 +6127,15 @@
         "node_modules/util-deprecate/node.js",
         "node_modules/uuid/index.js",
         "node_modules/uuid/lib/bytesToUuid.js",
+        "node_modules/uuid/lib/md5-browser.js",
+        "node_modules/uuid/lib/md5.js",
         "node_modules/uuid/lib/rng-browser.js",
         "node_modules/uuid/lib/rng.js",
         "node_modules/uuid/lib/sha1-browser.js",
         "node_modules/uuid/lib/sha1.js",
+        "node_modules/uuid/lib/v35.js",
         "node_modules/uuid/v1.js",
+        "node_modules/uuid/v3.js",
         "node_modules/uuid/v4.js",
         "node_modules/uuid/v5.js",
         "node_modules/v8flags/index.js",
@@ -6229,15 +6291,15 @@
           "babel-traverse": "^6.26.0",
           "babel-types": "^6.26.0",
           "babylon": "^6.18.0",
-          "convert-source-map": "^1.5.0",
-          "debug": "^2.6.8",
+          "convert-source-map": "^1.5.1",
+          "debug": "^2.6.9",
           "json5": "^0.5.1",
           "lodash": "^4.17.4",
           "minimatch": "^3.0.4",
           "path-is-absolute": "^1.0.1",
-          "private": "^0.1.7",
+          "private": "^0.1.8",
           "slash": "^1.0.0",
-          "source-map": "^0.5.6"
+          "source-map": "^0.5.7"
         }
       },
       {
@@ -6254,7 +6316,7 @@
           "detect-indent": "^4.0.0",
           "jsesc": "^1.3.0",
           "lodash": "^4.17.4",
-          "source-map": "^0.5.6",
+          "source-map": "^0.5.7",
           "trim-right": "^1.0.1"
         }
       },
@@ -6736,7 +6798,7 @@
           "babel-plugin-transform-es2015-unicode-regex": "^6.22.0",
           "babel-plugin-transform-exponentiation-operator": "^6.22.0",
           "babel-plugin-transform-regenerator": "^6.22.0",
-          "browserslist": "^2.1.2",
+          "browserslist": "^3.2.6",
           "invariant": "^2.2.2",
           "semver": "^5.3.0"
         }
@@ -6851,8 +6913,8 @@
           "node_modules/browserslist"
         ],
         "dependencies": {
-          "caniuse-lite": "^1.0.30000755",
-          "electron-to-chromium": "^1.3.27"
+          "caniuse-lite": "^1.0.30000844",
+          "electron-to-chromium": "^1.3.47"
         }
       },
       {
@@ -6980,8 +7042,11 @@
           "node_modules/es5-ext/number/min-safe-integer",
           "node_modules/es5-ext/object",
           "node_modules/es5-ext/object/assign",
+          "node_modules/es5-ext/object/entries",
           "node_modules/es5-ext/object/keys",
           "node_modules/es5-ext/object/set-prototype-of",
+          "node_modules/es5-ext/promise/#",
+          "node_modules/es5-ext/promise",
           "node_modules/es5-ext/reg-exp/#",
           "node_modules/es5-ext/reg-exp/#/match",
           "node_modules/es5-ext/reg-exp/#/replace",
@@ -7057,8 +7122,11 @@
           "node_modules/es5-ext/test/number/min-safe-integer",
           "node_modules/es5-ext/test/object",
           "node_modules/es5-ext/test/object/assign",
+          "node_modules/es5-ext/test/object/entries",
           "node_modules/es5-ext/test/object/keys",
           "node_modules/es5-ext/test/object/set-prototype-of",
+          "node_modules/es5-ext/test/promise/#",
+          "node_modules/es5-ext/test/promise",
           "node_modules/es5-ext/test/reg-exp/#",
           "node_modules/es5-ext/test/reg-exp/#/match",
           "node_modules/es5-ext/test/reg-exp/#/replace",
@@ -7080,8 +7148,9 @@
           "node_modules/es5-ext/test/string/raw"
         ],
         "dependencies": {
-          "es6-iterator": "~2.0.1",
-          "es6-symbol": "~3.1.1"
+          "es6-iterator": "~2.0.3",
+          "es6-symbol": "~3.1.1",
+          "next-tick": "1"
         }
       },
       {
@@ -7182,7 +7251,7 @@
         "dependencies": {
           "is-number": "^2.1.0",
           "isobject": "^2.0.0",
-          "randomatic": "^1.1.3",
+          "randomatic": "^3.0.0",
           "repeat-element": "^1.1.2",
           "repeat-string": "^1.5.2"
         }
@@ -7433,32 +7502,9 @@
           "node_modules/randomatic"
         ],
         "dependencies": {
-          "is-number": "^3.0.0",
-          "kind-of": "^4.0.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/randomatic/node_modules/is-number"
-        ],
-        "dependencies": {
-          "kind-of": "^3.0.2"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/randomatic/node_modules/is-number/node_modules/kind-of"
-        ],
-        "dependencies": {
-          "is-buffer": "^1.1.5"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/randomatic/node_modules/kind-of"
-        ],
-        "dependencies": {
-          "is-buffer": "^1.1.5"
+          "is-number": "^4.0.0",
+          "kind-of": "^6.0.0",
+          "math-random": "^1.0.1"
         }
       },
       {
@@ -7471,9 +7517,9 @@
           "core-util-is": "~1.0.0",
           "inherits": "~2.0.3",
           "isarray": "~1.0.0",
-          "process-nextick-args": "~1.0.6",
+          "process-nextick-args": "~2.0.0",
           "safe-buffer": "~5.1.1",
-          "string_decoder": "~1.0.3",
+          "string_decoder": "~1.1.1",
           "util-deprecate": "~1.0.1"
         }
       },

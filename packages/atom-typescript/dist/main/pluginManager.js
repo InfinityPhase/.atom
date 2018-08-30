@@ -16,6 +16,7 @@ const semanticViewController_1 = require("./atom/views/outline/semanticViewContr
 const symbolsViewController_1 = require("./atom/views/symbols/symbolsViewController");
 const editorPositionHistoryManager_1 = require("./atom/editorPositionHistoryManager");
 const utils_1 = require("./atom/utils");
+const path = require("path");
 class PluginManager {
     constructor(state) {
         this.panes = []; // TODO: do we need it?
@@ -31,11 +32,12 @@ class PluginManager {
         };
         this.getStatusPanel = () => this.statusPanel;
         this.withTypescriptBuffer = async (filePath, action) => {
-            const pane = this.panes.find(p => p.buffer.getPath() === filePath);
+            const normalizedFilePath = path.normalize(filePath);
+            const pane = this.panes.find(p => p.buffer.getPath() === normalizedFilePath);
             if (pane)
                 return action(pane.buffer);
             // no open buffer
-            const buffer = await Atom.TextBuffer.load(filePath);
+            const buffer = await Atom.TextBuffer.load(normalizedFilePath);
             try {
                 const tsbuffer = typescriptBuffer_1.TypescriptBuffer.create(buffer, fp => this.clientResolver.get(fp));
                 return await action(tsbuffer);
@@ -46,11 +48,13 @@ class PluginManager {
                 buffer.destroy();
             }
         };
-        this.applyEdits = async (edits, reverse = true) => void Promise.all(edits.map(edit => this.withTypescriptBuffer(edit.fileName, async (buffer) => {
+        this.applyEdits = async (edits) => void Promise.all(edits.map(edit => this.withTypescriptBuffer(edit.fileName, async (buffer) => {
             buffer.buffer.transact(() => {
-                const changes = reverse ? edit.textChanges.slice().reverse() : edit.textChanges;
+                const changes = edit.textChanges
+                    .map(e => ({ range: utils_1.spanToRange(e), newText: e.newText }))
+                    .sort((a, b) => b.range.compare(a.range));
                 for (const change of changes) {
-                    buffer.buffer.setTextInRange(utils_1.spanToRange(change), change.newText);
+                    buffer.buffer.setTextInRange(change.range, change.newText);
                 }
             });
             return buffer.flush();
@@ -89,7 +93,7 @@ class PluginManager {
     }
     consumeLinter(register) {
         const linter = register({
-            name: "Typescript",
+            name: "TypeScript",
         });
         this.errorPusher.setLinter(linter);
         this.clientResolver.on("diagnostics", ({ type, filePath, diagnostics }) => {

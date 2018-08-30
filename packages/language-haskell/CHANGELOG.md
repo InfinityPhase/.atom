@@ -1,3 +1,12 @@
+## 1.17.8
+
+-   Fix infix type constructor exports
+
+## 1.17.7
+
+-   Rework scoped types
+-   Fix data declarations comments
+
 ## 1.17.6
 
 -   Add module name highlighting to functions

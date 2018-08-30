@@ -1,24 +1,25 @@
 {
-  "_from": "file:/tmp/d-11838-15030-1wtctp9.q35p/package.tgz",
-  "_id": "linter-shellcheck@1.4.7",
+  "_from": "file:/tmp/d-118724-27969-1tzkolh.jwln/package.tgz",
+  "_id": "linter-shellcheck@1.5.0",
   "_inBundle": false,
-  "_integrity": "sha512-eM8cwdfP6Q466A9BTBODzI1E3HxgeiMhZQTfrwrmtHuljOmHgl1Iodxo1D5Lt9jej16HfcsjQ2NByalbWaRlmg==",
+  "_integrity": "sha512-0Oxwqt9em+97ukm4A1R0suHPW4fi3AIRGb7fC/xX5+4twIYHSVswqjR69+t+MXyfOma7Ui8KVhflO3Q/0yg6OA==",
   "_location": "/linter-shellcheck",
   "_phantomChildren": {},
   "_requested": {
     "type": "file",
-    "where": "/tmp/apm-install-dir-11838-15030-1b7mjdf.b99m",
-    "raw": "/tmp/d-11838-15030-1wtctp9.q35p/package.tgz",
-    "rawSpec": "/tmp/d-11838-15030-1wtctp9.q35p/package.tgz",
-    "saveSpec": "file:/tmp/d-11838-15030-1wtctp9.q35p/package.tgz",
-    "fetchSpec": "/tmp/d-11838-15030-1wtctp9.q35p/package.tgz"
+    "where": "/tmp/apm-install-dir-118724-27969-1a8p5wp.px1ph",
+    "raw": "/tmp/d-118724-27969-1tzkolh.jwln/package.tgz",
+    "rawSpec": "/tmp/d-118724-27969-1tzkolh.jwln/package.tgz",
+    "saveSpec": "file:/tmp/d-118724-27969-1tzkolh.jwln/package.tgz",
+    "fetchSpec": "/tmp/d-118724-27969-1tzkolh.jwln/package.tgz"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "/tmp/d-11838-15030-1wtctp9.q35p/package.tgz",
-  "_spec": "/tmp/d-11838-15030-1wtctp9.q35p/package.tgz",
-  "_where": "/tmp/apm-install-dir-11838-15030-1b7mjdf.b99m",
+  "_resolved": "/tmp/d-118724-27969-1tzkolh.jwln/package.tgz",
+  "_shasum": "4983003b6d9be500217ff37e093fdad36c36e59b",
+  "_spec": "/tmp/d-118724-27969-1tzkolh.jwln/package.tgz",
+  "_where": "/tmp/apm-install-dir-118724-27969-1a8p5wp.px1ph",
   "activationHooks": [
     "language-shellscript:grammar-used"
   ],
@@ -41,6 +42,12 @@
     "enableNotice": {
       "type": "boolean",
       "title": "Enable Notice Messages",
+      "default": false
+    },
+    "useProjectCwd": {
+      "type": "boolean",
+      "title": "Run ShellCheck relative to Project Root",
+      "description": "Enable to run ShellCheck using the project root as its working directory; causes ShellCheck to interpret `source=` paths relative to the project root.  Disable to keep `source=` paths relative to the file.",
       "default": false
     }
   },
@@ -102,7 +109,7 @@
     "lint": "eslint .",
     "test": "apm test"
   },
-  "version": "1.4.7",
+  "version": "1.5.0",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -178,7 +185,7 @@
       },
       {
         "name": "semver",
-        "version": "5.5.0",
+        "version": "5.5.1",
         "path": "node_modules/semver/semver.js"
       },
       {

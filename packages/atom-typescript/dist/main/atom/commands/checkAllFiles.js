@@ -1,19 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const registry_1 = require("./registry");
-const utils_1 = require("../utils");
 registry_1.addCommand("atom-text-editor", "typescript:check-all-files", deps => ({
     description: "Typecheck all files in project related to current active text editor",
-    async didDispatch(e) {
-        if (!utils_1.commandForTypeScript(e)) {
+    async didDispatch(editor) {
+        const file = editor.getPath();
+        if (file === undefined)
             return;
-        }
-        const fpp = utils_1.getFilePathPosition(e.currentTarget.getModel());
-        if (!fpp) {
-            e.abortKeyBinding();
-            return;
-        }
-        const { file } = fpp;
         const client = await deps.getClient(file);
         const projectInfo = await client.execute("projectInfo", {
             file,
@@ -26,7 +19,7 @@ registry_1.addCommand("atom-text-editor", "typescript:check-all-files", deps => 
         // that, we cancel the listener and close the progress bar after no diagnostics have been received
         // for some amount of time.
         let cancelTimeout;
-        const unregister = client.on("syntaxDiag", evt => {
+        const disp = client.on("syntaxDiag", evt => {
             if (cancelTimeout !== undefined)
                 window.clearTimeout(cancelTimeout);
             cancelTimeout = window.setTimeout(cancel, 500);
@@ -42,7 +35,7 @@ registry_1.addCommand("atom-text-editor", "typescript:check-all-files", deps => 
         }
         function updateStatus() {
             if (files.size === 0) {
-                unregister();
+                disp.dispose();
                 stp.update({ progress: undefined });
             }
             else {

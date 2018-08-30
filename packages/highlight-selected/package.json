@@ -1,58 +1,51 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "/tmp/d-117224-30051-1xzejsy.wz6c4n29/package.tgz",
-        "scope": null,
-        "escapedName": null,
-        "name": null,
-        "rawSpec": "/tmp/d-117224-30051-1xzejsy.wz6c4n29/package.tgz",
-        "spec": "/tmp/d-117224-30051-1xzejsy.wz6c4n29/package.tgz",
-        "type": "local"
-      },
-      "/tmp/apm-install-dir-117224-30051-cbzgyt.j476re8kt9"
-    ]
-  ],
-  "_from": "../d-117224-30051-1xzejsy.wz6c4n29/package.tgz",
-  "_id": "highlight-selected@0.13.1",
-  "_inCache": true,
+  "_from": "file:/tmp/d-118610-31040-1cmd7dz.r1wu/package.tgz",
+  "_id": "highlight-selected@0.14.0",
+  "_inBundle": false,
+  "_integrity": "sha512-QAByVgzyjBze/7LylzrSFzDNmjTdlTEpH1UYgmtanHz5GqLauCTkeMAhlX2Aa/DfuaVg5XK3O0fkb2qTksw5hA==",
   "_location": "/highlight-selected",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-117224-30051-1xzejsy.wz6c4n29/package.tgz",
-    "scope": null,
-    "escapedName": null,
-    "name": null,
-    "rawSpec": "/tmp/d-117224-30051-1xzejsy.wz6c4n29/package.tgz",
-    "spec": "/tmp/d-117224-30051-1xzejsy.wz6c4n29/package.tgz",
-    "type": "local"
+    "type": "file",
+    "where": "/tmp/apm-install-dir-118610-31040-5rvywp.3qa13",
+    "raw": "/tmp/d-118610-31040-1cmd7dz.r1wu/package.tgz",
+    "rawSpec": "/tmp/d-118610-31040-1cmd7dz.r1wu/package.tgz",
+    "saveSpec": "file:/tmp/d-118610-31040-1cmd7dz.r1wu/package.tgz",
+    "fetchSpec": "/tmp/d-118610-31040-1cmd7dz.r1wu/package.tgz"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "file:../d-117224-30051-1xzejsy.wz6c4n29/package.tgz",
-  "_shasum": "8b6ce153f680dfd60ab003835e666266c4420e5f",
-  "_shrinkwrap": null,
-  "_spec": "/tmp/d-117224-30051-1xzejsy.wz6c4n29/package.tgz",
-  "_where": "/tmp/apm-install-dir-117224-30051-cbzgyt.j476re8kt9",
+  "_resolved": "/tmp/d-118610-31040-1cmd7dz.r1wu/package.tgz",
+  "_shasum": "3c8c2c838b70beec0a4b108a5f7356bd70bb8b24",
+  "_spec": "/tmp/d-118610-31040-1cmd7dz.r1wu/package.tgz",
+  "_where": "/tmp/apm-install-dir-118610-31040-5rvywp.3qa13",
   "bugs": {
     "url": "https://github.com/richrace/highlight-selected/issues"
   },
+  "bundleDependencies": false,
   "consumedServices": {
     "status-bar": {
       "versions": {
         "^1.0.0": "consumeStatusBar"
       }
+    },
+    "scroll-marker": {
+      "versions": {
+        "0.1.0": "consumeScrollMarker"
+      }
     }
   },
   "dependencies": {
+    "atom-package-deps": "^4.6.2",
     "grim": "^2.0.1"
   },
+  "deprecated": false,
   "description": "Highlights the current word selected when double clicking",
   "devDependencies": {
-    "coffee-script": "1.9.0",
-    "coffeelint": "1.8.1",
-    "coffeelint-jasmine": "0.0.2"
+    "coffeelint": "^2.1.0",
+    "coffeelint-jasmine": "0.0.2",
+    "coffeescript": "^2.3.1"
   },
   "dist": {
     "shasum": "7c9da46b1412aceb069f8ca2ca54d014986ad408"
@@ -61,10 +54,17 @@
     "atom": ">=1.13.0 <2.0.0"
   },
   "homepage": "https://github.com/richrace/highlight-selected",
+  "keywords": [
+    "highlight selected",
+    "highlight selection",
+    "highlight occurrences"
+  ],
   "license": "MIT",
   "main": "./lib/highlight-selected",
   "name": "highlight-selected",
-  "optionalDependencies": {},
+  "package-deps": [
+    "scroll-marker"
+  ],
   "providedServices": {
     "highlightSelected": {
       "description": "Exposes Highlight Selected Events",
@@ -74,33 +74,81 @@
       }
     }
   },
-  "readme": "# Highlight Selected\n\nDouble click on a word to highlight it throughout the open file.\n\nThis is something hacky I've put together as I missed the functionality that Sublime gave. As such, it's doesn't work 100% but is good enough to start!\n\nSome code and has been take from Atom's find and replace package ([link](https://github.com/atom/find-and-replace))\n\nPlease log any issues and pull requests are more than welcome!\n\n![Gif in action](http://i.imgur.com/C5FnzzQ.gif)\n\n# Issues and Todo\n\n- Some double click events are not triggered\n- Refactor and tidy up the code\n- Add specs to test it\n",
-  "readmeFilename": "README.md",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/richrace/highlight-selected.git"
   },
-  "version": "0.13.1",
+  "version": "0.14.0",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
       {
+        "name": "atom-package-deps",
+        "version": "4.6.2",
+        "path": "node_modules/atom-package-deps/lib/index.js"
+      },
+      {
+        "name": "atom-package-path",
+        "version": "1.1.0",
+        "path": "node_modules/atom-package-path/lib/index.js"
+      },
+      {
         "name": "event-kit",
-        "version": "2.2.0",
+        "version": "2.5.0",
         "path": "node_modules/event-kit/lib/event-kit.js"
       },
       {
         "name": "grim",
-        "version": "2.0.1",
+        "version": "2.0.2",
         "path": "node_modules/grim/lib/grim.js"
+      },
+      {
+        "name": "is-utf8",
+        "version": "0.2.1",
+        "path": "node_modules/is-utf8/is-utf8.js"
+      },
+      {
+        "name": "sb-callsite",
+        "version": "1.1.2",
+        "path": "node_modules/sb-callsite/lib/main.js"
+      },
+      {
+        "name": "sb-fs",
+        "version": "3.0.0",
+        "path": "node_modules/sb-fs/lib/index.js"
+      },
+      {
+        "name": "sb-promisify",
+        "version": "2.0.2",
+        "path": "node_modules/sb-promisify/lib/index.js"
+      },
+      {
+        "name": "semver",
+        "version": "5.5.0",
+        "path": "node_modules/semver/semver.js"
+      },
+      {
+        "name": "strip-bom-buf",
+        "version": "1.0.0",
+        "path": "node_modules/strip-bom-buf/index.js"
       }
     ],
     "extensions": {
       ".json": [
         "coffeelint.json",
+        "node_modules/atom-package-deps/.eslintrc.json",
+        "node_modules/atom-package-deps/package.json",
+        "node_modules/atom-package-path/package.json",
         "node_modules/event-kit/api.json",
         "node_modules/event-kit/package.json",
         "node_modules/grim/package.json",
+        "node_modules/is-utf8/package.json",
+        "node_modules/sb-callsite/package.json",
+        "node_modules/sb-fs/package.json",
+        "node_modules/sb-promisify/package.json",
+        "node_modules/semver/package.json",
+        "node_modules/strip-bom-buf/package.json",
+        "package-lock.json",
         "package.json"
       ],
       ".coffee": [
@@ -110,12 +158,23 @@
         "lib/status-bar-view.coffee"
       ],
       ".js": [
+        "node_modules/atom-package-deps/lib/helpers.js",
+        "node_modules/atom-package-deps/lib/index.js",
+        "node_modules/atom-package-deps/lib/types.js",
+        "node_modules/atom-package-deps/lib/view.js",
+        "node_modules/atom-package-path/lib/index.js",
         "node_modules/event-kit/lib/composite-disposable.js",
         "node_modules/event-kit/lib/disposable.js",
         "node_modules/event-kit/lib/emitter.js",
         "node_modules/event-kit/lib/event-kit.js",
         "node_modules/grim/lib/deprecation.js",
-        "node_modules/grim/lib/grim.js"
+        "node_modules/grim/lib/grim.js",
+        "node_modules/is-utf8/is-utf8.js",
+        "node_modules/sb-callsite/lib/main.js",
+        "node_modules/sb-fs/lib/index.js",
+        "node_modules/sb-promisify/lib/index.js",
+        "node_modules/semver/semver.js",
+        "node_modules/strip-bom-buf/index.js"
       ]
     },
     "folders": [
@@ -127,7 +186,29 @@
           "spec"
         ],
         "dependencies": {
+          "atom-package-deps": "^4.6.2",
           "grim": "^2.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/atom-package-deps",
+          "node_modules/atom-package-deps/lib"
+        ],
+        "dependencies": {
+          "atom-package-path": "^1.1.0",
+          "sb-fs": "^3.0.0",
+          "semver": "^5.3.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/atom-package-path/lib",
+          "node_modules/atom-package-path",
+          "node_modules/atom-package-path/spec"
+        ],
+        "dependencies": {
+          "sb-callsite": "^1.1.2"
         }
       },
       {
@@ -137,6 +218,24 @@
         ],
         "dependencies": {
           "event-kit": "^2.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/sb-fs/lib",
+          "node_modules/sb-fs"
+        ],
+        "dependencies": {
+          "sb-promisify": "^2.0.1",
+          "strip-bom-buf": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/strip-bom-buf"
+        ],
+        "dependencies": {
+          "is-utf8": "^0.2.1"
         }
       }
     ]

@@ -18,6 +18,8 @@
     ui:
       panelContrast: true
       panelShadows: true
+  "atom-package-deps":
+    ignored: []
   "autoclose-html":
     forceInline: [
       "title"
@@ -32,6 +34,8 @@
       "td"
       "a"
     ]
+  "autocomplete-java":
+    classpathFilePath: ".classpath-atom"
   "autocomplete-python":
     useKite: false
   "battery-status":
@@ -43,22 +47,25 @@
       "welcome"
       "dalek"
       "metrics"
-      "git-plus"
       "linter-lua"
-      "autocomplete-java"
-      "linter-javac"
-      "github"
       "background-tips"
       "linter-golinter"
       "intentions"
-      "atom-ide-ui"
-      "platformio-ide"
-      "platformio-ide-debugger"
-      "platformio-ide-terminal"
-      "atom-beautify"
       "spell-check"
       "ide-haskell"
-      "language-hugo"
+      "ide-java"
+      "linter-javac"
+      "linter-gcc"
+      "platformio-ide"
+      "platformio-ide-terminal"
+      "platformio-ide-debugger"
+      "atom-bootstrap3"
+      "atom-typescript"
+      "todo-show"
+      "atom-jinja2"
+      "autoclose-html"
+      "autocomplete-java"
+      "javascript-refactor"
     ]
     ignoredNames: [
       ".git"
@@ -79,18 +86,31 @@
       "seti-ui"
       "monokai-seti"
     ]
+    useTreeSitterParsers: true
   editor:
-    fontSize: 13
+    invisibles: {}
+    tabLength: 4
   "exception-reporting":
     userId: "c9520757-c057-484e-a129-77dea25aa744"
+  "file-header":
+    username: "infinity"
   "file-icons":
+    coloured: false
     strategies: {}
   "git-plus":
     general:
       analytics: false
+  "ide-java":
+    virtualMachine: {}
   linter: {}
   "linter-flake8":
     pycodestyleErrorsToWarnings: true
+  "linter-gcc":
+    gccErrorLimit: -1
+    gccIncludePaths: " ./*, -/*"
+    gccLintOnTheFly: true
+  "linter-javac":
+    classpathFilename: ".classpath-atom"
   "linter-ui-default":
     panelHeight: 143
     useBusySignal: false
@@ -99,6 +119,8 @@
     plugins:
       bookmarks: true
       bookmarksDecorationsZIndex: 0
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
       "highlight-selected": true
       "highlight-selectedDecorationsZIndex": 0
       pigments: true
@@ -111,26 +133,42 @@
     binary: "/usr/bin/vendor_perl/perltidy"
   pigments:
     mergeColorDuplicates: true
+  "platformio-ide":
+    advanced:
+      showPlatformIOFiles: true
+      useBuiltinPIOCore: true
+    autoCloseSerialMonitor: false
+  "platformio-ide-terminal":
+    core: {}
   proton:
     core:
       selectedLayers: [
         "core"
       ]
-  script: {}
+  script:
+    cwdBehavior: "Project directory of the script"
+    stopOnRerun: true
   "seti-ui":
     compactView: true
+    disableAnimations: true
     fileIcons: false
     hideProjectTab: true
-    themeColor: "Purple"
-  "todo-show": {}
+    themeColor: "Pink"
+  "todo-show":
+    statusBarIndicator: true
   "tool-bar":
     position: "Left"
-  "tree-view":
-    hideIgnoredNames: true
+  "tree-view": {}
   welcome: {}
+  whitespace:
+    ignoreWhitespaceOnlyLines: true
+    removeTrailingWhitespace: false
 ".basic.html.text":
   editor:
     showIndentGuide: true
 ".diff.source":
   editor:
     showInvisibles: true
+".plain.text":
+  editor:
+    softWrap: true

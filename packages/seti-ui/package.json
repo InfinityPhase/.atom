@@ -1,24 +1,25 @@
 {
-  "_from": "file:/tmp/d-11815-7222-128ftwb.2c6xh/package.tgz",
-  "_id": "seti-ui@1.10.0",
+  "_from": "file:/tmp/d-11876-4353-1mcogy0.tg58/package.tgz",
+  "_id": "seti-ui@1.11.0",
   "_inBundle": false,
-  "_integrity": "sha512-95THOLbMLw9yswdkOL/me87gGUNf+LsirTdNJPrBhSp5fNgC0R5wH8uUaQWc1nsu/17ruhmjYkYzSQgbMcIn5g==",
+  "_integrity": "sha512-F5N4WuuHmlcQ4zTSWOMgtpm+3fiNZ+iC3ndwQYsw9ZvuQCteJaY2po5+UFBa6dgElJHAFMpjfbrlVxceXQpx1g==",
   "_location": "/seti-ui",
   "_phantomChildren": {},
   "_requested": {
     "type": "file",
-    "where": "/tmp/apm-install-dir-11815-7222-1o07myh.lqp2i",
-    "raw": "/tmp/d-11815-7222-128ftwb.2c6xh/package.tgz",
-    "rawSpec": "/tmp/d-11815-7222-128ftwb.2c6xh/package.tgz",
-    "saveSpec": "file:/tmp/d-11815-7222-128ftwb.2c6xh/package.tgz",
-    "fetchSpec": "/tmp/d-11815-7222-128ftwb.2c6xh/package.tgz"
+    "where": "/tmp/apm-install-dir-11876-4353-pgnl2l.vfr5j",
+    "raw": "/tmp/d-11876-4353-1mcogy0.tg58/package.tgz",
+    "rawSpec": "/tmp/d-11876-4353-1mcogy0.tg58/package.tgz",
+    "saveSpec": "file:/tmp/d-11876-4353-1mcogy0.tg58/package.tgz",
+    "fetchSpec": "/tmp/d-11876-4353-1mcogy0.tg58/package.tgz"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "/tmp/d-11815-7222-128ftwb.2c6xh/package.tgz",
-  "_spec": "/tmp/d-11815-7222-128ftwb.2c6xh/package.tgz",
-  "_where": "/tmp/apm-install-dir-11815-7222-1o07myh.lqp2i",
+  "_resolved": "/tmp/d-11876-4353-1mcogy0.tg58/package.tgz",
+  "_shasum": "dde74a99aeba1d80816fb40544445d39d7c6e043",
+  "_spec": "/tmp/d-11876-4353-1mcogy0.tg58/package.tgz",
+  "_where": "/tmp/apm-install-dir-11876-4353-pgnl2l.vfr5j",
   "bugs": {
     "url": "https://github.com/jesseweed/seti-ui/issues"
   },
@@ -118,7 +119,7 @@
     "url": "git+https://github.com/jesseweed/seti-ui.git"
   },
   "theme": "ui",
-  "version": "1.10.0",
+  "version": "1.11.0",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [],
@@ -134,6 +135,7 @@
         "lib/utility.coffee"
       ],
       ".json": [
+        "package-lock.json",
         "package.json"
       ]
     },
