@@ -1,25 +1,25 @@
 {
-  "_from": "file:/tmp/d-118721-26540-ee552o.x1xts/package.tgz",
-  "_id": "atom-beautify@0.33.0",
+  "_from": "https://www.atom.io/api/packages/atom-beautify/versions/0.33.4/tarball",
+  "_id": "atom-beautify@0.33.4",
   "_inBundle": false,
-  "_integrity": "sha512-ZOpeQz6kTjgSneepu7eQUda8+Y0gBm8rWwWGkj3M/QKYh3cpJ6i0XzRycZ8Ww+Rhusl+/oO9z+X/Hlt1R03oZw==",
+  "_integrity": "sha512-L41XFpoAhiP6JT6pl9yMuiDgY4vkUbLN8YQSqyKRzvEeRoBHpUJPitI4fcs6YXMKGV3Bh/smt7zKPxdQPyl1VA==",
   "_location": "/atom-beautify",
   "_phantomChildren": {},
   "_requested": {
-    "type": "file",
-    "where": "/tmp/apm-install-dir-118721-26540-4qkfuj.jncrk",
-    "raw": "/tmp/d-118721-26540-ee552o.x1xts/package.tgz",
-    "rawSpec": "/tmp/d-118721-26540-ee552o.x1xts/package.tgz",
-    "saveSpec": "file:/tmp/d-118721-26540-ee552o.x1xts/package.tgz",
-    "fetchSpec": "/tmp/d-118721-26540-ee552o.x1xts/package.tgz"
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/atom-beautify/versions/0.33.4/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/atom-beautify/versions/0.33.4/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/atom-beautify/versions/0.33.4/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/atom-beautify/versions/0.33.4/tarball"
   },
   "_requiredBy": [
-    "#USER"
+    "#USER",
+    "/"
   ],
-  "_resolved": "/tmp/d-118721-26540-ee552o.x1xts/package.tgz",
-  "_shasum": "703523e78f85fb8221ad65ee28da45bacdc48c80",
-  "_spec": "/tmp/d-118721-26540-ee552o.x1xts/package.tgz",
-  "_where": "/tmp/apm-install-dir-118721-26540-4qkfuj.jncrk",
+  "_resolved": "https://www.atom.io/api/packages/atom-beautify/versions/0.33.4/tarball",
+  "_shasum": "68c9c7c305aa529c17a24ee0819fb3c5fe9ec5a4",
+  "_spec": "https://www.atom.io/api/packages/atom-beautify/versions/0.33.4/tarball",
+  "_where": "/tmp/apm-install-dir-118830-23997-ntvrq9.ndjoi",
   "activationCommands": {
     "atom-workspace": [
       "atom-beautify:help-debug-editor",
@@ -286,6 +286,14 @@
     {
       "name": "Kohei Hiraga",
       "url": "https://github.com/range3"
+    },
+    {
+      "name": "Arlo Shallit",
+      "url": "https://github.com/arl-o"
+    },
+    {
+      "name": "Liam Newman",
+      "url": "https://github.com/bitwiseman"
     }
   ],
   "dependencies": {
@@ -306,11 +314,10 @@
     "extend": "^3.0.1",
     "gherkin": "^2.12.2",
     "handlebars": "^4.0.11",
-    "js-beautify": "^1.7.5",
+    "js-beautify": "^1.8.1",
     "jscs": "^3.0.7",
     "lodash": "^4.17.4",
     "loophole": "^1.1.0",
-    "marko-prettyprint": "^1.4.0",
     "nginxbeautify": "^2.0.1",
     "node-cljfmt": "0.5.3",
     "node-dir": "0.1.17",
@@ -492,7 +499,9 @@
     "vhdl",
     "vhdl beautifier",
     "gn",
-    "blade"
+    "blade",
+    "black",
+    "ocamlformat"
   ],
   "license": "MIT",
   "main": "./src/beautify",
@@ -511,7 +520,7 @@
     "pretest": "npm run lint",
     "test": "atom --test spec"
   },
-  "version": "0.33.0",
+  "version": "0.33.4",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -522,7 +531,7 @@
       },
       {
         "name": "acorn",
-        "version": "5.7.1",
+        "version": "5.7.3",
         "path": "node_modules/acorn/dist/acorn.js"
       },
       {
@@ -546,29 +555,9 @@
         "path": "node_modules/ajv-keywords/index.js"
       },
       {
-        "name": "align-text",
-        "version": "0.1.4",
-        "path": "node_modules/align-text/index.js"
-      },
-      {
-        "name": "longest",
-        "version": "1.0.1",
-        "path": "node_modules/align-text/node_modules/longest/index.js"
-      },
-      {
-        "name": "repeat-string",
-        "version": "1.6.1",
-        "path": "node_modules/align-text/node_modules/repeat-string/index.js"
-      },
-      {
         "name": "align-yaml",
         "version": "0.1.8",
         "path": "node_modules/align-yaml/index.js"
-      },
-      {
-        "name": "amdefine",
-        "version": "1.0.1",
-        "path": "node_modules/amdefine/amdefine.js"
       },
       {
         "name": "ansi-escapes",
@@ -584,16 +573,6 @@
         "name": "ansi-styles",
         "version": "1.0.0",
         "path": "node_modules/ansi-styles/ansi-styles.js"
-      },
-      {
-        "name": "app-module-path",
-        "version": "2.2.0",
-        "path": "node_modules/app-module-path/lib/index.js"
-      },
-      {
-        "name": "argly",
-        "version": "1.2.0",
-        "path": "node_modules/argly/src/index.js"
       },
       {
         "name": "argparse",
@@ -624,11 +603,6 @@
         "name": "assert-plus",
         "version": "1.0.0",
         "path": "node_modules/assert-plus/assert.js"
-      },
-      {
-        "name": "assertion-error",
-        "version": "1.1.0",
-        "path": "node_modules/assertion-error/index.js"
       },
       {
         "name": "async",
@@ -712,7 +686,7 @@
       },
       {
         "name": "bluebird",
-        "version": "3.5.1",
+        "version": "3.5.2",
         "path": "node_modules/bluebird/js/release/bluebird.js"
       },
       {
@@ -724,11 +698,6 @@
         "name": "brace-expansion",
         "version": "1.1.11",
         "path": "node_modules/brace-expansion/index.js"
-      },
-      {
-        "name": "browser-refresh-client",
-        "version": "1.1.4",
-        "path": "node_modules/browser-refresh-client/lib/index.js"
       },
       {
         "name": "buffer-from",
@@ -747,7 +716,7 @@
       },
       {
         "name": "camelcase",
-        "version": "1.2.1",
+        "version": "2.1.1",
         "path": "node_modules/camelcase/index.js"
       },
       {
@@ -761,24 +730,9 @@
         "path": "node_modules/ccount/index.js"
       },
       {
-        "name": "center-align",
-        "version": "0.1.3",
-        "path": "node_modules/center-align/index.js"
-      },
-      {
-        "name": "chai",
-        "version": "3.5.0",
-        "path": "node_modules/chai/index.js"
-      },
-      {
         "name": "chalk",
         "version": "0.4.0",
         "path": "node_modules/chalk/index.js"
-      },
-      {
-        "name": "char-props",
-        "version": "0.1.5",
-        "path": "node_modules/char-props/lib/charProps.js"
       },
       {
         "name": "character-entities",
@@ -827,13 +781,23 @@
       },
       {
         "name": "cliui",
-        "version": "2.1.0",
+        "version": "3.2.0",
         "path": "node_modules/cliui/index.js"
       },
       {
-        "name": "wordwrap",
-        "version": "0.0.2",
-        "path": "node_modules/cliui/node_modules/wordwrap/index.js"
+        "name": "is-fullwidth-code-point",
+        "version": "1.0.0",
+        "path": "node_modules/cliui/node_modules/is-fullwidth-code-point/index.js"
+      },
+      {
+        "name": "string-width",
+        "version": "1.0.2",
+        "path": "node_modules/cliui/node_modules/string-width/index.js"
+      },
+      {
+        "name": "strip-ansi",
+        "version": "3.0.1",
+        "path": "node_modules/cliui/node_modules/strip-ansi/index.js"
       },
       {
         "name": "co",
@@ -877,12 +841,12 @@
       },
       {
         "name": "color-convert",
-        "version": "1.9.2",
+        "version": "1.9.3",
         "path": "node_modules/color-convert/index.js"
       },
       {
         "name": "color-name",
-        "version": "1.1.1",
+        "version": "1.1.3",
         "path": "node_modules/color-name/index.js"
       },
       {
@@ -892,12 +856,12 @@
       },
       {
         "name": "combined-stream",
-        "version": "1.0.6",
+        "version": "1.0.7",
         "path": "node_modules/combined-stream/lib/combined_stream.js"
       },
       {
         "name": "commander",
-        "version": "2.17.1",
+        "version": "2.18.0",
         "path": "node_modules/commander/index.js"
       },
       {
@@ -911,11 +875,6 @@
         "path": "node_modules/comment-parser/index.js"
       },
       {
-        "name": "complain",
-        "version": "1.3.0",
-        "path": "node_modules/complain/index.js"
-      },
-      {
         "name": "concat-map",
         "version": "0.0.1",
         "path": "node_modules/concat-map/index.js"
@@ -927,7 +886,7 @@
       },
       {
         "name": "config-chain",
-        "version": "1.1.11",
+        "version": "1.1.12",
         "path": "node_modules/config-chain/index.js"
       },
       {
@@ -971,18 +930,13 @@
         "path": "node_modules/cson-parser/node_modules/coffee-script/lib/coffee-script/coffee-script.js"
       },
       {
-        "name": "cssbeautify",
-        "version": "0.3.1",
-        "path": "node_modules/cssbeautify/cssbeautify.js"
-      },
-      {
         "name": "csscomb",
         "version": "4.2.0",
         "path": "node_modules/csscomb/lib/csscomb.js"
       },
       {
         "name": "glob",
-        "version": "7.1.2",
+        "version": "7.1.3",
         "path": "node_modules/csscomb/node_modules/glob/glob.js"
       },
       {
@@ -1022,23 +976,13 @@
       },
       {
         "name": "debug",
-        "version": "3.1.0",
+        "version": "3.2.5",
         "path": "node_modules/debug/src/index.js"
       },
       {
         "name": "decamelize",
         "version": "1.2.0",
         "path": "node_modules/decamelize/index.js"
-      },
-      {
-        "name": "deep-eql",
-        "version": "0.1.3",
-        "path": "node_modules/deep-eql/index.js"
-      },
-      {
-        "name": "type-detect",
-        "version": "0.1.1",
-        "path": "node_modules/deep-eql/node_modules/type-detect/index.js"
       },
       {
         "name": "deep-equal",
@@ -1069,11 +1013,6 @@
         "name": "delayed-stream",
         "version": "1.0.0",
         "path": "node_modules/delayed-stream/lib/delayed_stream.js"
-      },
-      {
-        "name": "deresolve",
-        "version": "1.1.2",
-        "path": "node_modules/deresolve/src/index.js"
       },
       {
         "name": "diff",
@@ -1141,11 +1080,6 @@
         "path": "node_modules/entities/index.js"
       },
       {
-        "name": "error-stack-parser",
-        "version": "2.0.2",
-        "path": "node_modules/error-stack-parser/error-stack-parser.js"
-      },
-      {
         "name": "es5-ext",
         "version": "0.10.46",
         "path": "node_modules/es5-ext/index.js"
@@ -1186,21 +1120,6 @@
         "path": "node_modules/escape-string-regexp/index.js"
       },
       {
-        "name": "escodegen",
-        "version": "1.11.0",
-        "path": "node_modules/escodegen/escodegen.js"
-      },
-      {
-        "name": "esprima",
-        "version": "3.1.3",
-        "path": "node_modules/escodegen/node_modules/esprima/dist/esprima.js"
-      },
-      {
-        "name": "source-map",
-        "version": "0.6.1",
-        "path": "node_modules/escodegen/node_modules/source-map/source-map.js"
-      },
-      {
         "name": "eslint",
         "version": "4.19.1",
         "path": "node_modules/eslint/lib/api.js"
@@ -1232,7 +1151,7 @@
       },
       {
         "name": "glob",
-        "version": "7.1.2",
+        "version": "7.1.3",
         "path": "node_modules/eslint/node_modules/glob/glob.js"
       },
       {
@@ -1312,18 +1231,8 @@
       },
       {
         "name": "event-kit",
-        "version": "2.5.0",
+        "version": "2.5.1",
         "path": "node_modules/event-kit/lib/event-kit.js"
-      },
-      {
-        "name": "events",
-        "version": "1.1.1",
-        "path": "node_modules/events/events.js"
-      },
-      {
-        "name": "events-light",
-        "version": "1.0.5",
-        "path": "node_modules/events-light/src/index.js"
       },
       {
         "name": "execa",
@@ -1416,6 +1325,11 @@
         "path": "node_modules/form-data/lib/form_data.js"
       },
       {
+        "name": "combined-stream",
+        "version": "1.0.6",
+        "path": "node_modules/form-data/node_modules/combined-stream/lib/combined_stream.js"
+      },
+      {
         "name": "front-matter",
         "version": "1.0.0",
         "path": "node_modules/front-matter/index.js"
@@ -1432,7 +1346,7 @@
       },
       {
         "name": "glob",
-        "version": "7.1.2",
+        "version": "7.1.3",
         "path": "node_modules/fs-plus/node_modules/glob/glob.js"
       },
       {
@@ -1527,7 +1441,7 @@
       },
       {
         "name": "glob",
-        "version": "7.1.2",
+        "version": "7.1.3",
         "path": "node_modules/globby/node_modules/glob/glob.js"
       },
       {
@@ -1572,13 +1486,8 @@
       },
       {
         "name": "handlebars",
-        "version": "4.0.11",
+        "version": "4.0.12",
         "path": "node_modules/handlebars/lib/index.js"
-      },
-      {
-        "name": "async",
-        "version": "1.5.2",
-        "path": "node_modules/handlebars/node_modules/async/lib/async.js"
       },
       {
         "name": "optimist",
@@ -1621,11 +1530,6 @@
         "path": "node_modules/hawk/lib/index.js"
       },
       {
-        "name": "he",
-        "version": "1.1.1",
-        "path": "node_modules/he/he.js"
-      },
-      {
         "name": "hoek",
         "version": "4.2.1",
         "path": "node_modules/hoek/lib/index.js"
@@ -1634,11 +1538,6 @@
         "name": "html-entities",
         "version": "1.2.1",
         "path": "node_modules/html-entities/index.js"
-      },
-      {
-        "name": "htmljs-parser",
-        "version": "2.3.2",
-        "path": "node_modules/htmljs-parser/index.js"
       },
       {
         "name": "htmlparser2",
@@ -1672,7 +1571,7 @@
       },
       {
         "name": "iconv-lite",
-        "version": "0.4.23",
+        "version": "0.4.24",
         "path": "node_modules/iconv-lite/lib/index.js"
       },
       {
@@ -1694,11 +1593,6 @@
         "name": "indent",
         "version": "0.0.2",
         "path": "node_modules/indent/index.js"
-      },
-      {
-        "name": "indent-string",
-        "version": "3.2.0",
-        "path": "node_modules/indent-string/index.js"
       },
       {
         "name": "inflight",
@@ -1862,18 +1756,8 @@
       },
       {
         "name": "js-beautify",
-        "version": "1.7.5",
+        "version": "1.8.6",
         "path": "node_modules/js-beautify/js/index.js"
-      },
-      {
-        "name": "editorconfig",
-        "version": "0.13.3",
-        "path": "node_modules/js-beautify/node_modules/editorconfig/editorconfig.js"
-      },
-      {
-        "name": "lru-cache",
-        "version": "3.2.0",
-        "path": "node_modules/js-beautify/node_modules/lru-cache/lib/lru-cache.js"
       },
       {
         "name": "minimist",
@@ -1972,7 +1856,7 @@
       },
       {
         "name": "vow",
-        "version": "0.4.17",
+        "version": "0.4.18",
         "path": "node_modules/jscs/node_modules/vow/lib/vow.js"
       },
       {
@@ -2031,34 +1915,9 @@
         "path": "node_modules/JSV/lib/jsv.js"
       },
       {
-        "name": "kind-of",
-        "version": "3.2.2",
-        "path": "node_modules/kind-of/index.js"
-      },
-      {
-        "name": "lasso-caching-fs",
-        "version": "1.0.2",
-        "path": "node_modules/lasso-caching-fs/src/index.js"
-      },
-      {
-        "name": "lasso-modules-client",
-        "version": "2.0.5",
-        "path": "node_modules/lasso-modules-client/src/index.js"
-      },
-      {
-        "name": "lasso-package-root",
-        "version": "1.0.1",
-        "path": "node_modules/lasso-package-root/src/index.js"
-      },
-      {
         "name": "lazy",
         "version": "1.0.11",
         "path": "node_modules/lazy/lazy.js"
-      },
-      {
-        "name": "lazy-cache",
-        "version": "1.0.4",
-        "path": "node_modules/lazy-cache/index.js"
       },
       {
         "name": "lcid",
@@ -2069,11 +1928,6 @@
         "name": "levn",
         "version": "0.3.0",
         "path": "node_modules/levn/lib/index.js"
-      },
-      {
-        "name": "listener-tracker",
-        "version": "2.0.0",
-        "path": "node_modules/listener-tracker/lib/listener-tracker.js"
       },
       {
         "name": "load-plugin",
@@ -2087,7 +1941,7 @@
       },
       {
         "name": "lodash",
-        "version": "4.17.10",
+        "version": "4.17.11",
         "path": "node_modules/lodash/lodash.js"
       },
       {
@@ -2126,53 +1980,18 @@
         "path": "node_modules/marked/lib/marked.js"
       },
       {
-        "name": "marko",
-        "version": "4.12.5",
-        "path": "node_modules/marko/index.js"
-      },
-      {
-        "name": "esprima",
-        "version": "4.0.1",
-        "path": "node_modules/marko/node_modules/esprima/dist/esprima.js"
-      },
-      {
-        "name": "minimatch",
-        "version": "3.0.4",
-        "path": "node_modules/marko/node_modules/minimatch/minimatch.js"
-      },
-      {
-        "name": "resolve-from",
-        "version": "2.0.0",
-        "path": "node_modules/marko/node_modules/resolve-from/index.js"
-      },
-      {
-        "name": "marko-prettyprint",
-        "version": "1.4.3",
-        "path": "node_modules/marko-prettyprint/src/index.js"
-      },
-      {
-        "name": "minimatch",
-        "version": "3.0.4",
-        "path": "node_modules/marko-prettyprint/node_modules/minimatch/minimatch.js"
-      },
-      {
-        "name": "resolve-from",
-        "version": "4.0.0",
-        "path": "node_modules/marko-prettyprint/node_modules/resolve-from/index.js"
-      },
-      {
         "name": "mdast-util-compact",
         "version": "1.0.2",
         "path": "node_modules/mdast-util-compact/index.js"
       },
       {
         "name": "mime-db",
-        "version": "1.35.0",
+        "version": "1.36.0",
         "path": "node_modules/mime-db/index.js"
       },
       {
         "name": "mime-types",
-        "version": "2.1.19",
+        "version": "2.1.20",
         "path": "node_modules/mime-types/index.js"
       },
       {
@@ -2202,7 +2021,7 @@
       },
       {
         "name": "ms",
-        "version": "2.0.0",
+        "version": "2.1.1",
         "path": "node_modules/ms/index.js"
       },
       {
@@ -2252,7 +2071,7 @@
       },
       {
         "name": "nopt",
-        "version": "3.0.6",
+        "version": "4.0.1",
         "path": "node_modules/nopt/lib/nopt.js"
       },
       {
@@ -2326,6 +2145,11 @@
         "path": "node_modules/os-tmpdir/index.js"
       },
       {
+        "name": "osenv",
+        "version": "0.1.5",
+        "path": "node_modules/osenv/osenv.js"
+      },
+      {
         "name": "p-finally",
         "version": "1.0.0",
         "path": "node_modules/p-finally/index.js"
@@ -2337,7 +2161,7 @@
       },
       {
         "name": "parse-entities",
-        "version": "1.1.2",
+        "version": "1.2.0",
         "path": "node_modules/parse-entities/index.js"
       },
       {
@@ -2407,7 +2231,7 @@
       },
       {
         "name": "prettier",
-        "version": "1.14.2",
+        "version": "1.14.3",
         "path": "node_modules/prettier/index.js"
       },
       {
@@ -2456,11 +2280,6 @@
         "path": "node_modules/property-accessors/lib/property-accessors.js"
       },
       {
-        "name": "property-handlers",
-        "version": "1.1.1",
-        "path": "node_modules/property-handlers/lib/index.js"
-      },
-      {
         "name": "proto-list",
         "version": "1.2.4",
         "path": "node_modules/proto-list/proto-list.js"
@@ -2481,54 +2300,9 @@
         "path": "node_modules/punycode/punycode.js"
       },
       {
-        "name": "q",
-        "version": "1.5.1",
-        "path": "node_modules/q/q.js"
-      },
-      {
         "name": "qs",
         "version": "6.5.2",
         "path": "node_modules/qs/lib/index.js"
-      },
-      {
-        "name": "raptor-async",
-        "version": "1.1.3",
-        "path": "node_modules/raptor-async/index.js"
-      },
-      {
-        "name": "raptor-json",
-        "version": "1.1.0",
-        "path": "node_modules/raptor-json/index.js"
-      },
-      {
-        "name": "raptor-polyfill",
-        "version": "1.1.0",
-        "path": "node_modules/raptor-polyfill/raptor-polyfill.js"
-      },
-      {
-        "name": "raptor-promises",
-        "version": "1.0.3",
-        "path": "node_modules/raptor-promises/lib/raptor-promises.js"
-      },
-      {
-        "name": "raptor-util",
-        "version": "1.1.2",
-        "path": "node_modules/raptor-promises/node_modules/raptor-util/raptor-util.js"
-      },
-      {
-        "name": "raptor-regexp",
-        "version": "1.0.1",
-        "path": "node_modules/raptor-regexp/lib/raptor-regexp.js"
-      },
-      {
-        "name": "raptor-strings",
-        "version": "1.0.2",
-        "path": "node_modules/raptor-strings/lib/raptor-strings.js"
-      },
-      {
-        "name": "raptor-util",
-        "version": "3.2.0",
-        "path": "node_modules/raptor-util/raptor-util.js"
       },
       {
         "name": "rc",
@@ -2549,11 +2323,6 @@
         "name": "readable-stream",
         "version": "2.3.6",
         "path": "node_modules/readable-stream/readable.js"
-      },
-      {
-        "name": "redent",
-        "version": "2.0.0",
-        "path": "node_modules/redent/index.js"
       },
       {
         "name": "regenerator-runtime",
@@ -2636,11 +2405,6 @@
         "path": "node_modules/revalidator/lib/revalidator.js"
       },
       {
-        "name": "right-align",
-        "version": "0.1.3",
-        "path": "node_modules/right-align/index.js"
-      },
-      {
         "name": "rimraf",
         "version": "2.2.8",
         "path": "node_modules/rimraf/rimraf.js"
@@ -2649,11 +2413,6 @@
         "name": "run-async",
         "version": "2.3.0",
         "path": "node_modules/run-async/index.js"
-      },
-      {
-        "name": "rusha",
-        "version": "0.8.13",
-        "path": "node_modules/rusha/dist/rusha.js"
       },
       {
         "name": "rx-lite",
@@ -2679,41 +2438,6 @@
         "name": "season",
         "version": "6.0.2",
         "path": "node_modules/season/lib/cson.js"
-      },
-      {
-        "name": "camelcase",
-        "version": "2.1.1",
-        "path": "node_modules/season/node_modules/camelcase/index.js"
-      },
-      {
-        "name": "cliui",
-        "version": "3.2.0",
-        "path": "node_modules/season/node_modules/cliui/index.js"
-      },
-      {
-        "name": "is-fullwidth-code-point",
-        "version": "1.0.0",
-        "path": "node_modules/season/node_modules/is-fullwidth-code-point/index.js"
-      },
-      {
-        "name": "string-width",
-        "version": "1.0.2",
-        "path": "node_modules/season/node_modules/string-width/index.js"
-      },
-      {
-        "name": "strip-ansi",
-        "version": "3.0.1",
-        "path": "node_modules/season/node_modules/strip-ansi/index.js"
-      },
-      {
-        "name": "window-size",
-        "version": "0.1.4",
-        "path": "node_modules/season/node_modules/window-size/index.js"
-      },
-      {
-        "name": "yargs",
-        "version": "3.32.0",
-        "path": "node_modules/season/node_modules/yargs/index.js"
       },
       {
         "name": "semver",
@@ -2746,11 +2470,6 @@
         "path": "node_modules/shellsubstitute/index.js"
       },
       {
-        "name": "shorthash",
-        "version": "0.0.2",
-        "path": "node_modules/shorthash/index.js"
-      },
-      {
         "name": "sigmund",
         "version": "1.0.1",
         "path": "node_modules/sigmund/sigmund.js"
@@ -2759,11 +2478,6 @@
         "name": "signal-exit",
         "version": "3.0.2",
         "path": "node_modules/signal-exit/index.js"
-      },
-      {
-        "name": "simple-sha1",
-        "version": "2.1.1",
-        "path": "node_modules/simple-sha1/index.js"
       },
       {
         "name": "slice-ansi",
@@ -2777,8 +2491,8 @@
       },
       {
         "name": "source-map",
-        "version": "0.4.4",
-        "path": "node_modules/source-map/lib/source-map.js"
+        "version": "0.6.1",
+        "path": "node_modules/source-map/source-map.js"
       },
       {
         "name": "source-map-support",
@@ -2809,11 +2523,6 @@
         "name": "stack-trace",
         "version": "0.0.10",
         "path": "node_modules/stack-trace/lib/stack-trace.js"
-      },
-      {
-        "name": "stackframe",
-        "version": "1.0.4",
-        "path": "node_modules/stackframe/stackframe.js"
       },
       {
         "name": "state-toggle",
@@ -2859,11 +2568,6 @@
         "name": "strip-eof",
         "version": "1.0.0",
         "path": "node_modules/strip-eof/index.js"
-      },
-      {
-        "name": "strip-indent",
-        "version": "2.0.0",
-        "path": "node_modules/strip-indent/index.js"
       },
       {
         "name": "strip-json-comments",
@@ -2971,11 +2675,6 @@
         "path": "node_modules/trough/index.js"
       },
       {
-        "name": "try-require",
-        "version": "1.2.1",
-        "path": "node_modules/try-require/index.js"
-      },
-      {
         "name": "tunnel-agent",
         "version": "0.6.0",
         "path": "node_modules/tunnel-agent/index.js"
@@ -2989,11 +2688,6 @@
         "name": "type-check",
         "version": "0.3.2",
         "path": "node_modules/type-check/lib/index.js"
-      },
-      {
-        "name": "type-detect",
-        "version": "1.0.0",
-        "path": "node_modules/type-detect/index.js"
       },
       {
         "name": "typedarray",
@@ -3012,18 +2706,13 @@
       },
       {
         "name": "uglify-js",
-        "version": "2.8.29",
+        "version": "3.4.9",
         "path": "node_modules/uglify-js/tools/node.js"
       },
       {
-        "name": "source-map",
-        "version": "0.5.7",
-        "path": "node_modules/uglify-js/node_modules/source-map/source-map.js"
-      },
-      {
-        "name": "uglify-to-browserify",
-        "version": "1.0.2",
-        "path": "node_modules/uglify-to-browserify/index.js"
+        "name": "commander",
+        "version": "2.17.1",
+        "path": "node_modules/uglify-js/node_modules/commander/index.js"
       },
       {
         "name": "underscore",
@@ -3147,7 +2836,7 @@
       },
       {
         "name": "glob",
-        "version": "7.1.2",
+        "version": "7.1.3",
         "path": "node_modules/vow-fs/node_modules/glob/glob.js"
       },
       {
@@ -3162,7 +2851,7 @@
       },
       {
         "name": "vow",
-        "version": "0.4.17",
+        "version": "0.4.18",
         "path": "node_modules/vow-fs/node_modules/vow/lib/vow.js"
       },
       {
@@ -3172,13 +2861,8 @@
       },
       {
         "name": "vow",
-        "version": "0.4.17",
+        "version": "0.4.18",
         "path": "node_modules/vow-queue/node_modules/vow/lib/vow.js"
-      },
-      {
-        "name": "warp10",
-        "version": "1.3.6",
-        "path": "node_modules/warp10/src/index.js"
       },
       {
         "name": "which",
@@ -3187,7 +2871,7 @@
       },
       {
         "name": "window-size",
-        "version": "0.1.0",
+        "version": "0.1.4",
         "path": "node_modules/window-size/index.js"
       },
       {
@@ -3312,8 +2996,23 @@
       },
       {
         "name": "yargs",
-        "version": "3.10.0",
+        "version": "3.32.0",
         "path": "node_modules/yargs/index.js"
+      },
+      {
+        "name": "is-fullwidth-code-point",
+        "version": "1.0.0",
+        "path": "node_modules/yargs/node_modules/is-fullwidth-code-point/index.js"
+      },
+      {
+        "name": "string-width",
+        "version": "1.0.2",
+        "path": "node_modules/yargs/node_modules/string-width/index.js"
+      },
+      {
+        "name": "strip-ansi",
+        "version": "3.0.1",
+        "path": "node_modules/yargs/node_modules/strip-ansi/index.js"
       }
     ],
     "extensions": {
@@ -3348,24 +3047,17 @@
         "node_modules/ajv/lib/refs/json-schema-v5.json",
         "node_modules/ajv/package.json",
         "node_modules/ajv-keywords/package.json",
-        "node_modules/align-text/node_modules/longest/package.json",
-        "node_modules/align-text/node_modules/repeat-string/package.json",
-        "node_modules/align-text/package.json",
         "node_modules/align-yaml/bower.json",
         "node_modules/align-yaml/package.json",
-        "node_modules/amdefine/package.json",
         "node_modules/ansi-escapes/package.json",
         "node_modules/ansi-regex/package.json",
         "node_modules/ansi-styles/package.json",
-        "node_modules/app-module-path/package.json",
-        "node_modules/argly/package.json",
         "node_modules/argparse/package.json",
         "node_modules/array-union/package.json",
         "node_modules/array-uniq/package.json",
         "node_modules/arrify/package.json",
         "node_modules/asn1/package.json",
         "node_modules/assert-plus/package.json",
-        "node_modules/assertion-error/package.json",
         "node_modules/async/bower.json",
         "node_modules/async/package.json",
         "node_modules/asynckit/package.json",
@@ -3389,18 +3081,13 @@
         "node_modules/bluebird/package.json",
         "node_modules/boom/package.json",
         "node_modules/brace-expansion/package.json",
-        "node_modules/browser-refresh-client/package.json",
         "node_modules/buffer-from/package.json",
         "node_modules/caller-path/package.json",
         "node_modules/callsites/package.json",
         "node_modules/camelcase/package.json",
         "node_modules/caseless/package.json",
         "node_modules/ccount/package.json",
-        "node_modules/center-align/package.json",
-        "node_modules/chai/bower.json",
-        "node_modules/chai/package.json",
         "node_modules/chalk/package.json",
-        "node_modules/char-props/package.json",
         "node_modules/character-entities/index.json",
         "node_modules/character-entities/package.json",
         "node_modules/character-entities-html4/index.json",
@@ -3414,7 +3101,9 @@
         "node_modules/cli-cursor/package.json",
         "node_modules/cli-table/package.json",
         "node_modules/cli-width/package.json",
-        "node_modules/cliui/node_modules/wordwrap/package.json",
+        "node_modules/cliui/node_modules/is-fullwidth-code-point/package.json",
+        "node_modules/cliui/node_modules/string-width/package.json",
+        "node_modules/cliui/node_modules/strip-ansi/package.json",
         "node_modules/cliui/package.json",
         "node_modules/co/package.json",
         "node_modules/code-point-at/package.json",
@@ -3425,6 +3114,7 @@
         "node_modules/coffeescript/package.json",
         "node_modules/collapse-white-space/package.json",
         "node_modules/color-convert/package.json",
+        "node_modules/color-name/.eslintrc.json",
         "node_modules/color-name/package.json",
         "node_modules/colors/package.json",
         "node_modules/combined-stream/package.json",
@@ -3433,7 +3123,6 @@
         "node_modules/commandpost/package.json",
         "node_modules/commandpost/tsconfig.json",
         "node_modules/comment-parser/package.json",
-        "node_modules/complain/package.json",
         "node_modules/concat-map/package.json",
         "node_modules/concat-stream/package.json",
         "node_modules/config-chain/package.json",
@@ -3446,7 +3135,6 @@
         "node_modules/cryptiles/package.json",
         "node_modules/cson-parser/node_modules/coffee-script/package.json",
         "node_modules/cson-parser/package.json",
-        "node_modules/cssbeautify/package.json",
         "node_modules/csscomb/config/csscomb.json",
         "node_modules/csscomb/config/yandex.json",
         "node_modules/csscomb/config/zen.json",
@@ -3461,15 +3149,12 @@
         "node_modules/dashdash/package.json",
         "node_modules/debug/package.json",
         "node_modules/decamelize/package.json",
-        "node_modules/deep-eql/node_modules/type-detect/package.json",
-        "node_modules/deep-eql/package.json",
         "node_modules/deep-equal/package.json",
         "node_modules/deep-extend/package.json",
         "node_modules/deep-is/package.json",
         "node_modules/default-shell/package.json",
         "node_modules/del/package.json",
         "node_modules/delayed-stream/package.json",
-        "node_modules/deresolve/package.json",
         "node_modules/diff/package.json",
         "node_modules/doctrine/package.json",
         "node_modules/dom-serializer/node_modules/domelementtype/package.json",
@@ -3491,7 +3176,6 @@
         "node_modules/entities/maps/legacy.json",
         "node_modules/entities/maps/xml.json",
         "node_modules/entities/package.json",
-        "node_modules/error-stack-parser/package.json",
         "node_modules/es5-ext/node_modules/d/package.json",
         "node_modules/es5-ext/node_modules/es6-iterator/package.json",
         "node_modules/es5-ext/node_modules/es6-symbol/package.json",
@@ -3501,9 +3185,6 @@
         "node_modules/es6-symbol/package.json",
         "node_modules/es6-weak-map/package.json",
         "node_modules/escape-string-regexp/package.json",
-        "node_modules/escodegen/node_modules/esprima/package.json",
-        "node_modules/escodegen/node_modules/source-map/package.json",
-        "node_modules/escodegen/package.json",
         "node_modules/eslint/conf/blank-script.json",
         "node_modules/eslint/conf/category-list.json",
         "node_modules/eslint/conf/replacements.json",
@@ -3533,8 +3214,6 @@
         "node_modules/esutils/package.json",
         "node_modules/event-kit/api.json",
         "node_modules/event-kit/package.json",
-        "node_modules/events/package.json",
-        "node_modules/events-light/package.json",
         "node_modules/execa/node_modules/cross-spawn/package.json",
         "node_modules/execa/node_modules/lru-cache/package.json",
         "node_modules/execa/package.json",
@@ -3555,6 +3234,7 @@
         "node_modules/flat-cache/node_modules/graceful-fs/package.json",
         "node_modules/flat-cache/package.json",
         "node_modules/forever-agent/package.json",
+        "node_modules/form-data/node_modules/combined-stream/package.json",
         "node_modules/form-data/package.json",
         "node_modules/front-matter/package.json",
         "node_modules/fs-plus/node_modules/async/package.json",
@@ -3592,9 +3272,7 @@
         "node_modules/graceful-fs/package.json",
         "node_modules/graceful-readlink/package.json",
         "node_modules/grim/package.json",
-        "node_modules/handlebars/node_modules/async/package.json",
         "node_modules/handlebars/node_modules/optimist/package.json",
-        "node_modules/handlebars/package-lock.json",
         "node_modules/handlebars/package.json",
         "node_modules/har-schema/lib/afterRequest.json",
         "node_modules/har-schema/lib/beforeRequest.json",
@@ -3621,10 +3299,8 @@
         "node_modules/has-color/package.json",
         "node_modules/has-flag/package.json",
         "node_modules/hawk/package.json",
-        "node_modules/he/package.json",
         "node_modules/hoek/package.json",
         "node_modules/html-entities/package.json",
-        "node_modules/htmljs-parser/package.json",
         "node_modules/htmlparser2/node_modules/isarray/component.json",
         "node_modules/htmlparser2/node_modules/isarray/package.json",
         "node_modules/htmlparser2/node_modules/readable-stream/package.json",
@@ -3645,7 +3321,6 @@
         "node_modules/immutable/package.json",
         "node_modules/imurmurhash/package.json",
         "node_modules/indent/package.json",
-        "node_modules/indent-string/package.json",
         "node_modules/inflight/package.json",
         "node_modules/inherit/package.json",
         "node_modules/inherits/package.json",
@@ -3680,9 +3355,6 @@
         "node_modules/isstream/package.json",
         "node_modules/jquery/bower.json",
         "node_modules/jquery/package.json",
-        "node_modules/js-beautify/js/config/defaults.json",
-        "node_modules/js-beautify/node_modules/editorconfig/package.json",
-        "node_modules/js-beautify/node_modules/lru-cache/package.json",
         "node_modules/js-beautify/node_modules/minimist/package.json",
         "node_modules/js-beautify/node_modules/mkdirp/package.json",
         "node_modules/js-beautify/package.json",
@@ -3731,17 +3403,10 @@
         "node_modules/jsonlint/bower.json",
         "node_modules/jsonlint/package.json",
         "node_modules/jsprim/package.json",
-        "node_modules/kind-of/package.json",
-        "node_modules/lasso-caching-fs/package.json",
-        "node_modules/lasso-modules-client/package.json",
-        "node_modules/lasso-modules-client/transport/package.json",
-        "node_modules/lasso-package-root/package.json",
         "node_modules/lazy/package.json",
-        "node_modules/lazy-cache/package.json",
         "node_modules/lcid/lcid.json",
         "node_modules/lcid/package.json",
         "node_modules/levn/package.json",
-        "node_modules/listener-tracker/package.json",
         "node_modules/load-plugin/node_modules/resolve-from/package.json",
         "node_modules/load-plugin/package.json",
         "node_modules/lodash/package.json",
@@ -3754,61 +3419,6 @@
         "node_modules/markdown-table/package.json",
         "node_modules/marked/component.json",
         "node_modules/marked/package.json",
-        "node_modules/marko/dist/build.json",
-        "node_modules/marko/dist/compiler/browser.json",
-        "node_modules/marko/dist/components/compiler.browser.json",
-        "node_modules/marko/dist/components/legacy/browser.json",
-        "node_modules/marko/dist/components/legacy/package.json",
-        "node_modules/marko/dist/components/package.json",
-        "node_modules/marko/dist/components/taglib/helpers/package.json",
-        "node_modules/marko/dist/components/taglib/marko.json",
-        "node_modules/marko/dist/components/taglib/package.json",
-        "node_modules/marko/dist/loader/browser.json",
-        "node_modules/marko/dist/loader/package.json",
-        "node_modules/marko/dist/package.json",
-        "node_modules/marko/dist/runtime/compiler.browser.json",
-        "node_modules/marko/dist/runtime/package.json",
-        "node_modules/marko/dist/taglibs/async/marko.json",
-        "node_modules/marko/dist/taglibs/async/package.json",
-        "node_modules/marko/dist/taglibs/cache/marko.json",
-        "node_modules/marko/dist/taglibs/compiler.browser.json",
-        "node_modules/marko/dist/taglibs/core/marko.json",
-        "node_modules/marko/dist/taglibs/core/package.json",
-        "node_modules/marko/dist/taglibs/html/marko.json",
-        "node_modules/marko/dist/taglibs/layout/marko.json",
-        "node_modules/marko/dist/taglibs/svg/marko.json",
-        "node_modules/marko/docs/structure.json",
-        "node_modules/marko/node_modules/esprima/package.json",
-        "node_modules/marko/node_modules/minimatch/package.json",
-        "node_modules/marko/node_modules/resolve-from/package.json",
-        "node_modules/marko/package.json",
-        "node_modules/marko/src/build.json",
-        "node_modules/marko/src/compiler/browser.json",
-        "node_modules/marko/src/components/compiler.browser.json",
-        "node_modules/marko/src/components/legacy/browser.json",
-        "node_modules/marko/src/components/legacy/package.json",
-        "node_modules/marko/src/components/package.json",
-        "node_modules/marko/src/components/taglib/helpers/package.json",
-        "node_modules/marko/src/components/taglib/marko.json",
-        "node_modules/marko/src/components/taglib/package.json",
-        "node_modules/marko/src/loader/browser.json",
-        "node_modules/marko/src/loader/package.json",
-        "node_modules/marko/src/package.json",
-        "node_modules/marko/src/runtime/compiler.browser.json",
-        "node_modules/marko/src/runtime/package.json",
-        "node_modules/marko/src/taglibs/async/marko.json",
-        "node_modules/marko/src/taglibs/async/package.json",
-        "node_modules/marko/src/taglibs/cache/marko.json",
-        "node_modules/marko/src/taglibs/compiler.browser.json",
-        "node_modules/marko/src/taglibs/core/marko.json",
-        "node_modules/marko/src/taglibs/core/package.json",
-        "node_modules/marko/src/taglibs/html/marko.json",
-        "node_modules/marko/src/taglibs/layout/marko.json",
-        "node_modules/marko/src/taglibs/svg/marko.json",
-        "node_modules/marko-prettyprint/node_modules/minimatch/package.json",
-        "node_modules/marko-prettyprint/node_modules/resolve-from/package.json",
-        "node_modules/marko-prettyprint/package.json",
-        "node_modules/marko-prettyprint/src/util/package.json",
         "node_modules/mdast-util-compact/package.json",
         "node_modules/mime-db/db.json",
         "node_modules/mime-db/package.json",
@@ -3846,6 +3456,7 @@
         "node_modules/os-homedir/package.json",
         "node_modules/os-locale/package.json",
         "node_modules/os-tmpdir/package.json",
+        "node_modules/osenv/package.json",
         "node_modules/p-finally/package.json",
         "node_modules/pad/package.json",
         "node_modules/parse-entities/package.json",
@@ -3877,30 +3488,15 @@
         "node_modules/prompt/node_modules/winston/package.json",
         "node_modules/prompt/package.json",
         "node_modules/property-accessors/package.json",
-        "node_modules/property-handlers/package.json",
         "node_modules/proto-list/package.json",
         "node_modules/pseudomap/package.json",
         "node_modules/pug-beautify/package.json",
         "node_modules/punycode/package.json",
-        "node_modules/q/package.json",
         "node_modules/qs/package.json",
-        "node_modules/raptor-async/package.json",
-        "node_modules/raptor-json/package.json",
-        "node_modules/raptor-polyfill/package.json",
-        "node_modules/raptor-promises/node_modules/raptor-util/package.json",
-        "node_modules/raptor-promises/optimizer.json",
-        "node_modules/raptor-promises/package.json",
-        "node_modules/raptor-promises/util/package.json",
-        "node_modules/raptor-regexp/optimizer.json",
-        "node_modules/raptor-regexp/package.json",
-        "node_modules/raptor-strings/StringBuilder/package.json",
-        "node_modules/raptor-strings/package.json",
-        "node_modules/raptor-util/package.json",
         "node_modules/rc/node_modules/minimist/package.json",
         "node_modules/rc/package.json",
         "node_modules/read/package.json",
         "node_modules/readable-stream/package.json",
-        "node_modules/redent/package.json",
         "node_modules/regenerator-runtime/package.json",
         "node_modules/regexpp/package.json",
         "node_modules/remark/package.json",
@@ -3920,35 +3516,12 @@
         "node_modules/resolve-from/package.json",
         "node_modules/restore-cursor/package.json",
         "node_modules/revalidator/package.json",
-        "node_modules/right-align/package.json",
         "node_modules/rimraf/package.json",
         "node_modules/run-async/package.json",
-        "node_modules/rusha/package.json",
         "node_modules/rx-lite/package.json",
         "node_modules/rx-lite-aggregates/package.json",
         "node_modules/safe-buffer/package.json",
         "node_modules/safer-buffer/package.json",
-        "node_modules/season/node_modules/camelcase/package.json",
-        "node_modules/season/node_modules/cliui/package.json",
-        "node_modules/season/node_modules/is-fullwidth-code-point/package.json",
-        "node_modules/season/node_modules/string-width/package.json",
-        "node_modules/season/node_modules/strip-ansi/package.json",
-        "node_modules/season/node_modules/window-size/package.json",
-        "node_modules/season/node_modules/yargs/locales/de.json",
-        "node_modules/season/node_modules/yargs/locales/en.json",
-        "node_modules/season/node_modules/yargs/locales/es.json",
-        "node_modules/season/node_modules/yargs/locales/fr.json",
-        "node_modules/season/node_modules/yargs/locales/id.json",
-        "node_modules/season/node_modules/yargs/locales/ja.json",
-        "node_modules/season/node_modules/yargs/locales/ko.json",
-        "node_modules/season/node_modules/yargs/locales/nb.json",
-        "node_modules/season/node_modules/yargs/locales/pirate.json",
-        "node_modules/season/node_modules/yargs/locales/pl.json",
-        "node_modules/season/node_modules/yargs/locales/pt.json",
-        "node_modules/season/node_modules/yargs/locales/pt_BR.json",
-        "node_modules/season/node_modules/yargs/locales/tr.json",
-        "node_modules/season/node_modules/yargs/locales/zh.json",
-        "node_modules/season/node_modules/yargs/package.json",
         "node_modules/season/package.json",
         "node_modules/semver/package.json",
         "node_modules/shebang-command/package.json",
@@ -3956,10 +3529,8 @@
         "node_modules/shell-env/node_modules/strip-ansi/package.json",
         "node_modules/shell-env/package.json",
         "node_modules/shellsubstitute/package.json",
-        "node_modules/shorthash/package.json",
         "node_modules/sigmund/package.json",
         "node_modules/signal-exit/package.json",
-        "node_modules/simple-sha1/package.json",
         "node_modules/slice-ansi/package.json",
         "node_modules/sntp/package.json",
         "node_modules/source-map/package.json",
@@ -3971,9 +3542,6 @@
         "node_modules/sprintf-js/package.json",
         "node_modules/sshpk/package.json",
         "node_modules/stack-trace/package.json",
-        "node_modules/stackframe/bower.json",
-        "node_modules/stackframe/component.json",
-        "node_modules/stackframe/package.json",
         "node_modules/state-toggle/package.json",
         "node_modules/string-width/node_modules/ansi-regex/package.json",
         "node_modules/string-width/node_modules/strip-ansi/package.json",
@@ -3984,7 +3552,6 @@
         "node_modules/strip-ansi/package.json",
         "node_modules/strip-bom/package.json",
         "node_modules/strip-eof/package.json",
-        "node_modules/strip-indent/package.json",
         "node_modules/strip-json-comments/package.json",
         "node_modules/supports-color/package.json",
         "node_modules/table/dist/schemas/config.json",
@@ -4013,11 +3580,9 @@
         "node_modules/trim/package.json",
         "node_modules/trim-trailing-lines/package.json",
         "node_modules/trough/package.json",
-        "node_modules/try-require/package.json",
         "node_modules/tunnel-agent/package.json",
         "node_modules/tweetnacl/package.json",
         "node_modules/type-check/package.json",
-        "node_modules/type-detect/package.json",
         "node_modules/typedarray/package.json",
         "node_modules/typescript/lib/cs/diagnosticMessages.generated.json",
         "node_modules/typescript/lib/de/diagnosticMessages.generated.json",
@@ -4038,10 +3603,9 @@
         "node_modules/typescript-formatter/example/tsconfig.json",
         "node_modules/typescript-formatter/package.json",
         "node_modules/typescript-formatter/tsconfig.json",
-        "node_modules/uglify-js/node_modules/source-map/package.json",
+        "node_modules/uglify-js/node_modules/commander/package.json",
         "node_modules/uglify-js/package.json",
         "node_modules/uglify-js/tools/domprops.json",
-        "node_modules/uglify-to-browserify/package.json",
         "node_modules/underscore/package.json",
         "node_modules/underscore-plus/node_modules/underscore/package.json",
         "node_modules/underscore-plus/package.json",
@@ -4079,7 +3643,6 @@
         "node_modules/vow-queue/bower.json",
         "node_modules/vow-queue/node_modules/vow/package.json",
         "node_modules/vow-queue/package.json",
-        "node_modules/warp10/package.json",
         "node_modules/which/package.json",
         "node_modules/window-size/package.json",
         "node_modules/winston/node_modules/async/bower.json",
@@ -4110,6 +3673,23 @@
         "node_modules/yaml-front-matter/package.json",
         "node_modules/yaml-js/bower.json",
         "node_modules/yaml-js/package.json",
+        "node_modules/yargs/locales/de.json",
+        "node_modules/yargs/locales/en.json",
+        "node_modules/yargs/locales/es.json",
+        "node_modules/yargs/locales/fr.json",
+        "node_modules/yargs/locales/id.json",
+        "node_modules/yargs/locales/ja.json",
+        "node_modules/yargs/locales/ko.json",
+        "node_modules/yargs/locales/nb.json",
+        "node_modules/yargs/locales/pirate.json",
+        "node_modules/yargs/locales/pl.json",
+        "node_modules/yargs/locales/pt.json",
+        "node_modules/yargs/locales/pt_BR.json",
+        "node_modules/yargs/locales/tr.json",
+        "node_modules/yargs/locales/zh.json",
+        "node_modules/yargs/node_modules/is-fullwidth-code-point/package.json",
+        "node_modules/yargs/node_modules/string-width/package.json",
+        "node_modules/yargs/node_modules/strip-ansi/package.json",
         "node_modules/yargs/package.json",
         "package-lock.json",
         "package.json",
@@ -4286,20 +3866,10 @@
         "node_modules/ajv-keywords/keywords/switch.js",
         "node_modules/ajv-keywords/keywords/typeof.js",
         "node_modules/ajv-keywords/keywords/uniqueItemProperties.js",
-        "node_modules/align-text/index.js",
-        "node_modules/align-text/node_modules/longest/index.js",
-        "node_modules/align-text/node_modules/repeat-string/index.js",
         "node_modules/align-yaml/index.js",
-        "node_modules/amdefine/amdefine.js",
-        "node_modules/amdefine/intercept.js",
         "node_modules/ansi-escapes/index.js",
         "node_modules/ansi-regex/index.js",
         "node_modules/ansi-styles/ansi-styles.js",
-        "node_modules/app-module-path/cwd.js",
-        "node_modules/app-module-path/lib/index.js",
-        "node_modules/app-module-path/register.js",
-        "node_modules/argly/src/Parser.js",
-        "node_modules/argly/src/index.js",
         "node_modules/argparse/examples/arguments.js",
         "node_modules/argparse/examples/choice.js",
         "node_modules/argparse/examples/constants.js",
@@ -4342,7 +3912,6 @@
         "node_modules/asn1/lib/ber/writer.js",
         "node_modules/asn1/lib/index.js",
         "node_modules/assert-plus/assert.js",
-        "node_modules/assertion-error/index.js",
         "node_modules/async/all.js",
         "node_modules/async/allLimit.js",
         "node_modules/async/allSeries.js",
@@ -4799,8 +4368,6 @@
         "node_modules/bluebird/js/release/util.js",
         "node_modules/boom/lib/index.js",
         "node_modules/brace-expansion/index.js",
-        "node_modules/browser-refresh-client/lib/browser-refresh-client.js",
-        "node_modules/browser-refresh-client/lib/index.js",
         "node_modules/buffer-from/index.js",
         "node_modules/caller-path/index.js",
         "node_modules/callsites/index.js",
@@ -4808,44 +4375,7 @@
         "node_modules/caseless/index.js",
         "node_modules/caseless/test.js",
         "node_modules/ccount/index.js",
-        "node_modules/center-align/index.js",
-        "node_modules/center-align/utils.js",
-        "node_modules/chai/chai.js",
-        "node_modules/chai/index.js",
-        "node_modules/chai/karma.conf.js",
-        "node_modules/chai/karma.sauce.js",
-        "node_modules/chai/lib/chai/assertion.js",
-        "node_modules/chai/lib/chai/config.js",
-        "node_modules/chai/lib/chai/core/assertions.js",
-        "node_modules/chai/lib/chai/interface/assert.js",
-        "node_modules/chai/lib/chai/interface/expect.js",
-        "node_modules/chai/lib/chai/interface/should.js",
-        "node_modules/chai/lib/chai/utils/addChainableMethod.js",
-        "node_modules/chai/lib/chai/utils/addMethod.js",
-        "node_modules/chai/lib/chai/utils/addProperty.js",
-        "node_modules/chai/lib/chai/utils/expectTypes.js",
-        "node_modules/chai/lib/chai/utils/flag.js",
-        "node_modules/chai/lib/chai/utils/getActual.js",
-        "node_modules/chai/lib/chai/utils/getEnumerableProperties.js",
-        "node_modules/chai/lib/chai/utils/getMessage.js",
-        "node_modules/chai/lib/chai/utils/getName.js",
-        "node_modules/chai/lib/chai/utils/getPathInfo.js",
-        "node_modules/chai/lib/chai/utils/getPathValue.js",
-        "node_modules/chai/lib/chai/utils/getProperties.js",
-        "node_modules/chai/lib/chai/utils/hasProperty.js",
-        "node_modules/chai/lib/chai/utils/index.js",
-        "node_modules/chai/lib/chai/utils/inspect.js",
-        "node_modules/chai/lib/chai/utils/objDisplay.js",
-        "node_modules/chai/lib/chai/utils/overwriteChainableMethod.js",
-        "node_modules/chai/lib/chai/utils/overwriteMethod.js",
-        "node_modules/chai/lib/chai/utils/overwriteProperty.js",
-        "node_modules/chai/lib/chai/utils/test.js",
-        "node_modules/chai/lib/chai/utils/transferFlags.js",
-        "node_modules/chai/lib/chai.js",
-        "node_modules/chai/sauce.browsers.js",
         "node_modules/chalk/index.js",
-        "node_modules/char-props/grunt.js",
-        "node_modules/char-props/lib/charProps.js",
         "node_modules/chardet/encoding/iso2022.js",
         "node_modules/chardet/encoding/mbcs.js",
         "node_modules/chardet/encoding/sbcs.js",
@@ -4861,9 +4391,9 @@
         "node_modules/cli-table/lib/utils.js",
         "node_modules/cli-width/index.js",
         "node_modules/cliui/index.js",
-        "node_modules/cliui/node_modules/wordwrap/example/center.js",
-        "node_modules/cliui/node_modules/wordwrap/example/meat.js",
-        "node_modules/cliui/node_modules/wordwrap/index.js",
+        "node_modules/cliui/node_modules/is-fullwidth-code-point/index.js",
+        "node_modules/cliui/node_modules/string-width/index.js",
+        "node_modules/cliui/node_modules/strip-ansi/index.js",
         "node_modules/co/index.js",
         "node_modules/code-point-at/index.js",
         "node_modules/coffee-fmt/Coffeescript.js",
@@ -5343,6 +4873,7 @@
         "node_modules/color-convert/index.js",
         "node_modules/color-convert/route.js",
         "node_modules/color-name/index.js",
+        "node_modules/color-name/test.js",
         "node_modules/colors/examples/normal-usage.js",
         "node_modules/colors/examples/safe-string.js",
         "node_modules/colors/lib/colors.js",
@@ -5369,7 +4900,6 @@
         "node_modules/commandpost/lib/utils.js",
         "node_modules/comment-parser/index.js",
         "node_modules/comment-parser/parser.js",
-        "node_modules/complain/index.js",
         "node_modules/concat-map/example/map.js",
         "node_modules/concat-map/index.js",
         "node_modules/concat-stream/index.js",
@@ -6871,7 +6401,6 @@
         "node_modules/cson-parser/node_modules/coffee-script/lib/coffee-script/sourcemap.js",
         "node_modules/cson-parser/node_modules/coffee-script/register.js",
         "node_modules/cson-parser/node_modules/coffee-script/repl.js",
-        "node_modules/cssbeautify/cssbeautify.js",
         "node_modules/csscomb/lib/cli.js",
         "node_modules/csscomb/lib/core.js",
         "node_modules/csscomb/lib/csscomb.js",
@@ -7034,18 +6563,13 @@
         "node_modules/d/index.js",
         "node_modules/d/lazy.js",
         "node_modules/dashdash/lib/dashdash.js",
-        "node_modules/debug/karma.conf.js",
+        "node_modules/debug/dist/debug.js",
         "node_modules/debug/node.js",
         "node_modules/debug/src/browser.js",
-        "node_modules/debug/src/debug.js",
+        "node_modules/debug/src/common.js",
         "node_modules/debug/src/index.js",
         "node_modules/debug/src/node.js",
         "node_modules/decamelize/index.js",
-        "node_modules/deep-eql/index.js",
-        "node_modules/deep-eql/karma.conf.js",
-        "node_modules/deep-eql/lib/eql.js",
-        "node_modules/deep-eql/node_modules/type-detect/index.js",
-        "node_modules/deep-eql/node_modules/type-detect/lib/type.js",
         "node_modules/deep-equal/example/cmp.js",
         "node_modules/deep-equal/index.js",
         "node_modules/deep-equal/lib/is_arguments.js",
@@ -7057,7 +6581,6 @@
         "node_modules/default-shell/index.js",
         "node_modules/del/index.js",
         "node_modules/delayed-stream/lib/delayed_stream.js",
-        "node_modules/deresolve/src/index.js",
         "node_modules/diff/dist/diff.js",
         "node_modules/diff/dist/diff.min.js",
         "node_modules/diff/lib/convert/dmp.js",
@@ -7119,9 +6642,6 @@
         "node_modules/entities/lib/decode.js",
         "node_modules/entities/lib/decode_codepoint.js",
         "node_modules/entities/lib/encode.js",
-        "node_modules/error-stack-parser/dist/error-stack-parser.js",
-        "node_modules/error-stack-parser/dist/error-stack-parser.min.js",
-        "node_modules/error-stack-parser/error-stack-parser.js",
         "node_modules/es5-ext/array/#/@@iterator/implement.js",
         "node_modules/es5-ext/array/#/@@iterator/index.js",
         "node_modules/es5-ext/array/#/@@iterator/is-implemented.js",
@@ -7582,26 +7102,6 @@
         "node_modules/es6-weak-map/polyfill.js",
         "node_modules/es6-weak-map/valid-weak-map.js",
         "node_modules/escape-string-regexp/index.js",
-        "node_modules/escodegen/bin/escodegen.js",
-        "node_modules/escodegen/bin/esgenerate.js",
-        "node_modules/escodegen/escodegen.js",
-        "node_modules/escodegen/node_modules/esprima/bin/esparse.js",
-        "node_modules/escodegen/node_modules/esprima/bin/esvalidate.js",
-        "node_modules/escodegen/node_modules/esprima/dist/esprima.js",
-        "node_modules/escodegen/node_modules/source-map/dist/source-map.debug.js",
-        "node_modules/escodegen/node_modules/source-map/dist/source-map.js",
-        "node_modules/escodegen/node_modules/source-map/dist/source-map.min.js",
-        "node_modules/escodegen/node_modules/source-map/lib/array-set.js",
-        "node_modules/escodegen/node_modules/source-map/lib/base64-vlq.js",
-        "node_modules/escodegen/node_modules/source-map/lib/base64.js",
-        "node_modules/escodegen/node_modules/source-map/lib/binary-search.js",
-        "node_modules/escodegen/node_modules/source-map/lib/mapping-list.js",
-        "node_modules/escodegen/node_modules/source-map/lib/quick-sort.js",
-        "node_modules/escodegen/node_modules/source-map/lib/source-map-consumer.js",
-        "node_modules/escodegen/node_modules/source-map/lib/source-map-generator.js",
-        "node_modules/escodegen/node_modules/source-map/lib/source-node.js",
-        "node_modules/escodegen/node_modules/source-map/lib/util.js",
-        "node_modules/escodegen/node_modules/source-map/source-map.js",
         "node_modules/eslint/bin/eslint.js",
         "node_modules/eslint/conf/config-schema.js",
         "node_modules/eslint/conf/default-cli-options.js",
@@ -8050,12 +7550,11 @@
         "node_modules/esutils/lib/code.js",
         "node_modules/esutils/lib/keyword.js",
         "node_modules/esutils/lib/utils.js",
+        "node_modules/event-kit/Gruntfile.js",
         "node_modules/event-kit/lib/composite-disposable.js",
         "node_modules/event-kit/lib/disposable.js",
         "node_modules/event-kit/lib/emitter.js",
         "node_modules/event-kit/lib/event-kit.js",
-        "node_modules/events/events.js",
-        "node_modules/events-light/src/index.js",
         "node_modules/execa/index.js",
         "node_modules/execa/lib/errname.js",
         "node_modules/execa/node_modules/cross-spawn/index.js",
@@ -8097,6 +7596,8 @@
         "node_modules/form-data/lib/browser.js",
         "node_modules/form-data/lib/form_data.js",
         "node_modules/form-data/lib/populate.js",
+        "node_modules/form-data/node_modules/combined-stream/lib/combined_stream.js",
+        "node_modules/form-data/node_modules/combined-stream/lib/defer.js",
         "node_modules/front-matter/index.js",
         "node_modules/fs-plus/lib/fs-plus.js",
         "node_modules/fs-plus/node_modules/async/dist/async.js",
@@ -8377,9 +7878,6 @@
         "node_modules/handlebars/lib/handlebars.runtime.js",
         "node_modules/handlebars/lib/index.js",
         "node_modules/handlebars/lib/precompiler.js",
-        "node_modules/handlebars/node_modules/async/dist/async.js",
-        "node_modules/handlebars/node_modules/async/dist/async.min.js",
-        "node_modules/handlebars/node_modules/async/lib/async.js",
         "node_modules/handlebars/node_modules/optimist/example/bool.js",
         "node_modules/handlebars/node_modules/optimist/example/boolean_double.js",
         "node_modules/handlebars/node_modules/optimist/example/boolean_single.js",
@@ -8413,19 +7911,12 @@
         "node_modules/hawk/lib/index.js",
         "node_modules/hawk/lib/server.js",
         "node_modules/hawk/lib/utils.js",
-        "node_modules/he/he.js",
         "node_modules/hoek/lib/escape.js",
         "node_modules/hoek/lib/index.js",
         "node_modules/html-entities/index.js",
         "node_modules/html-entities/lib/html4-entities.js",
         "node_modules/html-entities/lib/html5-entities.js",
         "node_modules/html-entities/lib/xml-entities.js",
-        "node_modules/htmljs-parser/BaseParser.js",
-        "node_modules/htmljs-parser/Parser.js",
-        "node_modules/htmljs-parser/html-tags.js",
-        "node_modules/htmljs-parser/index.js",
-        "node_modules/htmljs-parser/notify-util.js",
-        "node_modules/htmljs-parser/operators.js",
         "node_modules/htmlparser2/lib/CollectingHandler.js",
         "node_modules/htmlparser2/lib/FeedHandler.js",
         "node_modules/htmlparser2/lib/Parser.js",
@@ -8478,7 +7969,6 @@
         "node_modules/imurmurhash/imurmurhash.js",
         "node_modules/imurmurhash/imurmurhash.min.js",
         "node_modules/indent/index.js",
-        "node_modules/indent-string/index.js",
         "node_modules/inflight/inflight.js",
         "node_modules/inherit/index.js",
         "node_modules/inherit/lib/inherit.js",
@@ -8628,6 +8118,8 @@
         "node_modules/js-beautify/js/bin/html-beautify.js",
         "node_modules/js-beautify/js/bin/js-beautify.js",
         "node_modules/js-beautify/js/index.js",
+        "node_modules/js-beautify/js/lib/beautifier.js",
+        "node_modules/js-beautify/js/lib/beautifier.min.js",
         "node_modules/js-beautify/js/lib/beautify-css.js",
         "node_modules/js-beautify/js/lib/beautify-html.js",
         "node_modules/js-beautify/js/lib/beautify.js",
@@ -8636,23 +8128,32 @@
         "node_modules/js-beautify/js/lib/unpackers/myobfuscate_unpacker.js",
         "node_modules/js-beautify/js/lib/unpackers/p_a_c_k_e_r_unpacker.js",
         "node_modules/js-beautify/js/lib/unpackers/urlencode_unpacker.js",
-        "node_modules/js-beautify/js/src/core/acorn.js",
+        "node_modules/js-beautify/js/src/cli.js",
+        "node_modules/js-beautify/js/src/core/directives.js",
         "node_modules/js-beautify/js/src/core/inputscanner.js",
         "node_modules/js-beautify/js/src/core/options.js",
         "node_modules/js-beautify/js/src/core/output.js",
         "node_modules/js-beautify/js/src/core/token.js",
+        "node_modules/js-beautify/js/src/core/tokenizer.js",
+        "node_modules/js-beautify/js/src/core/tokenstream.js",
         "node_modules/js-beautify/js/src/css/beautifier.js",
         "node_modules/js-beautify/js/src/css/index.js",
+        "node_modules/js-beautify/js/src/css/options.js",
+        "node_modules/js-beautify/js/src/css/tokenizer.js",
         "node_modules/js-beautify/js/src/html/beautifier.js",
         "node_modules/js-beautify/js/src/html/index.js",
+        "node_modules/js-beautify/js/src/html/options.js",
+        "node_modules/js-beautify/js/src/html/tokenizer.js",
         "node_modules/js-beautify/js/src/index.js",
+        "node_modules/js-beautify/js/src/javascript/acorn.js",
         "node_modules/js-beautify/js/src/javascript/beautifier.js",
         "node_modules/js-beautify/js/src/javascript/index.js",
+        "node_modules/js-beautify/js/src/javascript/options.js",
         "node_modules/js-beautify/js/src/javascript/tokenizer.js",
-        "node_modules/js-beautify/node_modules/editorconfig/editorconfig.js",
-        "node_modules/js-beautify/node_modules/editorconfig/lib/fnmatch.js",
-        "node_modules/js-beautify/node_modules/editorconfig/lib/ini.js",
-        "node_modules/js-beautify/node_modules/lru-cache/lib/lru-cache.js",
+        "node_modules/js-beautify/js/src/unpackers/javascriptobfuscator_unpacker.js",
+        "node_modules/js-beautify/js/src/unpackers/myobfuscate_unpacker.js",
+        "node_modules/js-beautify/js/src/unpackers/p_a_c_k_e_r_unpacker.js",
+        "node_modules/js-beautify/js/src/unpackers/urlencode_unpacker.js",
         "node_modules/js-beautify/node_modules/minimist/example/parse.js",
         "node_modules/js-beautify/node_modules/minimist/index.js",
         "node_modules/js-beautify/node_modules/mkdirp/bin/cmd.js",
@@ -9862,34 +9363,13 @@
         "node_modules/jsonlint/web/json2.js",
         "node_modules/jsonlint/web/jsonlint.js",
         "node_modules/jsprim/lib/jsprim.js",
-        "node_modules/kind-of/index.js",
-        "node_modules/lasso-caching-fs/src/index.js",
-        "node_modules/lasso-modules-client/src/index.js",
-        "node_modules/lasso-modules-client/transport/src/code-builtin.js",
-        "node_modules/lasso-modules-client/transport/src/code-define.js",
-        "node_modules/lasso-modules-client/transport/src/code-installed.js",
-        "node_modules/lasso-modules-client/transport/src/code-loader-metadata.js",
-        "node_modules/lasso-modules-client/transport/src/code-main.js",
-        "node_modules/lasso-modules-client/transport/src/code-ready.js",
-        "node_modules/lasso-modules-client/transport/src/code-remap.js",
-        "node_modules/lasso-modules-client/transport/src/code-run.js",
-        "node_modules/lasso-modules-client/transport/src/code-search-path.js",
-        "node_modules/lasso-modules-client/transport/src/getClientPath.js",
-        "node_modules/lasso-modules-client/transport/src/index.js",
-        "node_modules/lasso-modules-client/transport/src/normalizeMain.js",
-        "node_modules/lasso-modules-client/transport/src/util/removeCommonExt.js",
-        "node_modules/lasso-modules-client/transport/src/util/tokenizer.js",
-        "node_modules/lasso-package-root/src/index.js",
         "node_modules/lazy/lazy.js",
-        "node_modules/lazy-cache/index.js",
         "node_modules/lcid/index.js",
         "node_modules/levn/lib/cast.js",
         "node_modules/levn/lib/coerce.js",
         "node_modules/levn/lib/index.js",
         "node_modules/levn/lib/parse-string.js",
         "node_modules/levn/lib/parse.js",
-        "node_modules/listener-tracker/karma.conf.js",
-        "node_modules/listener-tracker/lib/listener-tracker.js",
         "node_modules/load-plugin/browser.js",
         "node_modules/load-plugin/index.js",
         "node_modules/load-plugin/node_modules/resolve-from/index.js",
@@ -10947,653 +10427,6 @@
         "node_modules/markdown-table/index.js",
         "node_modules/marked/index.js",
         "node_modules/marked/lib/marked.js",
-        "node_modules/marko/bin/markoc.js",
-        "node_modules/marko/browser-refresh.js",
-        "node_modules/marko/compiler.js",
-        "node_modules/marko/components.js",
-        "node_modules/marko/dist/browser-refresh.js",
-        "node_modules/marko/dist/compiler/Builder.js",
-        "node_modules/marko/dist/compiler/CodeGenerator.js",
-        "node_modules/marko/dist/compiler/CodeWriter.js",
-        "node_modules/marko/dist/compiler/CompileContext.js",
-        "node_modules/marko/dist/compiler/CompileError.js",
-        "node_modules/marko/dist/compiler/Compiler.js",
-        "node_modules/marko/dist/compiler/HtmlJsParser.js",
-        "node_modules/marko/dist/compiler/InlineCompiler.js",
-        "node_modules/marko/dist/compiler/Parser.js",
-        "node_modules/marko/dist/compiler/Walker.js",
-        "node_modules/marko/dist/compiler/ast/ArrayContainer.js",
-        "node_modules/marko/dist/compiler/ast/ArrayExpression.js",
-        "node_modules/marko/dist/compiler/ast/Assignment.js",
-        "node_modules/marko/dist/compiler/ast/AttributePlaceholder.js",
-        "node_modules/marko/dist/compiler/ast/BinaryExpression.js",
-        "node_modules/marko/dist/compiler/ast/Code.js",
-        "node_modules/marko/dist/compiler/ast/Comment.js",
-        "node_modules/marko/dist/compiler/ast/ConditionalExpression.js",
-        "node_modules/marko/dist/compiler/ast/Container.js",
-        "node_modules/marko/dist/compiler/ast/ContainerNode.js",
-        "node_modules/marko/dist/compiler/ast/CustomTag.js",
-        "node_modules/marko/dist/compiler/ast/Declaration.js",
-        "node_modules/marko/dist/compiler/ast/DocumentType.js",
-        "node_modules/marko/dist/compiler/ast/Else.js",
-        "node_modules/marko/dist/compiler/ast/ElseIf.js",
-        "node_modules/marko/dist/compiler/ast/Expression.js",
-        "node_modules/marko/dist/compiler/ast/ForEach.js",
-        "node_modules/marko/dist/compiler/ast/ForEachProp.js",
-        "node_modules/marko/dist/compiler/ast/ForRange.js",
-        "node_modules/marko/dist/compiler/ast/ForStatement.js",
-        "node_modules/marko/dist/compiler/ast/FunctionCall.js",
-        "node_modules/marko/dist/compiler/ast/FunctionDeclaration.js",
-        "node_modules/marko/dist/compiler/ast/Html.js",
-        "node_modules/marko/dist/compiler/ast/HtmlAttribute/html/generateCode.js",
-        "node_modules/marko/dist/compiler/ast/HtmlAttribute/index.js",
-        "node_modules/marko/dist/compiler/ast/HtmlAttribute/vdom/generateCode.js",
-        "node_modules/marko/dist/compiler/ast/HtmlAttributeCollection.js",
-        "node_modules/marko/dist/compiler/ast/HtmlComment.js",
-        "node_modules/marko/dist/compiler/ast/HtmlElement/html/EndTag.js",
-        "node_modules/marko/dist/compiler/ast/HtmlElement/html/StartTag.js",
-        "node_modules/marko/dist/compiler/ast/HtmlElement/html/generateCode.js",
-        "node_modules/marko/dist/compiler/ast/HtmlElement/index.js",
-        "node_modules/marko/dist/compiler/ast/HtmlElement/vdom/EndElementVDOM.js",
-        "node_modules/marko/dist/compiler/ast/HtmlElement/vdom/HtmlElementVDOM.js",
-        "node_modules/marko/dist/compiler/ast/HtmlElement/vdom/generateCode.js",
-        "node_modules/marko/dist/compiler/ast/Identifier.js",
-        "node_modules/marko/dist/compiler/ast/If.js",
-        "node_modules/marko/dist/compiler/ast/InvokeMacro.js",
-        "node_modules/marko/dist/compiler/ast/Literal.js",
-        "node_modules/marko/dist/compiler/ast/LogicalExpression.js",
-        "node_modules/marko/dist/compiler/ast/Macro.js",
-        "node_modules/marko/dist/compiler/ast/MemberExpression.js",
-        "node_modules/marko/dist/compiler/ast/NewExpression.js",
-        "node_modules/marko/dist/compiler/ast/Node.js",
-        "node_modules/marko/dist/compiler/ast/ObjectExpression.js",
-        "node_modules/marko/dist/compiler/ast/Program.js",
-        "node_modules/marko/dist/compiler/ast/Property.js",
-        "node_modules/marko/dist/compiler/ast/Return.js",
-        "node_modules/marko/dist/compiler/ast/Scriptlet.js",
-        "node_modules/marko/dist/compiler/ast/SelfInvokingFunction.js",
-        "node_modules/marko/dist/compiler/ast/SequenceExpression.js",
-        "node_modules/marko/dist/compiler/ast/TemplateRoot.js",
-        "node_modules/marko/dist/compiler/ast/Text/html/generateCode.js",
-        "node_modules/marko/dist/compiler/ast/Text/index.js",
-        "node_modules/marko/dist/compiler/ast/Text/vdom/TextVDOM.js",
-        "node_modules/marko/dist/compiler/ast/Text/vdom/generateCode.js",
-        "node_modules/marko/dist/compiler/ast/ThisExpression.js",
-        "node_modules/marko/dist/compiler/ast/UnaryExpression.js",
-        "node_modules/marko/dist/compiler/ast/UpdateExpression.js",
-        "node_modules/marko/dist/compiler/ast/VariableDeclarator.js",
-        "node_modules/marko/dist/compiler/ast/Vars.js",
-        "node_modules/marko/dist/compiler/ast/WhileStatement.js",
-        "node_modules/marko/dist/compiler/config.js",
-        "node_modules/marko/dist/compiler/index.js",
-        "node_modules/marko/dist/compiler/modules.js",
-        "node_modules/marko/dist/compiler/taglib-finder/index.js",
-        "node_modules/marko/dist/compiler/taglib-loader/Attribute.js",
-        "node_modules/marko/dist/compiler/taglib-loader/DependencyChain.js",
-        "node_modules/marko/dist/compiler/taglib-loader/ImportedVariable.js",
-        "node_modules/marko/dist/compiler/taglib-loader/NestedVariable.js",
-        "node_modules/marko/dist/compiler/taglib-loader/Property.js",
-        "node_modules/marko/dist/compiler/taglib-loader/Tag.js",
-        "node_modules/marko/dist/compiler/taglib-loader/Taglib.js",
-        "node_modules/marko/dist/compiler/taglib-loader/Transformer.js",
-        "node_modules/marko/dist/compiler/taglib-loader/cache.js",
-        "node_modules/marko/dist/compiler/taglib-loader/index.js",
-        "node_modules/marko/dist/compiler/taglib-loader/json-file-reader.js",
-        "node_modules/marko/dist/compiler/taglib-loader/loadAttributeFromProps.js",
-        "node_modules/marko/dist/compiler/taglib-loader/loadAttributes.js",
-        "node_modules/marko/dist/compiler/taglib-loader/loadTagFromFile.js",
-        "node_modules/marko/dist/compiler/taglib-loader/loadTagFromProps.js",
-        "node_modules/marko/dist/compiler/taglib-loader/loadTaglibFromFile.js",
-        "node_modules/marko/dist/compiler/taglib-loader/loadTaglibFromProps.js",
-        "node_modules/marko/dist/compiler/taglib-loader/loaders.js",
-        "node_modules/marko/dist/compiler/taglib-loader/scanTagsDir.js",
-        "node_modules/marko/dist/compiler/taglib-loader/tag-def-from-code.js",
-        "node_modules/marko/dist/compiler/taglib-loader/types.js",
-        "node_modules/marko/dist/compiler/taglib-lookup/TaglibLookup.js",
-        "node_modules/marko/dist/compiler/taglib-lookup/index.js",
-        "node_modules/marko/dist/compiler/util/PosInfo.js",
-        "node_modules/marko/dist/compiler/util/UniqueVars.js",
-        "node_modules/marko/dist/compiler/util/adjustIndent.js",
-        "node_modules/marko/dist/compiler/util/deresolve.js",
-        "node_modules/marko/dist/compiler/util/enableTagParams.js",
-        "node_modules/marko/dist/compiler/util/finger-print.js",
-        "node_modules/marko/dist/compiler/util/html-elements.js",
-        "node_modules/marko/dist/compiler/util/isCompoundExpression.js",
-        "node_modules/marko/dist/compiler/util/isJavaScriptReservedWord.js",
-        "node_modules/marko/dist/compiler/util/isValidJavaScriptIdentifier.js",
-        "node_modules/marko/dist/compiler/util/isValidJavaScriptVarName.js",
-        "node_modules/marko/dist/compiler/util/javaScriptReservedWords.js",
-        "node_modules/marko/dist/compiler/util/macros.js",
-        "node_modules/marko/dist/compiler/util/parseExpression.js",
-        "node_modules/marko/dist/compiler/util/parseJavaScript.js",
-        "node_modules/marko/dist/compiler/util/parseJavaScriptArgs.js",
-        "node_modules/marko/dist/compiler/util/parseJavaScriptParams.js",
-        "node_modules/marko/dist/compiler/util/parseStatement.js",
-        "node_modules/marko/dist/compiler/util/removeComments.js",
-        "node_modules/marko/dist/compiler/util/removeDashes.js",
-        "node_modules/marko/dist/compiler/util/replacePlaceholderEscapeFuncs.js",
-        "node_modules/marko/dist/compiler/util/safeVarName.js",
-        "node_modules/marko/dist/compiler/util/tokenizer.js",
-        "node_modules/marko/dist/compiler/util/vdom/VDOMOptimizer.js",
-        "node_modules/marko/dist/compiler/util/vdom/index.js",
-        "node_modules/marko/dist/compiler/util/vdom/isStaticValue.js",
-        "node_modules/marko/dist/components/Component.js",
-        "node_modules/marko/dist/components/ComponentDef.js",
-        "node_modules/marko/dist/components/ComponentsContext.js",
-        "node_modules/marko/dist/components/GlobalComponentsContext.js",
-        "node_modules/marko/dist/components/KeySequence.js",
-        "node_modules/marko/dist/components/ServerComponent.js",
-        "node_modules/marko/dist/components/State.js",
-        "node_modules/marko/dist/components/attach-detach.js",
-        "node_modules/marko/dist/components/beginComponent-browser.js",
-        "node_modules/marko/dist/components/beginComponent.js",
-        "node_modules/marko/dist/components/boot.js",
-        "node_modules/marko/dist/components/defineComponent.js",
-        "node_modules/marko/dist/components/endComponent-browser.js",
-        "node_modules/marko/dist/components/endComponent.js",
-        "node_modules/marko/dist/components/event-delegation.js",
-        "node_modules/marko/dist/components/helpers-browser.js",
-        "node_modules/marko/dist/components/helpers.js",
-        "node_modules/marko/dist/components/index-browser.js",
-        "node_modules/marko/dist/components/index.js",
-        "node_modules/marko/dist/components/init-components-browser.js",
-        "node_modules/marko/dist/components/init-components.js",
-        "node_modules/marko/dist/components/jquery.js",
-        "node_modules/marko/dist/components/legacy/State-legacy.js",
-        "node_modules/marko/dist/components/legacy/defineComponent-legacy.js",
-        "node_modules/marko/dist/components/legacy/defineRenderer-legacy.js",
-        "node_modules/marko/dist/components/legacy/defineWidget-legacy-browser.js",
-        "node_modules/marko/dist/components/legacy/defineWidget-legacy.js",
-        "node_modules/marko/dist/components/legacy/dependencies/html.js",
-        "node_modules/marko/dist/components/legacy/dependencies/index.js",
-        "node_modules/marko/dist/components/legacy/dependencies/vdom.js",
-        "node_modules/marko/dist/components/legacy/helpers-browser.js",
-        "node_modules/marko/dist/components/legacy/helpers.js",
-        "node_modules/marko/dist/components/legacy/index-browser.js",
-        "node_modules/marko/dist/components/legacy/index.js",
-        "node_modules/marko/dist/components/legacy/renderer-legacy.js",
-        "node_modules/marko/dist/components/ready.js",
-        "node_modules/marko/dist/components/registry-browser.js",
-        "node_modules/marko/dist/components/registry.js",
-        "node_modules/marko/dist/components/renderer.js",
-        "node_modules/marko/dist/components/taglib/TransformHelper/ComponentArgsCompiler.js",
-        "node_modules/marko/dist/components/taglib/TransformHelper/assignComponentId.js",
-        "node_modules/marko/dist/components/taglib/TransformHelper/convertToComponent.js",
-        "node_modules/marko/dist/components/taglib/TransformHelper/getComponentFiles.js",
-        "node_modules/marko/dist/components/taglib/TransformHelper/handleComponentEvents.js",
-        "node_modules/marko/dist/components/taglib/TransformHelper/handleComponentPreserve.js",
-        "node_modules/marko/dist/components/taglib/TransformHelper/handleComponentPreserveAttrs.js",
-        "node_modules/marko/dist/components/taglib/TransformHelper/handleLegacyBind.js",
-        "node_modules/marko/dist/components/taglib/TransformHelper/handleRootNodes.js",
-        "node_modules/marko/dist/components/taglib/TransformHelper/handleScopedAttrs.js",
-        "node_modules/marko/dist/components/taglib/TransformHelper/index.js",
-        "node_modules/marko/dist/components/taglib/body-transformer.js",
-        "node_modules/marko/dist/components/taglib/component-globals-tag-browser.js",
-        "node_modules/marko/dist/components/taglib/component-globals-tag.js",
-        "node_modules/marko/dist/components/taglib/component-tag.js",
-        "node_modules/marko/dist/components/taglib/components-transformer.js",
-        "node_modules/marko/dist/components/taglib/getRequirePath-browser.js",
-        "node_modules/marko/dist/components/taglib/getRequirePath.js",
-        "node_modules/marko/dist/components/taglib/helpers/bindComponent.js",
-        "node_modules/marko/dist/components/taglib/helpers/markoKeyAttr.js",
-        "node_modules/marko/dist/components/taglib/init-components-tag-browser.js",
-        "node_modules/marko/dist/components/taglib/init-components-tag.js",
-        "node_modules/marko/dist/components/taglib/preserve-tag-browser.js",
-        "node_modules/marko/dist/components/taglib/preserve-tag.js",
-        "node_modules/marko/dist/components/taglib/util/generateRegisterComponentCode.js",
-        "node_modules/marko/dist/components/taglib/util/getTransformHelper.js",
-        "node_modules/marko/dist/components/taglib/widget-types-tag.js",
-        "node_modules/marko/dist/components/update-manager.js",
-        "node_modules/marko/dist/components/util-browser.js",
-        "node_modules/marko/dist/components/util.js",
-        "node_modules/marko/dist/defineRenderer.js",
-        "node_modules/marko/dist/express.js",
-        "node_modules/marko/dist/hot-reload.js",
-        "node_modules/marko/dist/html.js",
-        "node_modules/marko/dist/index-browser.js",
-        "node_modules/marko/dist/index.js",
-        "node_modules/marko/dist/loader/index-browser-dynamic.js",
-        "node_modules/marko/dist/loader/index-browser.js",
-        "node_modules/marko/dist/loader/index-default.js",
-        "node_modules/marko/dist/loader/index.js",
-        "node_modules/marko/dist/morphdom/index.js",
-        "node_modules/marko/dist/morphdom/specialElHandlers.js",
-        "node_modules/marko/dist/node-require/index-browser.js",
-        "node_modules/marko/dist/node-require/index.js",
-        "node_modules/marko/dist/runtime/RenderResult.js",
-        "node_modules/marko/dist/runtime/createOut.js",
-        "node_modules/marko/dist/runtime/dom-insert.js",
-        "node_modules/marko/dist/runtime/events.js",
-        "node_modules/marko/dist/runtime/helper-assign.js",
-        "node_modules/marko/dist/runtime/helper-forEachPropStatusVar.js",
-        "node_modules/marko/dist/runtime/helper-forEachProperty.js",
-        "node_modules/marko/dist/runtime/helper-forEachWithStatusVar.js",
-        "node_modules/marko/dist/runtime/helper-forRange.js",
-        "node_modules/marko/dist/runtime/helper-loadNestedTag.js",
-        "node_modules/marko/dist/runtime/helper-loadTemplate.js",
-        "node_modules/marko/dist/runtime/helper-merge.js",
-        "node_modules/marko/dist/runtime/helper-mergeNestedTags.js",
-        "node_modules/marko/dist/runtime/helpers.js",
-        "node_modules/marko/dist/runtime/html/AsyncStream.js",
-        "node_modules/marko/dist/runtime/html/BufferedWriter.js",
-        "node_modules/marko/dist/runtime/html/StringWriter.js",
-        "node_modules/marko/dist/runtime/html/Template.js",
-        "node_modules/marko/dist/runtime/html/escape.js",
-        "node_modules/marko/dist/runtime/html/helper-attr.js",
-        "node_modules/marko/dist/runtime/html/helper-attrs.js",
-        "node_modules/marko/dist/runtime/html/helper-createInlineTemplate.js",
-        "node_modules/marko/dist/runtime/html/helpers.js",
-        "node_modules/marko/dist/runtime/html/index.js",
-        "node_modules/marko/dist/runtime/nextTick-browser.js",
-        "node_modules/marko/dist/runtime/nextTick.js",
-        "node_modules/marko/dist/runtime/renderable.js",
-        "node_modules/marko/dist/runtime/vdom/AsyncVDOMBuilder.js",
-        "node_modules/marko/dist/runtime/vdom/VComment.js",
-        "node_modules/marko/dist/runtime/vdom/VComponent.js",
-        "node_modules/marko/dist/runtime/vdom/VDocumentFragment.js",
-        "node_modules/marko/dist/runtime/vdom/VElement.js",
-        "node_modules/marko/dist/runtime/vdom/VNode.js",
-        "node_modules/marko/dist/runtime/vdom/VText.js",
-        "node_modules/marko/dist/runtime/vdom/helper-attrs.js",
-        "node_modules/marko/dist/runtime/vdom/helper-createInlineTemplate.js",
-        "node_modules/marko/dist/runtime/vdom/helper-styleAttr.js",
-        "node_modules/marko/dist/runtime/vdom/helpers.js",
-        "node_modules/marko/dist/runtime/vdom/index.js",
-        "node_modules/marko/dist/runtime/vdom/preserve-attrs.js",
-        "node_modules/marko/dist/runtime/vdom/vdom.js",
-        "node_modules/marko/dist/taglibs/async/AsyncValue.js",
-        "node_modules/marko/dist/taglibs/async/async-fragment-to-await-transformer.js",
-        "node_modules/marko/dist/taglibs/async/await-nested-tag-transformer.js",
-        "node_modules/marko/dist/taglibs/async/await-reorderer-tag.js",
-        "node_modules/marko/dist/taglibs/async/await-tag-transformer.js",
-        "node_modules/marko/dist/taglibs/async/await-tag.js",
-        "node_modules/marko/dist/taglibs/async/client-reorder-browser.js",
-        "node_modules/marko/dist/taglibs/async/client-reorder-runtime.js",
-        "node_modules/marko/dist/taglibs/async/client-reorder-runtime.min.js",
-        "node_modules/marko/dist/taglibs/async/client-reorder.js",
-        "node_modules/marko/dist/taglibs/async/noop-render.js",
-        "node_modules/marko/dist/taglibs/cache/cached-fragment-tag-transformer.js",
-        "node_modules/marko/dist/taglibs/cache/cached-fragment-tag.js",
-        "node_modules/marko/dist/taglibs/cache/default-cache-manager.js",
-        "node_modules/marko/dist/taglibs/core/assign-tag.js",
-        "node_modules/marko/dist/taglibs/core/class-tag.js",
-        "node_modules/marko/dist/taglibs/core/core-transformer.js",
-        "node_modules/marko/dist/taglibs/core/else-if-tag.js",
-        "node_modules/marko/dist/taglibs/core/else-tag.js",
-        "node_modules/marko/dist/taglibs/core/for-tag.js",
-        "node_modules/marko/dist/taglibs/core/if-tag.js",
-        "node_modules/marko/dist/taglibs/core/import-tag.js",
-        "node_modules/marko/dist/taglibs/core/include-html-tag-browser.js",
-        "node_modules/marko/dist/taglibs/core/include-html-tag.js",
-        "node_modules/marko/dist/taglibs/core/include-tag-transformer.js",
-        "node_modules/marko/dist/taglibs/core/include-tag.js",
-        "node_modules/marko/dist/taglibs/core/include-text-tag-browser.js",
-        "node_modules/marko/dist/taglibs/core/include-text-tag.js",
-        "node_modules/marko/dist/taglibs/core/invoke-tag.js",
-        "node_modules/marko/dist/taglibs/core/macro-body-tag.js",
-        "node_modules/marko/dist/taglibs/core/macro-tag.js",
-        "node_modules/marko/dist/taglibs/core/marko-preserve-whitespace-tag.js",
-        "node_modules/marko/dist/taglibs/core/marko-tag.js",
-        "node_modules/marko/dist/taglibs/core/module-code-tag.js",
-        "node_modules/marko/dist/taglibs/core/static-tag.js",
-        "node_modules/marko/dist/taglibs/core/unless-tag.js",
-        "node_modules/marko/dist/taglibs/core/util/createLoopNode.js",
-        "node_modules/marko/dist/taglibs/core/util/parseFor.js",
-        "node_modules/marko/dist/taglibs/core/util/parseImport.js",
-        "node_modules/marko/dist/taglibs/core/var-tag.js",
-        "node_modules/marko/dist/taglibs/core/while-tag.js",
-        "node_modules/marko/dist/taglibs/html/html-comment-tag.js",
-        "node_modules/marko/dist/taglibs/layout/placeholder-tag.js",
-        "node_modules/marko/dist/taglibs/layout/put-tag.js",
-        "node_modules/marko/dist/taglibs/layout/use-tag.js",
-        "node_modules/marko/dist/vdom.js",
-        "node_modules/marko/env.js",
-        "node_modules/marko/express.js",
-        "node_modules/marko/helpers/empty.js",
-        "node_modules/marko/helpers/notEmpty.js",
-        "node_modules/marko/hot-reload.js",
-        "node_modules/marko/index.js",
-        "node_modules/marko/legacy-components.js",
-        "node_modules/marko/node-require.js",
-        "node_modules/marko/node_modules/esprima/bin/esparse.js",
-        "node_modules/marko/node_modules/esprima/bin/esvalidate.js",
-        "node_modules/marko/node_modules/esprima/dist/esprima.js",
-        "node_modules/marko/node_modules/minimatch/minimatch.js",
-        "node_modules/marko/node_modules/resolve-from/index.js",
-        "node_modules/marko/scripts/babel-plugin-marko-debug.js",
-        "node_modules/marko/scripts/build.js",
-        "node_modules/marko/scripts/util.js",
-        "node_modules/marko/src/browser-refresh.js",
-        "node_modules/marko/src/compiler/Builder.js",
-        "node_modules/marko/src/compiler/CodeGenerator.js",
-        "node_modules/marko/src/compiler/CodeWriter.js",
-        "node_modules/marko/src/compiler/CompileContext.js",
-        "node_modules/marko/src/compiler/CompileError.js",
-        "node_modules/marko/src/compiler/Compiler.js",
-        "node_modules/marko/src/compiler/HtmlJsParser.js",
-        "node_modules/marko/src/compiler/InlineCompiler.js",
-        "node_modules/marko/src/compiler/Parser.js",
-        "node_modules/marko/src/compiler/Walker.js",
-        "node_modules/marko/src/compiler/ast/ArrayContainer.js",
-        "node_modules/marko/src/compiler/ast/ArrayExpression.js",
-        "node_modules/marko/src/compiler/ast/Assignment.js",
-        "node_modules/marko/src/compiler/ast/AttributePlaceholder.js",
-        "node_modules/marko/src/compiler/ast/BinaryExpression.js",
-        "node_modules/marko/src/compiler/ast/Code.js",
-        "node_modules/marko/src/compiler/ast/Comment.js",
-        "node_modules/marko/src/compiler/ast/ConditionalExpression.js",
-        "node_modules/marko/src/compiler/ast/Container.js",
-        "node_modules/marko/src/compiler/ast/ContainerNode.js",
-        "node_modules/marko/src/compiler/ast/CustomTag.js",
-        "node_modules/marko/src/compiler/ast/Declaration.js",
-        "node_modules/marko/src/compiler/ast/DocumentType.js",
-        "node_modules/marko/src/compiler/ast/Else.js",
-        "node_modules/marko/src/compiler/ast/ElseIf.js",
-        "node_modules/marko/src/compiler/ast/Expression.js",
-        "node_modules/marko/src/compiler/ast/ForEach.js",
-        "node_modules/marko/src/compiler/ast/ForEachProp.js",
-        "node_modules/marko/src/compiler/ast/ForRange.js",
-        "node_modules/marko/src/compiler/ast/ForStatement.js",
-        "node_modules/marko/src/compiler/ast/FunctionCall.js",
-        "node_modules/marko/src/compiler/ast/FunctionDeclaration.js",
-        "node_modules/marko/src/compiler/ast/Html.js",
-        "node_modules/marko/src/compiler/ast/HtmlAttribute/html/generateCode.js",
-        "node_modules/marko/src/compiler/ast/HtmlAttribute/index.js",
-        "node_modules/marko/src/compiler/ast/HtmlAttribute/vdom/generateCode.js",
-        "node_modules/marko/src/compiler/ast/HtmlAttributeCollection.js",
-        "node_modules/marko/src/compiler/ast/HtmlComment.js",
-        "node_modules/marko/src/compiler/ast/HtmlElement/html/EndTag.js",
-        "node_modules/marko/src/compiler/ast/HtmlElement/html/StartTag.js",
-        "node_modules/marko/src/compiler/ast/HtmlElement/html/generateCode.js",
-        "node_modules/marko/src/compiler/ast/HtmlElement/index.js",
-        "node_modules/marko/src/compiler/ast/HtmlElement/vdom/EndElementVDOM.js",
-        "node_modules/marko/src/compiler/ast/HtmlElement/vdom/HtmlElementVDOM.js",
-        "node_modules/marko/src/compiler/ast/HtmlElement/vdom/generateCode.js",
-        "node_modules/marko/src/compiler/ast/Identifier.js",
-        "node_modules/marko/src/compiler/ast/If.js",
-        "node_modules/marko/src/compiler/ast/InvokeMacro.js",
-        "node_modules/marko/src/compiler/ast/Literal.js",
-        "node_modules/marko/src/compiler/ast/LogicalExpression.js",
-        "node_modules/marko/src/compiler/ast/Macro.js",
-        "node_modules/marko/src/compiler/ast/MemberExpression.js",
-        "node_modules/marko/src/compiler/ast/NewExpression.js",
-        "node_modules/marko/src/compiler/ast/Node.js",
-        "node_modules/marko/src/compiler/ast/ObjectExpression.js",
-        "node_modules/marko/src/compiler/ast/Program.js",
-        "node_modules/marko/src/compiler/ast/Property.js",
-        "node_modules/marko/src/compiler/ast/Return.js",
-        "node_modules/marko/src/compiler/ast/Scriptlet.js",
-        "node_modules/marko/src/compiler/ast/SelfInvokingFunction.js",
-        "node_modules/marko/src/compiler/ast/SequenceExpression.js",
-        "node_modules/marko/src/compiler/ast/TemplateRoot.js",
-        "node_modules/marko/src/compiler/ast/Text/html/generateCode.js",
-        "node_modules/marko/src/compiler/ast/Text/index.js",
-        "node_modules/marko/src/compiler/ast/Text/vdom/TextVDOM.js",
-        "node_modules/marko/src/compiler/ast/Text/vdom/generateCode.js",
-        "node_modules/marko/src/compiler/ast/ThisExpression.js",
-        "node_modules/marko/src/compiler/ast/UnaryExpression.js",
-        "node_modules/marko/src/compiler/ast/UpdateExpression.js",
-        "node_modules/marko/src/compiler/ast/VariableDeclarator.js",
-        "node_modules/marko/src/compiler/ast/Vars.js",
-        "node_modules/marko/src/compiler/ast/WhileStatement.js",
-        "node_modules/marko/src/compiler/config.js",
-        "node_modules/marko/src/compiler/index.js",
-        "node_modules/marko/src/compiler/modules.js",
-        "node_modules/marko/src/compiler/taglib-finder/index.js",
-        "node_modules/marko/src/compiler/taglib-loader/Attribute.js",
-        "node_modules/marko/src/compiler/taglib-loader/DependencyChain.js",
-        "node_modules/marko/src/compiler/taglib-loader/ImportedVariable.js",
-        "node_modules/marko/src/compiler/taglib-loader/NestedVariable.js",
-        "node_modules/marko/src/compiler/taglib-loader/Property.js",
-        "node_modules/marko/src/compiler/taglib-loader/Tag.js",
-        "node_modules/marko/src/compiler/taglib-loader/Taglib.js",
-        "node_modules/marko/src/compiler/taglib-loader/Transformer.js",
-        "node_modules/marko/src/compiler/taglib-loader/cache.js",
-        "node_modules/marko/src/compiler/taglib-loader/index.js",
-        "node_modules/marko/src/compiler/taglib-loader/json-file-reader.js",
-        "node_modules/marko/src/compiler/taglib-loader/loadAttributeFromProps.js",
-        "node_modules/marko/src/compiler/taglib-loader/loadAttributes.js",
-        "node_modules/marko/src/compiler/taglib-loader/loadTagFromFile.js",
-        "node_modules/marko/src/compiler/taglib-loader/loadTagFromProps.js",
-        "node_modules/marko/src/compiler/taglib-loader/loadTaglibFromFile.js",
-        "node_modules/marko/src/compiler/taglib-loader/loadTaglibFromProps.js",
-        "node_modules/marko/src/compiler/taglib-loader/loaders.js",
-        "node_modules/marko/src/compiler/taglib-loader/scanTagsDir.js",
-        "node_modules/marko/src/compiler/taglib-loader/tag-def-from-code.js",
-        "node_modules/marko/src/compiler/taglib-loader/types.js",
-        "node_modules/marko/src/compiler/taglib-lookup/TaglibLookup.js",
-        "node_modules/marko/src/compiler/taglib-lookup/index.js",
-        "node_modules/marko/src/compiler/util/PosInfo.js",
-        "node_modules/marko/src/compiler/util/UniqueVars.js",
-        "node_modules/marko/src/compiler/util/adjustIndent.js",
-        "node_modules/marko/src/compiler/util/deresolve.js",
-        "node_modules/marko/src/compiler/util/enableTagParams.js",
-        "node_modules/marko/src/compiler/util/finger-print.js",
-        "node_modules/marko/src/compiler/util/html-elements.js",
-        "node_modules/marko/src/compiler/util/isCompoundExpression.js",
-        "node_modules/marko/src/compiler/util/isJavaScriptReservedWord.js",
-        "node_modules/marko/src/compiler/util/isValidJavaScriptIdentifier.js",
-        "node_modules/marko/src/compiler/util/isValidJavaScriptVarName.js",
-        "node_modules/marko/src/compiler/util/javaScriptReservedWords.js",
-        "node_modules/marko/src/compiler/util/macros.js",
-        "node_modules/marko/src/compiler/util/parseExpression.js",
-        "node_modules/marko/src/compiler/util/parseJavaScript.js",
-        "node_modules/marko/src/compiler/util/parseJavaScriptArgs.js",
-        "node_modules/marko/src/compiler/util/parseJavaScriptParams.js",
-        "node_modules/marko/src/compiler/util/parseStatement.js",
-        "node_modules/marko/src/compiler/util/removeComments.js",
-        "node_modules/marko/src/compiler/util/removeDashes.js",
-        "node_modules/marko/src/compiler/util/replacePlaceholderEscapeFuncs.js",
-        "node_modules/marko/src/compiler/util/safeVarName.js",
-        "node_modules/marko/src/compiler/util/tokenizer.js",
-        "node_modules/marko/src/compiler/util/vdom/VDOMOptimizer.js",
-        "node_modules/marko/src/compiler/util/vdom/index.js",
-        "node_modules/marko/src/compiler/util/vdom/isStaticValue.js",
-        "node_modules/marko/src/components/Component.js",
-        "node_modules/marko/src/components/ComponentDef.js",
-        "node_modules/marko/src/components/ComponentsContext.js",
-        "node_modules/marko/src/components/GlobalComponentsContext.js",
-        "node_modules/marko/src/components/KeySequence.js",
-        "node_modules/marko/src/components/ServerComponent.js",
-        "node_modules/marko/src/components/State.js",
-        "node_modules/marko/src/components/attach-detach.js",
-        "node_modules/marko/src/components/beginComponent-browser.js",
-        "node_modules/marko/src/components/beginComponent.js",
-        "node_modules/marko/src/components/boot.js",
-        "node_modules/marko/src/components/defineComponent.js",
-        "node_modules/marko/src/components/endComponent-browser.js",
-        "node_modules/marko/src/components/endComponent.js",
-        "node_modules/marko/src/components/event-delegation.js",
-        "node_modules/marko/src/components/helpers-browser.js",
-        "node_modules/marko/src/components/helpers.js",
-        "node_modules/marko/src/components/index-browser.js",
-        "node_modules/marko/src/components/index.js",
-        "node_modules/marko/src/components/init-components-browser.js",
-        "node_modules/marko/src/components/init-components.js",
-        "node_modules/marko/src/components/jquery.js",
-        "node_modules/marko/src/components/legacy/State-legacy.js",
-        "node_modules/marko/src/components/legacy/defineComponent-legacy.js",
-        "node_modules/marko/src/components/legacy/defineRenderer-legacy.js",
-        "node_modules/marko/src/components/legacy/defineWidget-legacy-browser.js",
-        "node_modules/marko/src/components/legacy/defineWidget-legacy.js",
-        "node_modules/marko/src/components/legacy/dependencies/html.js",
-        "node_modules/marko/src/components/legacy/dependencies/index.js",
-        "node_modules/marko/src/components/legacy/dependencies/vdom.js",
-        "node_modules/marko/src/components/legacy/helpers-browser.js",
-        "node_modules/marko/src/components/legacy/helpers.js",
-        "node_modules/marko/src/components/legacy/index-browser.js",
-        "node_modules/marko/src/components/legacy/index.js",
-        "node_modules/marko/src/components/legacy/renderer-legacy.js",
-        "node_modules/marko/src/components/ready.js",
-        "node_modules/marko/src/components/registry-browser.js",
-        "node_modules/marko/src/components/registry.js",
-        "node_modules/marko/src/components/renderer.js",
-        "node_modules/marko/src/components/taglib/TransformHelper/ComponentArgsCompiler.js",
-        "node_modules/marko/src/components/taglib/TransformHelper/assignComponentId.js",
-        "node_modules/marko/src/components/taglib/TransformHelper/convertToComponent.js",
-        "node_modules/marko/src/components/taglib/TransformHelper/getComponentFiles.js",
-        "node_modules/marko/src/components/taglib/TransformHelper/handleComponentEvents.js",
-        "node_modules/marko/src/components/taglib/TransformHelper/handleComponentPreserve.js",
-        "node_modules/marko/src/components/taglib/TransformHelper/handleComponentPreserveAttrs.js",
-        "node_modules/marko/src/components/taglib/TransformHelper/handleLegacyBind.js",
-        "node_modules/marko/src/components/taglib/TransformHelper/handleRootNodes.js",
-        "node_modules/marko/src/components/taglib/TransformHelper/handleScopedAttrs.js",
-        "node_modules/marko/src/components/taglib/TransformHelper/index.js",
-        "node_modules/marko/src/components/taglib/body-transformer.js",
-        "node_modules/marko/src/components/taglib/component-globals-tag-browser.js",
-        "node_modules/marko/src/components/taglib/component-globals-tag.js",
-        "node_modules/marko/src/components/taglib/component-tag.js",
-        "node_modules/marko/src/components/taglib/components-transformer.js",
-        "node_modules/marko/src/components/taglib/getRequirePath-browser.js",
-        "node_modules/marko/src/components/taglib/getRequirePath.js",
-        "node_modules/marko/src/components/taglib/helpers/bindComponent.js",
-        "node_modules/marko/src/components/taglib/helpers/markoKeyAttr.js",
-        "node_modules/marko/src/components/taglib/init-components-tag-browser.js",
-        "node_modules/marko/src/components/taglib/init-components-tag.js",
-        "node_modules/marko/src/components/taglib/preserve-tag-browser.js",
-        "node_modules/marko/src/components/taglib/preserve-tag.js",
-        "node_modules/marko/src/components/taglib/util/generateRegisterComponentCode.js",
-        "node_modules/marko/src/components/taglib/util/getTransformHelper.js",
-        "node_modules/marko/src/components/taglib/widget-types-tag.js",
-        "node_modules/marko/src/components/update-manager.js",
-        "node_modules/marko/src/components/util-browser.js",
-        "node_modules/marko/src/components/util.js",
-        "node_modules/marko/src/defineRenderer.js",
-        "node_modules/marko/src/express.js",
-        "node_modules/marko/src/hot-reload.js",
-        "node_modules/marko/src/html.js",
-        "node_modules/marko/src/index-browser.js",
-        "node_modules/marko/src/index.js",
-        "node_modules/marko/src/loader/index-browser-dynamic.js",
-        "node_modules/marko/src/loader/index-browser.js",
-        "node_modules/marko/src/loader/index-default.js",
-        "node_modules/marko/src/loader/index.js",
-        "node_modules/marko/src/morphdom/index.js",
-        "node_modules/marko/src/morphdom/specialElHandlers.js",
-        "node_modules/marko/src/node-require/index-browser.js",
-        "node_modules/marko/src/node-require/index.js",
-        "node_modules/marko/src/runtime/RenderResult.js",
-        "node_modules/marko/src/runtime/createOut.js",
-        "node_modules/marko/src/runtime/dom-insert.js",
-        "node_modules/marko/src/runtime/events.js",
-        "node_modules/marko/src/runtime/helper-assign.js",
-        "node_modules/marko/src/runtime/helper-forEachPropStatusVar.js",
-        "node_modules/marko/src/runtime/helper-forEachProperty.js",
-        "node_modules/marko/src/runtime/helper-forEachWithStatusVar.js",
-        "node_modules/marko/src/runtime/helper-forRange.js",
-        "node_modules/marko/src/runtime/helper-loadNestedTag.js",
-        "node_modules/marko/src/runtime/helper-loadTemplate.js",
-        "node_modules/marko/src/runtime/helper-merge.js",
-        "node_modules/marko/src/runtime/helper-mergeNestedTags.js",
-        "node_modules/marko/src/runtime/helpers.js",
-        "node_modules/marko/src/runtime/html/AsyncStream.js",
-        "node_modules/marko/src/runtime/html/BufferedWriter.js",
-        "node_modules/marko/src/runtime/html/StringWriter.js",
-        "node_modules/marko/src/runtime/html/Template.js",
-        "node_modules/marko/src/runtime/html/escape.js",
-        "node_modules/marko/src/runtime/html/helper-attr.js",
-        "node_modules/marko/src/runtime/html/helper-attrs.js",
-        "node_modules/marko/src/runtime/html/helper-createInlineTemplate.js",
-        "node_modules/marko/src/runtime/html/helpers.js",
-        "node_modules/marko/src/runtime/html/index.js",
-        "node_modules/marko/src/runtime/nextTick-browser.js",
-        "node_modules/marko/src/runtime/nextTick.js",
-        "node_modules/marko/src/runtime/renderable.js",
-        "node_modules/marko/src/runtime/vdom/AsyncVDOMBuilder.js",
-        "node_modules/marko/src/runtime/vdom/VComment.js",
-        "node_modules/marko/src/runtime/vdom/VComponent.js",
-        "node_modules/marko/src/runtime/vdom/VDocumentFragment.js",
-        "node_modules/marko/src/runtime/vdom/VElement.js",
-        "node_modules/marko/src/runtime/vdom/VNode.js",
-        "node_modules/marko/src/runtime/vdom/VText.js",
-        "node_modules/marko/src/runtime/vdom/helper-attrs.js",
-        "node_modules/marko/src/runtime/vdom/helper-createInlineTemplate.js",
-        "node_modules/marko/src/runtime/vdom/helper-styleAttr.js",
-        "node_modules/marko/src/runtime/vdom/helpers.js",
-        "node_modules/marko/src/runtime/vdom/index.js",
-        "node_modules/marko/src/runtime/vdom/preserve-attrs.js",
-        "node_modules/marko/src/runtime/vdom/vdom.js",
-        "node_modules/marko/src/taglibs/async/AsyncValue.js",
-        "node_modules/marko/src/taglibs/async/async-fragment-to-await-transformer.js",
-        "node_modules/marko/src/taglibs/async/await-nested-tag-transformer.js",
-        "node_modules/marko/src/taglibs/async/await-reorderer-tag.js",
-        "node_modules/marko/src/taglibs/async/await-tag-transformer.js",
-        "node_modules/marko/src/taglibs/async/await-tag.js",
-        "node_modules/marko/src/taglibs/async/client-reorder-browser.js",
-        "node_modules/marko/src/taglibs/async/client-reorder-runtime.js",
-        "node_modules/marko/src/taglibs/async/client-reorder-runtime.min.js",
-        "node_modules/marko/src/taglibs/async/client-reorder.js",
-        "node_modules/marko/src/taglibs/async/noop-render.js",
-        "node_modules/marko/src/taglibs/cache/cached-fragment-tag-transformer.js",
-        "node_modules/marko/src/taglibs/cache/cached-fragment-tag.js",
-        "node_modules/marko/src/taglibs/cache/default-cache-manager.js",
-        "node_modules/marko/src/taglibs/core/assign-tag.js",
-        "node_modules/marko/src/taglibs/core/class-tag.js",
-        "node_modules/marko/src/taglibs/core/core-transformer.js",
-        "node_modules/marko/src/taglibs/core/else-if-tag.js",
-        "node_modules/marko/src/taglibs/core/else-tag.js",
-        "node_modules/marko/src/taglibs/core/for-tag.js",
-        "node_modules/marko/src/taglibs/core/if-tag.js",
-        "node_modules/marko/src/taglibs/core/import-tag.js",
-        "node_modules/marko/src/taglibs/core/include-html-tag-browser.js",
-        "node_modules/marko/src/taglibs/core/include-html-tag.js",
-        "node_modules/marko/src/taglibs/core/include-tag-transformer.js",
-        "node_modules/marko/src/taglibs/core/include-tag.js",
-        "node_modules/marko/src/taglibs/core/include-text-tag-browser.js",
-        "node_modules/marko/src/taglibs/core/include-text-tag.js",
-        "node_modules/marko/src/taglibs/core/invoke-tag.js",
-        "node_modules/marko/src/taglibs/core/macro-body-tag.js",
-        "node_modules/marko/src/taglibs/core/macro-tag.js",
-        "node_modules/marko/src/taglibs/core/marko-preserve-whitespace-tag.js",
-        "node_modules/marko/src/taglibs/core/marko-tag.js",
-        "node_modules/marko/src/taglibs/core/module-code-tag.js",
-        "node_modules/marko/src/taglibs/core/static-tag.js",
-        "node_modules/marko/src/taglibs/core/unless-tag.js",
-        "node_modules/marko/src/taglibs/core/util/createLoopNode.js",
-        "node_modules/marko/src/taglibs/core/util/parseFor.js",
-        "node_modules/marko/src/taglibs/core/util/parseImport.js",
-        "node_modules/marko/src/taglibs/core/var-tag.js",
-        "node_modules/marko/src/taglibs/core/while-tag.js",
-        "node_modules/marko/src/taglibs/html/html-comment-tag.js",
-        "node_modules/marko/src/taglibs/layout/placeholder-tag.js",
-        "node_modules/marko/src/taglibs/layout/put-tag.js",
-        "node_modules/marko/src/taglibs/layout/use-tag.js",
-        "node_modules/marko/src/vdom.js",
-        "node_modules/marko-prettyprint/bin/marko-prettyprint.js",
-        "node_modules/marko-prettyprint/node_modules/minimatch/minimatch.js",
-        "node_modules/marko-prettyprint/node_modules/resolve-from/index.js",
-        "node_modules/marko-prettyprint/prettyPrintAST.js",
-        "node_modules/marko-prettyprint/prettyPrintFile.js",
-        "node_modules/marko-prettyprint/prettyPrintSource.js",
-        "node_modules/marko-prettyprint/src/PrintContext.js",
-        "node_modules/marko-prettyprint/src/constants.js",
-        "node_modules/marko-prettyprint/src/formatting-tags.js",
-        "node_modules/marko-prettyprint/src/index.js",
-        "node_modules/marko-prettyprint/src/prettyPrintAST.js",
-        "node_modules/marko-prettyprint/src/prettyPrintFile.js",
-        "node_modules/marko-prettyprint/src/prettyPrintSource.js",
-        "node_modules/marko-prettyprint/src/printDeclaration.js",
-        "node_modules/marko-prettyprint/src/printDocumentType.js",
-        "node_modules/marko-prettyprint/src/printHtmlComment.js",
-        "node_modules/marko-prettyprint/src/printHtmlElement.js",
-        "node_modules/marko-prettyprint/src/printNode.js",
-        "node_modules/marko-prettyprint/src/printNodes.js",
-        "node_modules/marko-prettyprint/src/printScriptlet.js",
-        "node_modules/marko-prettyprint/src/printText.js",
-        "node_modules/marko-prettyprint/src/printers.js",
-        "node_modules/marko-prettyprint/src/util/Writer.js",
-        "node_modules/marko-prettyprint/src/util/formatJS.js",
-        "node_modules/marko-prettyprint/src/util/getBodyText.js",
-        "node_modules/marko-prettyprint/src/util/getMarkoCompiler.browser.js",
-        "node_modules/marko-prettyprint/src/util/getMarkoCompiler.js",
-        "node_modules/marko-prettyprint/src/util/hasLineBreaks.js",
-        "node_modules/marko-prettyprint/src/util/hasUnenclosedWhitespace.js",
-        "node_modules/marko-prettyprint/src/util/indent.js",
-        "node_modules/marko-prettyprint/src/util/isInlineComment.js",
-        "node_modules/marko-prettyprint/src/util/readConfigFile.browser.js",
-        "node_modules/marko-prettyprint/src/util/readConfigFile.js",
-        "node_modules/marko-prettyprint/src/util/trim.js",
-        "node_modules/marko-prettyprint/src/util/unescapePlaceholdersInStringExpression.js",
         "node_modules/mdast-util-compact/index.js",
         "node_modules/mime-db/index.js",
         "node_modules/mime-types/index.js",
@@ -11657,11 +10490,14 @@
         "node_modules/os-homedir/index.js",
         "node_modules/os-locale/index.js",
         "node_modules/os-tmpdir/index.js",
+        "node_modules/osenv/osenv.js",
         "node_modules/p-finally/index.js",
         "node_modules/pad/index.js",
         "node_modules/pad/lib/pad.js",
         "node_modules/pad/samples/left.js",
         "node_modules/pad/samples/right.js",
+        "node_modules/parse-entities/decode-entity.browser.js",
+        "node_modules/parse-entities/decode-entity.js",
         "node_modules/parse-entities/index.js",
         "node_modules/parse5/lib/common/doctype.js",
         "node_modules/parse5/lib/common/foreign_content.js",
@@ -11787,92 +10623,17 @@
         "node_modules/prompt/node_modules/winston/node_modules/pkginfo/examples/target-dir.js",
         "node_modules/prompt/node_modules/winston/node_modules/pkginfo/lib/pkginfo.js",
         "node_modules/property-accessors/lib/property-accessors.js",
-        "node_modules/property-handlers/lib/index.js",
         "node_modules/proto-list/proto-list.js",
         "node_modules/pseudomap/map.js",
         "node_modules/pseudomap/pseudomap.js",
         "node_modules/pug-beautify/index.js",
         "node_modules/punycode/punycode.js",
-        "node_modules/q/q.js",
-        "node_modules/q/queue.js",
         "node_modules/qs/dist/qs.js",
         "node_modules/qs/lib/formats.js",
         "node_modules/qs/lib/index.js",
         "node_modules/qs/lib/parse.js",
         "node_modules/qs/lib/stringify.js",
         "node_modules/qs/lib/utils.js",
-        "node_modules/raptor-async/AsyncValue.js",
-        "node_modules/raptor-async/DataHolder.js",
-        "node_modules/raptor-async/index.js",
-        "node_modules/raptor-async/parallel.js",
-        "node_modules/raptor-async/series.js",
-        "node_modules/raptor-async/work-queue.js",
-        "node_modules/raptor-json/index.js",
-        "node_modules/raptor-json/parse.js",
-        "node_modules/raptor-json/stringify.js",
-        "node_modules/raptor-polyfill/array/_toInteger.js",
-        "node_modules/raptor-polyfill/array/_toObject.js",
-        "node_modules/raptor-polyfill/array/every.js",
-        "node_modules/raptor-polyfill/array/filter.js",
-        "node_modules/raptor-polyfill/array/forEach.js",
-        "node_modules/raptor-polyfill/array/index.js",
-        "node_modules/raptor-polyfill/array/indexOf.js",
-        "node_modules/raptor-polyfill/array/isArray.js",
-        "node_modules/raptor-polyfill/array/lastIndexOf.js",
-        "node_modules/raptor-polyfill/array/map.js",
-        "node_modules/raptor-polyfill/array/reduce.js",
-        "node_modules/raptor-polyfill/array/reduceRight.js",
-        "node_modules/raptor-polyfill/array/some.js",
-        "node_modules/raptor-polyfill/date/index.js",
-        "node_modules/raptor-polyfill/date/now.js",
-        "node_modules/raptor-polyfill/function/bind.js",
-        "node_modules/raptor-polyfill/function/index.js",
-        "node_modules/raptor-polyfill/json/index.js",
-        "node_modules/raptor-polyfill/object/assign.js",
-        "node_modules/raptor-polyfill/object/index.js",
-        "node_modules/raptor-polyfill/object/keys.js",
-        "node_modules/raptor-polyfill/raptor-polyfill.js",
-        "node_modules/raptor-polyfill/string/endsWith.js",
-        "node_modules/raptor-polyfill/string/index.js",
-        "node_modules/raptor-polyfill/string/startsWith.js",
-        "node_modules/raptor-polyfill/string/trim.js",
-        "node_modules/raptor-promises/lib/raptor-promises.js",
-        "node_modules/raptor-promises/node_modules/raptor-util/SubscriptionTracker.js",
-        "node_modules/raptor-promises/node_modules/raptor-util/_inherit.js",
-        "node_modules/raptor-promises/node_modules/raptor-util/arrayFromArguments.js",
-        "node_modules/raptor-promises/node_modules/raptor-util/attr.js",
-        "node_modules/raptor-promises/node_modules/raptor-util/attrs.js",
-        "node_modules/raptor-promises/node_modules/raptor-util/createError.js",
-        "node_modules/raptor-promises/node_modules/raptor-util/escapeXml.js",
-        "node_modules/raptor-promises/node_modules/raptor-util/extend.js",
-        "node_modules/raptor-promises/node_modules/raptor-util/forEach.js",
-        "node_modules/raptor-promises/node_modules/raptor-util/forEachEntry.js",
-        "node_modules/raptor-promises/node_modules/raptor-util/inherit.js",
-        "node_modules/raptor-promises/node_modules/raptor-util/isObjectEmpty.js",
-        "node_modules/raptor-promises/node_modules/raptor-util/makeClass.js",
-        "node_modules/raptor-promises/node_modules/raptor-util/makeEnum.js",
-        "node_modules/raptor-promises/node_modules/raptor-util/raptor-util.js",
-        "node_modules/raptor-promises/node_modules/raptor-util/toArray.js",
-        "node_modules/raptor-promises/node_modules/raptor-util/tryRequire.js",
-        "node_modules/raptor-promises/util/lib/raptor-promises-util.js",
-        "node_modules/raptor-regexp/lib/raptor-regexp.js",
-        "node_modules/raptor-strings/lib/StringBuilder.js",
-        "node_modules/raptor-strings/lib/raptor-strings.js",
-        "node_modules/raptor-util/SubscriptionTracker.js",
-        "node_modules/raptor-util/_inherit.js",
-        "node_modules/raptor-util/arrayFromArguments.js",
-        "node_modules/raptor-util/copyProps.js",
-        "node_modules/raptor-util/createError.js",
-        "node_modules/raptor-util/extend.js",
-        "node_modules/raptor-util/forEach.js",
-        "node_modules/raptor-util/forEachEntry.js",
-        "node_modules/raptor-util/inherit.js",
-        "node_modules/raptor-util/isObjectEmpty.js",
-        "node_modules/raptor-util/makeClass.js",
-        "node_modules/raptor-util/makeEnum.js",
-        "node_modules/raptor-util/raptor-util.js",
-        "node_modules/raptor-util/toArray.js",
-        "node_modules/raptor-util/tryRequire.js",
         "node_modules/rc/browser.js",
         "node_modules/rc/cli.js",
         "node_modules/rc/index.js",
@@ -11897,7 +10658,6 @@
         "node_modules/readable-stream/transform.js",
         "node_modules/readable-stream/writable-browser.js",
         "node_modules/readable-stream/writable.js",
-        "node_modules/redent/index.js",
         "node_modules/regenerator-runtime/path.js",
         "node_modules/regenerator-runtime/runtime-module.js",
         "node_modules/regenerator-runtime/runtime.js",
@@ -12028,14 +10788,9 @@
         "node_modules/restore-cursor/index.js",
         "node_modules/revalidator/example/webservice.js",
         "node_modules/revalidator/lib/revalidator.js",
-        "node_modules/right-align/index.js",
         "node_modules/rimraf/bin.js",
         "node_modules/rimraf/rimraf.js",
         "node_modules/run-async/index.js",
-        "node_modules/rusha/.eslintrc.js",
-        "node_modules/rusha/Gruntfile.js",
-        "node_modules/rusha/dist/rusha.js",
-        "node_modules/rusha/dist/rusha.min.js",
         "node_modules/rx-lite/rx.lite.js",
         "node_modules/rx-lite/rx.lite.min.js",
         "node_modules/rx-lite-aggregates/rx.lite.aggregates.js",
@@ -12046,52 +10801,32 @@
         "node_modules/safer-buffer/tests.js",
         "node_modules/season/lib/cson.js",
         "node_modules/season/lib/csonc.js",
-        "node_modules/season/node_modules/camelcase/index.js",
-        "node_modules/season/node_modules/cliui/index.js",
-        "node_modules/season/node_modules/is-fullwidth-code-point/index.js",
-        "node_modules/season/node_modules/string-width/index.js",
-        "node_modules/season/node_modules/strip-ansi/index.js",
-        "node_modules/season/node_modules/window-size/cli.js",
-        "node_modules/season/node_modules/window-size/index.js",
-        "node_modules/season/node_modules/yargs/index.js",
-        "node_modules/season/node_modules/yargs/lib/completion.js",
-        "node_modules/season/node_modules/yargs/lib/parser.js",
-        "node_modules/season/node_modules/yargs/lib/tokenize-arg-string.js",
-        "node_modules/season/node_modules/yargs/lib/usage.js",
-        "node_modules/season/node_modules/yargs/lib/validation.js",
         "node_modules/semver/semver.js",
         "node_modules/shebang-command/index.js",
         "node_modules/shebang-regex/index.js",
         "node_modules/shell-env/index.js",
         "node_modules/shell-env/node_modules/strip-ansi/index.js",
         "node_modules/shellsubstitute/index.js",
-        "node_modules/shorthash/examples/sandbox.js",
-        "node_modules/shorthash/index.js",
-        "node_modules/shorthash/shorthash.js",
         "node_modules/sigmund/bench.js",
         "node_modules/sigmund/sigmund.js",
         "node_modules/signal-exit/index.js",
         "node_modules/signal-exit/signals.js",
-        "node_modules/simple-sha1/browser.js",
-        "node_modules/simple-sha1/index.js",
         "node_modules/slice-ansi/index.js",
         "node_modules/sntp/lib/index.js",
-        "node_modules/source-map/build/assert-shim.js",
-        "node_modules/source-map/build/mini-require.js",
-        "node_modules/source-map/build/suffix-browser.js",
-        "node_modules/source-map/build/test-prefix.js",
-        "node_modules/source-map/build/test-suffix.js",
-        "node_modules/source-map/lib/source-map/array-set.js",
-        "node_modules/source-map/lib/source-map/base64-vlq.js",
-        "node_modules/source-map/lib/source-map/base64.js",
-        "node_modules/source-map/lib/source-map/binary-search.js",
-        "node_modules/source-map/lib/source-map/mapping-list.js",
-        "node_modules/source-map/lib/source-map/quick-sort.js",
-        "node_modules/source-map/lib/source-map/source-map-consumer.js",
-        "node_modules/source-map/lib/source-map/source-map-generator.js",
-        "node_modules/source-map/lib/source-map/source-node.js",
-        "node_modules/source-map/lib/source-map/util.js",
-        "node_modules/source-map/lib/source-map.js",
+        "node_modules/source-map/dist/source-map.debug.js",
+        "node_modules/source-map/dist/source-map.js",
+        "node_modules/source-map/dist/source-map.min.js",
+        "node_modules/source-map/lib/array-set.js",
+        "node_modules/source-map/lib/base64-vlq.js",
+        "node_modules/source-map/lib/base64.js",
+        "node_modules/source-map/lib/binary-search.js",
+        "node_modules/source-map/lib/mapping-list.js",
+        "node_modules/source-map/lib/quick-sort.js",
+        "node_modules/source-map/lib/source-map-consumer.js",
+        "node_modules/source-map/lib/source-map-generator.js",
+        "node_modules/source-map/lib/source-node.js",
+        "node_modules/source-map/lib/util.js",
+        "node_modules/source-map/source-map.js",
         "node_modules/source-map-support/browser-source-map-support.js",
         "node_modules/source-map-support/node_modules/source-map/dist/source-map.debug.js",
         "node_modules/source-map-support/node_modules/source-map/dist/source-map.js",
@@ -12142,12 +10877,6 @@
         "node_modules/sshpk/lib/ssh-buffer.js",
         "node_modules/sshpk/lib/utils.js",
         "node_modules/stack-trace/lib/stack-trace.js",
-        "node_modules/stackframe/dist/stackframe.js",
-        "node_modules/stackframe/dist/stackframe.min.js",
-        "node_modules/stackframe/gulpfile.js",
-        "node_modules/stackframe/karma.conf.ci.js",
-        "node_modules/stackframe/karma.conf.js",
-        "node_modules/stackframe/stackframe.js",
         "node_modules/state-toggle/index.js",
         "node_modules/string-width/index.js",
         "node_modules/string-width/node_modules/ansi-regex/index.js",
@@ -12158,7 +10887,6 @@
         "node_modules/strip-ansi/index.js",
         "node_modules/strip-bom/index.js",
         "node_modules/strip-eof/index.js",
-        "node_modules/strip-indent/index.js",
         "node_modules/strip-json-comments/index.js",
         "node_modules/supports-color/index.js",
         "node_modules/table/dist/alignString.js",
@@ -12287,7 +11015,6 @@
         "node_modules/trim-trailing-lines/index.js",
         "node_modules/trough/index.js",
         "node_modules/trough/wrap.js",
-        "node_modules/try-require/index.js",
         "node_modules/tunnel-agent/index.js",
         "node_modules/tweetnacl/nacl-fast.js",
         "node_modules/tweetnacl/nacl-fast.min.js",
@@ -12296,8 +11023,6 @@
         "node_modules/type-check/lib/check.js",
         "node_modules/type-check/lib/index.js",
         "node_modules/type-check/lib/parse-type.js",
-        "node_modules/type-detect/index.js",
-        "node_modules/type-detect/lib/type.js",
         "node_modules/typedarray/example/tarray.js",
         "node_modules/typedarray/index.js",
         "node_modules/typescript/lib/cancellationToken.js",
@@ -12318,9 +11043,9 @@
         "node_modules/typescript-formatter/lib/provider/tslintjson.js",
         "node_modules/typescript-formatter/lib/provider/vscodesettings.js",
         "node_modules/typescript-formatter/lib/utils.js",
-        "node_modules/uglify-js/bin/extract-props.js",
         "node_modules/uglify-js/lib/ast.js",
         "node_modules/uglify-js/lib/compress.js",
+        "node_modules/uglify-js/lib/minify.js",
         "node_modules/uglify-js/lib/mozilla-ast.js",
         "node_modules/uglify-js/lib/output.js",
         "node_modules/uglify-js/lib/parse.js",
@@ -12329,23 +11054,10 @@
         "node_modules/uglify-js/lib/sourcemap.js",
         "node_modules/uglify-js/lib/transform.js",
         "node_modules/uglify-js/lib/utils.js",
-        "node_modules/uglify-js/node_modules/source-map/dist/source-map.debug.js",
-        "node_modules/uglify-js/node_modules/source-map/dist/source-map.js",
-        "node_modules/uglify-js/node_modules/source-map/dist/source-map.min.js",
-        "node_modules/uglify-js/node_modules/source-map/lib/array-set.js",
-        "node_modules/uglify-js/node_modules/source-map/lib/base64-vlq.js",
-        "node_modules/uglify-js/node_modules/source-map/lib/base64.js",
-        "node_modules/uglify-js/node_modules/source-map/lib/binary-search.js",
-        "node_modules/uglify-js/node_modules/source-map/lib/mapping-list.js",
-        "node_modules/uglify-js/node_modules/source-map/lib/quick-sort.js",
-        "node_modules/uglify-js/node_modules/source-map/lib/source-map-consumer.js",
-        "node_modules/uglify-js/node_modules/source-map/lib/source-map-generator.js",
-        "node_modules/uglify-js/node_modules/source-map/lib/source-node.js",
-        "node_modules/uglify-js/node_modules/source-map/lib/util.js",
-        "node_modules/uglify-js/node_modules/source-map/source-map.js",
+        "node_modules/uglify-js/node_modules/commander/index.js",
+        "node_modules/uglify-js/tools/exit.js",
         "node_modules/uglify-js/tools/exports.js",
         "node_modules/uglify-js/tools/node.js",
-        "node_modules/uglify-to-browserify/index.js",
         "node_modules/underscore/underscore-min.js",
         "node_modules/underscore/underscore.js",
         "node_modules/underscore-plus/lib/underscore-plus.js",
@@ -12411,18 +11123,8 @@
         "node_modules/vow-queue/lib/queue.js",
         "node_modules/vow-queue/node_modules/vow/lib/vow.js",
         "node_modules/vow-queue/node_modules/vow/vow.min.js",
-        "node_modules/warp10/finalize.js",
-        "node_modules/warp10/parse.js",
-        "node_modules/warp10/serialize.js",
-        "node_modules/warp10/src/finalize.js",
-        "node_modules/warp10/src/index.js",
-        "node_modules/warp10/src/parse.js",
-        "node_modules/warp10/src/serialize.js",
-        "node_modules/warp10/src/stringify.js",
-        "node_modules/warp10/src/stringifyPrepare.js",
-        "node_modules/warp10/stringify.js",
-        "node_modules/warp10/stringifyPrepare.js",
         "node_modules/which/which.js",
+        "node_modules/window-size/cli.js",
         "node_modules/window-size/index.js",
         "node_modules/winston/lib/winston/common.js",
         "node_modules/winston/lib/winston/config/cli-config.js",
@@ -12996,8 +11698,12 @@
         "node_modules/yargs/index.js",
         "node_modules/yargs/lib/completion.js",
         "node_modules/yargs/lib/parser.js",
+        "node_modules/yargs/lib/tokenize-arg-string.js",
         "node_modules/yargs/lib/usage.js",
-        "node_modules/yargs/lib/validation.js"
+        "node_modules/yargs/lib/validation.js",
+        "node_modules/yargs/node_modules/is-fullwidth-code-point/index.js",
+        "node_modules/yargs/node_modules/string-width/index.js",
+        "node_modules/yargs/node_modules/strip-ansi/index.js"
       ],
       ".coffee": [
         "node_modules/pad/src/pad.coffee",
@@ -13023,6 +11729,7 @@
         "src/beautifiers/autopep8.coffee",
         "src/beautifiers/beautifier.coffee",
         "src/beautifiers/beautysh.coffee",
+        "src/beautifiers/black.coffee",
         "src/beautifiers/brittany.coffee",
         "src/beautifiers/clang-format.coffee",
         "src/beautifiers/cljfmt/index.coffee",
@@ -13052,6 +11759,7 @@
         "src/beautifiers/lua-beautifier/index.coffee",
         "src/beautifiers/marko-beautifier.coffee",
         "src/beautifiers/nginx-beautify.coffee",
+        "src/beautifiers/ocamlformat.coffee",
         "src/beautifiers/ocp-indent.coffee",
         "src/beautifiers/perltidy.coffee",
         "src/beautifiers/php-cs-fixer.coffee",
@@ -13199,11 +11907,10 @@
           "extend": "^3.0.1",
           "gherkin": "^2.12.2",
           "handlebars": "^4.0.11",
-          "js-beautify": "^1.7.5",
+          "js-beautify": "^1.8.1",
           "jscs": "^3.0.7",
           "lodash": "^4.17.4",
           "loophole": "^1.1.0",
-          "marko-prettyprint": "^1.4.0",
           "nginxbeautify": "^2.0.1",
           "node-cljfmt": "0.5.3",
           "node-dir": "0.1.17",
@@ -13252,16 +11959,6 @@
           "fast-deep-equal": "^1.0.0",
           "fast-json-stable-stringify": "^2.0.0",
           "json-schema-traverse": "^0.3.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/align-text"
-        ],
-        "dependencies": {
-          "kind-of": "^3.0.2",
-          "longest": "^1.0.1",
-          "repeat-string": "^1.5.2"
         }
       },
       {
@@ -13443,30 +12140,6 @@
       },
       {
         "paths": [
-          "node_modules/center-align"
-        ],
-        "dependencies": {
-          "align-text": "^0.1.3",
-          "lazy-cache": "^1.0.3"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/chai",
-          "node_modules/chai/lib/chai",
-          "node_modules/chai/lib/chai/core",
-          "node_modules/chai/lib/chai/interface",
-          "node_modules/chai/lib/chai/utils",
-          "node_modules/chai/lib"
-        ],
-        "dependencies": {
-          "assertion-error": "^1.0.1",
-          "deep-eql": "^0.1.3",
-          "type-detect": "^1.0.0"
-        }
-      },
-      {
-        "paths": [
           "node_modules/chalk"
         ],
         "dependencies": {
@@ -13494,13 +12167,38 @@
       },
       {
         "paths": [
-          "node_modules/cliui",
-          "node_modules/cliui/test"
+          "node_modules/cliui"
         ],
         "dependencies": {
-          "center-align": "^0.1.1",
-          "right-align": "^0.1.1",
-          "wordwrap": "0.0.2"
+          "string-width": "^1.0.1",
+          "strip-ansi": "^3.0.1",
+          "wrap-ansi": "^2.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/cliui/node_modules/is-fullwidth-code-point"
+        ],
+        "dependencies": {
+          "number-is-nan": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/cliui/node_modules/string-width"
+        ],
+        "dependencies": {
+          "code-point-at": "^1.0.0",
+          "is-fullwidth-code-point": "^1.0.0",
+          "strip-ansi": "^3.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/cliui/node_modules/strip-ansi"
+        ],
+        "dependencies": {
+          "ansi-regex": "^2.0.0"
         }
       },
       {
@@ -13538,7 +12236,7 @@
           "node_modules/color-convert"
         ],
         "dependencies": {
-          "color-name": "1.1.1"
+          "color-name": "1.1.3"
         }
       },
       {
@@ -13562,15 +12260,6 @@
       },
       {
         "paths": [
-          "node_modules/complain",
-          "node_modules/complain/test"
-        ],
-        "dependencies": {
-          "error-stack-parser": "^2.0.1"
-        }
-      },
-      {
-        "paths": [
           "node_modules/concat-stream"
         ],
         "dependencies": {
@@ -13582,8 +12271,7 @@
       },
       {
         "paths": [
-          "node_modules/config-chain",
-          "node_modules/config-chain/test"
+          "node_modules/config-chain"
         ],
         "dependencies": {
           "ini": "^1.3.4",
@@ -13720,20 +12408,12 @@
       },
       {
         "paths": [
+          "node_modules/debug/dist",
           "node_modules/debug",
           "node_modules/debug/src"
         ],
         "dependencies": {
-          "ms": "2.0.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/deep-eql",
-          "node_modules/deep-eql/lib"
-        ],
-        "dependencies": {
-          "type-detect": "0.1.1"
+          "ms": "^2.1.1"
         }
       },
       {
@@ -13748,21 +12428,6 @@
           "pify": "^2.0.0",
           "pinkie-promise": "^2.0.0",
           "rimraf": "^2.2.8"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/deresolve",
-          "node_modules/deresolve/src",
-          "node_modules/deresolve/test/fixtures/test-project",
-          "node_modules/deresolve/test/fixtures/test-project/src/hello-world",
-          "node_modules/deresolve/test/fixtures/test-project/src/no-main",
-          "node_modules/deresolve/test"
-        ],
-        "dependencies": {
-          "lasso-package-root": "^1.0.0",
-          "raptor-polyfill": "^1.0.2",
-          "resolve-from": "^1.0.1"
         }
       },
       {
@@ -13849,15 +12514,6 @@
           "mixto": "1.x",
           "property-accessors": "^1.1",
           "underscore-plus": "1.x"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/error-stack-parser/dist",
-          "node_modules/error-stack-parser"
-        ],
-        "dependencies": {
-          "stackframe": "^1.0.4"
         }
       },
       {
@@ -14098,19 +12754,6 @@
       },
       {
         "paths": [
-          "node_modules/escodegen/bin",
-          "node_modules/escodegen"
-        ],
-        "dependencies": {
-          "esprima": "^3.1.3",
-          "estraverse": "^4.2.0",
-          "esutils": "^2.0.2",
-          "optionator": "^0.8.1",
-          "source-map": "~0.6.1"
-        }
-      },
-      {
-        "paths": [
           "node_modules/eslint/bin",
           "node_modules/eslint/conf",
           "node_modules/eslint/lib",
@@ -14299,16 +12942,6 @@
       },
       {
         "paths": [
-          "node_modules/events-light",
-          "node_modules/events-light/src",
-          "node_modules/events-light/test"
-        ],
-        "dependencies": {
-          "chai": "^3.5.0"
-        }
-      },
-      {
-        "paths": [
           "node_modules/execa",
           "node_modules/execa/lib"
         ],
@@ -14390,6 +13023,15 @@
           "asynckit": "^0.4.0",
           "combined-stream": "1.0.6",
           "mime-types": "^2.1.12"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/form-data/node_modules/combined-stream/lib",
+          "node_modules/form-data/node_modules/combined-stream"
+        ],
+        "dependencies": {
+          "delayed-stream": "~1.0.0"
         }
       },
       {
@@ -14595,10 +13237,10 @@
           "node_modules/handlebars"
         ],
         "dependencies": {
-          "async": "^1.4.0",
+          "async": "^2.5.0",
           "optimist": "^0.6.1",
-          "source-map": "^0.4.4",
-          "uglify-js": "^2.6"
+          "source-map": "^0.6.1",
+          "uglify-js": "^3.1.4"
         }
       },
       {
@@ -14652,65 +13294,6 @@
           "cryptiles": "3.x.x",
           "hoek": "4.x.x",
           "sntp": "2.x.x"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/htmljs-parser",
-          "node_modules/htmljs-parser/test",
-          "node_modules/htmljs-parser/test/autotest/attr-escaped-dollar",
-          "node_modules/htmljs-parser/test/autotest/attr-literal-false",
-          "node_modules/htmljs-parser/test/autotest/attr-literal-null",
-          "node_modules/htmljs-parser/test/autotest/attr-literal-numbers",
-          "node_modules/htmljs-parser/test/autotest/attr-literal-string-double-quotes",
-          "node_modules/htmljs-parser/test/autotest/attr-literal-string-single-quotes",
-          "node_modules/htmljs-parser/test/autotest/attr-literal-true",
-          "node_modules/htmljs-parser/test/autotest/attr-literal-undefined",
-          "node_modules/htmljs-parser/test/autotest/attr-non-literal",
-          "node_modules/htmljs-parser/test/autotest/cdata-pos",
-          "node_modules/htmljs-parser/test/autotest/commas-relax",
-          "node_modules/htmljs-parser/test/autotest/ignoreAttributes",
-          "node_modules/htmljs-parser/test/autotest/ignorePlaceholders-attr-double-escaped-dollar-placeholder",
-          "node_modules/htmljs-parser/test/autotest/ignorePlaceholders-attr-escaped-dollar-placeholder",
-          "node_modules/htmljs-parser/test/autotest/ignorePlaceholders-attr-placeholder",
-          "node_modules/htmljs-parser/test/autotest/open-tag-only-custom",
-          "node_modules/htmljs-parser/test/autotest/open-tag-parser-state",
-          "node_modules/htmljs-parser/test/autotest/open-tag-parser-state-concise",
-          "node_modules/htmljs-parser/test/autotest/parsed-text-placeholder-in-template-literal-string",
-          "node_modules/htmljs-parser/test/autotest/text-parse-mode-concise",
-          "node_modules/htmljs-parser/test/autotest/text-parse-mode-delimited-block",
-          "node_modules/htmljs-parser/test/autotest/text-parse-mode-html",
-          "node_modules/htmljs-parser/test/autotest/text-parse-mode-parsed-text",
-          "node_modules/htmljs-parser/test/autotest/text-parse-mode-static-text",
-          "node_modules/htmljs-parser/test/autotest/textarea",
-          "node_modules/htmljs-parser/test/autotest/windows-line-ending",
-          "node_modules/htmljs-parser/test/autotest-1.x/attr-escaped-dollar",
-          "node_modules/htmljs-parser/test/autotest-1.x/attr-literal-false",
-          "node_modules/htmljs-parser/test/autotest-1.x/attr-literal-null",
-          "node_modules/htmljs-parser/test/autotest-1.x/attr-literal-numbers",
-          "node_modules/htmljs-parser/test/autotest-1.x/attr-literal-string-double-quotes",
-          "node_modules/htmljs-parser/test/autotest-1.x/attr-literal-string-single-quotes",
-          "node_modules/htmljs-parser/test/autotest-1.x/attr-literal-true",
-          "node_modules/htmljs-parser/test/autotest-1.x/attr-literal-undefined",
-          "node_modules/htmljs-parser/test/autotest-1.x/attr-non-literal",
-          "node_modules/htmljs-parser/test/autotest-1.x/cdata-pos",
-          "node_modules/htmljs-parser/test/autotest-1.x/ignorePlaceholders-attr-double-escaped-dollar-placeholder",
-          "node_modules/htmljs-parser/test/autotest-1.x/ignorePlaceholders-attr-escaped-dollar-placeholder",
-          "node_modules/htmljs-parser/test/autotest-1.x/ignorePlaceholders-attr-placeholder",
-          "node_modules/htmljs-parser/test/autotest-1.x/open-tag-only-custom",
-          "node_modules/htmljs-parser/test/autotest-1.x/open-tag-parser-state",
-          "node_modules/htmljs-parser/test/autotest-1.x/open-tag-parser-state-concise",
-          "node_modules/htmljs-parser/test/autotest-1.x/text-parse-mode-concise",
-          "node_modules/htmljs-parser/test/autotest-1.x/text-parse-mode-delimited-block",
-          "node_modules/htmljs-parser/test/autotest-1.x/text-parse-mode-html",
-          "node_modules/htmljs-parser/test/autotest-1.x/text-parse-mode-parsed-text",
-          "node_modules/htmljs-parser/test/autotest-1.x/text-parse-mode-static-text",
-          "node_modules/htmljs-parser/test/autotest-1.x/windows-line-ending",
-          "node_modules/htmljs-parser/test/util"
-        ],
-        "dependencies": {
-          "char-props": "^0.1.5",
-          "complain": "^1.0.0"
         }
       },
       {
@@ -14861,49 +13444,22 @@
       {
         "paths": [
           "node_modules/js-beautify/js/bin",
-          "node_modules/js-beautify/js/config",
           "node_modules/js-beautify/js",
           "node_modules/js-beautify/js/lib",
           "node_modules/js-beautify/js/lib/unpackers",
+          "node_modules/js-beautify/js/src",
           "node_modules/js-beautify/js/src/core",
           "node_modules/js-beautify/js/src/css",
           "node_modules/js-beautify/js/src/html",
-          "node_modules/js-beautify/js/src",
           "node_modules/js-beautify/js/src/javascript",
-          "node_modules/js-beautify/js/test",
-          "node_modules/js-beautify/js/test/generated",
-          "node_modules/js-beautify/js/test/resources/editorconfig",
-          "node_modules/js-beautify/js/test/resources",
+          "node_modules/js-beautify/js/src/unpackers",
           "node_modules/js-beautify"
         ],
         "dependencies": {
           "config-chain": "~1.1.5",
-          "editorconfig": "^0.13.2",
+          "editorconfig": "^0.15.0",
           "mkdirp": "~0.5.0",
-          "nopt": "~3.0.1"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/js-beautify/node_modules/editorconfig",
-          "node_modules/js-beautify/node_modules/editorconfig/lib"
-        ],
-        "dependencies": {
-          "bluebird": "^3.0.5",
-          "commander": "^2.9.0",
-          "lru-cache": "^3.2.0",
-          "semver": "^5.1.0",
-          "sigmund": "^1.0.1"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/js-beautify/node_modules/lru-cache/lib",
-          "node_modules/js-beautify/node_modules/lru-cache",
-          "node_modules/js-beautify/node_modules/lru-cache/test"
-        ],
-        "dependencies": {
-          "pseudomap": "^1.0.1"
+          "nopt": "~4.0.1"
         }
       },
       {
@@ -15106,56 +13662,6 @@
       },
       {
         "paths": [
-          "node_modules/kind-of"
-        ],
-        "dependencies": {
-          "is-buffer": "^1.1.5"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/lasso-caching-fs",
-          "node_modules/lasso-caching-fs/src",
-          "node_modules/lasso-caching-fs/test/fixtures",
-          "node_modules/lasso-caching-fs/test"
-        ],
-        "dependencies": {
-          "raptor-async": "^1.1.2"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/lasso-modules-client",
-          "node_modules/lasso-modules-client/src",
-          "node_modules/lasso-modules-client/test",
-          "node_modules/lasso-modules-client/transport",
-          "node_modules/lasso-modules-client/transport/src",
-          "node_modules/lasso-modules-client/transport/src/util",
-          "node_modules/lasso-modules-client/transport/test/fixtures/test-project/app_modules/bar",
-          "node_modules/lasso-modules-client/transport/test/fixtures/test-project",
-          "node_modules/lasso-modules-client/transport/test/fixtures/test-project/src/hello-world",
-          "node_modules/lasso-modules-client/transport/test/fixtures",
-          "node_modules/lasso-modules-client/transport/test"
-        ],
-        "dependencies": {
-          "lasso-package-root": "^1.0.0",
-          "raptor-polyfill": "^1.0.2"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/lasso-package-root",
-          "node_modules/lasso-package-root/src",
-          "node_modules/lasso-package-root/test/fixtures/test-project/nested",
-          "node_modules/lasso-package-root/test/fixtures/test-project",
-          "node_modules/lasso-package-root/test"
-        ],
-        "dependencies": {
-          "lasso-caching-fs": "^1.0.0"
-        }
-      },
-      {
-        "paths": [
           "node_modules/lcid"
         ],
         "dependencies": {
@@ -15183,170 +13689,6 @@
       },
       {
         "paths": [
-          "node_modules/marko/bin",
-          "node_modules/marko",
-          "node_modules/marko/dist",
-          "node_modules/marko/dist/compiler",
-          "node_modules/marko/dist/compiler/ast",
-          "node_modules/marko/dist/compiler/ast/HtmlAttribute/html",
-          "node_modules/marko/dist/compiler/ast/HtmlAttribute",
-          "node_modules/marko/dist/compiler/ast/HtmlAttribute/vdom",
-          "node_modules/marko/dist/compiler/ast/HtmlElement/html",
-          "node_modules/marko/dist/compiler/ast/HtmlElement",
-          "node_modules/marko/dist/compiler/ast/HtmlElement/vdom",
-          "node_modules/marko/dist/compiler/ast/Text/html",
-          "node_modules/marko/dist/compiler/ast/Text",
-          "node_modules/marko/dist/compiler/ast/Text/vdom",
-          "node_modules/marko/dist/compiler/taglib-finder",
-          "node_modules/marko/dist/compiler/taglib-loader",
-          "node_modules/marko/dist/compiler/taglib-lookup",
-          "node_modules/marko/dist/compiler/util",
-          "node_modules/marko/dist/compiler/util/vdom",
-          "node_modules/marko/dist/components",
-          "node_modules/marko/dist/components/legacy",
-          "node_modules/marko/dist/components/legacy/dependencies",
-          "node_modules/marko/dist/components/taglib/TransformHelper",
-          "node_modules/marko/dist/components/taglib",
-          "node_modules/marko/dist/components/taglib/helpers",
-          "node_modules/marko/dist/components/taglib/util",
-          "node_modules/marko/dist/loader",
-          "node_modules/marko/dist/morphdom",
-          "node_modules/marko/dist/node-require",
-          "node_modules/marko/dist/runtime",
-          "node_modules/marko/dist/runtime/html",
-          "node_modules/marko/dist/runtime/vdom",
-          "node_modules/marko/dist/taglibs/async",
-          "node_modules/marko/dist/taglibs/cache",
-          "node_modules/marko/dist/taglibs",
-          "node_modules/marko/dist/taglibs/core",
-          "node_modules/marko/dist/taglibs/core/util",
-          "node_modules/marko/dist/taglibs/html",
-          "node_modules/marko/dist/taglibs/layout",
-          "node_modules/marko/dist/taglibs/svg",
-          "node_modules/marko/docs",
-          "node_modules/marko/helpers",
-          "node_modules/marko/scripts",
-          "node_modules/marko/src",
-          "node_modules/marko/src/compiler",
-          "node_modules/marko/src/compiler/ast",
-          "node_modules/marko/src/compiler/ast/HtmlAttribute/html",
-          "node_modules/marko/src/compiler/ast/HtmlAttribute",
-          "node_modules/marko/src/compiler/ast/HtmlAttribute/vdom",
-          "node_modules/marko/src/compiler/ast/HtmlElement/html",
-          "node_modules/marko/src/compiler/ast/HtmlElement",
-          "node_modules/marko/src/compiler/ast/HtmlElement/vdom",
-          "node_modules/marko/src/compiler/ast/Text/html",
-          "node_modules/marko/src/compiler/ast/Text",
-          "node_modules/marko/src/compiler/ast/Text/vdom",
-          "node_modules/marko/src/compiler/taglib-finder",
-          "node_modules/marko/src/compiler/taglib-loader",
-          "node_modules/marko/src/compiler/taglib-lookup",
-          "node_modules/marko/src/compiler/util",
-          "node_modules/marko/src/compiler/util/vdom",
-          "node_modules/marko/src/components",
-          "node_modules/marko/src/components/legacy",
-          "node_modules/marko/src/components/legacy/dependencies",
-          "node_modules/marko/src/components/taglib/TransformHelper",
-          "node_modules/marko/src/components/taglib",
-          "node_modules/marko/src/components/taglib/helpers",
-          "node_modules/marko/src/components/taglib/util",
-          "node_modules/marko/src/loader",
-          "node_modules/marko/src/morphdom",
-          "node_modules/marko/src/node-require",
-          "node_modules/marko/src/runtime",
-          "node_modules/marko/src/runtime/html",
-          "node_modules/marko/src/runtime/vdom",
-          "node_modules/marko/src/taglibs/async",
-          "node_modules/marko/src/taglibs/cache",
-          "node_modules/marko/src/taglibs",
-          "node_modules/marko/src/taglibs/core",
-          "node_modules/marko/src/taglibs/core/util",
-          "node_modules/marko/src/taglibs/html",
-          "node_modules/marko/src/taglibs/layout",
-          "node_modules/marko/src/taglibs/svg"
-        ],
-        "dependencies": {
-          "app-module-path": "^2.2.0",
-          "argly": "^1.0.0",
-          "browser-refresh-client": "^1.0.0",
-          "char-props": "~0.1.5",
-          "complain": "^1.3.0",
-          "deresolve": "^1.1.2",
-          "escodegen": "^1.8.1",
-          "esprima": "^4.0.0",
-          "estraverse": "^4.2.0",
-          "events": "^1.0.2",
-          "events-light": "^1.0.0",
-          "he": "^1.1.0",
-          "htmljs-parser": "^2.3.2",
-          "lasso-caching-fs": "^1.0.1",
-          "lasso-modules-client": "^2.0.4",
-          "lasso-package-root": "^1.0.1",
-          "listener-tracker": "^2.0.0",
-          "minimatch": "^3.0.2",
-          "object-assign": "^4.1.0",
-          "property-handlers": "^1.0.0",
-          "raptor-json": "^1.0.1",
-          "raptor-polyfill": "^1.0.0",
-          "raptor-promises": "^1.0.1",
-          "raptor-regexp": "^1.0.0",
-          "raptor-util": "^3.2.0",
-          "resolve-from": "^2.0.0",
-          "shorthash": "0.0.2",
-          "simple-sha1": "^2.1.0",
-          "strip-json-comments": "^2.0.1",
-          "try-require": "^1.2.1",
-          "warp10": "^1.0.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/marko/node_modules/minimatch"
-        ],
-        "dependencies": {
-          "brace-expansion": "^1.1.7"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/marko-prettyprint/bin",
-          "node_modules/marko-prettyprint",
-          "node_modules/marko-prettyprint/src",
-          "node_modules/marko-prettyprint/src/util",
-          "node_modules/marko-prettyprint/test/autotest/formatting-tag-with-content",
-          "node_modules/marko-prettyprint/test/autotest/indent",
-          "node_modules/marko-prettyprint/test/autotest/markdown",
-          "node_modules/marko-prettyprint/test/autotest/max-line-length",
-          "node_modules/marko-prettyprint/test/marko-v3/autotest/formatting-tag-with-content",
-          "node_modules/marko-prettyprint/test/marko-v3/autotest/indent",
-          "node_modules/marko-prettyprint/test/marko-v3/autotest/markdown",
-          "node_modules/marko-prettyprint/test/marko-v3/autotest/max-line-length",
-          "node_modules/marko-prettyprint/test/marko-v3",
-          "node_modules/marko-prettyprint/test",
-          "node_modules/marko-prettyprint/test/util"
-        ],
-        "dependencies": {
-          "argly": "^1.2.0",
-          "cssbeautify": "^0.3.1",
-          "editorconfig": "^0.15.0",
-          "lasso-package-root": "^1.0.1",
-          "marko": "^4.12.3",
-          "minimatch": "^3.0.4",
-          "prettier": "^1.13.7",
-          "redent": "^2.0.0",
-          "resolve-from": "^4.0.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/marko-prettyprint/node_modules/minimatch"
-        ],
-        "dependencies": {
-          "brace-expansion": "^1.1.7"
-        }
-      },
-      {
-        "paths": [
           "node_modules/mdast-util-compact"
         ],
         "dependencies": {
@@ -15358,7 +13700,7 @@
           "node_modules/mime-types"
         ],
         "dependencies": {
-          "mime-db": "~1.35.0"
+          "mime-db": "~1.36.0"
         }
       },
       {
@@ -15416,7 +13758,8 @@
           "node_modules/nopt/test"
         ],
         "dependencies": {
-          "abbrev": "1"
+          "abbrev": "1",
+          "osenv": "^0.1.4"
         }
       },
       {
@@ -15484,6 +13827,15 @@
         ],
         "dependencies": {
           "lcid": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/osenv"
+        ],
+        "dependencies": {
+          "os-homedir": "^1.0.0",
+          "os-tmpdir": "^1.0.0"
         }
       },
       {
@@ -15557,37 +13909,6 @@
       },
       {
         "paths": [
-          "node_modules/raptor-json",
-          "node_modules/raptor-json/test"
-        ],
-        "dependencies": {
-          "raptor-strings": "^1.0.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/raptor-promises/lib",
-          "node_modules/raptor-promises",
-          "node_modules/raptor-promises/util/lib",
-          "node_modules/raptor-promises/util"
-        ],
-        "dependencies": {
-          "q": "^1.0.1",
-          "raptor-util": "^1.0.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/raptor-strings/StringBuilder",
-          "node_modules/raptor-strings/lib",
-          "node_modules/raptor-strings"
-        ],
-        "dependencies": {
-          "raptor-polyfill": "^1.0.1"
-        }
-      },
-      {
-        "paths": [
           "node_modules/rc",
           "node_modules/rc/lib",
           "node_modules/rc/test"
@@ -15622,15 +13943,6 @@
           "safe-buffer": "~5.1.1",
           "string_decoder": "~1.1.1",
           "util-deprecate": "~1.0.1"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/redent"
-        ],
-        "dependencies": {
-          "indent-string": "^3.0.0",
-          "strip-indent": "^2.0.0"
         }
       },
       {
@@ -15781,14 +14093,6 @@
       },
       {
         "paths": [
-          "node_modules/right-align"
-        ],
-        "dependencies": {
-          "align-text": "^0.1.1"
-        }
-      },
-      {
-        "paths": [
           "node_modules/run-async"
         ],
         "dependencies": {
@@ -15812,58 +14116,6 @@
           "cson-parser": "^1.3.0",
           "fs-plus": "^3.0.0",
           "yargs": "^3.23.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/season/node_modules/cliui"
-        ],
-        "dependencies": {
-          "string-width": "^1.0.1",
-          "strip-ansi": "^3.0.1",
-          "wrap-ansi": "^2.0.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/season/node_modules/is-fullwidth-code-point"
-        ],
-        "dependencies": {
-          "number-is-nan": "^1.0.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/season/node_modules/string-width"
-        ],
-        "dependencies": {
-          "code-point-at": "^1.0.0",
-          "is-fullwidth-code-point": "^1.0.0",
-          "strip-ansi": "^3.0.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/season/node_modules/strip-ansi"
-        ],
-        "dependencies": {
-          "ansi-regex": "^2.0.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/season/node_modules/yargs",
-          "node_modules/season/node_modules/yargs/lib",
-          "node_modules/season/node_modules/yargs/locales"
-        ],
-        "dependencies": {
-          "camelcase": "^2.0.1",
-          "cliui": "^3.0.3",
-          "decamelize": "^1.1.1",
-          "os-locale": "^1.4.0",
-          "string-width": "^1.0.1",
-          "window-size": "^0.1.4",
-          "y18n": "^3.2.0"
         }
       },
       {
@@ -15894,14 +14146,6 @@
       },
       {
         "paths": [
-          "node_modules/simple-sha1"
-        ],
-        "dependencies": {
-          "rusha": "^0.8.1"
-        }
-      },
-      {
-        "paths": [
           "node_modules/slice-ansi"
         ],
         "dependencies": {
@@ -15915,17 +14159,6 @@
         ],
         "dependencies": {
           "hoek": "4.x.x"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/source-map/build",
-          "node_modules/source-map/lib/source-map",
-          "node_modules/source-map/lib",
-          "node_modules/source-map"
-        ],
-        "dependencies": {
-          "amdefine": ">=0.0.4"
         }
       },
       {
@@ -16160,15 +14393,13 @@
       },
       {
         "paths": [
-          "node_modules/uglify-js/bin",
           "node_modules/uglify-js/lib",
           "node_modules/uglify-js",
           "node_modules/uglify-js/tools"
         ],
         "dependencies": {
-          "source-map": "~0.5.1",
-          "uglify-to-browserify": "~1.0.0",
-          "yargs": "~3.10.0"
+          "commander": "~2.17.1",
+          "source-map": "~0.6.1"
         }
       },
       {
@@ -16487,13 +14718,43 @@
       {
         "paths": [
           "node_modules/yargs",
-          "node_modules/yargs/lib"
+          "node_modules/yargs/lib",
+          "node_modules/yargs/locales"
         ],
         "dependencies": {
-          "camelcase": "^1.0.2",
-          "cliui": "^2.1.0",
-          "decamelize": "^1.0.0",
-          "window-size": "0.1.0"
+          "camelcase": "^2.0.1",
+          "cliui": "^3.0.3",
+          "decamelize": "^1.1.1",
+          "os-locale": "^1.4.0",
+          "string-width": "^1.0.1",
+          "window-size": "^0.1.4",
+          "y18n": "^3.2.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/yargs/node_modules/is-fullwidth-code-point"
+        ],
+        "dependencies": {
+          "number-is-nan": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/yargs/node_modules/string-width"
+        ],
+        "dependencies": {
+          "code-point-at": "^1.0.0",
+          "is-fullwidth-code-point": "^1.0.0",
+          "strip-ansi": "^3.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/yargs/node_modules/strip-ansi"
+        ],
+        "dependencies": {
+          "ansi-regex": "^2.0.0"
         }
       }
     ]

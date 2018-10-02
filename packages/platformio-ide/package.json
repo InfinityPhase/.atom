@@ -1,25 +1,25 @@
 {
-  "_from": "file:/tmp/d-118728-30796-e5392r.euh2v/package.tgz",
-  "_id": "platformio-ide@2.2.0",
+  "_from": "https://www.atom.io/api/packages/platformio-ide/versions/2.2.2/tarball",
+  "_id": "platformio-ide@2.2.2",
   "_inBundle": false,
-  "_integrity": "sha512-gLdJa/HfrFhdRtKSdMMPh/J9yMUR80mByXmOGQIlAtNAXBrOdeIAqOVdJ93tpUkyGszeL46dlIttHtzhPFZlrQ==",
+  "_integrity": "sha512-G7ubN47Iy0E3A2pgjI7Rb75J3KQGoSBil1yFWMhoBXlKCwFP9wIlusoRRBV5NfrNKXLOLqWfH8g5zT8CQoJbMg==",
   "_location": "/platformio-ide",
   "_phantomChildren": {},
   "_requested": {
-    "type": "file",
-    "where": "/tmp/apm-install-dir-118728-30796-1mb4ob9.i738",
-    "raw": "/tmp/d-118728-30796-e5392r.euh2v/package.tgz",
-    "rawSpec": "/tmp/d-118728-30796-e5392r.euh2v/package.tgz",
-    "saveSpec": "file:/tmp/d-118728-30796-e5392r.euh2v/package.tgz",
-    "fetchSpec": "/tmp/d-118728-30796-e5392r.euh2v/package.tgz"
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/platformio-ide/versions/2.2.2/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/platformio-ide/versions/2.2.2/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/platformio-ide/versions/2.2.2/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/platformio-ide/versions/2.2.2/tarball"
   },
   "_requiredBy": [
-    "#USER"
+    "#USER",
+    "/"
   ],
-  "_resolved": "/tmp/d-118728-30796-e5392r.euh2v/package.tgz",
-  "_shasum": "f773698e7c49d04b709c9395a41d319841867555",
-  "_spec": "/tmp/d-118728-30796-e5392r.euh2v/package.tgz",
-  "_where": "/tmp/apm-install-dir-118728-30796-1mb4ob9.i738",
+  "_resolved": "https://www.atom.io/api/packages/platformio-ide/versions/2.2.2/tarball",
+  "_shasum": "3127770e76927f46f8e227d2bce8ac49ca22c184",
+  "_spec": "https://www.atom.io/api/packages/platformio-ide/versions/2.2.2/tarball",
+  "_where": "/tmp/apm-install-dir-118814-32549-1mcy7rq.q1yl",
   "activationHooks": [
     "core:loaded-shell-environment"
   ],
@@ -53,7 +53,7 @@
     "command-join": "^1.1.1",
     "etch": "^0.14.0",
     "fs-plus": "^3.0.1",
-    "platformio-node-helpers": "^3.0.0",
+    "platformio-node-helpers": "^3.1.1",
     "semver": "^5.3.0"
   },
   "deprecated": false,
@@ -108,7 +108,7 @@
   "scripts": {
     "lint": "eslint --ext js lib || exit 0"
   },
-  "version": "2.2.0",
+  "version": "2.2.2",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -484,7 +484,7 @@
       },
       {
         "name": "platformio-node-helpers",
-        "version": "3.0.0",
+        "version": "3.1.1",
         "path": "node_modules/platformio-node-helpers/lib/index.js"
       },
       {
@@ -1208,6 +1208,7 @@
         "node_modules/path-is-absolute/package.json",
         "node_modules/path-key/package.json",
         "node_modules/performance-now/package.json",
+        "node_modules/platformio-node-helpers/.vscode/tasks.json",
         "node_modules/platformio-node-helpers/package.json",
         "node_modules/psl/data/rules.json",
         "node_modules/psl/package.json",
@@ -1265,7 +1266,7 @@
           "command-join": "^1.1.1",
           "etch": "^0.14.0",
           "fs-plus": "^3.0.1",
-          "platformio-node-helpers": "^3.0.0",
+          "platformio-node-helpers": "^3.1.1",
           "semver": "^5.3.0"
         }
       },
@@ -1564,6 +1565,7 @@
       {
         "paths": [
           "node_modules/platformio-node-helpers",
+          "node_modules/platformio-node-helpers/.vscode",
           "node_modules/platformio-node-helpers/lib"
         ],
         "dependencies": {

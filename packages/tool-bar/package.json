@@ -1,24 +1,25 @@
 {
-  "_from": "file:/tmp/d-118220-22969-17da9ce.jn7p/package.tgz",
-  "_id": "tool-bar@1.1.7",
+  "_from": "https://www.atom.io/api/packages/tool-bar/versions/1.1.10/tarball",
+  "_id": "tool-bar@1.1.10",
   "_inBundle": false,
-  "_integrity": "sha512-TPM1uXVmwMJEpzbZcuBg4Tu7SNjuWQFmDeSU1slaKHyZcv780yW+Bvg5HRpuSGc8u9QVQH2Hr11hj8DbhlKWkw==",
+  "_integrity": "sha512-D7RRm80PN4ahLYGdS5g/W7v4do3G29pm34M5LduV7uE7kGGWdLqyX10il5+Tq0wvSJlBbse83Sg67+Qs4n35PQ==",
   "_location": "/tool-bar",
   "_phantomChildren": {},
   "_requested": {
-    "type": "file",
-    "where": "/tmp/apm-install-dir-118220-22969-1si8kj.ynvva",
-    "raw": "/tmp/d-118220-22969-17da9ce.jn7p/package.tgz",
-    "rawSpec": "/tmp/d-118220-22969-17da9ce.jn7p/package.tgz",
-    "saveSpec": "file:/tmp/d-118220-22969-17da9ce.jn7p/package.tgz",
-    "fetchSpec": "/tmp/d-118220-22969-17da9ce.jn7p/package.tgz"
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/tool-bar/versions/1.1.10/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/tool-bar/versions/1.1.10/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/tool-bar/versions/1.1.10/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/tool-bar/versions/1.1.10/tarball"
   },
   "_requiredBy": [
-    "#USER"
+    "#USER",
+    "/"
   ],
-  "_resolved": "/tmp/d-118220-22969-17da9ce.jn7p/package.tgz",
-  "_spec": "/tmp/d-118220-22969-17da9ce.jn7p/package.tgz",
-  "_where": "/tmp/apm-install-dir-118220-22969-1si8kj.ynvva",
+  "_resolved": "https://www.atom.io/api/packages/tool-bar/versions/1.1.10/tarball",
+  "_shasum": "4d546d89f254d588b45787d1e539549bf2408c1b",
+  "_spec": "https://www.atom.io/api/packages/tool-bar/versions/1.1.10/tarball",
+  "_where": "/tmp/apm-install-dir-118814-32557-jc1l7f.h466a",
   "bugs": {
     "url": "https://github.com/suda/toolbar/issues"
   },
@@ -61,7 +62,7 @@
   "scripts": {
     "lint": "eslint --format tap . && remark ."
   },
-  "version": "1.1.7",
+  "version": "1.1.10",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [],

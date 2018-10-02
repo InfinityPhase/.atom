@@ -66,6 +66,8 @@
       "autoclose-html"
       "autocomplete-java"
       "javascript-refactor"
+      "linter-spell"
+      "linter-spell-javascript"
     ]
     ignoredNames: [
       ".git"
@@ -158,7 +160,8 @@
     statusBarIndicator: true
   "tool-bar":
     position: "Left"
-  "tree-view": {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
   welcome: {}
   whitespace:
     ignoreWhitespaceOnlyLines: true
