@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const utils_1 = require("../../../../utils");
 const fileSymbolsView_1 = require("./fileSymbolsView");
 const projectSymbolsView_1 = require("./projectSymbolsView");
 class SymbolsViewController {
@@ -7,10 +8,10 @@ class SymbolsViewController {
         this.deps = deps;
     }
     toggleFileView(editor) {
-        fileSymbolsView_1.toggle(editor, this.deps);
+        utils_1.handlePromise(fileSymbolsView_1.toggle(editor, this.deps));
     }
     toggleProjectView(editor) {
-        projectSymbolsView_1.toggle(editor, this.deps);
+        utils_1.handlePromise(projectSymbolsView_1.toggle(editor, this.deps));
     }
     dispose() {
         // TODO: proper disposal

@@ -1,11 +1,11 @@
 import {TextEditor} from "atom"
-import {selectListView} from "../simpleSelectionView"
 import * as etch from "etch"
-import {generateFile} from "./generator"
-import * as utils from "./utils"
-import {Tag} from "./symbolsTag"
-import {Deps} from "./deps"
 import {HighlightComponent} from "../highlightComponent"
+import {selectListView} from "../simpleSelectionView"
+import {Deps} from "./deps"
+import {generateFile} from "./generator"
+import {Tag} from "./symbolsTag"
+import * as utils from "./utils"
 
 export async function toggle(editor: TextEditor, deps: Deps) {
   const filePath = editor.getPath()
@@ -33,7 +33,7 @@ export async function toggle(editor: TextEditor, deps: Deps) {
       },
       itemFilterKey: "name",
     })
-    if (tag) utils.openTag(tag, editor, deps.getEditorPositionHistoryManager())
+    if (tag) await utils.openTag(tag, editor, deps.histGoForward)
     else if (initialState) utils.deserializeEditorState(editor, initialState)
   }
 }

@@ -1,23 +1,27 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const registry_1 = require("./registry");
 const atom_1 = require("atom");
 const utils_1 = require("../utils");
+const registry_1 = require("./registry");
 // Import all of the command files for their side effects
 require("./build");
 require("./checkAllFiles");
 require("./clearErrors");
-require("./formatCode");
 require("./findReferences");
+require("./formatCode");
 require("./goToDeclaration");
-require("./returnFromDeclaration");
-require("./renameRefactor");
-require("./showTooltip");
+require("./hideSigHelp");
 require("./initializeConfig");
-require("./semanticView");
-require("./symbolsView");
-require("./refactorCode");
 require("./organizeImports");
+require("./refactorCode");
+require("./reloadProjects");
+require("./renameRefactor");
+require("./restartAllServers");
+require("./returnFromDeclaration");
+require("./semanticView");
+require("./showSigHelp");
+require("./showTooltip");
+require("./symbolsView");
 function registerCommands(deps) {
     const disp = new atom_1.CompositeDisposable();
     for (const cmd of registry_1.getCommands()) {
@@ -48,14 +52,14 @@ function registerCommands(deps) {
         }
         else {
             const d = cmd.desc(deps);
-            atom.commands.add(cmd.selector, cmd.command, Object.assign({}, d, { async didDispatch() {
+            disp.add(atom.commands.add(cmd.selector, cmd.command, Object.assign({}, d, { async didDispatch() {
                     try {
                         await d.didDispatch();
                     }
                     catch (error) {
                         handle(error);
                     }
-                } }));
+                } })));
         }
     }
     return disp;

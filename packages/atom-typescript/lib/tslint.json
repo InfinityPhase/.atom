@@ -1,12 +1,13 @@
 {
   "defaultSeverity": "warning",
-  "extends": ["tslint:recommended"],
+  "extends": ["tslint:recommended", "tslint-use-atom-disposables"],
   "jsRules": {},
+  "defaultSeverity": "error",
   "rules": {
     "semicolon": false,
     "object-literal-sort-keys": false,
     "member-access": true,
-    "ordered-imports": false,
+    "ordered-imports": true,
     "interface-name": [true, "never-prefix"],
     "no-console": false,
     "arrow-parens": false,
@@ -27,7 +28,10 @@
     ],
     "strict-type-predicates": true,
     "no-unsafe-any": true,
-    "no-shadowed-variable": true
+    "no-unbound-method": true,
+    "no-shadowed-variable": true,
+    "no-floating-promises": true,
+    "await-promise": true
   },
   "rulesDirectory": []
 }

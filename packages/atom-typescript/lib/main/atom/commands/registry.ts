@@ -1,19 +1,25 @@
 import * as Atom from "atom"
-import {TypescriptServiceClient} from "../../../client/client"
-import {StatusPanel} from "../../atom/components/statusPanel"
-import {SemanticViewController} from "../views/outline/semanticViewController"
-import {SymbolsViewController} from "../views/symbols/symbolsViewController"
+import {GetClientFunction} from "../../../client"
 import {ApplyEdits} from "../../pluginManager"
-import {EditorPositionHistoryManager} from "../editorPositionHistoryManager"
+import {TBuildStatus, TProgress} from "../components/statusPanel"
+import {OpenParams} from "../editorPositionHistoryManager"
 
 export interface Dependencies {
+  getClient: GetClientFunction
   applyEdits: ApplyEdits
-  clearErrors(): void
-  getClient(filePath: string): Promise<TypescriptServiceClient>
-  getStatusPanel(): StatusPanel
-  getSemanticViewController(): SemanticViewController
-  getSymbolsViewController(): SymbolsViewController
-  getEditorPositionHistoryManager(): EditorPositionHistoryManager
+  clearErrors: () => void
+  killAllServers: () => void
+  reportProgress: (progress: TProgress) => void
+  reportBuildStatus: (status: TBuildStatus | undefined) => void
+  toggleSemanticViewController: () => void
+  toggleFileSymbolsView: (ed: Atom.TextEditor) => void
+  toggleProjectSymbolsView: (ed: Atom.TextEditor) => void
+  histGoForward: (ed: Atom.TextEditor, openParams: OpenParams) => Promise<object>
+  histGoBack: () => Promise<object | undefined>
+  histShowHistory: () => Promise<void>
+  showTooltipAt: (ed: Atom.TextEditor) => void
+  showSigHelpAt: (ed: Atom.TextEditor) => void
+  hideSigHelpAt: (ed: Atom.TextEditor) => boolean
 }
 
 export type AllowedSelectors = keyof Dispatch

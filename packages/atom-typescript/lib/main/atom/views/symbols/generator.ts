@@ -1,6 +1,6 @@
-import {Tag} from "./symbolsTag"
 import {NavigationTree, NavtoItem} from "typescript/lib/protocol"
 import {Deps} from "./deps"
+import {Tag} from "./symbolsTag"
 
 export async function generateFile(filePath: string, deps: Deps) {
   const navtree = await getNavTree(filePath, deps)
@@ -33,13 +33,26 @@ function* parseNavTo(navTree: NavtoItem[], parent?: Tag) {
 }
 
 async function getNavTree(filePath: string, deps: Deps) {
-  return deps.withTypescriptBuffer(filePath, buffer => {
-    return buffer.getNavTree()
-  })
+  try {
+    const client = await deps.getClient(filePath)
+    const navtreeResult = await client.execute("navtree", {file: filePath})
+    return navtreeResult.body
+  } catch (e) {
+    console.error(filePath, e)
+  }
 }
 
 async function getNavTo(filePath: string, search: string, deps: Deps) {
-  return deps.withTypescriptBuffer(filePath, buffer => {
-    return buffer.getNavTo(search)
-  })
+  try {
+    const client = await deps.getClient(filePath)
+    const navtoResult = await client.execute("navto", {
+      file: filePath,
+      currentFileOnly: false,
+      searchValue: search,
+      maxResultCount: 1000,
+    })
+    return navtoResult.body
+  } catch (e) {
+    console.error(filePath, e)
+  }
 }

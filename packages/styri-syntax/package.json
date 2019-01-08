@@ -1,25 +1,25 @@
 {
-  "_from": "file:/tmp/d-11871-16024-5wflmn.0tuuu/package.tgz",
-  "_id": "styri-syntax@0.2.0",
+  "_from": "https://www.atom.io/api/packages/styri-syntax/versions/1.0.0/tarball",
+  "_id": "styri-syntax@1.0.0",
   "_inBundle": false,
-  "_integrity": "sha512-ZfvfPlEh4yxaX3gIsXyjXp6OI8v9jTu5/QGYgSP/cSE7D0hXbB9aevEkYCxWaks460ZeHP46sR0lTc5LvDm+3w==",
+  "_integrity": "sha512-0wRM1PIi2OEa7gHaduwP4EQpRMqxHuCXJElTn/QrmSR3BasE0hpwDGPrSVLRxHiD2EBMxhJPZerYNmmBchAlwA==",
   "_location": "/styri-syntax",
   "_phantomChildren": {},
   "_requested": {
-    "type": "file",
-    "where": "/tmp/apm-install-dir-11871-16024-10l1ilg.jrod",
-    "raw": "/tmp/d-11871-16024-5wflmn.0tuuu/package.tgz",
-    "rawSpec": "/tmp/d-11871-16024-5wflmn.0tuuu/package.tgz",
-    "saveSpec": "file:/tmp/d-11871-16024-5wflmn.0tuuu/package.tgz",
-    "fetchSpec": "/tmp/d-11871-16024-5wflmn.0tuuu/package.tgz"
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/styri-syntax/versions/1.0.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/styri-syntax/versions/1.0.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/styri-syntax/versions/1.0.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/styri-syntax/versions/1.0.0/tarball"
   },
   "_requiredBy": [
-    "#USER"
+    "#USER",
+    "/"
   ],
-  "_resolved": "/tmp/d-11871-16024-5wflmn.0tuuu/package.tgz",
-  "_shasum": "43b5849392b874ac9dacee091f6392003807baf5",
-  "_spec": "/tmp/d-11871-16024-5wflmn.0tuuu/package.tgz",
-  "_where": "/tmp/apm-install-dir-11871-16024-10l1ilg.jrod",
+  "_resolved": "https://www.atom.io/api/packages/styri-syntax/versions/1.0.0/tarball",
+  "_shasum": "4c2f05b8a1b9d17ab0fc7783582f463b778c067f",
+  "_spec": "https://www.atom.io/api/packages/styri-syntax/versions/1.0.0/tarball",
+  "_where": "/tmp/apm-install-dir-11907-20271-d6yki.a5sbhb",
   "bugs": {
     "url": "https://github.com/chbk/styri-syntax/issues"
   },
@@ -42,7 +42,7 @@
     "url": "git+https://github.com/chbk/styri-syntax.git"
   },
   "theme": "syntax",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [],

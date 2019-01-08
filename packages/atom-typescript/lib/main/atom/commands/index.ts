@@ -1,24 +1,28 @@
-import {getCommands, Dependencies} from "./registry"
-import {CompositeDisposable} from "atom"
+import {CompositeDisposable, DisposableLike} from "atom"
 import {isTypescriptEditorWithPath, isTypescriptGrammar} from "../utils"
+import {Dependencies, getCommands} from "./registry"
 
 // Import all of the command files for their side effects
 import "./build"
 import "./checkAllFiles"
 import "./clearErrors"
-import "./formatCode"
 import "./findReferences"
+import "./formatCode"
 import "./goToDeclaration"
-import "./returnFromDeclaration"
-import "./renameRefactor"
-import "./showTooltip"
+import "./hideSigHelp"
 import "./initializeConfig"
-import "./semanticView"
-import "./symbolsView"
-import "./refactorCode"
 import "./organizeImports"
+import "./refactorCode"
+import "./reloadProjects"
+import "./renameRefactor"
+import "./restartAllServers"
+import "./returnFromDeclaration"
+import "./semanticView"
+import "./showSigHelp"
+import "./showTooltip"
+import "./symbolsView"
 
-export function registerCommands(deps: Dependencies) {
+export function registerCommands(deps: Dependencies): DisposableLike {
   const disp = new CompositeDisposable()
   for (const cmd of getCommands()) {
     if (cmd.selector === "atom-text-editor") {
@@ -54,16 +58,18 @@ export function registerCommands(deps: Dependencies) {
       )
     } else {
       const d = cmd.desc(deps)
-      atom.commands.add(cmd.selector, cmd.command, {
-        ...d,
-        async didDispatch() {
-          try {
-            await d.didDispatch()
-          } catch (error) {
-            handle(error as Error)
-          }
-        },
-      })
+      disp.add(
+        atom.commands.add(cmd.selector, cmd.command, {
+          ...d,
+          async didDispatch() {
+            try {
+              await d.didDispatch()
+            } catch (error) {
+              handle(error as Error)
+            }
+          },
+        }),
+      )
     }
   }
   return disp

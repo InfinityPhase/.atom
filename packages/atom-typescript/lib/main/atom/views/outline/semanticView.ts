@@ -1,6 +1,6 @@
+import {GetClientFunction} from "../../../../client"
 import {NavigationTreeComponent} from "./navigationTreeComponent"
 import {NavigationTreeViewModel} from "./semanticViewModel"
-import {WithTypescriptBuffer} from "../../../pluginManager"
 
 export const SEMANTIC_VIEW_URI = "atom-typescript://semantic-view"
 
@@ -11,10 +11,6 @@ export interface SemanticViewOptions {
 export interface SemanticViewSerializationData {
   data: SemanticViewOptions
   deserializer: "atomts-semantic-view/SemanticView"
-}
-
-export function deserializeSemanticView(serialized: SemanticViewSerializationData) {
-  return SemanticView.create(serialized.data)
 }
 
 export class SemanticView {
@@ -33,9 +29,9 @@ export class SemanticView {
     this.comp = new NavigationTreeComponent({navTree: config.navTree})
   }
 
-  public setWithTypescriptBuffer(wtb: WithTypescriptBuffer) {
-    this.comp.setWithTypescriptBuffer(wtb)
-    this.comp.update({})
+  public async setGetClient(gc: GetClientFunction) {
+    await this.comp.setGetClient(gc)
+    await this.comp.update({})
   }
 
   public getTitle() {
@@ -46,9 +42,9 @@ export class SemanticView {
     return SEMANTIC_VIEW_URI
   }
 
-  public destroy() {
+  public async destroy() {
     SemanticView.instance = null
-    this.comp.destroy()
+    await this.comp.destroy()
   }
 
   public getDefaultLocation() {
@@ -61,7 +57,6 @@ export class SemanticView {
   }
 
   public serialize(): SemanticViewSerializationData {
-    // console.log("SemanticView.serialize()") // DEBUG
     return {
       deserializer: "atomts-semantic-view/SemanticView",
       data: {navTree: this.comp.props.navTree},

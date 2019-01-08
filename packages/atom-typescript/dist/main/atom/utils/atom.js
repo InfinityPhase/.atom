@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const path = require("path");
+const ts_1 = require("./ts");
 // Return line/offset position in the editor using 1-indexed coordinates
 function getEditorPosition(editor) {
     const pos = editor.getCursorBufferPosition();
@@ -16,7 +17,11 @@ function isTypescriptFile(filePath) {
 }
 exports.isTypescriptFile = isTypescriptFile;
 function typeScriptScopes() {
-    return ["source.ts", "source.tsx", "typescript"];
+    const tsScopes = atom.config.get("atom-typescript").tsSyntaxScopes;
+    if (atom.config.get("atom-typescript").allowJS) {
+        tsScopes.push(...atom.config.get("atom-typescript").jsSyntaxScopes);
+    }
+    return tsScopes;
 }
 exports.typeScriptScopes = typeScriptScopes;
 function isTypescriptEditorWithPath(editor) {
@@ -29,13 +34,25 @@ function isTypescriptGrammar(editor) {
 }
 exports.isTypescriptGrammar = isTypescriptGrammar;
 function isAllowedExtension(ext) {
-    return [".ts", ".tst", ".tsx"].includes(ext);
+    const tsExts = atom.config.get("atom-typescript").tsFileExtensions;
+    if (atom.config.get("atom-typescript").allowJS) {
+        tsExts.push(...atom.config.get("atom-typescript").jsFileExtensions);
+    }
+    return tsExts.includes(ext);
 }
-function getFilePathPosition(editor) {
+function getFilePathPosition(editor, position) {
     const file = editor.getPath();
     if (file !== undefined) {
-        return Object.assign({ file }, getEditorPosition(editor));
+        const location = position ? ts_1.pointToLocation(position) : getEditorPosition(editor);
+        return Object.assign({ file }, location);
     }
 }
 exports.getFilePathPosition = getFilePathPosition;
+function* getOpenEditorsPaths() {
+    for (const ed of atom.workspace.getTextEditors()) {
+        if (isTypescriptEditorWithPath(ed))
+            yield ed.getPath();
+    }
+}
+exports.getOpenEditorsPaths = getOpenEditorsPaths;
 //# sourceMappingURL=atom.js.map

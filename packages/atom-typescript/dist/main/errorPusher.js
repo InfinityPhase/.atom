@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const lodash_1 = require("lodash");
-const utils_1 = require("./atom/utils");
 const atom_1 = require("atom");
+const lodash_1 = require("lodash");
 const path = require("path");
+const utils_1 = require("./atom/utils");
 /** Class that collects errors from all of the clients and pushes them to the Linter service */
 class ErrorPusher {
     constructor() {
@@ -15,16 +15,20 @@ class ErrorPusher {
         }));
         this.pushErrors = lodash_1.debounce(this.pushErrors.bind(this), 100);
     }
-    /** Return any errors that cover the given location */
-    getErrorsAt(filePath, loc) {
-        const result = [];
+    *getErrorsInRange(filePath, range) {
         for (const prefixed of this.errors.values()) {
             const errors = prefixed.get(path.normalize(filePath));
-            if (errors) {
-                result.push(...errors.filter(err => utils_1.isLocationInRange(loc, err)));
-            }
+            if (errors)
+                yield* errors.filter(err => utils_1.spanToRange(err).intersectsWith(range));
         }
-        return result;
+    }
+    /** Return any errors that cover the given location */
+    *getErrorsAt(filePath, loc) {
+        for (const prefixed of this.errors.values()) {
+            const errors = prefixed.get(path.normalize(filePath));
+            if (errors)
+                yield* errors.filter(err => utils_1.spanToRange(err).containsPoint(loc));
+        }
     }
     /** Set errors. Previous errors with the same prefix and filePath are going to be replaced */
     setErrors(prefix, filePath, errors) {
@@ -36,11 +40,16 @@ class ErrorPusher {
         prefixed.set(path.normalize(filePath), errors);
         this.pushErrors();
     }
-    /** Clear all errors */
-    clear() {
-        if (this.linter) {
-            this.linter.clearMessages();
+    clearFileErrors(filePath) {
+        for (const map of this.errors.values()) {
+            map.delete(filePath);
         }
+        this.pushErrors();
+    }
+    clear() {
+        if (!this.linter)
+            return;
+        this.linter.clearMessages();
     }
     setLinter(linter) {
         this.linter = linter;

@@ -1,25 +1,25 @@
 {
-  "_from": "https://www.atom.io/api/packages/autocomplete-python/versions/1.10.12/tarball",
-  "_id": "autocomplete-python@1.10.12",
+  "_from": "https://www.atom.io/api/packages/autocomplete-python/versions/1.11.0/tarball",
+  "_id": "autocomplete-python@1.11.0",
   "_inBundle": false,
-  "_integrity": "sha512-KRnqG+Dz4kQR+/mA8gLd0h6YfeLPc3UHke81lXgzyj7E+ZyDzaod+RL4BeeydTB/4dMAEoUOItJZSKzYqJBnpg==",
+  "_integrity": "sha512-thsN37jFxeFKRzezC4MUIwdzHYzGn+yLBX5Zfp4OnH+Yi/WLRzKGA9XcMULZ0OLzYQdKnC5BfQCWV8sLFdZ8Jw==",
   "_location": "/autocomplete-python",
   "_phantomChildren": {},
   "_requested": {
     "type": "remote",
-    "raw": "https://www.atom.io/api/packages/autocomplete-python/versions/1.10.12/tarball",
-    "rawSpec": "https://www.atom.io/api/packages/autocomplete-python/versions/1.10.12/tarball",
-    "saveSpec": "https://www.atom.io/api/packages/autocomplete-python/versions/1.10.12/tarball",
-    "fetchSpec": "https://www.atom.io/api/packages/autocomplete-python/versions/1.10.12/tarball"
+    "raw": "https://www.atom.io/api/packages/autocomplete-python/versions/1.11.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/autocomplete-python/versions/1.11.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/autocomplete-python/versions/1.11.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/autocomplete-python/versions/1.11.0/tarball"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://www.atom.io/api/packages/autocomplete-python/versions/1.10.12/tarball",
-  "_shasum": "bffa3203fc52b905ee25db44f070597f21641c1b",
-  "_spec": "https://www.atom.io/api/packages/autocomplete-python/versions/1.10.12/tarball",
-  "_where": "/tmp/apm-install-dir-118814-32537-15d8rq.ms1fh",
+  "_resolved": "https://www.atom.io/api/packages/autocomplete-python/versions/1.11.0/tarball",
+  "_shasum": "00aa6d5c4d3624f0ec5cb83a57c76c192c6ff5f1",
+  "_spec": "https://www.atom.io/api/packages/autocomplete-python/versions/1.11.0/tarball",
+  "_where": "/tmp/apm-install-dir-11907-20271-k2tgw9.00xgk",
   "bugs": {
     "url": "https://github.com/autocomplete-python/autocomplete-python/issues"
   },
@@ -45,7 +45,7 @@
     "atom-slick": "^2.0.0",
     "atom-space-pen-views": "~2.1.0",
     "fuzzaldrin-plus": "^0.3.1",
-    "kite-installer": "^3.0.0",
+    "kite-installer": "^3.1.0",
     "mixpanel": "^0.5.0",
     "selector-kit": "^0.1",
     "space-pen": "^5.1.2",
@@ -82,7 +82,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/autocomplete-python/autocomplete-python.git"
   },
-  "version": "1.10.12",
+  "version": "1.11.0",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -218,17 +218,17 @@
       },
       {
         "name": "kite-api",
-        "version": "2.0.1",
+        "version": "2.2.1",
         "path": "node_modules/kite-api/lib/index.js"
       },
       {
         "name": "kite-connector",
-        "version": "2.0.0",
+        "version": "2.0.4",
         "path": "node_modules/kite-connector/lib/index.js"
       },
       {
         "name": "kite-installer",
-        "version": "3.0.0",
+        "version": "3.1.0",
         "path": "node_modules/kite-installer/lib/index.js"
       },
       {
@@ -273,7 +273,7 @@
       },
       {
         "name": "rollbar",
-        "version": "2.4.6",
+        "version": "2.5.1",
         "path": "node_modules/rollbar/src/server/rollbar.js"
       },
       {
@@ -365,11 +365,11 @@
         "node_modules/jquery/bower.json",
         "node_modules/jquery/package.json",
         "node_modules/json-stringify-safe/package.json",
-        "node_modules/kite-api/.nyc_output/0d590a21-6b9b-4d99-9255-100b7b3e5776.json",
-        "node_modules/kite-api/.nyc_output/7dbc790a-79a5-4f1c-b45f-006eb054d681.json",
+        "node_modules/kite-api/.nyc_output/0c0aa977-6b87-413b-9df8-6c93781001f3.json",
+        "node_modules/kite-api/.nyc_output/6ce8d029-9097-4d57-8194-2b16ac080c22.json",
         "node_modules/kite-api/package.json",
-        "node_modules/kite-connector/.nyc_output/40bfa23a-dbc6-41a9-8221-be91643d0c31.json",
-        "node_modules/kite-connector/.nyc_output/8efb3600-082b-4ff2-ba47-a69c71fcfb01.json",
+        "node_modules/kite-connector/.nyc_output/5f939af5-d0ab-4d50-88df-794ae47080a4.json",
+        "node_modules/kite-connector/.nyc_output/ce725532-cfa1-4583-9870-ff6c1a267b3a.json",
         "node_modules/kite-connector/package.json",
         "node_modules/kite-installer/ext/telemetry/config.json",
         "node_modules/kite-installer/package.json",
@@ -395,6 +395,7 @@
         "node_modules/underscore-plus/node_modules/underscore/package.json",
         "node_modules/underscore-plus/package.json",
         "node_modules/uuid/package.json",
+        "package-lock.json",
         "package.json"
       ],
       ".js": [
@@ -1039,10 +1040,10 @@
         "node_modules/kite-installer/lib/elements/atom/install-element.js",
         "node_modules/kite-installer/lib/elements/atom/install-end-element.js",
         "node_modules/kite-installer/lib/elements/atom/install-error-element.js",
+        "node_modules/kite-installer/lib/elements/atom/install-wait-element.js",
         "node_modules/kite-installer/lib/elements/atom/kite-vs-jedi-element.js",
         "node_modules/kite-installer/lib/elements/atom/login-element.js",
         "node_modules/kite-installer/lib/elements/atom/not-admin-element.js",
-        "node_modules/kite-installer/lib/elements/atom/whitelist-element.js",
         "node_modules/kite-installer/lib/index.js",
         "node_modules/kite-installer/lib/install/authenticate.js",
         "node_modules/kite-installer/lib/install/base-step.js",
@@ -1062,8 +1063,6 @@
         "node_modules/kite-installer/lib/install/parallel-steps.js",
         "node_modules/kite-installer/lib/install/pass-step.js",
         "node_modules/kite-installer/lib/install/void-step.js",
-        "node_modules/kite-installer/lib/install/whitelist-choice.js",
-        "node_modules/kite-installer/lib/install/whitelist.js",
         "node_modules/kite-installer/lib/install.js",
         "node_modules/kite-installer/lib/state-controller.js",
         "node_modules/lru-cache/lib/lru-cache.js",
@@ -1174,7 +1173,7 @@
           "atom-slick": "^2.0.0",
           "atom-space-pen-views": "~2.1.0",
           "fuzzaldrin-plus": "^0.3.1",
-          "kite-installer": "^3.0.0",
+          "kite-installer": "^3.1.0",
           "mixpanel": "^0.5.0",
           "selector-kit": "^0.1",
           "space-pen": "^5.1.2",
@@ -1507,7 +1506,7 @@
           "node_modules/kite-api/test/stores"
         ],
         "dependencies": {
-          "kite-connector": "^2.0.0",
+          "kite-connector": "^2.0.4",
           "md5": "^2.2.0"
         }
       },
@@ -1523,8 +1522,8 @@
           "node_modules/kite-installer/test/install"
         ],
         "dependencies": {
-          "kite-api": "^2.0.0",
-          "kite-connector": "^2.0.0",
+          "kite-api": "^2.1.2",
+          "kite-connector": "^2.0.3",
           "mixpanel": "^0.5.0",
           "rollbar": "^2.4.4"
         }

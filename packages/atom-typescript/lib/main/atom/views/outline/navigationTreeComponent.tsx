@@ -1,18 +1,19 @@
-import atomUtils = require("../../utils")
-import {Disposable, TextEditor, CursorPositionChangedEvent} from "atom"
+import {CompositeDisposable, CursorPositionChangedEvent, Disposable, TextEditor} from "atom"
 import * as etch from "etch"
 import {isEqual} from "lodash"
 import {NavigationTree} from "typescript/lib/protocol"
-import {NavigationTreeViewModel, ToNodeScrollableEditor, SelectableNode} from "./semanticViewModel"
+import {GetClientFunction} from "../../../../client"
+import {handlePromise} from "../../../../utils"
+import atomUtils = require("../../utils")
 import {NavigationNodeComponent} from "./navigationNodeComponent"
 import {
   findNodeAt,
   getNodeStartLine,
   getNodeStartOffset,
-  restoreCollapsed,
   prepareNavTree,
+  restoreCollapsed,
 } from "./navTreeUtils"
-import {WithTypescriptBuffer} from "../../../pluginManager"
+import {NavigationTreeViewModel, SelectableNode, ToNodeScrollableEditor} from "./semanticViewModel"
 
 export interface Props extends JSX.Props {
   navTree: NavigationTreeViewModel | null
@@ -25,12 +26,13 @@ export class NavigationTreeComponent
   private editorScrolling?: Disposable
   private editorChanging?: Disposable
   private selectedNode?: NavigationTreeViewModel
-  private withTypescriptBuffer?: WithTypescriptBuffer
+  private getClient?: GetClientFunction
+  private subscriptions = new CompositeDisposable()
 
   constructor(public props: Props) {
     prepareNavTree(props.navTree)
     etch.initialize(this)
-    atom.workspace.observeActiveTextEditor(this.subscribeToEditor)
+    this.subscriptions.add(atom.workspace.observeActiveTextEditor(this.subscribeToEditor))
   }
 
   public async update(props: Partial<Props>) {
@@ -42,19 +44,18 @@ export class NavigationTreeComponent
   }
 
   public async destroy() {
-    if (this.editorScrolling) {
-      this.editorScrolling.dispose()
-    }
-    if (this.editorChanging) {
-      this.editorChanging.dispose()
-    }
+    if (this.editorScrolling) this.editorScrolling.dispose()
+    if (this.editorChanging) this.editorChanging.dispose()
+    this.editorScrolling = undefined
+    this.editorChanging = undefined
     this.selectedNode = undefined
+    this.subscriptions.dispose()
     await etch.destroy(this)
   }
 
-  public setWithTypescriptBuffer(wtb: WithTypescriptBuffer) {
-    this.withTypescriptBuffer = wtb
-    this.loadNavTree()
+  public async setGetClient(getClient: GetClientFunction) {
+    this.getClient = getClient
+    await this.loadNavTree()
   }
 
   public getSelectedNode() {
@@ -97,7 +98,7 @@ export class NavigationTreeComponent
     else return undefined
   }
 
-  private async setNavTree(navTree: NavigationTreeViewModel | null) {
+  private setNavTree(navTree: NavigationTreeViewModel | null) {
     prepareNavTree(navTree)
     if (isEqual(navTree, this.props.navTree)) {
       return
@@ -117,17 +118,17 @@ export class NavigationTreeComponent
 
   private loadNavTree = async () => {
     if (!this.editor) return
-    if (!this.withTypescriptBuffer) return
+    if (!this.getClient) return
     const filePath = this.editor.getPath()
     if (filePath === undefined) return
     try {
-      return await this.withTypescriptBuffer(filePath, async buffer => {
-        const navTree = await buffer.getNavTree()
-        if (navTree) {
-          this.setNavTree(navTree as NavigationTreeViewModel)
-          await etch.update(this)
-        }
-      })
+      const client = await this.getClient(filePath)
+      const navtreeResult = await client.execute("navtree", {file: filePath})
+      const navTree = navtreeResult.body
+      if (navTree) {
+        this.setNavTree(navTree as NavigationTreeViewModel)
+        await etch.update(this)
+      }
     } catch (err) {
       console.error(err, filePath)
     }
@@ -146,7 +147,7 @@ export class NavigationTreeComponent
     const selectedChild = findNodeAt(cursorLine, cursorLine, this.props.navTree)
     if (selectedChild !== this.selectedNode) {
       this.selectedNode = selectedChild
-      etch.update(this)
+      handlePromise(etch.update(this))
     }
   }
 
@@ -164,34 +165,19 @@ export class NavigationTreeComponent
     }
   }
 
-  private subscribeToEditor = (editor?: TextEditor) => {
+  private subscribeToEditor = async (editor?: TextEditor) => {
+    if (this.editorScrolling) this.editorScrolling.dispose()
+    if (this.editorChanging) this.editorChanging.dispose()
+
     if (!editor || !atomUtils.isTypescriptEditorWithPath(editor)) {
-      // unsubscribe from editor
-      // dispose subscriptions (except for editor-changing)
-      if (this.editorScrolling) {
-        this.editorScrolling.dispose()
-      }
-      if (this.editorChanging) {
-        this.editorChanging.dispose()
-      }
-
-      this.update({navTree: null})
-      return
+      return this.update({navTree: null})
     }
+    // else
     this.editor = editor
-
     // set navTree
-    this.loadNavTree()
+    await this.loadNavTree()
 
-    // Subscribe to stop scrolling
-    if (this.editorScrolling) {
-      this.editorScrolling.dispose()
-    }
     this.editorScrolling = editor.onDidChangeCursorPosition(this.selectAtCursorLine)
-
-    if (this.editorChanging) {
-      this.editorChanging.dispose()
-    }
     this.editorChanging = editor.onDidStopChanging(this.loadNavTree)
   }
 }

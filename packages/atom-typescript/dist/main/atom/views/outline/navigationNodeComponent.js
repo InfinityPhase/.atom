@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const etch = require("etch");
+const utils_1 = require("../../../../utils");
 const navTreeUtils_1 = require("./navTreeUtils");
 class NavigationNodeComponent {
     constructor(props) {
@@ -53,7 +54,7 @@ class NavigationNodeComponent {
         }
         else {
             node.collapsed = !node.collapsed;
-            etch.update(this);
+            utils_1.handlePromise(etch.update(this));
         }
     }
 }

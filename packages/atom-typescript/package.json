@@ -1,25 +1,25 @@
 {
-  "_from": "file:/tmp/d-118721-26550-1f3pu0o.hydq/package.tgz",
-  "_id": "atom-typescript@12.6.3",
+  "_from": "https://www.atom.io/api/packages/atom-typescript/versions/12.7.3/tarball",
+  "_id": "atom-typescript@12.7.3",
   "_inBundle": false,
-  "_integrity": "sha512-uwIsd8JltSL0+N/ceyH1p44ZmrHdSVfOYYEtJsoWGY7eLKDfhssmiKZBxSD3XHfzzCEk6VFPSvTgZouRqjKGHA==",
+  "_integrity": "sha512-VhbsVKm4WRkI8OIz7msntPKbRQXRG0POWVVcSoIiNwogVI7k5zMl6+9iOGkOe+rmlbfhlDpdn1WR/yF4MCmwhw==",
   "_location": "/atom-typescript",
   "_phantomChildren": {},
   "_requested": {
-    "type": "file",
-    "where": "/tmp/apm-install-dir-118721-26550-tqsll0.9u8u",
-    "raw": "/tmp/d-118721-26550-1f3pu0o.hydq/package.tgz",
-    "rawSpec": "/tmp/d-118721-26550-1f3pu0o.hydq/package.tgz",
-    "saveSpec": "file:/tmp/d-118721-26550-1f3pu0o.hydq/package.tgz",
-    "fetchSpec": "/tmp/d-118721-26550-1f3pu0o.hydq/package.tgz"
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/atom-typescript/versions/12.7.3/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/atom-typescript/versions/12.7.3/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/atom-typescript/versions/12.7.3/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/atom-typescript/versions/12.7.3/tarball"
   },
   "_requiredBy": [
-    "#USER"
+    "#USER",
+    "/"
   ],
-  "_resolved": "/tmp/d-118721-26550-1f3pu0o.hydq/package.tgz",
-  "_shasum": "926a50865561e7ebba2ad554ce943f7ff81ad533",
-  "_spec": "/tmp/d-118721-26550-1f3pu0o.hydq/package.tgz",
-  "_where": "/tmp/apm-install-dir-118721-26550-tqsll0.9u8u",
+  "_resolved": "https://www.atom.io/api/packages/atom-typescript/versions/12.7.3/tarball",
+  "_shasum": "b1d9772ebcf7a7378d4554ea73e6b678a87beeab",
+  "_spec": "https://www.atom.io/api/packages/atom-typescript/versions/12.7.3/tarball",
+  "_where": "/tmp/apm-install-dir-11907-20271-1s9wug4.p4uz",
   "activationCommands": {
     "atom-workspace": [
       "typescript:initialize-config"
@@ -54,6 +54,41 @@
       "default": "en",
       "order": 50
     },
+    "preferBuiltinTooltips": {
+      "title": "Prefer built-in type tooltips",
+      "description": "Use built-in tooltips for displaying type information instead of Atom-IDE ones (if available); Change requires Atom restart",
+      "type": "boolean",
+      "default": false,
+      "order": 55
+    },
+    "preferBuiltinSigHelp": {
+      "title": "Prefer built-in signagure help tooltips",
+      "description": "Use built-in tooltips for displaying signature help instead of Atom-IDE ones (if available); Change requires Atom restart",
+      "type": "boolean",
+      "default": false,
+      "order": 56
+    },
+    "preferBuiltinBusySignal": {
+      "title": "Prefer built-in busy status indicator",
+      "description": "Use built-in busy status indicator instead of Atom-IDE one (if available); Change requires Atom restart",
+      "type": "boolean",
+      "default": false,
+      "order": 57
+    },
+    "preferBuiltinOccurrenceHighlight": {
+      "title": "Prefer built-in occurrence highligting",
+      "description": "Use built-in occurrence highlights instead of Atom-IDE one (if available); Change requires Atom restart",
+      "type": "boolean",
+      "default": false,
+      "order": 58
+    },
+    "disableAtomIdeDefinitions": {
+      "title": "Disable Atom-IDE Definitions interface",
+      "description": "Atom-IDE will revert to using Hyperclick for go-to-definition; Atom-Typescript will be able to track position history and return-from-declaration command will work; you will lose fancy previews on ctrl/cmd+mouseover though; Change requires Atom restart",
+      "type": "boolean",
+      "default": false,
+      "order": 59
+    },
     "buildStatusTimeout": {
       "title": "Build status visibility timeout",
       "description": "How long to show successful build status, in seconds. Failed status will be shown indefinitely. Negative means forever",
@@ -74,6 +109,28 @@
       "type": "integer",
       "default": 100,
       "order": 60
+    },
+    "tooltipPosition": {
+      "title": "Built-in type tooltip position",
+      "description": "Above or below cursor position",
+      "type": "string",
+      "enum": [
+        "top",
+        "bottom"
+      ],
+      "default": "bottom",
+      "order": 61
+    },
+    "sigHelpPosition": {
+      "title": "Built-in signature help tooltip position",
+      "description": "Above or below cursor position",
+      "type": "string",
+      "enum": [
+        "top",
+        "bottom"
+      ],
+      "default": "top",
+      "order": 62
     },
     "ignoredDiagnosticCodes": {
       "title": "Ignore diagnostics",
@@ -98,6 +155,69 @@
       "type": "boolean",
       "default": "false",
       "order": 120
+    },
+    "tsFileExtensions": {
+      "title": "TypeScript file extensions",
+      "description": "Comma-separated list of TypeScript file extensions; may require Atom restart to take effect; DO NOT EDIT unless you know what you are doing",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        ".ts",
+        ".tst",
+        ".tsx"
+      ],
+      "order": 130
+    },
+    "jsFileExtensions": {
+      "title": "JavaScript file extensions",
+      "description": "Comma-separated list of JavaScript file extensions; may require Atom restart to take effect; DO NOT EDIT unless you know what you are doing",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        ".js",
+        ".jst",
+        ".jsx"
+      ],
+      "order": 140
+    },
+    "tsSyntaxScopes": {
+      "title": "TypeScript syntax scopes",
+      "description": "Comma-separated list of TypeScript syntax scopes; may require Atom restart to take effect; DO NOT EDIT unless you know what you are doing",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "source.ts",
+        "source.tsx",
+        "typescript"
+      ],
+      "order": 150
+    },
+    "jsSyntaxScopes": {
+      "title": "JavaScript syntax scopes",
+      "description": "Comma-separated list of JavaScript syntax scopes; may require Atom restart to take effect; DO NOT EDIT unless you know what you are doing",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "source.js",
+        "source.jsx",
+        "javascript"
+      ],
+      "order": 160
+    },
+    "allowJS": {
+      "title": "Enable Atom-Typescript for JavaScript files (experimental)",
+      "description": "Passes JS files to TypeScript server; Most likely need allowJS: true and checkJS: true in tsconfig",
+      "type": "boolean",
+      "default": false,
+      "order": 170
     }
   },
   "consumedServices": {
@@ -110,21 +230,35 @@
       "versions": {
         "^1.0.0": "consumeStatusBar"
       }
+    },
+    "datatip": {
+      "versions": {
+        "0.1.0": "consumeDatatipService"
+      }
+    },
+    "signature-help": {
+      "versions": {
+        "0.1.0": "consumeSignatureHelp"
+      }
+    },
+    "atom-ide-busy-signal": {
+      "versions": {
+        "0.1.0": "consumeBusySignal"
+      }
     }
   },
   "dependencies": {
     "atom-highlight": "^0.4.1",
     "atom-package-deps": "^4.6.2",
-    "atom-select-list": "^0.7.1",
+    "atom-select-list": "^0.7.2",
     "byline": "^5.0.0",
-    "escape-html": "^1.0.3",
     "etch": "^0.14.0",
     "fuzzaldrin": "^2.1.0",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.11",
     "resolve": "^1.8.1",
     "tsconfig": "^7.0.0",
     "tslib": "^1.9.3",
-    "typescript": "~2.9.2"
+    "typescript": "^3.1.6"
   },
   "deprecated": false,
   "description": "The only TypeScript plugin you will ever need.",
@@ -132,23 +266,24 @@
     "atomts-semantic-view/SemanticView": "deserializeSemanticView"
   },
   "devDependencies": {
-    "@types/atom": "~1.28",
+    "@types/atom": "^1.31.0",
     "@types/byline": "^4.2.31",
-    "@types/chai": "^4.1.4",
+    "@types/chai": "^4.1.7",
     "@types/fuzzaldrin": "^2.1.1",
-    "@types/lodash": "^4.14.116",
+    "@types/lodash": "^4.14.118",
     "@types/mocha": "^2",
-    "@types/node": "^8",
+    "@types/node": "^8.10.38",
     "@types/resolve": "^0.0.8",
     "atom-ts-spec-runner": "^1.1.1",
-    "chai": "^4.1.2",
-    "prettier": "^1.14.2",
+    "chai": "^4.2.0",
+    "prettier": "^1.15.2",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
-    "tslint-language-service": "^0.9.9"
+    "tslint-use-atom-disposables": "0.0.1",
+    "typescript-tslint-plugin": "0.0.4"
   },
   "engines": {
-    "atom": ">=1.27.0 <2.0.0",
+    "atom": ">=1.31.0 <2.0.0",
     "node": "*"
   },
   "homepage": "https://github.com/TypeStrong/atom-typescript",
@@ -180,9 +315,34 @@
         "1.0.0": "provideIntentions"
       }
     },
+    "intentions:highlight": {
+      "versions": {
+        "1.0.0": "provideIntentionsHighlight"
+      }
+    },
     "code-actions": {
       "versions": {
         "0.1.0": "provideCodeActions"
+      }
+    },
+    "find-references": {
+      "versions": {
+        "0.1.0": "provideReferences"
+      }
+    },
+    "outline-view": {
+      "versions": {
+        "0.1.0": "provideOutlines"
+      }
+    },
+    "definitions": {
+      "versions": {
+        "0.1.0": "provideDefinitions"
+      }
+    },
+    "code-highlight": {
+      "versions": {
+        "0.1.0": "provideCodeHighlight"
       }
     }
   },
@@ -198,7 +358,7 @@
     "test": "npm run typecheck && npm run lint && npm run prettier-check",
     "typecheck": "tsc --noEmit -p ./lib && tsc --noEmit -p ./scripts && tsc --noEmit -p ./spec"
   },
-  "version": "12.6.3",
+  "version": "12.7.3",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -234,13 +394,8 @@
       },
       {
         "name": "compare-versions",
-        "version": "3.3.1",
+        "version": "3.4.0",
         "path": "node_modules/compare-versions/index.js"
-      },
-      {
-        "name": "escape-html",
-        "version": "1.0.3",
-        "path": "node_modules/escape-html/index.js"
       },
       {
         "name": "etch",
@@ -259,7 +414,7 @@
       },
       {
         "name": "lodash",
-        "version": "4.17.10",
+        "version": "4.17.11",
         "path": "node_modules/lodash/lodash.js"
       },
       {
@@ -269,7 +424,7 @@
       },
       {
         "name": "resolve",
-        "version": "1.8.1",
+        "version": "1.9.0",
         "path": "node_modules/resolve/index.js"
       },
       {
@@ -289,7 +444,7 @@
       },
       {
         "name": "semver",
-        "version": "5.5.1",
+        "version": "5.6.0",
         "path": "node_modules/semver/semver.js"
       },
       {
@@ -319,7 +474,7 @@
       },
       {
         "name": "typescript",
-        "version": "2.9.2",
+        "version": "3.2.2",
         "path": "node_modules/typescript/lib/typescript.js"
       },
       {
@@ -344,7 +499,6 @@
         "node_modules/byline/package.json",
         "node_modules/compare-versions/bower.json",
         "node_modules/compare-versions/package.json",
-        "node_modules/escape-html/package.json",
         "node_modules/etch/package.json",
         "node_modules/fuzzaldrin/package.json",
         "node_modules/is-utf8/package.json",
@@ -364,6 +518,7 @@
         "node_modules/tslib/package.json",
         "node_modules/typescript/lib/cs/diagnosticMessages.generated.json",
         "node_modules/typescript/lib/de/diagnosticMessages.generated.json",
+        "node_modules/typescript/lib/diagnosticMessages.generated.json",
         "node_modules/typescript/lib/es/diagnosticMessages.generated.json",
         "node_modules/typescript/lib/fr/diagnosticMessages.generated.json",
         "node_modules/typescript/lib/it/diagnosticMessages.generated.json",
@@ -414,7 +569,6 @@
         "node_modules/atom-select-list/src/select-list-view.js",
         "node_modules/byline/lib/byline.js",
         "node_modules/compare-versions/index.js",
-        "node_modules/escape-html/index.js",
         "node_modules/etch/dist/component-helpers.js",
         "node_modules/etch/dist/default-scheduler.js",
         "node_modules/etch/dist/dom.js",
@@ -1498,6 +1652,7 @@
         "node_modules/resolve/lib/caller.js",
         "node_modules/resolve/lib/core.js",
         "node_modules/resolve/lib/node-modules-paths.js",
+        "node_modules/resolve/lib/normalize-options.js",
         "node_modules/resolve/lib/sync.js",
         "node_modules/sb-callsite/lib/main.js",
         "node_modules/sb-fs/lib/index.js",
@@ -1530,11 +1685,17 @@
           "dist/main/atom/codefix",
           "dist/main/atom/commands",
           "dist/main/atom/components",
+          "dist/main/atom/components/statusPanel",
+          "dist/main/atom/occurrence",
+          "dist/main/atom/sigHelp",
+          "dist/main/atom/tooltips",
           "dist/main/atom/utils",
           "dist/main/atom/views",
           "dist/main/atom/views/outline",
           "dist/main/atom/views/symbols",
+          "dist/main/atom-ide",
           "dist/main",
+          "dist",
           "lib",
           "",
           "scripts",
@@ -1543,16 +1704,15 @@
         "dependencies": {
           "atom-highlight": "^0.4.1",
           "atom-package-deps": "^4.6.2",
-          "atom-select-list": "^0.7.1",
+          "atom-select-list": "^0.7.2",
           "byline": "^5.0.0",
-          "escape-html": "^1.0.3",
           "etch": "^0.14.0",
           "fuzzaldrin": "^2.1.0",
-          "lodash": "^4.17.10",
+          "lodash": "^4.17.11",
           "resolve": "^1.8.1",
           "tsconfig": "^7.0.0",
           "tslib": "^1.9.3",
-          "typescript": "~2.9.2"
+          "typescript": "^3.1.6"
         }
       },
       {
@@ -1622,6 +1782,10 @@
           "node_modules/resolve/test/resolver/dot_main",
           "node_modules/resolve/test/resolver/dot_slash_main",
           "node_modules/resolve/test/resolver/incorrect_main",
+          "node_modules/resolve/test/resolver/invalid_main",
+          "node_modules/resolve/test/resolver/multirepo",
+          "node_modules/resolve/test/resolver/multirepo/packages/package-a",
+          "node_modules/resolve/test/resolver/multirepo/packages/package-b",
           "node_modules/resolve/test/resolver/other_path/lib",
           "node_modules/resolve/test/resolver/other_path",
           "node_modules/resolve/test/resolver/quux/foo",
@@ -1630,7 +1794,7 @@
           "node_modules/resolve/test/resolver/without_basedir"
         ],
         "dependencies": {
-          "path-parse": "^1.0.5"
+          "path-parse": "^1.0.6"
         }
       },
       {

@@ -1,5 +1,38 @@
 # Release Notes
 
+## 2.3.1 (2018-12-12)
+
+* Use stable PlatformIO Core by default
+* Updated minimal dependency of PlatformIO Core to >=3.6.3
+
+## 2.3.0 (2018-11-30)
+
+* PlatformIO Core Installer:
+    * Drop SockJS, switch to native WebSockets
+    * Catch errors when upgrading PIP (issue [#436](https://github.com/platformio/platformio-vscode-ide/issues/436))
+    * Check for official Python installation on Windows (resolves issue with a static "sys.prefix" and custom Python builds) (issue [#154](https://github.com/platformio/platformio-vscode-ide/issues/154))
+* Updated minimal dependency of PlatformIO Core to >=3.6.2
+
+## 2.2.6 (2018-11-23)
+
+* Use actual Python path when creating a virtual environment
+* Shutdown all PIO Home servers when can't start a new one
+* Better explanation about PIP issue on Windows
+
+## 2.2.5 (2018-11-17)
+
+* Added support for upcoming native WebSockets for PIO Home
+* Updated PlatformIO Core installer's `virtualenv` to 16.1.0
+
+## 2.2.4 (2018-10-29)
+
+* Removed "Upload and Monitor" project task (fixed "Inappropriate ioctl for device (error 25)")
+  If you need this task, please switch to [PlatformIO IDE for VSCode](https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide)
+
+## 2.2.3 (2018-10-26)
+
+* Handle "Error: Could not create PIO Core Virtual Environment" and propose user to file an issue
+
 ## 2.2.2 (2018-09-08)
 
 * Improved performance of Project IntelliSense Indexer

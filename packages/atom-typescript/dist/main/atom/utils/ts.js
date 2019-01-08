@@ -27,35 +27,47 @@ function rangeToLocationRange(range) {
     };
 }
 exports.rangeToLocationRange = rangeToLocationRange;
-// Compare loc2 with loc1. The result is -1 if loc1 is smaller and 1 if it's larger.
-function compareLocation(loc1, loc2) {
-    if (loc1.line < loc2.line) {
-        return -1;
-    }
-    else if (loc1.line > loc2.line) {
-        return 1;
-    }
-    else {
-        if (loc1.offset < loc2.offset) {
-            return -1;
-        }
-        else if (loc1.offset > loc2.offset) {
-            return 1;
-        }
-        else {
-            return 0;
-        }
-    }
-}
-exports.compareLocation = compareLocation;
-function isLocationInRange(loc, range) {
-    return compareLocation(range.start, loc) !== 1 && compareLocation(range.end, loc) !== -1;
-}
-exports.isLocationInRange = isLocationInRange;
-async function getProjectCodeSettings(configFile) {
-    const { config } = await tsconfig.load(configFile);
+async function getProjectConfig(configFile) {
+    const config = await loadConfig(configFile);
     const options = config.formatCodeOptions;
-    return Object.assign({ indentSize: atom.config.get("editor.tabLength"), tabSize: atom.config.get("editor.tabLength") }, options);
+    return {
+        formatCodeOptions: Object.assign({ indentSize: atom.config.get("editor.tabLength"), tabSize: atom.config.get("editor.tabLength") }, options),
+        compileOnSave: !!config.compileOnSave,
+    };
 }
-exports.getProjectCodeSettings = getProjectCodeSettings;
+exports.getProjectConfig = getProjectConfig;
+async function loadConfig(configFile) {
+    try {
+        const { config } = await tsconfig.load(configFile);
+        return config;
+    }
+    catch (e) {
+        atom.notifications.addWarning(`Failed to parse ${atom.project.relativize(configFile)}`, {
+            detail: `The error was: ${e.message}`,
+            dismissable: true,
+        });
+        return {};
+    }
+}
+function signatureHelpItemToSignature(i) {
+    return {
+        label: partsToStr(i.prefixDisplayParts) +
+            i.parameters.map(x => partsToStr(x.displayParts)).join(partsToStr(i.separatorDisplayParts)) +
+            partsToStr(i.suffixDisplayParts),
+        documentation: partsToStr(i.documentation),
+        parameters: i.parameters.map(signatureHelpParameterToSignatureParameter),
+    };
+}
+exports.signatureHelpItemToSignature = signatureHelpItemToSignature;
+function signatureHelpParameterToSignatureParameter(p) {
+    return {
+        label: partsToStr(p.displayParts),
+        documentation: partsToStr(p.documentation),
+    };
+}
+exports.signatureHelpParameterToSignatureParameter = signatureHelpParameterToSignatureParameter;
+function partsToStr(x) {
+    return x.map(i => i.text).join("");
+}
+exports.partsToStr = partsToStr;
 //# sourceMappingURL=ts.js.map

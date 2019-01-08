@@ -1,17 +1,18 @@
+import {TextEditor} from "atom"
+import {handlePromise} from "../../../../utils"
+import {Deps} from "./deps"
 import {toggle as toggleFileView} from "./fileSymbolsView"
 import {toggle as toggleProjectView} from "./projectSymbolsView"
-import {TextEditor} from "atom"
-import {Deps} from "./deps"
 
 export class SymbolsViewController {
   constructor(private deps: Deps) {}
 
   public toggleFileView(editor: TextEditor) {
-    toggleFileView(editor, this.deps)
+    handlePromise(toggleFileView(editor, this.deps))
   }
 
   public toggleProjectView(editor: TextEditor) {
-    toggleProjectView(editor, this.deps)
+    handlePromise(toggleProjectView(editor, this.deps))
   }
 
   public dispose() {

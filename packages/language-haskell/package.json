@@ -1,25 +1,25 @@
 {
-  "_from": "file:/tmp/d-118526-28202-1dksrmk.dp64/package.tgz",
-  "_id": "language-haskell@1.17.8",
+  "_from": "https://www.atom.io/api/packages/language-haskell/versions/1.18.0/tarball",
+  "_id": "language-haskell@1.18.0",
   "_inBundle": false,
-  "_integrity": "sha512-wElpsf+9xcnnxdtE3KzfZsGNi68paHhkVcu4C342Iaa0Cv2zZiGOD4mHrx36liiLekfoN1/orNc9EGIBZ01BEw==",
+  "_integrity": "sha512-1ejQcXSfBKIrT95e9qgYqEerEnZcNai1XCzzgD2wN0TrXv8yRNGYEzwTvcR5jr57GZYFtnezGgk7SsciOATwGg==",
   "_location": "/language-haskell",
   "_phantomChildren": {},
   "_requested": {
-    "type": "file",
-    "where": "/tmp/apm-install-dir-118526-28202-1v5glbg.5c5y",
-    "raw": "/tmp/d-118526-28202-1dksrmk.dp64/package.tgz",
-    "rawSpec": "/tmp/d-118526-28202-1dksrmk.dp64/package.tgz",
-    "saveSpec": "file:/tmp/d-118526-28202-1dksrmk.dp64/package.tgz",
-    "fetchSpec": "/tmp/d-118526-28202-1dksrmk.dp64/package.tgz"
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/language-haskell/versions/1.18.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/language-haskell/versions/1.18.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/language-haskell/versions/1.18.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/language-haskell/versions/1.18.0/tarball"
   },
   "_requiredBy": [
-    "#USER"
+    "#USER",
+    "/"
   ],
-  "_resolved": "/tmp/d-118526-28202-1dksrmk.dp64/package.tgz",
-  "_shasum": "d7f79ae5f17c522930cdc7e1c779c393e4386a48",
-  "_spec": "/tmp/d-118526-28202-1dksrmk.dp64/package.tgz",
-  "_where": "/tmp/apm-install-dir-118526-28202-1v5glbg.5c5y",
+  "_resolved": "https://www.atom.io/api/packages/language-haskell/versions/1.18.0/tarball",
+  "_shasum": "08acc2b260a758ae241c2a55c2b58231b85bd6c5",
+  "_spec": "https://www.atom.io/api/packages/language-haskell/versions/1.18.0/tarball",
+  "_where": "/tmp/apm-install-dir-11907-20271-264dvf.uq42g",
   "bugs": {
     "url": "https://github.com/atom-haskell/language-haskell/issues"
   },
@@ -43,13 +43,14 @@
     "type": "git",
     "url": "git+https://github.com/atom-haskell/language-haskell.git"
   },
-  "version": "1.17.8",
+  "version": "1.18.0",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [],
     "extensions": {
       ".json": [
         "coffeelint.json",
+        "package-lock.json",
         "package.json"
       ],
       ".coffee": [

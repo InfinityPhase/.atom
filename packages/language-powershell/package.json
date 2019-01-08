@@ -1,25 +1,25 @@
 {
-  "_from": "file:/tmp/d-118417-12846-kbu5ih.1kef9/package.tgz",
-  "_id": "language-powershell@4.0.1",
+  "_from": "https://www.atom.io/api/packages/language-powershell/versions/5.0.0/tarball",
+  "_id": "language-powershell@5.0.0",
   "_inBundle": false,
-  "_integrity": "sha512-GENOzLIFiuhOl69zdushZsUHYqRWa3jlo8HUIPAvqmbuIAzTRnzZMEizxZqgCyFFLH6nfJDxmhPbq+MS0imyEA==",
+  "_integrity": "sha512-Ik3yTXE1X/eNtYqIGCBDRz9Z5fMTPLM8JqnPER/Me6Wk8LKLwpX4ODQ7Tuz7lhPZkernRVvYIuq8dzoNHlM8kA==",
   "_location": "/language-powershell",
   "_phantomChildren": {},
   "_requested": {
-    "type": "file",
-    "where": "/tmp/apm-install-dir-118417-12846-1ppdwpn.m0r7l",
-    "raw": "/tmp/d-118417-12846-kbu5ih.1kef9/package.tgz",
-    "rawSpec": "/tmp/d-118417-12846-kbu5ih.1kef9/package.tgz",
-    "saveSpec": "file:/tmp/d-118417-12846-kbu5ih.1kef9/package.tgz",
-    "fetchSpec": "/tmp/d-118417-12846-kbu5ih.1kef9/package.tgz"
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/language-powershell/versions/5.0.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/language-powershell/versions/5.0.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/language-powershell/versions/5.0.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/language-powershell/versions/5.0.0/tarball"
   },
   "_requiredBy": [
-    "#USER"
+    "#USER",
+    "/"
   ],
-  "_resolved": "/tmp/d-118417-12846-kbu5ih.1kef9/package.tgz",
-  "_shasum": "a96828ba11567fd88d2cb8871718d4d78947b104",
-  "_spec": "/tmp/d-118417-12846-kbu5ih.1kef9/package.tgz",
-  "_where": "/tmp/apm-install-dir-118417-12846-1ppdwpn.m0r7l",
+  "_resolved": "https://www.atom.io/api/packages/language-powershell/versions/5.0.0/tarball",
+  "_shasum": "cc8f5bc0d9ba6cad1b257dbe0c13d80f4875cefd",
+  "_spec": "https://www.atom.io/api/packages/language-powershell/versions/5.0.0/tarball",
+  "_where": "/tmp/apm-install-dir-11907-20271-1uu6nx8.gi91",
   "bugs": {
     "url": "https://github.com/jugglingnutcase/language-powershell/issues"
   },
@@ -28,8 +28,8 @@
   "deprecated": false,
   "description": "PowerShell language support for Atom",
   "devDependencies": {
-    "cson": "^1.6.2",
-    "plist": "^1.1.0"
+    "cson": "3.0.2",
+    "plist": "2.0.1"
   },
   "engines": {
     "atom": ">0.50.0"
@@ -50,12 +50,13 @@
   "scripts": {
     "convert": "node scripts/convert-grammar.js"
   },
-  "version": "4.0.1",
+  "version": "5.0.0",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [],
     "extensions": {
       ".json": [
+        "package-lock.json",
         "package.json"
       ]
     },

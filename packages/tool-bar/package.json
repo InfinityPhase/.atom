@@ -1,25 +1,25 @@
 {
-  "_from": "https://www.atom.io/api/packages/tool-bar/versions/1.1.10/tarball",
-  "_id": "tool-bar@1.1.10",
+  "_from": "https://www.atom.io/api/packages/tool-bar/versions/1.1.11/tarball",
+  "_id": "tool-bar@1.1.11",
   "_inBundle": false,
-  "_integrity": "sha512-D7RRm80PN4ahLYGdS5g/W7v4do3G29pm34M5LduV7uE7kGGWdLqyX10il5+Tq0wvSJlBbse83Sg67+Qs4n35PQ==",
+  "_integrity": "sha512-2I8v1qujehuUdGgjwwCyu0b4grZal3dh5Xtxzi2TftCL/vls5CiRosYRENv2VctNW17BDY6ndHIT+oKDarCQrw==",
   "_location": "/tool-bar",
   "_phantomChildren": {},
   "_requested": {
     "type": "remote",
-    "raw": "https://www.atom.io/api/packages/tool-bar/versions/1.1.10/tarball",
-    "rawSpec": "https://www.atom.io/api/packages/tool-bar/versions/1.1.10/tarball",
-    "saveSpec": "https://www.atom.io/api/packages/tool-bar/versions/1.1.10/tarball",
-    "fetchSpec": "https://www.atom.io/api/packages/tool-bar/versions/1.1.10/tarball"
+    "raw": "https://www.atom.io/api/packages/tool-bar/versions/1.1.11/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/tool-bar/versions/1.1.11/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/tool-bar/versions/1.1.11/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/tool-bar/versions/1.1.11/tarball"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://www.atom.io/api/packages/tool-bar/versions/1.1.10/tarball",
-  "_shasum": "4d546d89f254d588b45787d1e539549bf2408c1b",
-  "_spec": "https://www.atom.io/api/packages/tool-bar/versions/1.1.10/tarball",
-  "_where": "/tmp/apm-install-dir-118814-32557-jc1l7f.h466a",
+  "_resolved": "https://www.atom.io/api/packages/tool-bar/versions/1.1.11/tarball",
+  "_shasum": "37af44882ae8a79da725fdf610de2fbaed6079b0",
+  "_spec": "https://www.atom.io/api/packages/tool-bar/versions/1.1.11/tarball",
+  "_where": "/tmp/apm-install-dir-11907-20271-rkiyu9.63wg",
   "bugs": {
     "url": "https://github.com/suda/toolbar/issues"
   },
@@ -62,7 +62,7 @@
   "scripts": {
     "lint": "eslint --format tap . && remark ."
   },
-  "version": "1.1.10",
+  "version": "1.1.11",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [],

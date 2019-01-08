@@ -1,6 +1,6 @@
-import {NavigationTreeViewModel} from "./semanticViewModel"
-import {NavigationTree} from "typescript/lib/protocol"
 import {isEqual} from "lodash"
+import {NavigationTree} from "typescript/lib/protocol"
+import {NavigationTreeViewModel} from "./semanticViewModel"
 
 /**
  * HELPER find the node that is "furthest down" the
@@ -60,7 +60,6 @@ export function findNodeAt(
  * @return the start line for the NavTree node, or 0, if none could be determined
  */
 export function getNodeStartLine(node: NavigationTree): number {
-  // console.log('getNodeStartLine.node -> ', node)
   return node.spans.length > 0 ? node.spans[0].start.line - 1 : 0
 }
 
@@ -70,7 +69,6 @@ export function getNodeStartLine(node: NavigationTree): number {
  * @return the start column for the NavTree node, or 0, if none could be determined
  */
 export function getNodeStartOffset(node: NavigationTree): number {
-  // console.log('getNodeStartLine.node -> ', node)
   return node.spans.length > 0 ? node.spans[0].start.offset - 1 : 0
 }
 

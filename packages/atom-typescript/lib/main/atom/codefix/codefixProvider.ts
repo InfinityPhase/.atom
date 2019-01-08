@@ -1,12 +1,11 @@
 import * as Atom from "atom"
-import {ClientResolver} from "../../../client/clientResolver"
+import {ClientResolver, TSClient} from "../../../client"
 import {ErrorPusher} from "../../errorPusher"
-import {pointToLocation} from "../utils"
-import {TypescriptServiceClient} from "../../../client/client"
 import {ApplyEdits} from "../../pluginManager"
+import {spanToRange} from "../utils"
 
 export class CodefixProvider {
-  private supportedFixes: WeakMap<TypescriptServiceClient, Set<number>> = new WeakMap()
+  private supportedFixes: WeakMap<TSClient, Set<number>> = new WeakMap()
 
   constructor(
     private clientResolver: ClientResolver,
@@ -14,9 +13,23 @@ export class CodefixProvider {
     private applyEdits: ApplyEdits,
   ) {}
 
+  public async getFixableRanges(textEditor: Atom.TextEditor, range: Atom.Range) {
+    const filePath = textEditor.getPath()
+    if (filePath === undefined) return []
+    const errors = this.errorPusher.getErrorsInRange(filePath, range)
+    const client = await this.clientResolver.get(filePath)
+    const supportedCodes = await this.getSupportedFixes(client)
+
+    const ranges = Array.from(errors)
+      .filter(error => error.code !== undefined && supportedCodes.has(error.code))
+      .map(error => spanToRange(error))
+
+    return ranges
+  }
+
   public async runCodeFix(
     textEditor: Atom.TextEditor,
-    bufferPosition: Atom.PointLike,
+    bufferPosition: Atom.Point,
   ): Promise<protocol.CodeAction[]> {
     const filePath = textEditor.getPath()
 
@@ -25,8 +38,7 @@ export class CodefixProvider {
     const client = await this.clientResolver.get(filePath)
     const supportedCodes = await this.getSupportedFixes(client)
 
-    const requests = this.errorPusher
-      .getErrorsAt(filePath, pointToLocation(bufferPosition))
+    const requests = Array.from(this.errorPusher.getErrorsAt(filePath, bufferPosition))
       .filter(error => error.code !== undefined && supportedCodes.has(error.code))
       .map(error =>
         client.execute("getCodeFixes", {
@@ -61,13 +73,13 @@ export class CodefixProvider {
     // NOOP
   }
 
-  private async getSupportedFixes(client: TypescriptServiceClient) {
+  private async getSupportedFixes(client: TSClient) {
     let codes = this.supportedFixes.get(client)
     if (codes) {
       return codes
     }
 
-    const result = await client.execute("getSupportedCodeFixes", undefined)
+    const result = await client.execute("getSupportedCodeFixes")
 
     if (!result.body) {
       throw new Error("No code fixes are supported")

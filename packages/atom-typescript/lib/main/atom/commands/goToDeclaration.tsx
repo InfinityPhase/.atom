@@ -1,10 +1,9 @@
-import {addCommand} from "./registry"
-import {getFilePathPosition} from "../utils"
-import {selectListView} from "../views/simpleSelectionView"
-import * as etch from "etch"
-import {HighlightComponent} from "../views/highlightComponent"
 import {TextEditor} from "atom"
-import {EditorPositionHistoryManager} from "../editorPositionHistoryManager"
+import * as etch from "etch"
+import {getFilePathPosition} from "../utils"
+import {HighlightComponent} from "../views/highlightComponent"
+import {selectListView} from "../views/simpleSelectionView"
+import {addCommand, Dependencies} from "./registry"
 
 addCommand("atom-text-editor", "typescript:go-to-declaration", deps => ({
   description: "Go to declaration of symbol under text cursor",
@@ -14,14 +13,14 @@ addCommand("atom-text-editor", "typescript:go-to-declaration", deps => ({
 
     const client = await deps.getClient(location.file)
     const result = await client.execute("definition", location)
-    handleDefinitionResult(result, editor, deps.getEditorPositionHistoryManager())
+    await handleDefinitionResult(result, editor, deps.histGoForward)
   },
 }))
 
 export async function handleDefinitionResult(
   result: protocol.DefinitionResponse,
   editor: TextEditor,
-  hist: EditorPositionHistoryManager,
+  histGoForward: Dependencies["histGoForward"],
 ): Promise<void> {
   if (!result.body) {
     return
@@ -38,8 +37,8 @@ export async function handleDefinitionResult(
       },
       itemFilterKey: "file",
     })
-    if (res) hist.goForward(editor, res)
+    if (res) await histGoForward(editor, res)
   } else if (result.body.length > 0) {
-    hist.goForward(editor, result.body[0])
+    await histGoForward(editor, result.body[0])
   }
 }
