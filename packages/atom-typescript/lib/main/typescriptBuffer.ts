@@ -1,5 +1,3 @@
-// A class to keep all changes to the buffer in sync with tsserver. This is mainly used with
-// the editor panes, but is also useful for editor-less buffer changes (renameRefactor).
 import * as Atom from "atom"
 import {flatten} from "lodash"
 import {GetClientFunction, TSClient} from "../client"
@@ -25,15 +23,8 @@ export class TypescriptBuffer {
   }
   private static bufferMap = new WeakMap<Atom.TextBuffer, TypescriptBuffer>()
 
-  private events = new Atom.Emitter<{
-    opened: void
-    updated: void
-  }>()
+  private events = new Atom.Emitter<{opened: void}>()
 
-  private lastChangedAt = Date.now()
-  private lastUpdatedAt = Date.now()
-
-  // Promise that resolves to the correct client for this filePath
   private state?: {
     client: TSClient
     filePath: string
@@ -51,14 +42,19 @@ export class TypescriptBuffer {
 
   private constructor(public buffer: Atom.TextBuffer, private deps: Deps) {
     this.subscriptions.add(
-      buffer.onDidChange(this.onDidChange),
       buffer.onDidChangePath(this.onDidChangePath),
       buffer.onDidDestroy(this.dispose),
       buffer.onDidSave(() => {
         handlePromise(this.onDidSave())
       }),
-      buffer.onDidStopChanging(arg => {
-        handlePromise(this.onDidStopChanging(arg))
+      buffer.onDidStopChanging(({changes}) => {
+        handlePromise(this.getErr({allFiles: false}))
+        if (changes.length > 0) this.deps.reportBuildStatus(undefined)
+      }),
+      buffer.onDidChangeText(arg => {
+        // NOTE: we don't need to worry about interleaving here,
+        // because onDidChangeText pushes all changes at once
+        handlePromise(this.onDidChangeText(arg))
       }),
     )
 
@@ -67,19 +63,6 @@ export class TypescriptBuffer {
 
   public getPath() {
     return this.state && this.state.filePath
-  }
-
-  // If there are any pending changes, flush them out to the Typescript server
-  public async flush() {
-    if (this.lastChangedAt > this.lastUpdatedAt) {
-      await new Promise<void>(resolve => {
-        const disp = this.events.once("updated", () => {
-          disp.dispose()
-          resolve()
-        })
-        this.buffer.emitDidStopChangingEvent()
-      })
-    }
   }
 
   public getInfo() {
@@ -173,7 +156,7 @@ export class TypescriptBuffer {
 
   private async readConfigFile() {
     if (!this.state || !this.state.configFile) return
-    const options = await getProjectConfig(this.state.configFile.getPath())
+    const options = getProjectConfig(this.state.configFile.getPath())
     this.compileOnSave = options.compileOnSave
     await this.state.client.execute("configure", {
       file: this.state.filePath,
@@ -203,10 +186,6 @@ export class TypescriptBuffer {
     }
   }
 
-  private onDidChange = () => {
-    this.lastChangedAt = Date.now()
-  }
-
   private onDidChangePath = (newPath: string) => {
     handlePromise(
       this.close().then(() => {
@@ -216,16 +195,13 @@ export class TypescriptBuffer {
   }
 
   private onDidSave = async () => {
-    await this.flush()
     await this.getErr({allFiles: true})
     await this.doCompileOnSave()
   }
 
-  private onDidStopChanging = async ({changes}: {changes: ReadonlyArray<Atom.TextChange>}) => {
+  private onDidChangeText = async ({changes}: {changes: ReadonlyArray<Atom.TextChange>}) => {
     // If there are no actual changes, or the file isn't open, we have nothing to do
     if (changes.length === 0 || !this.state) return
-
-    this.deps.reportBuildStatus(undefined)
 
     const {client, filePath} = this.state
 
@@ -249,9 +225,5 @@ export class TypescriptBuffer {
         return acc
       }, []),
     )
-
-    this.lastUpdatedAt = Date.now()
-    this.events.emit("updated")
-    return this.getErr({allFiles: false})
   }
 }

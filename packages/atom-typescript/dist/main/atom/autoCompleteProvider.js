@@ -4,11 +4,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Atom = require("atom");
 const fuzzaldrin = require("fuzzaldrin");
 const utils_1 = require("./utils");
-const importPathScopes = ["meta.import", "meta.import-equals", "triple-slash-directive"];
 class AutocompleteProvider {
-    constructor(getClient, flushTypescriptBuffer) {
+    constructor(getClient) {
         this.getClient = getClient;
-        this.flushTypescriptBuffer = flushTypescriptBuffer;
         this.selector = utils_1.typeScriptScopes()
             .map(x => (x.includes(".") ? `.${x}` : x))
             .join(", ");
@@ -35,14 +33,6 @@ class AutocompleteProvider {
             !containsScope(opts.scopeDescriptor.getScopesArray(), "template.expression.")) {
             return [];
         }
-        // Don't show autocomplete if we're in a string and it's not an import path
-        if (containsScope(opts.scopeDescriptor.getScopesArray(), "string.quoted.")) {
-            if (!importPathScopes.some(scope => containsScope(opts.scopeDescriptor.getScopesArray(), scope))) {
-                return [];
-            }
-        }
-        // Flush any pending changes for this buffer to get up to date completions
-        await this.flushTypescriptBuffer(location.file);
         try {
             let suggestions = await this.getSuggestionsWithCache(prefix, location, opts.activatedManually);
             const alphaPrefix = prefix.replace(/\W/g, "");
@@ -94,8 +84,7 @@ class AutocompleteProvider {
             }
         }
         const client = await this.getClient(location.file);
-        const completions = await client.execute("completions", Object.assign({ prefix, includeExternalModuleExports: false, includeInsertTextCompletions: true }, location));
-        const suggestions = completions.body.map(completionEntryToSuggestion);
+        const suggestions = await getSuggestionsInternal(client, location, prefix);
         this.lastSuggestions = {
             client,
             location,
@@ -106,6 +95,18 @@ class AutocompleteProvider {
     }
 }
 exports.AutocompleteProvider = AutocompleteProvider;
+async function getSuggestionsInternal(client, location, prefix) {
+    if (parseInt(client.version.split(".")[0], 10) >= 3) {
+        // use completionInfo
+        const completions = await client.execute("completionInfo", Object.assign({ prefix, includeExternalModuleExports: false, includeInsertTextCompletions: true }, location));
+        return completions.body.entries.map(completionEntryToSuggestion);
+    }
+    else {
+        // use deprecated completions
+        const completions = await client.execute("completions", Object.assign({ prefix, includeExternalModuleExports: false, includeInsertTextCompletions: true }, location));
+        return completions.body.map(completionEntryToSuggestion);
+    }
+}
 // Decide what needs to be replaced in the editor buffer when inserting the completion
 function getReplacementPrefix(prefix, trimmed, replacement) {
     if (trimmed === "." || trimmed === "{" || prefix === " ") {

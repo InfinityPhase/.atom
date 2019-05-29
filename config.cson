@@ -52,22 +52,24 @@
       "linter-golinter"
       "intentions"
       "spell-check"
-      "ide-haskell"
-      "ide-java"
-      "linter-javac"
       "linter-gcc"
       "platformio-ide"
       "platformio-ide-terminal"
       "platformio-ide-debugger"
       "atom-bootstrap3"
       "atom-typescript"
-      "todo-show"
       "atom-jinja2"
-      "autoclose-html"
-      "autocomplete-java"
       "javascript-refactor"
       "linter-spell"
       "linter-spell-javascript"
+      "tool-bar"
+      "build"
+      "autocomplete-clang"
+      "autocomplete-haskell"
+      "todo-show"
+      "atom-beautify"
+      "pigments"
+      "minimap-pigments"
     ]
     ignoredNames: [
       ".git"
@@ -97,7 +99,6 @@
   "file-header":
     username: "infinity"
   "file-icons":
-    coloured: false
     strategies: {}
   "git-plus":
     general:
@@ -175,3 +176,6 @@
 ".plain.text":
   editor:
     softWrap: true
+".python.source":
+  editor:
+    showIndentGuide: true

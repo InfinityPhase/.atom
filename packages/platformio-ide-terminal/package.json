@@ -1,25 +1,25 @@
 {
-  "_from": "file:/tmp/d-118721-26583-kfktfs.xpw/package.tgz",
-  "_id": "platformio-ide-terminal@2.8.4",
+  "_from": "https://www.atom.io/api/packages/platformio-ide-terminal/versions/2.9.1/tarball",
+  "_id": "platformio-ide-terminal@2.9.1",
   "_inBundle": false,
-  "_integrity": "sha512-gqI06OFPP1NuNTRsV298MrhfsDVE1dFwzauyoqUydBGQ8kwt7cJQ4784I856aLdfUM6qExK3pjFe9qdXZebcHQ==",
+  "_integrity": "sha512-TKRRUytTqG2xcY9P/m88iEvrgWincWnVwZ8A9G3m5t/9vLl5DjbXBTLdvhfsg+GrUrDWYmU+MNbDljMo95U5vg==",
   "_location": "/platformio-ide-terminal",
   "_phantomChildren": {},
   "_requested": {
-    "type": "file",
-    "where": "/tmp/apm-install-dir-118721-26583-b0ztll.cfmr4",
-    "raw": "/tmp/d-118721-26583-kfktfs.xpw/package.tgz",
-    "rawSpec": "/tmp/d-118721-26583-kfktfs.xpw/package.tgz",
-    "saveSpec": "file:/tmp/d-118721-26583-kfktfs.xpw/package.tgz",
-    "fetchSpec": "/tmp/d-118721-26583-kfktfs.xpw/package.tgz"
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/platformio-ide-terminal/versions/2.9.1/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/platformio-ide-terminal/versions/2.9.1/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/platformio-ide-terminal/versions/2.9.1/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/platformio-ide-terminal/versions/2.9.1/tarball"
   },
   "_requiredBy": [
-    "#USER"
+    "#USER",
+    "/"
   ],
-  "_resolved": "/tmp/d-118721-26583-kfktfs.xpw/package.tgz",
-  "_shasum": "0c757212efe8fb0cf02bde9b96ccbc9348a4e3e2",
-  "_spec": "/tmp/d-118721-26583-kfktfs.xpw/package.tgz",
-  "_where": "/tmp/apm-install-dir-118721-26583-b0ztll.cfmr4",
+  "_resolved": "https://www.atom.io/api/packages/platformio-ide-terminal/versions/2.9.1/tarball",
+  "_shasum": "0da58d5ba8d9e606f0e96b705e73f0a45ef94c3a",
+  "_spec": "https://www.atom.io/api/packages/platformio-ide-terminal/versions/2.9.1/tarball",
+  "_where": "/tmp/apm-install-dir-11925-19313-1btxahs.qgqp",
   "activationHooks": [
     "core:loaded-shell-environment"
   ],
@@ -47,11 +47,15 @@
       "name": "Dmytro Kyrychuk",
       "email": "dmytro.kyrychuck@gmail.com",
       "url": "http://platformio.org"
+    },
+    {
+      "name": "The Community Contributors",
+      "url": "https://github.com/platformio/platformio-atom-ide-terminal/graphs/contributors"
     }
   ],
   "dependencies": {
     "atom-space-pen-views": "^2.2.0",
-    "pty.js": "https://github.com/platformio/pty.js/tarball/prebuilt",
+    "node-pty-prebuilt": "^0.7.6",
     "term.js": "https://github.com/jeremyramin/term.js/tarball/master",
     "underscore": "^1.8.3"
   },
@@ -96,14 +100,69 @@
     "type": "git",
     "url": "git+https://github.com/platformio/platformio-atom-ide-terminal.git"
   },
-  "version": "2.8.4",
+  "version": "2.9.1",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
       {
+        "name": "ansi-regex",
+        "version": "2.1.1",
+        "path": "node_modules/ansi-regex/index.js"
+      },
+      {
+        "name": "aproba",
+        "version": "1.2.0",
+        "path": "node_modules/aproba/index.js"
+      },
+      {
+        "name": "are-we-there-yet",
+        "version": "1.1.5",
+        "path": "node_modules/are-we-there-yet/index.js"
+      },
+      {
         "name": "atom-space-pen-views",
         "version": "2.2.0",
         "path": "node_modules/atom-space-pen-views/lib/main.js"
+      },
+      {
+        "name": "bl",
+        "version": "1.2.2",
+        "path": "node_modules/bl/bl.js"
+      },
+      {
+        "name": "buffer-alloc",
+        "version": "1.2.0",
+        "path": "node_modules/buffer-alloc/index.js"
+      },
+      {
+        "name": "buffer-alloc-unsafe",
+        "version": "1.1.0",
+        "path": "node_modules/buffer-alloc-unsafe/index.js"
+      },
+      {
+        "name": "buffer-fill",
+        "version": "1.0.0",
+        "path": "node_modules/buffer-fill/index.js"
+      },
+      {
+        "name": "chownr",
+        "version": "1.1.1",
+        "path": "node_modules/chownr/chownr.js"
+      },
+      {
+        "name": "code-point-at",
+        "version": "1.1.0",
+        "path": "node_modules/code-point-at/index.js"
+      },
+      {
+        "name": "console-control-strings",
+        "version": "1.1.0",
+        "path": "node_modules/console-control-strings/index.js"
+      },
+      {
+        "name": "core-util-is",
+        "version": "1.0.2",
+        "path": "node_modules/core-util-is/lib/util.js"
       },
       {
         "name": "d",
@@ -111,13 +170,38 @@
         "path": "node_modules/d/index.js"
       },
       {
+        "name": "decompress-response",
+        "version": "3.3.0",
+        "path": "node_modules/decompress-response/index.js"
+      },
+      {
+        "name": "deep-extend",
+        "version": "0.6.0",
+        "path": "node_modules/deep-extend/lib/deep-extend.js"
+      },
+      {
+        "name": "delegates",
+        "version": "1.0.0",
+        "path": "node_modules/delegates/index.js"
+      },
+      {
+        "name": "detect-libc",
+        "version": "1.0.3",
+        "path": "node_modules/detect-libc/lib/detect-libc.js"
+      },
+      {
         "name": "emissary",
         "version": "1.3.3",
         "path": "node_modules/emissary/lib/emissary.js"
       },
       {
+        "name": "end-of-stream",
+        "version": "1.4.1",
+        "path": "node_modules/end-of-stream/index.js"
+      },
+      {
         "name": "es5-ext",
-        "version": "0.10.46",
+        "version": "0.10.48",
         "path": "node_modules/es5-ext/index.js"
       },
       {
@@ -151,9 +235,14 @@
         "path": "node_modules/es6-weak-map/index.js"
       },
       {
-        "name": "extend",
-        "version": "1.2.1",
-        "path": "node_modules/extend/index.js"
+        "name": "expand-template",
+        "version": "2.0.3",
+        "path": "node_modules/expand-template/index.js"
+      },
+      {
+        "name": "fs-constants",
+        "version": "1.0.0",
+        "path": "node_modules/fs-constants/index.js"
       },
       {
         "name": "fuzzaldrin",
@@ -161,9 +250,44 @@
         "path": "node_modules/fuzzaldrin/lib/fuzzaldrin.js"
       },
       {
+        "name": "gauge",
+        "version": "2.7.4",
+        "path": "node_modules/gauge/index.js"
+      },
+      {
+        "name": "github-from-package",
+        "version": "0.0.0",
+        "path": "node_modules/github-from-package/index.js"
+      },
+      {
         "name": "grim",
         "version": "1.5.0",
         "path": "node_modules/grim/lib/grim.js"
+      },
+      {
+        "name": "has-unicode",
+        "version": "2.0.1",
+        "path": "node_modules/has-unicode/index.js"
+      },
+      {
+        "name": "inherits",
+        "version": "2.0.3",
+        "path": "node_modules/inherits/inherits.js"
+      },
+      {
+        "name": "ini",
+        "version": "1.3.5",
+        "path": "node_modules/ini/ini.js"
+      },
+      {
+        "name": "is-fullwidth-code-point",
+        "version": "1.0.0",
+        "path": "node_modules/is-fullwidth-code-point/index.js"
+      },
+      {
+        "name": "isarray",
+        "version": "1.0.0",
+        "path": "node_modules/isarray/index.js"
       },
       {
         "name": "jquery",
@@ -171,14 +295,39 @@
         "path": "node_modules/jquery/dist/jquery.js"
       },
       {
+        "name": "mimic-response",
+        "version": "1.0.1",
+        "path": "node_modules/mimic-response/index.js"
+      },
+      {
+        "name": "minimist",
+        "version": "1.2.0",
+        "path": "node_modules/minimist/index.js"
+      },
+      {
         "name": "mixto",
         "version": "1.0.0",
         "path": "node_modules/mixto/lib/mixin.js"
       },
       {
+        "name": "mkdirp",
+        "version": "0.5.1",
+        "path": "node_modules/mkdirp/index.js"
+      },
+      {
+        "name": "minimist",
+        "version": "0.0.8",
+        "path": "node_modules/mkdirp/node_modules/minimist/index.js"
+      },
+      {
         "name": "nan",
-        "version": "2.2.1",
+        "version": "2.10.0",
         "path": "node_modules/nan/include_dirs.js"
+      },
+      {
+        "name": "napi-build-utils",
+        "version": "1.0.1",
+        "path": "node_modules/napi-build-utils/index.js"
       },
       {
         "name": "next-tick",
@@ -186,14 +335,104 @@
         "path": "node_modules/next-tick/index.js"
       },
       {
+        "name": "node-abi",
+        "version": "2.7.1",
+        "path": "node_modules/node-abi/index.js"
+      },
+      {
+        "name": "node-pty-prebuilt",
+        "version": "0.7.6",
+        "path": "node_modules/node-pty-prebuilt/lib/index.js"
+      },
+      {
+        "name": "noop-logger",
+        "version": "0.1.1",
+        "path": "node_modules/noop-logger/lib/index.js"
+      },
+      {
+        "name": "npmlog",
+        "version": "4.1.2",
+        "path": "node_modules/npmlog/log.js"
+      },
+      {
+        "name": "number-is-nan",
+        "version": "1.0.1",
+        "path": "node_modules/number-is-nan/index.js"
+      },
+      {
+        "name": "object-assign",
+        "version": "4.1.1",
+        "path": "node_modules/object-assign/index.js"
+      },
+      {
+        "name": "once",
+        "version": "1.4.0",
+        "path": "node_modules/once/once.js"
+      },
+      {
+        "name": "os-homedir",
+        "version": "1.0.2",
+        "path": "node_modules/os-homedir/index.js"
+      },
+      {
+        "name": "prebuild-install",
+        "version": "5.2.4",
+        "path": "node_modules/prebuild-install/index.js"
+      },
+      {
+        "name": "process-nextick-args",
+        "version": "2.0.0",
+        "path": "node_modules/process-nextick-args/index.js"
+      },
+      {
         "name": "property-accessors",
         "version": "1.1.3",
         "path": "node_modules/property-accessors/lib/property-accessors.js"
       },
       {
-        "name": "pty.js",
-        "version": "0.3.0",
-        "path": "node_modules/pty.js/index.js"
+        "name": "pump",
+        "version": "2.0.1",
+        "path": "node_modules/pump/index.js"
+      },
+      {
+        "name": "rc",
+        "version": "1.2.8",
+        "path": "node_modules/rc/index.js"
+      },
+      {
+        "name": "readable-stream",
+        "version": "2.3.6",
+        "path": "node_modules/readable-stream/readable.js"
+      },
+      {
+        "name": "safe-buffer",
+        "version": "5.1.2",
+        "path": "node_modules/safe-buffer/index.js"
+      },
+      {
+        "name": "semver",
+        "version": "5.6.0",
+        "path": "node_modules/semver/semver.js"
+      },
+      {
+        "name": "set-blocking",
+        "version": "2.0.0",
+        "path": "node_modules/set-blocking/index.js"
+      },
+      {
+        "name": "signal-exit",
+        "version": "3.0.2",
+        "path": "node_modules/signal-exit/index.js"
+      },
+      {
+        "name": "simple-concat",
+        "version": "1.0.0",
+        "path": "node_modules/simple-concat/index.js"
+      },
+      {
+        "name": "simple-get",
+        "version": "2.8.1",
+        "path": "node_modules/simple-get/index.js"
       },
       {
         "name": "space-pen",
@@ -201,9 +440,54 @@
         "path": "node_modules/space-pen/lib/space-pen.js"
       },
       {
+        "name": "string_decoder",
+        "version": "1.1.1",
+        "path": "node_modules/string_decoder/lib/string_decoder.js"
+      },
+      {
+        "name": "string-width",
+        "version": "1.0.2",
+        "path": "node_modules/string-width/index.js"
+      },
+      {
+        "name": "strip-ansi",
+        "version": "3.0.1",
+        "path": "node_modules/strip-ansi/index.js"
+      },
+      {
+        "name": "strip-json-comments",
+        "version": "2.0.1",
+        "path": "node_modules/strip-json-comments/index.js"
+      },
+      {
+        "name": "tar-fs",
+        "version": "1.16.3",
+        "path": "node_modules/tar-fs/index.js"
+      },
+      {
+        "name": "pump",
+        "version": "1.0.3",
+        "path": "node_modules/tar-fs/node_modules/pump/index.js"
+      },
+      {
+        "name": "tar-stream",
+        "version": "1.6.2",
+        "path": "node_modules/tar-stream/index.js"
+      },
+      {
         "name": "term.js",
         "version": "0.0.7",
         "path": "node_modules/term.js/index.js"
+      },
+      {
+        "name": "to-buffer",
+        "version": "1.1.1",
+        "path": "node_modules/to-buffer/index.js"
+      },
+      {
+        "name": "tunnel-agent",
+        "version": "0.6.0",
+        "path": "node_modules/tunnel-agent/index.js"
       },
       {
         "name": "underscore",
@@ -219,6 +503,31 @@
         "name": "underscore",
         "version": "1.8.3",
         "path": "node_modules/underscore-plus/node_modules/underscore/underscore.js"
+      },
+      {
+        "name": "util-deprecate",
+        "version": "1.0.2",
+        "path": "node_modules/util-deprecate/node.js"
+      },
+      {
+        "name": "which-pm-runs",
+        "version": "1.0.0",
+        "path": "node_modules/which-pm-runs/index.js"
+      },
+      {
+        "name": "wide-align",
+        "version": "1.1.3",
+        "path": "node_modules/wide-align/align.js"
+      },
+      {
+        "name": "wrappy",
+        "version": "1.0.2",
+        "path": "node_modules/wrappy/wrappy.js"
+      },
+      {
+        "name": "xtend",
+        "version": "4.0.1",
+        "path": "node_modules/xtend/immutable.js"
       }
     ],
     "extensions": {
@@ -233,13 +542,35 @@
         "lib/view.coffee"
       ],
       ".js": [
+        "node_modules/ansi-regex/index.js",
+        "node_modules/aproba/index.js",
+        "node_modules/are-we-there-yet/index.js",
+        "node_modules/are-we-there-yet/tracker-base.js",
+        "node_modules/are-we-there-yet/tracker-group.js",
+        "node_modules/are-we-there-yet/tracker-stream.js",
+        "node_modules/are-we-there-yet/tracker.js",
         "node_modules/atom-space-pen-views/lib/main.js",
         "node_modules/atom-space-pen-views/lib/scroll-view.js",
         "node_modules/atom-space-pen-views/lib/select-list-view.js",
         "node_modules/atom-space-pen-views/lib/text-editor-view.js",
+        "node_modules/bl/bl.js",
+        "node_modules/buffer-alloc/index.js",
+        "node_modules/buffer-alloc-unsafe/index.js",
+        "node_modules/buffer-fill/index.js",
+        "node_modules/chownr/chownr.js",
+        "node_modules/code-point-at/index.js",
+        "node_modules/console-control-strings/index.js",
+        "node_modules/core-util-is/lib/util.js",
+        "node_modules/core-util-is/test.js",
         "node_modules/d/auto-bind.js",
         "node_modules/d/index.js",
         "node_modules/d/lazy.js",
+        "node_modules/decompress-response/index.js",
+        "node_modules/deep-extend/index.js",
+        "node_modules/deep-extend/lib/deep-extend.js",
+        "node_modules/delegates/index.js",
+        "node_modules/detect-libc/bin/detect-libc.js",
+        "node_modules/detect-libc/lib/detect-libc.js",
         "node_modules/emissary/lib/behavior.js",
         "node_modules/emissary/lib/emissary.js",
         "node_modules/emissary/lib/emitter.js",
@@ -247,6 +578,8 @@
         "node_modules/emissary/lib/signal.js",
         "node_modules/emissary/lib/subscriber.js",
         "node_modules/emissary/lib/subscription.js",
+        "node_modules/end-of-stream/index.js",
+        "node_modules/es5-ext/.prettierrc.js",
         "node_modules/es5-ext/array/#/@@iterator/implement.js",
         "node_modules/es5-ext/array/#/@@iterator/index.js",
         "node_modules/es5-ext/array/#/@@iterator/is-implemented.js",
@@ -535,6 +868,7 @@
         "node_modules/es5-ext/object/ensure-natural-number-value.js",
         "node_modules/es5-ext/object/ensure-natural-number.js",
         "node_modules/es5-ext/object/ensure-plain-function.js",
+        "node_modules/es5-ext/object/ensure-plain-object.js",
         "node_modules/es5-ext/object/ensure-promise.js",
         "node_modules/es5-ext/object/ensure-thenable.js",
         "node_modules/es5-ext/object/entries/implement.js",
@@ -597,6 +931,10 @@
         "node_modules/es5-ext/object/validate-stringifiable.js",
         "node_modules/es5-ext/optional-chaining.js",
         "node_modules/es5-ext/promise/#/as-callback.js",
+        "node_modules/es5-ext/promise/#/finally/implement.js",
+        "node_modules/es5-ext/promise/#/finally/index.js",
+        "node_modules/es5-ext/promise/#/finally/is-implemented.js",
+        "node_modules/es5-ext/promise/#/finally/shim.js",
         "node_modules/es5-ext/promise/#/index.js",
         "node_modules/es5-ext/promise/index.js",
         "node_modules/es5-ext/promise/lazy.js",
@@ -706,13 +1044,40 @@
         "node_modules/es6-weak-map/is-weak-map.js",
         "node_modules/es6-weak-map/polyfill.js",
         "node_modules/es6-weak-map/valid-weak-map.js",
-        "node_modules/extend/index.js",
+        "node_modules/expand-template/index.js",
+        "node_modules/expand-template/test.js",
+        "node_modules/fs-constants/browser.js",
+        "node_modules/fs-constants/index.js",
         "node_modules/fuzzaldrin/lib/filter.js",
         "node_modules/fuzzaldrin/lib/fuzzaldrin.js",
         "node_modules/fuzzaldrin/lib/matcher.js",
         "node_modules/fuzzaldrin/lib/scorer.js",
+        "node_modules/gauge/base-theme.js",
+        "node_modules/gauge/error.js",
+        "node_modules/gauge/has-color.js",
+        "node_modules/gauge/index.js",
+        "node_modules/gauge/plumbing.js",
+        "node_modules/gauge/process.js",
+        "node_modules/gauge/progress-bar.js",
+        "node_modules/gauge/render-template.js",
+        "node_modules/gauge/set-immediate.js",
+        "node_modules/gauge/set-interval.js",
+        "node_modules/gauge/spin.js",
+        "node_modules/gauge/template-item.js",
+        "node_modules/gauge/theme-set.js",
+        "node_modules/gauge/themes.js",
+        "node_modules/gauge/wide-truncate.js",
+        "node_modules/github-from-package/example/url.js",
+        "node_modules/github-from-package/index.js",
         "node_modules/grim/lib/deprecation.js",
         "node_modules/grim/lib/grim.js",
+        "node_modules/has-unicode/index.js",
+        "node_modules/inherits/inherits.js",
+        "node_modules/inherits/inherits_browser.js",
+        "node_modules/ini/ini.js",
+        "node_modules/is-fullwidth-code-point/index.js",
+        "node_modules/isarray/index.js",
+        "node_modules/isarray/test.js",
         "node_modules/jquery/dist/jquery.js",
         "node_modules/jquery/dist/jquery.min.js",
         "node_modules/jquery/src/ajax/jsonp.js",
@@ -798,32 +1163,136 @@
         "node_modules/jquery/src/var/support.js",
         "node_modules/jquery/src/var/toString.js",
         "node_modules/jquery/src/wrap.js",
+        "node_modules/mimic-response/index.js",
+        "node_modules/minimist/example/parse.js",
+        "node_modules/minimist/index.js",
         "node_modules/mixto/lib/mixin.js",
+        "node_modules/mkdirp/bin/cmd.js",
+        "node_modules/mkdirp/examples/pow.js",
+        "node_modules/mkdirp/index.js",
+        "node_modules/mkdirp/node_modules/minimist/example/parse.js",
+        "node_modules/mkdirp/node_modules/minimist/index.js",
         "node_modules/nan/include_dirs.js",
         "node_modules/nan/tools/1to2.js",
+        "node_modules/napi-build-utils/index.js",
         "node_modules/next-tick/index.js",
+        "node_modules/node-abi/index.js",
+        "node_modules/node-pty-prebuilt/lib/index.js",
+        "node_modules/node-pty-prebuilt/lib/interfaces.js",
+        "node_modules/node-pty-prebuilt/lib/terminal.js",
+        "node_modules/node-pty-prebuilt/lib/terminal.test.js",
+        "node_modules/node-pty-prebuilt/lib/types.js",
+        "node_modules/node-pty-prebuilt/lib/unixTerminal.js",
+        "node_modules/node-pty-prebuilt/lib/unixTerminal.test.js",
+        "node_modules/node-pty-prebuilt/lib/utils.js",
+        "node_modules/node-pty-prebuilt/lib/windowsPtyAgent.js",
+        "node_modules/node-pty-prebuilt/lib/windowsPtyAgent.test.js",
+        "node_modules/node-pty-prebuilt/lib/windowsTerminal.js",
+        "node_modules/node-pty-prebuilt/lib/windowsTerminal.test.js",
+        "node_modules/node-pty-prebuilt/scripts/install.js",
+        "node_modules/node-pty-prebuilt/scripts/post-install.js",
+        "node_modules/noop-logger/lib/index.js",
+        "node_modules/npmlog/log.js",
+        "node_modules/number-is-nan/index.js",
+        "node_modules/object-assign/index.js",
+        "node_modules/once/once.js",
+        "node_modules/os-homedir/index.js",
+        "node_modules/prebuild-install/asset.js",
+        "node_modules/prebuild-install/bin.js",
+        "node_modules/prebuild-install/download.js",
+        "node_modules/prebuild-install/error.js",
+        "node_modules/prebuild-install/index.js",
+        "node_modules/prebuild-install/log.js",
+        "node_modules/prebuild-install/proxy.js",
+        "node_modules/prebuild-install/rc.js",
+        "node_modules/prebuild-install/util.js",
+        "node_modules/process-nextick-args/index.js",
         "node_modules/property-accessors/lib/property-accessors.js",
-        "node_modules/pty.js/index.js",
-        "node_modules/pty.js/lib/pty.js",
-        "node_modules/pty.js/lib/pty_win.js",
-        "node_modules/pty.js/scripts/install.js",
-        "node_modules/pty.js/scripts/post-install.js",
-        "node_modules/pty.js/test-windows/argvToCommandLine.js",
+        "node_modules/pump/index.js",
+        "node_modules/pump/test-browser.js",
+        "node_modules/pump/test-node.js",
+        "node_modules/rc/browser.js",
+        "node_modules/rc/cli.js",
+        "node_modules/rc/index.js",
+        "node_modules/rc/lib/utils.js",
+        "node_modules/readable-stream/duplex-browser.js",
+        "node_modules/readable-stream/duplex.js",
+        "node_modules/readable-stream/lib/_stream_duplex.js",
+        "node_modules/readable-stream/lib/_stream_passthrough.js",
+        "node_modules/readable-stream/lib/_stream_readable.js",
+        "node_modules/readable-stream/lib/_stream_transform.js",
+        "node_modules/readable-stream/lib/_stream_writable.js",
+        "node_modules/readable-stream/lib/internal/streams/BufferList.js",
+        "node_modules/readable-stream/lib/internal/streams/destroy.js",
+        "node_modules/readable-stream/lib/internal/streams/stream-browser.js",
+        "node_modules/readable-stream/lib/internal/streams/stream.js",
+        "node_modules/readable-stream/passthrough.js",
+        "node_modules/readable-stream/readable-browser.js",
+        "node_modules/readable-stream/readable.js",
+        "node_modules/readable-stream/transform.js",
+        "node_modules/readable-stream/writable-browser.js",
+        "node_modules/readable-stream/writable.js",
+        "node_modules/safe-buffer/index.js",
+        "node_modules/semver/semver.js",
+        "node_modules/set-blocking/index.js",
+        "node_modules/signal-exit/index.js",
+        "node_modules/signal-exit/signals.js",
+        "node_modules/simple-concat/index.js",
+        "node_modules/simple-get/index.js",
         "node_modules/space-pen/lib/space-pen.js",
+        "node_modules/string-width/index.js",
+        "node_modules/string_decoder/lib/string_decoder.js",
+        "node_modules/strip-ansi/index.js",
+        "node_modules/strip-json-comments/index.js",
+        "node_modules/tar-fs/index.js",
+        "node_modules/tar-fs/node_modules/pump/index.js",
+        "node_modules/tar-fs/node_modules/pump/test-browser.js",
+        "node_modules/tar-fs/node_modules/pump/test.js",
+        "node_modules/tar-stream/extract.js",
+        "node_modules/tar-stream/headers.js",
+        "node_modules/tar-stream/index.js",
+        "node_modules/tar-stream/pack.js",
         "node_modules/term.js/example/index.js",
         "node_modules/term.js/index.js",
         "node_modules/term.js/lib/index.js",
         "node_modules/term.js/src/term.js",
+        "node_modules/to-buffer/index.js",
+        "node_modules/to-buffer/test.js",
+        "node_modules/tunnel-agent/index.js",
         "node_modules/underscore/underscore-min.js",
         "node_modules/underscore/underscore.js",
         "node_modules/underscore-plus/lib/underscore-plus.js",
         "node_modules/underscore-plus/node_modules/underscore/underscore-min.js",
-        "node_modules/underscore-plus/node_modules/underscore/underscore.js"
+        "node_modules/underscore-plus/node_modules/underscore/underscore.js",
+        "node_modules/util-deprecate/browser.js",
+        "node_modules/util-deprecate/node.js",
+        "node_modules/which-pm-runs/index.js",
+        "node_modules/wide-align/align.js",
+        "node_modules/wrappy/wrappy.js",
+        "node_modules/xtend/immutable.js",
+        "node_modules/xtend/mutable.js",
+        "node_modules/xtend/test.js"
       ],
       ".json": [
+        "node_modules/ansi-regex/package.json",
+        "node_modules/aproba/package.json",
+        "node_modules/are-we-there-yet/package.json",
         "node_modules/atom-space-pen-views/package.json",
+        "node_modules/bl/package.json",
+        "node_modules/buffer-alloc/package.json",
+        "node_modules/buffer-alloc-unsafe/package.json",
+        "node_modules/buffer-fill/package.json",
+        "node_modules/chownr/package.json",
+        "node_modules/code-point-at/package.json",
+        "node_modules/console-control-strings/package.json",
+        "node_modules/core-util-is/package.json",
         "node_modules/d/package.json",
+        "node_modules/decompress-response/package.json",
+        "node_modules/deep-extend/package.json",
+        "node_modules/delegates/package.json",
+        "node_modules/detect-libc/package.json",
         "node_modules/emissary/package.json",
+        "node_modules/end-of-stream/package.json",
         "node_modules/es5-ext/node_modules/d/package.json",
         "node_modules/es5-ext/node_modules/es6-iterator/package.json",
         "node_modules/es5-ext/node_modules/es6-symbol/package.json",
@@ -832,27 +1301,74 @@
         "node_modules/es6-iterator/package.json",
         "node_modules/es6-symbol/package.json",
         "node_modules/es6-weak-map/package.json",
-        "node_modules/extend/package.json",
+        "node_modules/expand-template/package.json",
+        "node_modules/fs-constants/package.json",
         "node_modules/fuzzaldrin/package.json",
+        "node_modules/gauge/package.json",
+        "node_modules/github-from-package/example/package.json",
+        "node_modules/github-from-package/package.json",
         "node_modules/grim/package.json",
+        "node_modules/has-unicode/package.json",
+        "node_modules/inherits/package.json",
+        "node_modules/ini/package.json",
+        "node_modules/is-fullwidth-code-point/package.json",
+        "node_modules/isarray/component.json",
+        "node_modules/isarray/package.json",
         "node_modules/jquery/bower.json",
         "node_modules/jquery/package.json",
+        "node_modules/mimic-response/package.json",
+        "node_modules/minimist/package.json",
         "node_modules/mixto/package.json",
+        "node_modules/mkdirp/node_modules/minimist/package.json",
+        "node_modules/mkdirp/package.json",
         "node_modules/nan/package.json",
         "node_modules/nan/tools/package.json",
+        "node_modules/napi-build-utils/package.json",
         "node_modules/next-tick/package.json",
+        "node_modules/node-abi/package.json",
+        "node_modules/node-pty-prebuilt/package.json",
+        "node_modules/noop-logger/package.json",
+        "node_modules/npmlog/package.json",
+        "node_modules/number-is-nan/package.json",
+        "node_modules/object-assign/package.json",
+        "node_modules/once/package.json",
+        "node_modules/os-homedir/package.json",
+        "node_modules/prebuild-install/package.json",
+        "node_modules/process-nextick-args/package.json",
         "node_modules/property-accessors/package.json",
-        "node_modules/pty.js/package.json",
+        "node_modules/pump/package.json",
+        "node_modules/rc/package.json",
+        "node_modules/readable-stream/package.json",
+        "node_modules/safe-buffer/package.json",
+        "node_modules/semver/package.json",
+        "node_modules/set-blocking/package.json",
+        "node_modules/signal-exit/package.json",
+        "node_modules/simple-concat/package.json",
+        "node_modules/simple-get/package.json",
         "node_modules/space-pen/api.json",
         "node_modules/space-pen/package.json",
+        "node_modules/string-width/package.json",
+        "node_modules/string_decoder/package.json",
+        "node_modules/strip-ansi/package.json",
+        "node_modules/strip-json-comments/package.json",
+        "node_modules/tar-fs/node_modules/pump/package.json",
+        "node_modules/tar-fs/package.json",
+        "node_modules/tar-stream/package.json",
         "node_modules/term.js/package.json",
+        "node_modules/to-buffer/package.json",
+        "node_modules/tunnel-agent/package.json",
         "node_modules/underscore/package.json",
         "node_modules/underscore-plus/node_modules/underscore/package.json",
         "node_modules/underscore-plus/package.json",
+        "node_modules/util-deprecate/package.json",
+        "node_modules/which-pm-runs/package.json",
+        "node_modules/wide-align/package.json",
+        "node_modules/wrappy/package.json",
+        "node_modules/xtend/package.json",
         "package.json"
       ],
       ".node": [
-        "node_modules/pty.js/build/Release/pty.node"
+        "node_modules/node-pty-prebuilt/build/Release/pty.node"
       ]
     },
     "folders": [
@@ -864,7 +1380,17 @@
         ],
         "dependencies": {
           "atom-space-pen-views": "^2.2.0",
+          "node-pty-prebuilt": "^0.7.6",
           "underscore": "^1.8.3"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/are-we-there-yet"
+        ],
+        "dependencies": {
+          "delegates": "^1.0.0",
+          "readable-stream": "^2.0.6"
         }
       },
       {
@@ -879,11 +1405,38 @@
       },
       {
         "paths": [
+          "node_modules/bl",
+          "node_modules/bl/test"
+        ],
+        "dependencies": {
+          "readable-stream": "^2.3.5",
+          "safe-buffer": "^5.1.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/buffer-alloc"
+        ],
+        "dependencies": {
+          "buffer-alloc-unsafe": "^1.1.0",
+          "buffer-fill": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
           "node_modules/d",
           "node_modules/d/test"
         ],
         "dependencies": {
           "es5-ext": "~0.10.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/decompress-response"
+        ],
+        "dependencies": {
+          "mimic-response": "^1.0.0"
         }
       },
       {
@@ -900,6 +1453,15 @@
       },
       {
         "paths": [
+          "node_modules/end-of-stream"
+        ],
+        "dependencies": {
+          "once": "^1.4.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/es5-ext",
           "node_modules/es5-ext/array/#/@@iterator",
           "node_modules/es5-ext/array/#",
           "node_modules/es5-ext/array/#/concat",
@@ -924,7 +1486,6 @@
           "node_modules/es5-ext/error",
           "node_modules/es5-ext/function/#",
           "node_modules/es5-ext/function",
-          "node_modules/es5-ext",
           "node_modules/es5-ext/iterable",
           "node_modules/es5-ext/json",
           "node_modules/es5-ext/math",
@@ -960,6 +1521,7 @@
           "node_modules/es5-ext/object/keys",
           "node_modules/es5-ext/object/set-prototype-of",
           "node_modules/es5-ext/promise/#",
+          "node_modules/es5-ext/promise/#/finally",
           "node_modules/es5-ext/promise",
           "node_modules/es5-ext/reg-exp/#",
           "node_modules/es5-ext/reg-exp/#/match",
@@ -1040,6 +1602,7 @@
           "node_modules/es5-ext/test/object/keys",
           "node_modules/es5-ext/test/object/set-prototype-of",
           "node_modules/es5-ext/test/promise/#",
+          "node_modules/es5-ext/test/promise/#/finally",
           "node_modules/es5-ext/test/promise",
           "node_modules/es5-ext/test/reg-exp/#",
           "node_modules/es5-ext/test/reg-exp/#/match",
@@ -1136,11 +1699,108 @@
       },
       {
         "paths": [
+          "node_modules/gauge"
+        ],
+        "dependencies": {
+          "aproba": "^1.0.3",
+          "console-control-strings": "^1.0.0",
+          "has-unicode": "^2.0.0",
+          "object-assign": "^4.1.0",
+          "signal-exit": "^3.0.0",
+          "string-width": "^1.0.1",
+          "strip-ansi": "^3.0.1",
+          "wide-align": "^1.1.0"
+        }
+      },
+      {
+        "paths": [
           "node_modules/grim/lib",
           "node_modules/grim"
         ],
         "dependencies": {
           "emissary": "^1.2.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/is-fullwidth-code-point"
+        ],
+        "dependencies": {
+          "number-is-nan": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/mkdirp/bin",
+          "node_modules/mkdirp/examples",
+          "node_modules/mkdirp",
+          "node_modules/mkdirp/test"
+        ],
+        "dependencies": {
+          "minimist": "0.0.8"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/node-abi",
+          "node_modules/node-abi/test"
+        ],
+        "dependencies": {
+          "semver": "^5.4.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/node-pty-prebuilt/build/Release",
+          "node_modules/node-pty-prebuilt/lib",
+          "node_modules/node-pty-prebuilt",
+          "node_modules/node-pty-prebuilt/scripts"
+        ],
+        "dependencies": {
+          "nan": "2.10.0",
+          "prebuild-install": "^5.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/npmlog"
+        ],
+        "dependencies": {
+          "are-we-there-yet": "~1.1.2",
+          "console-control-strings": "~1.1.0",
+          "gauge": "~2.7.3",
+          "set-blocking": "~2.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/once"
+        ],
+        "dependencies": {
+          "wrappy": "1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/prebuild-install"
+        ],
+        "dependencies": {
+          "detect-libc": "^1.0.3",
+          "expand-template": "^2.0.3",
+          "github-from-package": "0.0.0",
+          "minimist": "^1.2.0",
+          "mkdirp": "^0.5.1",
+          "napi-build-utils": "^1.0.1",
+          "node-abi": "^2.7.0",
+          "noop-logger": "^0.1.1",
+          "npmlog": "^4.0.1",
+          "os-homedir": "^1.0.1",
+          "pump": "^2.0.1",
+          "rc": "^1.2.7",
+          "simple-get": "^2.7.0",
+          "tar-fs": "^1.13.0",
+          "tunnel-agent": "^0.6.0",
+          "which-pm-runs": "^1.0.0"
         }
       },
       {
@@ -1155,15 +1815,50 @@
       },
       {
         "paths": [
-          "node_modules/pty.js/build/Release",
-          "node_modules/pty.js",
-          "node_modules/pty.js/lib",
-          "node_modules/pty.js/scripts",
-          "node_modules/pty.js/test-windows"
+          "node_modules/pump"
         ],
         "dependencies": {
-          "extend": "~1.2.1",
-          "nan": "2.2.1"
+          "end-of-stream": "^1.1.0",
+          "once": "^1.3.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/rc",
+          "node_modules/rc/lib",
+          "node_modules/rc/test"
+        ],
+        "dependencies": {
+          "deep-extend": "^0.6.0",
+          "ini": "~1.3.0",
+          "minimist": "^1.2.0",
+          "strip-json-comments": "~2.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/readable-stream",
+          "node_modules/readable-stream/lib",
+          "node_modules/readable-stream/lib/internal/streams"
+        ],
+        "dependencies": {
+          "core-util-is": "~1.0.0",
+          "inherits": "~2.0.3",
+          "isarray": "~1.0.0",
+          "process-nextick-args": "~2.0.0",
+          "safe-buffer": "~5.1.1",
+          "string_decoder": "~1.1.1",
+          "util-deprecate": "~1.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/simple-get"
+        ],
+        "dependencies": {
+          "decompress-response": "^3.3.0",
+          "once": "^1.3.1",
+          "simple-concat": "^1.0.0"
         }
       },
       {
@@ -1179,11 +1874,89 @@
       },
       {
         "paths": [
+          "node_modules/string_decoder/lib",
+          "node_modules/string_decoder"
+        ],
+        "dependencies": {
+          "safe-buffer": "~5.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/string-width"
+        ],
+        "dependencies": {
+          "code-point-at": "^1.0.0",
+          "is-fullwidth-code-point": "^1.0.0",
+          "strip-ansi": "^3.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/strip-ansi"
+        ],
+        "dependencies": {
+          "ansi-regex": "^2.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/tar-fs",
+          "node_modules/tar-fs/test"
+        ],
+        "dependencies": {
+          "chownr": "^1.0.1",
+          "mkdirp": "^0.5.1",
+          "pump": "^1.0.0",
+          "tar-stream": "^1.1.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/tar-fs/node_modules/pump"
+        ],
+        "dependencies": {
+          "end-of-stream": "^1.1.0",
+          "once": "^1.3.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/tar-stream"
+        ],
+        "dependencies": {
+          "bl": "^1.0.0",
+          "buffer-alloc": "^1.2.0",
+          "end-of-stream": "^1.0.0",
+          "fs-constants": "^1.0.0",
+          "readable-stream": "^2.3.0",
+          "to-buffer": "^1.1.1",
+          "xtend": "^4.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/tunnel-agent"
+        ],
+        "dependencies": {
+          "safe-buffer": "^5.0.1"
+        }
+      },
+      {
+        "paths": [
           "node_modules/underscore-plus/lib",
           "node_modules/underscore-plus"
         ],
         "dependencies": {
           "underscore": "~1.8.3"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/wide-align"
+        ],
+        "dependencies": {
+          "string-width": "^1.0.2 || 2"
         }
       }
     ]

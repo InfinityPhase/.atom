@@ -3,10 +3,7 @@ import * as Atom from "atom"
 import * as ACP from "atom/autocomplete-plus"
 import * as fuzzaldrin from "fuzzaldrin"
 import {GetClientFunction, TSClient} from "../../client"
-import {FlushTypescriptBuffer} from "../pluginManager"
 import {FileLocationQuery, spanToRange, typeScriptScopes} from "./utils"
-
-const importPathScopes = ["meta.import", "meta.import-equals", "triple-slash-directive"]
 
 type SuggestionWithDetails = ACP.TextSuggestion & {
   details?: protocol.CompletionEntryDetails
@@ -38,10 +35,7 @@ export class AutocompleteProvider implements ACP.AutocompleteProvider {
     suggestions: SuggestionWithDetails[]
   }
 
-  constructor(
-    private getClient: GetClientFunction,
-    private flushTypescriptBuffer: FlushTypescriptBuffer,
-  ) {}
+  constructor(private getClient: GetClientFunction) {}
 
   public async getSuggestions(opts: ACP.SuggestionsRequestedEvent): Promise<ACP.TextSuggestion[]> {
     const location = getLocationQuery(opts)
@@ -66,18 +60,6 @@ export class AutocompleteProvider implements ACP.AutocompleteProvider {
     ) {
       return []
     }
-
-    // Don't show autocomplete if we're in a string and it's not an import path
-    if (containsScope(opts.scopeDescriptor.getScopesArray(), "string.quoted.")) {
-      if (
-        !importPathScopes.some(scope => containsScope(opts.scopeDescriptor.getScopesArray(), scope))
-      ) {
-        return []
-      }
-    }
-
-    // Flush any pending changes for this buffer to get up to date completions
-    await this.flushTypescriptBuffer(location.file)
 
     try {
       let suggestions = await this.getSuggestionsWithCache(prefix, location, opts.activatedManually)
@@ -155,14 +137,7 @@ export class AutocompleteProvider implements ACP.AutocompleteProvider {
     }
 
     const client = await this.getClient(location.file)
-    const completions = await client.execute("completions", {
-      prefix,
-      includeExternalModuleExports: false,
-      includeInsertTextCompletions: true,
-      ...location,
-    })
-
-    const suggestions = completions.body!.map(completionEntryToSuggestion)
+    const suggestions = await getSuggestionsInternal(client, location, prefix)
 
     this.lastSuggestions = {
       client,
@@ -172,6 +147,33 @@ export class AutocompleteProvider implements ACP.AutocompleteProvider {
     }
 
     return suggestions
+  }
+}
+
+async function getSuggestionsInternal(
+  client: TSClient,
+  location: FileLocationQuery,
+  prefix: string,
+) {
+  if (parseInt(client.version.split(".")[0], 10) >= 3) {
+    // use completionInfo
+    const completions = await client.execute("completionInfo", {
+      prefix,
+      includeExternalModuleExports: false,
+      includeInsertTextCompletions: true,
+      ...location,
+    })
+    return completions.body!.entries.map(completionEntryToSuggestion)
+  } else {
+    // use deprecated completions
+    const completions = await client.execute("completions", {
+      prefix,
+      includeExternalModuleExports: false,
+      includeInsertTextCompletions: true,
+      ...location,
+    })
+
+    return completions.body!.map(completionEntryToSuggestion)
   }
 }
 

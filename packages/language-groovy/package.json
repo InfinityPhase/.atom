@@ -1,0 +1,59 @@
+{
+  "_from": "https://www.atom.io/api/packages/language-groovy/versions/0.7.0/tarball",
+  "_id": "language-groovy@0.7.0",
+  "_inBundle": false,
+  "_integrity": "sha512-XEW7sDLOMIvdZlcWwWHBhYyDwBnSN8mWYLvrXyGbnRFacm9ku6+KPzXVrGLeuBGTT+vQECUExUF+LSgAdL+0CQ==",
+  "_location": "/language-groovy",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/language-groovy/versions/0.7.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/language-groovy/versions/0.7.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/language-groovy/versions/0.7.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/language-groovy/versions/0.7.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/language-groovy/versions/0.7.0/tarball",
+  "_shasum": "6174939bda5c578d452ed43c67c5316d50d74dba",
+  "_spec": "https://www.atom.io/api/packages/language-groovy/versions/0.7.0/tarball",
+  "_where": "/tmp/apm-install-dir-11925-6229-3hmbaw.9dbp3",
+  "bugs": {
+    "url": "https://github.com/Jakehp/language-groovy/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Groovy language support in Atom",
+  "devDependencies": {
+    "coffeelint": "1.10.1"
+  },
+  "engines": {
+    "atom": ">0.50.0 <2.0.0"
+  },
+  "homepage": "https://github.com/Jakehp/language-groovy#readme",
+  "license": "MIT",
+  "name": "language-groovy",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jakehp/language-groovy.git"
+  },
+  "scripts": {
+    "test": "coffeelint grammars/groovy.cson settings/language-groovy.cson snippets/language-groovy.cson"
+  },
+  "version": "0.7.0",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "coffeelint.json",
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

@@ -1,25 +1,25 @@
 {
-  "_from": "https://www.atom.io/api/packages/autocomplete-python/versions/1.11.0/tarball",
-  "_id": "autocomplete-python@1.11.0",
+  "_from": "https://www.atom.io/api/packages/autocomplete-python/versions/1.14.0/tarball",
+  "_id": "autocomplete-python@1.14.0",
   "_inBundle": false,
-  "_integrity": "sha512-thsN37jFxeFKRzezC4MUIwdzHYzGn+yLBX5Zfp4OnH+Yi/WLRzKGA9XcMULZ0OLzYQdKnC5BfQCWV8sLFdZ8Jw==",
+  "_integrity": "sha512-cJZ17vX4NwOjMbzS8yjsq7WcmR3B/SWkEHMezCW7ujcoS0eK7W7INXy0ENKSVipUYkNOtiCYA6iwFkckVBb8Yw==",
   "_location": "/autocomplete-python",
   "_phantomChildren": {},
   "_requested": {
     "type": "remote",
-    "raw": "https://www.atom.io/api/packages/autocomplete-python/versions/1.11.0/tarball",
-    "rawSpec": "https://www.atom.io/api/packages/autocomplete-python/versions/1.11.0/tarball",
-    "saveSpec": "https://www.atom.io/api/packages/autocomplete-python/versions/1.11.0/tarball",
-    "fetchSpec": "https://www.atom.io/api/packages/autocomplete-python/versions/1.11.0/tarball"
+    "raw": "https://www.atom.io/api/packages/autocomplete-python/versions/1.14.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/autocomplete-python/versions/1.14.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/autocomplete-python/versions/1.14.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/autocomplete-python/versions/1.14.0/tarball"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://www.atom.io/api/packages/autocomplete-python/versions/1.11.0/tarball",
-  "_shasum": "00aa6d5c4d3624f0ec5cb83a57c76c192c6ff5f1",
-  "_spec": "https://www.atom.io/api/packages/autocomplete-python/versions/1.11.0/tarball",
-  "_where": "/tmp/apm-install-dir-11907-20271-k2tgw9.00xgk",
+  "_resolved": "https://www.atom.io/api/packages/autocomplete-python/versions/1.14.0/tarball",
+  "_shasum": "80cef289564888c3aa5d870cd3f7c3dbadffe779",
+  "_spec": "https://www.atom.io/api/packages/autocomplete-python/versions/1.14.0/tarball",
+  "_where": "/tmp/apm-install-dir-119222-11743-1wr4xoo.b46p",
   "bugs": {
     "url": "https://github.com/autocomplete-python/autocomplete-python/issues"
   },
@@ -45,7 +45,7 @@
     "atom-slick": "^2.0.0",
     "atom-space-pen-views": "~2.1.0",
     "fuzzaldrin-plus": "^0.3.1",
-    "kite-installer": "^3.1.0",
+    "kite-installer": "^3.7.0",
     "mixpanel": "^0.5.0",
     "selector-kit": "^0.1",
     "space-pen": "^5.1.2",
@@ -82,7 +82,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/autocomplete-python/autocomplete-python.git"
   },
-  "version": "1.11.0",
+  "version": "1.14.0",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -90,6 +90,11 @@
         "name": "async",
         "version": "1.2.1",
         "path": "node_modules/async/lib/async.js"
+      },
+      {
+        "name": "asynckit",
+        "version": "0.4.0",
+        "path": "node_modules/asynckit/index.js"
       },
       {
         "name": "atom-slick",
@@ -105,6 +110,11 @@
         "name": "charenc",
         "version": "0.0.2",
         "path": "node_modules/charenc/charenc.js"
+      },
+      {
+        "name": "combined-stream",
+        "version": "1.0.7",
+        "path": "node_modules/combined-stream/lib/combined_stream.js"
       },
       {
         "name": "console-polyfill",
@@ -132,6 +142,11 @@
         "path": "node_modules/decache/decache.js"
       },
       {
+        "name": "delayed-stream",
+        "version": "1.0.0",
+        "path": "node_modules/delayed-stream/lib/delayed_stream.js"
+      },
+      {
         "name": "emissary",
         "version": "1.3.3",
         "path": "node_modules/emissary/lib/emissary.js"
@@ -143,7 +158,7 @@
       },
       {
         "name": "es5-ext",
-        "version": "0.10.46",
+        "version": "0.10.49",
         "path": "node_modules/es5-ext/index.js"
       },
       {
@@ -182,6 +197,11 @@
         "path": "node_modules/find/index.js"
       },
       {
+        "name": "form-data",
+        "version": "2.3.3",
+        "path": "node_modules/form-data/lib/form_data.js"
+      },
+      {
         "name": "fuzzaldrin",
         "version": "2.1.0",
         "path": "node_modules/fuzzaldrin/lib/fuzzaldrin.js"
@@ -218,17 +238,17 @@
       },
       {
         "name": "kite-api",
-        "version": "2.2.1",
+        "version": "2.14.0",
         "path": "node_modules/kite-api/lib/index.js"
       },
       {
         "name": "kite-connector",
-        "version": "2.0.4",
+        "version": "2.8.0",
         "path": "node_modules/kite-connector/lib/index.js"
       },
       {
         "name": "kite-installer",
-        "version": "3.1.0",
+        "version": "3.7.0",
         "path": "node_modules/kite-installer/lib/index.js"
       },
       {
@@ -240,6 +260,16 @@
         "name": "md5",
         "version": "2.2.1",
         "path": "node_modules/md5/md5.js"
+      },
+      {
+        "name": "mime-db",
+        "version": "1.38.0",
+        "path": "node_modules/mime-db/index.js"
+      },
+      {
+        "name": "mime-types",
+        "version": "2.1.22",
+        "path": "node_modules/mime-types/index.js"
       },
       {
         "name": "mixpanel",
@@ -273,7 +303,7 @@
       },
       {
         "name": "rollbar",
-        "version": "2.5.1",
+        "version": "2.5.4",
         "path": "node_modules/rollbar/src/server/rollbar.js"
       },
       {
@@ -337,15 +367,18 @@
         "node_modules/async/component.json",
         "node_modules/async/nyc_output/5074.json",
         "node_modules/async/package.json",
+        "node_modules/asynckit/package.json",
         "node_modules/atom-slick/package.json",
         "node_modules/atom-space-pen-views/package.json",
         "node_modules/charenc/package.json",
+        "node_modules/combined-stream/package.json",
         "node_modules/console-polyfill/package.json",
         "node_modules/crypt/package.json",
         "node_modules/d/package.json",
         "node_modules/debug/component.json",
         "node_modules/debug/package.json",
         "node_modules/decache/package.json",
+        "node_modules/delayed-stream/package.json",
         "node_modules/emissary/package.json",
         "node_modules/error-stack-parser/package.json",
         "node_modules/es5-ext/node_modules/d/package.json",
@@ -357,6 +390,7 @@
         "node_modules/es6-symbol/package.json",
         "node_modules/es6-weak-map/package.json",
         "node_modules/find/package.json",
+        "node_modules/form-data/package.json",
         "node_modules/fuzzaldrin/package.json",
         "node_modules/fuzzaldrin-plus/package.json",
         "node_modules/grim/package.json",
@@ -365,16 +399,15 @@
         "node_modules/jquery/bower.json",
         "node_modules/jquery/package.json",
         "node_modules/json-stringify-safe/package.json",
-        "node_modules/kite-api/.nyc_output/0c0aa977-6b87-413b-9df8-6c93781001f3.json",
-        "node_modules/kite-api/.nyc_output/6ce8d029-9097-4d57-8194-2b16ac080c22.json",
         "node_modules/kite-api/package.json",
-        "node_modules/kite-connector/.nyc_output/5f939af5-d0ab-4d50-88df-794ae47080a4.json",
-        "node_modules/kite-connector/.nyc_output/ce725532-cfa1-4583-9870-ff6c1a267b3a.json",
         "node_modules/kite-connector/package.json",
         "node_modules/kite-installer/ext/telemetry/config.json",
         "node_modules/kite-installer/package.json",
         "node_modules/lru-cache/package.json",
         "node_modules/md5/package.json",
+        "node_modules/mime-db/db.json",
+        "node_modules/mime-db/package.json",
+        "node_modules/mime-types/package.json",
         "node_modules/mixpanel/package.json",
         "node_modules/mixto/package.json",
         "node_modules/ms/package.json",
@@ -405,6 +438,23 @@
         "node_modules/async/coverage/sorter.js",
         "node_modules/async/lib/async.js",
         "node_modules/async/support/sync-package-managers.js",
+        "node_modules/asynckit/bench.js",
+        "node_modules/asynckit/index.js",
+        "node_modules/asynckit/lib/abort.js",
+        "node_modules/asynckit/lib/async.js",
+        "node_modules/asynckit/lib/defer.js",
+        "node_modules/asynckit/lib/iterate.js",
+        "node_modules/asynckit/lib/readable_asynckit.js",
+        "node_modules/asynckit/lib/readable_parallel.js",
+        "node_modules/asynckit/lib/readable_serial.js",
+        "node_modules/asynckit/lib/readable_serial_ordered.js",
+        "node_modules/asynckit/lib/state.js",
+        "node_modules/asynckit/lib/streamify.js",
+        "node_modules/asynckit/lib/terminator.js",
+        "node_modules/asynckit/parallel.js",
+        "node_modules/asynckit/serial.js",
+        "node_modules/asynckit/serialOrdered.js",
+        "node_modules/asynckit/stream.js",
         "node_modules/atom-slick/finder.js",
         "node_modules/atom-slick/index.js",
         "node_modules/atom-slick/parser.js",
@@ -414,6 +464,8 @@
         "node_modules/atom-space-pen-views/lib/text-editor-view.js",
         "node_modules/charenc/README.js",
         "node_modules/charenc/charenc.js",
+        "node_modules/combined-stream/lib/combined_stream.js",
+        "node_modules/combined-stream/lib/defer.js",
         "node_modules/console-polyfill/index.js",
         "node_modules/crypt/crypt.js",
         "node_modules/d/auto-bind.js",
@@ -429,6 +481,7 @@
         "node_modules/decache/decache.js",
         "node_modules/decache/lib/mymodule.js",
         "node_modules/decache/lib/othermodule.js",
+        "node_modules/delayed-stream/lib/delayed_stream.js",
         "node_modules/emissary/lib/behavior.js",
         "node_modules/emissary/lib/emissary.js",
         "node_modules/emissary/lib/emitter.js",
@@ -439,6 +492,7 @@
         "node_modules/error-stack-parser/dist/error-stack-parser.js",
         "node_modules/error-stack-parser/dist/error-stack-parser.min.js",
         "node_modules/error-stack-parser/error-stack-parser.js",
+        "node_modules/es5-ext/.prettierrc.js",
         "node_modules/es5-ext/array/#/@@iterator/implement.js",
         "node_modules/es5-ext/array/#/@@iterator/index.js",
         "node_modules/es5-ext/array/#/@@iterator/is-implemented.js",
@@ -727,6 +781,7 @@
         "node_modules/es5-ext/object/ensure-natural-number-value.js",
         "node_modules/es5-ext/object/ensure-natural-number.js",
         "node_modules/es5-ext/object/ensure-plain-function.js",
+        "node_modules/es5-ext/object/ensure-plain-object.js",
         "node_modules/es5-ext/object/ensure-promise.js",
         "node_modules/es5-ext/object/ensure-thenable.js",
         "node_modules/es5-ext/object/entries/implement.js",
@@ -789,6 +844,10 @@
         "node_modules/es5-ext/object/validate-stringifiable.js",
         "node_modules/es5-ext/optional-chaining.js",
         "node_modules/es5-ext/promise/#/as-callback.js",
+        "node_modules/es5-ext/promise/#/finally/implement.js",
+        "node_modules/es5-ext/promise/#/finally/index.js",
+        "node_modules/es5-ext/promise/#/finally/is-implemented.js",
+        "node_modules/es5-ext/promise/#/finally/shim.js",
         "node_modules/es5-ext/promise/#/index.js",
         "node_modules/es5-ext/promise/index.js",
         "node_modules/es5-ext/promise/lazy.js",
@@ -899,6 +958,9 @@
         "node_modules/es6-weak-map/polyfill.js",
         "node_modules/es6-weak-map/valid-weak-map.js",
         "node_modules/find/index.js",
+        "node_modules/form-data/lib/browser.js",
+        "node_modules/form-data/lib/form_data.js",
+        "node_modules/form-data/lib/populate.js",
         "node_modules/fuzzaldrin/lib/filter.js",
         "node_modules/fuzzaldrin/lib/fuzzaldrin.js",
         "node_modules/fuzzaldrin/lib/matcher.js",
@@ -1000,8 +1062,6 @@
         "node_modules/jquery/src/wrap.js",
         "node_modules/json-stringify-safe/stringify.js",
         "node_modules/kite-api/.eslintrc.js",
-        "node_modules/kite-api/coverage/lcov-report/prettify.js",
-        "node_modules/kite-api/coverage/lcov-report/sorter.js",
         "node_modules/kite-api/lib/constants.js",
         "node_modules/kite-api/lib/editor-config.js",
         "node_modules/kite-api/lib/index.js",
@@ -1020,7 +1080,6 @@
         "node_modules/kite-connector/lib/kite-process-error.js",
         "node_modules/kite-connector/lib/kite-request-error.js",
         "node_modules/kite-connector/lib/kite-state-error.js",
-        "node_modules/kite-connector/lib/kite-whitelist-error.js",
         "node_modules/kite-connector/lib/logger.js",
         "node_modules/kite-connector/lib/loggers/console.js",
         "node_modules/kite-connector/lib/loggers/null.js",
@@ -1069,6 +1128,8 @@
         "node_modules/lru-cache/s.js",
         "node_modules/md5/md5.js",
         "node_modules/md5/test.js",
+        "node_modules/mime-db/index.js",
+        "node_modules/mime-types/index.js",
         "node_modules/mixpanel/example.js",
         "node_modules/mixpanel/lib/mixpanel-node.js",
         "node_modules/mixto/lib/mixin.js",
@@ -1173,7 +1234,7 @@
           "atom-slick": "^2.0.0",
           "atom-space-pen-views": "~2.1.0",
           "fuzzaldrin-plus": "^0.3.1",
-          "kite-installer": "^3.1.0",
+          "kite-installer": "^3.7.0",
           "mixpanel": "^0.5.0",
           "selector-kit": "^0.1",
           "space-pen": "^5.1.2",
@@ -1188,6 +1249,15 @@
         "dependencies": {
           "fuzzaldrin": "^2.1.0",
           "space-pen": "^5.1.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/combined-stream/lib",
+          "node_modules/combined-stream"
+        ],
+        "dependencies": {
+          "delayed-stream": "~1.0.0"
         }
       },
       {
@@ -1241,6 +1311,7 @@
       },
       {
         "paths": [
+          "node_modules/es5-ext",
           "node_modules/es5-ext/array/#/@@iterator",
           "node_modules/es5-ext/array/#",
           "node_modules/es5-ext/array/#/concat",
@@ -1265,7 +1336,6 @@
           "node_modules/es5-ext/error",
           "node_modules/es5-ext/function/#",
           "node_modules/es5-ext/function",
-          "node_modules/es5-ext",
           "node_modules/es5-ext/iterable",
           "node_modules/es5-ext/json",
           "node_modules/es5-ext/math",
@@ -1301,6 +1371,7 @@
           "node_modules/es5-ext/object/keys",
           "node_modules/es5-ext/object/set-prototype-of",
           "node_modules/es5-ext/promise/#",
+          "node_modules/es5-ext/promise/#/finally",
           "node_modules/es5-ext/promise",
           "node_modules/es5-ext/reg-exp/#",
           "node_modules/es5-ext/reg-exp/#/match",
@@ -1381,6 +1452,7 @@
           "node_modules/es5-ext/test/object/keys",
           "node_modules/es5-ext/test/object/set-prototype-of",
           "node_modules/es5-ext/test/promise/#",
+          "node_modules/es5-ext/test/promise/#/finally",
           "node_modules/es5-ext/test/promise",
           "node_modules/es5-ext/test/reg-exp/#",
           "node_modules/es5-ext/test/reg-exp/#/match",
@@ -1405,7 +1477,7 @@
         "dependencies": {
           "es6-iterator": "~2.0.3",
           "es6-symbol": "~3.1.1",
-          "next-tick": "1"
+          "next-tick": "^1.0.0"
         }
       },
       {
@@ -1486,6 +1558,17 @@
       },
       {
         "paths": [
+          "node_modules/form-data/lib",
+          "node_modules/form-data"
+        ],
+        "dependencies": {
+          "asynckit": "^0.4.0",
+          "combined-stream": "^1.0.6",
+          "mime-types": "^2.1.12"
+        }
+      },
+      {
+        "paths": [
           "node_modules/grim/lib",
           "node_modules/grim"
         ],
@@ -1496,8 +1579,6 @@
       {
         "paths": [
           "node_modules/kite-api",
-          "node_modules/kite-api/.nyc_output",
-          "node_modules/kite-api/coverage/lcov-report",
           "node_modules/kite-api/lib",
           "node_modules/kite-api/lib/stores",
           "node_modules/kite-api/test",
@@ -1506,8 +1587,25 @@
           "node_modules/kite-api/test/stores"
         ],
         "dependencies": {
-          "kite-connector": "^2.0.4",
+          "kite-connector": "^2.8.0",
           "md5": "^2.2.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/kite-connector",
+          "node_modules/kite-connector/lib/clients",
+          "node_modules/kite-connector/lib",
+          "node_modules/kite-connector/lib/loggers",
+          "node_modules/kite-connector/lib/support",
+          "node_modules/kite-connector/test/clients",
+          "node_modules/kite-connector/test/helpers",
+          "node_modules/kite-connector/test",
+          "node_modules/kite-connector/test/loggers",
+          "node_modules/kite-connector/test/support"
+        ],
+        "dependencies": {
+          "form-data": "^2.3.2"
         }
       },
       {
@@ -1522,8 +1620,8 @@
           "node_modules/kite-installer/test/install"
         ],
         "dependencies": {
-          "kite-api": "^2.1.2",
-          "kite-connector": "^2.0.3",
+          "kite-api": "2.14.0",
+          "kite-connector": "2.8.0",
           "mixpanel": "^0.5.0",
           "rollbar": "^2.4.4"
         }
@@ -1536,6 +1634,14 @@
           "charenc": "~0.0.1",
           "crypt": "~0.0.1",
           "is-buffer": "~1.1.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/mime-types"
+        ],
+        "dependencies": {
+          "mime-db": "~1.38.0"
         }
       },
       {

@@ -1,0 +1,4893 @@
+{
+  "_from": "https://www.atom.io/api/packages/latex/versions/0.50.2/tarball",
+  "_id": "latex@0.50.2",
+  "_inBundle": false,
+  "_integrity": "sha512-/gv4Ah0bQN6MPCXT8gbE6uXdB+PZw9HM+3LD6o42ZFC+8aLSG8CDM9RvlR480Qcx/cVfjil9qHIayiDmlVJrBA==",
+  "_location": "/latex",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/latex/versions/0.50.2/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/latex/versions/0.50.2/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/latex/versions/0.50.2/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/latex/versions/0.50.2/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/latex/versions/0.50.2/tarball",
+  "_shasum": "f847358aeaff49936f28dd261992dd58f3bb95cb",
+  "_spec": "https://www.atom.io/api/packages/latex/versions/0.50.2/tarball",
+  "_where": "/tmp/apm-install-dir-119322-7637-16c5owe.4rznf",
+  "activationCommands": {
+    "atom-workspace": [
+      "latex:build",
+      "latex:check-runtime",
+      "latex:clean",
+      "latex:clear-log",
+      "latex:hide-log",
+      "latex:rebuild",
+      "latex:show-log",
+      "latex:sync-log",
+      "latex:sync",
+      "latex:toggle-log"
+    ]
+  },
+  "activationHooks": [
+    "language-latex:grammar-used",
+    "language-tex:grammar-used",
+    "language-latexsimple:grammar-used"
+  ],
+  "author": {
+    "name": "Thomas Johansen",
+    "email": "thomasjo@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/thomasjo/atom-latex/issues"
+  },
+  "bundleDependencies": false,
+  "configSchema": {
+    "texPath": {
+      "title": "TeX Path",
+      "description": "The full path to your TeX distribution's bin directory. Supports `$PATH` substitution.",
+      "type": "string",
+      "default": "",
+      "order": 1
+    },
+    "engine": {
+      "description": "Select standard LaTeX engine",
+      "type": "string",
+      "enum": [
+        "pdflatex",
+        "lualatex",
+        "platex",
+        "uplatex",
+        "xelatex"
+      ],
+      "default": "pdflatex",
+      "order": 2
+    },
+    "customEngine": {
+      "description": "Enter command for custom LaTeX engine. Overrides Engine.",
+      "type": "string",
+      "default": "",
+      "order": 3
+    },
+    "enableShellEscape": {
+      "type": "boolean",
+      "default": false,
+      "order": 4
+    },
+    "enableSynctex": {
+      "title": "Enable SyncTeX",
+      "type": "boolean",
+      "default": true,
+      "order": 5
+    },
+    "useDicy": {
+      "title": "Use DiCy",
+      "description": "Use the experimental javascript based builder [`DiCy`](https://yitzchak.github.io/dicy/) instead of `latexmk`. [`DiCy`](https://yitzchak.github.io/dicy/) is included with this package so no further configuration or installation is required.",
+      "type": "boolean",
+      "default": "false",
+      "order": 6
+    },
+    "enableExtendedBuildMode": {
+      "description": "Enable extended build mode using `latexmk` rules for custom files types. Currently includes support for Asymptote, the `glossaries` package, the `index` package, MetaPost, the `nomencl` package and SageTeX. Please note that these rules are loaded after all other `latexmkrc` files are loaded, and therefore may overwrite custom rules defined by the user.",
+      "type": "boolean",
+      "default": true,
+      "order": 7
+    },
+    "loggingLevel": {
+      "description": "The minimum level of message severity to output in the logger. A logging level of `error` shows only messages indicating catastrophic issues such as undefined symbols, `warning` shows error messages and messages indicating unintended consequences such as bad boxes, and `info` shows all messages including purely informational messages such a font loading.",
+      "type": "string",
+      "enum": [
+        "error",
+        "warning",
+        "info"
+      ],
+      "default": "warning",
+      "order": 8
+    },
+    "cleanPatterns": {
+      "description": "The files and directories to remove during a LaTeX clean. Basic glob patterns are understood and named properties such as {jobname} are replaced with the current build properties. Patterns that start with `/` or `\\` are matched against any file in the same directory as the source file. All other patterns are matched against generated files in the output directory. More information can be found on the Atom LaTeX wiki.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "**/*.aux",
+        "**/*.aux.bak",
+        "**/*.bbl",
+        "**/*.bcf",
+        "**/*.blg",
+        "**/*.dvi",
+        "**/*.fdb_latexmk",
+        "**/*.fls",
+        "**/*.idx",
+        "**/*.idx.bak",
+        "**/*.ilg",
+        "**/*.ind",
+        "**/*.lof",
+        "**/*.log",
+        "**/*.lol",
+        "**/*.lot",
+        "**/*.nav",
+        "**/*.out",
+        "**/*.pdf",
+        "**/*.ps",
+        "**/*.snm",
+        "**/*.synctex.gz",
+        "**/*.toc",
+        "/**/_minted-{jobname}",
+        "/{output_dir}/sage-plots-for-{jobname}.tex",
+        "/missfont.log",
+        "/texput.log",
+        "/texput.aux"
+      ],
+      "order": 9
+    },
+    "outputDirectory": {
+      "description": "All files generated during a build will be redirected here. Leave blank if you want the build output to be stored in the same directory as the TeX document.",
+      "type": "string",
+      "default": "",
+      "order": 10
+    },
+    "outputFormat": {
+      "description": "Output file format. DVI and PS currently only supported for latexmk.",
+      "type": "string",
+      "enum": [
+        "pdf",
+        "dvi",
+        "ps"
+      ],
+      "default": "pdf",
+      "order": 11
+    },
+    "producer": {
+      "title": "PDF Producer",
+      "description": "Program to use when post-processing DVI output in order to produce PDF. This is only used for LaTeX engines not capable of natively producing PDF. Currently only supported for latexmk.",
+      "type": "string",
+      "enum": [
+        "dvipdfmx",
+        "xdvipdfmx",
+        "dvipdf",
+        "ps2pdf"
+      ],
+      "default": "dvipdfmx",
+      "order": 12
+    },
+    "moveResultToSourceDirectory": {
+      "title": "Move Result to Source Directory",
+      "description": "Ensures that the output file produced by a successful build is stored together with the TeX document that produced it.",
+      "type": "boolean",
+      "default": true,
+      "order": 13
+    },
+    "buildOnSave": {
+      "title": "Build on Save",
+      "description": "Automatically run builds when files are saved.",
+      "type": "boolean",
+      "default": false,
+      "order": 14
+    },
+    "openResultAfterBuild": {
+      "title": "Open Result after Successful Build",
+      "type": "boolean",
+      "default": true,
+      "order": 15
+    },
+    "openResultInBackground": {
+      "title": "Open Result in Background",
+      "type": "boolean",
+      "default": true,
+      "order": 16
+    },
+    "opener": {
+      "type": "string",
+      "enum": [
+        "automatic",
+        "atril",
+        "evince",
+        "okular",
+        "pdf-view",
+        "preview",
+        "qpdfview",
+        "shell-open",
+        "skim",
+        "sumatra",
+        "xdg-open",
+        "x-reader",
+        "zathura",
+        "custom"
+      ],
+      "default": "automatic",
+      "order": 17
+    },
+    "pdfViewSplitDirection": {
+      "description": "Pane split direction to use for pdf-view.",
+      "type": "string",
+      "enum": [
+        "left",
+        "right",
+        "up",
+        "down"
+      ],
+      "default": "right",
+      "order": 18
+    },
+    "skimPath": {
+      "description": "Full application path to Skim (macOS).",
+      "type": "string",
+      "default": "/Applications/Skim.app",
+      "order": 19
+    },
+    "sumatraPath": {
+      "title": "SumatraPDF Path",
+      "description": "Full application path to SumatraPDF (Windows).",
+      "type": "string",
+      "default": "C:\\Program Files (x86)\\SumatraPDF\\SumatraPDF.exe",
+      "order": 20
+    },
+    "okularPath": {
+      "description": "Full application path to Okular (*nix).",
+      "type": "string",
+      "default": "/usr/bin/okular",
+      "order": 21
+    },
+    "zathuraPath": {
+      "description": "Full application path to Zathura (*nix).",
+      "type": "string",
+      "default": "/usr/bin/zathura",
+      "order": 22
+    },
+    "qpdfviewPath": {
+      "description": "Full application path to qpdfview (*nix).",
+      "type": "string",
+      "default": "/usr/bin/qpdfview",
+      "order": 23
+    },
+    "viewerPath": {
+      "title": "Custom PDF Viewer Path",
+      "description": "Full application path to your PDF viewer. Overrides Skim and SumatraPDF options.",
+      "type": "string",
+      "default": "",
+      "order": 24
+    }
+  },
+  "consumedServices": {
+    "status-bar": {
+      "versions": {
+        "^1.0.0": "consumeStatusBar"
+      }
+    }
+  },
+  "contributors": [
+    {
+      "name": "Tarn Burton",
+      "email": "twburton@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "@dicy/client": "^0.13.0",
+    "dbus-native": "^0.4.0",
+    "etch": "0.12.6",
+    "fs-plus": "^3.0.0",
+    "glob": "^7.1.1",
+    "js-yaml": "^3.11.0",
+    "lodash": "^4.17.4",
+    "minimatch": "^3.0.4",
+    "temp": "^0.8.3",
+    "tree-kill": "^1.1.0",
+    "wrench": "^1.5.9"
+  },
+  "deprecated": false,
+  "description": "Compile LaTeX documents from within Atom",
+  "deserializers": {
+    "latex/log": "deserializeLog"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "snazzy": "^7.1.1",
+    "standard": "^11.0.0"
+  },
+  "engines": {
+    "atom": ">=1.19.0 <2.0.0"
+  },
+  "homepage": "https://github.com/thomasjo/atom-latex#readme",
+  "keywords": [
+    "tex",
+    "latex",
+    "latexmk",
+    "texlive",
+    "miktex"
+  ],
+  "license": "MIT",
+  "main": "./lib/main",
+  "name": "latex",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomasjo/atom-latex.git"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "globals": [
+      "atom",
+      "latex",
+      "afterEach",
+      "beforeEach",
+      "describe",
+      "expect",
+      "it",
+      "jasmine",
+      "runs",
+      "spyOn",
+      "waitsFor",
+      "waitsForPromise"
+    ]
+  },
+  "version": "0.50.2",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [
+      {
+        "name": "abstract-socket",
+        "version": "2.0.0",
+        "path": "node_modules/abstract-socket/lib/abstract_socket.js"
+      },
+      {
+        "name": "ansi-regex",
+        "version": "3.0.0",
+        "path": "node_modules/ansi-regex/index.js"
+      },
+      {
+        "name": "argparse",
+        "version": "1.0.10",
+        "path": "node_modules/argparse/index.js"
+      },
+      {
+        "name": "arr-diff",
+        "version": "4.0.0",
+        "path": "node_modules/arr-diff/index.js"
+      },
+      {
+        "name": "arr-flatten",
+        "version": "1.1.0",
+        "path": "node_modules/arr-flatten/index.js"
+      },
+      {
+        "name": "arr-union",
+        "version": "3.1.0",
+        "path": "node_modules/arr-union/index.js"
+      },
+      {
+        "name": "array-unique",
+        "version": "0.3.2",
+        "path": "node_modules/array-unique/index.js"
+      },
+      {
+        "name": "assign-symbols",
+        "version": "1.0.0",
+        "path": "node_modules/assign-symbols/index.js"
+      },
+      {
+        "name": "async",
+        "version": "1.5.2",
+        "path": "node_modules/async/lib/async.js"
+      },
+      {
+        "name": "atob",
+        "version": "2.1.2",
+        "path": "node_modules/atob/node-atob.js"
+      },
+      {
+        "name": "balanced-match",
+        "version": "1.0.0",
+        "path": "node_modules/balanced-match/index.js"
+      },
+      {
+        "name": "base",
+        "version": "0.11.2",
+        "path": "node_modules/base/index.js"
+      },
+      {
+        "name": "define-property",
+        "version": "1.0.0",
+        "path": "node_modules/base/node_modules/define-property/index.js"
+      },
+      {
+        "name": "is-accessor-descriptor",
+        "version": "1.0.0",
+        "path": "node_modules/base/node_modules/is-accessor-descriptor/index.js"
+      },
+      {
+        "name": "is-data-descriptor",
+        "version": "1.0.0",
+        "path": "node_modules/base/node_modules/is-data-descriptor/index.js"
+      },
+      {
+        "name": "is-descriptor",
+        "version": "1.0.2",
+        "path": "node_modules/base/node_modules/is-descriptor/index.js"
+      },
+      {
+        "name": "bindings",
+        "version": "1.5.0",
+        "path": "node_modules/bindings/bindings.js"
+      },
+      {
+        "name": "brace-expansion",
+        "version": "1.1.11",
+        "path": "node_modules/brace-expansion/index.js"
+      },
+      {
+        "name": "braces",
+        "version": "2.3.2",
+        "path": "node_modules/braces/index.js"
+      },
+      {
+        "name": "extend-shallow",
+        "version": "2.0.1",
+        "path": "node_modules/braces/node_modules/extend-shallow/index.js"
+      },
+      {
+        "name": "cache-base",
+        "version": "1.0.1",
+        "path": "node_modules/cache-base/index.js"
+      },
+      {
+        "name": "call-me-maybe",
+        "version": "1.0.1",
+        "path": "node_modules/call-me-maybe/index.js"
+      },
+      {
+        "name": "camelcase",
+        "version": "4.1.0",
+        "path": "node_modules/camelcase/index.js"
+      },
+      {
+        "name": "class-utils",
+        "version": "0.3.6",
+        "path": "node_modules/class-utils/index.js"
+      },
+      {
+        "name": "define-property",
+        "version": "0.2.5",
+        "path": "node_modules/class-utils/node_modules/define-property/index.js"
+      },
+      {
+        "name": "cliui",
+        "version": "4.1.0",
+        "path": "node_modules/cliui/index.js"
+      },
+      {
+        "name": "code-point-at",
+        "version": "1.1.0",
+        "path": "node_modules/code-point-at/index.js"
+      },
+      {
+        "name": "collection-visit",
+        "version": "1.0.0",
+        "path": "node_modules/collection-visit/index.js"
+      },
+      {
+        "name": "command-join",
+        "version": "2.0.0",
+        "path": "node_modules/command-join/command-join.js"
+      },
+      {
+        "name": "component-emitter",
+        "version": "1.3.0",
+        "path": "node_modules/component-emitter/index.js"
+      },
+      {
+        "name": "concat-map",
+        "version": "0.0.1",
+        "path": "node_modules/concat-map/index.js"
+      },
+      {
+        "name": "copy-descriptor",
+        "version": "0.1.1",
+        "path": "node_modules/copy-descriptor/index.js"
+      },
+      {
+        "name": "cross-spawn",
+        "version": "5.1.0",
+        "path": "node_modules/cross-spawn/index.js"
+      },
+      {
+        "name": "dbus-native",
+        "version": "0.4.0",
+        "path": "node_modules/dbus-native/index.js"
+      },
+      {
+        "name": "debug",
+        "version": "2.6.9",
+        "path": "node_modules/debug/src/index.js"
+      },
+      {
+        "name": "decamelize",
+        "version": "1.2.0",
+        "path": "node_modules/decamelize/index.js"
+      },
+      {
+        "name": "decode-uri-component",
+        "version": "0.2.0",
+        "path": "node_modules/decode-uri-component/index.js"
+      },
+      {
+        "name": "define-property",
+        "version": "2.0.2",
+        "path": "node_modules/define-property/index.js"
+      },
+      {
+        "name": "is-accessor-descriptor",
+        "version": "1.0.0",
+        "path": "node_modules/define-property/node_modules/is-accessor-descriptor/index.js"
+      },
+      {
+        "name": "is-data-descriptor",
+        "version": "1.0.0",
+        "path": "node_modules/define-property/node_modules/is-data-descriptor/index.js"
+      },
+      {
+        "name": "is-descriptor",
+        "version": "1.0.2",
+        "path": "node_modules/define-property/node_modules/is-descriptor/index.js"
+      },
+      {
+        "name": "duplexer",
+        "version": "0.1.1",
+        "path": "node_modules/duplexer/index.js"
+      },
+      {
+        "name": "esprima",
+        "version": "4.0.1",
+        "path": "node_modules/esprima/dist/esprima.js"
+      },
+      {
+        "name": "etch",
+        "version": "0.12.6",
+        "path": "node_modules/etch/lib/index.js"
+      },
+      {
+        "name": "event-stream",
+        "version": "4.0.1",
+        "path": "node_modules/event-stream/index.js"
+      },
+      {
+        "name": "execa",
+        "version": "0.7.0",
+        "path": "node_modules/execa/index.js"
+      },
+      {
+        "name": "expand-brackets",
+        "version": "2.1.4",
+        "path": "node_modules/expand-brackets/index.js"
+      },
+      {
+        "name": "define-property",
+        "version": "0.2.5",
+        "path": "node_modules/expand-brackets/node_modules/define-property/index.js"
+      },
+      {
+        "name": "extend-shallow",
+        "version": "2.0.1",
+        "path": "node_modules/expand-brackets/node_modules/extend-shallow/index.js"
+      },
+      {
+        "name": "extend-shallow",
+        "version": "3.0.2",
+        "path": "node_modules/extend-shallow/index.js"
+      },
+      {
+        "name": "is-extendable",
+        "version": "1.0.1",
+        "path": "node_modules/extend-shallow/node_modules/is-extendable/index.js"
+      },
+      {
+        "name": "extglob",
+        "version": "2.0.4",
+        "path": "node_modules/extglob/index.js"
+      },
+      {
+        "name": "define-property",
+        "version": "1.0.0",
+        "path": "node_modules/extglob/node_modules/define-property/index.js"
+      },
+      {
+        "name": "extend-shallow",
+        "version": "2.0.1",
+        "path": "node_modules/extglob/node_modules/extend-shallow/index.js"
+      },
+      {
+        "name": "is-accessor-descriptor",
+        "version": "1.0.0",
+        "path": "node_modules/extglob/node_modules/is-accessor-descriptor/index.js"
+      },
+      {
+        "name": "is-data-descriptor",
+        "version": "1.0.0",
+        "path": "node_modules/extglob/node_modules/is-data-descriptor/index.js"
+      },
+      {
+        "name": "is-descriptor",
+        "version": "1.0.2",
+        "path": "node_modules/extglob/node_modules/is-descriptor/index.js"
+      },
+      {
+        "name": "fast-glob",
+        "version": "2.2.6",
+        "path": "node_modules/fast-glob/index.js"
+      },
+      {
+        "name": "file-uri-to-path",
+        "version": "1.0.0",
+        "path": "node_modules/file-uri-to-path/index.js"
+      },
+      {
+        "name": "file-url",
+        "version": "2.0.2",
+        "path": "node_modules/file-url/index.js"
+      },
+      {
+        "name": "fill-range",
+        "version": "4.0.0",
+        "path": "node_modules/fill-range/index.js"
+      },
+      {
+        "name": "extend-shallow",
+        "version": "2.0.1",
+        "path": "node_modules/fill-range/node_modules/extend-shallow/index.js"
+      },
+      {
+        "name": "find-up",
+        "version": "2.1.0",
+        "path": "node_modules/find-up/index.js"
+      },
+      {
+        "name": "for-in",
+        "version": "1.0.2",
+        "path": "node_modules/for-in/index.js"
+      },
+      {
+        "name": "fragment-cache",
+        "version": "0.2.1",
+        "path": "node_modules/fragment-cache/index.js"
+      },
+      {
+        "name": "from",
+        "version": "0.1.7",
+        "path": "node_modules/from/index.js"
+      },
+      {
+        "name": "fs-extra",
+        "version": "5.0.0",
+        "path": "node_modules/fs-extra/lib/index.js"
+      },
+      {
+        "name": "fs-plus",
+        "version": "3.1.1",
+        "path": "node_modules/fs-plus/lib/fs-plus.js"
+      },
+      {
+        "name": "rimraf",
+        "version": "2.6.3",
+        "path": "node_modules/fs-plus/node_modules/rimraf/rimraf.js"
+      },
+      {
+        "name": "fs.realpath",
+        "version": "1.0.0",
+        "path": "node_modules/fs.realpath/index.js"
+      },
+      {
+        "name": "get-caller-file",
+        "version": "1.0.3",
+        "path": "node_modules/get-caller-file/index.js"
+      },
+      {
+        "name": "get-stream",
+        "version": "3.0.0",
+        "path": "node_modules/get-stream/index.js"
+      },
+      {
+        "name": "get-value",
+        "version": "2.0.6",
+        "path": "node_modules/get-value/index.js"
+      },
+      {
+        "name": "glob",
+        "version": "7.1.3",
+        "path": "node_modules/glob/glob.js"
+      },
+      {
+        "name": "glob-parent",
+        "version": "3.1.0",
+        "path": "node_modules/glob-parent/index.js"
+      },
+      {
+        "name": "is-glob",
+        "version": "3.1.0",
+        "path": "node_modules/glob-parent/node_modules/is-glob/index.js"
+      },
+      {
+        "name": "glob-to-regexp",
+        "version": "0.3.0",
+        "path": "node_modules/glob-to-regexp/index.js"
+      },
+      {
+        "name": "graceful-fs",
+        "version": "4.1.15",
+        "path": "node_modules/graceful-fs/graceful-fs.js"
+      },
+      {
+        "name": "graphlib",
+        "version": "2.1.7",
+        "path": "node_modules/graphlib/index.js"
+      },
+      {
+        "name": "has-value",
+        "version": "1.0.0",
+        "path": "node_modules/has-value/index.js"
+      },
+      {
+        "name": "has-values",
+        "version": "1.0.0",
+        "path": "node_modules/has-values/index.js"
+      },
+      {
+        "name": "kind-of",
+        "version": "4.0.0",
+        "path": "node_modules/has-values/node_modules/kind-of/index.js"
+      },
+      {
+        "name": "hexy",
+        "version": "0.2.11",
+        "path": "node_modules/hexy/hexy.js"
+      },
+      {
+        "name": "inflight",
+        "version": "1.0.6",
+        "path": "node_modules/inflight/inflight.js"
+      },
+      {
+        "name": "inherits",
+        "version": "2.0.3",
+        "path": "node_modules/inherits/inherits.js"
+      },
+      {
+        "name": "invert-kv",
+        "version": "1.0.0",
+        "path": "node_modules/invert-kv/index.js"
+      },
+      {
+        "name": "is-accessor-descriptor",
+        "version": "0.1.6",
+        "path": "node_modules/is-accessor-descriptor/index.js"
+      },
+      {
+        "name": "kind-of",
+        "version": "3.2.2",
+        "path": "node_modules/is-accessor-descriptor/node_modules/kind-of/index.js"
+      },
+      {
+        "name": "is-buffer",
+        "version": "1.1.6",
+        "path": "node_modules/is-buffer/index.js"
+      },
+      {
+        "name": "is-data-descriptor",
+        "version": "0.1.4",
+        "path": "node_modules/is-data-descriptor/index.js"
+      },
+      {
+        "name": "kind-of",
+        "version": "3.2.2",
+        "path": "node_modules/is-data-descriptor/node_modules/kind-of/index.js"
+      },
+      {
+        "name": "is-descriptor",
+        "version": "0.1.6",
+        "path": "node_modules/is-descriptor/index.js"
+      },
+      {
+        "name": "kind-of",
+        "version": "5.1.0",
+        "path": "node_modules/is-descriptor/node_modules/kind-of/index.js"
+      },
+      {
+        "name": "is-extendable",
+        "version": "0.1.1",
+        "path": "node_modules/is-extendable/index.js"
+      },
+      {
+        "name": "is-extglob",
+        "version": "2.1.1",
+        "path": "node_modules/is-extglob/index.js"
+      },
+      {
+        "name": "is-fullwidth-code-point",
+        "version": "2.0.0",
+        "path": "node_modules/is-fullwidth-code-point/index.js"
+      },
+      {
+        "name": "is-glob",
+        "version": "4.0.1",
+        "path": "node_modules/is-glob/index.js"
+      },
+      {
+        "name": "is-number",
+        "version": "3.0.0",
+        "path": "node_modules/is-number/index.js"
+      },
+      {
+        "name": "kind-of",
+        "version": "3.2.2",
+        "path": "node_modules/is-number/node_modules/kind-of/index.js"
+      },
+      {
+        "name": "is-plain-object",
+        "version": "2.0.4",
+        "path": "node_modules/is-plain-object/index.js"
+      },
+      {
+        "name": "is-stream",
+        "version": "1.1.0",
+        "path": "node_modules/is-stream/index.js"
+      },
+      {
+        "name": "is-windows",
+        "version": "1.0.2",
+        "path": "node_modules/is-windows/index.js"
+      },
+      {
+        "name": "isarray",
+        "version": "1.0.0",
+        "path": "node_modules/isarray/index.js"
+      },
+      {
+        "name": "isexe",
+        "version": "2.0.0",
+        "path": "node_modules/isexe/index.js"
+      },
+      {
+        "name": "isobject",
+        "version": "3.0.1",
+        "path": "node_modules/isobject/index.js"
+      },
+      {
+        "name": "js-yaml",
+        "version": "3.13.1",
+        "path": "node_modules/js-yaml/index.js"
+      },
+      {
+        "name": "jsonfile",
+        "version": "4.0.0",
+        "path": "node_modules/jsonfile/index.js"
+      },
+      {
+        "name": "kind-of",
+        "version": "6.0.2",
+        "path": "node_modules/kind-of/index.js"
+      },
+      {
+        "name": "lcid",
+        "version": "1.0.0",
+        "path": "node_modules/lcid/index.js"
+      },
+      {
+        "name": "locate-path",
+        "version": "2.0.0",
+        "path": "node_modules/locate-path/index.js"
+      },
+      {
+        "name": "lodash",
+        "version": "4.17.11",
+        "path": "node_modules/lodash/lodash.js"
+      },
+      {
+        "name": "long",
+        "version": "4.0.0",
+        "path": "node_modules/long/src/long.js"
+      },
+      {
+        "name": "lru-cache",
+        "version": "4.1.5",
+        "path": "node_modules/lru-cache/index.js"
+      },
+      {
+        "name": "map-cache",
+        "version": "0.2.2",
+        "path": "node_modules/map-cache/index.js"
+      },
+      {
+        "name": "map-stream",
+        "version": "0.0.7",
+        "path": "node_modules/map-stream/index.js"
+      },
+      {
+        "name": "map-visit",
+        "version": "1.0.0",
+        "path": "node_modules/map-visit/index.js"
+      },
+      {
+        "name": "mem",
+        "version": "1.1.0",
+        "path": "node_modules/mem/index.js"
+      },
+      {
+        "name": "merge2",
+        "version": "1.2.3",
+        "path": "node_modules/merge2/index.js"
+      },
+      {
+        "name": "micromatch",
+        "version": "3.1.10",
+        "path": "node_modules/micromatch/index.js"
+      },
+      {
+        "name": "mimic-fn",
+        "version": "1.2.0",
+        "path": "node_modules/mimic-fn/index.js"
+      },
+      {
+        "name": "minimatch",
+        "version": "3.0.4",
+        "path": "node_modules/minimatch/minimatch.js"
+      },
+      {
+        "name": "minimist",
+        "version": "0.0.10",
+        "path": "node_modules/minimist/index.js"
+      },
+      {
+        "name": "mixin-deep",
+        "version": "1.3.1",
+        "path": "node_modules/mixin-deep/index.js"
+      },
+      {
+        "name": "is-extendable",
+        "version": "1.0.1",
+        "path": "node_modules/mixin-deep/node_modules/is-extendable/index.js"
+      },
+      {
+        "name": "mkdirp",
+        "version": "0.5.1",
+        "path": "node_modules/mkdirp/index.js"
+      },
+      {
+        "name": "minimist",
+        "version": "0.0.8",
+        "path": "node_modules/mkdirp/node_modules/minimist/index.js"
+      },
+      {
+        "name": "ms",
+        "version": "2.0.0",
+        "path": "node_modules/ms/index.js"
+      },
+      {
+        "name": "nan",
+        "version": "2.13.2",
+        "path": "node_modules/nan/include_dirs.js"
+      },
+      {
+        "name": "nanomatch",
+        "version": "1.2.13",
+        "path": "node_modules/nanomatch/index.js"
+      },
+      {
+        "name": "npm-run-path",
+        "version": "2.0.2",
+        "path": "node_modules/npm-run-path/index.js"
+      },
+      {
+        "name": "number-is-nan",
+        "version": "1.0.1",
+        "path": "node_modules/number-is-nan/index.js"
+      },
+      {
+        "name": "object-copy",
+        "version": "0.1.0",
+        "path": "node_modules/object-copy/index.js"
+      },
+      {
+        "name": "define-property",
+        "version": "0.2.5",
+        "path": "node_modules/object-copy/node_modules/define-property/index.js"
+      },
+      {
+        "name": "kind-of",
+        "version": "3.2.2",
+        "path": "node_modules/object-copy/node_modules/kind-of/index.js"
+      },
+      {
+        "name": "object-visit",
+        "version": "1.0.1",
+        "path": "node_modules/object-visit/index.js"
+      },
+      {
+        "name": "object.pick",
+        "version": "1.3.0",
+        "path": "node_modules/object.pick/index.js"
+      },
+      {
+        "name": "once",
+        "version": "1.4.0",
+        "path": "node_modules/once/once.js"
+      },
+      {
+        "name": "optimist",
+        "version": "0.6.1",
+        "path": "node_modules/optimist/index.js"
+      },
+      {
+        "name": "os-locale",
+        "version": "2.1.0",
+        "path": "node_modules/os-locale/index.js"
+      },
+      {
+        "name": "os-tmpdir",
+        "version": "1.0.2",
+        "path": "node_modules/os-tmpdir/index.js"
+      },
+      {
+        "name": "p-finally",
+        "version": "1.0.0",
+        "path": "node_modules/p-finally/index.js"
+      },
+      {
+        "name": "p-limit",
+        "version": "1.3.0",
+        "path": "node_modules/p-limit/index.js"
+      },
+      {
+        "name": "p-locate",
+        "version": "2.0.0",
+        "path": "node_modules/p-locate/index.js"
+      },
+      {
+        "name": "p-try",
+        "version": "1.0.0",
+        "path": "node_modules/p-try/index.js"
+      },
+      {
+        "name": "pascalcase",
+        "version": "0.1.1",
+        "path": "node_modules/pascalcase/index.js"
+      },
+      {
+        "name": "path-dirname",
+        "version": "1.0.2",
+        "path": "node_modules/path-dirname/index.js"
+      },
+      {
+        "name": "path-exists",
+        "version": "3.0.0",
+        "path": "node_modules/path-exists/index.js"
+      },
+      {
+        "name": "path-is-absolute",
+        "version": "1.0.1",
+        "path": "node_modules/path-is-absolute/index.js"
+      },
+      {
+        "name": "path-key",
+        "version": "2.0.1",
+        "path": "node_modules/path-key/index.js"
+      },
+      {
+        "name": "pause-stream",
+        "version": "0.0.11",
+        "path": "node_modules/pause-stream/index.js"
+      },
+      {
+        "name": "posix-character-classes",
+        "version": "0.1.1",
+        "path": "node_modules/posix-character-classes/index.js"
+      },
+      {
+        "name": "pseudomap",
+        "version": "1.0.2",
+        "path": "node_modules/pseudomap/map.js"
+      },
+      {
+        "name": "put",
+        "version": "0.0.6",
+        "path": "node_modules/put/index.js"
+      },
+      {
+        "name": "readdir-enhanced",
+        "version": "2.2.4",
+        "path": "node_modules/readdir-enhanced/lib/index.js"
+      },
+      {
+        "name": "glob-to-regexp",
+        "version": "0.4.1",
+        "path": "node_modules/readdir-enhanced/node_modules/glob-to-regexp/index.js"
+      },
+      {
+        "name": "regex-not",
+        "version": "1.0.2",
+        "path": "node_modules/regex-not/index.js"
+      },
+      {
+        "name": "repeat-element",
+        "version": "1.1.3",
+        "path": "node_modules/repeat-element/index.js"
+      },
+      {
+        "name": "repeat-string",
+        "version": "1.6.1",
+        "path": "node_modules/repeat-string/index.js"
+      },
+      {
+        "name": "require-directory",
+        "version": "2.1.1",
+        "path": "node_modules/require-directory/index.js"
+      },
+      {
+        "name": "require-main-filename",
+        "version": "1.0.1",
+        "path": "node_modules/require-main-filename/index.js"
+      },
+      {
+        "name": "resolve-url",
+        "version": "0.2.1",
+        "path": "node_modules/resolve-url/resolve-url.js"
+      },
+      {
+        "name": "ret",
+        "version": "0.1.15",
+        "path": "node_modules/ret/lib/index.js"
+      },
+      {
+        "name": "rimraf",
+        "version": "2.2.8",
+        "path": "node_modules/rimraf/rimraf.js"
+      },
+      {
+        "name": "safe-buffer",
+        "version": "5.1.2",
+        "path": "node_modules/safe-buffer/index.js"
+      },
+      {
+        "name": "safe-regex",
+        "version": "1.1.0",
+        "path": "node_modules/safe-regex/index.js"
+      },
+      {
+        "name": "sax",
+        "version": "1.2.4",
+        "path": "node_modules/sax/lib/sax.js"
+      },
+      {
+        "name": "semver",
+        "version": "5.7.0",
+        "path": "node_modules/semver/semver.js"
+      },
+      {
+        "name": "set-blocking",
+        "version": "2.0.0",
+        "path": "node_modules/set-blocking/index.js"
+      },
+      {
+        "name": "set-value",
+        "version": "2.0.0",
+        "path": "node_modules/set-value/index.js"
+      },
+      {
+        "name": "extend-shallow",
+        "version": "2.0.1",
+        "path": "node_modules/set-value/node_modules/extend-shallow/index.js"
+      },
+      {
+        "name": "shebang-command",
+        "version": "1.2.0",
+        "path": "node_modules/shebang-command/index.js"
+      },
+      {
+        "name": "shebang-regex",
+        "version": "1.0.0",
+        "path": "node_modules/shebang-regex/index.js"
+      },
+      {
+        "name": "signal-exit",
+        "version": "3.0.2",
+        "path": "node_modules/signal-exit/index.js"
+      },
+      {
+        "name": "snapdragon",
+        "version": "0.8.2",
+        "path": "node_modules/snapdragon/index.js"
+      },
+      {
+        "name": "define-property",
+        "version": "0.2.5",
+        "path": "node_modules/snapdragon/node_modules/define-property/index.js"
+      },
+      {
+        "name": "extend-shallow",
+        "version": "2.0.1",
+        "path": "node_modules/snapdragon/node_modules/extend-shallow/index.js"
+      },
+      {
+        "name": "snapdragon-node",
+        "version": "2.1.1",
+        "path": "node_modules/snapdragon-node/index.js"
+      },
+      {
+        "name": "define-property",
+        "version": "1.0.0",
+        "path": "node_modules/snapdragon-node/node_modules/define-property/index.js"
+      },
+      {
+        "name": "is-accessor-descriptor",
+        "version": "1.0.0",
+        "path": "node_modules/snapdragon-node/node_modules/is-accessor-descriptor/index.js"
+      },
+      {
+        "name": "is-data-descriptor",
+        "version": "1.0.0",
+        "path": "node_modules/snapdragon-node/node_modules/is-data-descriptor/index.js"
+      },
+      {
+        "name": "is-descriptor",
+        "version": "1.0.2",
+        "path": "node_modules/snapdragon-node/node_modules/is-descriptor/index.js"
+      },
+      {
+        "name": "snapdragon-util",
+        "version": "3.0.1",
+        "path": "node_modules/snapdragon-util/index.js"
+      },
+      {
+        "name": "kind-of",
+        "version": "3.2.2",
+        "path": "node_modules/snapdragon-util/node_modules/kind-of/index.js"
+      },
+      {
+        "name": "source-map",
+        "version": "0.5.7",
+        "path": "node_modules/source-map/source-map.js"
+      },
+      {
+        "name": "source-map-resolve",
+        "version": "0.5.2",
+        "path": "node_modules/source-map-resolve/lib/source-map-resolve-node.js"
+      },
+      {
+        "name": "source-map-url",
+        "version": "0.4.0",
+        "path": "node_modules/source-map-url/source-map-url.js"
+      },
+      {
+        "name": "split",
+        "version": "1.0.1",
+        "path": "node_modules/split/index.js"
+      },
+      {
+        "name": "split-string",
+        "version": "3.1.0",
+        "path": "node_modules/split-string/index.js"
+      },
+      {
+        "name": "sprintf-js",
+        "version": "1.0.3",
+        "path": "node_modules/sprintf-js/src/sprintf.js"
+      },
+      {
+        "name": "static-extend",
+        "version": "0.1.2",
+        "path": "node_modules/static-extend/index.js"
+      },
+      {
+        "name": "define-property",
+        "version": "0.2.5",
+        "path": "node_modules/static-extend/node_modules/define-property/index.js"
+      },
+      {
+        "name": "stream-combiner",
+        "version": "0.2.2",
+        "path": "node_modules/stream-combiner/index.js"
+      },
+      {
+        "name": "string-width",
+        "version": "2.1.1",
+        "path": "node_modules/string-width/index.js"
+      },
+      {
+        "name": "strip-ansi",
+        "version": "4.0.0",
+        "path": "node_modules/strip-ansi/index.js"
+      },
+      {
+        "name": "strip-eof",
+        "version": "1.0.0",
+        "path": "node_modules/strip-eof/index.js"
+      },
+      {
+        "name": "temp",
+        "version": "0.8.3",
+        "path": "node_modules/temp/lib/temp.js"
+      },
+      {
+        "name": "through",
+        "version": "2.3.8",
+        "path": "node_modules/through/index.js"
+      },
+      {
+        "name": "to-object-path",
+        "version": "0.3.0",
+        "path": "node_modules/to-object-path/index.js"
+      },
+      {
+        "name": "kind-of",
+        "version": "3.2.2",
+        "path": "node_modules/to-object-path/node_modules/kind-of/index.js"
+      },
+      {
+        "name": "to-regex",
+        "version": "3.0.2",
+        "path": "node_modules/to-regex/index.js"
+      },
+      {
+        "name": "to-regex-range",
+        "version": "2.1.1",
+        "path": "node_modules/to-regex-range/index.js"
+      },
+      {
+        "name": "tree-kill",
+        "version": "1.2.1",
+        "path": "node_modules/tree-kill/index.js"
+      },
+      {
+        "name": "underscore",
+        "version": "1.9.1",
+        "path": "node_modules/underscore/underscore.js"
+      },
+      {
+        "name": "underscore-plus",
+        "version": "1.7.0",
+        "path": "node_modules/underscore-plus/lib/underscore-plus.js"
+      },
+      {
+        "name": "union-value",
+        "version": "1.0.0",
+        "path": "node_modules/union-value/index.js"
+      },
+      {
+        "name": "extend-shallow",
+        "version": "2.0.1",
+        "path": "node_modules/union-value/node_modules/extend-shallow/index.js"
+      },
+      {
+        "name": "set-value",
+        "version": "0.4.3",
+        "path": "node_modules/union-value/node_modules/set-value/index.js"
+      },
+      {
+        "name": "universalify",
+        "version": "0.1.2",
+        "path": "node_modules/universalify/index.js"
+      },
+      {
+        "name": "unset-value",
+        "version": "1.0.0",
+        "path": "node_modules/unset-value/index.js"
+      },
+      {
+        "name": "has-value",
+        "version": "0.3.1",
+        "path": "node_modules/unset-value/node_modules/has-value/index.js"
+      },
+      {
+        "name": "isobject",
+        "version": "2.1.0",
+        "path": "node_modules/unset-value/node_modules/has-value/node_modules/isobject/index.js"
+      },
+      {
+        "name": "has-values",
+        "version": "0.1.4",
+        "path": "node_modules/unset-value/node_modules/has-values/index.js"
+      },
+      {
+        "name": "urix",
+        "version": "0.1.0",
+        "path": "node_modules/urix/index.js"
+      },
+      {
+        "name": "use",
+        "version": "3.1.1",
+        "path": "node_modules/use/index.js"
+      },
+      {
+        "name": "vscode-jsonrpc",
+        "version": "3.6.2",
+        "path": "node_modules/vscode-jsonrpc/lib/main.js"
+      },
+      {
+        "name": "which",
+        "version": "1.3.1",
+        "path": "node_modules/which/which.js"
+      },
+      {
+        "name": "which-module",
+        "version": "2.0.0",
+        "path": "node_modules/which-module/index.js"
+      },
+      {
+        "name": "wordwrap",
+        "version": "0.0.3",
+        "path": "node_modules/wordwrap/index.js"
+      },
+      {
+        "name": "wrap-ansi",
+        "version": "2.1.0",
+        "path": "node_modules/wrap-ansi/index.js"
+      },
+      {
+        "name": "ansi-regex",
+        "version": "2.1.1",
+        "path": "node_modules/wrap-ansi/node_modules/ansi-regex/index.js"
+      },
+      {
+        "name": "is-fullwidth-code-point",
+        "version": "1.0.0",
+        "path": "node_modules/wrap-ansi/node_modules/is-fullwidth-code-point/index.js"
+      },
+      {
+        "name": "string-width",
+        "version": "1.0.2",
+        "path": "node_modules/wrap-ansi/node_modules/string-width/index.js"
+      },
+      {
+        "name": "strip-ansi",
+        "version": "3.0.1",
+        "path": "node_modules/wrap-ansi/node_modules/strip-ansi/index.js"
+      },
+      {
+        "name": "wrappy",
+        "version": "1.0.2",
+        "path": "node_modules/wrappy/wrappy.js"
+      },
+      {
+        "name": "wrench",
+        "version": "1.5.9",
+        "path": "node_modules/wrench/lib/wrench.js"
+      },
+      {
+        "name": "xml2js",
+        "version": "0.4.19",
+        "path": "node_modules/xml2js/lib/xml2js.js"
+      },
+      {
+        "name": "xmlbuilder",
+        "version": "9.0.7",
+        "path": "node_modules/xmlbuilder/lib/index.js"
+      },
+      {
+        "name": "y18n",
+        "version": "3.2.1",
+        "path": "node_modules/y18n/index.js"
+      },
+      {
+        "name": "yallist",
+        "version": "2.1.2",
+        "path": "node_modules/yallist/yallist.js"
+      },
+      {
+        "name": "yargs",
+        "version": "11.1.0",
+        "path": "node_modules/yargs/index.js"
+      },
+      {
+        "name": "yargs-parser",
+        "version": "9.0.2",
+        "path": "node_modules/yargs-parser/index.js"
+      }
+    ],
+    "extensions": {
+      ".js": [
+        "lib/build-state.js",
+        "lib/builder-registry.js",
+        "lib/builder.js",
+        "lib/builders/knitr.js",
+        "lib/builders/latexmk.js",
+        "lib/composer.js",
+        "lib/config-migrator.js",
+        "lib/latex.js",
+        "lib/logger.js",
+        "lib/main.js",
+        "lib/marker-manager.js",
+        "lib/opener-registry.js",
+        "lib/opener.js",
+        "lib/openers/atril-opener.js",
+        "lib/openers/custom-opener.js",
+        "lib/openers/evince-opener.js",
+        "lib/openers/okular-opener.js",
+        "lib/openers/pdf-view-opener.js",
+        "lib/openers/preview-opener.js",
+        "lib/openers/qpdfview-opener.js",
+        "lib/openers/shell-open-opener.js",
+        "lib/openers/skim-opener.js",
+        "lib/openers/sumatra-opener.js",
+        "lib/openers/x-reader-opener.js",
+        "lib/openers/xdg-open-opener.js",
+        "lib/openers/zathura-opener.js",
+        "lib/parser.js",
+        "lib/parsers/fdb-parser.js",
+        "lib/parsers/log-parser.js",
+        "lib/parsers/magic-parser.js",
+        "lib/process-manager.js",
+        "lib/status-indicator.js",
+        "lib/views/file-reference.js",
+        "lib/views/log-dock.js",
+        "lib/views/log-message.js",
+        "lib/views/message-count.js",
+        "lib/views/message-icon.js",
+        "lib/views/status-label.js",
+        "lib/werkzeug.js",
+        "node_modules/@dicy/client/lib/Client.js",
+        "node_modules/@dicy/client/lib/main.js",
+        "node_modules/@dicy/core/lib/Builder.js",
+        "node_modules/@dicy/core/lib/BuilderCache.js",
+        "node_modules/@dicy/core/lib/File.js",
+        "node_modules/@dicy/core/lib/Log.js",
+        "node_modules/@dicy/core/lib/Rule.js",
+        "node_modules/@dicy/core/lib/Rules/Agda.js",
+        "node_modules/@dicy/core/lib/Rules/ApplyOptions.js",
+        "node_modules/@dicy/core/lib/Rules/ApplySourceMaps.js",
+        "node_modules/@dicy/core/lib/Rules/AssignJobNames.js",
+        "node_modules/@dicy/core/lib/Rules/Asymptote.js",
+        "node_modules/@dicy/core/lib/Rules/BibTeX.js",
+        "node_modules/@dicy/core/lib/Rules/BibToGls.js",
+        "node_modules/@dicy/core/lib/Rules/Biber.js",
+        "node_modules/@dicy/core/lib/Rules/CheckForMissingBuildRule.js",
+        "node_modules/@dicy/core/lib/Rules/Clean.js",
+        "node_modules/@dicy/core/lib/Rules/CopyTargetsToRoot.js",
+        "node_modules/@dicy/core/lib/Rules/CreateOutputTree.js",
+        "node_modules/@dicy/core/lib/Rules/DviToPdf.js",
+        "node_modules/@dicy/core/lib/Rules/DviToPs.js",
+        "node_modules/@dicy/core/lib/Rules/DviToSvg.js",
+        "node_modules/@dicy/core/lib/Rules/EpsToPdf.js",
+        "node_modules/@dicy/core/lib/Rules/FindLogFiles.js",
+        "node_modules/@dicy/core/lib/Rules/GraphDependencies.js",
+        "node_modules/@dicy/core/lib/Rules/GraphViz.js",
+        "node_modules/@dicy/core/lib/Rules/Knitr.js",
+        "node_modules/@dicy/core/lib/Rules/LaTeX.js",
+        "node_modules/@dicy/core/lib/Rules/LhsToTeX.js",
+        "node_modules/@dicy/core/lib/Rules/LoadAndValidateCache.js",
+        "node_modules/@dicy/core/lib/Rules/LogProducedTargets.js",
+        "node_modules/@dicy/core/lib/Rules/MakeGlossaries.js",
+        "node_modules/@dicy/core/lib/Rules/MakeIndex.js",
+        "node_modules/@dicy/core/lib/Rules/MetaPost.js",
+        "node_modules/@dicy/core/lib/Rules/Migrate.js",
+        "node_modules/@dicy/core/lib/Rules/ParseAsymptoteStdOut.js",
+        "node_modules/@dicy/core/lib/Rules/ParseBibTeXLog.js",
+        "node_modules/@dicy/core/lib/Rules/ParseBibToGlsLog.js",
+        "node_modules/@dicy/core/lib/Rules/ParseBiberLog.js",
+        "node_modules/@dicy/core/lib/Rules/ParseFileListing.js",
+        "node_modules/@dicy/core/lib/Rules/ParseKnitrConcordance.js",
+        "node_modules/@dicy/core/lib/Rules/ParseLaTeXAuxilary.js",
+        "node_modules/@dicy/core/lib/Rules/ParseLaTeXLog.js",
+        "node_modules/@dicy/core/lib/Rules/ParseLaTeXMagic.js",
+        "node_modules/@dicy/core/lib/Rules/ParseMakeIndexLog.js",
+        "node_modules/@dicy/core/lib/Rules/ParseMendexLog.js",
+        "node_modules/@dicy/core/lib/Rules/ParseMendexStdErr.js",
+        "node_modules/@dicy/core/lib/Rules/ParseOptionsFile.js",
+        "node_modules/@dicy/core/lib/Rules/ParseSplitIndexStdErr.js",
+        "node_modules/@dicy/core/lib/Rules/ParseSplitIndexStdOut.js",
+        "node_modules/@dicy/core/lib/Rules/ParseXindyLog.js",
+        "node_modules/@dicy/core/lib/Rules/PatchSyncTeX.js",
+        "node_modules/@dicy/core/lib/Rules/PdfToPs.js",
+        "node_modules/@dicy/core/lib/Rules/PsToPdf.js",
+        "node_modules/@dicy/core/lib/Rules/Pweave.js",
+        "node_modules/@dicy/core/lib/Rules/PythonTeX.js",
+        "node_modules/@dicy/core/lib/Rules/ReportLogMessages.js",
+        "node_modules/@dicy/core/lib/Rules/RunTests.js",
+        "node_modules/@dicy/core/lib/Rules/Sage.js",
+        "node_modules/@dicy/core/lib/Rules/SaveCache.js",
+        "node_modules/@dicy/core/lib/Rules/SplitIndex.js",
+        "node_modules/@dicy/core/lib/State.js",
+        "node_modules/@dicy/core/lib/StateConsumer.js",
+        "node_modules/@dicy/core/lib/main.js",
+        "node_modules/@dicy/core/lib/types.js",
+        "node_modules/@dicy/server/lib/Server.js",
+        "node_modules/@dicy/server/lib/main.js",
+        "node_modules/@dicy/types/lib/api.js",
+        "node_modules/@dicy/types/lib/main.js",
+        "node_modules/@dicy/types/lib/types.js",
+        "node_modules/@mrmlnc/readdir-enhanced/lib/async/for-each.js",
+        "node_modules/@mrmlnc/readdir-enhanced/lib/async/index.js",
+        "node_modules/@mrmlnc/readdir-enhanced/lib/call.js",
+        "node_modules/@mrmlnc/readdir-enhanced/lib/directory-reader.js",
+        "node_modules/@mrmlnc/readdir-enhanced/lib/index.js",
+        "node_modules/@mrmlnc/readdir-enhanced/lib/normalize-options.js",
+        "node_modules/@mrmlnc/readdir-enhanced/lib/stat.js",
+        "node_modules/@mrmlnc/readdir-enhanced/lib/stream/index.js",
+        "node_modules/@mrmlnc/readdir-enhanced/lib/sync/for-each.js",
+        "node_modules/@mrmlnc/readdir-enhanced/lib/sync/fs.js",
+        "node_modules/@mrmlnc/readdir-enhanced/lib/sync/index.js",
+        "node_modules/@nodelib/fs.stat/out/adapters/fs.js",
+        "node_modules/@nodelib/fs.stat/out/index.js",
+        "node_modules/@nodelib/fs.stat/out/managers/options.js",
+        "node_modules/@nodelib/fs.stat/out/providers/stat.js",
+        "node_modules/abstract-socket/examples/client.js",
+        "node_modules/abstract-socket/examples/server.js",
+        "node_modules/abstract-socket/lib/abstract_socket.js",
+        "node_modules/ansi-regex/index.js",
+        "node_modules/argparse/index.js",
+        "node_modules/argparse/lib/action/append/constant.js",
+        "node_modules/argparse/lib/action/append.js",
+        "node_modules/argparse/lib/action/count.js",
+        "node_modules/argparse/lib/action/help.js",
+        "node_modules/argparse/lib/action/store/constant.js",
+        "node_modules/argparse/lib/action/store/false.js",
+        "node_modules/argparse/lib/action/store/true.js",
+        "node_modules/argparse/lib/action/store.js",
+        "node_modules/argparse/lib/action/subparsers.js",
+        "node_modules/argparse/lib/action/version.js",
+        "node_modules/argparse/lib/action.js",
+        "node_modules/argparse/lib/action_container.js",
+        "node_modules/argparse/lib/argparse.js",
+        "node_modules/argparse/lib/argument/error.js",
+        "node_modules/argparse/lib/argument/exclusive.js",
+        "node_modules/argparse/lib/argument/group.js",
+        "node_modules/argparse/lib/argument_parser.js",
+        "node_modules/argparse/lib/const.js",
+        "node_modules/argparse/lib/help/added_formatters.js",
+        "node_modules/argparse/lib/help/formatter.js",
+        "node_modules/argparse/lib/namespace.js",
+        "node_modules/argparse/lib/utils.js",
+        "node_modules/arr-diff/index.js",
+        "node_modules/arr-flatten/index.js",
+        "node_modules/arr-union/index.js",
+        "node_modules/array-unique/index.js",
+        "node_modules/assign-symbols/index.js",
+        "node_modules/async/dist/async.js",
+        "node_modules/async/dist/async.min.js",
+        "node_modules/async/lib/async.js",
+        "node_modules/atob/bin/atob.js",
+        "node_modules/atob/browser-atob.js",
+        "node_modules/atob/node-atob.js",
+        "node_modules/atob/test.js",
+        "node_modules/balanced-match/index.js",
+        "node_modules/base/index.js",
+        "node_modules/base/node_modules/define-property/index.js",
+        "node_modules/base/node_modules/is-accessor-descriptor/index.js",
+        "node_modules/base/node_modules/is-data-descriptor/index.js",
+        "node_modules/base/node_modules/is-descriptor/index.js",
+        "node_modules/bindings/bindings.js",
+        "node_modules/brace-expansion/index.js",
+        "node_modules/braces/index.js",
+        "node_modules/braces/lib/braces.js",
+        "node_modules/braces/lib/compilers.js",
+        "node_modules/braces/lib/parsers.js",
+        "node_modules/braces/lib/utils.js",
+        "node_modules/braces/node_modules/extend-shallow/index.js",
+        "node_modules/cache-base/index.js",
+        "node_modules/call-me-maybe/index.js",
+        "node_modules/camelcase/index.js",
+        "node_modules/class-utils/index.js",
+        "node_modules/class-utils/node_modules/define-property/index.js",
+        "node_modules/cliui/index.js",
+        "node_modules/code-point-at/index.js",
+        "node_modules/collection-visit/index.js",
+        "node_modules/command-join/command-join.js",
+        "node_modules/component-emitter/index.js",
+        "node_modules/concat-map/example/map.js",
+        "node_modules/concat-map/index.js",
+        "node_modules/copy-descriptor/index.js",
+        "node_modules/cross-spawn/index.js",
+        "node_modules/cross-spawn/lib/enoent.js",
+        "node_modules/cross-spawn/lib/parse.js",
+        "node_modules/cross-spawn/lib/util/escapeArgument.js",
+        "node_modules/cross-spawn/lib/util/escapeCommand.js",
+        "node_modules/cross-spawn/lib/util/hasEmptyArgumentBug.js",
+        "node_modules/cross-spawn/lib/util/readShebang.js",
+        "node_modules/cross-spawn/lib/util/resolveCommand.js",
+        "node_modules/dbus-native/bin/dbus2js.js",
+        "node_modules/dbus-native/index.js",
+        "node_modules/dbus-native/lib/address-x11.js",
+        "node_modules/dbus-native/lib/align.js",
+        "node_modules/dbus-native/lib/bus.js",
+        "node_modules/dbus-native/lib/constants.js",
+        "node_modules/dbus-native/lib/dbus-buffer.js",
+        "node_modules/dbus-native/lib/handshake.js",
+        "node_modules/dbus-native/lib/hello-message.js",
+        "node_modules/dbus-native/lib/introspect.js",
+        "node_modules/dbus-native/lib/marshall.js",
+        "node_modules/dbus-native/lib/marshallers.js",
+        "node_modules/dbus-native/lib/message.js",
+        "node_modules/dbus-native/lib/portforward.js",
+        "node_modules/dbus-native/lib/readline.js",
+        "node_modules/dbus-native/lib/server-handshake.js",
+        "node_modules/dbus-native/lib/server.js",
+        "node_modules/dbus-native/lib/signature.js",
+        "node_modules/dbus-native/lib/stdifaces.js",
+        "node_modules/dbus-native/lib/unmarshall.js",
+        "node_modules/debug/karma.conf.js",
+        "node_modules/debug/node.js",
+        "node_modules/debug/src/browser.js",
+        "node_modules/debug/src/debug.js",
+        "node_modules/debug/src/index.js",
+        "node_modules/debug/src/inspector-log.js",
+        "node_modules/debug/src/node.js",
+        "node_modules/decamelize/index.js",
+        "node_modules/decode-uri-component/index.js",
+        "node_modules/define-property/index.js",
+        "node_modules/define-property/node_modules/is-accessor-descriptor/index.js",
+        "node_modules/define-property/node_modules/is-data-descriptor/index.js",
+        "node_modules/define-property/node_modules/is-descriptor/index.js",
+        "node_modules/duplexer/index.js",
+        "node_modules/esprima/bin/esparse.js",
+        "node_modules/esprima/bin/esvalidate.js",
+        "node_modules/esprima/dist/esprima.js",
+        "node_modules/etch/dist/component-helpers.js",
+        "node_modules/etch/dist/default-scheduler.js",
+        "node_modules/etch/dist/dom.js",
+        "node_modules/etch/dist/event-listener-props.js",
+        "node_modules/etch/dist/index.js",
+        "node_modules/etch/dist/patch.js",
+        "node_modules/etch/dist/render.js",
+        "node_modules/etch/dist/scheduler-assignment.js",
+        "node_modules/etch/dist/svg-attribute-translations.js",
+        "node_modules/etch/dist/svg-tags.js",
+        "node_modules/etch/dist/update-props.js",
+        "node_modules/etch/lib/component-helpers.js",
+        "node_modules/etch/lib/default-scheduler.js",
+        "node_modules/etch/lib/dom.js",
+        "node_modules/etch/lib/event-listener-props.js",
+        "node_modules/etch/lib/index.js",
+        "node_modules/etch/lib/patch.js",
+        "node_modules/etch/lib/render.js",
+        "node_modules/etch/lib/scheduler-assignment.js",
+        "node_modules/etch/lib/svg-attribute-translations.js",
+        "node_modules/etch/lib/svg-tags.js",
+        "node_modules/etch/lib/update-props.js",
+        "node_modules/event-stream/examples/map.js",
+        "node_modules/event-stream/examples/pretty.js",
+        "node_modules/event-stream/examples/split.js",
+        "node_modules/event-stream/index.js",
+        "node_modules/execa/index.js",
+        "node_modules/execa/lib/errname.js",
+        "node_modules/execa/lib/stdio.js",
+        "node_modules/expand-brackets/index.js",
+        "node_modules/expand-brackets/lib/compilers.js",
+        "node_modules/expand-brackets/lib/parsers.js",
+        "node_modules/expand-brackets/lib/utils.js",
+        "node_modules/expand-brackets/node_modules/define-property/index.js",
+        "node_modules/expand-brackets/node_modules/extend-shallow/index.js",
+        "node_modules/extend-shallow/index.js",
+        "node_modules/extend-shallow/node_modules/is-extendable/index.js",
+        "node_modules/extglob/index.js",
+        "node_modules/extglob/lib/compilers.js",
+        "node_modules/extglob/lib/extglob.js",
+        "node_modules/extglob/lib/parsers.js",
+        "node_modules/extglob/lib/utils.js",
+        "node_modules/extglob/node_modules/define-property/index.js",
+        "node_modules/extglob/node_modules/extend-shallow/index.js",
+        "node_modules/extglob/node_modules/is-accessor-descriptor/index.js",
+        "node_modules/extglob/node_modules/is-data-descriptor/index.js",
+        "node_modules/extglob/node_modules/is-descriptor/index.js",
+        "node_modules/fast-glob/index.js",
+        "node_modules/fast-glob/out/adapters/fs-stream.js",
+        "node_modules/fast-glob/out/adapters/fs-sync.js",
+        "node_modules/fast-glob/out/adapters/fs.js",
+        "node_modules/fast-glob/out/index.js",
+        "node_modules/fast-glob/out/managers/options.js",
+        "node_modules/fast-glob/out/managers/tasks.js",
+        "node_modules/fast-glob/out/providers/filters/deep.js",
+        "node_modules/fast-glob/out/providers/filters/entry.js",
+        "node_modules/fast-glob/out/providers/reader-async.js",
+        "node_modules/fast-glob/out/providers/reader-stream.js",
+        "node_modules/fast-glob/out/providers/reader-sync.js",
+        "node_modules/fast-glob/out/providers/reader.js",
+        "node_modules/fast-glob/out/types/entries.js",
+        "node_modules/fast-glob/out/types/patterns.js",
+        "node_modules/fast-glob/out/utils/array.js",
+        "node_modules/fast-glob/out/utils/path.js",
+        "node_modules/fast-glob/out/utils/pattern.js",
+        "node_modules/fast-glob/out/utils/stream.js",
+        "node_modules/file-uri-to-path/index.js",
+        "node_modules/file-url/index.js",
+        "node_modules/fill-range/index.js",
+        "node_modules/fill-range/node_modules/extend-shallow/index.js",
+        "node_modules/find-up/index.js",
+        "node_modules/for-in/index.js",
+        "node_modules/fragment-cache/index.js",
+        "node_modules/from/index.js",
+        "node_modules/fs-extra/lib/copy/copy.js",
+        "node_modules/fs-extra/lib/copy/index.js",
+        "node_modules/fs-extra/lib/copy-sync/copy-sync.js",
+        "node_modules/fs-extra/lib/copy-sync/index.js",
+        "node_modules/fs-extra/lib/empty/index.js",
+        "node_modules/fs-extra/lib/ensure/file.js",
+        "node_modules/fs-extra/lib/ensure/index.js",
+        "node_modules/fs-extra/lib/ensure/link.js",
+        "node_modules/fs-extra/lib/ensure/symlink-paths.js",
+        "node_modules/fs-extra/lib/ensure/symlink-type.js",
+        "node_modules/fs-extra/lib/ensure/symlink.js",
+        "node_modules/fs-extra/lib/fs/index.js",
+        "node_modules/fs-extra/lib/index.js",
+        "node_modules/fs-extra/lib/json/index.js",
+        "node_modules/fs-extra/lib/json/jsonfile.js",
+        "node_modules/fs-extra/lib/json/output-json-sync.js",
+        "node_modules/fs-extra/lib/json/output-json.js",
+        "node_modules/fs-extra/lib/mkdirs/index.js",
+        "node_modules/fs-extra/lib/mkdirs/mkdirs-sync.js",
+        "node_modules/fs-extra/lib/mkdirs/mkdirs.js",
+        "node_modules/fs-extra/lib/mkdirs/win32.js",
+        "node_modules/fs-extra/lib/move/index.js",
+        "node_modules/fs-extra/lib/move-sync/index.js",
+        "node_modules/fs-extra/lib/output/index.js",
+        "node_modules/fs-extra/lib/path-exists/index.js",
+        "node_modules/fs-extra/lib/remove/index.js",
+        "node_modules/fs-extra/lib/remove/rimraf.js",
+        "node_modules/fs-extra/lib/util/assign.js",
+        "node_modules/fs-extra/lib/util/buffer.js",
+        "node_modules/fs-extra/lib/util/utimes.js",
+        "node_modules/fs-plus/lib/fs-plus.js",
+        "node_modules/fs-plus/node_modules/rimraf/bin.js",
+        "node_modules/fs-plus/node_modules/rimraf/rimraf.js",
+        "node_modules/fs.realpath/index.js",
+        "node_modules/fs.realpath/old.js",
+        "node_modules/get-caller-file/index.js",
+        "node_modules/get-stream/buffer-stream.js",
+        "node_modules/get-stream/index.js",
+        "node_modules/get-value/index.js",
+        "node_modules/glob/common.js",
+        "node_modules/glob/glob.js",
+        "node_modules/glob/sync.js",
+        "node_modules/glob-parent/index.js",
+        "node_modules/glob-parent/node_modules/is-glob/index.js",
+        "node_modules/glob-to-regexp/index.js",
+        "node_modules/glob-to-regexp/test.js",
+        "node_modules/graceful-fs/clone.js",
+        "node_modules/graceful-fs/graceful-fs.js",
+        "node_modules/graceful-fs/legacy-streams.js",
+        "node_modules/graceful-fs/polyfills.js",
+        "node_modules/graphlib/dist/graphlib.core.js",
+        "node_modules/graphlib/dist/graphlib.core.min.js",
+        "node_modules/graphlib/dist/graphlib.js",
+        "node_modules/graphlib/dist/graphlib.min.js",
+        "node_modules/graphlib/index.js",
+        "node_modules/graphlib/karma.amd.conf.js",
+        "node_modules/graphlib/karma.conf.js",
+        "node_modules/graphlib/karma.core.conf.js",
+        "node_modules/graphlib/lib/alg/components.js",
+        "node_modules/graphlib/lib/alg/dfs.js",
+        "node_modules/graphlib/lib/alg/dijkstra-all.js",
+        "node_modules/graphlib/lib/alg/dijkstra.js",
+        "node_modules/graphlib/lib/alg/find-cycles.js",
+        "node_modules/graphlib/lib/alg/floyd-warshall.js",
+        "node_modules/graphlib/lib/alg/index.js",
+        "node_modules/graphlib/lib/alg/is-acyclic.js",
+        "node_modules/graphlib/lib/alg/postorder.js",
+        "node_modules/graphlib/lib/alg/preorder.js",
+        "node_modules/graphlib/lib/alg/prim.js",
+        "node_modules/graphlib/lib/alg/tarjan.js",
+        "node_modules/graphlib/lib/alg/topsort.js",
+        "node_modules/graphlib/lib/data/priority-queue.js",
+        "node_modules/graphlib/lib/graph.js",
+        "node_modules/graphlib/lib/index.js",
+        "node_modules/graphlib/lib/json.js",
+        "node_modules/graphlib/lib/lodash.js",
+        "node_modules/graphlib/lib/version.js",
+        "node_modules/has-value/index.js",
+        "node_modules/has-values/index.js",
+        "node_modules/has-values/node_modules/kind-of/index.js",
+        "node_modules/hexy/bin/hexy_cmd.js",
+        "node_modules/hexy/hexy.js",
+        "node_modules/hexy/test.js",
+        "node_modules/inflight/inflight.js",
+        "node_modules/inherits/inherits.js",
+        "node_modules/inherits/inherits_browser.js",
+        "node_modules/invert-kv/index.js",
+        "node_modules/is-accessor-descriptor/index.js",
+        "node_modules/is-accessor-descriptor/node_modules/kind-of/index.js",
+        "node_modules/is-buffer/index.js",
+        "node_modules/is-data-descriptor/index.js",
+        "node_modules/is-data-descriptor/node_modules/kind-of/index.js",
+        "node_modules/is-descriptor/index.js",
+        "node_modules/is-descriptor/node_modules/kind-of/index.js",
+        "node_modules/is-extendable/index.js",
+        "node_modules/is-extglob/index.js",
+        "node_modules/is-fullwidth-code-point/index.js",
+        "node_modules/is-glob/index.js",
+        "node_modules/is-number/index.js",
+        "node_modules/is-number/node_modules/kind-of/index.js",
+        "node_modules/is-plain-object/index.js",
+        "node_modules/is-stream/index.js",
+        "node_modules/is-windows/index.js",
+        "node_modules/isarray/index.js",
+        "node_modules/isarray/test.js",
+        "node_modules/isexe/index.js",
+        "node_modules/isexe/mode.js",
+        "node_modules/isexe/windows.js",
+        "node_modules/isobject/index.js",
+        "node_modules/js-yaml/bin/js-yaml.js",
+        "node_modules/js-yaml/dist/js-yaml.js",
+        "node_modules/js-yaml/dist/js-yaml.min.js",
+        "node_modules/js-yaml/index.js",
+        "node_modules/js-yaml/lib/js-yaml/common.js",
+        "node_modules/js-yaml/lib/js-yaml/dumper.js",
+        "node_modules/js-yaml/lib/js-yaml/exception.js",
+        "node_modules/js-yaml/lib/js-yaml/loader.js",
+        "node_modules/js-yaml/lib/js-yaml/mark.js",
+        "node_modules/js-yaml/lib/js-yaml/schema/core.js",
+        "node_modules/js-yaml/lib/js-yaml/schema/default_full.js",
+        "node_modules/js-yaml/lib/js-yaml/schema/default_safe.js",
+        "node_modules/js-yaml/lib/js-yaml/schema/failsafe.js",
+        "node_modules/js-yaml/lib/js-yaml/schema/json.js",
+        "node_modules/js-yaml/lib/js-yaml/schema.js",
+        "node_modules/js-yaml/lib/js-yaml/type/binary.js",
+        "node_modules/js-yaml/lib/js-yaml/type/bool.js",
+        "node_modules/js-yaml/lib/js-yaml/type/float.js",
+        "node_modules/js-yaml/lib/js-yaml/type/int.js",
+        "node_modules/js-yaml/lib/js-yaml/type/js/function.js",
+        "node_modules/js-yaml/lib/js-yaml/type/js/regexp.js",
+        "node_modules/js-yaml/lib/js-yaml/type/js/undefined.js",
+        "node_modules/js-yaml/lib/js-yaml/type/map.js",
+        "node_modules/js-yaml/lib/js-yaml/type/merge.js",
+        "node_modules/js-yaml/lib/js-yaml/type/null.js",
+        "node_modules/js-yaml/lib/js-yaml/type/omap.js",
+        "node_modules/js-yaml/lib/js-yaml/type/pairs.js",
+        "node_modules/js-yaml/lib/js-yaml/type/seq.js",
+        "node_modules/js-yaml/lib/js-yaml/type/set.js",
+        "node_modules/js-yaml/lib/js-yaml/type/str.js",
+        "node_modules/js-yaml/lib/js-yaml/type/timestamp.js",
+        "node_modules/js-yaml/lib/js-yaml/type.js",
+        "node_modules/js-yaml/lib/js-yaml.js",
+        "node_modules/jsonfile/index.js",
+        "node_modules/kind-of/index.js",
+        "node_modules/lcid/index.js",
+        "node_modules/locate-path/index.js",
+        "node_modules/lodash/_DataView.js",
+        "node_modules/lodash/_Hash.js",
+        "node_modules/lodash/_LazyWrapper.js",
+        "node_modules/lodash/_ListCache.js",
+        "node_modules/lodash/_LodashWrapper.js",
+        "node_modules/lodash/_Map.js",
+        "node_modules/lodash/_MapCache.js",
+        "node_modules/lodash/_Promise.js",
+        "node_modules/lodash/_Set.js",
+        "node_modules/lodash/_SetCache.js",
+        "node_modules/lodash/_Stack.js",
+        "node_modules/lodash/_Symbol.js",
+        "node_modules/lodash/_Uint8Array.js",
+        "node_modules/lodash/_WeakMap.js",
+        "node_modules/lodash/_apply.js",
+        "node_modules/lodash/_arrayAggregator.js",
+        "node_modules/lodash/_arrayEach.js",
+        "node_modules/lodash/_arrayEachRight.js",
+        "node_modules/lodash/_arrayEvery.js",
+        "node_modules/lodash/_arrayFilter.js",
+        "node_modules/lodash/_arrayIncludes.js",
+        "node_modules/lodash/_arrayIncludesWith.js",
+        "node_modules/lodash/_arrayLikeKeys.js",
+        "node_modules/lodash/_arrayMap.js",
+        "node_modules/lodash/_arrayPush.js",
+        "node_modules/lodash/_arrayReduce.js",
+        "node_modules/lodash/_arrayReduceRight.js",
+        "node_modules/lodash/_arraySample.js",
+        "node_modules/lodash/_arraySampleSize.js",
+        "node_modules/lodash/_arrayShuffle.js",
+        "node_modules/lodash/_arraySome.js",
+        "node_modules/lodash/_asciiSize.js",
+        "node_modules/lodash/_asciiToArray.js",
+        "node_modules/lodash/_asciiWords.js",
+        "node_modules/lodash/_assignMergeValue.js",
+        "node_modules/lodash/_assignValue.js",
+        "node_modules/lodash/_assocIndexOf.js",
+        "node_modules/lodash/_baseAggregator.js",
+        "node_modules/lodash/_baseAssign.js",
+        "node_modules/lodash/_baseAssignIn.js",
+        "node_modules/lodash/_baseAssignValue.js",
+        "node_modules/lodash/_baseAt.js",
+        "node_modules/lodash/_baseClamp.js",
+        "node_modules/lodash/_baseClone.js",
+        "node_modules/lodash/_baseConforms.js",
+        "node_modules/lodash/_baseConformsTo.js",
+        "node_modules/lodash/_baseCreate.js",
+        "node_modules/lodash/_baseDelay.js",
+        "node_modules/lodash/_baseDifference.js",
+        "node_modules/lodash/_baseEach.js",
+        "node_modules/lodash/_baseEachRight.js",
+        "node_modules/lodash/_baseEvery.js",
+        "node_modules/lodash/_baseExtremum.js",
+        "node_modules/lodash/_baseFill.js",
+        "node_modules/lodash/_baseFilter.js",
+        "node_modules/lodash/_baseFindIndex.js",
+        "node_modules/lodash/_baseFindKey.js",
+        "node_modules/lodash/_baseFlatten.js",
+        "node_modules/lodash/_baseFor.js",
+        "node_modules/lodash/_baseForOwn.js",
+        "node_modules/lodash/_baseForOwnRight.js",
+        "node_modules/lodash/_baseForRight.js",
+        "node_modules/lodash/_baseFunctions.js",
+        "node_modules/lodash/_baseGet.js",
+        "node_modules/lodash/_baseGetAllKeys.js",
+        "node_modules/lodash/_baseGetTag.js",
+        "node_modules/lodash/_baseGt.js",
+        "node_modules/lodash/_baseHas.js",
+        "node_modules/lodash/_baseHasIn.js",
+        "node_modules/lodash/_baseInRange.js",
+        "node_modules/lodash/_baseIndexOf.js",
+        "node_modules/lodash/_baseIndexOfWith.js",
+        "node_modules/lodash/_baseIntersection.js",
+        "node_modules/lodash/_baseInverter.js",
+        "node_modules/lodash/_baseInvoke.js",
+        "node_modules/lodash/_baseIsArguments.js",
+        "node_modules/lodash/_baseIsArrayBuffer.js",
+        "node_modules/lodash/_baseIsDate.js",
+        "node_modules/lodash/_baseIsEqual.js",
+        "node_modules/lodash/_baseIsEqualDeep.js",
+        "node_modules/lodash/_baseIsMap.js",
+        "node_modules/lodash/_baseIsMatch.js",
+        "node_modules/lodash/_baseIsNaN.js",
+        "node_modules/lodash/_baseIsNative.js",
+        "node_modules/lodash/_baseIsRegExp.js",
+        "node_modules/lodash/_baseIsSet.js",
+        "node_modules/lodash/_baseIsTypedArray.js",
+        "node_modules/lodash/_baseIteratee.js",
+        "node_modules/lodash/_baseKeys.js",
+        "node_modules/lodash/_baseKeysIn.js",
+        "node_modules/lodash/_baseLodash.js",
+        "node_modules/lodash/_baseLt.js",
+        "node_modules/lodash/_baseMap.js",
+        "node_modules/lodash/_baseMatches.js",
+        "node_modules/lodash/_baseMatchesProperty.js",
+        "node_modules/lodash/_baseMean.js",
+        "node_modules/lodash/_baseMerge.js",
+        "node_modules/lodash/_baseMergeDeep.js",
+        "node_modules/lodash/_baseNth.js",
+        "node_modules/lodash/_baseOrderBy.js",
+        "node_modules/lodash/_basePick.js",
+        "node_modules/lodash/_basePickBy.js",
+        "node_modules/lodash/_baseProperty.js",
+        "node_modules/lodash/_basePropertyDeep.js",
+        "node_modules/lodash/_basePropertyOf.js",
+        "node_modules/lodash/_basePullAll.js",
+        "node_modules/lodash/_basePullAt.js",
+        "node_modules/lodash/_baseRandom.js",
+        "node_modules/lodash/_baseRange.js",
+        "node_modules/lodash/_baseReduce.js",
+        "node_modules/lodash/_baseRepeat.js",
+        "node_modules/lodash/_baseRest.js",
+        "node_modules/lodash/_baseSample.js",
+        "node_modules/lodash/_baseSampleSize.js",
+        "node_modules/lodash/_baseSet.js",
+        "node_modules/lodash/_baseSetData.js",
+        "node_modules/lodash/_baseSetToString.js",
+        "node_modules/lodash/_baseShuffle.js",
+        "node_modules/lodash/_baseSlice.js",
+        "node_modules/lodash/_baseSome.js",
+        "node_modules/lodash/_baseSortBy.js",
+        "node_modules/lodash/_baseSortedIndex.js",
+        "node_modules/lodash/_baseSortedIndexBy.js",
+        "node_modules/lodash/_baseSortedUniq.js",
+        "node_modules/lodash/_baseSum.js",
+        "node_modules/lodash/_baseTimes.js",
+        "node_modules/lodash/_baseToNumber.js",
+        "node_modules/lodash/_baseToPairs.js",
+        "node_modules/lodash/_baseToString.js",
+        "node_modules/lodash/_baseUnary.js",
+        "node_modules/lodash/_baseUniq.js",
+        "node_modules/lodash/_baseUnset.js",
+        "node_modules/lodash/_baseUpdate.js",
+        "node_modules/lodash/_baseValues.js",
+        "node_modules/lodash/_baseWhile.js",
+        "node_modules/lodash/_baseWrapperValue.js",
+        "node_modules/lodash/_baseXor.js",
+        "node_modules/lodash/_baseZipObject.js",
+        "node_modules/lodash/_cacheHas.js",
+        "node_modules/lodash/_castArrayLikeObject.js",
+        "node_modules/lodash/_castFunction.js",
+        "node_modules/lodash/_castPath.js",
+        "node_modules/lodash/_castRest.js",
+        "node_modules/lodash/_castSlice.js",
+        "node_modules/lodash/_charsEndIndex.js",
+        "node_modules/lodash/_charsStartIndex.js",
+        "node_modules/lodash/_cloneArrayBuffer.js",
+        "node_modules/lodash/_cloneBuffer.js",
+        "node_modules/lodash/_cloneDataView.js",
+        "node_modules/lodash/_cloneRegExp.js",
+        "node_modules/lodash/_cloneSymbol.js",
+        "node_modules/lodash/_cloneTypedArray.js",
+        "node_modules/lodash/_compareAscending.js",
+        "node_modules/lodash/_compareMultiple.js",
+        "node_modules/lodash/_composeArgs.js",
+        "node_modules/lodash/_composeArgsRight.js",
+        "node_modules/lodash/_copyArray.js",
+        "node_modules/lodash/_copyObject.js",
+        "node_modules/lodash/_copySymbols.js",
+        "node_modules/lodash/_copySymbolsIn.js",
+        "node_modules/lodash/_coreJsData.js",
+        "node_modules/lodash/_countHolders.js",
+        "node_modules/lodash/_createAggregator.js",
+        "node_modules/lodash/_createAssigner.js",
+        "node_modules/lodash/_createBaseEach.js",
+        "node_modules/lodash/_createBaseFor.js",
+        "node_modules/lodash/_createBind.js",
+        "node_modules/lodash/_createCaseFirst.js",
+        "node_modules/lodash/_createCompounder.js",
+        "node_modules/lodash/_createCtor.js",
+        "node_modules/lodash/_createCurry.js",
+        "node_modules/lodash/_createFind.js",
+        "node_modules/lodash/_createFlow.js",
+        "node_modules/lodash/_createHybrid.js",
+        "node_modules/lodash/_createInverter.js",
+        "node_modules/lodash/_createMathOperation.js",
+        "node_modules/lodash/_createOver.js",
+        "node_modules/lodash/_createPadding.js",
+        "node_modules/lodash/_createPartial.js",
+        "node_modules/lodash/_createRange.js",
+        "node_modules/lodash/_createRecurry.js",
+        "node_modules/lodash/_createRelationalOperation.js",
+        "node_modules/lodash/_createRound.js",
+        "node_modules/lodash/_createSet.js",
+        "node_modules/lodash/_createToPairs.js",
+        "node_modules/lodash/_createWrap.js",
+        "node_modules/lodash/_customDefaultsAssignIn.js",
+        "node_modules/lodash/_customDefaultsMerge.js",
+        "node_modules/lodash/_customOmitClone.js",
+        "node_modules/lodash/_deburrLetter.js",
+        "node_modules/lodash/_defineProperty.js",
+        "node_modules/lodash/_equalArrays.js",
+        "node_modules/lodash/_equalByTag.js",
+        "node_modules/lodash/_equalObjects.js",
+        "node_modules/lodash/_escapeHtmlChar.js",
+        "node_modules/lodash/_escapeStringChar.js",
+        "node_modules/lodash/_flatRest.js",
+        "node_modules/lodash/_freeGlobal.js",
+        "node_modules/lodash/_getAllKeys.js",
+        "node_modules/lodash/_getAllKeysIn.js",
+        "node_modules/lodash/_getData.js",
+        "node_modules/lodash/_getFuncName.js",
+        "node_modules/lodash/_getHolder.js",
+        "node_modules/lodash/_getMapData.js",
+        "node_modules/lodash/_getMatchData.js",
+        "node_modules/lodash/_getNative.js",
+        "node_modules/lodash/_getPrototype.js",
+        "node_modules/lodash/_getRawTag.js",
+        "node_modules/lodash/_getSymbols.js",
+        "node_modules/lodash/_getSymbolsIn.js",
+        "node_modules/lodash/_getTag.js",
+        "node_modules/lodash/_getValue.js",
+        "node_modules/lodash/_getView.js",
+        "node_modules/lodash/_getWrapDetails.js",
+        "node_modules/lodash/_hasPath.js",
+        "node_modules/lodash/_hasUnicode.js",
+        "node_modules/lodash/_hasUnicodeWord.js",
+        "node_modules/lodash/_hashClear.js",
+        "node_modules/lodash/_hashDelete.js",
+        "node_modules/lodash/_hashGet.js",
+        "node_modules/lodash/_hashHas.js",
+        "node_modules/lodash/_hashSet.js",
+        "node_modules/lodash/_initCloneArray.js",
+        "node_modules/lodash/_initCloneByTag.js",
+        "node_modules/lodash/_initCloneObject.js",
+        "node_modules/lodash/_insertWrapDetails.js",
+        "node_modules/lodash/_isFlattenable.js",
+        "node_modules/lodash/_isIndex.js",
+        "node_modules/lodash/_isIterateeCall.js",
+        "node_modules/lodash/_isKey.js",
+        "node_modules/lodash/_isKeyable.js",
+        "node_modules/lodash/_isLaziable.js",
+        "node_modules/lodash/_isMaskable.js",
+        "node_modules/lodash/_isMasked.js",
+        "node_modules/lodash/_isPrototype.js",
+        "node_modules/lodash/_isStrictComparable.js",
+        "node_modules/lodash/_iteratorToArray.js",
+        "node_modules/lodash/_lazyClone.js",
+        "node_modules/lodash/_lazyReverse.js",
+        "node_modules/lodash/_lazyValue.js",
+        "node_modules/lodash/_listCacheClear.js",
+        "node_modules/lodash/_listCacheDelete.js",
+        "node_modules/lodash/_listCacheGet.js",
+        "node_modules/lodash/_listCacheHas.js",
+        "node_modules/lodash/_listCacheSet.js",
+        "node_modules/lodash/_mapCacheClear.js",
+        "node_modules/lodash/_mapCacheDelete.js",
+        "node_modules/lodash/_mapCacheGet.js",
+        "node_modules/lodash/_mapCacheHas.js",
+        "node_modules/lodash/_mapCacheSet.js",
+        "node_modules/lodash/_mapToArray.js",
+        "node_modules/lodash/_matchesStrictComparable.js",
+        "node_modules/lodash/_memoizeCapped.js",
+        "node_modules/lodash/_mergeData.js",
+        "node_modules/lodash/_metaMap.js",
+        "node_modules/lodash/_nativeCreate.js",
+        "node_modules/lodash/_nativeKeys.js",
+        "node_modules/lodash/_nativeKeysIn.js",
+        "node_modules/lodash/_nodeUtil.js",
+        "node_modules/lodash/_objectToString.js",
+        "node_modules/lodash/_overArg.js",
+        "node_modules/lodash/_overRest.js",
+        "node_modules/lodash/_parent.js",
+        "node_modules/lodash/_reEscape.js",
+        "node_modules/lodash/_reEvaluate.js",
+        "node_modules/lodash/_reInterpolate.js",
+        "node_modules/lodash/_realNames.js",
+        "node_modules/lodash/_reorder.js",
+        "node_modules/lodash/_replaceHolders.js",
+        "node_modules/lodash/_root.js",
+        "node_modules/lodash/_safeGet.js",
+        "node_modules/lodash/_setCacheAdd.js",
+        "node_modules/lodash/_setCacheHas.js",
+        "node_modules/lodash/_setData.js",
+        "node_modules/lodash/_setToArray.js",
+        "node_modules/lodash/_setToPairs.js",
+        "node_modules/lodash/_setToString.js",
+        "node_modules/lodash/_setWrapToString.js",
+        "node_modules/lodash/_shortOut.js",
+        "node_modules/lodash/_shuffleSelf.js",
+        "node_modules/lodash/_stackClear.js",
+        "node_modules/lodash/_stackDelete.js",
+        "node_modules/lodash/_stackGet.js",
+        "node_modules/lodash/_stackHas.js",
+        "node_modules/lodash/_stackSet.js",
+        "node_modules/lodash/_strictIndexOf.js",
+        "node_modules/lodash/_strictLastIndexOf.js",
+        "node_modules/lodash/_stringSize.js",
+        "node_modules/lodash/_stringToArray.js",
+        "node_modules/lodash/_stringToPath.js",
+        "node_modules/lodash/_toKey.js",
+        "node_modules/lodash/_toSource.js",
+        "node_modules/lodash/_unescapeHtmlChar.js",
+        "node_modules/lodash/_unicodeSize.js",
+        "node_modules/lodash/_unicodeToArray.js",
+        "node_modules/lodash/_unicodeWords.js",
+        "node_modules/lodash/_updateWrapDetails.js",
+        "node_modules/lodash/_wrapperClone.js",
+        "node_modules/lodash/add.js",
+        "node_modules/lodash/after.js",
+        "node_modules/lodash/array.js",
+        "node_modules/lodash/ary.js",
+        "node_modules/lodash/assign.js",
+        "node_modules/lodash/assignIn.js",
+        "node_modules/lodash/assignInWith.js",
+        "node_modules/lodash/assignWith.js",
+        "node_modules/lodash/at.js",
+        "node_modules/lodash/attempt.js",
+        "node_modules/lodash/before.js",
+        "node_modules/lodash/bind.js",
+        "node_modules/lodash/bindAll.js",
+        "node_modules/lodash/bindKey.js",
+        "node_modules/lodash/camelCase.js",
+        "node_modules/lodash/capitalize.js",
+        "node_modules/lodash/castArray.js",
+        "node_modules/lodash/ceil.js",
+        "node_modules/lodash/chain.js",
+        "node_modules/lodash/chunk.js",
+        "node_modules/lodash/clamp.js",
+        "node_modules/lodash/clone.js",
+        "node_modules/lodash/cloneDeep.js",
+        "node_modules/lodash/cloneDeepWith.js",
+        "node_modules/lodash/cloneWith.js",
+        "node_modules/lodash/collection.js",
+        "node_modules/lodash/commit.js",
+        "node_modules/lodash/compact.js",
+        "node_modules/lodash/concat.js",
+        "node_modules/lodash/cond.js",
+        "node_modules/lodash/conforms.js",
+        "node_modules/lodash/conformsTo.js",
+        "node_modules/lodash/constant.js",
+        "node_modules/lodash/core.js",
+        "node_modules/lodash/core.min.js",
+        "node_modules/lodash/countBy.js",
+        "node_modules/lodash/create.js",
+        "node_modules/lodash/curry.js",
+        "node_modules/lodash/curryRight.js",
+        "node_modules/lodash/date.js",
+        "node_modules/lodash/debounce.js",
+        "node_modules/lodash/deburr.js",
+        "node_modules/lodash/defaultTo.js",
+        "node_modules/lodash/defaults.js",
+        "node_modules/lodash/defaultsDeep.js",
+        "node_modules/lodash/defer.js",
+        "node_modules/lodash/delay.js",
+        "node_modules/lodash/difference.js",
+        "node_modules/lodash/differenceBy.js",
+        "node_modules/lodash/differenceWith.js",
+        "node_modules/lodash/divide.js",
+        "node_modules/lodash/drop.js",
+        "node_modules/lodash/dropRight.js",
+        "node_modules/lodash/dropRightWhile.js",
+        "node_modules/lodash/dropWhile.js",
+        "node_modules/lodash/each.js",
+        "node_modules/lodash/eachRight.js",
+        "node_modules/lodash/endsWith.js",
+        "node_modules/lodash/entries.js",
+        "node_modules/lodash/entriesIn.js",
+        "node_modules/lodash/eq.js",
+        "node_modules/lodash/escape.js",
+        "node_modules/lodash/escapeRegExp.js",
+        "node_modules/lodash/every.js",
+        "node_modules/lodash/extend.js",
+        "node_modules/lodash/extendWith.js",
+        "node_modules/lodash/fill.js",
+        "node_modules/lodash/filter.js",
+        "node_modules/lodash/find.js",
+        "node_modules/lodash/findIndex.js",
+        "node_modules/lodash/findKey.js",
+        "node_modules/lodash/findLast.js",
+        "node_modules/lodash/findLastIndex.js",
+        "node_modules/lodash/findLastKey.js",
+        "node_modules/lodash/first.js",
+        "node_modules/lodash/flatMap.js",
+        "node_modules/lodash/flatMapDeep.js",
+        "node_modules/lodash/flatMapDepth.js",
+        "node_modules/lodash/flatten.js",
+        "node_modules/lodash/flattenDeep.js",
+        "node_modules/lodash/flattenDepth.js",
+        "node_modules/lodash/flip.js",
+        "node_modules/lodash/floor.js",
+        "node_modules/lodash/flow.js",
+        "node_modules/lodash/flowRight.js",
+        "node_modules/lodash/forEach.js",
+        "node_modules/lodash/forEachRight.js",
+        "node_modules/lodash/forIn.js",
+        "node_modules/lodash/forInRight.js",
+        "node_modules/lodash/forOwn.js",
+        "node_modules/lodash/forOwnRight.js",
+        "node_modules/lodash/fp/F.js",
+        "node_modules/lodash/fp/T.js",
+        "node_modules/lodash/fp/__.js",
+        "node_modules/lodash/fp/_baseConvert.js",
+        "node_modules/lodash/fp/_convertBrowser.js",
+        "node_modules/lodash/fp/_falseOptions.js",
+        "node_modules/lodash/fp/_mapping.js",
+        "node_modules/lodash/fp/_util.js",
+        "node_modules/lodash/fp/add.js",
+        "node_modules/lodash/fp/after.js",
+        "node_modules/lodash/fp/all.js",
+        "node_modules/lodash/fp/allPass.js",
+        "node_modules/lodash/fp/always.js",
+        "node_modules/lodash/fp/any.js",
+        "node_modules/lodash/fp/anyPass.js",
+        "node_modules/lodash/fp/apply.js",
+        "node_modules/lodash/fp/array.js",
+        "node_modules/lodash/fp/ary.js",
+        "node_modules/lodash/fp/assign.js",
+        "node_modules/lodash/fp/assignAll.js",
+        "node_modules/lodash/fp/assignAllWith.js",
+        "node_modules/lodash/fp/assignIn.js",
+        "node_modules/lodash/fp/assignInAll.js",
+        "node_modules/lodash/fp/assignInAllWith.js",
+        "node_modules/lodash/fp/assignInWith.js",
+        "node_modules/lodash/fp/assignWith.js",
+        "node_modules/lodash/fp/assoc.js",
+        "node_modules/lodash/fp/assocPath.js",
+        "node_modules/lodash/fp/at.js",
+        "node_modules/lodash/fp/attempt.js",
+        "node_modules/lodash/fp/before.js",
+        "node_modules/lodash/fp/bind.js",
+        "node_modules/lodash/fp/bindAll.js",
+        "node_modules/lodash/fp/bindKey.js",
+        "node_modules/lodash/fp/camelCase.js",
+        "node_modules/lodash/fp/capitalize.js",
+        "node_modules/lodash/fp/castArray.js",
+        "node_modules/lodash/fp/ceil.js",
+        "node_modules/lodash/fp/chain.js",
+        "node_modules/lodash/fp/chunk.js",
+        "node_modules/lodash/fp/clamp.js",
+        "node_modules/lodash/fp/clone.js",
+        "node_modules/lodash/fp/cloneDeep.js",
+        "node_modules/lodash/fp/cloneDeepWith.js",
+        "node_modules/lodash/fp/cloneWith.js",
+        "node_modules/lodash/fp/collection.js",
+        "node_modules/lodash/fp/commit.js",
+        "node_modules/lodash/fp/compact.js",
+        "node_modules/lodash/fp/complement.js",
+        "node_modules/lodash/fp/compose.js",
+        "node_modules/lodash/fp/concat.js",
+        "node_modules/lodash/fp/cond.js",
+        "node_modules/lodash/fp/conforms.js",
+        "node_modules/lodash/fp/conformsTo.js",
+        "node_modules/lodash/fp/constant.js",
+        "node_modules/lodash/fp/contains.js",
+        "node_modules/lodash/fp/convert.js",
+        "node_modules/lodash/fp/countBy.js",
+        "node_modules/lodash/fp/create.js",
+        "node_modules/lodash/fp/curry.js",
+        "node_modules/lodash/fp/curryN.js",
+        "node_modules/lodash/fp/curryRight.js",
+        "node_modules/lodash/fp/curryRightN.js",
+        "node_modules/lodash/fp/date.js",
+        "node_modules/lodash/fp/debounce.js",
+        "node_modules/lodash/fp/deburr.js",
+        "node_modules/lodash/fp/defaultTo.js",
+        "node_modules/lodash/fp/defaults.js",
+        "node_modules/lodash/fp/defaultsAll.js",
+        "node_modules/lodash/fp/defaultsDeep.js",
+        "node_modules/lodash/fp/defaultsDeepAll.js",
+        "node_modules/lodash/fp/defer.js",
+        "node_modules/lodash/fp/delay.js",
+        "node_modules/lodash/fp/difference.js",
+        "node_modules/lodash/fp/differenceBy.js",
+        "node_modules/lodash/fp/differenceWith.js",
+        "node_modules/lodash/fp/dissoc.js",
+        "node_modules/lodash/fp/dissocPath.js",
+        "node_modules/lodash/fp/divide.js",
+        "node_modules/lodash/fp/drop.js",
+        "node_modules/lodash/fp/dropLast.js",
+        "node_modules/lodash/fp/dropLastWhile.js",
+        "node_modules/lodash/fp/dropRight.js",
+        "node_modules/lodash/fp/dropRightWhile.js",
+        "node_modules/lodash/fp/dropWhile.js",
+        "node_modules/lodash/fp/each.js",
+        "node_modules/lodash/fp/eachRight.js",
+        "node_modules/lodash/fp/endsWith.js",
+        "node_modules/lodash/fp/entries.js",
+        "node_modules/lodash/fp/entriesIn.js",
+        "node_modules/lodash/fp/eq.js",
+        "node_modules/lodash/fp/equals.js",
+        "node_modules/lodash/fp/escape.js",
+        "node_modules/lodash/fp/escapeRegExp.js",
+        "node_modules/lodash/fp/every.js",
+        "node_modules/lodash/fp/extend.js",
+        "node_modules/lodash/fp/extendAll.js",
+        "node_modules/lodash/fp/extendAllWith.js",
+        "node_modules/lodash/fp/extendWith.js",
+        "node_modules/lodash/fp/fill.js",
+        "node_modules/lodash/fp/filter.js",
+        "node_modules/lodash/fp/find.js",
+        "node_modules/lodash/fp/findFrom.js",
+        "node_modules/lodash/fp/findIndex.js",
+        "node_modules/lodash/fp/findIndexFrom.js",
+        "node_modules/lodash/fp/findKey.js",
+        "node_modules/lodash/fp/findLast.js",
+        "node_modules/lodash/fp/findLastFrom.js",
+        "node_modules/lodash/fp/findLastIndex.js",
+        "node_modules/lodash/fp/findLastIndexFrom.js",
+        "node_modules/lodash/fp/findLastKey.js",
+        "node_modules/lodash/fp/first.js",
+        "node_modules/lodash/fp/flatMap.js",
+        "node_modules/lodash/fp/flatMapDeep.js",
+        "node_modules/lodash/fp/flatMapDepth.js",
+        "node_modules/lodash/fp/flatten.js",
+        "node_modules/lodash/fp/flattenDeep.js",
+        "node_modules/lodash/fp/flattenDepth.js",
+        "node_modules/lodash/fp/flip.js",
+        "node_modules/lodash/fp/floor.js",
+        "node_modules/lodash/fp/flow.js",
+        "node_modules/lodash/fp/flowRight.js",
+        "node_modules/lodash/fp/forEach.js",
+        "node_modules/lodash/fp/forEachRight.js",
+        "node_modules/lodash/fp/forIn.js",
+        "node_modules/lodash/fp/forInRight.js",
+        "node_modules/lodash/fp/forOwn.js",
+        "node_modules/lodash/fp/forOwnRight.js",
+        "node_modules/lodash/fp/fromPairs.js",
+        "node_modules/lodash/fp/function.js",
+        "node_modules/lodash/fp/functions.js",
+        "node_modules/lodash/fp/functionsIn.js",
+        "node_modules/lodash/fp/get.js",
+        "node_modules/lodash/fp/getOr.js",
+        "node_modules/lodash/fp/groupBy.js",
+        "node_modules/lodash/fp/gt.js",
+        "node_modules/lodash/fp/gte.js",
+        "node_modules/lodash/fp/has.js",
+        "node_modules/lodash/fp/hasIn.js",
+        "node_modules/lodash/fp/head.js",
+        "node_modules/lodash/fp/identical.js",
+        "node_modules/lodash/fp/identity.js",
+        "node_modules/lodash/fp/inRange.js",
+        "node_modules/lodash/fp/includes.js",
+        "node_modules/lodash/fp/includesFrom.js",
+        "node_modules/lodash/fp/indexBy.js",
+        "node_modules/lodash/fp/indexOf.js",
+        "node_modules/lodash/fp/indexOfFrom.js",
+        "node_modules/lodash/fp/init.js",
+        "node_modules/lodash/fp/initial.js",
+        "node_modules/lodash/fp/intersection.js",
+        "node_modules/lodash/fp/intersectionBy.js",
+        "node_modules/lodash/fp/intersectionWith.js",
+        "node_modules/lodash/fp/invert.js",
+        "node_modules/lodash/fp/invertBy.js",
+        "node_modules/lodash/fp/invertObj.js",
+        "node_modules/lodash/fp/invoke.js",
+        "node_modules/lodash/fp/invokeArgs.js",
+        "node_modules/lodash/fp/invokeArgsMap.js",
+        "node_modules/lodash/fp/invokeMap.js",
+        "node_modules/lodash/fp/isArguments.js",
+        "node_modules/lodash/fp/isArray.js",
+        "node_modules/lodash/fp/isArrayBuffer.js",
+        "node_modules/lodash/fp/isArrayLike.js",
+        "node_modules/lodash/fp/isArrayLikeObject.js",
+        "node_modules/lodash/fp/isBoolean.js",
+        "node_modules/lodash/fp/isBuffer.js",
+        "node_modules/lodash/fp/isDate.js",
+        "node_modules/lodash/fp/isElement.js",
+        "node_modules/lodash/fp/isEmpty.js",
+        "node_modules/lodash/fp/isEqual.js",
+        "node_modules/lodash/fp/isEqualWith.js",
+        "node_modules/lodash/fp/isError.js",
+        "node_modules/lodash/fp/isFinite.js",
+        "node_modules/lodash/fp/isFunction.js",
+        "node_modules/lodash/fp/isInteger.js",
+        "node_modules/lodash/fp/isLength.js",
+        "node_modules/lodash/fp/isMap.js",
+        "node_modules/lodash/fp/isMatch.js",
+        "node_modules/lodash/fp/isMatchWith.js",
+        "node_modules/lodash/fp/isNaN.js",
+        "node_modules/lodash/fp/isNative.js",
+        "node_modules/lodash/fp/isNil.js",
+        "node_modules/lodash/fp/isNull.js",
+        "node_modules/lodash/fp/isNumber.js",
+        "node_modules/lodash/fp/isObject.js",
+        "node_modules/lodash/fp/isObjectLike.js",
+        "node_modules/lodash/fp/isPlainObject.js",
+        "node_modules/lodash/fp/isRegExp.js",
+        "node_modules/lodash/fp/isSafeInteger.js",
+        "node_modules/lodash/fp/isSet.js",
+        "node_modules/lodash/fp/isString.js",
+        "node_modules/lodash/fp/isSymbol.js",
+        "node_modules/lodash/fp/isTypedArray.js",
+        "node_modules/lodash/fp/isUndefined.js",
+        "node_modules/lodash/fp/isWeakMap.js",
+        "node_modules/lodash/fp/isWeakSet.js",
+        "node_modules/lodash/fp/iteratee.js",
+        "node_modules/lodash/fp/join.js",
+        "node_modules/lodash/fp/juxt.js",
+        "node_modules/lodash/fp/kebabCase.js",
+        "node_modules/lodash/fp/keyBy.js",
+        "node_modules/lodash/fp/keys.js",
+        "node_modules/lodash/fp/keysIn.js",
+        "node_modules/lodash/fp/lang.js",
+        "node_modules/lodash/fp/last.js",
+        "node_modules/lodash/fp/lastIndexOf.js",
+        "node_modules/lodash/fp/lastIndexOfFrom.js",
+        "node_modules/lodash/fp/lowerCase.js",
+        "node_modules/lodash/fp/lowerFirst.js",
+        "node_modules/lodash/fp/lt.js",
+        "node_modules/lodash/fp/lte.js",
+        "node_modules/lodash/fp/map.js",
+        "node_modules/lodash/fp/mapKeys.js",
+        "node_modules/lodash/fp/mapValues.js",
+        "node_modules/lodash/fp/matches.js",
+        "node_modules/lodash/fp/matchesProperty.js",
+        "node_modules/lodash/fp/math.js",
+        "node_modules/lodash/fp/max.js",
+        "node_modules/lodash/fp/maxBy.js",
+        "node_modules/lodash/fp/mean.js",
+        "node_modules/lodash/fp/meanBy.js",
+        "node_modules/lodash/fp/memoize.js",
+        "node_modules/lodash/fp/merge.js",
+        "node_modules/lodash/fp/mergeAll.js",
+        "node_modules/lodash/fp/mergeAllWith.js",
+        "node_modules/lodash/fp/mergeWith.js",
+        "node_modules/lodash/fp/method.js",
+        "node_modules/lodash/fp/methodOf.js",
+        "node_modules/lodash/fp/min.js",
+        "node_modules/lodash/fp/minBy.js",
+        "node_modules/lodash/fp/mixin.js",
+        "node_modules/lodash/fp/multiply.js",
+        "node_modules/lodash/fp/nAry.js",
+        "node_modules/lodash/fp/negate.js",
+        "node_modules/lodash/fp/next.js",
+        "node_modules/lodash/fp/noop.js",
+        "node_modules/lodash/fp/now.js",
+        "node_modules/lodash/fp/nth.js",
+        "node_modules/lodash/fp/nthArg.js",
+        "node_modules/lodash/fp/number.js",
+        "node_modules/lodash/fp/object.js",
+        "node_modules/lodash/fp/omit.js",
+        "node_modules/lodash/fp/omitAll.js",
+        "node_modules/lodash/fp/omitBy.js",
+        "node_modules/lodash/fp/once.js",
+        "node_modules/lodash/fp/orderBy.js",
+        "node_modules/lodash/fp/over.js",
+        "node_modules/lodash/fp/overArgs.js",
+        "node_modules/lodash/fp/overEvery.js",
+        "node_modules/lodash/fp/overSome.js",
+        "node_modules/lodash/fp/pad.js",
+        "node_modules/lodash/fp/padChars.js",
+        "node_modules/lodash/fp/padCharsEnd.js",
+        "node_modules/lodash/fp/padCharsStart.js",
+        "node_modules/lodash/fp/padEnd.js",
+        "node_modules/lodash/fp/padStart.js",
+        "node_modules/lodash/fp/parseInt.js",
+        "node_modules/lodash/fp/partial.js",
+        "node_modules/lodash/fp/partialRight.js",
+        "node_modules/lodash/fp/partition.js",
+        "node_modules/lodash/fp/path.js",
+        "node_modules/lodash/fp/pathEq.js",
+        "node_modules/lodash/fp/pathOr.js",
+        "node_modules/lodash/fp/paths.js",
+        "node_modules/lodash/fp/pick.js",
+        "node_modules/lodash/fp/pickAll.js",
+        "node_modules/lodash/fp/pickBy.js",
+        "node_modules/lodash/fp/pipe.js",
+        "node_modules/lodash/fp/placeholder.js",
+        "node_modules/lodash/fp/plant.js",
+        "node_modules/lodash/fp/pluck.js",
+        "node_modules/lodash/fp/prop.js",
+        "node_modules/lodash/fp/propEq.js",
+        "node_modules/lodash/fp/propOr.js",
+        "node_modules/lodash/fp/property.js",
+        "node_modules/lodash/fp/propertyOf.js",
+        "node_modules/lodash/fp/props.js",
+        "node_modules/lodash/fp/pull.js",
+        "node_modules/lodash/fp/pullAll.js",
+        "node_modules/lodash/fp/pullAllBy.js",
+        "node_modules/lodash/fp/pullAllWith.js",
+        "node_modules/lodash/fp/pullAt.js",
+        "node_modules/lodash/fp/random.js",
+        "node_modules/lodash/fp/range.js",
+        "node_modules/lodash/fp/rangeRight.js",
+        "node_modules/lodash/fp/rangeStep.js",
+        "node_modules/lodash/fp/rangeStepRight.js",
+        "node_modules/lodash/fp/rearg.js",
+        "node_modules/lodash/fp/reduce.js",
+        "node_modules/lodash/fp/reduceRight.js",
+        "node_modules/lodash/fp/reject.js",
+        "node_modules/lodash/fp/remove.js",
+        "node_modules/lodash/fp/repeat.js",
+        "node_modules/lodash/fp/replace.js",
+        "node_modules/lodash/fp/rest.js",
+        "node_modules/lodash/fp/restFrom.js",
+        "node_modules/lodash/fp/result.js",
+        "node_modules/lodash/fp/reverse.js",
+        "node_modules/lodash/fp/round.js",
+        "node_modules/lodash/fp/sample.js",
+        "node_modules/lodash/fp/sampleSize.js",
+        "node_modules/lodash/fp/seq.js",
+        "node_modules/lodash/fp/set.js",
+        "node_modules/lodash/fp/setWith.js",
+        "node_modules/lodash/fp/shuffle.js",
+        "node_modules/lodash/fp/size.js",
+        "node_modules/lodash/fp/slice.js",
+        "node_modules/lodash/fp/snakeCase.js",
+        "node_modules/lodash/fp/some.js",
+        "node_modules/lodash/fp/sortBy.js",
+        "node_modules/lodash/fp/sortedIndex.js",
+        "node_modules/lodash/fp/sortedIndexBy.js",
+        "node_modules/lodash/fp/sortedIndexOf.js",
+        "node_modules/lodash/fp/sortedLastIndex.js",
+        "node_modules/lodash/fp/sortedLastIndexBy.js",
+        "node_modules/lodash/fp/sortedLastIndexOf.js",
+        "node_modules/lodash/fp/sortedUniq.js",
+        "node_modules/lodash/fp/sortedUniqBy.js",
+        "node_modules/lodash/fp/split.js",
+        "node_modules/lodash/fp/spread.js",
+        "node_modules/lodash/fp/spreadFrom.js",
+        "node_modules/lodash/fp/startCase.js",
+        "node_modules/lodash/fp/startsWith.js",
+        "node_modules/lodash/fp/string.js",
+        "node_modules/lodash/fp/stubArray.js",
+        "node_modules/lodash/fp/stubFalse.js",
+        "node_modules/lodash/fp/stubObject.js",
+        "node_modules/lodash/fp/stubString.js",
+        "node_modules/lodash/fp/stubTrue.js",
+        "node_modules/lodash/fp/subtract.js",
+        "node_modules/lodash/fp/sum.js",
+        "node_modules/lodash/fp/sumBy.js",
+        "node_modules/lodash/fp/symmetricDifference.js",
+        "node_modules/lodash/fp/symmetricDifferenceBy.js",
+        "node_modules/lodash/fp/symmetricDifferenceWith.js",
+        "node_modules/lodash/fp/tail.js",
+        "node_modules/lodash/fp/take.js",
+        "node_modules/lodash/fp/takeLast.js",
+        "node_modules/lodash/fp/takeLastWhile.js",
+        "node_modules/lodash/fp/takeRight.js",
+        "node_modules/lodash/fp/takeRightWhile.js",
+        "node_modules/lodash/fp/takeWhile.js",
+        "node_modules/lodash/fp/tap.js",
+        "node_modules/lodash/fp/template.js",
+        "node_modules/lodash/fp/templateSettings.js",
+        "node_modules/lodash/fp/throttle.js",
+        "node_modules/lodash/fp/thru.js",
+        "node_modules/lodash/fp/times.js",
+        "node_modules/lodash/fp/toArray.js",
+        "node_modules/lodash/fp/toFinite.js",
+        "node_modules/lodash/fp/toInteger.js",
+        "node_modules/lodash/fp/toIterator.js",
+        "node_modules/lodash/fp/toJSON.js",
+        "node_modules/lodash/fp/toLength.js",
+        "node_modules/lodash/fp/toLower.js",
+        "node_modules/lodash/fp/toNumber.js",
+        "node_modules/lodash/fp/toPairs.js",
+        "node_modules/lodash/fp/toPairsIn.js",
+        "node_modules/lodash/fp/toPath.js",
+        "node_modules/lodash/fp/toPlainObject.js",
+        "node_modules/lodash/fp/toSafeInteger.js",
+        "node_modules/lodash/fp/toString.js",
+        "node_modules/lodash/fp/toUpper.js",
+        "node_modules/lodash/fp/transform.js",
+        "node_modules/lodash/fp/trim.js",
+        "node_modules/lodash/fp/trimChars.js",
+        "node_modules/lodash/fp/trimCharsEnd.js",
+        "node_modules/lodash/fp/trimCharsStart.js",
+        "node_modules/lodash/fp/trimEnd.js",
+        "node_modules/lodash/fp/trimStart.js",
+        "node_modules/lodash/fp/truncate.js",
+        "node_modules/lodash/fp/unapply.js",
+        "node_modules/lodash/fp/unary.js",
+        "node_modules/lodash/fp/unescape.js",
+        "node_modules/lodash/fp/union.js",
+        "node_modules/lodash/fp/unionBy.js",
+        "node_modules/lodash/fp/unionWith.js",
+        "node_modules/lodash/fp/uniq.js",
+        "node_modules/lodash/fp/uniqBy.js",
+        "node_modules/lodash/fp/uniqWith.js",
+        "node_modules/lodash/fp/uniqueId.js",
+        "node_modules/lodash/fp/unnest.js",
+        "node_modules/lodash/fp/unset.js",
+        "node_modules/lodash/fp/unzip.js",
+        "node_modules/lodash/fp/unzipWith.js",
+        "node_modules/lodash/fp/update.js",
+        "node_modules/lodash/fp/updateWith.js",
+        "node_modules/lodash/fp/upperCase.js",
+        "node_modules/lodash/fp/upperFirst.js",
+        "node_modules/lodash/fp/useWith.js",
+        "node_modules/lodash/fp/util.js",
+        "node_modules/lodash/fp/value.js",
+        "node_modules/lodash/fp/valueOf.js",
+        "node_modules/lodash/fp/values.js",
+        "node_modules/lodash/fp/valuesIn.js",
+        "node_modules/lodash/fp/where.js",
+        "node_modules/lodash/fp/whereEq.js",
+        "node_modules/lodash/fp/without.js",
+        "node_modules/lodash/fp/words.js",
+        "node_modules/lodash/fp/wrap.js",
+        "node_modules/lodash/fp/wrapperAt.js",
+        "node_modules/lodash/fp/wrapperChain.js",
+        "node_modules/lodash/fp/wrapperLodash.js",
+        "node_modules/lodash/fp/wrapperReverse.js",
+        "node_modules/lodash/fp/wrapperValue.js",
+        "node_modules/lodash/fp/xor.js",
+        "node_modules/lodash/fp/xorBy.js",
+        "node_modules/lodash/fp/xorWith.js",
+        "node_modules/lodash/fp/zip.js",
+        "node_modules/lodash/fp/zipAll.js",
+        "node_modules/lodash/fp/zipObj.js",
+        "node_modules/lodash/fp/zipObject.js",
+        "node_modules/lodash/fp/zipObjectDeep.js",
+        "node_modules/lodash/fp/zipWith.js",
+        "node_modules/lodash/fp.js",
+        "node_modules/lodash/fromPairs.js",
+        "node_modules/lodash/function.js",
+        "node_modules/lodash/functions.js",
+        "node_modules/lodash/functionsIn.js",
+        "node_modules/lodash/get.js",
+        "node_modules/lodash/groupBy.js",
+        "node_modules/lodash/gt.js",
+        "node_modules/lodash/gte.js",
+        "node_modules/lodash/has.js",
+        "node_modules/lodash/hasIn.js",
+        "node_modules/lodash/head.js",
+        "node_modules/lodash/identity.js",
+        "node_modules/lodash/inRange.js",
+        "node_modules/lodash/includes.js",
+        "node_modules/lodash/index.js",
+        "node_modules/lodash/indexOf.js",
+        "node_modules/lodash/initial.js",
+        "node_modules/lodash/intersection.js",
+        "node_modules/lodash/intersectionBy.js",
+        "node_modules/lodash/intersectionWith.js",
+        "node_modules/lodash/invert.js",
+        "node_modules/lodash/invertBy.js",
+        "node_modules/lodash/invoke.js",
+        "node_modules/lodash/invokeMap.js",
+        "node_modules/lodash/isArguments.js",
+        "node_modules/lodash/isArray.js",
+        "node_modules/lodash/isArrayBuffer.js",
+        "node_modules/lodash/isArrayLike.js",
+        "node_modules/lodash/isArrayLikeObject.js",
+        "node_modules/lodash/isBoolean.js",
+        "node_modules/lodash/isBuffer.js",
+        "node_modules/lodash/isDate.js",
+        "node_modules/lodash/isElement.js",
+        "node_modules/lodash/isEmpty.js",
+        "node_modules/lodash/isEqual.js",
+        "node_modules/lodash/isEqualWith.js",
+        "node_modules/lodash/isError.js",
+        "node_modules/lodash/isFinite.js",
+        "node_modules/lodash/isFunction.js",
+        "node_modules/lodash/isInteger.js",
+        "node_modules/lodash/isLength.js",
+        "node_modules/lodash/isMap.js",
+        "node_modules/lodash/isMatch.js",
+        "node_modules/lodash/isMatchWith.js",
+        "node_modules/lodash/isNaN.js",
+        "node_modules/lodash/isNative.js",
+        "node_modules/lodash/isNil.js",
+        "node_modules/lodash/isNull.js",
+        "node_modules/lodash/isNumber.js",
+        "node_modules/lodash/isObject.js",
+        "node_modules/lodash/isObjectLike.js",
+        "node_modules/lodash/isPlainObject.js",
+        "node_modules/lodash/isRegExp.js",
+        "node_modules/lodash/isSafeInteger.js",
+        "node_modules/lodash/isSet.js",
+        "node_modules/lodash/isString.js",
+        "node_modules/lodash/isSymbol.js",
+        "node_modules/lodash/isTypedArray.js",
+        "node_modules/lodash/isUndefined.js",
+        "node_modules/lodash/isWeakMap.js",
+        "node_modules/lodash/isWeakSet.js",
+        "node_modules/lodash/iteratee.js",
+        "node_modules/lodash/join.js",
+        "node_modules/lodash/kebabCase.js",
+        "node_modules/lodash/keyBy.js",
+        "node_modules/lodash/keys.js",
+        "node_modules/lodash/keysIn.js",
+        "node_modules/lodash/lang.js",
+        "node_modules/lodash/last.js",
+        "node_modules/lodash/lastIndexOf.js",
+        "node_modules/lodash/lodash.js",
+        "node_modules/lodash/lodash.min.js",
+        "node_modules/lodash/lowerCase.js",
+        "node_modules/lodash/lowerFirst.js",
+        "node_modules/lodash/lt.js",
+        "node_modules/lodash/lte.js",
+        "node_modules/lodash/map.js",
+        "node_modules/lodash/mapKeys.js",
+        "node_modules/lodash/mapValues.js",
+        "node_modules/lodash/matches.js",
+        "node_modules/lodash/matchesProperty.js",
+        "node_modules/lodash/math.js",
+        "node_modules/lodash/max.js",
+        "node_modules/lodash/maxBy.js",
+        "node_modules/lodash/mean.js",
+        "node_modules/lodash/meanBy.js",
+        "node_modules/lodash/memoize.js",
+        "node_modules/lodash/merge.js",
+        "node_modules/lodash/mergeWith.js",
+        "node_modules/lodash/method.js",
+        "node_modules/lodash/methodOf.js",
+        "node_modules/lodash/min.js",
+        "node_modules/lodash/minBy.js",
+        "node_modules/lodash/mixin.js",
+        "node_modules/lodash/multiply.js",
+        "node_modules/lodash/negate.js",
+        "node_modules/lodash/next.js",
+        "node_modules/lodash/noop.js",
+        "node_modules/lodash/now.js",
+        "node_modules/lodash/nth.js",
+        "node_modules/lodash/nthArg.js",
+        "node_modules/lodash/number.js",
+        "node_modules/lodash/object.js",
+        "node_modules/lodash/omit.js",
+        "node_modules/lodash/omitBy.js",
+        "node_modules/lodash/once.js",
+        "node_modules/lodash/orderBy.js",
+        "node_modules/lodash/over.js",
+        "node_modules/lodash/overArgs.js",
+        "node_modules/lodash/overEvery.js",
+        "node_modules/lodash/overSome.js",
+        "node_modules/lodash/pad.js",
+        "node_modules/lodash/padEnd.js",
+        "node_modules/lodash/padStart.js",
+        "node_modules/lodash/parseInt.js",
+        "node_modules/lodash/partial.js",
+        "node_modules/lodash/partialRight.js",
+        "node_modules/lodash/partition.js",
+        "node_modules/lodash/pick.js",
+        "node_modules/lodash/pickBy.js",
+        "node_modules/lodash/plant.js",
+        "node_modules/lodash/property.js",
+        "node_modules/lodash/propertyOf.js",
+        "node_modules/lodash/pull.js",
+        "node_modules/lodash/pullAll.js",
+        "node_modules/lodash/pullAllBy.js",
+        "node_modules/lodash/pullAllWith.js",
+        "node_modules/lodash/pullAt.js",
+        "node_modules/lodash/random.js",
+        "node_modules/lodash/range.js",
+        "node_modules/lodash/rangeRight.js",
+        "node_modules/lodash/rearg.js",
+        "node_modules/lodash/reduce.js",
+        "node_modules/lodash/reduceRight.js",
+        "node_modules/lodash/reject.js",
+        "node_modules/lodash/remove.js",
+        "node_modules/lodash/repeat.js",
+        "node_modules/lodash/replace.js",
+        "node_modules/lodash/rest.js",
+        "node_modules/lodash/result.js",
+        "node_modules/lodash/reverse.js",
+        "node_modules/lodash/round.js",
+        "node_modules/lodash/sample.js",
+        "node_modules/lodash/sampleSize.js",
+        "node_modules/lodash/seq.js",
+        "node_modules/lodash/set.js",
+        "node_modules/lodash/setWith.js",
+        "node_modules/lodash/shuffle.js",
+        "node_modules/lodash/size.js",
+        "node_modules/lodash/slice.js",
+        "node_modules/lodash/snakeCase.js",
+        "node_modules/lodash/some.js",
+        "node_modules/lodash/sortBy.js",
+        "node_modules/lodash/sortedIndex.js",
+        "node_modules/lodash/sortedIndexBy.js",
+        "node_modules/lodash/sortedIndexOf.js",
+        "node_modules/lodash/sortedLastIndex.js",
+        "node_modules/lodash/sortedLastIndexBy.js",
+        "node_modules/lodash/sortedLastIndexOf.js",
+        "node_modules/lodash/sortedUniq.js",
+        "node_modules/lodash/sortedUniqBy.js",
+        "node_modules/lodash/split.js",
+        "node_modules/lodash/spread.js",
+        "node_modules/lodash/startCase.js",
+        "node_modules/lodash/startsWith.js",
+        "node_modules/lodash/string.js",
+        "node_modules/lodash/stubArray.js",
+        "node_modules/lodash/stubFalse.js",
+        "node_modules/lodash/stubObject.js",
+        "node_modules/lodash/stubString.js",
+        "node_modules/lodash/stubTrue.js",
+        "node_modules/lodash/subtract.js",
+        "node_modules/lodash/sum.js",
+        "node_modules/lodash/sumBy.js",
+        "node_modules/lodash/tail.js",
+        "node_modules/lodash/take.js",
+        "node_modules/lodash/takeRight.js",
+        "node_modules/lodash/takeRightWhile.js",
+        "node_modules/lodash/takeWhile.js",
+        "node_modules/lodash/tap.js",
+        "node_modules/lodash/template.js",
+        "node_modules/lodash/templateSettings.js",
+        "node_modules/lodash/throttle.js",
+        "node_modules/lodash/thru.js",
+        "node_modules/lodash/times.js",
+        "node_modules/lodash/toArray.js",
+        "node_modules/lodash/toFinite.js",
+        "node_modules/lodash/toInteger.js",
+        "node_modules/lodash/toIterator.js",
+        "node_modules/lodash/toJSON.js",
+        "node_modules/lodash/toLength.js",
+        "node_modules/lodash/toLower.js",
+        "node_modules/lodash/toNumber.js",
+        "node_modules/lodash/toPairs.js",
+        "node_modules/lodash/toPairsIn.js",
+        "node_modules/lodash/toPath.js",
+        "node_modules/lodash/toPlainObject.js",
+        "node_modules/lodash/toSafeInteger.js",
+        "node_modules/lodash/toString.js",
+        "node_modules/lodash/toUpper.js",
+        "node_modules/lodash/transform.js",
+        "node_modules/lodash/trim.js",
+        "node_modules/lodash/trimEnd.js",
+        "node_modules/lodash/trimStart.js",
+        "node_modules/lodash/truncate.js",
+        "node_modules/lodash/unary.js",
+        "node_modules/lodash/unescape.js",
+        "node_modules/lodash/union.js",
+        "node_modules/lodash/unionBy.js",
+        "node_modules/lodash/unionWith.js",
+        "node_modules/lodash/uniq.js",
+        "node_modules/lodash/uniqBy.js",
+        "node_modules/lodash/uniqWith.js",
+        "node_modules/lodash/uniqueId.js",
+        "node_modules/lodash/unset.js",
+        "node_modules/lodash/unzip.js",
+        "node_modules/lodash/unzipWith.js",
+        "node_modules/lodash/update.js",
+        "node_modules/lodash/updateWith.js",
+        "node_modules/lodash/upperCase.js",
+        "node_modules/lodash/upperFirst.js",
+        "node_modules/lodash/util.js",
+        "node_modules/lodash/value.js",
+        "node_modules/lodash/valueOf.js",
+        "node_modules/lodash/values.js",
+        "node_modules/lodash/valuesIn.js",
+        "node_modules/lodash/without.js",
+        "node_modules/lodash/words.js",
+        "node_modules/lodash/wrap.js",
+        "node_modules/lodash/wrapperAt.js",
+        "node_modules/lodash/wrapperChain.js",
+        "node_modules/lodash/wrapperLodash.js",
+        "node_modules/lodash/wrapperReverse.js",
+        "node_modules/lodash/wrapperValue.js",
+        "node_modules/lodash/xor.js",
+        "node_modules/lodash/xorBy.js",
+        "node_modules/lodash/xorWith.js",
+        "node_modules/lodash/zip.js",
+        "node_modules/lodash/zipObject.js",
+        "node_modules/lodash/zipObjectDeep.js",
+        "node_modules/lodash/zipWith.js",
+        "node_modules/long/dist/long.js",
+        "node_modules/long/index.js",
+        "node_modules/long/src/long.js",
+        "node_modules/lru-cache/index.js",
+        "node_modules/map-cache/index.js",
+        "node_modules/map-stream/examples/pretty.js",
+        "node_modules/map-stream/index.js",
+        "node_modules/map-visit/index.js",
+        "node_modules/mem/index.js",
+        "node_modules/merge2/index.js",
+        "node_modules/micromatch/index.js",
+        "node_modules/micromatch/lib/cache.js",
+        "node_modules/micromatch/lib/compilers.js",
+        "node_modules/micromatch/lib/parsers.js",
+        "node_modules/micromatch/lib/utils.js",
+        "node_modules/mimic-fn/index.js",
+        "node_modules/minimatch/minimatch.js",
+        "node_modules/minimist/example/parse.js",
+        "node_modules/minimist/index.js",
+        "node_modules/mixin-deep/index.js",
+        "node_modules/mixin-deep/node_modules/is-extendable/index.js",
+        "node_modules/mkdirp/bin/cmd.js",
+        "node_modules/mkdirp/examples/pow.js",
+        "node_modules/mkdirp/index.js",
+        "node_modules/mkdirp/node_modules/minimist/example/parse.js",
+        "node_modules/mkdirp/node_modules/minimist/index.js",
+        "node_modules/ms/index.js",
+        "node_modules/nan/include_dirs.js",
+        "node_modules/nan/tools/1to2.js",
+        "node_modules/nanomatch/index.js",
+        "node_modules/nanomatch/lib/cache.js",
+        "node_modules/nanomatch/lib/compilers.js",
+        "node_modules/nanomatch/lib/parsers.js",
+        "node_modules/nanomatch/lib/utils.js",
+        "node_modules/npm-run-path/index.js",
+        "node_modules/number-is-nan/index.js",
+        "node_modules/object-copy/index.js",
+        "node_modules/object-copy/node_modules/define-property/index.js",
+        "node_modules/object-copy/node_modules/kind-of/index.js",
+        "node_modules/object-visit/index.js",
+        "node_modules/object.pick/index.js",
+        "node_modules/once/once.js",
+        "node_modules/optimist/example/bool.js",
+        "node_modules/optimist/example/boolean_double.js",
+        "node_modules/optimist/example/boolean_single.js",
+        "node_modules/optimist/example/default_hash.js",
+        "node_modules/optimist/example/default_singles.js",
+        "node_modules/optimist/example/divide.js",
+        "node_modules/optimist/example/line_count.js",
+        "node_modules/optimist/example/line_count_options.js",
+        "node_modules/optimist/example/line_count_wrap.js",
+        "node_modules/optimist/example/nonopt.js",
+        "node_modules/optimist/example/reflect.js",
+        "node_modules/optimist/example/short.js",
+        "node_modules/optimist/example/string.js",
+        "node_modules/optimist/example/usage-options.js",
+        "node_modules/optimist/example/xup.js",
+        "node_modules/optimist/index.js",
+        "node_modules/os-locale/index.js",
+        "node_modules/os-tmpdir/index.js",
+        "node_modules/p-finally/index.js",
+        "node_modules/p-limit/index.js",
+        "node_modules/p-locate/index.js",
+        "node_modules/p-try/index.js",
+        "node_modules/pascalcase/index.js",
+        "node_modules/path-dirname/index.js",
+        "node_modules/path-exists/index.js",
+        "node_modules/path-is-absolute/index.js",
+        "node_modules/path-key/index.js",
+        "node_modules/pause-stream/index.js",
+        "node_modules/posix-character-classes/index.js",
+        "node_modules/pseudomap/map.js",
+        "node_modules/pseudomap/pseudomap.js",
+        "node_modules/put/examples/buf.js",
+        "node_modules/put/examples/stream.js",
+        "node_modules/put/index.js",
+        "node_modules/readdir-enhanced/lib/async/for-each.js",
+        "node_modules/readdir-enhanced/lib/async/index.js",
+        "node_modules/readdir-enhanced/lib/call.js",
+        "node_modules/readdir-enhanced/lib/directory-reader.js",
+        "node_modules/readdir-enhanced/lib/index.js",
+        "node_modules/readdir-enhanced/lib/normalize-options.js",
+        "node_modules/readdir-enhanced/lib/stat.js",
+        "node_modules/readdir-enhanced/lib/stream/index.js",
+        "node_modules/readdir-enhanced/lib/sync/for-each.js",
+        "node_modules/readdir-enhanced/lib/sync/fs.js",
+        "node_modules/readdir-enhanced/lib/sync/index.js",
+        "node_modules/readdir-enhanced/node_modules/glob-to-regexp/index.js",
+        "node_modules/readdir-enhanced/node_modules/glob-to-regexp/test.js",
+        "node_modules/regex-not/index.js",
+        "node_modules/repeat-element/index.js",
+        "node_modules/repeat-string/index.js",
+        "node_modules/require-directory/index.js",
+        "node_modules/require-main-filename/index.js",
+        "node_modules/require-main-filename/test.js",
+        "node_modules/resolve-url/resolve-url.js",
+        "node_modules/ret/lib/index.js",
+        "node_modules/ret/lib/positions.js",
+        "node_modules/ret/lib/sets.js",
+        "node_modules/ret/lib/types.js",
+        "node_modules/ret/lib/util.js",
+        "node_modules/rimraf/bin.js",
+        "node_modules/rimraf/rimraf.js",
+        "node_modules/safe-buffer/index.js",
+        "node_modules/safe-regex/example/safe.js",
+        "node_modules/safe-regex/index.js",
+        "node_modules/sax/lib/sax.js",
+        "node_modules/semver/semver.js",
+        "node_modules/set-blocking/index.js",
+        "node_modules/set-value/index.js",
+        "node_modules/set-value/node_modules/extend-shallow/index.js",
+        "node_modules/shebang-command/index.js",
+        "node_modules/shebang-regex/index.js",
+        "node_modules/signal-exit/index.js",
+        "node_modules/signal-exit/signals.js",
+        "node_modules/snapdragon/index.js",
+        "node_modules/snapdragon/lib/compiler.js",
+        "node_modules/snapdragon/lib/parser.js",
+        "node_modules/snapdragon/lib/position.js",
+        "node_modules/snapdragon/lib/source-maps.js",
+        "node_modules/snapdragon/lib/utils.js",
+        "node_modules/snapdragon/node_modules/define-property/index.js",
+        "node_modules/snapdragon/node_modules/extend-shallow/index.js",
+        "node_modules/snapdragon-node/index.js",
+        "node_modules/snapdragon-node/node_modules/define-property/index.js",
+        "node_modules/snapdragon-node/node_modules/is-accessor-descriptor/index.js",
+        "node_modules/snapdragon-node/node_modules/is-data-descriptor/index.js",
+        "node_modules/snapdragon-node/node_modules/is-descriptor/index.js",
+        "node_modules/snapdragon-util/index.js",
+        "node_modules/snapdragon-util/node_modules/kind-of/index.js",
+        "node_modules/source-map/dist/source-map.debug.js",
+        "node_modules/source-map/dist/source-map.js",
+        "node_modules/source-map/dist/source-map.min.js",
+        "node_modules/source-map/lib/array-set.js",
+        "node_modules/source-map/lib/base64-vlq.js",
+        "node_modules/source-map/lib/base64.js",
+        "node_modules/source-map/lib/binary-search.js",
+        "node_modules/source-map/lib/mapping-list.js",
+        "node_modules/source-map/lib/quick-sort.js",
+        "node_modules/source-map/lib/source-map-consumer.js",
+        "node_modules/source-map/lib/source-map-generator.js",
+        "node_modules/source-map/lib/source-node.js",
+        "node_modules/source-map/lib/util.js",
+        "node_modules/source-map/source-map.js",
+        "node_modules/source-map-resolve/generate-source-map-resolve.js",
+        "node_modules/source-map-resolve/lib/decode-uri-component.js",
+        "node_modules/source-map-resolve/lib/resolve-url.js",
+        "node_modules/source-map-resolve/lib/source-map-resolve-node.js",
+        "node_modules/source-map-resolve/source-map-resolve.js",
+        "node_modules/source-map-url/source-map-url.js",
+        "node_modules/split/examples/pretty.js",
+        "node_modules/split/index.js",
+        "node_modules/split-string/index.js",
+        "node_modules/sprintf-js/dist/angular-sprintf.min.js",
+        "node_modules/sprintf-js/dist/sprintf.min.js",
+        "node_modules/sprintf-js/gruntfile.js",
+        "node_modules/sprintf-js/src/angular-sprintf.js",
+        "node_modules/sprintf-js/src/sprintf.js",
+        "node_modules/static-extend/index.js",
+        "node_modules/static-extend/node_modules/define-property/index.js",
+        "node_modules/stream-combiner/index.js",
+        "node_modules/string-width/index.js",
+        "node_modules/strip-ansi/index.js",
+        "node_modules/strip-eof/index.js",
+        "node_modules/temp/examples/grepcount.js",
+        "node_modules/temp/examples/pdfcreator.js",
+        "node_modules/temp/lib/temp.js",
+        "node_modules/temp/no_cleanup.js",
+        "node_modules/temp/no_cleanup_on_exit.js",
+        "node_modules/temp/no_cleanup_on_exit.spec.js",
+        "node_modules/through/index.js",
+        "node_modules/to-object-path/index.js",
+        "node_modules/to-object-path/node_modules/kind-of/index.js",
+        "node_modules/to-regex/index.js",
+        "node_modules/to-regex-range/index.js",
+        "node_modules/tree-kill/cli.js",
+        "node_modules/tree-kill/index.js",
+        "node_modules/underscore/underscore-min.js",
+        "node_modules/underscore/underscore.js",
+        "node_modules/underscore-plus/lib/underscore-plus.js",
+        "node_modules/union-value/index.js",
+        "node_modules/union-value/node_modules/extend-shallow/index.js",
+        "node_modules/union-value/node_modules/set-value/index.js",
+        "node_modules/universalify/index.js",
+        "node_modules/unset-value/index.js",
+        "node_modules/unset-value/node_modules/has-value/index.js",
+        "node_modules/unset-value/node_modules/has-value/node_modules/isobject/index.js",
+        "node_modules/unset-value/node_modules/has-values/index.js",
+        "node_modules/urix/index.js",
+        "node_modules/use/index.js",
+        "node_modules/vscode-jsonrpc/lib/cancellation.js",
+        "node_modules/vscode-jsonrpc/lib/events.js",
+        "node_modules/vscode-jsonrpc/lib/is.js",
+        "node_modules/vscode-jsonrpc/lib/linkedMap.js",
+        "node_modules/vscode-jsonrpc/lib/main.js",
+        "node_modules/vscode-jsonrpc/lib/messageReader.js",
+        "node_modules/vscode-jsonrpc/lib/messageWriter.js",
+        "node_modules/vscode-jsonrpc/lib/messages.js",
+        "node_modules/vscode-jsonrpc/lib/pipeSupport.js",
+        "node_modules/vscode-jsonrpc/lib/socketSupport.js",
+        "node_modules/vscode-jsonrpc/lib/thenable.js",
+        "node_modules/which/which.js",
+        "node_modules/which-module/index.js",
+        "node_modules/wordwrap/example/center.js",
+        "node_modules/wordwrap/example/meat.js",
+        "node_modules/wordwrap/index.js",
+        "node_modules/wrap-ansi/index.js",
+        "node_modules/wrap-ansi/node_modules/ansi-regex/index.js",
+        "node_modules/wrap-ansi/node_modules/is-fullwidth-code-point/index.js",
+        "node_modules/wrap-ansi/node_modules/string-width/index.js",
+        "node_modules/wrap-ansi/node_modules/strip-ansi/index.js",
+        "node_modules/wrappy/wrappy.js",
+        "node_modules/wrench/lib/wrench.js",
+        "node_modules/xml2js/lib/bom.js",
+        "node_modules/xml2js/lib/builder.js",
+        "node_modules/xml2js/lib/defaults.js",
+        "node_modules/xml2js/lib/parser.js",
+        "node_modules/xml2js/lib/processors.js",
+        "node_modules/xml2js/lib/xml2js.js",
+        "node_modules/xmlbuilder/lib/Utility.js",
+        "node_modules/xmlbuilder/lib/XMLAttribute.js",
+        "node_modules/xmlbuilder/lib/XMLCData.js",
+        "node_modules/xmlbuilder/lib/XMLComment.js",
+        "node_modules/xmlbuilder/lib/XMLDTDAttList.js",
+        "node_modules/xmlbuilder/lib/XMLDTDElement.js",
+        "node_modules/xmlbuilder/lib/XMLDTDEntity.js",
+        "node_modules/xmlbuilder/lib/XMLDTDNotation.js",
+        "node_modules/xmlbuilder/lib/XMLDeclaration.js",
+        "node_modules/xmlbuilder/lib/XMLDocType.js",
+        "node_modules/xmlbuilder/lib/XMLDocument.js",
+        "node_modules/xmlbuilder/lib/XMLDocumentCB.js",
+        "node_modules/xmlbuilder/lib/XMLElement.js",
+        "node_modules/xmlbuilder/lib/XMLNode.js",
+        "node_modules/xmlbuilder/lib/XMLProcessingInstruction.js",
+        "node_modules/xmlbuilder/lib/XMLRaw.js",
+        "node_modules/xmlbuilder/lib/XMLStreamWriter.js",
+        "node_modules/xmlbuilder/lib/XMLStringWriter.js",
+        "node_modules/xmlbuilder/lib/XMLStringifier.js",
+        "node_modules/xmlbuilder/lib/XMLText.js",
+        "node_modules/xmlbuilder/lib/XMLWriterBase.js",
+        "node_modules/xmlbuilder/lib/index.js",
+        "node_modules/y18n/index.js",
+        "node_modules/yallist/iterator.js",
+        "node_modules/yallist/yallist.js",
+        "node_modules/yargs/index.js",
+        "node_modules/yargs/lib/apply-extends.js",
+        "node_modules/yargs/lib/argsert.js",
+        "node_modules/yargs/lib/command.js",
+        "node_modules/yargs/lib/completion.js",
+        "node_modules/yargs/lib/levenshtein.js",
+        "node_modules/yargs/lib/obj-filter.js",
+        "node_modules/yargs/lib/usage.js",
+        "node_modules/yargs/lib/validation.js",
+        "node_modules/yargs/lib/yerror.js",
+        "node_modules/yargs/yargs.js",
+        "node_modules/yargs-parser/index.js",
+        "node_modules/yargs-parser/lib/tokenize-arg-string.js"
+      ],
+      ".json": [
+        "node_modules/@dicy/client/package.json",
+        "node_modules/@dicy/client/tsconfig.json",
+        "node_modules/@dicy/core/package.json",
+        "node_modules/@dicy/core/tsconfig.json",
+        "node_modules/@dicy/server/package.json",
+        "node_modules/@dicy/server/tsconfig.json",
+        "node_modules/@dicy/types/package.json",
+        "node_modules/@dicy/types/tsconfig.json",
+        "node_modules/@mrmlnc/readdir-enhanced/package.json",
+        "node_modules/@nodelib/fs.stat/package.json",
+        "node_modules/abstract-socket/package.json",
+        "node_modules/ansi-regex/package.json",
+        "node_modules/argparse/package.json",
+        "node_modules/arr-diff/package.json",
+        "node_modules/arr-flatten/package.json",
+        "node_modules/arr-union/package.json",
+        "node_modules/array-unique/package.json",
+        "node_modules/assign-symbols/package.json",
+        "node_modules/async/package.json",
+        "node_modules/atob/bower.json",
+        "node_modules/atob/package.json",
+        "node_modules/balanced-match/package.json",
+        "node_modules/base/node_modules/define-property/package.json",
+        "node_modules/base/node_modules/is-accessor-descriptor/package.json",
+        "node_modules/base/node_modules/is-data-descriptor/package.json",
+        "node_modules/base/node_modules/is-descriptor/package.json",
+        "node_modules/base/package.json",
+        "node_modules/bindings/package.json",
+        "node_modules/brace-expansion/package.json",
+        "node_modules/braces/node_modules/extend-shallow/package.json",
+        "node_modules/braces/package.json",
+        "node_modules/cache-base/package.json",
+        "node_modules/call-me-maybe/package.json",
+        "node_modules/camelcase/package.json",
+        "node_modules/class-utils/node_modules/define-property/package.json",
+        "node_modules/class-utils/package.json",
+        "node_modules/cliui/package.json",
+        "node_modules/code-point-at/package.json",
+        "node_modules/collection-visit/package.json",
+        "node_modules/command-join/package.json",
+        "node_modules/component-emitter/package.json",
+        "node_modules/concat-map/package.json",
+        "node_modules/copy-descriptor/package.json",
+        "node_modules/cross-spawn/package.json",
+        "node_modules/dbus-native/lib/header-signature.json",
+        "node_modules/dbus-native/package.json",
+        "node_modules/debug/component.json",
+        "node_modules/debug/package.json",
+        "node_modules/decamelize/package.json",
+        "node_modules/decode-uri-component/package.json",
+        "node_modules/define-property/node_modules/is-accessor-descriptor/package.json",
+        "node_modules/define-property/node_modules/is-data-descriptor/package.json",
+        "node_modules/define-property/node_modules/is-descriptor/package.json",
+        "node_modules/define-property/package.json",
+        "node_modules/duplexer/package.json",
+        "node_modules/esprima/package.json",
+        "node_modules/etch/package.json",
+        "node_modules/event-stream/package.json",
+        "node_modules/execa/package.json",
+        "node_modules/expand-brackets/node_modules/define-property/package.json",
+        "node_modules/expand-brackets/node_modules/extend-shallow/package.json",
+        "node_modules/expand-brackets/package.json",
+        "node_modules/extend-shallow/node_modules/is-extendable/package.json",
+        "node_modules/extend-shallow/package.json",
+        "node_modules/extglob/node_modules/define-property/package.json",
+        "node_modules/extglob/node_modules/extend-shallow/package.json",
+        "node_modules/extglob/node_modules/is-accessor-descriptor/package.json",
+        "node_modules/extglob/node_modules/is-data-descriptor/package.json",
+        "node_modules/extglob/node_modules/is-descriptor/package.json",
+        "node_modules/extglob/package.json",
+        "node_modules/fast-glob/package.json",
+        "node_modules/file-uri-to-path/package.json",
+        "node_modules/file-url/package.json",
+        "node_modules/fill-range/node_modules/extend-shallow/package.json",
+        "node_modules/fill-range/package.json",
+        "node_modules/find-up/package.json",
+        "node_modules/for-in/package.json",
+        "node_modules/fragment-cache/package.json",
+        "node_modules/from/package.json",
+        "node_modules/fs-extra/package.json",
+        "node_modules/fs-plus/node_modules/rimraf/package.json",
+        "node_modules/fs-plus/package.json",
+        "node_modules/fs.realpath/package.json",
+        "node_modules/get-caller-file/package.json",
+        "node_modules/get-stream/package.json",
+        "node_modules/get-value/package.json",
+        "node_modules/glob/package.json",
+        "node_modules/glob-parent/node_modules/is-glob/package.json",
+        "node_modules/glob-parent/package.json",
+        "node_modules/glob-to-regexp/package.json",
+        "node_modules/graceful-fs/package.json",
+        "node_modules/graphlib/bower.json",
+        "node_modules/graphlib/package.json",
+        "node_modules/has-value/package.json",
+        "node_modules/has-values/node_modules/kind-of/package.json",
+        "node_modules/has-values/package.json",
+        "node_modules/hexy/package.json",
+        "node_modules/inflight/package.json",
+        "node_modules/inherits/package.json",
+        "node_modules/invert-kv/package.json",
+        "node_modules/is-accessor-descriptor/node_modules/kind-of/package.json",
+        "node_modules/is-accessor-descriptor/package.json",
+        "node_modules/is-buffer/package.json",
+        "node_modules/is-data-descriptor/node_modules/kind-of/package.json",
+        "node_modules/is-data-descriptor/package.json",
+        "node_modules/is-descriptor/node_modules/kind-of/package.json",
+        "node_modules/is-descriptor/package.json",
+        "node_modules/is-extendable/package.json",
+        "node_modules/is-extglob/package.json",
+        "node_modules/is-fullwidth-code-point/package.json",
+        "node_modules/is-glob/package.json",
+        "node_modules/is-number/node_modules/kind-of/package.json",
+        "node_modules/is-number/package.json",
+        "node_modules/is-plain-object/package.json",
+        "node_modules/is-stream/package.json",
+        "node_modules/is-windows/package.json",
+        "node_modules/isarray/component.json",
+        "node_modules/isarray/package.json",
+        "node_modules/isexe/package.json",
+        "node_modules/isobject/package.json",
+        "node_modules/js-yaml/package.json",
+        "node_modules/jsonfile/package.json",
+        "node_modules/kind-of/package.json",
+        "node_modules/lcid/lcid.json",
+        "node_modules/lcid/package.json",
+        "node_modules/locate-path/package.json",
+        "node_modules/lodash/package.json",
+        "node_modules/long/package.json",
+        "node_modules/lru-cache/package.json",
+        "node_modules/map-cache/package.json",
+        "node_modules/map-stream/package.json",
+        "node_modules/map-visit/package.json",
+        "node_modules/mem/package.json",
+        "node_modules/merge2/package.json",
+        "node_modules/micromatch/package.json",
+        "node_modules/mimic-fn/package.json",
+        "node_modules/minimatch/package.json",
+        "node_modules/minimist/package.json",
+        "node_modules/mixin-deep/node_modules/is-extendable/package.json",
+        "node_modules/mixin-deep/package.json",
+        "node_modules/mkdirp/node_modules/minimist/package.json",
+        "node_modules/mkdirp/package.json",
+        "node_modules/ms/package.json",
+        "node_modules/nan/package.json",
+        "node_modules/nan/tools/package.json",
+        "node_modules/nanomatch/package.json",
+        "node_modules/npm-run-path/package.json",
+        "node_modules/number-is-nan/package.json",
+        "node_modules/object-copy/node_modules/define-property/package.json",
+        "node_modules/object-copy/node_modules/kind-of/package.json",
+        "node_modules/object-copy/package.json",
+        "node_modules/object-visit/package.json",
+        "node_modules/object.pick/package.json",
+        "node_modules/once/package.json",
+        "node_modules/optimist/package.json",
+        "node_modules/os-locale/package.json",
+        "node_modules/os-tmpdir/package.json",
+        "node_modules/p-finally/package.json",
+        "node_modules/p-limit/package.json",
+        "node_modules/p-locate/package.json",
+        "node_modules/p-try/package.json",
+        "node_modules/pascalcase/package.json",
+        "node_modules/path-dirname/package.json",
+        "node_modules/path-exists/package.json",
+        "node_modules/path-is-absolute/package.json",
+        "node_modules/path-key/package.json",
+        "node_modules/pause-stream/package.json",
+        "node_modules/posix-character-classes/package.json",
+        "node_modules/pseudomap/package.json",
+        "node_modules/put/package.json",
+        "node_modules/readdir-enhanced/node_modules/glob-to-regexp/package.json",
+        "node_modules/readdir-enhanced/package.json",
+        "node_modules/regex-not/package.json",
+        "node_modules/repeat-element/package.json",
+        "node_modules/repeat-string/package.json",
+        "node_modules/require-directory/package.json",
+        "node_modules/require-main-filename/package.json",
+        "node_modules/resolve-url/bower.json",
+        "node_modules/resolve-url/component.json",
+        "node_modules/resolve-url/package.json",
+        "node_modules/ret/package.json",
+        "node_modules/rimraf/package.json",
+        "node_modules/safe-buffer/package.json",
+        "node_modules/safe-regex/package.json",
+        "node_modules/sax/package.json",
+        "node_modules/semver/package.json",
+        "node_modules/set-blocking/package.json",
+        "node_modules/set-value/node_modules/extend-shallow/package.json",
+        "node_modules/set-value/package.json",
+        "node_modules/shebang-command/package.json",
+        "node_modules/shebang-regex/package.json",
+        "node_modules/signal-exit/package.json",
+        "node_modules/snapdragon/node_modules/define-property/package.json",
+        "node_modules/snapdragon/node_modules/extend-shallow/package.json",
+        "node_modules/snapdragon/package.json",
+        "node_modules/snapdragon-node/node_modules/define-property/package.json",
+        "node_modules/snapdragon-node/node_modules/is-accessor-descriptor/package.json",
+        "node_modules/snapdragon-node/node_modules/is-data-descriptor/package.json",
+        "node_modules/snapdragon-node/node_modules/is-descriptor/package.json",
+        "node_modules/snapdragon-node/package.json",
+        "node_modules/snapdragon-util/node_modules/kind-of/package.json",
+        "node_modules/snapdragon-util/package.json",
+        "node_modules/source-map/package.json",
+        "node_modules/source-map-resolve/bower.json",
+        "node_modules/source-map-resolve/component.json",
+        "node_modules/source-map-resolve/package.json",
+        "node_modules/source-map-url/bower.json",
+        "node_modules/source-map-url/component.json",
+        "node_modules/source-map-url/package.json",
+        "node_modules/split/package.json",
+        "node_modules/split-string/package.json",
+        "node_modules/sprintf-js/bower.json",
+        "node_modules/sprintf-js/package.json",
+        "node_modules/static-extend/node_modules/define-property/package.json",
+        "node_modules/static-extend/package.json",
+        "node_modules/stream-combiner/package.json",
+        "node_modules/string-width/package.json",
+        "node_modules/strip-ansi/package.json",
+        "node_modules/strip-eof/package.json",
+        "node_modules/temp/package.json",
+        "node_modules/through/package.json",
+        "node_modules/to-object-path/node_modules/kind-of/package.json",
+        "node_modules/to-object-path/package.json",
+        "node_modules/to-regex/package.json",
+        "node_modules/to-regex-range/package.json",
+        "node_modules/tree-kill/package.json",
+        "node_modules/underscore/package.json",
+        "node_modules/underscore-plus/package.json",
+        "node_modules/union-value/node_modules/extend-shallow/package.json",
+        "node_modules/union-value/node_modules/set-value/package.json",
+        "node_modules/union-value/package.json",
+        "node_modules/universalify/package.json",
+        "node_modules/unset-value/node_modules/has-value/node_modules/isobject/package.json",
+        "node_modules/unset-value/node_modules/has-value/package.json",
+        "node_modules/unset-value/node_modules/has-values/package.json",
+        "node_modules/unset-value/package.json",
+        "node_modules/urix/package.json",
+        "node_modules/use/package.json",
+        "node_modules/vscode-jsonrpc/package.json",
+        "node_modules/which/package.json",
+        "node_modules/which-module/package.json",
+        "node_modules/wordwrap/package.json",
+        "node_modules/wrap-ansi/node_modules/ansi-regex/package.json",
+        "node_modules/wrap-ansi/node_modules/is-fullwidth-code-point/package.json",
+        "node_modules/wrap-ansi/node_modules/string-width/package.json",
+        "node_modules/wrap-ansi/node_modules/strip-ansi/package.json",
+        "node_modules/wrap-ansi/package.json",
+        "node_modules/wrappy/package.json",
+        "node_modules/wrench/package.json",
+        "node_modules/xml2js/package.json",
+        "node_modules/xmlbuilder/package.json",
+        "node_modules/y18n/package.json",
+        "node_modules/yallist/package.json",
+        "node_modules/yargs/locales/be.json",
+        "node_modules/yargs/locales/de.json",
+        "node_modules/yargs/locales/en.json",
+        "node_modules/yargs/locales/es.json",
+        "node_modules/yargs/locales/fr.json",
+        "node_modules/yargs/locales/hi.json",
+        "node_modules/yargs/locales/hu.json",
+        "node_modules/yargs/locales/id.json",
+        "node_modules/yargs/locales/it.json",
+        "node_modules/yargs/locales/ja.json",
+        "node_modules/yargs/locales/ko.json",
+        "node_modules/yargs/locales/nb.json",
+        "node_modules/yargs/locales/nl.json",
+        "node_modules/yargs/locales/nn.json",
+        "node_modules/yargs/locales/pirate.json",
+        "node_modules/yargs/locales/pl.json",
+        "node_modules/yargs/locales/pt.json",
+        "node_modules/yargs/locales/pt_BR.json",
+        "node_modules/yargs/locales/ru.json",
+        "node_modules/yargs/locales/th.json",
+        "node_modules/yargs/locales/tr.json",
+        "node_modules/yargs/locales/zh_CN.json",
+        "node_modules/yargs/locales/zh_TW.json",
+        "node_modules/yargs/package.json",
+        "node_modules/yargs-parser/package.json",
+        "package.json"
+      ],
+      ".node": [
+        "node_modules/abstract-socket/build/Release/abstract_socket.node",
+        "node_modules/abstract-socket/build/Release/obj.target/abstract_socket.node"
+      ]
+    },
+    "folders": [
+      {
+        "paths": [
+          "keymaps",
+          "lib",
+          "lib/builders",
+          "lib/openers",
+          "lib/parsers",
+          "lib/views",
+          "menus",
+          "",
+          "spec",
+          "spec/builders",
+          "spec/parsers"
+        ],
+        "dependencies": {
+          "@dicy/client": "^0.13.0",
+          "dbus-native": "^0.4.0",
+          "etch": "0.12.6",
+          "fs-plus": "^3.0.0",
+          "glob": "^7.1.1",
+          "js-yaml": "^3.11.0",
+          "lodash": "^4.17.4",
+          "minimatch": "^3.0.4",
+          "temp": "^0.8.3",
+          "tree-kill": "^1.1.0",
+          "wrench": "^1.5.9"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/abstract-socket/build/Release",
+          "node_modules/abstract-socket/build/Release/obj.target",
+          "node_modules/abstract-socket/examples",
+          "node_modules/abstract-socket/lib",
+          "node_modules/abstract-socket",
+          "node_modules/abstract-socket/test"
+        ],
+        "dependencies": {
+          "bindings": "^1.2.1",
+          "nan": "^2.0.9"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/argparse",
+          "node_modules/argparse/lib/action/append",
+          "node_modules/argparse/lib/action",
+          "node_modules/argparse/lib/action/store",
+          "node_modules/argparse/lib",
+          "node_modules/argparse/lib/argument",
+          "node_modules/argparse/lib/help"
+        ],
+        "dependencies": {
+          "sprintf-js": "~1.0.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/base"
+        ],
+        "dependencies": {
+          "cache-base": "^1.0.1",
+          "class-utils": "^0.3.5",
+          "component-emitter": "^1.2.1",
+          "define-property": "^1.0.0",
+          "isobject": "^3.0.1",
+          "mixin-deep": "^1.2.0",
+          "pascalcase": "^0.1.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/base/node_modules/define-property"
+        ],
+        "dependencies": {
+          "is-descriptor": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/base/node_modules/is-accessor-descriptor"
+        ],
+        "dependencies": {
+          "kind-of": "^6.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/base/node_modules/is-data-descriptor"
+        ],
+        "dependencies": {
+          "kind-of": "^6.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/base/node_modules/is-descriptor"
+        ],
+        "dependencies": {
+          "is-accessor-descriptor": "^1.0.0",
+          "is-data-descriptor": "^1.0.0",
+          "kind-of": "^6.0.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/bindings"
+        ],
+        "dependencies": {
+          "file-uri-to-path": "1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/brace-expansion"
+        ],
+        "dependencies": {
+          "balanced-match": "^1.0.0",
+          "concat-map": "0.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/braces",
+          "node_modules/braces/lib"
+        ],
+        "dependencies": {
+          "arr-flatten": "^1.1.0",
+          "array-unique": "^0.3.2",
+          "extend-shallow": "^2.0.1",
+          "fill-range": "^4.0.0",
+          "isobject": "^3.0.1",
+          "repeat-element": "^1.1.2",
+          "snapdragon": "^0.8.1",
+          "snapdragon-node": "^2.0.1",
+          "split-string": "^3.0.2",
+          "to-regex": "^3.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/braces/node_modules/extend-shallow"
+        ],
+        "dependencies": {
+          "is-extendable": "^0.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/cache-base"
+        ],
+        "dependencies": {
+          "collection-visit": "^1.0.0",
+          "component-emitter": "^1.2.1",
+          "get-value": "^2.0.6",
+          "has-value": "^1.0.0",
+          "isobject": "^3.0.1",
+          "set-value": "^2.0.0",
+          "to-object-path": "^0.3.0",
+          "union-value": "^1.0.0",
+          "unset-value": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/class-utils"
+        ],
+        "dependencies": {
+          "arr-union": "^3.1.0",
+          "define-property": "^0.2.5",
+          "isobject": "^3.0.0",
+          "static-extend": "^0.1.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/class-utils/node_modules/define-property"
+        ],
+        "dependencies": {
+          "is-descriptor": "^0.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/cliui"
+        ],
+        "dependencies": {
+          "string-width": "^2.1.1",
+          "strip-ansi": "^4.0.0",
+          "wrap-ansi": "^2.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/collection-visit"
+        ],
+        "dependencies": {
+          "map-visit": "^1.0.0",
+          "object-visit": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/cross-spawn",
+          "node_modules/cross-spawn/lib",
+          "node_modules/cross-spawn/lib/util"
+        ],
+        "dependencies": {
+          "lru-cache": "^4.0.1",
+          "shebang-command": "^1.2.0",
+          "which": "^1.2.9"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/dbus-native/bin",
+          "node_modules/dbus-native",
+          "node_modules/dbus-native/lib"
+        ],
+        "dependencies": {
+          "abstract-socket": "^2.0.0",
+          "event-stream": "^4.0.0",
+          "hexy": "^0.2.10",
+          "long": "^4.0.0",
+          "optimist": "^0.6.1",
+          "put": "0.0.6",
+          "safe-buffer": "^5.1.1",
+          "xml2js": "^0.4.17"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/debug",
+          "node_modules/debug/src"
+        ],
+        "dependencies": {
+          "ms": "2.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/define-property"
+        ],
+        "dependencies": {
+          "is-descriptor": "^1.0.2",
+          "isobject": "^3.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/define-property/node_modules/is-accessor-descriptor"
+        ],
+        "dependencies": {
+          "kind-of": "^6.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/define-property/node_modules/is-data-descriptor"
+        ],
+        "dependencies": {
+          "kind-of": "^6.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/define-property/node_modules/is-descriptor"
+        ],
+        "dependencies": {
+          "is-accessor-descriptor": "^1.0.0",
+          "is-data-descriptor": "^1.0.0",
+          "kind-of": "^6.0.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/event-stream/examples",
+          "node_modules/event-stream",
+          "node_modules/event-stream/test",
+          "node_modules/event-stream/test/helper"
+        ],
+        "dependencies": {
+          "duplexer": "^0.1.1",
+          "from": "^0.1.7",
+          "map-stream": "0.0.7",
+          "pause-stream": "^0.0.11",
+          "split": "^1.0.1",
+          "stream-combiner": "^0.2.2",
+          "through": "^2.3.8"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/execa",
+          "node_modules/execa/lib"
+        ],
+        "dependencies": {
+          "cross-spawn": "^5.0.1",
+          "get-stream": "^3.0.0",
+          "is-stream": "^1.1.0",
+          "npm-run-path": "^2.0.0",
+          "p-finally": "^1.0.0",
+          "signal-exit": "^3.0.0",
+          "strip-eof": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/expand-brackets",
+          "node_modules/expand-brackets/lib"
+        ],
+        "dependencies": {
+          "debug": "^2.3.3",
+          "define-property": "^0.2.5",
+          "extend-shallow": "^2.0.1",
+          "posix-character-classes": "^0.1.0",
+          "regex-not": "^1.0.0",
+          "snapdragon": "^0.8.1",
+          "to-regex": "^3.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/expand-brackets/node_modules/define-property"
+        ],
+        "dependencies": {
+          "is-descriptor": "^0.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/expand-brackets/node_modules/extend-shallow"
+        ],
+        "dependencies": {
+          "is-extendable": "^0.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/extend-shallow"
+        ],
+        "dependencies": {
+          "assign-symbols": "^1.0.0",
+          "is-extendable": "^1.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/extend-shallow/node_modules/is-extendable"
+        ],
+        "dependencies": {
+          "is-plain-object": "^2.0.4"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/extglob",
+          "node_modules/extglob/lib"
+        ],
+        "dependencies": {
+          "array-unique": "^0.3.2",
+          "define-property": "^1.0.0",
+          "expand-brackets": "^2.1.4",
+          "extend-shallow": "^2.0.1",
+          "fragment-cache": "^0.2.1",
+          "regex-not": "^1.0.0",
+          "snapdragon": "^0.8.1",
+          "to-regex": "^3.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/extglob/node_modules/define-property"
+        ],
+        "dependencies": {
+          "is-descriptor": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/extglob/node_modules/extend-shallow"
+        ],
+        "dependencies": {
+          "is-extendable": "^0.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/extglob/node_modules/is-accessor-descriptor"
+        ],
+        "dependencies": {
+          "kind-of": "^6.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/extglob/node_modules/is-data-descriptor"
+        ],
+        "dependencies": {
+          "kind-of": "^6.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/extglob/node_modules/is-descriptor"
+        ],
+        "dependencies": {
+          "is-accessor-descriptor": "^1.0.0",
+          "is-data-descriptor": "^1.0.0",
+          "kind-of": "^6.0.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/fast-glob",
+          "node_modules/fast-glob/out/adapters",
+          "node_modules/fast-glob/out",
+          "node_modules/fast-glob/out/managers",
+          "node_modules/fast-glob/out/providers/filters",
+          "node_modules/fast-glob/out/providers",
+          "node_modules/fast-glob/out/types",
+          "node_modules/fast-glob/out/utils"
+        ],
+        "dependencies": {
+          "@mrmlnc/readdir-enhanced": "^2.2.1",
+          "@nodelib/fs.stat": "^1.1.2",
+          "glob-parent": "^3.1.0",
+          "is-glob": "^4.0.0",
+          "merge2": "^1.2.3",
+          "micromatch": "^3.1.10"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/fill-range"
+        ],
+        "dependencies": {
+          "extend-shallow": "^2.0.1",
+          "is-number": "^3.0.0",
+          "repeat-string": "^1.6.1",
+          "to-regex-range": "^2.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/fill-range/node_modules/extend-shallow"
+        ],
+        "dependencies": {
+          "is-extendable": "^0.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/find-up"
+        ],
+        "dependencies": {
+          "locate-path": "^2.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/fragment-cache"
+        ],
+        "dependencies": {
+          "map-cache": "^0.2.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/fs-extra/lib/copy",
+          "node_modules/fs-extra/lib/copy-sync",
+          "node_modules/fs-extra/lib/empty",
+          "node_modules/fs-extra/lib/ensure",
+          "node_modules/fs-extra/lib/fs",
+          "node_modules/fs-extra/lib",
+          "node_modules/fs-extra/lib/json",
+          "node_modules/fs-extra/lib/mkdirs",
+          "node_modules/fs-extra/lib/move",
+          "node_modules/fs-extra/lib/move-sync",
+          "node_modules/fs-extra/lib/output",
+          "node_modules/fs-extra/lib/path-exists",
+          "node_modules/fs-extra/lib/remove",
+          "node_modules/fs-extra/lib/util",
+          "node_modules/fs-extra"
+        ],
+        "dependencies": {
+          "graceful-fs": "^4.1.2",
+          "jsonfile": "^4.0.0",
+          "universalify": "^0.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/fs-plus/lib",
+          "node_modules/fs-plus"
+        ],
+        "dependencies": {
+          "async": "^1.5.2",
+          "mkdirp": "^0.5.1",
+          "rimraf": "^2.5.2",
+          "underscore-plus": "1.x"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/fs-plus/node_modules/rimraf"
+        ],
+        "dependencies": {
+          "glob": "^7.1.3"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/glob"
+        ],
+        "dependencies": {
+          "fs.realpath": "^1.0.0",
+          "inflight": "^1.0.4",
+          "inherits": "2",
+          "minimatch": "^3.0.4",
+          "once": "^1.3.0",
+          "path-is-absolute": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/glob-parent"
+        ],
+        "dependencies": {
+          "is-glob": "^3.1.0",
+          "path-dirname": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/glob-parent/node_modules/is-glob"
+        ],
+        "dependencies": {
+          "is-extglob": "^2.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/graphlib",
+          "node_modules/graphlib/dist",
+          "node_modules/graphlib/lib/alg",
+          "node_modules/graphlib/lib/data",
+          "node_modules/graphlib/lib"
+        ],
+        "dependencies": {
+          "lodash": "^4.17.5"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/has-value"
+        ],
+        "dependencies": {
+          "get-value": "^2.0.6",
+          "has-values": "^1.0.0",
+          "isobject": "^3.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/has-values"
+        ],
+        "dependencies": {
+          "is-number": "^3.0.0",
+          "kind-of": "^4.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/has-values/node_modules/kind-of"
+        ],
+        "dependencies": {
+          "is-buffer": "^1.1.5"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/inflight"
+        ],
+        "dependencies": {
+          "once": "^1.3.0",
+          "wrappy": "1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/is-accessor-descriptor"
+        ],
+        "dependencies": {
+          "kind-of": "^3.0.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/is-accessor-descriptor/node_modules/kind-of"
+        ],
+        "dependencies": {
+          "is-buffer": "^1.1.5"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/is-data-descriptor"
+        ],
+        "dependencies": {
+          "kind-of": "^3.0.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/is-data-descriptor/node_modules/kind-of"
+        ],
+        "dependencies": {
+          "is-buffer": "^1.1.5"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/is-descriptor"
+        ],
+        "dependencies": {
+          "is-accessor-descriptor": "^0.1.6",
+          "is-data-descriptor": "^0.1.4",
+          "kind-of": "^5.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/is-glob"
+        ],
+        "dependencies": {
+          "is-extglob": "^2.1.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/is-number"
+        ],
+        "dependencies": {
+          "kind-of": "^3.0.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/is-number/node_modules/kind-of"
+        ],
+        "dependencies": {
+          "is-buffer": "^1.1.5"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/is-plain-object"
+        ],
+        "dependencies": {
+          "isobject": "^3.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/js-yaml/bin",
+          "node_modules/js-yaml/dist",
+          "node_modules/js-yaml",
+          "node_modules/js-yaml/lib/js-yaml",
+          "node_modules/js-yaml/lib/js-yaml/schema",
+          "node_modules/js-yaml/lib/js-yaml/type",
+          "node_modules/js-yaml/lib/js-yaml/type/js",
+          "node_modules/js-yaml/lib"
+        ],
+        "dependencies": {
+          "argparse": "^1.0.7",
+          "esprima": "^4.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/jsonfile"
+        ],
+        "dependencies": {
+          "graceful-fs": "^4.1.6"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/lcid"
+        ],
+        "dependencies": {
+          "invert-kv": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/locate-path"
+        ],
+        "dependencies": {
+          "p-locate": "^2.0.0",
+          "path-exists": "^3.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/lru-cache"
+        ],
+        "dependencies": {
+          "pseudomap": "^1.0.2",
+          "yallist": "^2.1.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/map-visit"
+        ],
+        "dependencies": {
+          "object-visit": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/mem"
+        ],
+        "dependencies": {
+          "mimic-fn": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/micromatch",
+          "node_modules/micromatch/lib"
+        ],
+        "dependencies": {
+          "arr-diff": "^4.0.0",
+          "array-unique": "^0.3.2",
+          "braces": "^2.3.1",
+          "define-property": "^2.0.2",
+          "extend-shallow": "^3.0.2",
+          "extglob": "^2.0.4",
+          "fragment-cache": "^0.2.1",
+          "kind-of": "^6.0.2",
+          "nanomatch": "^1.2.9",
+          "object.pick": "^1.3.0",
+          "regex-not": "^1.0.0",
+          "snapdragon": "^0.8.1",
+          "to-regex": "^3.0.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/minimatch"
+        ],
+        "dependencies": {
+          "brace-expansion": "^1.1.7"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/mixin-deep"
+        ],
+        "dependencies": {
+          "for-in": "^1.0.2",
+          "is-extendable": "^1.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/mixin-deep/node_modules/is-extendable"
+        ],
+        "dependencies": {
+          "is-plain-object": "^2.0.4"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/mkdirp/bin",
+          "node_modules/mkdirp/examples",
+          "node_modules/mkdirp",
+          "node_modules/mkdirp/test"
+        ],
+        "dependencies": {
+          "minimist": "0.0.8"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/nanomatch",
+          "node_modules/nanomatch/lib"
+        ],
+        "dependencies": {
+          "arr-diff": "^4.0.0",
+          "array-unique": "^0.3.2",
+          "define-property": "^2.0.2",
+          "extend-shallow": "^3.0.2",
+          "fragment-cache": "^0.2.1",
+          "is-windows": "^1.0.2",
+          "kind-of": "^6.0.2",
+          "object.pick": "^1.3.0",
+          "regex-not": "^1.0.0",
+          "snapdragon": "^0.8.1",
+          "to-regex": "^3.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/npm-run-path"
+        ],
+        "dependencies": {
+          "path-key": "^2.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/object-copy"
+        ],
+        "dependencies": {
+          "copy-descriptor": "^0.1.0",
+          "define-property": "^0.2.5",
+          "kind-of": "^3.0.3"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/object-copy/node_modules/define-property"
+        ],
+        "dependencies": {
+          "is-descriptor": "^0.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/object-copy/node_modules/kind-of"
+        ],
+        "dependencies": {
+          "is-buffer": "^1.1.5"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/object-visit"
+        ],
+        "dependencies": {
+          "isobject": "^3.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/object.pick"
+        ],
+        "dependencies": {
+          "isobject": "^3.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/once"
+        ],
+        "dependencies": {
+          "wrappy": "1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/optimist/example",
+          "node_modules/optimist",
+          "node_modules/optimist/test/_",
+          "node_modules/optimist/test"
+        ],
+        "dependencies": {
+          "minimist": "~0.0.1",
+          "wordwrap": "~0.0.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/os-locale"
+        ],
+        "dependencies": {
+          "execa": "^0.7.0",
+          "lcid": "^1.0.0",
+          "mem": "^1.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/p-limit"
+        ],
+        "dependencies": {
+          "p-try": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/p-locate"
+        ],
+        "dependencies": {
+          "p-limit": "^1.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/pause-stream",
+          "node_modules/pause-stream/test"
+        ],
+        "dependencies": {
+          "through": "~2.3"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/readdir-enhanced/lib/async",
+          "node_modules/readdir-enhanced/lib",
+          "node_modules/readdir-enhanced/lib/stream",
+          "node_modules/readdir-enhanced/lib/sync",
+          "node_modules/readdir-enhanced"
+        ],
+        "dependencies": {
+          "call-me-maybe": "^1.0.1",
+          "glob-to-regexp": "^0.4.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/regex-not"
+        ],
+        "dependencies": {
+          "extend-shallow": "^3.0.2",
+          "safe-regex": "^1.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/safe-regex/example",
+          "node_modules/safe-regex",
+          "node_modules/safe-regex/test"
+        ],
+        "dependencies": {
+          "ret": "~0.1.10"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/set-value"
+        ],
+        "dependencies": {
+          "extend-shallow": "^2.0.1",
+          "is-extendable": "^0.1.1",
+          "is-plain-object": "^2.0.3",
+          "split-string": "^3.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/set-value/node_modules/extend-shallow"
+        ],
+        "dependencies": {
+          "is-extendable": "^0.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/shebang-command"
+        ],
+        "dependencies": {
+          "shebang-regex": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/snapdragon",
+          "node_modules/snapdragon/lib"
+        ],
+        "dependencies": {
+          "base": "^0.11.1",
+          "debug": "^2.2.0",
+          "define-property": "^0.2.5",
+          "extend-shallow": "^2.0.1",
+          "map-cache": "^0.2.2",
+          "source-map": "^0.5.6",
+          "source-map-resolve": "^0.5.0",
+          "use": "^3.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/snapdragon/node_modules/define-property"
+        ],
+        "dependencies": {
+          "is-descriptor": "^0.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/snapdragon/node_modules/extend-shallow"
+        ],
+        "dependencies": {
+          "is-extendable": "^0.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/snapdragon-node"
+        ],
+        "dependencies": {
+          "define-property": "^1.0.0",
+          "isobject": "^3.0.0",
+          "snapdragon-util": "^3.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/snapdragon-node/node_modules/define-property"
+        ],
+        "dependencies": {
+          "is-descriptor": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/snapdragon-node/node_modules/is-accessor-descriptor"
+        ],
+        "dependencies": {
+          "kind-of": "^6.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/snapdragon-node/node_modules/is-data-descriptor"
+        ],
+        "dependencies": {
+          "kind-of": "^6.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/snapdragon-node/node_modules/is-descriptor"
+        ],
+        "dependencies": {
+          "is-accessor-descriptor": "^1.0.0",
+          "is-data-descriptor": "^1.0.0",
+          "kind-of": "^6.0.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/snapdragon-util"
+        ],
+        "dependencies": {
+          "kind-of": "^3.2.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/snapdragon-util/node_modules/kind-of"
+        ],
+        "dependencies": {
+          "is-buffer": "^1.1.5"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/source-map-resolve",
+          "node_modules/source-map-resolve/lib",
+          "node_modules/source-map-resolve/test"
+        ],
+        "dependencies": {
+          "atob": "^2.1.1",
+          "decode-uri-component": "^0.2.0",
+          "resolve-url": "^0.2.1",
+          "source-map-url": "^0.4.0",
+          "urix": "^0.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/split/examples",
+          "node_modules/split",
+          "node_modules/split/test"
+        ],
+        "dependencies": {
+          "through": "2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/split-string"
+        ],
+        "dependencies": {
+          "extend-shallow": "^3.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/static-extend"
+        ],
+        "dependencies": {
+          "define-property": "^0.2.5",
+          "object-copy": "^0.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/static-extend/node_modules/define-property"
+        ],
+        "dependencies": {
+          "is-descriptor": "^0.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/stream-combiner",
+          "node_modules/stream-combiner/test"
+        ],
+        "dependencies": {
+          "duplexer": "~0.1.1",
+          "through": "~2.3.4"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/string-width"
+        ],
+        "dependencies": {
+          "is-fullwidth-code-point": "^2.0.0",
+          "strip-ansi": "^4.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/strip-ansi"
+        ],
+        "dependencies": {
+          "ansi-regex": "^3.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/temp/examples",
+          "node_modules/temp/lib",
+          "node_modules/temp",
+          "node_modules/temp/test"
+        ],
+        "dependencies": {
+          "os-tmpdir": "^1.0.0",
+          "rimraf": "~2.2.6"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/to-object-path"
+        ],
+        "dependencies": {
+          "kind-of": "^3.0.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/to-object-path/node_modules/kind-of"
+        ],
+        "dependencies": {
+          "is-buffer": "^1.1.5"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/to-regex"
+        ],
+        "dependencies": {
+          "define-property": "^2.0.2",
+          "extend-shallow": "^3.0.2",
+          "regex-not": "^1.0.2",
+          "safe-regex": "^1.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/to-regex-range"
+        ],
+        "dependencies": {
+          "is-number": "^3.0.0",
+          "repeat-string": "^1.6.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/underscore-plus/lib",
+          "node_modules/underscore-plus"
+        ],
+        "dependencies": {
+          "underscore": "^1.9.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/union-value"
+        ],
+        "dependencies": {
+          "arr-union": "^3.1.0",
+          "get-value": "^2.0.6",
+          "is-extendable": "^0.1.1",
+          "set-value": "^0.4.3"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/union-value/node_modules/extend-shallow"
+        ],
+        "dependencies": {
+          "is-extendable": "^0.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/union-value/node_modules/set-value"
+        ],
+        "dependencies": {
+          "extend-shallow": "^2.0.1",
+          "is-extendable": "^0.1.1",
+          "is-plain-object": "^2.0.1",
+          "to-object-path": "^0.3.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/unset-value"
+        ],
+        "dependencies": {
+          "has-value": "^0.3.1",
+          "isobject": "^3.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/unset-value/node_modules/has-value"
+        ],
+        "dependencies": {
+          "get-value": "^2.0.3",
+          "has-values": "^0.1.4",
+          "isobject": "^2.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/unset-value/node_modules/has-value/node_modules/isobject"
+        ],
+        "dependencies": {
+          "isarray": "1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/which"
+        ],
+        "dependencies": {
+          "isexe": "^2.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/wrap-ansi"
+        ],
+        "dependencies": {
+          "string-width": "^1.0.1",
+          "strip-ansi": "^3.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/wrap-ansi/node_modules/is-fullwidth-code-point"
+        ],
+        "dependencies": {
+          "number-is-nan": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/wrap-ansi/node_modules/string-width"
+        ],
+        "dependencies": {
+          "code-point-at": "^1.0.0",
+          "is-fullwidth-code-point": "^1.0.0",
+          "strip-ansi": "^3.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/wrap-ansi/node_modules/strip-ansi"
+        ],
+        "dependencies": {
+          "ansi-regex": "^2.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/xml2js/lib",
+          "node_modules/xml2js"
+        ],
+        "dependencies": {
+          "sax": ">=0.6.0",
+          "xmlbuilder": "~9.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/yargs",
+          "node_modules/yargs/lib",
+          "node_modules/yargs/locales"
+        ],
+        "dependencies": {
+          "cliui": "^4.0.0",
+          "decamelize": "^1.1.1",
+          "find-up": "^2.1.0",
+          "get-caller-file": "^1.0.1",
+          "os-locale": "^2.0.0",
+          "require-directory": "^2.1.1",
+          "require-main-filename": "^1.0.1",
+          "set-blocking": "^2.0.0",
+          "string-width": "^2.0.0",
+          "which-module": "^2.0.0",
+          "y18n": "^3.2.1",
+          "yargs-parser": "^9.0.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/yargs-parser",
+          "node_modules/yargs-parser/lib"
+        ],
+        "dependencies": {
+          "camelcase": "^4.1.0"
+        }
+      }
+    ]
+  }
+}

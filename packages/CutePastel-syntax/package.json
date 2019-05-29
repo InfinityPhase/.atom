@@ -1,30 +1,31 @@
 {
-  "_from": "file:/tmp/d-11818-1725-15q3dtu.ctx7/package.tgz",
-  "_id": "CutePastel-syntax@0.0.1",
+  "_from": "https://www.atom.io/api/packages/cutepastel-syntax/versions/0.2.0/tarball",
+  "_id": "CutePastel-syntax@0.2.0",
   "_inBundle": false,
-  "_integrity": "sha512-Ud7M4h3hWlOk/tFq6aZIrqUpmSq8RRwHbM+GbopacNrGRmAEe16ZkSTHqhPW6sHW3Tg3lHDhCTKJgs6fDmzz5g==",
+  "_integrity": "sha512-1yZiKF4pKn8xmRjonytvD4R0ovOdAIElrpCK6KWrgitMNOsoCPe4tzPzOYjbL+jdr/ki++l/NTj+xzRPq+LUtg==",
   "_location": "/CutePastel-syntax",
   "_phantomChildren": {},
   "_requested": {
-    "type": "file",
-    "where": "/tmp/apm-install-dir-11818-1725-1frl3lz.h4vq",
-    "raw": "/tmp/d-11818-1725-15q3dtu.ctx7/package.tgz",
-    "rawSpec": "/tmp/d-11818-1725-15q3dtu.ctx7/package.tgz",
-    "saveSpec": "file:/tmp/d-11818-1725-15q3dtu.ctx7/package.tgz",
-    "fetchSpec": "/tmp/d-11818-1725-15q3dtu.ctx7/package.tgz"
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/cutepastel-syntax/versions/0.2.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/cutepastel-syntax/versions/0.2.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/cutepastel-syntax/versions/0.2.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/cutepastel-syntax/versions/0.2.0/tarball"
   },
   "_requiredBy": [
-    "#USER"
+    "#USER",
+    "/"
   ],
-  "_resolved": "/tmp/d-11818-1725-15q3dtu.ctx7/package.tgz",
-  "_spec": "/tmp/d-11818-1725-15q3dtu.ctx7/package.tgz",
-  "_where": "/tmp/apm-install-dir-11818-1725-1frl3lz.h4vq",
+  "_resolved": "https://www.atom.io/api/packages/cutepastel-syntax/versions/0.2.0/tarball",
+  "_shasum": "ee05c4bcd5c2a80ea17534ffe21e39edeb2cf64f",
+  "_spec": "https://www.atom.io/api/packages/cutepastel-syntax/versions/0.2.0/tarball",
+  "_where": "/tmp/apm-install-dir-11925-19258-1he8kar.a5wv",
   "bugs": {
     "url": "https://github.com/Anna-Cantrell/cutepastel-syntax/issues"
   },
   "bundleDependencies": false,
   "deprecated": false,
-  "description": "A super cute pastel colored theme to make your workflow a little happier ^_^",
+  "description": "A super cute pastel colopink theme to make your workflow a little happier ^_^",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
@@ -43,5 +44,5 @@
     "url": "git+https://github.com/Anna-Cantrell/cutepastel-syntax.git"
   },
   "theme": "syntax",
-  "version": "0.0.1"
+  "version": "0.2.0"
 }

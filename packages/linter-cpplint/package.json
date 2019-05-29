@@ -1,32 +1,32 @@
 {
-  "_from": "file:/tmp/d-11874-19480-1xanv2i.h27p/package.tgz",
-  "_id": "linter-cpplint@2.0.1",
+  "_from": "https://www.atom.io/api/packages/linter-cpplint/versions/2.1.0/tarball",
+  "_id": "linter-cpplint@2.1.0",
   "_inBundle": false,
-  "_integrity": "sha512-emvMHb18Ug1AX13k3xGrztb6vud0vkbyqPBLNsAY+TRploiGBW5ek/+lt6xpxsOI3LwM5yK14/fseYTS3eS7aw==",
+  "_integrity": "sha512-XFam3lfZyeFbyenK8Vh5AwElSuiZFIgvt0HWKoh95Ni8wrXwqu13pqSLjnIu/9klfipUBmBILeoXTGvJv5wFVw==",
   "_location": "/linter-cpplint",
   "_phantomChildren": {},
   "_requested": {
-    "type": "file",
-    "where": "/tmp/apm-install-dir-11874-19480-vow98v.lp2p",
-    "raw": "/tmp/d-11874-19480-1xanv2i.h27p/package.tgz",
-    "rawSpec": "/tmp/d-11874-19480-1xanv2i.h27p/package.tgz",
-    "saveSpec": "file:/tmp/d-11874-19480-1xanv2i.h27p/package.tgz",
-    "fetchSpec": "/tmp/d-11874-19480-1xanv2i.h27p/package.tgz"
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/linter-cpplint/versions/2.1.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/linter-cpplint/versions/2.1.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/linter-cpplint/versions/2.1.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/linter-cpplint/versions/2.1.0/tarball"
   },
   "_requiredBy": [
-    "#USER"
+    "#USER",
+    "/"
   ],
-  "_resolved": "/tmp/d-11874-19480-1xanv2i.h27p/package.tgz",
-  "_shasum": "ec523ab0ba11ca63a9606369678a52c09922b597",
-  "_spec": "/tmp/d-11874-19480-1xanv2i.h27p/package.tgz",
-  "_where": "/tmp/apm-install-dir-11874-19480-vow98v.lp2p",
+  "_resolved": "https://www.atom.io/api/packages/linter-cpplint/versions/2.1.0/tarball",
+  "_shasum": "e42f693a46911c45647ba48028173094547280f9",
+  "_spec": "https://www.atom.io/api/packages/linter-cpplint/versions/2.1.0/tarball",
+  "_where": "/tmp/apm-install-dir-11925-19272-7dht57.mddt9",
   "bugs": {
     "url": "https://github.com/AtomLinter/linter-cpplint/issues"
   },
   "bundleDependencies": false,
   "dependencies": {
-    "atom-linter": "^9.0.0",
-    "atom-package-deps": "^4.0.1"
+    "atom-linter": "^10.0.0",
+    "atom-package-deps": "^5.0.0"
   },
   "deprecated": false,
   "description": "Linter plugin for c++, using cpplint.",
@@ -38,13 +38,13 @@
   "main": "./lib/init.coffee",
   "name": "linter-cpplint",
   "package-deps": [
-    "linter"
+    "linter:2.0.0"
   ],
   "private": true,
   "providedServices": {
     "linter": {
       "versions": {
-        "1.0.0": "provideLinter"
+        "2.0.0": "provideLinter"
       }
     }
   },
@@ -55,24 +55,19 @@
   "scripts": {
     "test": "apm test"
   },
-  "version": "2.0.1",
+  "version": "2.1.0",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
       {
         "name": "atom-linter",
-        "version": "9.0.1",
+        "version": "10.0.0",
         "path": "node_modules/atom-linter/lib/index.js"
       },
       {
         "name": "atom-package-deps",
-        "version": "4.6.2",
+        "version": "5.0.0",
         "path": "node_modules/atom-package-deps/lib/index.js"
-      },
-      {
-        "name": "atom-package-path",
-        "version": "1.1.0",
-        "path": "node_modules/atom-package-path/lib/index.js"
       },
       {
         "name": "consistent-env",
@@ -91,7 +86,7 @@
       },
       {
         "name": "named-js-regexp",
-        "version": "1.3.3",
+        "version": "1.3.4",
         "path": "node_modules/named-js-regexp/lib/named-js-regexp.js"
       },
       {
@@ -100,13 +95,8 @@
         "path": "node_modules/os-tmpdir/index.js"
       },
       {
-        "name": "sb-callsite",
-        "version": "1.1.2",
-        "path": "node_modules/sb-callsite/lib/main.js"
-      },
-      {
         "name": "sb-exec",
-        "version": "3.1.0",
+        "version": "4.0.0",
         "path": "node_modules/sb-exec/lib/index.js"
       },
       {
@@ -131,7 +121,7 @@
       },
       {
         "name": "semver",
-        "version": "5.5.0",
+        "version": "5.6.0",
         "path": "node_modules/semver/semver.js"
       },
       {
@@ -154,14 +144,12 @@
         "node_modules/atom-linter/package.json",
         "node_modules/atom-package-deps/.eslintrc.json",
         "node_modules/atom-package-deps/package.json",
-        "node_modules/atom-package-path/package.json",
         "node_modules/consistent-env/.eslintrc.json",
         "node_modules/consistent-env/package.json",
         "node_modules/is-utf8/package.json",
         "node_modules/lodash.uniq/package.json",
         "node_modules/named-js-regexp/package.json",
         "node_modules/os-tmpdir/package.json",
-        "node_modules/sb-callsite/package.json",
         "node_modules/sb-exec/.eslintrc.json",
         "node_modules/sb-exec/package.json",
         "node_modules/sb-fs/package.json",
@@ -173,6 +161,7 @@
         "node_modules/semver/package.json",
         "node_modules/strip-bom-buf/package.json",
         "node_modules/tmp/package.json",
+        "package-lock.json",
         "package.json"
       ],
       ".js": [
@@ -183,15 +172,12 @@
         "node_modules/atom-package-deps/lib/index.js",
         "node_modules/atom-package-deps/lib/types.js",
         "node_modules/atom-package-deps/lib/view.js",
-        "node_modules/atom-package-path/lib/index.js",
         "node_modules/consistent-env/lib/helpers.js",
         "node_modules/consistent-env/lib/index.js",
         "node_modules/is-utf8/is-utf8.js",
         "node_modules/lodash.uniq/index.js",
         "node_modules/named-js-regexp/lib/named-js-regexp.js",
         "node_modules/os-tmpdir/index.js",
-        "node_modules/sb-callsite/lib/main.js",
-        "node_modules/sb-exec/decls/jasmine.js",
         "node_modules/sb-exec/lib/helpers.js",
         "node_modules/sb-exec/lib/index.js",
         "node_modules/sb-exec/lib/types.js",
@@ -213,8 +199,8 @@
           ""
         ],
         "dependencies": {
-          "atom-linter": "^9.0.0",
-          "atom-package-deps": "^4.0.1"
+          "atom-linter": "^10.0.0",
+          "atom-package-deps": "^5.0.0"
         }
       },
       {
@@ -224,7 +210,7 @@
         ],
         "dependencies": {
           "named-js-regexp": "^1.3.1",
-          "sb-exec": "^3.1.0",
+          "sb-exec": "^4.0.0",
           "sb-promisify": "^2.0.1",
           "tmp": "~0.0.28"
         }
@@ -235,19 +221,8 @@
           "node_modules/atom-package-deps/lib"
         ],
         "dependencies": {
-          "atom-package-path": "^1.1.0",
           "sb-fs": "^3.0.0",
-          "semver": "^5.3.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/atom-package-path/lib",
-          "node_modules/atom-package-path",
-          "node_modules/atom-package-path/spec"
-        ],
-        "dependencies": {
-          "sb-callsite": "^1.1.2"
+          "semver": "^5.6.0"
         }
       },
       {
@@ -262,7 +237,6 @@
       {
         "paths": [
           "node_modules/sb-exec",
-          "node_modules/sb-exec/decls",
           "node_modules/sb-exec/lib"
         ],
         "dependencies": {
