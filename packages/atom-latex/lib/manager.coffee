@@ -49,7 +49,17 @@ class Manager extends Disposable
         @latex.manager.config?.latex_ext?.indexOf(path.extname(name)) > -1
       return true
     return false
-
+    
+  getDocandExt: (fpath) ->
+    @latex.manager.loadLocalCfg()
+    extnames = ['.tex','.tikz']
+    # Check custom extensions first to handle stuff like `main.tex.tikz`
+    if @latex.manager.config?.latex_ext?
+      extnames = Array.from(new Set(@latex.manager.config.latex_ext.concat(extnames)));
+    for ext in extnames
+      if path.basename(fpath).endsWith(ext)
+        return [path.basename(fpath).replace(ext,''), ext.slice(1)]
+        
   findMain: (here) ->
     result = @findMainSequence(here)
     if result and !fs.existsSync(@latex.mainFile)
@@ -64,6 +74,7 @@ class Manager extends Disposable
         }])
       return false
     @latex.panel.view.update()
+    @latex.mainDoc = @getDocandExt(@latex.mainFile)
     return result
 
   refindMain: () ->
@@ -144,8 +155,8 @@ class Manager extends Disposable
   findPDF: ->
     if !@findMain()
       return false
-    # //some.path/to/mainFile.blah.tex -> //some.path/to/mainFile/mainFile.pdf
-    pdfPath = @latex.mainFile.replace(/\.([^\\|\/]*)$/, '.pdf')
+    # //some.path/tex/mainFile.rev1.tex -> /some.path/tex/mainFile.rev1.pdf
+    pdfPath = @latex.mainFile.replace(///#{@latex.mainDoc[1]}$///, 'pdf')
     @latex.logger.debuglog.info("""PDF path: #{pdfPath}""")
     return pdfPath
 
@@ -196,8 +207,8 @@ class Manager extends Disposable
         @rootWatcher.on('unlink',(fpath) =>
           @watchActions(fpath,'unlink')
           return)
+        console.timeEnd('RootWatcher Init')
       )
-      console.timeEnd('RootWatcher Init')
       return true
 
     return false
@@ -217,14 +228,18 @@ class Manager extends Disposable
   findAll: ->
     if !@findMain()
       return false
+    findFiles = () =>
+        @latex.texFiles = [ @latex.mainFile ]
+        @latex.bibFiles = []
+        @findDependentFiles(@latex.mainFile)    
     if @disable_watcher or @watchRoot()
-      @latex.texFiles = [ @latex.mainFile ]
-      @latex.bibFiles = []
-      @findDependentFiles(@latex.mainFile)
+      findFiles()
       if @disable_watcher
         @watchActions(file,'add') for file in @latex.texFiles
+    else if !@rootDir()?
+      findFiles()
     return true
-
+    
   findDependentFiles: (file) ->
     content = fs.readFileSync file, 'utf-8'
     baseDir = path.dirname(@latex.mainFile)
@@ -271,18 +286,12 @@ class Manager extends Disposable
     if !@bibWatcher? or @bibWatcher.closed
       @bibWatcher = chokidar.watch(bib)
       @watched.push(bib)
-      # @latex.logger.log.push {
-      #   type: status
-      #   text: "Watching bib file #{bib} for changes"
-      # }
+      @latex.logger.debuglog.info("Watching bib file #{bib} for changes")
       # Register watcher callbacks
       @bibWatcher.on('add', (fpath) =>
         # bib file added, parse
         @latex.provider.citation.getBibItems(fpath)
-        # @latex.logger.log.push {
-        #   type: status
-        #   text: "Added bib file #{fpath} to Watcher"
-        # }
+        @latex.logger.debuglog.info("Added bib file #{fpath} to Watcher")
         return)
       @bibWatcher.on('change', (fpath) =>
         # bib file changed, reparse

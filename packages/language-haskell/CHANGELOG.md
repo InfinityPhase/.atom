@@ -1,3 +1,34 @@
+## 1.19.2
+
+-   Fix #125
+
+    A curious case of `module Test ( (:-)(), apply ) where` not parsing
+    correctly due to `()` being parsed as `(` and then `)` closing the
+    exports list. This is fixed by relaxing the syntax definition for the
+    constructor list exports.
+
+-   Forbid (..) operator
+
+    (..) user-defined operator is forbidden in Haskell, since according to
+    Haskell2010 report, it's one of the reserved operators:
+    `..`,`:`,`::`,`=`,`\`,`|`,`<-`,`->`,`@`,`~`,`=>`.
+    In particular, `..` clashes with explicit wildcard export, e.g.
+    `module Something ( Typename(..) ) where`, hence `(..)` should never be
+    parsed as an operator.
+
+## 1.19.1
+
+-   Fix existential quantification in data declarations
+-   Add test for multiline type ctor defns
+
+## 1.19.0
+
+-   Rework data declarations to support multiline constructor definitions
+
+## 1.18.2
+
+-   cabal.cson: support common stanza (#122) (Domen Kožar)
+
 ## 1.18.1
 
 -   Fix standalone deriving via

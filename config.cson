@@ -67,9 +67,9 @@
       "autocomplete-clang"
       "autocomplete-haskell"
       "todo-show"
-      "atom-beautify"
       "pigments"
       "minimap-pigments"
+      "atom-beautify"
     ]
     ignoredNames: [
       ".git"

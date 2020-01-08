@@ -23,6 +23,10 @@ class Viewer extends Disposable
       when 'loaded'
         if @client.position and @client.ws?
           @client.ws.send JSON.stringify @client.position
+        @client.ws.send JSON.stringify {
+                            type: 'params',
+                            invert: atom.config.get('atom-latex.invert_viewer'),
+                            }
       when 'position'
         @client.position = data
       when 'click'
@@ -47,7 +51,9 @@ class Viewer extends Disposable
       @latex.viewer.focusMain()
 
   focusViewer: ->
-    @window.show() if @window? and !@window.isDestroyed()
+    if @window? and !@window.isDestroyed()
+      @window.setBounds(@window.getBounds())
+      @window.focus() 
 
   focusMain: ->
     @self.focus() if @self? and !@self.focused
@@ -76,6 +82,7 @@ class Viewer extends Disposable
   openViewerNewWindow: ->
     pdfPath = @latex.manager.findPDF()
     if !fs.existsSync pdfPath
+      @latex.logger.debuglog.error("""#{pdfPath} Doesn't exist""")
       return
 
     if !@getUrl()

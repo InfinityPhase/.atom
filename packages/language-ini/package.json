@@ -1,25 +1,25 @@
 {
-  "_from": "file:/tmp/d-11849-22294-p36uzu.wbpk8/package.tgz",
-  "_id": "language-ini@1.20.0",
+  "_from": "https://www.atom.io/api/packages/language-ini/versions/1.23.0/tarball",
+  "_id": "language-ini@1.23.0",
   "_inBundle": false,
-  "_integrity": "sha512-aQijgrFBEnPiohfUFF3qPObcf8lxxjMaCrC4ZE+9gZLIkfDS9kk0QD3un//+VAl70Hv3/xXAtUpxa7IfrkZRbQ==",
+  "_integrity": "sha512-NaY/4dZGEEHd4BKw2uJWkSFKeeW6uYQqsWZ/hjz7FLr5QN32wClGgLvuvyvXxDiDBjRuIza+U5vNYjI4bn/9jg==",
   "_location": "/language-ini",
   "_phantomChildren": {},
   "_requested": {
-    "type": "file",
-    "where": "/tmp/apm-install-dir-11849-22294-8vyj5n.q2mwu",
-    "raw": "/tmp/d-11849-22294-p36uzu.wbpk8/package.tgz",
-    "rawSpec": "/tmp/d-11849-22294-p36uzu.wbpk8/package.tgz",
-    "saveSpec": "file:/tmp/d-11849-22294-p36uzu.wbpk8/package.tgz",
-    "fetchSpec": "/tmp/d-11849-22294-p36uzu.wbpk8/package.tgz"
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/language-ini/versions/1.23.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/language-ini/versions/1.23.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/language-ini/versions/1.23.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/language-ini/versions/1.23.0/tarball"
   },
   "_requiredBy": [
-    "#USER"
+    "#USER",
+    "/"
   ],
-  "_resolved": "/tmp/d-11849-22294-p36uzu.wbpk8/package.tgz",
-  "_shasum": "ec9c7f2af63704b90e4c9be42b3dab5ccdbc3b34",
-  "_spec": "/tmp/d-11849-22294-p36uzu.wbpk8/package.tgz",
-  "_where": "/tmp/apm-install-dir-11849-22294-8vyj5n.q2mwu",
+  "_resolved": "https://www.atom.io/api/packages/language-ini/versions/1.23.0/tarball",
+  "_shasum": "7e4ddb68b7ad693c4e24ec998f801cd1422748c6",
+  "_spec": "https://www.atom.io/api/packages/language-ini/versions/1.23.0/tarball",
+  "_where": "/tmp/apm-install-dir-2019119-144401-1kspn2z.9jhwi",
   "author": {
     "name": "Jacob Bednarz",
     "email": "jacob.bednarz@gmail.com",
@@ -45,7 +45,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "1.20.0",
+  "version": "1.23.0",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [],

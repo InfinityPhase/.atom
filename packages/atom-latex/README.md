@@ -2,11 +2,8 @@
 
 Atom-LaTeX is an extension for [Atom.io](https://atom.io/), aiming to provide all-in-one features and utilities for LaTeX typesetting with Atom.
 
-## Update (Thank you, `@ashthespy`!)
-
-The original package author `@James-Yu` switched back to [Visual Studio Code](https://code.visualstudio.com/) for most coding and typesetting tasks due to reasons 1, 2, 3, and more since late Mar. 2017.
-
-Atom-LaTeX is currently actively maintained by `@ashthespy`. Please join me in thanking him for the great contribution!
+###### Note
+The original package author [`James-Yu`](https://github.com/James-Yu) switched back to [Visual Studio Code](https://code.visualstudio.com/) since late March 2017. If you prefer VS Code as well, check out the sibling of this package [LaTeX-Workshop](https://github.com/James-Yu/LaTeX-Workshop).
 
 ## Features
 
@@ -82,7 +79,7 @@ By default [`latexmk`](http://personal.psu.edu/jcc8/software/latexmk/) is used t
 If `latexmk` fails, the `custom toolchain` is utilised which by default sequentially runs the typical `pdflatex`>`bibtex`>`pdflatex`>`pdflatex` command chain:
 
 ```
-%TEX %ARG %DOC && %BIB %DOC && %TEX %ARG %DOC && %TEX %ARG %DOC
+%TEX %ARG %DOC.%EXT && %BIB %DOC && %TEX %ARG %DOC.%EXT && %TEX %ARG %DOC.%EXT
 ```
 Multiple commands should be separated by `&&`. Placeholders `%TEX`,`%ARG` and `%BIB` will be replaced by tools defined in the settings menu
 `%DOC` will be replaced by the [root LaTeX](root_file) filename (without extension), while `%EXT` gives the file extension

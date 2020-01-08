@@ -3,7 +3,78 @@ Change Log
 All notable changes to the project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-[Unpublished]: https://github.com/file-icons/atom/compare/v2.1.32...HEAD
+[Unpublished]: https://github.com/file-icons/atom/compare/v2.1.37...HEAD
+
+
+[v2.1.37] - 2019-12-20
+----------------------
+### Added
+- **New icons:** Conda (`.condarc`), Dependabot (`.dependabot` directories), Faust (`.dsp`), Gnuplot, Oberon (`.ob2`), Patreon (`PATRONS.md`), Razzle (`razzle.config.*`), Stylish Haskell (`.stylish-haskell.yaml`), Terser (`.{terserrc,uglifyrc}.*`), Truffle (`truffle.js`), WASI, Zeit (`now.json`, `.nowignore`)
+- **Support:** Firestore (`firestore.indexes.json`), Gridsome (`gridsome.{client,server}.*`), JavaScript (`**/cartridge/scripts/**/*.ds`), JSON (`.jsonc`), Ledger (`.ledger`, `.hledger`, `.journal`), Mocha (`.mocharc.{jsonc,cjs,mjs}`), Modernizr (`.modernizr{,rc}.js`), Raku (`.raku`, `.rakumod`, `.rakutest`), Shell (`.dircolors`, `dircolors`), VSCode (`.code-workspace`), YAML (`.yaml.mysql`, `.yaml.sed`)
+- **Interpreter recognition:** JavaScript ([`gjs`][], [`mujs`][], [`qjs{,bn,bnc,c}`][QuickJS]), WebAssembly ([`wasmtime`][])
+
+### Changed
+- Renamed Perl 6 to Raku
+
+[v2.1.37]:    https://github.com/file-icons/atom/releases/tag/v2.1.37
+[`gjs`]:      https://gitlab.gnome.org/GNOME/gjs/wikis/Home
+[`mujs`]:     https://www.mujs.com/
+[`wasmtime`]: https://wasmtime.dev/
+[QuickJS]:    https://bellard.org/quickjs/
+
+
+
+[v2.1.36] - 2019-10-19
+----------------------
+### Added
+- **New icons:** AdvPL (`.ahu`, `.aph`, `.prw`, `.tlpp`), AmuseWiki (`.muse`), Hyper (`.hyper.js`), mIRC (`.mrc`), Noon (`.noon`), Odin (`.odin`), Open Policy Agent (`.rego`), Sorbet (`.rbi`), Vyper (`.vy`), Webhint (`.hintrc`), Wget (`.wgetrc`, `.wget-hsts`)
+- **Support:** CPAN (`.cpanplus` directories), cURL (`_curlrc`, `curlrc`), Haskell (`.hs-boot`, `.hsig`), Jest (`.{ts,tsx,mjs}.snap`), JFlex (`.jlex`), NodeJS (`.node_repl_history`, `.node-gyp` directories), Tag (`.sha{256,sum}`), Vim (`.vim` directories)
+
+### Changed
+- Replaced V's icon with updated logo
+
+### Fixed
+- Incorrect scope-name used when matching a grammar override for V
+
+[v2.1.36]: https://github.com/file-icons/atom/releases/tag/v2.1.36
+
+
+
+[v2.1.35] - 2019-08-21
+----------------------
+### Added
+- **New icons:** AffectScript (`.affect`), Alacritty (`.alacritty.yml`, `.config/alacritty` folders), Biml (`.biml`), BNF (`.abnf`, `.bnf`, `.ebnf`), MELPA, NSRI (`.nsri{rc,ignore}{,.{{,config.}js,json,yml,yaml}}`, `.integrity.json`), PineScript (`.pine`), PyUp (`.pyup`, `.pyup.{yml,yaml}`), Renovate (`.renovaterc.json`, `renovate.json`), V (`.v`, `.vh`)
+- **Support:** Sequelize (`.sequelizerc.{js,json}`)
+
+[v2.1.35]: https://github.com/file-icons/atom/releases/tag/v2.1.35
+
+
+
+[v2.1.34] - 2019-08-13
+----------------------
+### Added
+- **Support:** Atom (`.atom-ci` folders), Data (`.aff`, `.dic`, `.dict`, `.snippet`, `.snippets`, `.snip`), Images (`.gsrc`, `.grn`), Istanbul (`.nycrc.{yml,yaml}`, `nyc.config.js`, `.nyc_output` folders), Minecraft (`.mclevel`, `.mcpack`, `.mcworld`)
+- Test-file icons to numbered JS/TS files inside a directory named `test{s}` or `spec{s}`
+
+[v2.1.34]: https://github.com/file-icons/atom/releases/tag/v2.1.34
+
+
+
+[v2.1.33] - 2019-06-01
+----------------------
+### Added
+- **New icons:** Acre Desktop (`acre.config`, `.acre`, `APLSource`), Docz (`.doczrc.{js,json}`, `.docz`), Fexl (`.fxl`), InfluxData, Jsonnet (`.jsonnet`, `.libsonnet`), MacVim, Matroska, Picolisp, Remark (`.re{hype,mark,text}rc.{js,json,yml,yaml}`, `.re{hype,mark,text}ignore`), Robot Framework (updated), Scratch (`.sb2`, `.sb3`), VSCode (alt), WebVTT (`.vtt`)
+- **Support:** Kubernetes (`kubernetes*.yml`), Tagfile (`.atom-socket-*`)
+
+### Changed
+- `.l` extension now associated with Lex instead of Lisp
+
+### Fixed
+- Awk not being recognised when overriding a file's grammar
+- Inkscape icon missing for `.inx` files
+
+[v2.1.33]: https://github.com/file-icons/atom/releases/tag/v2.1.33
+
 
 
 [v2.1.32] - 2019-04-25

@@ -1,25 +1,25 @@
 {
-  "_from": "https://www.atom.io/api/packages/atom-typescript/versions/13.2.1/tarball",
-  "_id": "atom-typescript@13.2.1",
+  "_from": "https://www.atom.io/api/packages/atom-typescript/versions/13.4.8/tarball",
+  "_id": "atom-typescript@13.4.8",
   "_inBundle": false,
-  "_integrity": "sha512-r7UoNoYRbOr83zwEWrmgjuWacEzRwOu5fDYqUgBwAxl3pU6kTSiElL/u+EfaVf1SCQXH7/eNxV5XyIyBIwb7Wg==",
+  "_integrity": "sha512-CrCQHgzsftUv/Z7mVWSRRz2/MFW/8XaNxZuXfKIhp0eVVGR1zmOUBDLtxEXm372pAH2iP8eC/kdoFEC76wmC4w==",
   "_location": "/atom-typescript",
   "_phantomChildren": {},
   "_requested": {
     "type": "remote",
-    "raw": "https://www.atom.io/api/packages/atom-typescript/versions/13.2.1/tarball",
-    "rawSpec": "https://www.atom.io/api/packages/atom-typescript/versions/13.2.1/tarball",
-    "saveSpec": "https://www.atom.io/api/packages/atom-typescript/versions/13.2.1/tarball",
-    "fetchSpec": "https://www.atom.io/api/packages/atom-typescript/versions/13.2.1/tarball"
+    "raw": "https://www.atom.io/api/packages/atom-typescript/versions/13.4.8/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/atom-typescript/versions/13.4.8/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/atom-typescript/versions/13.4.8/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/atom-typescript/versions/13.4.8/tarball"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://www.atom.io/api/packages/atom-typescript/versions/13.2.1/tarball",
-  "_shasum": "93614ab9a5c2f149be94024d9e1d277acd383e70",
-  "_spec": "https://www.atom.io/api/packages/atom-typescript/versions/13.2.1/tarball",
-  "_where": "/tmp/apm-install-dir-119225-29682-a54wrw.8nu1f",
+  "_resolved": "https://www.atom.io/api/packages/atom-typescript/versions/13.4.8/tarball",
+  "_shasum": "16f1a8238c9bbdc9edd9d5358ef400e3a74c7822",
+  "_spec": "https://www.atom.io/api/packages/atom-typescript/versions/13.4.8/tarball",
+  "_where": "/tmp/apm-install-dir-202008-430061-1ga0rbh.yiwll",
   "activationCommands": {
     "atom-workspace": [
       "typescript:initialize-config"
@@ -255,16 +255,16 @@
     }
   },
   "dependencies": {
-    "atom-highlight": "^0.4.1",
-    "atom-package-deps": "^5.0.0",
+    "atom-package-deps": "^5.1.0",
     "atom-select-list": "^0.7.2",
     "byline": "^5.0.0",
     "etch": "^0.14.0",
+    "fs-plus": "^3.1.1",
     "fuzzaldrin": "^2.1.0",
-    "lodash": "^4.17.11",
-    "resolve": "^1.10.0",
-    "tslib": "^1.9.3",
-    "typescript": "^3.3.4000"
+    "lodash": "^4.17.15",
+    "resolve": "^1.13.1",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.3"
   },
   "deprecated": false,
   "description": "The only TypeScript plugin you will ever need.",
@@ -272,21 +272,22 @@
     "atomts-semantic-view/SemanticView": "deserializeSemanticView"
   },
   "devDependencies": {
-    "@types/atom": "^1.31.1",
+    "@types/atom": "^1.36.1",
     "@types/byline": "^4.2.31",
-    "@types/chai": "^4.1.7",
+    "@types/chai": "^4.2.6",
+    "@types/fs-plus": "^3.0.1",
     "@types/fuzzaldrin": "^2.1.2",
-    "@types/lodash": "^4.14.123",
+    "@types/lodash": "^4.14.149",
     "@types/mocha": "^5",
-    "@types/node": "^8",
+    "@types/node": "^10",
     "@types/resolve": "^0.0.8",
     "atom-ts-spec-runner": "^1.1.1",
     "chai": "^4.2.0",
-    "prettier": "^1.16.4",
-    "ts-node": "^8.0.3",
-    "tslint": "^5.14.0",
+    "prettier": "^1.19.1",
+    "ts-node": "^8.5.4",
+    "tslint": "^5.20.1",
     "tslint-use-atom-disposables": "0.0.1",
-    "typescript-tslint-plugin": "0.3.1"
+    "typescript-tslint-plugin": "0.5.5"
   },
   "engines": {
     "atom": ">=1.31.0 <2.0.0",
@@ -364,18 +365,18 @@
     "test": "npm run typecheck && npm run lint && npm run prettier-check",
     "typecheck": "tsc --noEmit -p ./lib && tsc --noEmit -p ./scripts && tsc --noEmit -p ./spec"
   },
-  "version": "13.2.1",
+  "version": "13.4.8",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
       {
-        "name": "atom-highlight",
-        "version": "0.4.1",
-        "path": "node_modules/atom-highlight/lib/highlight.js"
+        "name": "async",
+        "version": "1.5.2",
+        "path": "node_modules/async/lib/async.js"
       },
       {
         "name": "atom-package-deps",
-        "version": "5.0.0",
+        "version": "5.1.0",
         "path": "node_modules/atom-package-deps/lib/index.js"
       },
       {
@@ -389,14 +390,24 @@
         "path": "node_modules/atom-select-list/node_modules/etch/lib/index.js"
       },
       {
+        "name": "balanced-match",
+        "version": "1.0.0",
+        "path": "node_modules/balanced-match/index.js"
+      },
+      {
+        "name": "brace-expansion",
+        "version": "1.1.11",
+        "path": "node_modules/brace-expansion/index.js"
+      },
+      {
         "name": "byline",
         "version": "5.0.0",
         "path": "node_modules/byline/lib/byline.js"
       },
       {
-        "name": "compare-versions",
-        "version": "3.4.0",
-        "path": "node_modules/compare-versions/index.js"
+        "name": "concat-map",
+        "version": "0.0.1",
+        "path": "node_modules/concat-map/index.js"
       },
       {
         "name": "etch",
@@ -404,9 +415,34 @@
         "path": "node_modules/etch/lib/index.js"
       },
       {
+        "name": "fs-plus",
+        "version": "3.1.1",
+        "path": "node_modules/fs-plus/lib/fs-plus.js"
+      },
+      {
+        "name": "fs.realpath",
+        "version": "1.0.0",
+        "path": "node_modules/fs.realpath/index.js"
+      },
+      {
         "name": "fuzzaldrin",
         "version": "2.1.0",
         "path": "node_modules/fuzzaldrin/lib/fuzzaldrin.js"
+      },
+      {
+        "name": "glob",
+        "version": "7.1.6",
+        "path": "node_modules/glob/glob.js"
+      },
+      {
+        "name": "inflight",
+        "version": "1.0.6",
+        "path": "node_modules/inflight/inflight.js"
+      },
+      {
+        "name": "inherits",
+        "version": "2.0.4",
+        "path": "node_modules/inherits/inherits.js"
       },
       {
         "name": "is-utf8",
@@ -415,8 +451,33 @@
       },
       {
         "name": "lodash",
-        "version": "4.17.11",
+        "version": "4.17.15",
         "path": "node_modules/lodash/lodash.js"
+      },
+      {
+        "name": "minimatch",
+        "version": "3.0.4",
+        "path": "node_modules/minimatch/minimatch.js"
+      },
+      {
+        "name": "minimist",
+        "version": "0.0.8",
+        "path": "node_modules/minimist/index.js"
+      },
+      {
+        "name": "mkdirp",
+        "version": "0.5.1",
+        "path": "node_modules/mkdirp/index.js"
+      },
+      {
+        "name": "once",
+        "version": "1.4.0",
+        "path": "node_modules/once/once.js"
+      },
+      {
+        "name": "path-is-absolute",
+        "version": "1.0.1",
+        "path": "node_modules/path-is-absolute/index.js"
       },
       {
         "name": "path-parse",
@@ -425,22 +486,22 @@
       },
       {
         "name": "resolve",
-        "version": "1.10.0",
+        "version": "1.14.2",
         "path": "node_modules/resolve/index.js"
       },
       {
+        "name": "rimraf",
+        "version": "2.7.1",
+        "path": "node_modules/rimraf/rimraf.js"
+      },
+      {
         "name": "sb-fs",
-        "version": "3.0.0",
+        "version": "4.0.0",
         "path": "node_modules/sb-fs/lib/index.js"
       },
       {
-        "name": "sb-promisify",
-        "version": "2.0.2",
-        "path": "node_modules/sb-promisify/lib/index.js"
-      },
-      {
         "name": "semver",
-        "version": "5.6.0",
+        "version": "6.3.0",
         "path": "node_modules/semver/semver.js"
       },
       {
@@ -450,44 +511,64 @@
       },
       {
         "name": "tslib",
-        "version": "1.9.3",
+        "version": "1.10.0",
         "path": "node_modules/tslib/tslib.js"
       },
       {
         "name": "typescript",
-        "version": "3.3.4000",
+        "version": "3.7.4",
         "path": "node_modules/typescript/lib/typescript.js"
       },
       {
         "name": "underscore",
-        "version": "1.9.1",
+        "version": "1.9.2",
         "path": "node_modules/underscore/underscore.js"
+      },
+      {
+        "name": "underscore-plus",
+        "version": "1.7.0",
+        "path": "node_modules/underscore-plus/lib/underscore-plus.js"
+      },
+      {
+        "name": "wrappy",
+        "version": "1.0.2",
+        "path": "node_modules/wrappy/wrappy.js"
       }
     ],
     "extensions": {
       ".json": [
         "lib/tsconfig.json",
         "lib/tslint.json",
-        "node_modules/atom-highlight/package.json",
+        "node_modules/async/package.json",
         "node_modules/atom-package-deps/.eslintrc.json",
         "node_modules/atom-package-deps/package.json",
         "node_modules/atom-select-list/node_modules/etch/package.json",
         "node_modules/atom-select-list/package.json",
+        "node_modules/balanced-match/package.json",
+        "node_modules/brace-expansion/package.json",
         "node_modules/byline/package.json",
-        "node_modules/compare-versions/bower.json",
-        "node_modules/compare-versions/package.json",
+        "node_modules/concat-map/package.json",
         "node_modules/etch/package.json",
+        "node_modules/fs-plus/package.json",
+        "node_modules/fs.realpath/package.json",
         "node_modules/fuzzaldrin/package.json",
+        "node_modules/glob/package.json",
+        "node_modules/inflight/package.json",
+        "node_modules/inherits/package.json",
         "node_modules/is-utf8/package.json",
         "node_modules/lodash/package.json",
+        "node_modules/minimatch/package.json",
+        "node_modules/minimist/package.json",
+        "node_modules/mkdirp/package.json",
+        "node_modules/once/package.json",
+        "node_modules/path-is-absolute/package.json",
         "node_modules/path-parse/package.json",
         "node_modules/resolve/lib/core.json",
         "node_modules/resolve/package.json",
+        "node_modules/rimraf/package.json",
         "node_modules/sb-fs/package.json",
-        "node_modules/sb-promisify/package.json",
         "node_modules/semver/package.json",
         "node_modules/strip-bom-buf/package.json",
-        "node_modules/tslib/bower.json",
         "node_modules/tslib/package.json",
         "node_modules/typescript/lib/cs/diagnosticMessages.generated.json",
         "node_modules/typescript/lib/de/diagnosticMessages.generated.json",
@@ -506,12 +587,16 @@
         "node_modules/typescript/lib/zh-tw/diagnosticMessages.generated.json",
         "node_modules/typescript/package.json",
         "node_modules/underscore/package.json",
+        "node_modules/underscore-plus/package.json",
+        "node_modules/wrappy/package.json",
         "package-lock.json",
         "package.json",
         "tslint.json"
       ],
       ".js": [
-        "node_modules/atom-highlight/lib/highlight.js",
+        "node_modules/async/dist/async.js",
+        "node_modules/async/dist/async.min.js",
+        "node_modules/async/lib/async.js",
         "node_modules/atom-package-deps/lib/helpers.js",
         "node_modules/atom-package-deps/lib/index.js",
         "node_modules/atom-package-deps/lib/types.js",
@@ -539,8 +624,11 @@
         "node_modules/atom-select-list/node_modules/etch/lib/svg-tags.js",
         "node_modules/atom-select-list/node_modules/etch/lib/update-props.js",
         "node_modules/atom-select-list/src/select-list-view.js",
+        "node_modules/balanced-match/index.js",
+        "node_modules/brace-expansion/index.js",
         "node_modules/byline/lib/byline.js",
-        "node_modules/compare-versions/index.js",
+        "node_modules/concat-map/example/map.js",
+        "node_modules/concat-map/index.js",
         "node_modules/etch/dist/component-helpers.js",
         "node_modules/etch/dist/default-scheduler.js",
         "node_modules/etch/dist/dom.js",
@@ -564,10 +652,19 @@
         "node_modules/etch/lib/svg-tags.js",
         "node_modules/etch/lib/update-props.js",
         "node_modules/etch/lib/update-ref.js",
+        "node_modules/fs-plus/lib/fs-plus.js",
+        "node_modules/fs.realpath/index.js",
+        "node_modules/fs.realpath/old.js",
         "node_modules/fuzzaldrin/lib/filter.js",
         "node_modules/fuzzaldrin/lib/fuzzaldrin.js",
         "node_modules/fuzzaldrin/lib/matcher.js",
         "node_modules/fuzzaldrin/lib/scorer.js",
+        "node_modules/glob/common.js",
+        "node_modules/glob/glob.js",
+        "node_modules/glob/sync.js",
+        "node_modules/inflight/inflight.js",
+        "node_modules/inherits/inherits.js",
+        "node_modules/inherits/inherits_browser.js",
         "node_modules/is-utf8/is-utf8.js",
         "node_modules/lodash/_DataView.js",
         "node_modules/lodash/_Hash.js",
@@ -1615,6 +1712,14 @@
         "node_modules/lodash/zipObject.js",
         "node_modules/lodash/zipObjectDeep.js",
         "node_modules/lodash/zipWith.js",
+        "node_modules/minimatch/minimatch.js",
+        "node_modules/minimist/example/parse.js",
+        "node_modules/minimist/index.js",
+        "node_modules/mkdirp/bin/cmd.js",
+        "node_modules/mkdirp/examples/pow.js",
+        "node_modules/mkdirp/index.js",
+        "node_modules/once/once.js",
+        "node_modules/path-is-absolute/index.js",
         "node_modules/path-parse/index.js",
         "node_modules/path-parse/test.js",
         "node_modules/resolve/example/async.js",
@@ -1623,11 +1728,14 @@
         "node_modules/resolve/lib/async.js",
         "node_modules/resolve/lib/caller.js",
         "node_modules/resolve/lib/core.js",
+        "node_modules/resolve/lib/is-core.js",
         "node_modules/resolve/lib/node-modules-paths.js",
         "node_modules/resolve/lib/normalize-options.js",
         "node_modules/resolve/lib/sync.js",
+        "node_modules/rimraf/bin.js",
+        "node_modules/rimraf/rimraf.js",
         "node_modules/sb-fs/lib/index.js",
-        "node_modules/sb-promisify/lib/index.js",
+        "node_modules/semver/bin/semver.js",
         "node_modules/semver/semver.js",
         "node_modules/strip-bom-buf/index.js",
         "node_modules/tslib/tslib.es6.js",
@@ -1641,7 +1749,9 @@
         "node_modules/typescript/lib/typingsInstaller.js",
         "node_modules/typescript/lib/watchGuard.js",
         "node_modules/underscore/underscore-min.js",
-        "node_modules/underscore/underscore.js"
+        "node_modules/underscore/underscore.js",
+        "node_modules/underscore-plus/lib/underscore-plus.js",
+        "node_modules/wrappy/wrappy.js"
       ]
     },
     "folders": [
@@ -1669,26 +1779,16 @@
           "spec"
         ],
         "dependencies": {
-          "atom-highlight": "^0.4.1",
-          "atom-package-deps": "^5.0.0",
+          "atom-package-deps": "^5.1.0",
           "atom-select-list": "^0.7.2",
           "byline": "^5.0.0",
           "etch": "^0.14.0",
+          "fs-plus": "^3.1.1",
           "fuzzaldrin": "^2.1.0",
-          "lodash": "^4.17.11",
-          "resolve": "^1.10.0",
-          "tslib": "^1.9.3",
-          "typescript": "^3.3.4000"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/atom-highlight/lib",
-          "node_modules/atom-highlight"
-        ],
-        "dependencies": {
-          "compare-versions": "^3.1.0",
-          "underscore": "^1.8.3"
+          "lodash": "^4.17.15",
+          "resolve": "^1.13.1",
+          "tslib": "^1.10.0",
+          "typescript": "^3.7.3"
         }
       },
       {
@@ -1697,8 +1797,8 @@
           "node_modules/atom-package-deps/lib"
         ],
         "dependencies": {
-          "sb-fs": "^3.0.0",
-          "semver": "^5.6.0"
+          "sb-fs": "^4.0.0",
+          "semver": "^6.0.0"
         }
       },
       {
@@ -1710,6 +1810,76 @@
         "dependencies": {
           "etch": "^0.12.6",
           "fuzzaldrin": "^2.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/brace-expansion"
+        ],
+        "dependencies": {
+          "balanced-match": "^1.0.0",
+          "concat-map": "0.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/fs-plus/lib",
+          "node_modules/fs-plus"
+        ],
+        "dependencies": {
+          "async": "^1.5.2",
+          "mkdirp": "^0.5.1",
+          "rimraf": "^2.5.2",
+          "underscore-plus": "1.x"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/glob"
+        ],
+        "dependencies": {
+          "fs.realpath": "^1.0.0",
+          "inflight": "^1.0.4",
+          "inherits": "2",
+          "minimatch": "^3.0.4",
+          "once": "^1.3.0",
+          "path-is-absolute": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/inflight"
+        ],
+        "dependencies": {
+          "once": "^1.3.0",
+          "wrappy": "1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/minimatch"
+        ],
+        "dependencies": {
+          "brace-expansion": "^1.1.7"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/mkdirp/bin",
+          "node_modules/mkdirp/examples",
+          "node_modules/mkdirp",
+          "node_modules/mkdirp/test"
+        ],
+        "dependencies": {
+          "minimist": "0.0.8"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/once"
+        ],
+        "dependencies": {
+          "wrappy": "1"
         }
       },
       {
@@ -1741,11 +1911,13 @@
           "node_modules/resolve/test/resolver/multirepo",
           "node_modules/resolve/test/resolver/multirepo/packages/package-a",
           "node_modules/resolve/test/resolver/multirepo/packages/package-b",
+          "node_modules/resolve/test/resolver/nested_symlinks/mylib",
           "node_modules/resolve/test/resolver/other_path/lib",
           "node_modules/resolve/test/resolver/other_path",
           "node_modules/resolve/test/resolver/quux/foo",
           "node_modules/resolve/test/resolver/same_names/foo",
           "node_modules/resolve/test/resolver/same_names",
+          "node_modules/resolve/test/resolver/symlinked/package",
           "node_modules/resolve/test/resolver/without_basedir"
         ],
         "dependencies": {
@@ -1754,11 +1926,18 @@
       },
       {
         "paths": [
+          "node_modules/rimraf"
+        ],
+        "dependencies": {
+          "glob": "^7.1.3"
+        }
+      },
+      {
+        "paths": [
           "node_modules/sb-fs/lib",
           "node_modules/sb-fs"
         ],
         "dependencies": {
-          "sb-promisify": "^2.0.1",
           "strip-bom-buf": "^1.0.0"
         }
       },
@@ -1768,6 +1947,15 @@
         ],
         "dependencies": {
           "is-utf8": "^0.2.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/underscore-plus/lib",
+          "node_modules/underscore-plus"
+        ],
+        "dependencies": {
+          "underscore": "^1.9.1"
         }
       }
     ]

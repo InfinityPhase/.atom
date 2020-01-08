@@ -1,3 +1,48 @@
+## [0.8.11]  2019-10-02
+### Fixed
+* [(##216)](https://github.com/James-Yu/Atom-LaTeX/issues/#216) Add missing `error` entry type to debug log
+* [(##223)](https://github.com/James-Yu/Atom-LaTeX/issues/#223) Remember preview window position
+* [(##225)](https://github.com/James-Yu/Atom-LaTeX/issues/#225) Use editor's default `tabLength`
+* [(##217)](https://github.com/James-Yu/Atom-LaTeX/issues/#217) Escape `filename.aux` Regex
+
+### Changed
+* [(##141)](https://github.com/James-Yu/Atom-LaTeX/issues/#141) Wrap selection with environment
+* Update `chokidar` to v3
+
+## [0.8.10]  2019-08-05
+### Fixed
+* [(##186)](https://github.com/James-Yu/Atom-LaTeX/issues/#186) Fix reference autocomplete ':' issue
+* [(##205)](https://github.com/James-Yu/Atom-LaTeX/issues/#205) Fix for filenames with dots
+
+## [0.8.9]  2019-08-02
+### Fixed
+* [(##187)](https://github.com/James-Yu/Atom-LaTeX/issues/#187) Handle case of no rootDir
+
+## [0.8.8]  2019-07-30
+### Fixed
+* [(##206)](https://github.com/James-Yu/Atom-LaTeX/issues/#206) Fix viewer issues with Atom 1.39/Electron 3.x
+
+## [0.8.7]  2019-07-24
+### Fixed
+* [(##129)](https://github.com/James-Yu/Atom-LaTeX/issues/#129) Fix log parser attempting to parse non latex files as well
+
+### Changed
+* PDF Viewer improvements
+  * Add a 'dark mode' via `invert_viewer` option 
+    * Can be toggled with <kbd>ctrl</kbd><kbd>i</kbd>
+  * Auto hide toolbar for viewer 
+  * Style tweaks for viewer scrollbar
+
+## [0.8.6]  2019-07-01
+### Fixed
+* [(#176)](https://github.com/James-Yu/Atom-LaTeX/issues/176) Fix `latex-beamer` artefact
+
+### Changed
+* Update `pdfjs-dist`
+* PDF Viewer improvements
+  * SynTeX/Reverse SynTeX indicators
+* [(#159)](https://github.com/James-Yu/Atom-LaTeX/pull/171) Extended the log parser to catch more errors
+
 ## [0.8.5]  2018-08-31
 ### Fixed
 * [(#158)](https://github.com/James-Yu/Atom-LaTeX/issues/158) Fix filenames escaping with whitespace on Unix

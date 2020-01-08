@@ -1,25 +1,25 @@
 {
-  "_from": "https://www.atom.io/api/packages/autocomplete-python/versions/1.14.0/tarball",
-  "_id": "autocomplete-python@1.14.0",
+  "_from": "https://www.atom.io/api/packages/autocomplete-python/versions/1.16.0/tarball",
+  "_id": "autocomplete-python@1.16.0",
   "_inBundle": false,
-  "_integrity": "sha512-cJZ17vX4NwOjMbzS8yjsq7WcmR3B/SWkEHMezCW7ujcoS0eK7W7INXy0ENKSVipUYkNOtiCYA6iwFkckVBb8Yw==",
+  "_integrity": "sha512-oJmjxDg27LqKMGs3OjNE9ieR826VtDvtLXxxyjf4BR6utDtU3PTuXBTgXyBoDW6Df/Og2uFiI6MxbvHe6K+k6w==",
   "_location": "/autocomplete-python",
   "_phantomChildren": {},
   "_requested": {
     "type": "remote",
-    "raw": "https://www.atom.io/api/packages/autocomplete-python/versions/1.14.0/tarball",
-    "rawSpec": "https://www.atom.io/api/packages/autocomplete-python/versions/1.14.0/tarball",
-    "saveSpec": "https://www.atom.io/api/packages/autocomplete-python/versions/1.14.0/tarball",
-    "fetchSpec": "https://www.atom.io/api/packages/autocomplete-python/versions/1.14.0/tarball"
+    "raw": "https://www.atom.io/api/packages/autocomplete-python/versions/1.16.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/autocomplete-python/versions/1.16.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/autocomplete-python/versions/1.16.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/autocomplete-python/versions/1.16.0/tarball"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://www.atom.io/api/packages/autocomplete-python/versions/1.14.0/tarball",
-  "_shasum": "80cef289564888c3aa5d870cd3f7c3dbadffe779",
-  "_spec": "https://www.atom.io/api/packages/autocomplete-python/versions/1.14.0/tarball",
-  "_where": "/tmp/apm-install-dir-119222-11743-1wr4xoo.b46p",
+  "_resolved": "https://www.atom.io/api/packages/autocomplete-python/versions/1.16.0/tarball",
+  "_shasum": "33f0499fccd1be2a2e72894273f42c52397b77ca",
+  "_spec": "https://www.atom.io/api/packages/autocomplete-python/versions/1.16.0/tarball",
+  "_where": "/tmp/apm-install-dir-2019119-144401-1g5tc8j.2ssw",
   "bugs": {
     "url": "https://github.com/autocomplete-python/autocomplete-python/issues"
   },
@@ -28,6 +28,11 @@
     "snippets": {
       "versions": {
         "0.1.0": "consumeSnippets"
+      }
+    },
+    "status-bar": {
+      "versions": {
+        "^1.0.0": "consumeStatusBar"
       }
     }
   },
@@ -45,7 +50,7 @@
     "atom-slick": "^2.0.0",
     "atom-space-pen-views": "~2.1.0",
     "fuzzaldrin-plus": "^0.3.1",
-    "kite-installer": "^3.7.0",
+    "kite-installer": "=3.15.0",
     "mixpanel": "^0.5.0",
     "selector-kit": "^0.1",
     "space-pen": "^5.1.2",
@@ -82,7 +87,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/autocomplete-python/autocomplete-python.git"
   },
-  "version": "1.14.0",
+  "version": "1.16.0",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -107,13 +112,18 @@
         "path": "node_modules/atom-space-pen-views/lib/main.js"
       },
       {
+        "name": "buffer-from",
+        "version": "1.1.1",
+        "path": "node_modules/buffer-from/index.js"
+      },
+      {
         "name": "charenc",
         "version": "0.0.2",
         "path": "node_modules/charenc/charenc.js"
       },
       {
         "name": "combined-stream",
-        "version": "1.0.7",
+        "version": "1.0.8",
         "path": "node_modules/combined-stream/lib/combined_stream.js"
       },
       {
@@ -153,17 +163,17 @@
       },
       {
         "name": "error-stack-parser",
-        "version": "1.3.3",
+        "version": "2.0.4",
         "path": "node_modules/error-stack-parser/error-stack-parser.js"
       },
       {
         "name": "es5-ext",
-        "version": "0.10.49",
+        "version": "0.10.53",
         "path": "node_modules/es5-ext/index.js"
       },
       {
         "name": "d",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "path": "node_modules/es5-ext/node_modules/d/index.js"
       },
       {
@@ -173,7 +183,7 @@
       },
       {
         "name": "es6-symbol",
-        "version": "3.1.1",
+        "version": "3.1.3",
         "path": "node_modules/es5-ext/node_modules/es6-symbol/index.js"
       },
       {
@@ -198,7 +208,7 @@
       },
       {
         "name": "form-data",
-        "version": "2.3.3",
+        "version": "2.5.1",
         "path": "node_modules/form-data/lib/form_data.js"
       },
       {
@@ -238,17 +248,17 @@
       },
       {
         "name": "kite-api",
-        "version": "2.14.0",
+        "version": "3.9.0",
         "path": "node_modules/kite-api/lib/index.js"
       },
       {
         "name": "kite-connector",
-        "version": "2.8.0",
+        "version": "3.10.0",
         "path": "node_modules/kite-connector/lib/index.js"
       },
       {
         "name": "kite-installer",
-        "version": "3.7.0",
+        "version": "3.15.0",
         "path": "node_modules/kite-installer/lib/index.js"
       },
       {
@@ -263,12 +273,12 @@
       },
       {
         "name": "mime-db",
-        "version": "1.38.0",
+        "version": "1.42.0",
         "path": "node_modules/mime-db/index.js"
       },
       {
         "name": "mime-types",
-        "version": "2.1.22",
+        "version": "2.1.25",
         "path": "node_modules/mime-types/index.js"
       },
       {
@@ -303,7 +313,7 @@
       },
       {
         "name": "rollbar",
-        "version": "2.5.4",
+        "version": "2.14.4",
         "path": "node_modules/rollbar/src/server/rollbar.js"
       },
       {
@@ -312,13 +322,18 @@
         "path": "node_modules/selector-kit/lib/selector-kit.js"
       },
       {
+        "name": "source-map",
+        "version": "0.5.7",
+        "path": "node_modules/source-map/source-map.js"
+      },
+      {
         "name": "space-pen",
         "version": "5.1.2",
         "path": "node_modules/space-pen/lib/space-pen.js"
       },
       {
         "name": "stackframe",
-        "version": "0.3.1",
+        "version": "1.1.0",
         "path": "node_modules/stackframe/stackframe.js"
       },
       {
@@ -333,13 +348,8 @@
       },
       {
         "name": "underscore-plus",
-        "version": "1.6.8",
+        "version": "1.7.0",
         "path": "node_modules/underscore-plus/lib/underscore-plus.js"
-      },
-      {
-        "name": "underscore",
-        "version": "1.8.3",
-        "path": "node_modules/underscore-plus/node_modules/underscore/underscore.js"
       },
       {
         "name": "uuid",
@@ -370,6 +380,7 @@
         "node_modules/asynckit/package.json",
         "node_modules/atom-slick/package.json",
         "node_modules/atom-space-pen-views/package.json",
+        "node_modules/buffer-from/package.json",
         "node_modules/charenc/package.json",
         "node_modules/combined-stream/package.json",
         "node_modules/console-polyfill/package.json",
@@ -389,6 +400,8 @@
         "node_modules/es6-iterator/package.json",
         "node_modules/es6-symbol/package.json",
         "node_modules/es6-weak-map/package.json",
+        "node_modules/ext/node_modules/type/package.json",
+        "node_modules/ext/package.json",
         "node_modules/find/package.json",
         "node_modules/form-data/package.json",
         "node_modules/fuzzaldrin/package.json",
@@ -419,13 +432,15 @@
         "node_modules/rollbar/browserstack.browsers.json",
         "node_modules/rollbar/package.json",
         "node_modules/selector-kit/package.json",
+        "node_modules/source-map/package.json",
         "node_modules/space-pen/api.json",
         "node_modules/space-pen/package.json",
         "node_modules/stackframe/bower.json",
+        "node_modules/stackframe/component.json",
         "node_modules/stackframe/package.json",
         "node_modules/traverse-chain/package.json",
+        "node_modules/type/package.json",
         "node_modules/underscore/package.json",
-        "node_modules/underscore-plus/node_modules/underscore/package.json",
         "node_modules/underscore-plus/package.json",
         "node_modules/uuid/package.json",
         "package-lock.json",
@@ -462,10 +477,10 @@
         "node_modules/atom-space-pen-views/lib/scroll-view.js",
         "node_modules/atom-space-pen-views/lib/select-list-view.js",
         "node_modules/atom-space-pen-views/lib/text-editor-view.js",
+        "node_modules/buffer-from/index.js",
         "node_modules/charenc/README.js",
         "node_modules/charenc/charenc.js",
         "node_modules/combined-stream/lib/combined_stream.js",
-        "node_modules/combined-stream/lib/defer.js",
         "node_modules/console-polyfill/index.js",
         "node_modules/crypt/crypt.js",
         "node_modules/d/auto-bind.js",
@@ -492,7 +507,6 @@
         "node_modules/error-stack-parser/dist/error-stack-parser.js",
         "node_modules/error-stack-parser/dist/error-stack-parser.min.js",
         "node_modules/error-stack-parser/error-stack-parser.js",
-        "node_modules/es5-ext/.prettierrc.js",
         "node_modules/es5-ext/array/#/@@iterator/implement.js",
         "node_modules/es5-ext/array/#/@@iterator/index.js",
         "node_modules/es5-ext/array/#/@@iterator/is-implemented.js",
@@ -727,6 +741,9 @@
         "node_modules/es5-ext/node_modules/es6-symbol/is-implemented.js",
         "node_modules/es5-ext/node_modules/es6-symbol/is-native-implemented.js",
         "node_modules/es5-ext/node_modules/es6-symbol/is-symbol.js",
+        "node_modules/es5-ext/node_modules/es6-symbol/lib/private/generate-name.js",
+        "node_modules/es5-ext/node_modules/es6-symbol/lib/private/setup/standard-symbols.js",
+        "node_modules/es5-ext/node_modules/es6-symbol/lib/private/setup/symbol-registry.js",
         "node_modules/es5-ext/node_modules/es6-symbol/polyfill.js",
         "node_modules/es5-ext/node_modules/es6-symbol/validate-symbol.js",
         "node_modules/es5-ext/number/#/index.js",
@@ -957,6 +974,71 @@
         "node_modules/es6-weak-map/is-weak-map.js",
         "node_modules/es6-weak-map/polyfill.js",
         "node_modules/es6-weak-map/valid-weak-map.js",
+        "node_modules/ext/function/identity.js",
+        "node_modules/ext/global-this/implementation.js",
+        "node_modules/ext/global-this/index.js",
+        "node_modules/ext/global-this/is-implemented.js",
+        "node_modules/ext/lib/private/decimal-adjust.js",
+        "node_modules/ext/math/ceil-10.js",
+        "node_modules/ext/math/floor-10.js",
+        "node_modules/ext/math/round-10.js",
+        "node_modules/ext/node_modules/type/array/ensure.js",
+        "node_modules/ext/node_modules/type/array/is.js",
+        "node_modules/ext/node_modules/type/array-length/coerce.js",
+        "node_modules/ext/node_modules/type/array-length/ensure.js",
+        "node_modules/ext/node_modules/type/array-like/ensure.js",
+        "node_modules/ext/node_modules/type/array-like/is.js",
+        "node_modules/ext/node_modules/type/date/ensure.js",
+        "node_modules/ext/node_modules/type/date/is.js",
+        "node_modules/ext/node_modules/type/error/ensure.js",
+        "node_modules/ext/node_modules/type/error/is.js",
+        "node_modules/ext/node_modules/type/finite/coerce.js",
+        "node_modules/ext/node_modules/type/finite/ensure.js",
+        "node_modules/ext/node_modules/type/function/ensure.js",
+        "node_modules/ext/node_modules/type/function/is.js",
+        "node_modules/ext/node_modules/type/integer/coerce.js",
+        "node_modules/ext/node_modules/type/integer/ensure.js",
+        "node_modules/ext/node_modules/type/iterable/ensure.js",
+        "node_modules/ext/node_modules/type/iterable/is.js",
+        "node_modules/ext/node_modules/type/lib/is-to-string-tag-supported.js",
+        "node_modules/ext/node_modules/type/lib/resolve-error-message.js",
+        "node_modules/ext/node_modules/type/lib/resolve-exception.js",
+        "node_modules/ext/node_modules/type/lib/safe-to-string.js",
+        "node_modules/ext/node_modules/type/lib/to-short-string.js",
+        "node_modules/ext/node_modules/type/natural-number/coerce.js",
+        "node_modules/ext/node_modules/type/natural-number/ensure.js",
+        "node_modules/ext/node_modules/type/number/coerce.js",
+        "node_modules/ext/node_modules/type/number/ensure.js",
+        "node_modules/ext/node_modules/type/object/ensure.js",
+        "node_modules/ext/node_modules/type/object/is.js",
+        "node_modules/ext/node_modules/type/plain-function/ensure.js",
+        "node_modules/ext/node_modules/type/plain-function/is.js",
+        "node_modules/ext/node_modules/type/plain-object/ensure.js",
+        "node_modules/ext/node_modules/type/plain-object/is.js",
+        "node_modules/ext/node_modules/type/promise/ensure.js",
+        "node_modules/ext/node_modules/type/promise/is.js",
+        "node_modules/ext/node_modules/type/prototype/is.js",
+        "node_modules/ext/node_modules/type/reg-exp/ensure.js",
+        "node_modules/ext/node_modules/type/reg-exp/is.js",
+        "node_modules/ext/node_modules/type/safe-integer/coerce.js",
+        "node_modules/ext/node_modules/type/safe-integer/ensure.js",
+        "node_modules/ext/node_modules/type/string/coerce.js",
+        "node_modules/ext/node_modules/type/string/ensure.js",
+        "node_modules/ext/node_modules/type/thenable/ensure.js",
+        "node_modules/ext/node_modules/type/thenable/is.js",
+        "node_modules/ext/node_modules/type/time-value/coerce.js",
+        "node_modules/ext/node_modules/type/time-value/ensure.js",
+        "node_modules/ext/node_modules/type/value/ensure.js",
+        "node_modules/ext/node_modules/type/value/is.js",
+        "node_modules/ext/object/entries/implement.js",
+        "node_modules/ext/object/entries/implementation.js",
+        "node_modules/ext/object/entries/index.js",
+        "node_modules/ext/object/entries/is-implemented.js",
+        "node_modules/ext/string/random.js",
+        "node_modules/ext/string_/includes/implementation.js",
+        "node_modules/ext/string_/includes/index.js",
+        "node_modules/ext/string_/includes/is-implemented.js",
+        "node_modules/ext/thenable_/finally.js",
         "node_modules/find/index.js",
         "node_modules/form-data/lib/browser.js",
         "node_modules/form-data/lib/form_data.js",
@@ -1083,6 +1165,7 @@
         "node_modules/kite-connector/lib/logger.js",
         "node_modules/kite-connector/lib/loggers/console.js",
         "node_modules/kite-connector/lib/loggers/null.js",
+        "node_modules/kite-connector/lib/support/linux.js",
         "node_modules/kite-connector/lib/support/no-support.js",
         "node_modules/kite-connector/lib/support/osx.js",
         "node_modules/kite-connector/lib/support/test-adapter.js",
@@ -1099,6 +1182,8 @@
         "node_modules/kite-installer/lib/elements/atom/install-element.js",
         "node_modules/kite-installer/lib/elements/atom/install-end-element.js",
         "node_modules/kite-installer/lib/elements/atom/install-error-element.js",
+        "node_modules/kite-installer/lib/elements/atom/install-error-view.js",
+        "node_modules/kite-installer/lib/elements/atom/install-statusbar-element.js",
         "node_modules/kite-installer/lib/elements/atom/install-wait-element.js",
         "node_modules/kite-installer/lib/elements/atom/kite-vs-jedi-element.js",
         "node_modules/kite-installer/lib/elements/atom/login-element.js",
@@ -1121,6 +1206,7 @@
         "node_modules/kite-installer/lib/install/login.js",
         "node_modules/kite-installer/lib/install/parallel-steps.js",
         "node_modules/kite-installer/lib/install/pass-step.js",
+        "node_modules/kite-installer/lib/install/runWithCopilot.js",
         "node_modules/kite-installer/lib/install/void-step.js",
         "node_modules/kite-installer/lib/install.js",
         "node_modules/kite-installer/lib/state-controller.js",
@@ -1161,7 +1247,6 @@
         "node_modules/rollbar/src/browser/bundles/rollbar.snippet.js",
         "node_modules/rollbar/src/browser/detection.js",
         "node_modules/rollbar/src/browser/domUtility.js",
-        "node_modules/rollbar/src/browser/errorParser.js",
         "node_modules/rollbar/src/browser/globalSetup.js",
         "node_modules/rollbar/src/browser/logger.js",
         "node_modules/rollbar/src/browser/plugins/jquery.js",
@@ -1174,6 +1259,7 @@
         "node_modules/rollbar/src/browser/transforms.js",
         "node_modules/rollbar/src/browser/transport.js",
         "node_modules/rollbar/src/browser/url.js",
+        "node_modules/rollbar/src/errorParser.js",
         "node_modules/rollbar/src/merge.js",
         "node_modules/rollbar/src/notifier.js",
         "node_modules/rollbar/src/predicates.js",
@@ -1188,6 +1274,7 @@
         "node_modules/rollbar/src/server/logger.js",
         "node_modules/rollbar/src/server/parser.js",
         "node_modules/rollbar/src/server/rollbar.js",
+        "node_modules/rollbar/src/server/sourceMap/stackTrace.js",
         "node_modules/rollbar/src/server/transforms.js",
         "node_modules/rollbar/src/server/transport.js",
         "node_modules/rollbar/src/telemetry.js",
@@ -1202,6 +1289,20 @@
         "node_modules/rollbar/webpack.config.js",
         "node_modules/selector-kit/lib/selector-kit.js",
         "node_modules/selector-kit/lib/selector.js",
+        "node_modules/source-map/dist/source-map.debug.js",
+        "node_modules/source-map/dist/source-map.js",
+        "node_modules/source-map/dist/source-map.min.js",
+        "node_modules/source-map/lib/array-set.js",
+        "node_modules/source-map/lib/base64-vlq.js",
+        "node_modules/source-map/lib/base64.js",
+        "node_modules/source-map/lib/binary-search.js",
+        "node_modules/source-map/lib/mapping-list.js",
+        "node_modules/source-map/lib/quick-sort.js",
+        "node_modules/source-map/lib/source-map-consumer.js",
+        "node_modules/source-map/lib/source-map-generator.js",
+        "node_modules/source-map/lib/source-node.js",
+        "node_modules/source-map/lib/util.js",
+        "node_modules/source-map/source-map.js",
         "node_modules/space-pen/lib/space-pen.js",
         "node_modules/stackframe/dist/stackframe.js",
         "node_modules/stackframe/dist/stackframe.min.js",
@@ -1210,11 +1311,56 @@
         "node_modules/stackframe/karma.conf.js",
         "node_modules/stackframe/stackframe.js",
         "node_modules/traverse-chain/index.js",
+        "node_modules/type/array/ensure.js",
+        "node_modules/type/array/is.js",
+        "node_modules/type/array-length/coerce.js",
+        "node_modules/type/array-length/ensure.js",
+        "node_modules/type/array-like/ensure.js",
+        "node_modules/type/array-like/is.js",
+        "node_modules/type/date/ensure.js",
+        "node_modules/type/date/is.js",
+        "node_modules/type/error/ensure.js",
+        "node_modules/type/error/is.js",
+        "node_modules/type/finite/coerce.js",
+        "node_modules/type/finite/ensure.js",
+        "node_modules/type/function/ensure.js",
+        "node_modules/type/function/is.js",
+        "node_modules/type/integer/coerce.js",
+        "node_modules/type/integer/ensure.js",
+        "node_modules/type/iterable/ensure.js",
+        "node_modules/type/iterable/is.js",
+        "node_modules/type/lib/is-to-string-tag-supported.js",
+        "node_modules/type/lib/resolve-exception.js",
+        "node_modules/type/lib/safe-to-string.js",
+        "node_modules/type/lib/to-short-string.js",
+        "node_modules/type/natural-number/coerce.js",
+        "node_modules/type/natural-number/ensure.js",
+        "node_modules/type/number/coerce.js",
+        "node_modules/type/number/ensure.js",
+        "node_modules/type/object/ensure.js",
+        "node_modules/type/object/is.js",
+        "node_modules/type/plain-function/ensure.js",
+        "node_modules/type/plain-function/is.js",
+        "node_modules/type/plain-object/ensure.js",
+        "node_modules/type/plain-object/is.js",
+        "node_modules/type/promise/ensure.js",
+        "node_modules/type/promise/is.js",
+        "node_modules/type/prototype/is.js",
+        "node_modules/type/reg-exp/ensure.js",
+        "node_modules/type/reg-exp/is.js",
+        "node_modules/type/safe-integer/coerce.js",
+        "node_modules/type/safe-integer/ensure.js",
+        "node_modules/type/string/coerce.js",
+        "node_modules/type/string/ensure.js",
+        "node_modules/type/thenable/ensure.js",
+        "node_modules/type/thenable/is.js",
+        "node_modules/type/time-value/coerce.js",
+        "node_modules/type/time-value/ensure.js",
+        "node_modules/type/value/ensure.js",
+        "node_modules/type/value/is.js",
         "node_modules/underscore/underscore-min.js",
         "node_modules/underscore/underscore.js",
         "node_modules/underscore-plus/lib/underscore-plus.js",
-        "node_modules/underscore-plus/node_modules/underscore/underscore-min.js",
-        "node_modules/underscore-plus/node_modules/underscore/underscore.js",
         "node_modules/uuid/index.js",
         "node_modules/uuid/lib/bytesToUuid.js",
         "node_modules/uuid/lib/rng-browser.js",
@@ -1234,7 +1380,7 @@
           "atom-slick": "^2.0.0",
           "atom-space-pen-views": "~2.1.0",
           "fuzzaldrin-plus": "^0.3.1",
-          "kite-installer": "^3.7.0",
+          "kite-installer": "=3.15.0",
           "mixpanel": "^0.5.0",
           "selector-kit": "^0.1",
           "space-pen": "^5.1.2",
@@ -1306,12 +1452,11 @@
           "node_modules/error-stack-parser"
         ],
         "dependencies": {
-          "stackframe": "^0.3.1"
+          "stackframe": "^1.1.0"
         }
       },
       {
         "paths": [
-          "node_modules/es5-ext",
           "node_modules/es5-ext/array/#/@@iterator",
           "node_modules/es5-ext/array/#",
           "node_modules/es5-ext/array/#/concat",
@@ -1336,6 +1481,7 @@
           "node_modules/es5-ext/error",
           "node_modules/es5-ext/function/#",
           "node_modules/es5-ext/function",
+          "node_modules/es5-ext",
           "node_modules/es5-ext/iterable",
           "node_modules/es5-ext/json",
           "node_modules/es5-ext/math",
@@ -1476,8 +1622,8 @@
         ],
         "dependencies": {
           "es6-iterator": "~2.0.3",
-          "es6-symbol": "~3.1.1",
-          "next-tick": "^1.0.0"
+          "es6-symbol": "~3.1.3",
+          "next-tick": "~1.0.0"
         }
       },
       {
@@ -1486,7 +1632,8 @@
           "node_modules/es5-ext/node_modules/d/test"
         ],
         "dependencies": {
-          "es5-ext": "^0.10.9"
+          "es5-ext": "^0.10.50",
+          "type": "^1.0.1"
         }
       },
       {
@@ -1505,11 +1652,13 @@
       {
         "paths": [
           "node_modules/es5-ext/node_modules/es6-symbol",
+          "node_modules/es5-ext/node_modules/es6-symbol/lib/private",
+          "node_modules/es5-ext/node_modules/es6-symbol/lib/private/setup",
           "node_modules/es5-ext/node_modules/es6-symbol/test"
         ],
         "dependencies": {
-          "d": "1",
-          "es5-ext": "~0.10.14"
+          "d": "^1.0.1",
+          "ext": "^1.1.2"
         }
       },
       {
@@ -1545,6 +1694,29 @@
           "es5-ext": "~0.10.6",
           "es6-iterator": "~0.1.3",
           "es6-symbol": "~2.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/ext/function",
+          "node_modules/ext/global-this",
+          "node_modules/ext/lib/private",
+          "node_modules/ext/math",
+          "node_modules/ext/object/entries",
+          "node_modules/ext",
+          "node_modules/ext/string",
+          "node_modules/ext/string_/includes",
+          "node_modules/ext/test/function",
+          "node_modules/ext/test/global-this",
+          "node_modules/ext/test/math",
+          "node_modules/ext/test/object/entries",
+          "node_modules/ext/test/string",
+          "node_modules/ext/test/string_/includes",
+          "node_modules/ext/test/thenable_",
+          "node_modules/ext/thenable_"
+        ],
+        "dependencies": {
+          "type": "^2.0.0"
         }
       },
       {
@@ -1587,7 +1759,7 @@
           "node_modules/kite-api/test/stores"
         ],
         "dependencies": {
-          "kite-connector": "^2.8.0",
+          "kite-connector": "=3.10.0",
           "md5": "^2.2.0"
         }
       },
@@ -1620,8 +1792,8 @@
           "node_modules/kite-installer/test/install"
         ],
         "dependencies": {
-          "kite-api": "2.14.0",
-          "kite-connector": "2.8.0",
+          "kite-api": "=3.9.0",
+          "kite-connector": "=3.10.0",
           "mixpanel": "^0.5.0",
           "rollbar": "^2.4.4"
         }
@@ -1641,7 +1813,7 @@
           "node_modules/mime-types"
         ],
         "dependencies": {
-          "mime-db": "~1.38.0"
+          "mime-db": "1.42.0"
         }
       },
       {
@@ -1675,18 +1847,21 @@
           "node_modules/rollbar/src/browser/plugins",
           "node_modules/rollbar/src/react-native",
           "node_modules/rollbar/src/server",
+          "node_modules/rollbar/src/server/sourceMap",
           "node_modules/rollbar/test",
           "node_modules/rollbar/vendor/JSON-js"
         ],
         "dependencies": {
           "async": "~1.2.1",
+          "buffer-from": "~1.1.1",
           "console-polyfill": "0.3.0",
           "debug": "2.6.9",
           "decache": "^3.0.5",
-          "error-stack-parser": "1.3.3",
+          "error-stack-parser": "^2.0.4",
           "json-stringify-safe": "~5.0.0",
           "lru-cache": "~2.2.1",
           "request-ip": "~2.0.1",
+          "source-map": "^0.5.7",
           "uuid": "3.0.x"
         }
       },
@@ -1716,7 +1891,7 @@
           "node_modules/underscore-plus"
         ],
         "dependencies": {
-          "underscore": "~1.8.3"
+          "underscore": "^1.9.1"
         }
       }
     ]
