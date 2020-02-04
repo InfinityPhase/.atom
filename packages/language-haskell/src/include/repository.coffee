@@ -92,8 +92,10 @@ module.exports=
       ,
         include: '#comma'
       ,
+        include: '#infix_op'
+      ,
         name: 'meta.other.constructor-list.haskell'
-        begin: /{rb}\s*\(/
+        begin: /\(/
         end: /\)/
         patterns: [
           { include: '#comments' }
@@ -107,8 +109,6 @@ module.exports=
           }
           {include: '#infix_op'}
         ]
-      ,
-        include: '#infix_op'
     ]
   module_name:
     name: 'support.other.module.haskell'
@@ -227,11 +227,9 @@ module.exports=
       ,
         include: '#string'
       ,
-        name: 'keyword.other.arrow.haskell'
-        match: guarded '->|→'
+        include: '#arrow'
       ,
-        name: 'keyword.other.big-arrow.haskell'
-        match: guarded '=>|⇒'
+        include: '#big_arrow'
       ,
         match: "'({operator})"
         name: 'keyword.operator.promoted.haskell'
@@ -241,8 +239,7 @@ module.exports=
       ,
         include: '#operator'
       ,
-        name: 'variable.other.generic-type.haskell'
-        match: /{lb}{functionName}{rb}/
+        include: '#type_variable'
       ,
         name: 'entity.name.type.promoted.haskell'
         match: /{lbrel}'({className}){rb}/
@@ -254,6 +251,15 @@ module.exports=
       ,
         include: '#lit_num'
     ]
+  arrow:
+    name: 'keyword.other.arrow.haskell'
+    match: '{arrow}'
+  big_arrow:
+    name: 'keyword.other.big-arrow.haskell'
+    match: '{big_arrow}'
+  type_variable:
+    name: 'variable.other.generic-type.haskell'
+    match: /{lb}{functionName}{rb}/
   unit:
     name: 'constant.language.unit.haskell'
     match: /\(\)/
@@ -299,6 +305,8 @@ module.exports=
   via:
     patterns: [
         {include: '#via_list'}
+        {include: '#via_list_newline'}
+        {include: '#via_indent'}
         {include: '#via_simple'}
         {include: '#via_keyword'}
     ]
@@ -319,6 +327,24 @@ module.exports=
     end: /\)/
     beginCaptures:
       1: name: 'keyword.other.haskell'
+    patterns: [
+        {include: "#type_signature"}
+    ]
+  via_list_newline:
+    name: 'meta.via.haskell'
+    begin: /{lb}(via)\s*/
+    end: /$/
+    beginCaptures:
+      1: name: 'keyword.other.haskell'
+    patterns: [
+        {include: "#type_signature"}
+    ]
+  via_indent:
+    name: 'meta.via.haskell'
+    begin: /{indentBlockStart}(via)\s*/
+    end: /{indentBlockCont}/
+    beginCaptures:
+      2: name: 'keyword.other.haskell'
     patterns: [
         {include: "#type_signature"}
     ]
@@ -459,18 +485,13 @@ module.exports=
         ]
     patterns: [
       {include: '#comments'}
+      {include: '#string'}
       {include: '#where'}
       {include: '#deriving'}
       {include: '#via'}
       {include: '#assignment_op'}
-      {
-        match: /{ctor}/
-        captures:
-          1: patterns: [include: '#type_ctor']
-          2:
-            name: 'meta.type-signature.haskell'
-            patterns: [include: '#type_signature']
-      }
+      {include: '#type_ctor_forall'}
+      {include: '#type_ctor_alt'}
       {
         match: /\|/
         captures:
@@ -491,6 +512,41 @@ module.exports=
         ]
       }
       {include: '#ctor_type_declaration'} #GADT
+    ]
+  type_ctor_forall:
+    begin: '{lb}forall{rb}'
+    end: '{type_ctor_alt_delim}'
+    contentName: 'meta.type-signature'
+    beginCaptures:
+      0: patterns: [include: '#type_signature']
+    patterns: [
+      {include: '#comments'}
+      {
+        match: '\\G.*?{big_arrow}'
+        captures: 0: patterns: [include: '#type_signature']
+      }
+      {
+        match: '\\G.*?\\.'
+        captures: 0: patterns: [include: '#type_signature']
+      }
+      { include: '#big_arrow' }
+      { include: '#type_variable' }
+      {
+        begin: '\\('
+        end: '\\)'
+        patterns: [include: '#type_signature']
+      }
+      {include: '#type_ctor_alt'}
+    ]
+  type_ctor_alt:
+    begin: '{lb}({className})\\s*'
+    end: '{type_ctor_alt_delim}'
+    contentName: 'meta.type-signature'
+    beginCaptures:
+      1: patterns: [include: '#type_ctor']
+    patterns: [
+      {include: '#comments'}
+      {include: '#type_signature'}
     ]
   type_alias:
     name: 'meta.declaration.type.type.haskell'

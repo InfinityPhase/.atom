@@ -1,47 +1,34 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "/tmp/d-117317-12484-1nvqqk9.u52y3f2yb9/package.tgz",
-        "scope": null,
-        "escapedName": null,
-        "name": null,
-        "rawSpec": "/tmp/d-117317-12484-1nvqqk9.u52y3f2yb9/package.tgz",
-        "spec": "/tmp/d-117317-12484-1nvqqk9.u52y3f2yb9/package.tgz",
-        "type": "local"
-      },
-      "/tmp/apm-install-dir-117317-12484-1f49sch.44lgeng66r"
-    ]
-  ],
-  "_from": "../d-117317-12484-1nvqqk9.u52y3f2yb9/package.tgz",
-  "_id": "nord-atom-syntax@0.9.1",
-  "_inCache": true,
+  "_from": "https://www.atom.io/api/packages/nord-atom-syntax/versions/0.10.0/tarball",
+  "_id": "nord-atom-syntax@0.10.0",
+  "_inBundle": false,
+  "_integrity": "sha512-aA5EDY/zXlVw+170a3dkTvGPhyyES1ywDiy5KEUFs+PuYaKaHRN48tNvRX07VZdexmHoduxb+nsQGR9bQgQJ3g==",
   "_location": "/nord-atom-syntax",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "/tmp/d-117317-12484-1nvqqk9.u52y3f2yb9/package.tgz",
-    "scope": null,
-    "escapedName": null,
-    "name": null,
-    "rawSpec": "/tmp/d-117317-12484-1nvqqk9.u52y3f2yb9/package.tgz",
-    "spec": "/tmp/d-117317-12484-1nvqqk9.u52y3f2yb9/package.tgz",
-    "type": "local"
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/nord-atom-syntax/versions/0.10.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/nord-atom-syntax/versions/0.10.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/nord-atom-syntax/versions/0.10.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/nord-atom-syntax/versions/0.10.0/tarball"
   },
   "_requiredBy": [
-    "#USER"
+    "#USER",
+    "/"
   ],
-  "_resolved": "file:../d-117317-12484-1nvqqk9.u52y3f2yb9/package.tgz",
-  "_shasum": "146ffdaad7ba6eca4f30209931319d444c88c102",
-  "_shrinkwrap": null,
-  "_spec": "/tmp/d-117317-12484-1nvqqk9.u52y3f2yb9/package.tgz",
-  "_where": "/tmp/apm-install-dir-117317-12484-1f49sch.44lgeng66r",
+  "_resolved": "https://www.atom.io/api/packages/nord-atom-syntax/versions/0.10.0/tarball",
+  "_shasum": "62510503f2579afc43ca6f82042f32754e0c98ec",
+  "_spec": "https://www.atom.io/api/packages/nord-atom-syntax/versions/0.10.0/tarball",
+  "_where": "/tmp/apm-install-dir-202013-113935-wbfv1z.ksd8b",
   "author": {
     "name": "Arctic Ice Studio",
-    "email": "development@arcticicestudio.com"
+    "email": "development@arcticicestudio.com",
+    "url": "https://www.arcticicestudio.com"
   },
   "bugs": {
     "url": "https://github.com/arcticicestudio/nord-atom-syntax/issues"
   },
+  "bundleDependencies": false,
   "configSchema": {
     "accessibility": {
       "type": "object",
@@ -57,7 +44,7 @@
       }
     }
   },
-  "dependencies": {},
+  "deprecated": false,
   "description": "An arctic, north-bluish clean and elegant Atom syntax theme.",
   "devDependencies": {
     "eslint": "3.15.0",
@@ -70,7 +57,7 @@
   "engines": {
     "atom": ">=1.13.0 <2.0.0"
   },
-  "homepage": "https://github.com/arcticicestudio/nord-atom-syntax",
+  "homepage": "https://www.nordtheme.com/ports/atom-syntax",
   "keywords": [
     "arctic",
     "north",
@@ -83,15 +70,12 @@
   "license": "MIT",
   "main": "./lib/main",
   "name": "nord-atom-syntax",
-  "optionalDependencies": {},
-  "readme": "<p align=\"center\"><img src=\"https://cdn.rawgit.com/arcticicestudio/nord-atom-syntax/develop/assets/nord-atom-syntax-banner.svg\"/></p>\n\n<p align=\"center\"><img src=\"https://cdn.travis-ci.org/images/favicon-c566132d45ab1a9bcae64d8d90e4378a.svg\" width=24 height=24/> <a href=\"https://travis-ci.org/arcticicestudio/nord-atom-syntax\"><img src=\"https://img.shields.io/travis/arcticicestudio/nord-atom-syntax/develop.svg\"/></a> <img src=\"https://circleci.com/favicon.ico\" width=24 height=24/> <a href=\"https://circleci.com/gh/arcticicestudio/nord-atom-syntax\"><img src=\"https://circleci.com/gh/arcticicestudio/nord-atom-syntax.svg?style=shield&circle-token=63fc45d7300d4fc129c165e1aa2d1291474e5e1c\"/></a> <img src=\"https://assets-cdn.github.com/favicon.ico\" width=24 height=24/> <a href=\"https://github.com/arcticicestudio/nord-atom-syntax/releases/latest\"><img src=\"https://img.shields.io/github/release/arcticicestudio/nord-atom-syntax.svg\"/></a> <a href=\"https://github.com/arcticicestudio/nord/releases/tag/v0.2.0\"><img src=\"https://img.shields.io/badge/Nord-v0.2.0-88C0D0.svg\"/></a> <img src=\"https://atom.io/favicon.ico\" width=24 height=24/> <a href=\"https://github.com/atom/atom/releases/tag/v1.13.0\"><img src=\"https://img.shields.io/badge/Atom->=v1.13.0-green.svg\"/></a> <a href=\"https://atom.io/themes/nord-atom-syntax\"><img src=\"https://img.shields.io/apm/v/nord-atom-syntax.svg\"/></a> <a href=\"https://atom.io/themes/nord-atom-syntax\"><img src=\"https://img.shields.io/apm/dm/nord-atom-syntax.svg\"/></a></p>\n\n<p align=\"center\">An arctic, north-bluish clean and elegant Atom syntax theme.</p>\n\n<p align=\"center\">Designed for a fluent and clear workflow.<br>\nBased on the <a href=\"https://github.com/arcticicestudio/nord\">Nord</a> color palette.<br>\nFits the <a href=\"https://atom.io/themes/nord-atom-ui\">nord-atom-ui</a> theme.</p>\n\n\n<p align=\"center\"><img src=\"https://raw.githubusercontent.com/arcticicestudio/nord-atom-syntax/develop/assets/scrot-top.png\"/><br><blockquote>Icons provided by <a href=\"https://atom.io/packages/file-icons\">file-icons</a>, minimap by <a href=\"https://atom.io/packages/minimap\">minimap</a>.<br>Font: <a href=\"https://adobe-fonts.github.io/source-code-pro\">Source Code Pro</a> 20px</blockquote></p>\n\n## Getting started\n### Installation\n**<img src=\"https://atom.io/favicon.ico\" width=16 height=16/> [apm](https://github.com/atom/apm)**  \n```shell\napm install nord-atom-syntax\n```\n\n**<img src=\"https://atom.io/favicon.ico\" width=16 height=16/> [Atom](https://atom.io)**  \n  1. Open *Settings* > *Install*\n  2. Set the filter to *Themes*\n  3. Search for `nord-atom-syntax` and install\n\n**Activation**\n  1. Open *Settings* > *Themes*\n  2. Select `Nord Atom` from the *Syntax Theme* drop-down menu\n\n## Features\n<p align=\"center\"><strong>Non-obtrusive bracket matching- and <code>find-and-replace</code> marker.<br>Unselected line numbers are hidden in order to keep the focus.</strong><br><img src=\"https://raw.githubusercontent.com/arcticicestudio/nord-atom-syntax/develop/assets/scrot-feature-bracketmarker.png\"/><br><img src=\"https://raw.githubusercontent.com/arcticicestudio/nord-atom-syntax/develop/assets/scrot-feature-findandreplace.png\"/></p>\n\n<p align=\"center\"><strong>Smooth transitions for gutter- and <code>find-and-replace</code> interactions.</strong><br><img src=\"https://raw.githubusercontent.com/arcticicestudio/nord-atom-syntax/develop/assets/scrcast-feature-findandreplace.gif\"/><br><img src=\"https://raw.githubusercontent.com/arcticicestudio/nord-atom-syntax/develop/assets/scrcast-feature-smoothtransition.gif\"/></p>\n\n<p align=\"center\"><strong>Colors of selected code can still be easily recognized.</strong><br><img src=\"https://raw.githubusercontent.com/arcticicestudio/nord-atom-syntax/develop/assets/scrcast-feature-selection.gif\"/></p>\n\n## Languages\nThis theme contains optimized styles to achieve a consistent and uniform coloring across languages.  \nDetailed descriptions for supported languages can be found in the [project wiki](https://github.com/arcticicestudio/nord-atom-syntax/wiki/Optimized-Language-Styles).\n\n![][scrot-lang-c]\n![][scrot-lang-java]\n![][scrot-lang-javascript]\n![][scrot-lang-json]\n![][scrot-lang-markdown]\n![][scrot-lang-php]\n![][scrot-lang-python]\n![][scrot-lang-ruby]\n![][scrot-lang-xml]\n\n## Development\n[![](https://img.shields.io/badge/Changelog-0.9.1-81A1C1.svg)](https://github.com/arcticicestudio/nord-atom-syntax/blob/v0.9.1/CHANGELOG.md) [![](https://img.shields.io/badge/Workflow-gitflow--branching--model-81A1C1.svg)](http://nvie.com/posts/a-successful-git-branching-model) [![](https://img.shields.io/badge/Versioning-ArcVer_0.8.0-81A1C1.svg)](https://github.com/arcticicestudio/arcver)\n\n### Contribution\nPlease report issues/bugs, feature requests and suggestions for improvements to the [issue tracker](https://github.com/arcticicestudio/nord-atom-syntax/issues).\n\n<p align=\"center\"><img src=\"https://cdn.rawgit.com/arcticicestudio/nord/develop/src/assets/banner-footer-mountains.svg\" /></p>\n\n<p align=\"center\"> <img src=\"http://arcticicestudio.com/favicon.ico\" width=16 height=16/> Copyright &copy; 2017 Arctic Ice Studio</p>\n\n<p align=\"center\"><a href=\"https://github.com/arcticicestudio/nord-atom-syntax/develop/LICENSE.md\"><img src=\"https://img.shields.io/badge/License-MIT-5E81AC.svg\"/></a></p>\n\n[scrot-lang-c]: https://raw.githubusercontent.com/arcticicestudio/nord-atom-syntax/develop/assets/scrot-lang-c.png\n[scrot-lang-java]: https://raw.githubusercontent.com/arcticicestudio/nord-atom-syntax/develop/assets/scrot-lang-java.png\n[scrot-lang-javascript]: https://raw.githubusercontent.com/arcticicestudio/nord-atom-syntax/develop/assets/scrot-lang-javascript.png\n[scrot-lang-json]: https://raw.githubusercontent.com/arcticicestudio/nord-atom-syntax/develop/assets/scrot-lang-json.png\n[scrot-lang-markdown]: https://raw.githubusercontent.com/arcticicestudio/nord-atom-syntax/develop/assets/scrot-lang-markdown.png\n[scrot-lang-php]: https://raw.githubusercontent.com/arcticicestudio/nord-atom-syntax/develop/assets/scrot-lang-php.png\n[scrot-lang-python]: https://raw.githubusercontent.com/arcticicestudio/nord-atom-syntax/develop/assets/scrot-lang-python.png\n[scrot-lang-ruby]: https://raw.githubusercontent.com/arcticicestudio/nord-atom-syntax/develop/assets/scrot-lang-ruby.png\n[scrot-lang-xml]: https://raw.githubusercontent.com/arcticicestudio/nord-atom-syntax/develop/assets/scrot-lang-xml.png\n",
-  "readmeFilename": "README.md",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/arcticicestudio/nord-atom-syntax.git"
   },
   "theme": "syntax",
-  "version": "0.9.1",
+  "version": "0.10.0",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [],
@@ -100,9 +84,7 @@
         ".eslintrc.js",
         ".stylelintrc.js",
         "gulpfile.js",
-        "lib/constants.js",
-        "lib/main.js",
-        "lib/utils.js"
+        "lib/main.js"
       ],
       ".json": [
         "package.json"

@@ -70,6 +70,19 @@ noSuffix:     By default, icon names are suffixed with "-icon". Set noSuffix to 
 
 directoryIcons:
 
+	"Acre Desktop":
+		icon: "acre"
+		match: [
+			[/^APLSource$/, "medium-blue"]
+			[/^\.acre$/, "dark-blue"]
+		]
+
+	Alacritty:
+		icon: "alacritty-alt"
+		match: /\/\.config\/alacritty$/i
+		colour: "dark-blue"
+		matchPath: true
+
 	"App Store":
 		icon: "appstore"
 		match: /\.(app|xcodeproj|xcworkspace)$/i
@@ -81,7 +94,7 @@ directoryIcons:
 
 	Atom:
 		icon: "atom"
-		match: /^\.atom$/
+		match: /^\.atom(-ci)?$/
 		colour: "dark-green"
 
 	"Azure Pipelines":
@@ -114,8 +127,10 @@ directoryIcons:
 
 	CPAN:
 		icon: "cpan"
-		match: /^\.cpan$/i
-		colour: "medium-blue"
+		match: [
+			[/^\.cpan$/i, "medium-blue"]
+			[/^\.cpanplus$/i, "dark-blue"]
+		]
 
 	CVS:
 		icon: "cvs"
@@ -126,6 +141,11 @@ directoryIcons:
 		icon: "deno"
 		match: ".deno"
 		colour: "dark-purple"
+
+	Dependabot:
+		icon: "dependabot"
+		match: ".dependabot"
+		colour: "medium-blue"
 
 	Docker:
 		icon: "docker"
@@ -163,6 +183,11 @@ directoryIcons:
 		icon: "gitlab"
 		match: /^\.gitlab$/
 
+	Istanbul:
+		icon: "istanbul"
+		match: /^\.nyc[-_]output$/
+		colour: "medium-orange"
+
 	Meteor:
 		icon: "meteor"
 		match: /^\.meteor$/
@@ -175,8 +200,10 @@ directoryIcons:
 
 	NodeJS:
 		icon: "node"
-		match: /^node_modules$/
-		colour: "medium-green"
+		match: [
+			[/^node_modules$/, "medium-green"]
+			[/^\.node-gyp$/, "dark-green"]
+		]
 
 	Package:
 		icon: "package"
@@ -196,6 +223,11 @@ directoryIcons:
 			[".vagrant", "medium-cyan"]
 			[".vagrant.d", "dark-cyan"]
 		]
+
+	Vim:
+		icon: "vim"
+		match: /^\.vim$/i
+		colour: "medium-green"
 
 	"Visual Studio":
 		icon: "vs"
@@ -231,6 +263,13 @@ fileIcons:
 			[".fsa", "medium-red"]
 		]
 
+	"Acre Desktop":
+		icon: "acre"
+		match: /^acre\.config$/i
+		colour: "medium-blue"
+		priority: 1.5
+		uses: "JSON"
+
 	ActionScript: # Or Flash-related
 		icon: "as"
 		match: [
@@ -253,6 +292,11 @@ fileIcons:
 			[".aep", "dark-pink"]
 			[".aet", "dark-purple"]
 		]
+
+	"Adobe Animate":
+		icon: "animate"
+		match: ".fla"
+		colour: ["dark-orange", "medium-red"]
 
 	"Adobe Illustrator":
 		icon: "ai"
@@ -286,6 +330,22 @@ fileIcons:
 			[".psq", "medium-purple"]
 		]
 
+	AdvPL:
+		icon: "totvs"
+		alias: "TOTVS"
+		match: [
+			[".prw", "medium-maroon", "advpl"]
+			[".ahu", "medium-green"]
+			[".aph", "dark-green"]
+			[".tlpp", "dark-blue"]
+		]
+
+	AffectScript:
+		icon: "affectscript"
+		match: ".affect"
+		colour: "medium-pink"
+		scope: "affect"
+
 	Affinity:
 		icon: "affinity"
 		match: [
@@ -293,6 +353,12 @@ fileIcons:
 			[".afphoto", "medium-pink"]
 			[".afpub", "medium-red"]
 		]
+
+	Alacritty:
+		icon: "alacritty"
+		match: /^\.?alacritty\.ya?ml$/i
+		colour: "medium-orange"
+		priority: 2
 
 	Alex:
 		icon: "alex"
@@ -317,6 +383,13 @@ fileIcons:
 		scope: "ampl"
 		match: ".ampl"
 		colour: "dark-maroon"
+
+	AmuseWiki:
+		icon: "amusewiki"
+		match: ".muse"
+		colour: "dark-red"
+		alias: "Muse"
+		scope: "muse"
 
 	Android:
 		icon: "android"
@@ -492,23 +565,73 @@ fileIcons:
 		match: ".aj"
 		colour: "medium-maroon"
 
-	Assembly: # Or binary
-		icon: "binary"
+	Assembly:
+		icon: "asm"
 		match: [
-			[/\.(l?a|[ls]?o|out|s|a51|asm|axf|elf|prx|puff|z80)$/i, "medium-red",
-				scope: /(^|\.)(a[rs]m|x86|z80|lc-?3|cpu12|x86asm|m68k|assembly|avr(dis)?asm|dasm)(\.|$)/i,
-				alias: /^(asm(68k|h8300)?|[ft]asm|v?masm)$/i]
-			[".agc", "dark-blue", scope: "source.agc", alias: /^(Virtual\s*)?AGC$|^Apollo([-_\s]*11)?\s*Guidance\s*Computer$/i]
-			[".ditroff", "dark-green", scope: "source.ditroff", signature: /^x\s*T\s+(dvi|html|lbp|lj4|ps|post|pdf|ascii|cp1047|latin1|utf8|X75|X75-12|X100|X100-12)(?=\s|$)/]
-			[".ko", "dark-green"]
-			[".lst", "medium-blue", "lst-cpu12"]
-			[/\.((c([+px]{2}?)?-?)?objdump|bsdiff|bin|dat|pak|pdb)$/i, "dark-orange"]
-			[".d-objdump", "dark-blue"]
-			[/\.(gco?|gcode|[cdhk]nc)$/i, "medium-orange", "g-code"]
-			[/\.rpy[bc]$/i, "medium-red"]
-			[/\.py[co]$/i, "dark-purple"]
-			[".swp", "dark-green", priority: 4]
-			[/^\.rnd$/i, "dark-blue"]
+			[".a", "medium-green", alias: "asm", scope: /(^|\.)(asm|assembly|lc-?3)(\.|$)/i]
+			[".i", "medium-cyan"]
+			[".s", "dark-green"]
+			[".asm", "medium-green"]
+			[".a51", "medium-orange", alias: "RTX-51 TINY"]
+		]
+
+	"Assembly, AGC":
+		icon: "asm-agc"
+		match: ".agc"
+		colour: "dark-blue"
+		scope: "source.agc"
+		alias: /^(Virtual\s*)?AGC$|^Apollo([-_\s]*11)?\s*Guidance\s*Computer$/i
+		uses: "Assembly"
+
+	"Assembly, ARM":
+		icon: "asm-arm"
+		match: ".arm"
+		colour: "medium-blue"
+		scope: "arm"
+		uses: "Assembly"
+
+	"Assembly, AVR":
+		icon: "asm-avr"
+		match: ".avr"
+		colour: "dark-purple"
+		scope: /(^|\.)avr(dis)?asm(\.|$)/i
+		uses: "Assembly"
+
+	"Assembly, Hitachi":
+		icon: "asm-hitachi"
+		match: /\.h8(SX?|\d{3})?$/i
+		colour: "medium-grey"
+		alias: /^(h8(SX?|\/?\d{3})?)$/i
+		uses: "Assembly"
+
+	"Assembly, Intel":
+		icon: "asm-intel"
+		match: /\.((x|i(a[-_]?))(32|86|64)(asm)?|i386|80386)$/i
+		colour: "dark-blue"
+		scope: /(^|\.)((x|i(a[-_]?))(32|86|64)(asm)?|i386|80386)(\.|$)/i
+		alias: /^(x86|x64|x86[-_]?64|i(a[-_]?)?(32|64)|i386|80386|Intel|Itanium|[ftm]asm)$/i
+		uses: "Assembly"
+
+	"Assembly, Motorola":
+		icon: "asm-m68k"
+		uses: "Assembly"
+		match: [
+			[".m68k", "dark-red", alias: /^(asm68(k|\d{2,3})?|m68k)$/i, scope: /(^|\.)(m68k|dasm)(\.|$)/i]
+			[".lst", "medium-blue", alias: "lst-cpu12", scope: /(^|\.)(lst-)?cpu[-_\s]?12(\.|$)/i]
+		]
+
+	"Assembly, VAX":
+		icon: "asm-vax"
+		match: /\.v(ax|masm)$/i
+		colour: "medium-maroon"
+		alias: /^(Macro[-_\s]?32|VAX\s+Macro|vmasm)$/i
+		uses: "Assembly"
+
+	"Assembly, Zilog":
+		icon: "asm-zilog"
+		uses: "Assembly"
+		match: [
+			[".z80", "medium-yellow", scope: "z80"]
 			[/\.PLX(COPY)?$/, "medium-blue",
 				alias: /^z\/?(OS|VM)\s*(Assembl(y|er)|PL\/?X(\s*EDL)?)$/i
 				scope: /\.zvm(asm|plx|plxedl)(\.|$)/
@@ -557,11 +680,15 @@ fileIcons:
 			[".au", "medium-cyan", signature: /^\.snd|^dns\./]
 			[".flac", "dark-red", signature: /^fLaC/]
 			[/\.f4[ab]$/i, "medium-red", signature: /^FLV\x01\x04/]
+			[".it", "medium-orange", mime: "audio/x-mod", signature: /^IMPM/]
 			[".m4a", "medium-cyan", signature: /^.{4}ftypM4A/]
+			[".mka", "medium-purple", mime: "audio/x-matroska"]
 			[/\.(mpc|mp\+)$/i, "dark-green", signature: /^MPCK/]
 			[".oga", "dark-orange"] # Shares .ogg sig
 			[".opus", "dark-maroon", signature: /OpusHead/]
 			[/\.r[am]$/i, "dark-blue", signature: /^\.RMF/]
+			[".s3m", "medium-green", mime: "audio/x-s3m", signature: /^.{44}SCRM/]
+			[".sndh", "medium-yellow"]
 			[".wma", "medium-blue"] # Shares .asf sig
 		]
 
@@ -596,12 +723,30 @@ fileIcons:
 		colour: "medium-blue"
 		scope: /(^|\.)avro(-idl)?(\.|$)/i
 
+	Awk:
+		icon: "terminal"
+		match: [
+			[".awk", "medium-blue", "awk"]
+			[".gawk", "medium-red", "gawk"]
+			[".mawk", "medium-maroon", "mawk"]
+			[".nawk", "dark-green", "nawk"]
+			[".auk", "dark-cyan"]
+		]
+
 	"Azure Pipelines":
 		icon: "azurepipelines"
 		match: /^azure-pipelines\.ya?ml$/i
 		colour: "dark-blue"
 		priority: 2
 		uses: "YAML"
+
+	"Backus-Naur Form":
+		icon: "bnf"
+		match: [
+			[".bnf", "medium-maroon", "bnf"]
+			[".abnf", "medium-green", "abnf"]
+			[".ebnf", "medium-red", "ebnf"]
+		]
 
 	Babel:
 		icon: "babel"
@@ -623,9 +768,10 @@ fileIcons:
 
 	Ballerina:
 		icon: "ballerina"
-		match: ".bal"
-		colour: "medium-cyan"
-		scope: "ballerina"
+		match: [
+			[".bal", "medium-cyan", "ballerina"]
+			[".balx", "dark-green", uses: "Binary"]
+		]
 
 	Bazaar:
 		icon: "bazaar"
@@ -658,8 +804,34 @@ fileIcons:
 		match: [
 			[".cbx", "auto-red"]
 			[".bbx", "auto-orange"]
-			[".bib", "auto-yellow", "bibtex"]
+			[/\.bib(tex)?$/i, "auto-yellow", "bibtex"]
 			[".bst", "auto-green"]
+		]
+
+	Biml:
+		icon: "biml"
+		match: ".biml"
+		colour: "medium-red"
+		scope: "biml"
+		uses: "XML"
+
+	Binary:
+		icon: "binary"
+		match: [
+			[/\.([ls]?o|out)$/i, "medium-red"]
+			[".axf", "dark-blue"]
+			[".elf", "medium-green"]
+			[".la", "dark-red"]
+			[".ko", "dark-green"]
+			[/\.((c([+px]{2}?)?-?)?objdump|bsdiff|bin|dat|pak|pdb)$/i, "dark-orange"]
+			[".d-objdump", "dark-blue"]
+			[/\.(gco?|gcode|[cdhk]nc)$/i, "medium-orange", "g-code"]
+			[/\.rpy[bc]$/i, "medium-red"]
+			[/\.py[cdo]$/i, "dark-purple"]
+			[".prx", "medium-purple"]
+			[".puff", "medium-grey"]
+			[".swp", "dark-green", priority: 4]
+			[/^\.rnd$/i, "dark-blue"]
 		]
 
 	BinTray:
@@ -926,6 +1098,11 @@ fileIcons:
 			[/\.(todo|taskpaper)$/i, "medium-yellow"]
 		]
 
+	Cheetah3D:
+		icon: "cheetah3d"
+		match: ".jas"
+		colour: "auto-yellow"
+
 	Chef:
 		icon: "chef"
 		match: /^chefignore$|^(Berks|Policy)file(\.lock)?$/i
@@ -1111,8 +1288,9 @@ fileIcons:
 
 	COLLADA:
 		icon: "khronos"
-		match: ".dae"
+		match: /\.(dae|collada)$/i
 		colour: "medium-orange"
+		uses: "XML"
 
 	"Common Lisp":
 		icon: "cl"
@@ -1164,9 +1342,18 @@ fileIcons:
 			[".war", "medium-purple"]
 			[".wgt", "medium-blue"]
 			[".xar", "dark-orange", signature: /^xar!/]
+			[".dsk", "medium-green"]
+			[".ear", "medium-purple"]
 			[".egg", "light-orange"]
 			[".sit", "medium-blue", signature: /^SIT[!D]/]
 		]
+
+	"Computable Document Format":
+		icon: "cdf"
+		match: ".cdf"
+		colour: "medium-red"
+		mime: "application/cdf"
+		uses: "Mathematica"
 
 	Conan:
 		icon: "conan"
@@ -1174,11 +1361,17 @@ fileIcons:
 		match: /^(conanfile\.(txt|py)|conan\.conf)$/i
 		colour: "auto-blue"
 
+	Conda:
+		icon: "conda"
+		match: /^\.?condarc$/i
+		colour: "medium-green"
+		uses: "Python"
+
 	Config:
 		icon: "config"
 		generic: true
 		match: [
-			[/\.(ini|desktop|directory|cfg|conf|prefs)$/i, "medium-yellow", scope: "ini", alias: "dosini"]
+			[/\.(ini|desktop|directory|cfg|co?nf|prefs)$/i, "medium-yellow", scope: "ini", alias: "dosini"]
 			[".properties", "medium-purple", scope: "java-properties"]
 			[".ld", "dark-red"]
 			[".lds", "medium-red"]
@@ -1190,7 +1383,11 @@ fileIcons:
 			[/^buildozer\.spec$/i, "dark-blue", priority: 2]
 			[/config|settings|option|pref/i, null, priority: 0]
 			[".flc", "medium-green", alias: "FIGlet control", scope: /^source\.figctrl$/i, signature: /^flc2a/]
-			[/\/dev[-\w]+\/([^\/]+\/)*(DESC|Foundry|download|symbolmap)(\.in|\.proto)?$/, "dark-green", matchPath: true, priority: 1.5]
+			[///
+				/(dev[-\w]+|troff)/ ([^/]+/)*
+				(DESC|Foundry|download|symbolmap)
+				(\.(in|proto|8400))?$
+			///i, "dark-green", matchPath: true, priority: 1.5, scope: /^source\.ditroff\.desc$/]
 			[/[\/\\]fontforge[\/\\]hotkeys[\/\\][^\/\\]+/i, "dark-blue", matchPath: true, priority: 0.75, scope: /fontforge.hotkeys/i]
 			[/\.git[\/\\](config|info[\/\\]\w+)$/, "dark-red", matchPath: true]
 			[/(^|[\/\\])\.fossil-settings\1(?:[^/\/]+)/, "dark-cyan", matchPath: true]
@@ -1372,8 +1569,9 @@ fileIcons:
 
 	cURL:
 		icon: "curl"
-		match: /^\.curlrc$/i
+		match: /(^|\.)curlrc$|^_curlrc$/i
 		colour: "dark-blue"
+		scope: "curlrc"
 
 	CVS:
 		icon: "cvs"
@@ -1441,7 +1639,9 @@ fileIcons:
 		icon: "database"
 		generic: true
 		match: [
+			[".aff", "medium-red"]
 			[".cson", "medium-maroon"]
+			[/\.dict?$/i, "medium-green"]
 			[".hson", "medium-orange", "hson"]
 			[".http", "medium-red"]
 			[".ndjson", "medium-orange"]
@@ -1454,11 +1654,16 @@ fileIcons:
 			[".ejson", "dark-red"]
 			[".edn", "medium-purple"]
 			[".eam.fs", "dark-purple"]
+			[".son", "dark-green", "son"]
 			[".ston", "medium-maroon"]
 			[".ttl", "medium-cyan", scope: "turtle"]
 			[".schema", "dark-blue", priority: 0.25]
+			[".sy", "dark-green"]
 			[".syntax", "medium-blue"]
 			[".webmanifest", "medium-blue"]
+			[/\.(od|onlydata)$/i, "medium-grey", alias: "OnlyData"]
+			[".dbi", "medium-orange"] # https://wiki.servoy.com/display/DOCS/Updating+a+Local+Database+Using+DBI+Files
+			[/\.snip(pets?)?$/i, "medium-green", alias: /^(SnipMate|UltiSnip|NeoSnippet)$/i, scope: /\.(vim-snippet|snipmate|ultisnips|neosnippet|snippets?)(\.|$)/i]
 			[/\.yas(nippet)?$/i, "medium-green", alias: /(YA)?Snippet/i, scope: /^source\.yasnippet$/i]
 			[/(^|\.)fonts\.(dir|scale|alias)$/i, "medium-red", scope: /^source\.fontdir$/i, priority: 4]
 			[/(^|\.)encodings\.dir$/i, "medium-orange"]
@@ -1467,10 +1672,15 @@ fileIcons:
 			[/^(mime\.types|fstab)$/i, "medium-maroon"]
 			[/^METADATA\.pb$/, "medium-red", priority: 2]
 			[/\.(ldj|ldjson|jsonl)$/, "dark-orange", "jsonl"]
-			[/\.(irb-history|lesshst|wget-hsts)$/i, "medium-red"]
+			[/\.(irb-history|lesshst)$/i, "medium-red"]
 			[/^(magic\.mgc|figmagic)$/i, "medium-purple", signature: /^\xF1\x1E\x04\x1C|^\x1C\x04\x1E\xF1/]
 			[/[\/\\](?:magic[\/\\]Magdir|file[\/\\]magic)[\/\\][-.\w]+$/i, "dark-red", matchPath: true]
 			[/(\\|\/)dev[-\w]+\1(?:[^\\\/]+\1)*(?!DESC|NOTES)(?:[A-Z][-A-Z]*)(?:\.in)?$/, "medium-green", matchPath: true]
+			[///
+				/tab\.(37|450-12|450|lp|think)$
+				|
+				/dev[-\w]+/(APL\.bug|[A-Z][-A-Za-z0-9]*)(\.fd)?$
+			///i, "medium-green", matchPath: true, priority: 0.75]
 			[/\.ssh[\/\\](authorized_keys|known_hosts)$/, "medium-green", matchPath: true]
 			[/^\.icondb\.js$/, "dark-red", priority: 1.5]
 			[/\.git[\/\\](.*[\/\\])?(HEAD|ORIG_HEAD|packed-refs|logs[\/\\](.+[\/\\])?[^\/\\]+)$/, "medium-red",
@@ -1501,6 +1711,7 @@ fileIcons:
 		icon: "delphi"
 		match: [
 			[".dfm", "medium-red"]
+			[".dof", "medium-blue", uses: "INI"]
 			[".dpr", "medium-orange"]
 		]
 
@@ -1517,6 +1728,12 @@ fileIcons:
 			[".dts", "medium-purple", scope: "dts", alias: "DeviceTree Source"]
 			[".dtsi", "medium-orange"]
 		]
+
+	Dhall:
+		icon: "dhall"
+		match: ".dhall"
+		colour: "dark-grey"
+		scope: ".dhall"
 
 	Dia:
 		icon: "dia"
@@ -1536,6 +1753,13 @@ fileIcons:
 		colour: "medium-orange"
 		uses: "YAML"
 
+	Ditroff:
+		icon: "binary"
+		match: /\.dit(roff)?$/i
+		colour: "dark-green"
+		scope: "source.ditroff"
+		signature: /^x\s*T\s+(dvi|html|lbp|lj4|ps|post|pdf|ascii|cp1047|latin1|utf8|X75|X75-12|X100|X100-12)(?=\s|$)/
+
 	"DNS Zone / CNAME":
 		icon: "earth"
 		match: [
@@ -1543,6 +1767,13 @@ fileIcons:
 			[".arpa", "medium-green"]
 			[/^CNAME$/, "dark-blue"]
 		]
+
+	DocBook:
+		icon: "docbook"
+		match: /\.(dbk|docbook)$/i
+		colour: "medium-cyan"
+		mime: "application/docbook+xml"
+		uses: "XML"
 
 	Docker:
 		icon: "docker"
@@ -1562,6 +1793,14 @@ fileIcons:
 		match: ".eco"
 		colour: "medium-maroon"
 		scope: "eco"
+
+	Docz:
+		icon: "docz"
+		priority: 2
+		match: [
+			[/(^|\.)docz(rc)?(\.config)?\.js$/i, "auto-yellow"]
+			[/(^|\.)docz(rc)?(\.config)?\.json$/i, "auto-orange"]
+		]
 
 	Dogescript:
 		icon: "doge"
@@ -1697,7 +1936,7 @@ fileIcons:
 		icon: "elixir"
 		match: [
 			[".ex", "dark-purple", "elixir"]
-			[/\.(exs|eex)$/i, "medium-purple"]
+			[/\.(exs|l?eex)$/i, "medium-purple"]
 			[/^mix\.(exs?|lock)$/i, "light-purple"]
 		]
 
@@ -1723,6 +1962,8 @@ fileIcons:
 		icon: "at"
 		match: /^(authors|(code)?owners)$/i
 		colour: "auto-red"
+		alias: /^(EML|mbox|e?-?mail)$/i
+		scope: /^text\.eml($|\.)/
 
 	Ember:
 		icon: "ember"
@@ -1834,10 +2075,29 @@ fileIcons:
 			[".sam", "dark-yellow"]
 		]
 
+	Faust:
+		icon: "faust"
+		match: ".dsp"
+		colour: "dark-orange"
+		scope: "faust"
+
 	FBX:
 		icon: "fbx"
 		match: ".fbx"
 		colour: "medium-maroon"
+
+	Fexl:
+		icon: "fexl"
+		match: ".fxl"
+		colour: "medium-cyan"
+		scope: /(^|\.)fe?xl(.|$)/i
+		interpreter: "fexl"
+
+	"Final Draft":
+		icon: "finaldraft"
+		match: ".fdx"
+		colour: "medium-green"
+		uses: "XML"
 
 	Finder:
 		icon: "finder"
@@ -1852,6 +2112,7 @@ fileIcons:
 		icon: "firebase"
 		match: [
 			[/^firebase\.json$/i, "medium-yellow", priority: 2]
+			[/^firestore\.indexes\.json$/i, "medium-yellow", priority: 2]
 			[/^firestore\.rules?$/i, "medium-orange",
 				alias: "firerules"
 				scope: /\bsource\.fire(store|rules)(?=\\.|$)/i,
@@ -2085,7 +2346,6 @@ fileIcons:
 			[/^Settings\.StyleCop$/, "medium-green"]
 			[".4th", "medium-blue"]
 			[/\.adm[lx]$/i, "dark-blue"]
-			[".abnf", "medium-green", "abnf"]
 			[".aepx", "medium-purple"]
 			[".agda", "dark-cyan"]
 			[".appxmanifest", "medium-orange"]
@@ -2095,7 +2355,6 @@ fileIcons:
 			[".bc", "dark-red", "baan"]
 			[".befunge", "medium-orange"]
 			[".bmx", "dark-blue"]
-			[".bnf", "medium-maroon", "bnf"]
 			[".brs", "dark-blue", "brightscript"]
 			[".capnp", "dark-red", scope: "capnp", alias: /^(Cap[^\w\s]?n\s*Proto|capnp)$/i]
 			[".ccxml", "dark-blue"]
@@ -2115,7 +2374,6 @@ fileIcons:
 			[".dtd", "medium-cyan", scope: "dtd", alias: /^(DTD|Document[\s_-]*Type[\s_-]*Definition)$/i]
 			[".dyl", "medium-blue"]
 			[".dylan", "medium-blue"]
-			[".ebnf", "medium-red", "ebnf"]
 			[".ecl", "medium-blue"]
 			[".eclxml", "dark-green"]
 			[".fcgi", "medium-blue"]
@@ -2135,11 +2393,12 @@ fileIcons:
 			[".intr", "dark-blue"]
 			[".ivy", "dark-green"]
 			[".jelly", "medium-yellow"]
-			[".jflex", "medium-red"]
+			[/\.jf?lex$/i, "medium-red", scope: /^source\.jf?lex$/i]
 			[".jsproj", "dark-yellow"]
+			[".jspx", "dark-purple"]
 			[".lagda", "medium-cyan"]
 			[".launch", "medium-blue"]
-			[".lex", "medium-cyan"]
+			[".lex", "medium-cyan", "lex"]
 			[".lid", "medium-purple"]
 			[".lp", "dark-purple"]
 			[".m4", "medium-red", "m4"]
@@ -2162,11 +2421,11 @@ fileIcons:
 			[".pig", "medium-pink"]
 			[".plist", "dark-cyan", scope: "plist"]
 			[".prg", "medium-red"]
-			[".prw", "dark-red"]
 			[".proj", "dark-green"]
 			[".props", "medium-cyan"]
 			[".psc1", "light-blue"]
 			[".pt", "medium-red"]
+			[".qhelp", "medium-purple", alias: "Semmle", uses: "XML"]
 			[".resx", "medium-cyan"]
 			[".rl", "medium-red"]
 			[".scxml", "light-cyan"]
@@ -2183,6 +2442,7 @@ fileIcons:
 			[".st", "medium-blue"]
 			[".stellaris", "medium-blue", "stellaris"]
 			[".storyboard", "medium-green"]
+			[".tagx", "medium-purple"]
 			[".targets", "medium-red"]
 			[".tera", "medium-red"]
 			[".tml", "dark-green"]
@@ -2219,6 +2479,13 @@ fileIcons:
 		alias: /^xml\+(genshi|kid)$/i
 		match: ".kid"
 		colour: "medium-red"
+
+	GenStat:
+		icon: "genstat"
+		match: [
+			[".gen", "medium-green"]
+			[".gpi", "medium-blue"]
+		]
 
 	Gentoo:
 		icon: "gentoo"
@@ -2307,7 +2574,7 @@ fileIcons:
 		]
 
 	Gnuplot:
-		icon: "graph"
+		icon: "gnuplot"
 		scope: "gnuplot"
 		interpreter: "gnuplot"
 		match: /\.(gp|plo?t|gnuplot)$/i
@@ -2377,7 +2644,7 @@ fileIcons:
 
 	Gridsome:
 		icon: "gridsome"
-		match: /\bgridsome\.config\.[jt]s$/i
+		match: /\bgridsome\.(config|client|server)\.[jt]s$/i
 		colour: "medium-cyan"
 		priority: 2
 
@@ -2442,6 +2709,8 @@ fileIcons:
 			[".hsc", "medium-blue", scope: "hsc2hs"]
 			[".c2hs", "dark-purple", scope: "c2hs", alias: /^C2hs(\s*Haskell)?$/i]
 			[".lhs", "dark-blue", scope: "latex.haskell", alias: /^(lhaskell|lhs|Literate\s*Haskell)$/i]
+			[".hs-boot", "medium-maroon"]
+			[".hsig", "medium-maroon"]
 		]
 
 	Haxe:
@@ -2459,6 +2728,13 @@ fileIcons:
 		icon: "helix"
 		match: /^\.p4ignore$/i
 		colour: "medium-blue"
+
+	Help:
+		icon: "question"
+		match: [
+			[".chm", "medium-blue", signature: /^ITSF/, mime: "application/vnd.ms-htmlhelp", uses: "Binary"]
+			[".hlp", "dark-blue", signature: /^\?_\x03\0/, mime: "application/winhlp", uses: "Binary"]
+		]
 
 	Heroku:
 		icon: "heroku"
@@ -2506,6 +2782,7 @@ fileIcons:
 			[".gohtml", "dark-blue", "gohtml"]
 			[".html.eex", "medium-purple"]
 			[".jsp", "medium-purple", scope: "jsp", alias: /^(jsp|Java\s*Server\s*Pages?)$/i]
+			[".jspf", "dark-purple"]
 			[".kit", "medium-green"]
 			[".isml", "medium-blue", "isml"]
 			[".latte", "medium-red", "latte"]
@@ -2536,6 +2813,12 @@ fileIcons:
 		interpreter: "hy"
 		match: ".hy"
 		colour: "dark-blue"
+
+	Hyper:
+		icon: "hyper"
+		match: /^\.hyper\.js$/i
+		colour: "dark-purple"
+		priority: 2
 
 	IDL:
 		icon: "idl"
@@ -2587,6 +2870,7 @@ fileIcons:
 			[/\.fits?$/i, "medium-cyan", signature: /^SIMPLE  =/]
 			[".flif", "dark-red", signature: /^FLIF/]
 			[".fts", "medium-cyan"]
+			[/\.(gsrc|gr(emli)?n)$/i, "medium-orange", signature: /^(sun)?gremlinfile/, alias: "Gremlin", scope: /^source\.gremlin$/, mime: "text/plain"]
 			[".hdp", "dark-red"]
 			[".hdr", "medium-blue", signature: /^#\?RADIANCE\n/]
 			[".heic", "dark-red"]
@@ -2595,11 +2879,12 @@ fileIcons:
 			[".iff", "dark-blue"]
 			[/\.(jp[f2xm]|j2c|mj2)$/i, "dark-green", signature: /^\0{3}\fjP {2}/]
 			[".jps", "dark-cyan"]
+			[".jng", "medium-cyan", mime: "image/x-jng", signature: /^\x8BJNG\r\n\x1A\n/]
 			[".jxr", "dark-red"]
 			[".lbm", "dark-blue"]
 			[".liff", "dark-blue"]
 			[".mpo", "medium-pink"]
-			[".mng", "medium-orange", signature: /^.MNG\r\n\x1A\n/]
+			[".mng", "medium-orange", mime: "video/x-mng", signature: /^.MNG\r\n\x1A\n/]
 			[".nrrd", "dark-blue"]
 			[".ora", "medium-yellow"]
 			[".pcx", "dark-blue"]
@@ -2613,6 +2898,7 @@ fileIcons:
 			[/\.tiff?$/i, "medium-red", signature: /^II\x2A\0|^MM\0\x2A/]
 			[/\.vsdx?$/i, "dark-blue"]
 			[".wbm", "dark-maroon"]
+			[".wbmp", "dark-grey", mime: "image/vnd.wap.wbmp"]
 			[/\.(wmf|emf|wmz|apm)$/i, "medium-red", signature: /^[\x01\x02]\0\t\0|^×ÍÆ\x9A/]
 			[".wdp", "dark-red"]
 			[".xwd", "dark-purple"]
@@ -2684,8 +2970,12 @@ fileIcons:
 
 	Istanbul:
 		icon: "istanbul"
-		match: /^\.nycrc(\.json)?$/i
-		colour: "medium-orange"
+		priority: 2
+		match: [
+			[/^\.nycrc(\.json)?$/i, "medium-orange", uses: "JSON"]
+			[/^\.nycrc\.ya?ml$/i, "medium-green", uses: "YAML"]
+			[/^nyc\.config\.js$/i, "auto-yellow", uses: "JavaScript"]
+		]
 
 	J:
 		icon: "j"
@@ -2715,14 +3005,15 @@ fileIcons:
 
 	Java:
 		icon: "java"
-		scope: "java"
-		match: ".java"
-		colour: "medium-purple"
+		match: [
+			[".java", "medium-purple", scope: "java"]
+			[".class", "medium-maroon"]
+		]
 
 	JavaScript:
 		icon: "js"
 		match: [
-			[".js", "auto-yellow", scope: "js", alias: /^(js|node)$/i, interpreter: /^(node|chakra|d8|iojs|js|rhino|v8(-shell)?)$/]
+			[".js", "auto-yellow", scope: "js", alias: /^(js|node)$/i, interpreter: /^(node|chakra|d8|iojs|g?js|qjs(c?|bnc?)?|mujs|rhino|v8(-shell)?)$/]
 			["._js", "auto-orange"]
 			[".jsb", "auto-maroon"]
 			[".jsm", "auto-blue"]
@@ -2745,6 +3036,7 @@ fileIcons:
 			[".pjs", "dark-purple"]
 			[".js.ecr", "medium-cyan", priority: 2]
 			[".js.erb", "medium-red", priority: 2]
+			[/([/\\])cartridge\1scripts(?:\1.+)?\1[^\\/]+\.ds$/i, "medium-blue", matchPath: true]
 		]
 
 	Jekyll:
@@ -2765,6 +3057,7 @@ fileIcons:
 		match: [
 			[/^jest(\.config)?\.js(on)?$/i, "medium-red"]
 			[/\.jsx?\.snap$/i, "auto-yellow"]
+			[/\.(mjs|tsx?)\.snap$/i, "medium-blue"]
 		]
 
 	Jinja:
@@ -2802,9 +3095,11 @@ fileIcons:
 
 	JSON:
 		icon: "json"
-		match: /\.(h|geo|topo)?json$/i
-		colour: "medium-cyan"
-		scope: "json"
+		match: [
+			[/\.(h|geo|topo)?json$/i, "medium-cyan", scope: "json"]
+			[".jsonc", "dark-blue", alias: "JSON with Comments", scope: "jsonc"]
+			[".rsj", "medium-blue"]
+		]
 
 	JSON5:
 		icon: "json5"
@@ -2822,6 +3117,13 @@ fileIcons:
 		scope: "jq"
 		match: ".jq"
 		colour: "medium-blue"
+
+	Jsonnet:
+		icon: "jsonnet"
+		match: [
+			[".jsonnet", "dark-blue", "jsonnet"]
+			[".libsonnet", "medium-blue"]
+		]
 
 	JSX:
 		icon: "jsx"
@@ -2929,6 +3231,7 @@ fileIcons:
 		icon: "kubernetes"
 		alias: "k8s"
 		match: [
+			[/^kubernetes.*\.ya?ml$/i, "medium-blue", priority: 2, uses: "YAML"]
 			[/(^|\.)kazelcfg\.json$/i, "medium-blue", interpreter: "kazel", priority: 2, uses: "JSON"]
 		]
 
@@ -2966,6 +3269,13 @@ fileIcons:
 			[".hlean", "dark-red"]
 		]
 
+	Ledger:
+		icon: "graph"
+		match: [
+			[".ledger", "medium-blue", "ledger"]
+			[".hledger", "medium-green"]
+		]
+
 	Lektor:
 		icon: "lektor"
 		match: [
@@ -2996,6 +3306,13 @@ fileIcons:
 			[".lws", "medium-blue"]
 		]
 
+	LilyPond:
+		icon: "lilypond"
+		match: [
+			[".ly", "medium-green", scope: /\.(At)?lilypond/i, alias: /^Lily\s*Pond$/i, mime: "text/x-lilypond"]
+			[".ily", "dark-green"]
+		]
+
 	Lime:
 		icon: "lime"
 		match: ".hxp"
@@ -3013,9 +3330,8 @@ fileIcons:
 	Lisp:
 		icon: "lisp"
 		match: [
-			[".lsp", "medium-red", "newlisp"]
 			[".lisp", "dark-red", "lisp"]
-			[".l", "medium-maroon", interpreter: /picolisp|pil/]
+			[".lsp", "medium-red", "newlisp"]
 			[".nl", "medium-maroon"]
 			[".ny", "medium-blue"]
 			[".podsl", "medium-purple"]
@@ -3155,7 +3471,7 @@ fileIcons:
 	Markdown:
 		icon: "markdown"
 		scope: /(^|\.)[gp]fm|md|markdown(\.|$)/i
-		match: /\.(md|mdown|markdown|mkd|mkdown|mdwn|mkdn|rmd|ron|pmd)$/i
+		match: /\.(md(te?xt)?|mdown|markdown|mkd|mkdown|mdwn|mkdn|rmd|ron|pmd)$/i
 		alias: /^(CommonMark|GFM|Pandoc)$|\bMarkdown\b/i
 		colour: "medium-blue"
 
@@ -3185,7 +3501,6 @@ fileIcons:
 		icon: "mathematica"
 		match: [
 			[".mathematica", "dark-red", scope: "mathematica", alias: "mma"]
-			[".cdf", "medium-red"]
 			[".ma", "medium-orange"]
 			[".mt", "medium-maroon"]
 			[".nb", "dark-orange"]
@@ -3202,9 +3517,17 @@ fileIcons:
 
 	MATLAB:
 		icon: "matlab"
-		scope: "matlab"
-		match: ".matlab"
-		colour: "medium-yellow"
+		match: [
+			[".matlab", "medium-yellow", "matlab"]
+			[".mlappinstall", "dark-maroon", uses: "ZIP"]
+			[".mlpkginstall", "medium-cyan", uses: "XML"]
+			[".mltbx", "dark-red"]
+			[".mdlp", "medium-red"]
+			[".mn", "dark-purple"]
+			[".sldd", "medium-maroon", alias: "Simulink Data Dictionary"]
+			[".slx", "medium-red"]
+			[".slxp", "dark-red"]
+		]
 
 	Max:
 		icon: "max"
@@ -3390,6 +3713,9 @@ fileIcons:
 		match: [
 			[/^mcmod\.info$/i, "dark-green", scope: "forge-config"]
 			[".mcfunction", "light-green"]
+			[".mclevel", "medium-green"]
+			[".mcpack", "dark-green"]
+			[".mcworld", "medium-blue"]
 			[/^pack\.mcmeta$/i, "dark-green"]
 			[/\.png\.mcmeta$/, "dark-green"]
 		]
@@ -3415,6 +3741,12 @@ fileIcons:
 		scope: "miranda"
 		colour: "medium-red"
 
+	mIRC:
+		icon: "mirc"
+		match: ".mrc"
+		colour: "medium-red"
+		scope: "mrc"
+
 	MJML:
 		icon: "mjml"
 		match: [
@@ -3432,7 +3764,7 @@ fileIcons:
 		icon: "mocha"
 		priority: 2
 		match: [
-			[/\.mocharc\.(json|js|ya?ml)$/i, "medium-maroon"]
+			[/\.mocharc\.(jsonc?|[cm]?js|ya?ml)$/i, "medium-maroon"]
 			[/^mocha(\.min)?\.([jt]sx?|es6?|coffee)$/i, "medium-maroon"]
 			[/^mocha(\.min)?\.(s?css|less|styl)$/i, "medium-red"]
 			["mocha.opts", "light-maroon", priority: 2]
@@ -3446,14 +3778,21 @@ fileIcons:
 			[".mtl", "dark-blue",  scope: "wavefront.mtl"]
 			[".shader", "medium-cyan", alias: "ShaderLab", scope: /\.(shader(code|lab)|cg)(?=\.|$)/i]
 			[/\.geo(m|metry)?$/i, "medium-red"]
+			[".c4d", "dark-blue"]
 			[".comp", "medium-purple"]
 			[".tesc", "medium-green"]
 			[".tese", "medium-green"]
 			[".cginc", "dark-cyan"]
+			[".dxf", "medium-orange"]
+			[".dwg", "dark-orange"]
+			[".jas", "medium-yellow"]
+			[".mdl", "medium-red"]
+			[".ply", "dark-red", mime: "text/plain", signature: /^ply|^EPLYBNDS/]
 			[".fnc", "dark-blue", alias: "QuickCAM 3D"]
 			[".stl", "dark-green"]
 			[".u3d", "medium-orange"]
 			[/\.(rviz|vcg)$/i, "dark-blue", "rviz"]
+			[".x", "medium-green", alias: "DirectX 3D File", scope: /(^|\.)direct-?x($|\.)/i, priority: 0.5, signature: /^xof 0303(?:txt|bin|tzip|bzip)\b/]
 		]
 
 	Modelica:
@@ -3465,8 +3804,13 @@ fileIcons:
 	Modernizr:
 		icon: "modernizr"
 		priority: 2
-		match: /^modernizr([-\.]custom|-\d\.\d+)(\.\d+)?\.js$/i
+		match: /^\.?modernizr(rc)?\.js$|^modernizr([-\.]custom|-\d\.\d+)(\.\d+)?\.js$/i
 		colour: "medium-red"
+
+	Modo:
+		icon: "modo"
+		match: ".lxo"
+		colour: "medium-cyan"
 
 	"Modula-2":
 		icon: "modula2"
@@ -3562,10 +3906,6 @@ fileIcons:
 			[".chord", "medium-orange"]
 			[/\.midi?$/i, "dark-blue", signature: /^MThd/]
 
-			# LilyPond
-			[".ly", "medium-green", scope: /\.(At)?lilypond/i, alias: /^Lily\s*Pond$/i]
-			[".ily", "dark-green"]
-
 			# Pure Data
 			[".pd", "dark-red"]
 		]
@@ -3574,7 +3914,7 @@ fileIcons:
 		icon: "mustache"
 		scope: /(^|\.)(mustache|handlebars)(\.|$)/i
 		alias: /^(hbs|htmlbars|handlebars)$/i
-		match: /\.(hbs|handlebars|(mu)?stache)$/i
+		match: /\.(hb[st]|handlebars|(mu)?stache)$/i
 		colour: "medium-orange"
 
 	Nano:
@@ -3739,6 +4079,7 @@ fileIcons:
 			[".node", "dark-green"]
 			[".node-version", "dark-green"]
 			[/^BUNDLED_NODE_VERSION$/, "dark-green"]
+			[".node_repl_history", "dark-green"]
 		]
 
 	Nodemon:
@@ -3752,6 +4093,13 @@ fileIcons:
 		match: ".nomad"
 		colour: "medium-green"
 
+	Noon:
+		icon: "noon"
+		match: ".noon"
+		colour: "dark-grey"
+		scope: "noon"
+		interpreter: "noon"
+
 	Normalize:
 		icon: "normalize"
 		priority: 2
@@ -3763,6 +4111,7 @@ fileIcons:
 		priority: 2
 		match: /^(package\.json|\.npmignore|\.?npmrc|npm-debug\.log|npm-shrinkwrap\.json|package-lock\.json)$/i
 		colour: "medium-red"
+		scope: /\.ini\.npmrc\b/
 
 	NSIS:
 		icon: "nsis"
@@ -3770,6 +4119,20 @@ fileIcons:
 			[".nsi", "medium-purple", "nsis"]
 			[".nsh", "dark-cyan"]
 		]
+
+	"NSRI Config":
+		icon: "nsri"
+		priority: 2
+		match: [
+			[/^\.nsrirc(\.(json|(config\.)?js|ya?ml))?$/i, "medium-green"]
+			[/^\.nsriignore(\.(json|(config\.)?js|ya?ml))?$/i, "dark-green"]
+		]
+
+	"NSRI Integrity":
+		icon: "nsri-alt"
+		match: ".integrity.json"
+		colour: "medium-green"
+		priority: 2
 
 	Nu:
 		icon: "recycle"
@@ -3810,6 +4173,13 @@ fileIcons:
 		scope: "nxc"
 		colour: "medium-orange"
 
+	Oberon:
+		icon: "oberon"
+		match: ".ob2"
+		colour: "medium-purple"
+		scope: "oberon"
+		uses: "Modula-2"
+
 	"Objective-C":
 		icon: "objc"
 		match: [
@@ -3844,6 +4214,13 @@ fileIcons:
 			[".octave_hist", "medium-orange"]
 			[".octaverc", "dark-orange"]
 		]
+
+	Odin:
+		icon: "odin"
+		match: ".odin"
+		colour: "medium-blue"
+		scope: "odin"
+		interpreter: "odin"
 
 	OOC:
 		icon: "ooc"
@@ -3902,6 +4279,12 @@ fileIcons:
 			[".odf", "medium-maroon"]
 			[".odb", "light-pink"]
 		]
+
+	"Open Policy Agent":
+		icon: "openpolicy"
+		match: ".rego"
+		colour: "medium-cyan"
+		scope: "rego"
 
 	OpenSCAD:
 		icon: "scad"
@@ -4000,12 +4383,26 @@ fileIcons:
 		match: [
 			[/\.pas(cal)?$/i, "medium-purple", scope: "pascal", interpreter: /pascal|instantfpc/]
 			[".lpr", "dark-purple"]
+			[".lfm", "medium-blue"]
+			[".lps", "medium-red"]
+			[".lpi", "dark-blue", uses: "XML"] # Lazarus Project Info
+			[".lpk", "dark-cyan", uses: "XML"] # Lazarus Package File
+			[".lrs", "medium-maroon"]
+			[".lrt", "dark-red"]
+			[".or", "medium-blue"]
+			[".ppu", "medium-cyan"]
 		]
 
 	Patch:
 		icon: "patch"
 		match: ".patch"
 		colour: "medium-green"
+
+	Patreon:
+		icon: "patreon"
+		match: /^PATR(ONS|EON)\.md$/
+		colour: "medium-orange"
+		priority: 2
 
 	PAWN:
 		icon: "pawn"
@@ -4043,19 +4440,6 @@ fileIcons:
 			[/\.(psgi|xs)$/i, "medium-red"]
 		]
 
-	Perl6:
-		icon: "perl6"
-		match: [
-			[".pl6", "medium-purple", scope: /(^|\.)perl6(fe)?(?=\.|$)/, alias: /^(pl6|Perl\s*6)$/i, interpreter: "perl6"]
-			[/\.[tp]6$|\.6pl$/i, "light-blue"]
-			[/\.(pm6|p6m)$/i, "dark-pink"]
-			[".6pm", "dark-cyan"]
-			[".nqp", "dark-purple"]
-			[".p6l", "medium-blue"]
-			[".pod6", "dark-green"]
-			[/^Rexfile$/, "medium-green"]
-		]
-
 	Phalcon:
 		icon: "phalcon"
 		scope: "volt"
@@ -4067,6 +4451,8 @@ fileIcons:
 		match: [
 			[/\.php([st\d]|_cs)?$/i, "dark-blue", interpreter: "php", scope: "php", signature: /^<\?php/]
 			[/^Phakefile/, "dark-green"]
+			[".engine", "medium-blue"]
+			[".phar", "medium-red", uses: "Binary"]
 		]
 
 	PHPUnit:
@@ -4091,7 +4477,7 @@ fileIcons:
 
 	Pickle:
 		icon: "pickle"
-		match: ".pkl"
+		match: /\.(pkl|pickle)$/i
 		colour: "dark-cyan"
 
 	"PICO-8":
@@ -4102,6 +4488,14 @@ fileIcons:
 		interpreter: "pico-8"
 		signature: /^pico-8 cartridge \/\/ http:\/\/www\.pico-8\.com$/
 		scope: "p8"
+
+	PicoLisp:
+		icon: "picolisp"
+		priority: 0.5
+		match: ".l"
+		colour: "medium-purple"
+		interpreter: /^(picolisp|pil)$/
+		uses: "Lisp"
 
 	Pipenv:
 		icon: "pipenv"
@@ -4114,6 +4508,12 @@ fileIcons:
 			[".pike", "dark-cyan", interpreter: "pike"]
 			[".pmod", "medium-blue"]
 		]
+
+	PineScript:
+		icon: "pinescript"
+		match: ".pine"
+		colour: "medium-green"
+		scope: "pine"
 
 	PlatformIO:
 		icon: "platformio"
@@ -4173,11 +4573,13 @@ fileIcons:
 
 	PostScript:
 		icon: "postscript"
+		mime: "application/postscript"
 		match: [
 			[".ps", "medium-red", scope: "postscript", alias: "postscr", signature: /^%!PS/]
 			[".eps", "medium-orange"]
 			[".pfa", "dark-blue"]
 			[/\.a[fm]m$/i, "medium-green", scope: "afm", signature: /^\s*Start(Comp|Master)?FontMetrics\s+(\d+\.\d+)/]
+			[/\.eps[fi]$/i, "dark-orange"]
 			[".gsf", "dark-orange"]
 		]
 
@@ -4331,6 +4733,7 @@ fileIcons:
 			[".py3", "dark-blue"]
 			[".pyi", "medium-blue"]
 			[".pyw", "medium-maroon"]
+			[".pyz", "dark-red", uses: "Binary"]
 			[".tac", "dark-pink"]
 			[".wsgi", "dark-red"]
 			[".xpy", "auto-yellow"]
@@ -4341,6 +4744,12 @@ fileIcons:
 			[/^(Snakefile|WATCHLISTS)$/, "medium-green"]
 			[/^wscript$/, "dark-maroon"]
 		]
+
+	PyUp:
+		icon: "pyup"
+		match: /^\.pyup(\.ya?ml)?$/i
+		colour: "dark-cyan"
+		priority: 2
 
 	"Q/Kdb+":
 		icon: "kx"
@@ -4388,6 +4797,22 @@ fileIcons:
 			[".scrbl", "dark-blue", "scribble"]
 		]
 
+	Raku:
+		icon: "perl6"
+		match: [
+			[".pl6", "medium-purple", scope: /(^|\.)perl6(fe)?(?=\.|$)/, alias: /^(pl6|Perl\s*6)$/i, interpreter: "perl6"]
+			[/\.[tp]6$|\.6pl$/i, "light-blue"]
+			[/\.(pm6|p6m)$/i, "dark-pink"]
+			[".6pm", "dark-cyan"]
+			[".nqp", "dark-purple"]
+			[".p6l", "medium-blue"]
+			[".pod6", "dark-green"]
+			[".raku", "medium-blue"]
+			[".rakumod", "dark-blue"]
+			[".rakutest", "dark-purple"]
+			[/^Rexfile$/, "medium-green"]
+		]
+
 	RAML:
 		icon: "raml"
 		scope: "raml"
@@ -4406,6 +4831,35 @@ fileIcons:
 		match: ".rsc"
 		colour: "medium-yellow"
 
+	Razzle:
+		icon: "razzle"
+		priority: 2
+		match: /^razzle\.config\./i
+		colour: "dark-blue"
+		uses: "JavaScript"
+
+	Remark:
+		icon: "remark"
+		priority: 2
+		match: [
+			[/^\.rehyperc(\.(js|json|ya?ml))?$/i, "medium-yellow"]
+			[/^\.remarkrc(\.(js|json|ya?ml))?$/i, "medium-red"]
+			[/^\.retextrc(\.(js|json|ya?ml))?$/i, "medium-green"]
+			[".rehypeignore", "dark-yellow"]
+			[".remarkignore", "dark-red"]
+			[".retextignore", "dark-green"]
+		]
+
+	RData:
+		icon: "rdata"
+		uses: "Binary"
+		match: [
+			[".Rdata", "medium-red"]
+			[".rdb", "medium-orange"]
+			[".rds", "medium-yellow"]
+			[".rdx", "medium-maroon"]
+		]
+
 	RDoc:
 		icon: "rdoc"
 		scope: "rdoc"
@@ -4423,13 +4877,14 @@ fileIcons:
 	Readme:
 		icon: "book"
 		match: [
-			[/^README(\b|_)|^(licen[sc]es?(\.mysql)?|(read|readme|click|delete|keep|test)\.me)$|\.(readme|1st|licen[sc]es?)$/i, "medium-blue", priority: 2]
-			[/^(notice|bugs|changes|change[-_]?log([-._]?\d+)?|contribute|contributing|contributors|copying(\.regex)?|faq|hacking|history|install|maintainers|manifest|more\.stuff|notes|problems|projects|revision|terms|thanks|warnings)(_\w+)?$/i, "dark-blue", priority: 2]
+			[/^README(\b|_)|^((un)?licen[sc]es?(\.mysql)?|(read|readme|click|delete|keep|test)\.me)(\.(md|txt))?$|\.(readme|1st|licen[sc]es?)$/i, "medium-blue", priority: 2]
+			[/^(notice|bugs|changes|change[-_]?log([-._]?\d+)?|contribute|contributing|contributors|copy(ing|right)(\.regex)?|faq|fixes|hacking|history|install|maintainers|manifest|more\.stuff|notes|problems|projects|revision|terms|thanks|warnings)(_\w+)?$/i, "dark-blue", priority: 2]
 			[/\b(changelog|copying(v?\d)?|install|read[-_]?me)\b|^licen[sc]es?[-._]/i, "medium-blue", priority: 0]
 			[/^news([-_.]?[-\d]+)?$/i, "dark-blue", priority: 0]
 			[/^zork\d\.(?!pre$|pur$)[a-z]+$/, "dark-blue", priority: 0]
 			[/^zork\d\.doc$/, "medium-blue", priority: 2]
 			[".changes", "medium-blue"]
+			[".journal", "medium-blue", uses: "Ledger"]
 			[".faq", "medium-blue"]
 		]
 
@@ -4449,6 +4904,16 @@ fileIcons:
 		match: [
 			[".re", "medium-red", "reason"]
 			[".rei", "medium-orange"]
+		]
+
+	"Reason Studios":
+		icon: "reasonstudios"
+		match: [
+			[".reason", "medium-orange"]
+			[".rns", "dark-orange", signature: /^Propellerheads Reason Song File/]
+			[".rsn", "medium-orange"]
+			[".rx2", "medium-red"]
+			[".sxt", "medium-yellow", mime: "audio/x-aiff", signature: /^FORM.{4}PTCH/]
 		]
 
 	Rebol:
@@ -4483,6 +4948,13 @@ fileIcons:
 		match: /\.regexp?$/i
 		colour: "medium-green"
 		scope: /(\.|^)regexp?(\.|$)/i
+
+	Renovate:
+		icon: "renovate"
+		match: /(?!^renovate$)(\.|^)renovate(rc)?(\.json)?$/i
+		colour: "medium-cyan"
+		priority: 2
+		uses: "JSON"
 
 	RequireJS:
 		icon: "requirejs"
@@ -4532,7 +5004,7 @@ fileIcons:
 	RobotFramework:
 		icon: "robot"
 		match: ".robot"
-		colour: "medium-purple"
+		colour: "medium-cyan"
 
 	Robots:
 		icon: "robots"
@@ -4669,6 +5141,14 @@ fileIcons:
 			[".tst", "dark-cyan"]
 		]
 
+	Scratch:
+		icon: "scratch"
+		uses: "ZIP"
+		match: [
+			[".sb2", "dark-orange"]
+			[".sb3", "medium-orange"]
+		]
+
 	Scrutinizer:
 		icon: "scrutinizer"
 		priority: 2
@@ -4720,8 +5200,9 @@ fileIcons:
 
 	Sequelize:
 		icon: "sequelize"
-		match: /\.sequelizerc$/i
+		match: /\.sequelizerc(\.js|\.json)?$/i
 		colour: "auto-blue"
+		priority: 2
 
 	"Silicon Graphics Image":
 		icon: "sgi"
@@ -4747,7 +5228,8 @@ fileIcons:
 			[/\.zsh(-theme|_history)?$|^\.?(antigen|zpreztorc|zlogin|zlogout|zprofile|zshenv|zshrc)$/i, "medium-blue"]
 			[/\.fish$|^\.fishrc$/i, "medium-green", "fish"]
 			[/^\.?(login|profile)$/, "medium-red"]
-			[".inputrc", "medium-red"]
+			[/^\.?_?dir_?colors$/i, "medium-green", "dircolors"]
+			[".inputrc", "medium-red", alias: "Readline Config", scope: "inputrc"]
 			[".tmux", "medium-blue"]
 			[/^(configure|config\.(guess|rpath|status|sub)|depcomp|libtool|compile)$/, "medium-red"]
 			[/^\/(private\/)?etc\/([^/]+\/)*(profile$|nanorc$|rc\.|csh\.)/i, "dark-purple", matchPath: true]
@@ -4755,11 +5237,6 @@ fileIcons:
 			[".profile", "dark-purple"]
 			[".tcsh", "medium-green"]
 			[".csh", "medium-yellow"]
-			[".awk", "medium-blue", "awk"]
-			[".gawk", "medium-red", "gawk"]
-			[".mawk", "medium-maroon", "mawk"]
-			[".nawk", "dark-green", "nawk"]
-			[".auk", "dark-cyan"]
 		]
 
 	Shen:
@@ -4868,6 +5345,12 @@ fileIcons:
 		match: /\.sol(idity)?$/i
 		scope: "solidity"
 		colour: "dark-cyan"
+
+	Sorbet:
+		icon: "sorbet"
+		match: ".rbi"
+		colour: "auto-purple"
+		uses: "Ruby"
 
 	SourcePawn:
 		icon: "clojure"
@@ -5020,6 +5503,12 @@ fileIcons:
 			[/\.stylelint(ignore|cache)$/i, "dark-blue"]
 		]
 
+	"Stylish Haskell":
+		icon: "stylishhaskell"
+		priority: 2
+		match: /^\.stylish-haskell\.ya?ml$/i
+		colour: "medium-purple"
+
 	Stylus:
 		icon: "stylus"
 		scope: "stylus"
@@ -5088,7 +5577,10 @@ fileIcons:
 			[/\.?c?tags$/i, "medium-blue"]
 			[/\.gemtags/i, "medium-red"]
 			[/\.hgtags$|^localtags$/i, "medium-cyan"]
+			[/^\.atom-socket-.+\.\d$/, "medium-green", priority: 2]
 			[".pid", "medium-orange"]
+			[".tld", "medium-maroon", uses: "XML"]
+			[/(\.|^)sha(256|sum)?$/i, "medium-green"]
 		]
 
 	Tailwind:
@@ -5149,6 +5641,12 @@ fileIcons:
 			[/\.tfstate(\.backup)?$/i, "medium-cyan"]
 		]
 
+	Terser:
+		icon: "terser"
+		match: /^\.(terser|uglify)rc(\.\w+)?$/i
+		colour: "medium-orange"
+		priority: 2
+
 	"Test, CoffeeScript":
 		icon: "test-coffee"
 		match: /[._-](spec|test)s?\.((lit)?coffee|iced|cjsx)$/i
@@ -5158,7 +5656,7 @@ fileIcons:
 	"Test, Generic":
 		icon: "test-generic"
 		match: [
-			[/([\\\x2F])t\1t\d+(?:(?!\1).)+\.sh$/i, "medium-green", matchPath: true, priority: 1.5]
+			[/([\\/])t\1t?\d+(?:(?!\1).)+\.sh$/i, "medium-green", matchPath: true, priority: 1.5]
 			[".test", "medium-green", priority: 0.25]
 			[".xspec", "dark-green"]
 		]
@@ -5177,9 +5675,11 @@ fileIcons:
 
 	"Test, JavaScript":
 		icon: "test-js"
-		match: /[._-](spec|test)s?\.([_ms]?js|js[bms]|es\d*)$/i
-		colour: "auto-yellow"
 		priority: 1.5
+		match: [
+			[/[._-](spec|test)s?\.([_cms]?js|js[bms]|es\d*)$/i, "auto-yellow"]
+			[/([\\\/])(?:(spec|test)s?|t)\1(?:\d+[-.])+(?!-)[^.\\\/]+\.[cm]?js$/i, "auto-yellow", matchPath: true]
+		]
 
 	"Test, Perl":
 		icon: "test-perl"
@@ -5199,8 +5699,10 @@ fileIcons:
 	"Test, React":
 		icon: "test-react"
 		priority: 1.5
-		match: /[._-](spec|test)s?\.(jsx|react\.js)$/
-		colour: "auto-blue"
+		match: [
+			[/[._-](spec|test)s?\.(jsx|react\.js)$/, "auto-blue"]
+			[/([\\\/])(spec|test)s?\1(?:\d+[-.])+(?!-)[^.\\\/]+\.(jsx|react\.js)$/i, "auto-blue", matchPath: true]
+		]
 
 	"Test, Ruby":
 		icon: "test-ruby"
@@ -5221,6 +5723,8 @@ fileIcons:
 		match: [
 			[/[._-](spec|test)s?\.ts$/i, "auto-blue"]
 			[/[._-](spec|test)s?\.tsx$/i, ["light-blue", "medium-blue"]]
+			[/([\\\/])(spec|test)s?\1(?:\d+[-.])+(?!-)[^.\\\/]+\.ts$/i, "auto-blue", matchPath: true]
+			[/([\\\/])(spec|test)s?\1(?:\d+[-.])+(?!-)[^.\\\/]+\.tsx$/i, ["light-blue", "medium-blue"], matchPath: true]
 		]
 
 	TeX:
@@ -5250,7 +5754,7 @@ fileIcons:
 			[/\.te?xt$/i, "medium-blue", signature: /^\xEF\xBB\xBF|^\xFF\xFE/]
 			[/\.log$|^Terminal[-_\s]Saved[-_\s]Output$/i, "medium-maroon"]
 			[/\.git[\/\\]description$/, "dark-red", matchPath: true]
-			[".err", "medium-red"]
+			[/\.err$|\.std(err|out)$/i, "medium-red"]
 			[".rtf", "dark-red"]
 			[/\.i?nfo$/i, "dark-blue"]
 			[".abt", "dark-purple"]
@@ -5258,13 +5762,12 @@ fileIcons:
 			[".brf", "medium-maroon"]
 			[".dri", "medium-blue"]
 			[".etx", "medium-yellow"]
-			[".gpi", "medium-red"]
 			[".irclog", "medium-blue"]
 			[".more", "medium-purple"]
 			[".msg", "medium-orange"]
 			[".no", "medium-red"]
 			[".rpt", "medium-maroon"]
-			[".srt", "medium-purple"]
+			[".srt", "medium-purple", scope: "srt", alias: /^Sub-?Rip([-\s]*(Text|Sub-?titles?)){0,2}$/i]
 			[".sub", "dark-purple"]
 			[/^(bug-report|fdl|for-release|tests)$/i, "medium-red"]
 			[/\.(utxt|utf8)$/i, "medium-cyan"]
@@ -5294,6 +5797,12 @@ fileIcons:
 			[".yaml-tmlanguage", "medium-orange"]
 			[".JSON-tmLanguage", "medium-purple"]
 		]
+
+	Theme:
+		icon: "icon-paintcan"
+		noSuffix: true
+		match: ".theme"
+		colour: "medium-purple"
 
 	Thor:
 		icon: "thor"
@@ -5343,6 +5852,12 @@ fileIcons:
 		priority: 2
 		match: /^\.travis/i
 		colour: "medium-red"
+
+	Truffle:
+		icon: "truffle"
+		priority: 2
+		match: /^\.?truffle\.js$/i
+		colour: "auto-maroon"
 
 	TSX: # React/Typescript
 		icon: "tsx"
@@ -5429,11 +5944,14 @@ fileIcons:
 		match: [
 			[".anim", "dark-blue", "shaderlab"]
 			[".asset", "dark-green"]
+			[".cubemap", "medium-cyan"]
 			[".mat", "medium-red"]
 			[".meta", "dark-red"]
+			[/\.physics?Material(2D)?$/i, "dark-cyan"]
 			[".prefab", "dark-cyan"]
 			[".unity", "medium-blue"]
 			[".unityproj", "medium-maroon"]
+			[".unitypackage", "dark-green"]
 		]
 
 	Uno:
@@ -5453,11 +5971,20 @@ fileIcons:
 			[".urs", "dark-blue"]
 		]
 
+	V:
+		icon: "v"
+		priority: 0.9 # HACK
+		match: [
+			[".v", "medium-blue", scope: "v", interpreter: /^v$/i]
+			[".vh", "dark-blue"]
+		]
+
 	V8:
 		icon: "v8"
 		match: [
 			[/^([dv]8|v8[-_.][^.]*|mksnapshot|mkpeephole)$/i, "medium-blue", priority: 0]
 			[/^\.v8flags\b/, "medium-blue"]
+			[/^\.c8rc(\.json)?$/i, "dark-blue", priority: 2, interpreter: "c8", uses: "JSON"]
 		]
 
 	Vagrant:
@@ -5501,9 +6028,10 @@ fileIcons:
 		match: [
 			[/\.3gpp?$/i, "medium-blue", signature: /^.{4}ftyp3g/]
 			[/\.(mp4|m4v|h264)$/i, "dark-blue", signature: /^.{4}ftyp/]
+			[".asx", "medium-maroon", signature: /^<ASX /i, uses: "Text"]
 			[".avi", "medium-blue", signature: /^MLVI/]
 			[".mov", "medium-cyan", signature: /^.{4}moov/]
-			[".mkv", "medium-purple", signature: /^\x1AEß£\x93B\x82\x88matroska/]
+			[/\.mk(v|s|3d)$/i, "medium-purple", mime: "video/x-matroska", signature: /^\x1AEß£\x93B\x82\x88matroska/]
 			[".flv", "medium-red", signature: /^FLV\x01/]
 			[".webm", "dark-blue", signature: /^\x1A\x45\xDF\xA3/]
 			[/\.mpe?g$/i, "medium-red", signature: /^\0{2}\x01[\xB3\xBA]/]
@@ -5544,9 +6072,16 @@ fileIcons:
 			[/\.vscodeignore(\.json)?$/i, "medium-blue", priority: 2]
 			[".vstemplate", "medium-purple"]
 			[".vsixmanifest", "dark-orange"]
+			[".code-workspace", "dark-blue", uses: "JSON"]
 			[".builds", "medium-maroon"]
+			[".dbproj", "dark-purple"]
+			[".lsproj", "light-cyan"]
+			[".modelproj", "dark-red"]
 			[".sln", "medium-orange"]
 			[".njsproj", "light-red"]
+			[".sqlproj", "medium-orange", uses: "XML"]
+			[".vcxitems", "auto-purple"]
+			[".wmaproj", "medium-maroon"]
 		]
 
 	VMware:
@@ -5576,6 +6111,13 @@ fileIcons:
 			[/^vue\.config\.js$/i, "light-green", priority: 2]
 		]
 
+	Vyper:
+		icon: "vyper"
+		match: ".vy"
+		colour: "medium-grey"
+		interpreter: "vyper"
+		scope: "vyper"
+
 	Wallaby:
 		icon: "wallaby"
 		priority: 2
@@ -5604,9 +6146,16 @@ fileIcons:
 	WebAssembly:
 		icon: "wasm"
 		match: [
-			[/\.was?t$/i, "medium-blue", scope: /(^|\.)(webassembly|was[mt])(\.|$)/i, alias: /^was[mt]$/i]
+			[/\.was?t$/i, "medium-blue", scope: /(^|\.)(webassembly|was[mt])(\.|$)/i, alias: /^was[mti]$/i, interpreter: "wasmtime"]
 			[".wasm", "medium-red"]
 		]
+
+	Webhint:
+		icon: "webhint"
+		match: /^\.hintrc$/i
+		colour: "dark-purple"
+		interpreter: "hint"
+		uses: "JSON"
 
 	WebGL:
 		icon: "webgl"
@@ -5623,6 +6172,20 @@ fileIcons:
 		priority: 2
 		match: /(^|\.)webpack(file)?(?=\.|$).*\.([jt]sx?|json)$/i
 		colour: "medium-blue"
+
+	WebVTT:
+		icon: "webvtt"
+		match: ".vtt"
+		colour: "dark-blue"
+		scope: /^source\.vtt$/
+		signature: /^WEBVTT(?=\s|$)/
+
+	Wget:
+		icon: "wget"
+		match: [
+			[/^wgetrc$|\.wgetrc$/i, "medium-purple", scope: "wgetrc", interpreter: "wget"]
+			[".wget-hsts", "medium-maroon"]
+		]
 
 	WeChat:
 		icon: "wechat"
@@ -5747,8 +6310,11 @@ fileIcons:
 
 	YAML:
 		icon: "yaml"
-		match: /\.ya?ml$/i
-		colour: "medium-red"
+		match: [
+			[/\.ya?ml$/i, "medium-red"]
+			[/\.ya?ml\.mysql$/i, "medium-orange", priority: 2]
+			[/\.ya?ml\.sed$/i, "dark-green", priority: 2]
+		]
 
 	Yandex:
 		icon: "yandex"
@@ -5782,6 +6348,13 @@ fileIcons:
 		match: ".yo-rc.json"
 		colour: "medium-cyan"
 
+	Yorick:
+		icon: "yorick"
+		match: ".yorick" # HACK: `.i` is the real extension, but it's already used by SWIG/assembly
+		colour: "medium-orange"
+		interpreter: "yorick"
+		scope: "yorick"
+
 	YUI:
 		icon: "yui"
 		priority: 2
@@ -5790,8 +6363,17 @@ fileIcons:
 
 	ZBrush:
 		icon: "zbrush"
-		match: ".zpr"
-		colour: "dark-purple"
+		match: [
+			[".zpr", "dark-purple"]
+			[".ztl", "auto-red", alias: "ZBrush tool"]
+		]
+
+	Zeit:
+		icon: "zeit"
+		match: [
+			[/^now\.json$/i, "auto-grey", priority: 2, uses: "JSON"]
+			[".nowignore", "auto-maroon", uses: "Ignore List"]
+		]
 
 	Zephir:
 		icon: "zephir"

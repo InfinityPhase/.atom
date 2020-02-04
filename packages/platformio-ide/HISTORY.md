@@ -1,5 +1,39 @@
 # Release Notes
 
+## 2.6.0 (2019-11-20)
+
+- Minimal requirements for PlatformIO Core is >=4.1.0
+- Added PIO Check project task
+- Automatically shutdown PIO Home server after 1-hour inactivity
+- Ignore PIO Home from Proxy using `NO_PROXY` environment variable
+- PlatformIO Core Installer:
+    * Updated default Python installer to 3.7.5
+    * Check Python's "urllib" SSL module
+    * Skip Python from msys, mingw, emacs installations
+
+## 2.5.0 (2019-10-31)
+
+* Handle "openTextDocument" in VSCode from upcoming PIO Home 3.0 and Project Inspect
+* Use single PIO Home Server instance per multiple windows/sessions
+* Fixed an issue with broken GCC Linter
+
+## 2.4.1 (2019-07-19)
+
+* Fixes typos in modal windows
+
+## 2.4.0 (2019-07-19)
+
+* Full support for [PlatformIO Core 4.0](https://community.platformio.org/t/platformio-core-4-0-is-finally-released/8587)
+* PlatformIO Core Installer:
+    - Added support for Python 3 and its "venv" module
+    - Added [PIO Remote](http://docs.platformio.org/en/latest/plus/pio-remote.html) project tasks
+    - Added "Fuses" related project tasks
+    - Added "Erase" project task for Espressif and Nordic dev/platforms
+    - Implemented ProjectConfig parser following PIO Core 4.0 specification
+    - Support custom port for PIO Home server
+    - Override default `~/.platformio/penv` folder with environment variable `PLATFORMIO_PENV_DIR`
+* Removed 'showPlatformIOFiles' configuration option, `.pio` folder will shown automatically in project tree
+
 ## 2.3.1 (2018-12-12)
 
 * Use stable PlatformIO Core by default

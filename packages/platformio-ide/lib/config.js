@@ -13,10 +13,8 @@ import path from 'path';
 export const IS_WINDOWS = process.platform.startsWith('win');
 export const PKG_BASE_DIR = path.resolve(path.dirname(__filename), '..');
 
-export const PIO_CORE_MIN_VERSION = '3.6.3';
+export const PIO_CORE_MIN_VERSION = '4.1.0';
 export const TERMINAL_REOPEN_DELAY = 1000; // ms, dalay before serial monitor restore
-
-export const PLATFORMIO_API_ENDPOINT = 'http://api.platformio.org';
 
 
 export const ATOM_CONFIG = {
@@ -61,14 +59,6 @@ export const ATOM_CONFIG = {
     title: 'Advanced',
     order: 50,
     properties: {
-      showPlatformIOFiles: {
-        title: 'Show PlatformIO service files',
-        description: 'Do not hide in `Tree View` PlatformIO service files and ' +
-          'directories (`.pioenvs`, `.piolibdeps`, other configuration files)',
-        type: 'boolean',
-        default: false,
-        order: 0
-      },
       useDevelopmentIDE: {
         title: 'Use development version of PlatformIO IDE',
         description: '[Git](https://git-scm.com/downloads) should be installed in a system.',
@@ -126,8 +116,8 @@ export const ATOM_DEPENDENCIES = {
     // forceVersion: '1.11.23',
     requirements: '>=1.11.3'
   },
-  'linter-gcc': {
-    requirements: '>=0.6.5'
+  'linter-gcc2': {
+    requirements: '>=0.8.7'
   },
   'language-ini': {
     requirements: '>=1.14.0'

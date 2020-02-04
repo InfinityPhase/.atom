@@ -1,3 +1,74 @@
+## 13.4.8
+
+-   Remove stray console.log
+
+## 13.4.7
+
+-   More autocompletion tweaks
+
+## 13.4.6
+
+-   Tweak autocompletion prefix heuristics
+
+## 13.4.5
+
+-   Fix #1530
+
+## 13.4.4
+
+-   Fix replacement prefix case bug
+
+## 13.4.2
+
+-   Add missing files
+
+    This fixes a packaging bug in 13.4.1
+
+## 13.4.1
+
+-   Rework replacement prefix heuristic in autocompletion
+
+    This hopefully fixes an array of relatively infrequent, but annoying
+    bugs when confirming an autocompletion suggestion would remove some part
+    of the preceding code. See [#1528](https://github.com/TypeStrong/atom-typescript/issues/1528) for an example.
+
+## 13.4.0
+
+### New features
+
+-   "Scrollable" builtin signature help
+
+    Now builtin signature help only displays one signature, and signatures
+    are "scrollable" using `typescript:typescript:signature-help-next` and `typescript:signature-help-prev` commands, bound to `Page Down` and `Page Up` by default.
+
+-   Tooltips now include JSDoc tag information (i.e. `@param`, `@return`, etc) (via Pull request #1523 from Jérémy Flusin)
+
+    Notice this changes some CSS used in tooltips. Builtin tooltips are particularly affected. If you're using custom CSS, we're sorry for the inconvenience.
+
+-   Add "<" as signature help trigger character
+
+    This brings signature help more in-line with how tsserver expects things to work. The visible result is that signature help is displayed for React components in JSX.
+
+-   Bundle TypeScript 3.7
+
+### Fixes
+
+-   Fix #1522 (subscription disposal race condition)
+-   Fix #1509 (catch errors from pixelPositionForBufferPosition calls to dying editor views)
+-   Fix #1503 (tree-sitter compatibility for "find references" views)
+-   Grammar and wording fixes in docs (Beth McIntosh)
+
+### Maintenance
+
+-   Use className in JSX instead of class
+-   Force LF newlines in generated files
+-   Bump dependencies
+
+## 13.3.0
+
+-   Bump atom-highlight version
+-   Rename File command
+
 ## 13.2.0
 
 -   Allow autocomplete in strings

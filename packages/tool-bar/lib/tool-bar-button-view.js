@@ -42,7 +42,11 @@ module.exports = class ToolBarButtonView {
     }
     if (options.icon) {
       if (options.iconset) {
-        classNames.push(options.iconset, `${options.iconset}-${options.icon}`);
+        if (options.iconset.startsWith('fa')) {
+          classNames.push(options.iconset, `fa-${options.icon}`);
+        } else {
+          classNames.push(options.iconset, `${options.iconset}-${options.icon}`);
+        }
       } else {
         classNames.push(`icon-${options.icon}`);
       }
@@ -126,14 +130,16 @@ module.exports = class ToolBarButtonView {
       ? document.activeElement
       : workspaceView;
 
-    if (typeof callback === 'string') {
-      atom.commands.dispatch(target, callback);
-    } else if (Array.isArray(callback)) {
-      for (let i = 0; i < callback.length; i++) {
+    if (!Array.isArray(callback)) {
+      callback = [callback];
+    }
+
+    for (let i = 0; i < callback.length; i++) {
+      if (typeof callback[i] === 'string') {
         atom.commands.dispatch(target, callback[i]);
+      } else if (typeof callback[i] === 'function') {
+        callback[i].call(this, data, target);
       }
-    } else if (typeof callback === 'function') {
-      callback.call(this, data, target);
     }
   }
 };

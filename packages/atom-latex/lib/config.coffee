@@ -26,7 +26,7 @@ module.exports =
                   and `%DOC` will be replaced by the main LaTeX file which \
                   is either automatically detected or manually set'
     type: 'string'
-    default: '%TEX %ARG %DOC && %BIB %DOC && %TEX %ARG %DOC && %TEX %ARG %DOC'
+    default: '%TEX %ARG %DOC.%EXT && %BIB %DOC && %TEX %ARG %DOC.%EXT && %TEX %ARG %DOC.%EXT'
   compiler:
     title: 'LaTeX compiler to use'
     order: 4
@@ -121,3 +121,11 @@ module.exports =
                   to take effect.'
     type: 'boolean'
     default: false
+  completion_suggestion_priority:
+    title: 'autocomplete-plus suggestion priority'
+    order: 16
+    description: 'Specify the sort order of autocompletion suggestions \
+                  provided by atom-latex.
+                  Note the default providers like snippets have priority of \ `1`. Reload Atom to take effect.'
+    type: 'integer'
+    default: 2

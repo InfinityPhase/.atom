@@ -97,6 +97,18 @@ with `typescript:restart-all-servers` command.
 If that doesn't help, resetting the editor using `Window: Reload` command
 should work.
 
+## Rename-refactor updates files in `node_modules`?!
+
+This by design, since TypeScript doesn't really assign any special meaning to `node_modules`. You can explicitly forbid this by excluding `node_modules` from the project, f.ex. by adding `node_modules` to `exclude` option in `tsconfig.json`:
+
+```json
+{
+  "exclude": [
+    "node_modules"
+  ]
+}
+```
+
 ## Failed to Update
 
 This can happen particularly on windows ([relevant
@@ -109,7 +121,7 @@ instances and run the following commands:
 
 ## Failed to install
 
-Follow the same steps as specified in failed to update.
+Follow the same steps as specified in [failed to update](#failed-to-update).
 
 ## How can I contribute
 

@@ -1,25 +1,25 @@
 {
-  "_from": "https://www.atom.io/api/packages/platformio-ide/versions/2.3.1/tarball",
-  "_id": "platformio-ide@2.3.1",
+  "_from": "https://www.atom.io/api/packages/platformio-ide/versions/2.6.0/tarball",
+  "_id": "platformio-ide@2.6.0",
   "_inBundle": false,
-  "_integrity": "sha512-lWllDRapFrXU4cJtwbsSI0xRmkeQbqE4mqTUeBl1OYewoSm6Ld19BYI4KVTH6nDTsM1P0swK2stcMkoloSQhqg==",
+  "_integrity": "sha512-rJyF2U+PZsrQ1Wuvpk0e86rBNdE4f3XGZOsqT6BRKyBBhgqG/qxO1+UFE5Oss8lnFcEGZvnZkIS7HA8A6IiKCA==",
   "_location": "/platformio-ide",
   "_phantomChildren": {},
   "_requested": {
     "type": "remote",
-    "raw": "https://www.atom.io/api/packages/platformio-ide/versions/2.3.1/tarball",
-    "rawSpec": "https://www.atom.io/api/packages/platformio-ide/versions/2.3.1/tarball",
-    "saveSpec": "https://www.atom.io/api/packages/platformio-ide/versions/2.3.1/tarball",
-    "fetchSpec": "https://www.atom.io/api/packages/platformio-ide/versions/2.3.1/tarball"
+    "raw": "https://www.atom.io/api/packages/platformio-ide/versions/2.6.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/platformio-ide/versions/2.6.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/platformio-ide/versions/2.6.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/platformio-ide/versions/2.6.0/tarball"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://www.atom.io/api/packages/platformio-ide/versions/2.3.1/tarball",
-  "_shasum": "e2bc456abb462544ec1a4435e6920d6137da58c2",
-  "_spec": "https://www.atom.io/api/packages/platformio-ide/versions/2.3.1/tarball",
-  "_where": "/tmp/apm-install-dir-11907-20271-e3j52s.e5xq7",
+  "_resolved": "https://www.atom.io/api/packages/platformio-ide/versions/2.6.0/tarball",
+  "_shasum": "547f71009032e3c1f4c5dc63c0df7b15ed5f5abe",
+  "_spec": "https://www.atom.io/api/packages/platformio-ide/versions/2.6.0/tarball",
+  "_where": "/tmp/apm-install-dir-202013-115083-48pntv.yk1eg",
   "activationHooks": [
     "core:loaded-shell-environment"
   ],
@@ -50,21 +50,21 @@
     }
   },
   "dependencies": {
-    "command-join": "^1.1.1",
+    "command-join": "^3.0.0",
     "etch": "^0.14.0",
     "fs-plus": "^3.0.1",
-    "platformio-node-helpers": "^4.0.0",
-    "semver": "^5.3.0"
+    "platformio-node-helpers": "^6.0.0",
+    "semver": "^6.2.0"
   },
   "deprecated": false,
   "description": "Official PlatformIO IDE for IoT, Arduino, ARM mbed, Espressif (ESP8266/ESP32), STM32, PIC32, nRF51/nRF52, FPGA, CMSIS, SPL, AVR, Samsung ARTIK, libOpenCM3",
   "devDependencies": {
-    "babel-eslint": "^8.1.2",
+    "babel-eslint": "^10.0.2",
     "esformatter": "^0.10.0",
     "esformatter-jsx": "^8.0.1",
-    "eslint": "^4.1.1",
+    "eslint": "^6.0.1",
     "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx": "0.0.2"
+    "eslint-plugin-jsx": "0.1.0"
   },
   "engines": {
     "atom": ">=1.13.0 <2.0.0"
@@ -108,19 +108,14 @@
   "scripts": {
     "lint": "eslint --ext js lib || exit 0"
   },
-  "version": "2.3.1",
+  "version": "2.6.0",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
       {
         "name": "ajv",
-        "version": "6.6.2",
+        "version": "6.11.0",
         "path": "node_modules/ajv/lib/ajv.js"
-      },
-      {
-        "name": "array-from",
-        "version": "2.1.1",
-        "path": "node_modules/array-from/index.js"
       },
       {
         "name": "asn1",
@@ -138,11 +133,6 @@
         "path": "node_modules/async/lib/async.js"
       },
       {
-        "name": "async-limiter",
-        "version": "1.0.0",
-        "path": "node_modules/async-limiter/index.js"
-      },
-      {
         "name": "asynckit",
         "version": "0.4.0",
         "path": "node_modules/asynckit/index.js"
@@ -154,7 +144,7 @@
       },
       {
         "name": "aws4",
-        "version": "1.8.0",
+        "version": "1.9.1",
         "path": "node_modules/aws4/aws4.js"
       },
       {
@@ -179,18 +169,18 @@
       },
       {
         "name": "chownr",
-        "version": "1.1.1",
+        "version": "1.1.3",
         "path": "node_modules/chownr/chownr.js"
       },
       {
         "name": "combined-stream",
-        "version": "1.0.7",
+        "version": "1.0.8",
         "path": "node_modules/combined-stream/lib/combined_stream.js"
       },
       {
         "name": "command-join",
-        "version": "1.1.1",
-        "path": "node_modules/command-join/dist/command-join.js"
+        "version": "3.0.0",
+        "path": "node_modules/command-join/command-join.js"
       },
       {
         "name": "concat-map",
@@ -204,7 +194,7 @@
       },
       {
         "name": "cross-spawn",
-        "version": "6.0.5",
+        "version": "7.0.1",
         "path": "node_modules/cross-spawn/index.js"
       },
       {
@@ -249,12 +239,12 @@
       },
       {
         "name": "fast-deep-equal",
-        "version": "2.0.1",
+        "version": "3.1.1",
         "path": "node_modules/fast-deep-equal/index.js"
       },
       {
         "name": "fast-json-stable-stringify",
-        "version": "2.0.0",
+        "version": "2.1.0",
         "path": "node_modules/fast-json-stable-stringify/index.js"
       },
       {
@@ -269,7 +259,7 @@
       },
       {
         "name": "fs-minipass",
-        "version": "1.2.5",
+        "version": "2.1.0",
         "path": "node_modules/fs-minipass/index.js"
       },
       {
@@ -289,7 +279,7 @@
       },
       {
         "name": "glob",
-        "version": "7.1.3",
+        "version": "7.1.6",
         "path": "node_modules/glob/glob.js"
       },
       {
@@ -314,13 +304,8 @@
       },
       {
         "name": "inherits",
-        "version": "2.0.3",
+        "version": "2.0.4",
         "path": "node_modules/inherits/inherits.js"
-      },
-      {
-        "name": "ini",
-        "version": "1.3.5",
-        "path": "node_modules/ini/ini.js"
       },
       {
         "name": "ip-regex",
@@ -374,7 +359,7 @@
       },
       {
         "name": "jsonrpc-lite",
-        "version": "1.3.1",
+        "version": "2.0.7",
         "path": "node_modules/jsonrpc-lite/jsonrpc.js"
       },
       {
@@ -384,12 +369,12 @@
       },
       {
         "name": "mime-db",
-        "version": "1.37.0",
+        "version": "1.43.0",
         "path": "node_modules/mime-db/index.js"
       },
       {
         "name": "mime-types",
-        "version": "2.1.21",
+        "version": "2.1.26",
         "path": "node_modules/mime-types/index.js"
       },
       {
@@ -404,12 +389,12 @@
       },
       {
         "name": "minipass",
-        "version": "2.3.5",
+        "version": "3.1.1",
         "path": "node_modules/minipass/index.js"
       },
       {
         "name": "minizlib",
-        "version": "1.2.1",
+        "version": "2.1.0",
         "path": "node_modules/minizlib/index.js"
       },
       {
@@ -419,13 +404,8 @@
       },
       {
         "name": "ms",
-        "version": "2.1.1",
+        "version": "2.1.2",
         "path": "node_modules/ms/index.js"
-      },
-      {
-        "name": "nice-try",
-        "version": "1.0.5",
-        "path": "node_modules/nice-try/src/index.js"
       },
       {
         "name": "oauth-sign",
@@ -438,18 +418,13 @@
         "path": "node_modules/once/once.js"
       },
       {
-        "name": "os-tmpdir",
-        "version": "1.0.2",
-        "path": "node_modules/os-tmpdir/index.js"
-      },
-      {
         "name": "path-is-absolute",
         "version": "1.0.1",
         "path": "node_modules/path-is-absolute/index.js"
       },
       {
         "name": "path-key",
-        "version": "2.0.1",
+        "version": "3.1.1",
         "path": "node_modules/path-key/index.js"
       },
       {
@@ -459,12 +434,12 @@
       },
       {
         "name": "platformio-node-helpers",
-        "version": "4.0.0",
+        "version": "6.0.0",
         "path": "node_modules/platformio-node-helpers/dist/index.js"
       },
       {
         "name": "psl",
-        "version": "1.1.31",
+        "version": "1.7.0",
         "path": "node_modules/psl/index.js"
       },
       {
@@ -479,13 +454,8 @@
       },
       {
         "name": "querystringify",
-        "version": "2.1.0",
+        "version": "2.1.1",
         "path": "node_modules/querystringify/index.js"
-      },
-      {
-        "name": "repeat-string",
-        "version": "1.6.1",
-        "path": "node_modules/repeat-string/index.js"
       },
       {
         "name": "request",
@@ -494,12 +464,12 @@
       },
       {
         "name": "rimraf",
-        "version": "2.6.3",
+        "version": "2.7.1",
         "path": "node_modules/rimraf/rimraf.js"
       },
       {
         "name": "safe-buffer",
-        "version": "5.1.2",
+        "version": "5.2.0",
         "path": "node_modules/safe-buffer/index.js"
       },
       {
@@ -509,27 +479,27 @@
       },
       {
         "name": "semver",
-        "version": "5.6.0",
+        "version": "6.3.0",
         "path": "node_modules/semver/semver.js"
       },
       {
         "name": "shebang-command",
-        "version": "1.2.0",
+        "version": "2.0.0",
         "path": "node_modules/shebang-command/index.js"
       },
       {
         "name": "shebang-regex",
-        "version": "1.0.0",
+        "version": "3.0.0",
         "path": "node_modules/shebang-regex/index.js"
       },
       {
         "name": "sshpk",
-        "version": "1.16.0",
+        "version": "1.16.1",
         "path": "node_modules/sshpk/lib/index.js"
       },
       {
         "name": "tar",
-        "version": "4.4.8",
+        "version": "5.0.5",
         "path": "node_modules/tar/index.js"
       },
       {
@@ -539,7 +509,7 @@
       },
       {
         "name": "tmp",
-        "version": "0.0.33",
+        "version": "0.1.0",
         "path": "node_modules/tmp/lib/tmp.js"
       },
       {
@@ -564,12 +534,12 @@
       },
       {
         "name": "underscore",
-        "version": "1.8.3",
+        "version": "1.9.2",
         "path": "node_modules/underscore/underscore.js"
       },
       {
         "name": "underscore-plus",
-        "version": "1.6.8",
+        "version": "1.7.0",
         "path": "node_modules/underscore-plus/lib/underscore-plus.js"
       },
       {
@@ -579,7 +549,7 @@
       },
       {
         "name": "uuid",
-        "version": "3.3.2",
+        "version": "3.4.0",
         "path": "node_modules/uuid/index.js"
       },
       {
@@ -589,7 +559,7 @@
       },
       {
         "name": "which",
-        "version": "1.3.1",
+        "version": "2.0.2",
         "path": "node_modules/which/which.js"
       },
       {
@@ -599,12 +569,12 @@
       },
       {
         "name": "ws",
-        "version": "6.1.2",
+        "version": "7.2.1",
         "path": "node_modules/ws/index.js"
       },
       {
         "name": "yallist",
-        "version": "3.0.3",
+        "version": "4.0.0",
         "path": "node_modules/yallist/yallist.js"
       }
     ],
@@ -633,6 +603,14 @@
         "lib/services/toolbar.js",
         "lib/utils.js",
         "lib/view.js",
+        "node_modules/@improved/node/assert.js",
+        "node_modules/@improved/node/crypto.js",
+        "node_modules/@improved/node/fs.js",
+        "node_modules/@improved/node/path-posix.js",
+        "node_modules/@improved/node/path-win32.js",
+        "node_modules/@improved/node/process.js",
+        "node_modules/@improved/node/punycode-ucs2.js",
+        "node_modules/@improved/node/stream.js",
         "node_modules/ajv/.tonic_example.js",
         "node_modules/ajv/dist/ajv.bundle.js",
         "node_modules/ajv/dist/ajv.min.js",
@@ -649,6 +627,7 @@
         "node_modules/ajv/lib/compile/ucs2length.js",
         "node_modules/ajv/lib/compile/util.js",
         "node_modules/ajv/lib/data.js",
+        "node_modules/ajv/lib/definition_schema.js",
         "node_modules/ajv/lib/dotjs/_limit.js",
         "node_modules/ajv/lib/dotjs/_limitItems.js",
         "node_modules/ajv/lib/dotjs/_limitLength.js",
@@ -678,9 +657,6 @@
         "node_modules/ajv/lib/keyword.js",
         "node_modules/ajv/scripts/bundle.js",
         "node_modules/ajv/scripts/compile-dots.js",
-        "node_modules/array-from/index.js",
-        "node_modules/array-from/polyfill.js",
-        "node_modules/array-from/test.js",
         "node_modules/asn1/lib/ber/errors.js",
         "node_modules/asn1/lib/ber/index.js",
         "node_modules/asn1/lib/ber/reader.js",
@@ -691,9 +667,6 @@
         "node_modules/async/dist/async.js",
         "node_modules/async/dist/async.min.js",
         "node_modules/async/lib/async.js",
-        "node_modules/async-limiter/coverage/lcov-report/prettify.js",
-        "node_modules/async-limiter/coverage/lcov-report/sorter.js",
-        "node_modules/async-limiter/index.js",
         "node_modules/asynckit/bench.js",
         "node_modules/asynckit/index.js",
         "node_modules/asynckit/lib/abort.js",
@@ -721,8 +694,7 @@
         "node_modules/caseless/test.js",
         "node_modules/chownr/chownr.js",
         "node_modules/combined-stream/lib/combined_stream.js",
-        "node_modules/combined-stream/lib/defer.js",
-        "node_modules/command-join/dist/command-join.js",
+        "node_modules/command-join/command-join.js",
         "node_modules/concat-map/example/map.js",
         "node_modules/concat-map/index.js",
         "node_modules/core-util-is/lib/util.js",
@@ -771,7 +743,10 @@
         "node_modules/etch/lib/update-ref.js",
         "node_modules/extend/index.js",
         "node_modules/extsprintf/lib/extsprintf.js",
+        "node_modules/fast-deep-equal/es6/index.js",
+        "node_modules/fast-deep-equal/es6/react.js",
         "node_modules/fast-deep-equal/index.js",
+        "node_modules/fast-deep-equal/react.js",
         "node_modules/fast-json-stable-stringify/benchmark/index.js",
         "node_modules/fast-json-stable-stringify/example/key_cmp.js",
         "node_modules/fast-json-stable-stringify/example/nested.js",
@@ -802,7 +777,6 @@
         "node_modules/inflight/inflight.js",
         "node_modules/inherits/inherits.js",
         "node_modules/inherits/inherits_browser.js",
-        "node_modules/ini/ini.js",
         "node_modules/ip-regex/index.js",
         "node_modules/is-typedarray/index.js",
         "node_modules/is-typedarray/test.js",
@@ -834,20 +808,15 @@
         "node_modules/mkdirp/examples/pow.js",
         "node_modules/mkdirp/index.js",
         "node_modules/ms/index.js",
-        "node_modules/nice-try/src/index.js",
         "node_modules/oauth-sign/index.js",
         "node_modules/once/once.js",
-        "node_modules/os-tmpdir/index.js",
         "node_modules/path-is-absolute/index.js",
         "node_modules/path-key/index.js",
         "node_modules/performance-now/lib/performance-now.js",
-        "node_modules/platformio-node-helpers/.eslintrc.js",
         "node_modules/platformio-node-helpers/dist/index.js",
-        "node_modules/platformio-node-helpers/webpack.config.js",
         "node_modules/psl/dist/psl.js",
         "node_modules/psl/dist/psl.min.js",
         "node_modules/psl/index.js",
-        "node_modules/psl/karma.conf.js",
         "node_modules/punycode/punycode.es6.js",
         "node_modules/punycode/punycode.js",
         "node_modules/qs/dist/qs.js",
@@ -857,7 +826,6 @@
         "node_modules/qs/lib/stringify.js",
         "node_modules/qs/lib/utils.js",
         "node_modules/querystringify/index.js",
-        "node_modules/repeat-string/index.js",
         "node_modules/request/index.js",
         "node_modules/request/lib/auth.js",
         "node_modules/request/lib/cookies.js",
@@ -877,6 +845,7 @@
         "node_modules/safer-buffer/dangerous.js",
         "node_modules/safer-buffer/safer.js",
         "node_modules/safer-buffer/tests.js",
+        "node_modules/semver/bin/semver.js",
         "node_modules/semver/semver.js",
         "node_modules/shebang-command/index.js",
         "node_modules/shebang-regex/index.js",
@@ -906,9 +875,9 @@
         "node_modules/sshpk/lib/ssh-buffer.js",
         "node_modules/sshpk/lib/utils.js",
         "node_modules/tar/index.js",
-        "node_modules/tar/lib/buffer.js",
         "node_modules/tar/lib/create.js",
         "node_modules/tar/lib/extract.js",
+        "node_modules/tar/lib/get-write-flag.js",
         "node_modules/tar/lib/header.js",
         "node_modules/tar/lib/high-level-opt.js",
         "node_modules/tar/lib/large-numbers.js",
@@ -917,6 +886,7 @@
         "node_modules/tar/lib/mode-fix.js",
         "node_modules/tar/lib/pack.js",
         "node_modules/tar/lib/parse.js",
+        "node_modules/tar/lib/path-reservations.js",
         "node_modules/tar/lib/pax.js",
         "node_modules/tar/lib/read-entry.js",
         "node_modules/tar/lib/replace.js",
@@ -979,9 +949,11 @@
         "node_modules/ws/lib/constants.js",
         "node_modules/ws/lib/event-target.js",
         "node_modules/ws/lib/extension.js",
+        "node_modules/ws/lib/limiter.js",
         "node_modules/ws/lib/permessage-deflate.js",
         "node_modules/ws/lib/receiver.js",
         "node_modules/ws/lib/sender.js",
+        "node_modules/ws/lib/stream.js",
         "node_modules/ws/lib/validation.js",
         "node_modules/ws/lib/websocket-server.js",
         "node_modules/ws/lib/websocket.js",
@@ -989,17 +961,16 @@
         "node_modules/yallist/yallist.js"
       ],
       ".json": [
+        "node_modules/@improved/node/package.json",
         "node_modules/ajv/lib/refs/data.json",
         "node_modules/ajv/lib/refs/json-schema-draft-04.json",
         "node_modules/ajv/lib/refs/json-schema-draft-06.json",
         "node_modules/ajv/lib/refs/json-schema-draft-07.json",
+        "node_modules/ajv/lib/refs/json-schema-secure.json",
         "node_modules/ajv/package.json",
-        "node_modules/array-from/package.json",
         "node_modules/asn1/package.json",
         "node_modules/assert-plus/package.json",
         "node_modules/async/package.json",
-        "node_modules/async-limiter/coverage/coverage.json",
-        "node_modules/async-limiter/package.json",
         "node_modules/asynckit/package.json",
         "node_modules/aws-sign2/package.json",
         "node_modules/aws4/package.json",
@@ -1056,7 +1027,6 @@
         "node_modules/http-signature/package.json",
         "node_modules/inflight/package.json",
         "node_modules/inherits/package.json",
-        "node_modules/ini/package.json",
         "node_modules/ip-regex/package.json",
         "node_modules/is-typedarray/package.json",
         "node_modules/is-url/package.json",
@@ -1078,21 +1048,17 @@
         "node_modules/minizlib/package.json",
         "node_modules/mkdirp/package.json",
         "node_modules/ms/package.json",
-        "node_modules/nice-try/package.json",
         "node_modules/oauth-sign/package.json",
         "node_modules/once/package.json",
-        "node_modules/os-tmpdir/package.json",
         "node_modules/path-is-absolute/package.json",
         "node_modules/path-key/package.json",
         "node_modules/performance-now/package.json",
-        "node_modules/platformio-node-helpers/.vscode/tasks.json",
         "node_modules/platformio-node-helpers/package.json",
         "node_modules/psl/data/rules.json",
         "node_modules/psl/package.json",
         "node_modules/punycode/package.json",
         "node_modules/qs/package.json",
         "node_modules/querystringify/package.json",
-        "node_modules/repeat-string/package.json",
         "node_modules/request/package.json",
         "node_modules/rimraf/package.json",
         "node_modules/safe-buffer/package.json",
@@ -1113,7 +1079,6 @@
         "node_modules/uri-js/bower.json",
         "node_modules/uri-js/package.json",
         "node_modules/uri-js/tsconfig.json",
-        "node_modules/uuid/.eslintrc.json",
         "node_modules/uuid/package.json",
         "node_modules/verror/package.json",
         "node_modules/which/package.json",
@@ -1139,11 +1104,11 @@
           "spec"
         ],
         "dependencies": {
-          "command-join": "^1.1.1",
+          "command-join": "^3.0.0",
           "etch": "^0.14.0",
           "fs-plus": "^3.0.1",
-          "platformio-node-helpers": "^4.0.0",
-          "semver": "^5.3.0"
+          "platformio-node-helpers": "^6.0.0",
+          "semver": "^6.2.0"
         }
       },
       {
@@ -1157,7 +1122,7 @@
           "node_modules/ajv/scripts"
         ],
         "dependencies": {
-          "fast-deep-equal": "^2.0.1",
+          "fast-deep-equal": "^3.1.1",
           "fast-json-stable-stringify": "^2.0.0",
           "json-schema-traverse": "^0.4.1",
           "uri-js": "^4.2.2"
@@ -1201,12 +1166,10 @@
       },
       {
         "paths": [
-          "node_modules/command-join/dist",
           "node_modules/command-join"
         ],
         "dependencies": {
-          "array-from": "^2.1.1",
-          "repeat-string": "^1.5.4"
+          "@improved/node": "^1.0.0"
         }
       },
       {
@@ -1216,11 +1179,9 @@
           "node_modules/cross-spawn/lib/util"
         ],
         "dependencies": {
-          "nice-try": "^1.0.4",
-          "path-key": "^2.0.1",
-          "semver": "^5.5.0",
-          "shebang-command": "^1.2.0",
-          "which": "^1.2.9"
+          "path-key": "^3.1.0",
+          "shebang-command": "^2.0.0",
+          "which": "^2.0.1"
         }
       },
       {
@@ -1268,7 +1229,7 @@
           "node_modules/fs-minipass"
         ],
         "dependencies": {
-          "minipass": "^2.2.1"
+          "minipass": "^3.0.0"
         }
       },
       {
@@ -1362,7 +1323,7 @@
           "node_modules/mime-types"
         ],
         "dependencies": {
-          "mime-db": "~1.37.0"
+          "mime-db": "1.43.0"
         }
       },
       {
@@ -1378,8 +1339,7 @@
           "node_modules/minipass"
         ],
         "dependencies": {
-          "safe-buffer": "^5.1.2",
-          "yallist": "^3.0.0"
+          "yallist": "^4.0.0"
         }
       },
       {
@@ -1387,7 +1347,8 @@
           "node_modules/minizlib"
         ],
         "dependencies": {
-          "minipass": "^2.2.1"
+          "minipass": "^3.0.0",
+          "yallist": "^4.0.0"
         }
       },
       {
@@ -1411,22 +1372,21 @@
       },
       {
         "paths": [
-          "node_modules/platformio-node-helpers",
-          "node_modules/platformio-node-helpers/.vscode",
-          "node_modules/platformio-node-helpers/dist"
+          "node_modules/platformio-node-helpers/dist",
+          "node_modules/platformio-node-helpers"
         ],
         "dependencies": {
-          "cross-spawn": "^6.0.5",
-          "fs-plus": "^3.0.2",
-          "ini": "^1.3.5",
-          "jsonrpc-lite": "^1.0.0",
+          "cross-spawn": "~7.0.1",
+          "fs-plus": "~3.1.1",
+          "glob": "~7.1.6",
+          "jsonrpc-lite": "~2.0.7",
           "querystringify": "*",
-          "request": "^2.88.0",
-          "semver": "^5.6.0",
-          "tar": "^4.4.8",
-          "tcp-port-used": "^1.0.1",
-          "tmp": "^0.0.33",
-          "ws": "^6.1.2"
+          "request": "~2.88.0",
+          "semver": "~6.3.0",
+          "tar": "~5.0.5",
+          "tcp-port-used": "~1.0.1",
+          "tmp": "~0.1.0",
+          "ws": "~7.2.0"
         }
       },
       {
@@ -1470,7 +1430,7 @@
           "node_modules/shebang-command"
         ],
         "dependencies": {
-          "shebang-regex": "^1.0.0"
+          "shebang-regex": "^3.0.0"
         }
       },
       {
@@ -1497,13 +1457,12 @@
           "node_modules/tar/lib"
         ],
         "dependencies": {
-          "chownr": "^1.1.1",
-          "fs-minipass": "^1.2.5",
-          "minipass": "^2.3.4",
-          "minizlib": "^1.1.1",
+          "chownr": "^1.1.3",
+          "fs-minipass": "^2.0.0",
+          "minipass": "^3.0.0",
+          "minizlib": "^2.1.0",
           "mkdirp": "^0.5.0",
-          "safe-buffer": "^5.1.2",
-          "yallist": "^3.0.2"
+          "yallist": "^4.0.0"
         }
       },
       {
@@ -1521,7 +1480,7 @@
           "node_modules/tmp"
         ],
         "dependencies": {
-          "os-tmpdir": "~1.0.2"
+          "rimraf": "^2.6.3"
         }
       },
       {
@@ -1548,7 +1507,7 @@
           "node_modules/underscore-plus"
         ],
         "dependencies": {
-          "underscore": "~1.8.3"
+          "underscore": "^1.9.1"
         }
       },
       {
@@ -1580,15 +1539,6 @@
         ],
         "dependencies": {
           "isexe": "^2.0.0"
-        }
-      },
-      {
-        "paths": [
-          "node_modules/ws",
-          "node_modules/ws/lib"
-        ],
-        "dependencies": {
-          "async-limiter": "~1.0.0"
         }
       }
     ]

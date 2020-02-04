@@ -40,6 +40,7 @@ const commandWithResponseMap: {readonly [K in CommandsWithResponse]: true} = {
   getEditsForRefactor: true,
   organizeImports: true,
   signatureHelp: true,
+  getEditsForFileRename: true,
 }
 
 const commandWithResponse = new Set(Object.keys(commandWithResponseMap))
@@ -149,7 +150,7 @@ export class TypescriptServiceClient {
 
     // Pipe both stdout and stderr appropriately
     messageStream(cp.stdout).on("data", this.onMessage)
-    cp.stderr.on("data", data => {
+    cp.stderr.on("data", (data: Buffer) => {
       console.warn("tsserver stderr:", (this.lastStderrOutput = data.toString()))
     })
     return cp
@@ -219,7 +220,7 @@ class MessageStream extends Transform {
     super({objectMode: true})
   }
 
-  public _transform(buf: Buffer, _encoding: string, callback: (n: null) => void) {
+  public _transform(buf: Buffer, _encoding: string, callback: (n: Error | undefined) => void) {
     const line = buf.toString()
 
     try {
@@ -231,7 +232,7 @@ class MessageStream extends Transform {
     } catch (error) {
       console.error("client: failed to parse: ", line)
     } finally {
-      callback(null)
+      callback(undefined)
     }
   }
 }

@@ -1,3 +1,6 @@
+var compile_commands_last_modified = 0;
+var compile_commands = {};
+
 module.exports = {
   flattenHash: function(obj){
     var array = [];
@@ -41,16 +44,17 @@ module.exports = {
     return editor;
   },
   getCwd: function() {
-    var cwd = atom.project.getPaths()[0]
-    if (!cwd) {
-      editor = atom.workspace.getActivePaneItem();
-      if (editor) {
-        temp_file = editor.buffer.file;
-        if (temp_file) {
-          cwd = temp_file.getParent().getPath();
-        }
+    var cwd;
+    editor = atom.workspace.getActiveTextEditor();
+    if (editor) {
+      temp_file_path = editor.getPath();
+      if (temp_file_path) {
+        cwd = atom.project.relativizePath(temp_file_path)[0]
       }
+    } else {
+      cwd = atom.project.getPaths()[0]
     }
+
     if (cwd) {
       return cwd
     } else {
@@ -59,11 +63,13 @@ module.exports = {
   },
   getFileDir: function() {
     var filedir;
-    editor = atom.workspace.getActivePaneItem();
+    editor = atom.workspace.getActiveTextEditor();
     if (editor) {
-      temp_file = editor.buffer.file;
-      if (temp_file) {
-        filedir = temp_file.getParent().getPath();
+      buffer = editor.buffer;
+      if (buffer) {
+        temp_path = buffer.file;
+        if (temp_path)
+          filedir = temp_path.getParent().getPath();
       }
     }
     return filedir;
@@ -120,7 +126,7 @@ module.exports = {
     });
     return output;
   },
-  buildCommand: function(activeEditor, file) {
+  buildCommand: function(activeEditor, file, real_file) {
     config = require("./config");
     var path = require('path');
     var fs = require('fs')
@@ -139,26 +145,47 @@ module.exports = {
       if (commands_file.substring(0, 1) == ".") {
         commands_file = path.join(cwd, commands_file);
       }
-      console.log(commands_file)
+      if (atom.config.get("linter-gcc.gccDebug")){
+        console.log(commands_file)
+      }
       if (fs.existsSync(commands_file)) {
+        commands_file_stats = fs.statSync(commands_file);
+        if (commands_file_stats.mtime.getTime() > compile_commands_last_modified)
+        {
+          compile_commands_last_modified = commands_file_stats.mtime.getTime()
+          try {
+            compile_commands = JSON.parse(fs.readFileSync(commands_file));
+          } catch (e) {
+            console.log(e)
+          }
+        }
 
-        delete require.cache[commands_file]
         try {
-          compile_commands = require(commands_file)
           compile_commands.forEach(function(item) {
-            if (item.file == file) {
+            if (item.file == real_file) {
               command_array = module.exports.splitStringTrim(item.command, " ", false, "")
               command = command_array[0]
               command_array.shift()
               command_array = module.exports.removeOutputArgument(command_array)
               args = args.concat(command_array)
+              if (atom.config.get("linter-gcc.gccLintOnTheFly") == true) {
+                args.push("-iquote" + path.dirname(real_file));
+                for (i = 0; i < args.length; i++) {
+                  if (args[i] == real_file) {
+                    args[i] = file;
+                  }
+                }
+              }
             }
           })
         } catch (e) {
           console.log(e)
         }
       }
+      /* Only override command from settings if compile_commands.json didn't provide one */
+      if (command == "")
         command = settings.execPath;
+
       // Expand path if necessary
       if (command.substring(0, 1) == ".") {
         command = path.join(cwd, command);
@@ -197,6 +224,13 @@ module.exports = {
       var include_paths = module.exports.splitStringTrim(settings.gccIncludePaths, ",", true, "-I");
       args = args.concat(include_paths);
 
+      var isystem_include_paths = module.exports.splitStringTrim(settings.gccISystemPaths, ",", true, "-isystem");
+      args = args.concat(isystem_include_paths);
+
+      if (atom.config.get("linter-gcc.gccLintOnTheFly") == true) {
+        args.push("-iquote" + path.dirname(real_file));
+      }
+
       args.push(file);
     }
 
@@ -209,5 +243,71 @@ module.exports = {
     }
 
     return {binary: command, args: args};
+  },
+  parse: function(data,editor) {
+
+    if (typeof data !== 'string') {
+      throw new Error('Invalid or no `data` provided');
+    }
+
+    var  NamedRegexp = require('named-js-regexp');
+    var options = {flags: "g"}
+
+    if (settings.gcc7orGreater) {
+      var regex = `(?<file>.+):(?<line>\\d+):(?<col>\\d+):\\s*\\w*\\s*(?<type>(${atom.config.get("linter-gcc.gccErrorString")}|${atom.config.get("linter-gcc.gccWarningString")}|${atom.config.get("linter-gcc.gccNoteString")}))\\s*:\\s*(?<message>.*)(\\r?\\n(?<code>.*)\\r?\\n(?<placemarks>\\s+\\^~*))*`
+    }
+    else
+    {
+      var regex = `(?<file>.+):(?<line>\\d+):(?<col>\\d+):\\s*\\w*\\s*(?<type>(${atom.config.get("linter-gcc.gccErrorString")}|${atom.config.get("linter-gcc.gccWarningString")}|${atom.config.get("linter-gcc.gccNoteString")}))\\s*:\\s*(?<message>.*)`
+    }
+    var compiledRegexp = new NamedRegexp(regex, options.flags);
+    var rawMatch = compiledRegexp.exec(data);
+
+    var messages = [];
+    while (rawMatch !== null) {
+      var match = rawMatch.groups();
+      var type = match.type;
+      var text = match.message;
+      var file = match.file;
+      if (file.includes("<") || file == null)
+      {
+        rawMatch = compiledRegexp.exec(data);
+        continue;
+      }
+
+      var lineStart = Math.max(parseInt(match.line || 1) - 1, 0);
+      var colStart = Math.max(parseInt(match.col || 1) - 1, 0);
+      var lineEnd = lineStart;
+
+      if (settings.gcc7orGreater && typeof match.placemarks !== "undefined") {
+        var colEnd = Math.max(match.placemarks.lastIndexOf("~"), colStart+1);
+      }
+      else
+      {
+        var colEnd = colStart + 1;
+      }
+
+      var duplicate = false;
+      messages.forEach(function(msg){
+        duplicate = duplicate || (msg.severity === type && msg.location.file === file
+                                  && msg.location.position[0][0] === lineStart
+                                  && msg.location.position[0][1] === colStart);
+      })
+
+      if (!duplicate) {
+        messages.push({
+          severity: type,
+          excerpt: text,
+          location:{
+              file: file,
+              position: [[lineStart, colStart], [lineEnd, colEnd]]
+          }
+        });
+      }
+
+      rawMatch = compiledRegexp.exec(data);
+    }
+
+    return messages;
   }
 }

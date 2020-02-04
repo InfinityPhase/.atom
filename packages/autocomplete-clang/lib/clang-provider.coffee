@@ -4,8 +4,8 @@
 
 {Range, CompositeDisposable} = require 'atom'
 path = require 'path'
-{makeBufferedClangProcess, buildCodeCompletionArgs} = require './clang-args-builder'
-{getSourceScopeLang, prefixAtPosition, nearestSymbolPosition} = require './util'
+{spawnClang, buildCodeCompletionArgs} = require './clang-args-builder'
+{getScopeLang, prefixAtPosition, nearestSymbolPosition} = require './common-util'
 
 module.exports =
 class ClangProvider
@@ -13,7 +13,7 @@ class ClangProvider
   inclusionPriority: 1
 
   getSuggestions: ({editor, scopeDescriptor, bufferPosition}) ->
-    language = getSourceScopeLang scopeDescriptor.getScopesArray()
+    language = getScopeLang scopeDescriptor.getScopesArray()
     prefix = prefixAtPosition(editor, bufferPosition)
     [symbolPosition,lastSymbol] = nearestSymbolPosition(editor, bufferPosition)
     minimumWordLength = atom.config.get('autocomplete-plus.minimumWordLength')
@@ -27,11 +27,11 @@ class ClangProvider
       @codeCompletionAt(editor, symbolPosition.row, symbolPosition.column, language, prefix)
 
   codeCompletionAt: (editor, row, column, language, prefix) ->
+    cwd = path.dirname editor.getPath()
     args = buildCodeCompletionArgs editor, row, column, language
-    callback = (code, outputs, errors, resolve) =>
+    spawnClang cwd, args, editor.getText(), (code, outputs, errors, resolve) =>
       console.log errors
       resolve(@handleCompletionResult(outputs, code, prefix))
-    makeBufferedClangProcess editor, args, callback, editor.getText()
 
   convertCompletionLine: (line, prefix) ->
     contentRe = /^COMPLETION: (.*)/

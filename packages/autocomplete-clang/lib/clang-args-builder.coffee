@@ -1,21 +1,22 @@
 {BufferedProcess} = require 'atom'
 path = require 'path'
 fs = require 'fs'
-tmp = require 'tmp'
+os = require 'os'
+uuidv4 = require 'uuid/v4'
 ClangFlags = require 'clang-flags'
 
 module.exports =
 
-  makeBufferedClangProcess: (editor, args, callback, input)->
+  spawnClang: (cwd, args, input, callback)->
     new Promise (resolve) ->
       command = atom.config.get "autocomplete-clang.clangCommand"
-      options = cwd: path.dirname editor.getPath()
+      options = cwd: cwd
       [outputs, errors] = [[], []]
       stdout = (data)-> outputs.push data
       stderr = (data)-> errors.push data
       argsCountThreshold = atom.config.get("autocomplete-clang.argsCountThreshold")
       if (args.join(" ")).length > (argsCountThreshold or 7000)
-        [args, filePath] = makeFileBasedArgs args, editor
+        [args, filePath] = makeFileBasedArgs args
         exit = (code)->
           fs.unlinkSync filePath
           callback code, (outputs.join '\n'), (errors.join '\n'), resolve
@@ -27,7 +28,7 @@ module.exports =
       bufferedProcess.process.stdin.end()
 
   buildCodeCompletionArgs: (editor, row, column, language) ->
-    {std, filePath, currentDir, pchPath} = getCommonArgs editor,language
+    {std, filePath, currentDir, pchPath} = getCommons editor,language
     args = []
     args.push "-fsyntax-only"
     args.push "-x#{language}"
@@ -36,8 +37,8 @@ module.exports =
     args.push("-include-pch", pchPath) if fs.existsSync(pchPath)
     addCommonArgs args, std, currentDir, pchPath, filePath
 
-  buildGoDeclarationCommandArgs: (editor, language, term)->
-    {std, filePath, currentDir, pchPath} = getCommonArgs editor,language
+  buildAstDumpArgs: (editor, language, term)->
+    {std, filePath, currentDir, pchPath} = getCommons editor,language
     args = []
     args.push "-fsyntax-only"
     args.push "-x#{language}"
@@ -47,14 +48,14 @@ module.exports =
     args.push("-include-pch", pchPath) if fs.existsSync(pchPath)
     addCommonArgs args, std, currentDir, pchPath, filePath
 
-  buildEmitPchCommandArgs: (editor, language)->
-    {std, filePath, currentDir, pchPath} = getCommonArgs editor,language
+  buildEmitPchArgs: (editor, language)->
+    {std, filePath, currentDir, pchPath} = getCommons editor,language
     args = []
     args.push "-x#{language}-header"
     args.push "-Xclang", "-emit-pch", "-o", pchPath
     addCommonArgs args, std, currentDir, pchPath, filePath
 
-getCommonArgs = (editor, language)->
+getCommons = (editor, language)->
   pchFilePrefix = atom.config.get "autocomplete-clang.pchFilePrefix"
   pchFile = [pchFilePrefix, language, "pch"].join '.'
   filePath = editor.getPath()
@@ -92,12 +93,11 @@ addDocumentationArgs = (args)->
       args.push "-fretain-comments-from-system-headers"
   args
 
-makeFileBasedArgs = (args, editor)->
+makeFileBasedArgs = (args)->
   args = args.join('\n')
   args = args.replace /\\/g, "\\\\"
   args = args.replace /\ /g, "\\\ "
-  filePath = tmp.fileSync().name
-  fs.writeFile filePath, args, (error) ->
-    console.error("Error writing file", error) if error
+  filePath = path.join(os.tmpdir(), "acargs-"+uuidv4())
+  fs.writeFileSync filePath, args
   args = ['@' + filePath]
   [args, filePath]
